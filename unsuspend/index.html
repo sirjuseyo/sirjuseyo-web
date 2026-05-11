@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>연체이력•원약불•이약불로 이용 정지된 고객님들 필독</title>
+  <style>
+    :root {
+      --brand:     #380097;
+      --bg:        #F6F6F6;
+      --ink:       #121212;
+      --muted:     #6B6B6B;
+      --warn:      #DC2626;
+      --green-bg:  #E8F5E9;
+      --green:     #22C55E;
+      --orange:    #EA580C;
+      --table-hl:  #FFF0F0;
+      --chat-bg:   #2A2A2A;
+      --bubble:    #3C3C3C;
+      --yellow:    #FEE500;
+      --blockquote:#F3F0FF;
+      --blockquote-border: #7C3AED;
+      --warn-bg:   #FFF7ED;
+      --warn-border:#F59E0B;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .page {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      min-height: 100vh;
+    }
+
+    /* ── 섹션 공통 ── */
+    .section {
+      padding: 32px 20px;
+      border-bottom: 1px solid #F0F0F0;
+    }
+    .section:last-child { border-bottom: none; }
+
+    /* ── 섹션 1: 히어로 ── */
+    .hero {
+      padding: 40px 24px 32px;
+      background: #fff;
+    }
+    .hero-icon {
+      font-size: 52px;
+      line-height: 1;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .hero-title {
+      font-size: clamp(26px, 6vw, 36px);
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+
+    /* ── 섹션 2: 감면 요약 ── */
+    .summary {
+      background: #fff;
+      padding: 28px 24px;
+    }
+    .summary-text {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+    .summary-text .lock-icon {
+      margin-right: 6px;
+    }
+    .summary-highlight {
+      color: var(--warn);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-style: dotted;
+    }
+    .special-box {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border-radius: 8px;
+      background: #FAFAFA;
+      border: 1px solid #E8E8E8;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .special-box .underline {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .special-box strong {
+      font-weight: 800;
+    }
+
+    /* ── 섹션 3: 채팅 스토리 ── */
+    .chat-section {
+      background: #fff;
+      padding: 0 24px 28px;
+    }
+    .chat-window {
+      background: var(--chat-bg);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .chat-topbar {
+      background: #222;
+      text-align: center;
+      padding: 12px;
+      color: #ccc;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .chat-body {
+      padding: 20px 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .chat-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .chat-row.right {
+      justify-content: flex-end;
+    }
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #555;
+      flex-shrink: 0;
+    }
+    .bubble {
+      background: var(--bubble);
+      color: #fff;
+      border-radius: 4px 16px 16px 16px;
+      padding: 10px 14px;
+      max-width: 78%;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .bubble.bold {
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .bubble.yellow {
+      background: var(--yellow);
+      color: #111;
+      font-weight: 800;
+      font-size: 15px;
+      border-radius: 16px 4px 16px 16px;
+      text-align: right;
+    }
+    .chat-spacer {
+      height: 6px;
+    }
+
+    /* ── 섹션 4: 조건 박스 ── */
+    .cond-section {
+      background: #fff;
+      padding: 0 24px 32px;
+    }
+    .cond-box {
+      background: var(--blockquote);
+      border-left: 4px solid var(--blockquote-border);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 18px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .cond-box .red { color: var(--warn); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    .cond-label {
+      margin-top: 24px;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── 섹션 5~7: 유형별 섹션 공통 ── */
+    .type-section {
+      background: #fff;
+      padding: 32px 24px;
+      border-top: 8px solid var(--bg);
+    }
+    .type-title {
+      background: var(--green-bg);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: clamp(18px, 4vw, 22px);
+      font-weight: 900;
+      color: var(--ink);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .check-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #FAFAFA;
+      border: 1px solid #ECECEC;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .check-item .check-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .check-item .red {
+      color: var(--warn);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── 감면 이벤트 넘버 헤더 ── */
+    .event-label {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .event-label .num-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .event-label .red { color: var(--warn); }
+
+    /* ── 감면 비교 테이블 ── */
+    .discount-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #E5E7EB;
+    }
+    .discount-table th {
+      background: #F9FAFB;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 700;
+      color: var(--muted);
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .discount-table td {
+      padding: 12px 12px;
+      border-bottom: 1px solid #F0F0F0;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .discount-table tr:last-child td { border-bottom: none; }
+    .discount-table .col-label { color: var(--muted); font-size: 12px; }
+    .discount-table .col-hl {
+      background: var(--table-hl);
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    /* ── 포인트 CTA 배지 ── */
+    .point-badge {
+      background: #FFF7ED;
+      border: 1.5px solid #FED7AA;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .point-badge .diamond {
+      color: var(--orange);
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .point-badge .pt-num {
+      color: var(--warn);
+      font-weight: 900;
+      font-size: 17px;
+    }
+
+    /* ── 카카오 CTA 이미지 ── */
+    .kakao-img-wrap {
+      margin-top: 4px;
+    }
+    .kakao-img-wrap img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    /* ── 섹션 8: 주의사항 ── */
+    .warn-section {
+      background: var(--warn-bg);
+      padding: 28px 24px;
+      border-top: 8px solid var(--bg);
+    }
+    .warn-title {
+      font-size: 17px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .warn-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .warn-list li {
+      font-size: 14px;
+      line-height: 1.7;
+      padding-left: 16px;
+      position: relative;
+    }
+    .warn-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-weight: 900;
+    }
+    .warn-list li strong { font-weight: 800; }
+
+    /* ── 섹션 9: 클로징 ── */
+    .closing-section {
+      background: #fff;
+      padding: 40px 24px 48px;
+      display: flex;
+      justify-content: center;
+      border-top: 8px solid var(--bg);
+    }
+    .closing-section img {
+      width: 100%;
+      max-width: 360px;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── 섹션 1: 히어로 ── -->
+  <section class="hero">
+    <span class="hero-icon">🗣️</span>
+    <h1 class="hero-title">연체이력•원약불•이약불로 이용 정지된 고객님들 필독</h1>
+    <p class="summary-text">
+      📢 2025년도에 서비스를 재개하고, 큰 맘먹고 제공하는 <strong style="background:#DC2626;color:#fff;padding:2px 6px;border-radius:4px;">파격적인 감면 혜택</strong>
+    </p>
+  </section>
+
+  <!-- ── 섹션 2: 감면 요약 + 특별 이벤트 안내 ── -->
+  <section class="summary section">
+    <p class="summary-text">
+      <span class="lock-icon">🔒</span>정상적으로 이용을 재개하려면 원래 수만 포인트를 적립해야 하지만,<br>
+      지금은 <span class="summary-highlight">단 몇 천 포인트로도</span> 해제가 가능합니다.
+    </p>
+    <div class="special-box">
+      지금 <span class="underline">고객님께서는</span><br>
+      <span class="underline">복잡한 해제 절차 없이 단순 포인트 적립만으로</span><br>
+      이용 정지를 해제하실 수 있는 <strong>특별 이벤트 대상자</strong>입니다.
+    </div>
+  </section>
+
+  <!-- ── 섹션 3: 채팅 스토리 ── -->
+  <section class="chat-section section">
+    <div class="chat-window">
+      <div class="chat-topbar">써주세요.</div>
+      <div class="chat-body">
+
+        <!-- A 고객 -->
+        <div class="chat-row">
+          <div class="avatar"></div>
+          <div class="bubble">6개월 이상 연체한 A 고객님은</div>
+        </div>
+        <div class="chat-row">
+          <div class="avatar" style="opacity:0"></div>
+          <div class="bubble">연체이력 해제를 위해서</div>
+        </div>
+        <div class="chat-row">
+          <div class="avatar" style="opacity:0"></div>
+          <div class="bubble bold">70,000포인트를 적립했어야 했어요.</div>
+        </div>
+
+        <div class="chat-spacer"></div>
+
+        <!-- B 고객 -->
+        <div class="chat-row">
+          <div class="avatar"></div>
+          <div class="bubble">B 고객님은 30만 원 빌리고<br>그 3만 원은 포인트로 갚기로 계약했는데</div>
+        </div>
+        <div class="chat-row">
+          <div class="avatar" style="opacity:0"></div>
+          <div class="bubble">현금으로 상환해서 계약을 어긴 걸로 기록됐어요!</div>
+        </div>
+        <div class="chat-row">
+          <div class="avatar" style="opacity:0"></div>
+          <div class="bubble bold">이용 정지를 해제하려면 33,000포인트를 적립해야 해요!</div>
+        </div>
+
+        <div class="chat-spacer"></div>
+
+        <!-- 클라이맥스 -->
+        <div class="chat-row right">
+          <div class="bubble yellow">헐.. 그러면 지금이 절호의 기회네요?</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 섹션 4: 조건 박스 ── -->
+  <section class="cond-section section">
+    <div class="cond-box">
+      🔴 이제 이용정지를 해제한 후에는<br>
+      대출 심사 시 <span class="red">고객님의 신용, 소득, 상환 능력과 상환 의지를 더욱 면밀하게 평가</span> 할 예정입니다.
+    </div>
+    <p class="cond-label">❗ 단, 조건이 있어요.</p>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- ── 섹션 5: 연체이력 보유 고객 ── -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="type-section">
+    <div class="type-title">✅ 혹시 연체이력 보유중인 고객이신가요?</div>
+
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-icon">☑️</span>
+        <span>약속한 상환일에 대출을 갚지 못해, 마지막 써주세요. 이용 이력이 <strong>'연체 상환'</strong>으로 기록된 상태입니다.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">☑️</span>
+        <span>현재 이용 정지 중이므로, <span class="red">연체이력을 해제하지 않으면 모든 대출 신청 건은 취소 처리됩니다.</span></span>
+      </div>
+    </div>
+
+    <!-- ① 감면 이벤트 테이블 -->
+    <div class="event-label">
+      <span class="num-badge">1</span>
+      연체이력 해제 감면 이벤트 안내
+    </div>
+    <table class="discount-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>기존</th>
+          <th>감면 혜택 적용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-label">신용코칭<br>태도트레이닝</td>
+          <td>(연체해지 포인트*1.5배) 포인트<br>(연체기간*100) 포인트</td>
+          <td class="col-hl">총 5,000포인트</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 포인트 배지 -->
+    <div class="point-badge">
+      <span class="diamond">◆</span>
+      <span><span class="pt-num">5,000포인트</span> 적립 시 즉시 연체이력 해제 후 이용 가능</span>
+    </div>
+
+    <!-- ② 카카오 CTA -->
+    <div class="event-label">
+      <span class="num-badge">2</span>
+      연체이력 해제를 위한 포인트 적립 후, 아래 정보를 톡에 남겨주세요
+    </div>
+    <div class="kakao-img-wrap">
+      <img src="../project-docs/200_refers/img/007.png" alt="써주세요 카카오채널 추가 후 연체이력 해제 안내" />
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- ── 섹션 6: 원리포 약속 불이행 고객 ── -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="type-section">
+    <div class="type-title">✅ 혹시 원리포 약속 불이행 고객이신가요?</div>
+
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-icon">☑️</span>
+        <span>약속한 상환일에 원금의 최소 10%를 포인트로 갚지 못해, 마지막 써주세요. 이용 이력이 <strong>'원리포 약속 불이행'</strong>으로 기록된 상태입니다.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">☑️</span>
+        <span>현재 이용 정지 중이므로, <span class="red">원리포 약속 불이행을 해제하지 않으면 모든 대출 신청 건은 취소 처리됩니다.</span></span>
+      </div>
+    </div>
+
+    <!-- ① 감면 이벤트 테이블 -->
+    <div class="event-label">
+      <span class="num-badge">1</span>
+      원리포 약속 불이행 해제 감면 이벤트
+    </div>
+    <table class="discount-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>기존</th>
+          <th>감면 혜택 적용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-label">신용코칭<br>태도트레이닝</td>
+          <td>(원금) 포인트<br>(이용정지기간*100) 포인트</td>
+          <td class="col-hl">총 3,000포인트</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 포인트 배지 -->
+    <div class="point-badge">
+      <span class="diamond">◆</span>
+      <span><span class="pt-num">3,000포인트</span> 적립 시 즉시 연체이력 해제 후 이용 가능</span>
+    </div>
+
+    <!-- ② 카카오 CTA -->
+    <div class="event-label">
+      <span class="num-badge">2</span>
+      원리포 약속 불이행 해제를 위한 포인트 적립 후, 아래 정보를 톡에 남겨주세요
+    </div>
+    <div class="kakao-img-wrap">
+      <img src="../project-docs/200_refers/img/008.png" alt="써주세요 카카오채널 추가 후 원약불 해제 안내" />
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- ── 섹션 7: 이포 약속 불이행 고객 ── -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="type-section">
+    <div class="type-title">✅ 혹시 이포 약속 불이행 고객이신가요?</div>
+
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-icon">☑️</span>
+        <span>약속한 상환일에 이자를 포인트로 갚지 못해, 마지막 써주세요. 이용 이력이 <strong>'이포 약속 불이행'</strong>으로 기록된 상태입니다.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">☑️</span>
+        <span>현재 이용 정지 중이므로, <span class="red">이포 약속 불이행을 해제하지 않으면 모든 대출 신청 건은 취소 처리됩니다.</span></span>
+      </div>
+    </div>
+
+    <!-- ① 감면 이벤트 테이블 -->
+    <div class="event-label">
+      <span class="num-badge">1</span>
+      이포 약속 불이행 해제 감면 이벤트
+    </div>
+    <table class="discount-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>기존</th>
+          <th>감면 혜택 적용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-label">신용코칭<br>태도트레이닝</td>
+          <td>(이자) 포인트<br>(이용정지기간*100) 포인트</td>
+          <td class="col-hl">총 1,000포인트</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 포인트 배지 -->
+    <div class="point-badge">
+      <span class="diamond">◆</span>
+      <span><span class="pt-num">1,000포인트</span> 적립 시 즉시 연체이력 해제 후 이용 가능</span>
+    </div>
+
+    <!-- ② 카카오 CTA -->
+    <div class="event-label">
+      <span class="num-badge">2</span>
+      이포 약속 불이행 해제를 위한 포인트 적립 후, 아래 정보를 톡에 남겨주세요
+    </div>
+    <div class="kakao-img-wrap">
+      <img src="../project-docs/200_refers/img/009.png" alt="써주세요 카카오채널 추가 후 이약불 해제 안내" />
+    </div>
+  </section>
+
+  <!-- ── 섹션 8: 주의사항 ── -->
+  <section class="warn-section">
+    <div class="warn-title">⚠️ 꼭! 확인해요.</div>
+    <ul class="warn-list">
+      <li>감면 이벤트는 <strong>한정된 기간동안만</strong> 진행됩니다. 언제 감면 이벤트를 마감할지 모르니 기회를 놓치지 마세요!</li>
+      <li>이용정지를 해제하더라도, 대출 심사 결과에 따라 한도가 변동될 수 있습니다.</li>
+    </ul>
+  </section>
+
+  <!-- ── 섹션 9: 클로징 ── -->
+  <section class="closing-section">
+    <img src="../project-docs/200_refers/img/006.png" alt="기회는 한번 – 놓치지 마세요!" />
+  </section>
+
+</div>
+</body>
+</html>
