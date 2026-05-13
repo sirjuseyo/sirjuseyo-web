@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nanocredit | 신용은 중요하지 않아요, 포인트를 적립하면 AI가 돈을 빌려 드려요.</title>
+  <style>
+    :root {
+      --brand:     #380097;
+      --nc-purple: #4432A2;
+      --nc-btn:    #AFA9FD;
+      --nc-grad-s: #C8B8FF;
+      --nc-grad-e: #E0D4FF;
+      --dark:      #000000;
+      --bg:        #FFFFFF;
+      --hl:        #A8A4FF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #E5E7EB;
+      padding: 0 24px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 800; color: var(--nc-purple);
+      text-decoration: none; letter-spacing: -0.5px;
+    }
+    .nav-hamburger {
+      background: none; border: none;
+      cursor: pointer; padding: 4px;
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--nc-purple); border-radius: 2px;
+    }
+
+    /* ─── 섹션 공통 이미지 ─── */
+    .sec-img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ─── SEC-01: HERO (검정 배경) ─── */
+    #hero {
+      background: #000;
+    }
+
+    /* ─── SEC-02: 거절 경험 (보라 그라디언트) ─── */
+    #rejection {
+      background: linear-gradient(180deg, var(--nc-grad-s) 0%, var(--nc-grad-e) 100%);
+    }
+
+    /* ─── SEC-03: 전통 금융 시스템 (흰색) ─── */
+    #traditional {
+      background: #fff;
+    }
+
+    /* ─── SEC-04: 공감 메시지 (흰/연회색) ─── */
+    #empathy {
+      background: #fff;
+    }
+
+    /* ─── SEC-05: 신용 한계 (검정) ─── */
+    #limit {
+      background: #000;
+    }
+
+    /* ─── SEC-06: AI 심사 화면 (placeholder) ─── */
+    #ai-review {
+      background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 320px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .ai-placeholder-ring {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      border: 8px solid rgba(175,169,253,0.2);
+      border-top-color: var(--nc-btn);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      position: relative;
+    }
+    .ai-placeholder-ring::after {
+      content: '92%';
+      font-size: 28px; font-weight: 800;
+      color: var(--nc-btn);
+    }
+    .ai-placeholder-label {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px; line-height: 1.6;
+      letter-spacing: -0.3px;
+    }
+    .ai-placeholder-title {
+      color: #fff;
+      font-size: 20px; font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    /* ─── SEC-07: 부대비용 억울함 (보라 그라디언트) ─── */
+    #extra-cost {
+      background: linear-gradient(180deg, var(--nc-grad-s) 0%, var(--nc-grad-e) 100%);
+    }
+
+    /* ─── SEC-08: 크레딧 미션 (보라 그라디언트) ─── */
+    #credit-mission {
+      background: linear-gradient(180deg, var(--nc-grad-s) 0%, var(--nc-grad-e) 100%);
+    }
+
+    /* ─── SEC-09: 앱 화면 (placeholder) ─── */
+    #app-screen {
+      background: #f8f6ff;
+      min-height: 260px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 60px 24px;
+      text-align: center;
+      gap: 16px;
+    }
+    .app-screen-phone {
+      width: 60px; height: 100px;
+      border: 3px solid var(--nc-btn);
+      border-radius: 12px;
+      background: linear-gradient(180deg, #f0edff 0%, #ddd6ff 100%);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto;
+    }
+    .app-screen-phone::after {
+      content: '📱';
+      font-size: 28px;
+    }
+    .app-screen-label {
+      color: var(--nc-purple);
+      font-size: 14px; font-weight: 500;
+    }
+
+    /* ─── SEC-10: Use Case (흰색) ─── */
+    #use-case {
+      background: #fff;
+    }
+
+    /* ─── SEC-11: 이달의 특별 상품 카드 ─── */
+    #monthly-products {
+      background: #fff;
+      padding: 40px 20px;
+    }
+    .monthly-title {
+      font-size: 22px; font-weight: 800;
+      color: #111; text-align: center;
+      margin-bottom: 28px; letter-spacing: -0.5px;
+    }
+    .monthly-title span {
+      color: var(--nc-purple);
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      max-width: 480px;
+      margin: 0 auto 16px;
+    }
+    .product-card {
+      background: #fff;
+      border: 1.5px solid #e0dafa;
+      border-radius: 16px;
+      padding: 20px 16px;
+      display: flex; flex-direction: column;
+      align-items: flex-start; gap: 8px;
+      box-shadow: 0 2px 12px rgba(68,50,162,0.07);
+      transition: box-shadow 0.2s;
+    }
+    .product-card:hover {
+      box-shadow: 0 4px 20px rgba(68,50,162,0.14);
+    }
+    .card-icon { font-size: 28px; }
+    .card-period {
+      font-size: 12px; color: var(--nc-purple);
+      font-weight: 600; letter-spacing: 0.3px;
+      background: #f0edff; border-radius: 6px;
+      padding: 3px 8px;
+    }
+    .card-amount {
+      font-size: 26px; font-weight: 800;
+      color: #111; letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    .card-amount-unit {
+      font-size: 15px; font-weight: 600;
+      color: #555;
+    }
+    .card-apply-btn {
+      margin-top: 4px;
+      width: 100%;
+      padding: 10px 0;
+      background: var(--nc-btn);
+      color: var(--nc-purple);
+      font-size: 14px; font-weight: 700;
+      border: none; border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: background 0.2s;
+    }
+    .card-apply-btn:hover {
+      background: #fff;
+      border: 1px solid var(--nc-btn);
+    }
+    .monthly-sample-img {
+      width: 100%;
+      max-width: 480px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 12px;
+    }
+
+    /* ─── SEC-12: 슬라이드쇼 placeholder ─── */
+    #slide-banner {
+      background: linear-gradient(135deg, #f0edff 0%, #e4dcff 100%);
+      min-height: 120px;
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .slide-banner-label {
+      color: var(--nc-purple);
+      font-size: 13px; font-weight: 500;
+      opacity: 0.7;
+    }
+
+    /* ─── CTA 버튼 ─── */
+    .cta-section {
+      padding: 28px 20px 40px;
+      background: #fff;
+    }
+    .nanocreditButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 80px;
+      border: 1px solid;
+      border-radius: 10px;
+      font-size: 25px;
+      font-weight: bold;
+      text-decoration-line: none;
+      color: #4432A2;
+      background-color: #AFA9FD;
+      border-color: #AFA9FD;
+      transition: 200ms;
+    }
+    .nanocreditButton:hover {
+      color: #4432A2;
+      background-color: #ffffff;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fff;
+      padding: 32px 20px 48px;
+      border-top: 1px solid #E5E7EB;
+    }
+    .footer-logo {
+      font-size: 18px; font-weight: 800;
+      color: var(--nc-purple);
+      margin-bottom: 12px;
+    }
+    .footer-info {
+      font-size: 12px; color: #888;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a class="nav-logo" href="../home/">nanocredit</a>
+  <button class="nav-hamburger" aria-label="메뉴">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── SEC-01: HERO ─── -->
+<section id="hero">
+  <img class="sec-img"
+    src="../imgs/nanocredit/2depth_쇼핑-내역을-제출하고-돈-빌리기_랜딩페이지_세로버전-002.png"
+    alt="나는 [  ]때문에 대출거절 된 적이 있다? — 대출거절 사유 TOP5" />
+</section>
+
+<!-- ─── SEC-02: 거절 경험 질문 ─── -->
+<section id="rejection">
+  <img class="sec-img"
+    src="../imgs/nanocredit/2depth_쇼핑-내역을-제출하고-돈-빌리기_랜딩페이지_세로버전-003.png"
+    alt="이런 이유로 거절당한 경험이 있나요? / 전통적인 금융 시스템 설명" />
+</section>
+
+<!-- ─── SEC-03: 전통 금융 시스템 ─── -->
+<!-- SEC-02 이미지가 하단까지 포함 → 별도 이미지 없음 -->
+
+<!-- ─── SEC-04: 공감 메시지 ─── -->
+<section id="empathy">
+  <img class="sec-img"
+    src="../imgs/nanocredit/2depth_쇼핑 내역을 제출하고 돈 빌리기_랜딩페이지_세로버전-002.png"
+    alt="나는 대출을 갚을 능력이 충분한데 왜 안 되는 거지?" />
+</section>
+
+<!-- ─── SEC-05: 신용 한계 메시지 ─── -->
+<section id="limit">
+  <img class="sec-img"
+    src="../imgs/nanocredit/2depth_landing-page_포인트를-적립하고-돈-빌리기 (1).png"
+    alt="진정한 신용은 제한된 정보로 판단하기엔 한계가 있어요" />
+</section>
+
+<!-- ─── SEC-06: AI 심사 화면 (이미지 미확보 → placeholder) ─── -->
+<section id="ai-review">
+  <p class="ai-placeholder-title">AI 심사 진행 중</p>
+  <div class="ai-placeholder-ring"></div>
+  <p class="ai-placeholder-label">AI가 실제 상환 능력을 분석하고 있어요.<br>이미지 에셋 확보 후 교체 예정입니다.</p>
+</section>
+
+<!-- ─── SEC-07: 부대비용 억울함 ─── -->
+<section id="extra-cost">
+  <img class="sec-img"
+    src="../imgs/nanocredit/2depth_landing-page_포인트를-적립하고-돈-빌리기-035.png"
+    alt="10만 원 빌리러 와서 신용 조회 비용을 내가 부담한다면 억울하잖아요?" />
+</section>
+
+<!-- ─── SEC-08: 크레딧 미션 소개 ─── -->
+<section id="credit-mission">
+  <img class="sec-img"
+    src="../imgs/nanocredit/2depth_쇼핑-내역을-제출하고-돈-빌리기_랜딩페이지_세로버전-006.png"
+    alt="크레딧 미션을 통해 해결할 수 있도록 해드려요. 저희는 부대비용을 고객님께 전가하지 않습니다." />
+</section>
+
+<!-- ─── SEC-09: 앱 화면 (이미지 미확보 → placeholder) ─── -->
+<section id="app-screen">
+  <div class="app-screen-phone"></div>
+  <p class="app-screen-label">대출 신청 앱 화면<br>이미지 에셋 확보 후 교체 예정입니다.</p>
+</section>
+
+<!-- ─── SEC-10: Use Case ─── -->
+<section id="use-case">
+  <img class="sec-img"
+    src="../imgs/nanocredit/sjy_web_home (1).png"
+    alt="특히 이렇게 쓰면 끝이에요. — 포인트 적립소에서 구매해요." />
+</section>
+
+<!-- ─── SEC-11: 이달의 특별 상품 카드 ─── -->
+<section id="monthly-products">
+  <h2 class="monthly-title">이달의 <span>특별 상품</span></h2>
+  <div class="cards-grid">
+    <!-- 카드 1 -->
+    <div class="product-card">
+      <span class="card-icon">🌱</span>
+      <span class="card-period">1개월</span>
+      <div>
+        <span class="card-amount">10만</span><span class="card-amount-unit">원</span>
+      </div>
+      <a class="card-apply-btn" href="https://monthly-loan.sirjuseyo.com/">신청하기</a>
+    </div>
+    <!-- 카드 2 -->
+    <div class="product-card">
+      <span class="card-icon">💰</span>
+      <span class="card-period">1개월</span>
+      <div>
+        <span class="card-amount">20만</span><span class="card-amount-unit">원</span>
+      </div>
+      <a class="card-apply-btn" href="https://monthly-loan.sirjuseyo.com/">신청하기</a>
+    </div>
+    <!-- 카드 3 -->
+    <div class="product-card">
+      <span class="card-icon">🎯</span>
+      <span class="card-period">1개월</span>
+      <div>
+        <span class="card-amount">30만</span><span class="card-amount-unit">원</span>
+      </div>
+      <a class="card-apply-btn" href="https://monthly-loan.sirjuseyo.com/">신청하기</a>
+    </div>
+    <!-- 카드 4 -->
+    <div class="product-card">
+      <span class="card-icon">🚀</span>
+      <span class="card-period">1개월</span>
+      <div>
+        <span class="card-amount">50만</span><span class="card-amount-unit">원</span>
+      </div>
+      <a class="card-apply-btn" href="https://monthly-loan.sirjuseyo.com/">신청하기</a>
+    </div>
+  </div>
+  <!-- 005.webp 카드 샘플 이미지 -->
+  <img class="monthly-sample-img"
+    src="../imgs/nanocredit/005.webp"
+    alt="이달의 특별 상품 샘플" />
+</section>
+
+<!-- ─── SEC-12: 배너 슬라이드쇼 (이미지 미확보 → placeholder) ─── -->
+<section id="slide-banner">
+  <p class="slide-banner-label">📌 배너 슬라이드쇼 — 이미지 에셋 확보 후 교체 예정</p>
+</section>
+
+<!-- ─── CTA 버튼 ─── -->
+<div class="cta-section">
+  <a class="nanocreditButton" href="https://monthly-loan.sirjuseyo.com/">
+    이 달의 대출 신청하러 가기
+  </a>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">nanocredit</div>
+  <p class="footer-info">
+    써주세요.연계대부 | 대표 정희선<br>
+    서울시 강남구 테헤란로 427, 8층<br>
+    사업자등록번호 855-87-02303 | 대부업등록번호 2023-금감원-0074<br><br>
+    대출금리 연 12% ~ 연 39.9% (법정최고금리 이내)<br>
+    중개수수료를 요구하거나 받는 것은 불법입니다.
+  </p>
+</footer>
+
+</body>
+</html>
