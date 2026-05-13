@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy 정책 | 써주세요</title>
+  <style>
+    :root {
+      --brand:      #380097;
+      --bg:         #FFFFFF;
+      --ink:        #121212;
+      --muted:      #6B6B6B;
+      --privacy-bg: #FFF0F0;
+      --privacy-fg: #DC2626;
+      --divider:    #E5E7EB;
+      --warn-bg:    #FFFBEB;
+      --warn-border:#FCD34D;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* ───────────────────────────────────────────
+       헤더
+    ─────────────────────────────────────────── */
+    .header {
+      padding: 48px 0 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      gap: 14px;
+    }
+
+    .header-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      background: var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* 아이콘 이미지가 준비되면 아래처럼 교체:
+       <img src="아이콘경로" alt="써주세요" style="width:72px;height:72px;border-radius:18px;display:block;"> */
+
+    .header-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.3px;
+    }
+
+    /* ───────────────────────────────────────────
+       소개 텍스트
+    ─────────────────────────────────────────── */
+    .intro {
+      padding: 20px 0 28px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .intro p + p { margin-top: 8px; }
+
+    /* ───────────────────────────────────────────
+       개인정보보호 방침 목록 네비게이션
+    ─────────────────────────────────────────── */
+    .nav-section {
+      padding: 28px 0 24px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .nav-section-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--ink);
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-item a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 14px;
+      transition: background 0.15s;
+      border: 1px solid transparent;
+    }
+
+    .nav-item a:hover {
+      background: #F5F3FF;
+      border-color: #E9E4FF;
+    }
+
+    .nav-icon {
+      font-size: 15px;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    .nav-label {
+      flex: 1;
+    }
+
+    .badge-privacy {
+      background: var(--privacy-bg);
+      color: var(--privacy-fg);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 999px;
+      flex-shrink: 0;
+      letter-spacing: 0.2px;
+    }
+
+    /* ───────────────────────────────────────────
+       7개 문서 섹션
+    ─────────────────────────────────────────── */
+    .doc-section {
+      padding: 36px 0 28px;
+      border-top: 1px solid var(--divider);
+    }
+
+    .doc-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    /* 문서 본문 공통 스타일 */
+    .doc-content {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--ink);
+      word-break: keep-all;
+    }
+
+    .doc-content p {
+      margin-bottom: 12px;
+    }
+
+    .doc-content h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin: 20px 0 8px;
+    }
+
+    .doc-content ul, .doc-content ol {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .doc-content li {
+      margin-bottom: 4px;
+    }
+
+    /* 플레이스홀더 */
+    .placeholder {
+      background: #F9FAFB;
+      border: 2px dashed #D1D5DB;
+      border-radius: 10px;
+      padding: 32px 24px;
+      text-align: center;
+      color: #9CA3AF;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .placeholder strong {
+      display: block;
+      font-size: 15px;
+      color: #6B7280;
+      margin-bottom: 6px;
+    }
+
+    /* ───────────────────────────────────────────
+       삭제/폐기 요청 안내
+    ─────────────────────────────────────────── */
+    .warn-section {
+      margin: 44px 0 0;
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+
+    .warn-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .warn-body {
+      font-size: 13px;
+      color: var(--ink);
+      line-height: 1.85;
+    }
+
+    .warn-body p + p { margin-top: 6px; }
+
+    /* ───────────────────────────────────────────
+       Contact 섹션
+    ─────────────────────────────────────────── */
+    .contact-section {
+      padding: 40px 0 32px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .contact-section-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .contact-card {
+      background: #F9FAFB;
+      border: 1px solid var(--divider);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .contact-card-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand);
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      font-size: 13px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .contact-card .label {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .link-contact {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #0070C0;
+      text-decoration: none;
+      padding: 4px 0;
+      transition: opacity 0.15s;
+    }
+
+    .link-contact:hover { opacity: 0.7; }
+
+    /* ───────────────────────────────────────────
+       하단 법인 정보 (Footer)
+    ─────────────────────────────────────────── */
+    .footer {
+      padding: 28px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 14px 0;
+    }
+
+    .footer-company-name {
+      font-weight: 700;
+      color: #444;
+      font-size: 13px;
+    }
+
+    /* ───────────────────────────────────────────
+       반응형 (모바일)
+    ─────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .page { padding: 0 16px 60px; }
+      .header { padding: 36px 0 22px; }
+      .header-title { font-size: 22px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .doc-title { font-size: 16px; }
+      .link-contact { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <a href="javascript:history.back()" style="display:inline-flex;align-items:center;gap:10px;font-size:22px;font-weight:800;letter-spacing:-0.5px;color:#380097;text-decoration:none;margin:28px 0 32px;">← BACK</a>
+
+  <!-- ══════════════════════════════════════════════
+       ① 헤더
+  ══════════════════════════════════════════════ -->
+  <header class="header">
+    <div class="header-icon">
+      <!--
+        ============================================================
+        🖼️ 아이콘 이미지 교체 안내
+        - 우피 페이지 상단 빨간 화살표 아이콘 이미지 경로 확정 후
+          아래 SVG를 img 태그로 교체하세요
+        - 예: <img src="../assets/icon.png" alt="써주세요" style="width:72px;height:72px;border-radius:18px;display:block;">
+        ============================================================
+      -->
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="5" width="24" height="30" rx="3" fill="white" opacity="0.9"/>
+        <rect x="12" y="12" width="16" height="2" rx="1" fill="#380097"/>
+        <rect x="12" y="17" width="16" height="2" rx="1" fill="#380097"/>
+        <rect x="12" y="22" width="10" height="2" rx="1" fill="#380097"/>
+      </svg>
+    </div>
+    <h1 class="header-title">Privacy 정책</h1>
+  </header>
+
+  <!-- ══════════════════════════════════════════════
+       ② 소개 텍스트
+  ══════════════════════════════════════════════ -->
+  <div class="intro">
+    <p>(주)혁사호재(이하 '써주세요.' 앱의 운영사라고 함)는 개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다. (주)혁사호재는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)를 통하여 공지할 것입니다.</p>
+    <p>본 방침은 2024년 7월 28일부터 시행됩니다.</p>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       ③ 개인정보보호 방침 확인하기 — 7개 항목 목록
+  ══════════════════════════════════════════════ -->
+  <nav class="nav-section">
+    <p class="nav-section-title">개인정보보호 방침 확인하기</p>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="01_terms.html">
+          <span class="nav-icon">📄</span>
+          <span class="nav-label">서비스 이용약관</span>
+          <span class="badge-privacy">Privacy</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="02_collect-personal.html">
+          <span class="nav-icon">📄</span>
+          <span class="nav-label">개인(신용)정보 수집·이용 동의서</span>
+          <span class="badge-privacy">Privacy</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="03_collect-unique.html">
+          <span class="nav-icon">📄</span>
+          <span class="nav-label">고유식별정보 수집·이용 동의서</span>
+          <span class="badge-privacy">Privacy</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="04_inquiry-personal.html">
+          <span class="nav-icon">📄</span>
+          <span class="nav-label">개인(신용)정보 조회 동의서</span>
+          <span class="badge-privacy">Privacy</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="05_inquiry-unique.html">
+          <span class="nav-icon">📄</span>
+          <span class="nav-label">고유식별정보 조회 동의서</span>
+          <span class="badge-privacy">Privacy</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="06_provide-personal.html">
+          <span class="nav-icon">📄</span>
+          <span class="nav-label">개인(신용)정보 제공 동의서</span>
+          <span class="badge-privacy">Privacy</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="07_provide-unique.html">
+          <span class="nav-icon">📄</span>
+          <span class="nav-label">고유식별정보 제공 동의서</span>
+          <span class="badge-privacy">Privacy</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════
+       ⑤ 회원가입 정보 삭제/폐기 요청 안내
+  ══════════════════════════════════════════════ -->
+  <div class="warn-section">
+    <p class="warn-title">⚠️ 회원가입 정보 삭제/폐기 요청 안내</p>
+    <div class="warn-body">
+      <!--
+        ============================================================
+        📌 삭제/폐기 안내 텍스트 — 원본 전문으로 교체해 주세요
+        ============================================================
+      -->
+      <p><strong>회원가입 정보를 비롯한 모든 개인정보 삭제/폐기 요청은 아래 채널을 통해 문의 부탁드립니다.</strong></p>
+      <p>개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하기 위해 당사의 공식 채널을 통해 요청을 받아 개인정보를 삭제/폐기처리하고 있음을 알려드립니다.</p>
+      <!--
+        ============================================================
+        📌 삭제/폐기 안내 텍스트 끝
+        ============================================================
+      -->
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       ⑥ Contact 섹션
+  ══════════════════════════════════════════════ -->
+  <div class="contact-section">
+    <p class="contact-section-title">Contact</p>
+    <div class="contact-grid">
+
+      <!-- 고객센터 -->
+      <div class="contact-card">
+        <p class="contact-card-title">📞 고객센터</p>
+        <p><span class="label">대표전화</span> ｜ 02-2054-3002</p>
+        <p style="margin-top:6px;"><span class="label">고객문의</span> ｜</p>
+        <p>customer@sirjuseyo.com</p>
+      </div>
+
+      <!-- CS (카카오) -->
+      <div class="contact-card">
+        <p class="contact-card-title">💬 CS</p>
+        <!--
+          ============================================================
+          📌 카카오 채널 링크 — href="" 안에 실제 URL을 넣어주세요
+          ============================================================
+        -->
+        <a href="http://pf.kakao.com/_AcXXxl" class="link-contact" target="_blank" rel="noopener">💬 카톡 채널로 가기</a>
+        <a href="http://pf.kakao.com/_cRVhn/chat" class="link-contact" target="_blank" rel="noopener">📞 1:1 채팅방에 바로 문의하기</a>
+        <!--
+          ============================================================
+          📌 카카오 채널 링크 끝
+          ============================================================
+        -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       ⑦ 하단 법인 정보 (Footer)
+  ══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <p><span class="footer-company-name">(주)혁사호재</span> ｜ 대표이사 : 박준호</p>
+    <p>주소 : 서울특별시 강남구 선릉로 428, 15층 123호(대치동, 위워크선릉3호점)</p>
+    <p>사업자 등록번호 : 619-88-00665 ｜ 통신판매업 신고번호 : 2019-서울강남-04564호</p>
+
+    <hr class="footer-divider">
+
+    <p><span class="footer-company-name">써주세요연계대부</span> ｜ 대표 : 정희선</p>
+    <p>주소 : 서울특별시 강남구 도곡로 112, 2층 C2-7호(도곡동, 서한빌딩)</p>
+    <p>사업자 등록번호 : 778-28-01770</p>
+    <p>대부업 등록번호 : 2024-서울강남-0087 ｜ 대부중개업 등록번호 : 2024-서울강남-0088</p>
+  </footer>
+
+</div>
+</body>
+</html>
