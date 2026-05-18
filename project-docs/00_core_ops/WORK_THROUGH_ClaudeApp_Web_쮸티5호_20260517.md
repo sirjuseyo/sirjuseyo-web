@@ -105,7 +105,7 @@ var action: String?
 | 연관 T-ID | T-001 |
 | 커밋 해시 | 63dce29 |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 ### 문제 위치
 
@@ -188,7 +188,7 @@ var action: String?
 | 연관 T-ID | T-001 |
 | 커밋 해시 | - |
 | 작업 이력 | 2차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **파일:** `nanocredit/20/index.html`
 
@@ -205,7 +205,7 @@ var action: String?
 | 연관 T-ID | T-002 |
 | 커밋 해시 | 63dce29 |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 ### 문제 위치
 
@@ -288,7 +288,7 @@ var action: String?
 | 연관 T-ID | T-003 |
 | 커밋 해시 | 63dce29 |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 ### 문제 위치
 
@@ -368,7 +368,7 @@ var action: String?
 | 연관 T-ID | T-003 |
 | 커밋 해시 | - |
 | 작업 이력 | 2차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **파일:** `nanocredit/50/index.html`
 
@@ -385,7 +385,7 @@ var action: String?
 | 연관 T-ID | T-003 |
 | 커밋 해시 | - |
 | 작업 이력 | 3차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **파일:** `nanocredit/50/index.html`
 
@@ -402,7 +402,7 @@ var action: String?
 | 연관 T-ID | T-004 |
 | 커밋 해시 | 63dce29 |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 ### 문제 위치
 
@@ -442,7 +442,7 @@ var action: String?
 | 연관 T-ID | T-004 |
 | 커밋 해시 | - |
 | 작업 이력 | 2차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **파일:** `nanocredit/30/index.html`
 
@@ -459,7 +459,7 @@ var action: String?
 | 연관 T-ID | T-005 |
 | 커밋 해시 | 316089d |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 ### 문제 위치
 
@@ -505,7 +505,7 @@ var action: String?
 | 연관 T-ID | T-006 |
 | 커밋 해시 | 63dce29 |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 ### 문제 위치
 
@@ -548,7 +548,7 @@ var action: String?
 | 연관 T-ID | T-007 |
 | 커밋 해시 | 5669a91 |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 ### 문제 위치
 
@@ -613,7 +613,7 @@ var action: String?
 | 연관 T-ID | T-008 |
 | 커밋 해시 | ae74f0c |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 ### 문제 위치
 
@@ -669,7 +669,7 @@ var action: String?
 | 연관 T-ID | T-008 |
 | 커밋 해시 | - |
 | 작업 이력 | 2차~8차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **수정 이력 요약:**
 - 2차: 경고 박스 텍스트 사이즈 키움, 레이아웃 개판 수정
@@ -691,7 +691,7 @@ var action: String?
 | 연관 T-ID | T-009 |
 | 커밋 해시 | 1542e17 |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 ### 문제 위치
 
@@ -739,7 +739,7 @@ var action: String?
 | 연관 T-ID | T-009 |
 | 커밋 해시 | - |
 | 작업 이력 | 2차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **수정 내용 (사장님 피드백 반영):**
 1. SEC-03+04: 텍스트 재현 → 통합 이미지 1장으로 처리
@@ -749,4 +749,35 @@ var action: String?
 5. SEC-12/13: 원본 텍스트 그대로 반영 (절친 + 부모님 소통내역 상세)
 6. SEC-14: "은총 촬영" → "등·초본"으로 수정 + 정부24 발급 절차 + 제3자 제출 정보 추가
 7. 이미지 매핑: 5개 → 8개 전부 완료
+
+---
+
+### 깃 & 배포 관리자 작업 완료 보고서 (T-001~T-009)
+
+[PRD : 깃 관리자 -> 개발자 전달]
+
+sirjuseyo-web T-001~T-009 반영 완료했습니다.
+
+- 원격 머지:
+  - `feature/home-footer-privacy-updates -> main`
+  - merge commit: `4c5da2d0aff47b4212f1879a90b01bd2bdae1fb9`
+  - 포함 commit: `63dce29`, `316089d`, `5669a91`, `ae74f0c`, `1542e17`, `c362d9a`
+
+- 배포:
+  - GitHub Pages 배포 완료
+  - deploy run: `26053429902` `success`
+
+- 확인:
+  - `https://www.sirjuseyo.com/` `HTTP/2 200`
+  - `https://www.sirjuseyo.com/nanocredit/` `HTTP/2 200`
+  - `https://www.sirjuseyo.com/nanocredit/pre-check/` `HTTP/2 200`
+  - `https://www.sirjuseyo.com/nanocredit/10/20/30/50/` 모두 `HTTP/2 200`
+
+- 문서:
+  - GitDeployOps TODO/WORK_THROUGH 업데이트 완료
+  - 완료 보고서 `WT-062` 기록 완료
+  - 문서 commit/push: `62b946b`
+
+한 줄 버전:
+- `sirjuseyo-web T-001~T-009 feature/home-footer-privacy-updates -> main 반영 완료, GitHub Pages 배포 및 주요 URL 확인 완료했습니다.`
 

@@ -104,7 +104,7 @@
 - 문서 커밋: `{문서커밋해시}` `{문서커밋메시지}`
 
 한 줄 버전:
-- `{레포명} {T-ID} 완료, {feature 브랜치명} 푸시 및 PR #{PR번호} 생성 완료, {검증 요약} 했습니다. Ser5호님 feature -> dev 검토 부탁드립니다.`
+- `{레포명} {T-ID} 완료, {feature 브랜치명} 푸시 및 PR #{PR번호} 생성 완료, {검증 요약} 했습니다. 깃 & 배포 관리자님 feature -> dev 검토 부탁드립니다.`
 
 ### 깃 관리자 작업 완료 보고서 보관 정책 
 
@@ -246,6 +246,15 @@
 
 | T-ID | 작업 타이틀 | 로컬커밋 | 원격푸시 | DEV | PRD 코드배포 | PRD 빌드 | PRD 운영배포 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|---|---|
+| T-001 | nanocredit 20만 원 상품 랜딩페이지 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-19 | merge `4c5da2d`, deploy `26053429902` success |
+| T-002 | nanocredit 30만 원 상품 랜딩페이지 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-19 | merge `4c5da2d`, deploy `26053429902` success |
+| T-003 | nanocredit 50만 원 상품 랜딩페이지 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-19 | merge `4c5da2d`, deploy `26053429902` success |
+| T-004 | nanocredit 한도상향 섹션 수정 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-19 | merge `4c5da2d`, deploy `26053429902` success |
+| T-005 | 홈 페이지 About us / 푸터 수정 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-19 | merge `4c5da2d`, deploy `26053429902` success |
+| T-006 | nanocredit 신청 버튼 링크 변경 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-19 | merge `4c5da2d`, deploy `26053429902` success |
+| T-007 | nanocredit 메인 배너 교체 + 슬라이드 삭제 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-19 | merge `4c5da2d`, deploy `26053429902` success |
+| T-008 | nanocredit pre-check 페이지 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-19 | merge `4c5da2d`, deploy `26053429902` success |
+| T-009 | nanocredit 소통거리 기획안 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-19 | merge `4c5da2d`, deploy `26053429902` success |
 
 
 ---
@@ -254,15 +263,15 @@
 
 | T-ID | WT-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|
-| T-001 | WT-001 | 63dce29 | **진행중(In-Progress)** | nanocredit 20만 원 상품 랜딩페이지 신규 제작 | 쮸티5호 | 2026-05-17 | 【파일】`nanocredit/20/index.html` / 【작업】10만 원 index.html 복사 후 20만 원 기준 내용 변경 |
-| T-002 | WT-002 | 63dce29 | **진행중(In-Progress)** | nanocredit 30만 원 상품 랜딩페이지 신규 제작 | 쮸티5호 | 2026-05-17 | 【파일】`nanocredit/30/index.html` / 【작업】20만 원 index.html 복사 후 30만 원 기준 내용 변경 |
-| T-003 | WT-003 | 63dce29 | **진행중(In-Progress)** | nanocredit 50만 원 상품 랜딩페이지 신규 제작 | 쮸티5호 | 2026-05-17 | 【파일】`nanocredit/50/index.html` / 【작업】30만 원 index.html 복사 후 50만 원 기준 내용 변경 |
-| T-004 | WT-004 | 63dce29 | **진행중(In-Progress)** | nanocredit 한도상향 섹션 전체 수정 (10/20/30/50만 원) | 쮸티5호 | 2026-05-18 | 【파일】`nanocredit/10,20,30,50/index.html` / 【작업】10만 삭제, 20만→20만, 30만→30만, 50만 확인 |
-| T-005 | WT-005 | 316089d | **진행중(In-Progress)** | 홈 페이지 About us / 푸터 수정 | 쮸티5호 | 2026-05-18 | 【파일】`index.html` / 【작업】박스 순서 변경, 문구 수정, 푸터 하단 UI 강조 |
-| T-006 | WT-006 | 63dce29 | **진행중(In-Progress)** | nanocredit 신청 버튼 링크 변경 (10~50만 원) | 쮸티5호 | 2026-05-18 | 【파일】`nanocredit/10,20,30,50/index.html` / 【작업】CTA 링크 apply/apply.html로 변경 |
-| T-007 | WT-007 | 5669a91 | **진행중(In-Progress)** | nanocredit 메인 30만/50만 배너 이미지 교체 + 슬라이드 배너 삭제 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/index.html` / 【작업】30만·50만 텍스트 카드 → 배너 이미지 카드 교체, 슬라이드 배너 섹션 삭제 |
-| T-008 | WT-008 | ae74f0c | **진행중(In-Progress)** | nanocredit pre-check 페이지 신규 제작 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/pre-check/index.html` / 【작업】"대출 심사 시작 전, 반드시 확인해요" 페이지 신규 생성 |
-| T-009 | WT-009 | 1542e17 | **진행중(In-Progress)** | nanocredit 소통거리 제출 페이지 기획안 작성 | 쮸티5호 | 2026-05-19 | 【파일】`project-docs/10_plan/기획안_nanocredit_소통거리제출_페이지.md` / 【작업】원본 스크린샷 8장 분석, 이미지 8개 매핑, 14개 섹션 기획안 완성 |
+| T-001 | WT-001 | 63dce29 | **검증완료** | nanocredit 20만 원 상품 랜딩페이지 신규 제작 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/20/index.html` / 머지 `4c5da2d` / 배포 완료 |
+| T-002 | WT-002 | 63dce29 | **검증완료** | nanocredit 30만 원 상품 랜딩페이지 신규 제작 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/30/index.html` / 머지 `4c5da2d` / 배포 완료 |
+| T-003 | WT-003 | 63dce29 | **검증완료** | nanocredit 50만 원 상품 랜딩페이지 신규 제작 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/50/index.html` / 머지 `4c5da2d` / 배포 완료 |
+| T-004 | WT-004 | 63dce29 | **검증완료** | nanocredit 한도상향 섹션 전체 수정 (10/20/30/50만 원) | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/10,20,30,50/index.html` / 머지 `4c5da2d` / 배포 완료 |
+| T-005 | WT-005 | 316089d | **검증완료** | 홈 페이지 About us / 푸터 수정 | 쮸티5호 | 2026-05-19 | 【파일】`index.html` / 머지 `4c5da2d` / 배포 완료 |
+| T-006 | WT-006 | 63dce29 | **검증완료** | nanocredit 신청 버튼 링크 변경 (10~50만 원) | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/10,20,30,50/index.html` / 머지 `4c5da2d` / 배포 완료 |
+| T-007 | WT-007 | 5669a91 | **검증완료** | nanocredit 메인 30만/50만 배너 이미지 교체 + 슬라이드 배너 삭제 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/index.html` / 머지 `4c5da2d` / 배포 완료 |
+| T-008 | WT-008 | ae74f0c | **검증완료** | nanocredit pre-check 페이지 신규 제작 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/pre-check/index.html` / 머지 `4c5da2d` / 배포 완료 |
+| T-009 | WT-009 | 1542e17 | **검증완료** | nanocredit 소통거리 제출 페이지 기획안 작성 | 쮸티5호 | 2026-05-19 | 【파일】`project-docs/10_plan/기획안_nanocredit_소통거리제출_페이지.md` / 머지 `4c5da2d` / 배포 완료 |
 
 
 ---
