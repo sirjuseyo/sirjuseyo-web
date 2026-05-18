@@ -22,6 +22,31 @@
       overflow-x: hidden;
     }
 
+    /* ─── PAGE TITLE SECTION ─── */
+    .page-title-section {
+      background: #fff;
+      padding: 32px 24px 28px;
+      border-bottom: 1px solid #F0EDF8;
+    }
+    .page-title-text {
+      font-size: 32px; font-weight: 900;
+      color: #111; line-height: 1.3;
+      letter-spacing: -1.2px;
+      margin-bottom: 24px;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      color: #555;
+      text-decoration: none;
+      background: #fff;
+      cursor: pointer;
+    }
+    .back-btn:hover { background: #f5f5f5; }
+
     /* ─── NAV ─── */
     nav {
       position: sticky; top: 0; z-index: 100;
@@ -76,76 +101,192 @@
       background: #000;
     }
 
-    /* ─── SEC-06: AI 심사 화면 (placeholder) ─── */
-    #ai-review {
-      background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
-      min-height: 320px;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 60px 24px;
-      text-align: center;
+    /* ─── SEC-05b: 당신의 모든 활동과 경험 (흰색 텍스트) ─── */
+    #alt-credit {
+      background: #fff;
+      padding: 48px 24px 40px;
     }
-    .ai-placeholder-ring {
-      width: 140px; height: 140px;
-      border-radius: 50%;
-      border: 8px solid rgba(175,169,253,0.2);
-      border-top-color: var(--nc-btn);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 24px;
-      position: relative;
+    .alt-credit-heading {
+      font-size: 30px; font-weight: 900;
+      color: #111; line-height: 1.35;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
     }
-    .ai-placeholder-ring::after {
-      content: '92%';
-      font-size: 28px; font-weight: 800;
-      color: var(--nc-btn);
+    .alt-credit-heading .hl { color: var(--brand); }
+    .alt-credit-desc {
+      font-size: 17px; color: #444; line-height: 1.9;
+      margin-bottom: 28px;
+      letter-spacing: -0.3px;
+      border-left: 3px solid #D8D0FF;
+      padding-left: 16px;
     }
-    .ai-placeholder-label {
-      color: rgba(255,255,255,0.7);
-      font-size: 14px; line-height: 1.6;
+    .callout-box {
+      background: #F3F0FF;
+      border-left: 4px solid var(--nc-purple);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      font-size: 17px; color: #222;
+      line-height: 1.8; letter-spacing: -0.3px;
+    }
+    .callout-box .callout-arrow {
+      color: var(--nc-purple); font-weight: 800; margin-right: 6px;
+    }
+
+    /* ─── SEC-05c: 포인트 적립 심사 첫걸음 (흰색 텍스트) ─── */
+    #point-review {
+      background: #fff;
+      padding: 8px 24px 48px;
+      border-top: 1px solid #F0EDF8;
+    }
+    .point-heading {
+      font-size: 30px; font-weight: 900;
+      color: #111; line-height: 1.35;
+      letter-spacing: -1px;
+      margin-bottom: 28px;
+    }
+    .point-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .point-num {
+      font-size: 24px; flex-shrink: 0; line-height: 1;
+      margin-top: 2px;
+    }
+    .point-text {
+      font-size: 17px; color: #333; line-height: 1.8;
       letter-spacing: -0.3px;
     }
-    .ai-placeholder-title {
-      color: #fff;
-      font-size: 20px; font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
+    .chart-block {
+      margin-top: 32px;
+      background: #F8F7FF;
+      border-radius: 12px;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .chart-title {
+      font-size: 19px; font-weight: 800;
+      color: #111; margin-bottom: 20px;
+      letter-spacing: -0.3px;
+    }
+    .point-text-purple {
+      font-size: 17px; color: var(--nc-purple); line-height: 1.8;
+      letter-spacing: -0.3px; font-weight: 700;
+    }
+    /* 도넛 차트 */
+    .donut-wrap {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 20px;
+    }
+    .donut-chart {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: conic-gradient(var(--nc-purple) 0% 92%, #D1D5DB 92% 100%);
+      position: relative;
+      flex-shrink: 0;
+    }
+    .donut-hole {
+      position: absolute;
+      width: 100px; height: 100px;
+      background: #F8F7FF;
+      border-radius: 50%;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .donut-center-val {
+      font-size: 26px; font-weight: 800;
+      color: var(--brand); letter-spacing: -1px;
+    }
+    .donut-legend {
+      display: flex; gap: 20px; justify-content: center;
+    }
+    .legend-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 14px; color: #333; font-weight: 500;
+    }
+    .legend-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .legend-dot.approve { background: var(--nc-purple); }
+    .legend-dot.reject  { background: #D1D5DB; }
+
+    /* ─── 부대비용 헤더 ─── */
+    .extra-header-wrap {
+      background: #fff;
+      padding: 40px 24px 0;
+    }
+    .extra-header-title {
+      font-size: 30px; font-weight: 900;
+      color: #111; line-height: 1.35;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .content-divider {
+      border: none;
+      border-top: 1.5px solid #E5E7EB;
+      margin: 0 0 28px;
     }
 
-    /* ─── SEC-07: 부대비용 억울함 (보라 그라디언트) ─── */
+    /* ─── SEC-07: 부대비용 억울함 ─── */
     #extra-cost {
       background: linear-gradient(180deg, var(--nc-grad-s) 0%, var(--nc-grad-e) 100%);
+      padding-bottom: 28px;
     }
 
-    /* ─── SEC-08: 크레딧 미션 (보라 그라디언트) ─── */
+    /* ─── SEC-08: 크레딧 미션 ─── */
     #credit-mission {
       background: linear-gradient(180deg, var(--nc-grad-s) 0%, var(--nc-grad-e) 100%);
+      padding-bottom: 28px;
     }
 
-    /* ─── SEC-09: 앱 화면 (placeholder) ─── */
-    #app-screen {
-      background: #f8f6ff;
-      min-height: 260px;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 60px 24px;
-      text-align: center;
-      gap: 16px;
+    /* ─── 크레딧 미션 콘텐츠 ─── */
+    .credit-content {
+      background: #fff;
+      padding: 20px 24px 40px;
     }
-    .app-screen-phone {
-      width: 60px; height: 100px;
-      border: 3px solid var(--nc-btn);
-      border-radius: 12px;
-      background: linear-gradient(180deg, #f0edff 0%, #ddd6ff 100%);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto;
+    .check-item-box {
+      background: #F0EDFF;
+      border-radius: 10px;
+      padding: 16px 18px;
+      display: flex; gap: 10px; align-items: flex-start;
+      margin-bottom: 12px;
     }
-    .app-screen-phone::after {
-      content: '📱';
-      font-size: 28px;
+    .check-item-box .chk {
+      font-size: 20px; flex-shrink: 0; margin-top: 2px;
     }
-    .app-screen-label {
-      color: var(--nc-purple);
-      font-size: 14px; font-weight: 500;
+    .check-item-box p {
+      font-size: 17px; color: #333;
+      line-height: 1.8; letter-spacing: -0.3px;
+    }
+    .check-item-box.highlight-box {
+      background: var(--nc-purple);
+    }
+    .check-item-box.highlight-box p {
+      color: #fff; font-weight: 600;
+    }
+    .section-gap {
+      height: 28px;
+    }
+    .reduction-title {
+      font-size: 26px; font-weight: 900;
+      color: #111; letter-spacing: -0.8px;
+      margin: 36px 0 18px;
+      line-height: 1.35;
+    }
+    .quote-callout {
+      border-left: 3px solid #C8B8FF;
+      padding: 16px 40px 16px 20px;
+      margin-top: 10px;
+      font-size: 16px; color: #555;
+      line-height: 1.85; letter-spacing: -0.2px;
+      position: relative;
+    }
+    .quote-callout::after {
+      content: '💬';
+      position: absolute; right: 14px; top: 14px;
+      font-size: 16px;
     }
 
     /* ─── SEC-10: Use Case (흰색) ─── */
@@ -228,6 +369,23 @@
       border-radius: 12px;
     }
 
+    /* ─── 배너형 상품 카드 ─── */
+    .product-card-banner {
+      display: block;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 14px rgba(68,50,162,0.12);
+      text-decoration: none;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .product-card-banner:hover {
+      box-shadow: 0 6px 24px rgba(68,50,162,0.22);
+      transform: translateY(-2px);
+    }
+    .product-card-banner img {
+      width: 100%; display: block;
+    }
+
     /* ─── SEC-12: 슬라이드쇼 placeholder ─── */
     #slide-banner {
       background: linear-gradient(135deg, #f0edff 0%, #e4dcff 100%);
@@ -295,6 +453,12 @@
   </button>
 </nav>
 
+<!-- ─── 페이지 타이틀 ─── -->
+<div class="page-title-section">
+  <h1 class="page-title-text">신용은 중요하지 않아요,<br>포인트를 적립하면<br>AI가 돈을 빌려 드려요.</h1>
+  <a class="back-btn" href="../home/">⬅ BACK</a>
+</div>
+
 <!-- ─── SEC-01: HERO ─── -->
 <section id="hero">
   <img class="sec-img"
@@ -326,12 +490,58 @@
     alt="진정한 신용은 제한된 정보로 판단하기엔 한계가 있어요" />
 </section>
 
-<!-- ─── SEC-06: AI 심사 화면 (이미지 미확보 → placeholder) ─── -->
-<section id="ai-review">
-  <p class="ai-placeholder-title">AI 심사 진행 중</p>
-  <div class="ai-placeholder-ring"></div>
-  <p class="ai-placeholder-label">AI가 실제 상환 능력을 분석하고 있어요.<br>이미지 에셋 확보 후 교체 예정입니다.</p>
+<!-- ─── SEC-05b: 당신의 모든 활동과 경험 ─── -->
+<section id="alt-credit">
+  <h2 class="alt-credit-heading">🏛 당신의 모든 활동과 경험이<br><span class="hl">새로운 신용</span>이 됩니다.</h2>
+  <p class="alt-credit-desc">우리는 기존의 방식에서 벗어나,<br>당신의 잠재력을 인정하는<br><strong>세상에 없던 대안신용평가 시스템</strong>을 만들었습니다.</p>
+  <div class="callout-box">
+    <span class="callout-arrow">➤</span>그 시작이 바로 <strong>'포인트'를 쌓으면 AI가 당신의 신용을 평가하는 시스템</strong>이죠.
+  </div>
+  <div class="callout-box">
+    <span class="callout-arrow">➤</span>매일 앱에서 미션을 수행하고 포인트를 모으는<br><strong>당신의 꾸준함과 성실함</strong>이 바로 또 다른 신용의 증명이 됩니다.
+  </div>
 </section>
+
+<!-- ─── SEC-05c: 포인트 적립 심사 첫걸음 ─── -->
+<section id="point-review">
+  <h2 class="point-heading">✅ 포인트 적립은 심사의 첫걸음입니다.</h2>
+  <div class="point-item">
+    <span class="point-num">1️⃣</span>
+    <p class="point-text">포인트는 AI가 당신의 상환 능력을 평가하는<br><strong>가장 중요한 기준 중 하나</strong>입니다.</p>
+  </div>
+  <div class="point-item">
+    <span class="point-num">2️⃣</span>
+    <p class="point-text">물론, 포인트만으로 대출이 100% 확정되는 것은 아닙니다.</p>
+  </div>
+  <div class="point-item">
+    <span class="point-num">3️⃣</span>
+    <p class="point-text-purple">AI는 고객님의 다양한 데이터를 종합적으로 분석해<br>최종 대출 가능 여부와 한도를 결정합니다.</p>
+  </div>
+  <div class="chart-block">
+    <p class="chart-title">📊 2025년 2월~8월 대출 승인 비율</p>
+    <div class="donut-wrap">
+      <div class="donut-chart">
+        <div class="donut-hole">
+          <span class="donut-center-val">92%</span>
+        </div>
+      </div>
+      <div class="donut-legend">
+        <div class="legend-item">
+          <span class="legend-dot approve"></span>승인 92%
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot reject"></span>거절 8%
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 부대비용 헤더 ─── -->
+<div class="extra-header-wrap">
+  <h2 class="extra-header-title">🅿️ 부대비용, 이제 포인트로 해결하세요.</h2>
+  <hr class="content-divider" />
+</div>
 
 <!-- ─── SEC-07: 부대비용 억울함 ─── -->
 <section id="extra-cost">
@@ -347,11 +557,30 @@
     alt="크레딧 미션을 통해 해결할 수 있도록 해드려요. 저희는 부대비용을 고객님께 전가하지 않습니다." />
 </section>
 
-<!-- ─── SEC-09: 앱 화면 (이미지 미확보 → placeholder) ─── -->
-<section id="app-screen">
-  <div class="app-screen-phone"></div>
-  <p class="app-screen-label">대출 신청 앱 화면<br>이미지 에셋 확보 후 교체 예정입니다.</p>
-</section>
+<!-- ─── 크레딧 미션 콘텐츠 ─── -->
+<div class="credit-content">
+  <div class="check-item-box">
+    <span class="chk">☑️</span>
+    <p>크레딧 미션을 통해 광고를 시청하고 포인트를 쌓아 보세요.</p>
+  </div>
+  <div class="check-item-box">
+    <span class="chk">☑️</span>
+    <p>이 포인트로 신용 조회 비용을 해결할 수 있습니다.</p>
+  </div>
+
+  <div class="section-gap"></div>
+
+  <h3 class="reduction-title">💡 국내 최초 원금 감면과 무이자 실현</h3>
+
+  <div class="check-item-box highlight-box">
+    <span class="chk">☑️</span>
+    <p>적립한 포인트를 원금과 이자 상환하는 데 사용할 수 있어요.</p>
+  </div>
+
+  <div class="quote-callout">
+    1포인트라도 상환에 사용하면,<br>그만큼 현금으로 덜 갚을 수 있어요.
+  </div>
+</div>
 
 <!-- ─── SEC-10: Use Case ─── -->
 <section id="use-case">
@@ -360,57 +589,29 @@
     alt="특히 이렇게 쓰면 끝이에요. — 포인트 적립소에서 구매해요." />
 </section>
 
-<!-- ─── SEC-11: 이달의 특별 상품 카드 ─── -->
+<!-- ─── SEC-11: 신청 가능한 대출 상품 ─── -->
 <section id="monthly-products">
-  <h2 class="monthly-title">이달의 <span>특별 상품</span></h2>
+  <h2 class="monthly-title">신청 가능한 <span>대출 상품</span></h2>
   <div class="cards-grid">
-    <!-- 카드 1 -->
-    <div class="product-card">
-      <span class="card-icon">🌱</span>
-      <span class="card-period">1개월</span>
-      <div>
-        <span class="card-amount">10만</span><span class="card-amount-unit">원</span>
-      </div>
-      <a class="card-apply-btn" href="https://monthly-loan.sirjuseyo.com/">신청하기</a>
-    </div>
-    <!-- 카드 2 -->
-    <div class="product-card">
-      <span class="card-icon">💰</span>
-      <span class="card-period">1개월</span>
-      <div>
-        <span class="card-amount">20만</span><span class="card-amount-unit">원</span>
-      </div>
-      <a class="card-apply-btn" href="https://monthly-loan.sirjuseyo.com/">신청하기</a>
-    </div>
-    <!-- 카드 3 -->
-    <div class="product-card">
-      <span class="card-icon">🎯</span>
-      <span class="card-period">1개월</span>
-      <div>
-        <span class="card-amount">30만</span><span class="card-amount-unit">원</span>
-      </div>
-      <a class="card-apply-btn" href="https://monthly-loan.sirjuseyo.com/">신청하기</a>
-    </div>
-    <!-- 카드 4 -->
-    <div class="product-card">
-      <span class="card-icon">🚀</span>
-      <span class="card-period">1개월</span>
-      <div>
-        <span class="card-amount">50만</span><span class="card-amount-unit">원</span>
-      </div>
-      <a class="card-apply-btn" href="https://monthly-loan.sirjuseyo.com/">신청하기</a>
-    </div>
+    <!-- 카드 1: 10만 원 (배너 이미지 적용 완료) -->
+    <a class="product-card-banner" href="./10/">
+      <img src="../imgs/nanocredit/nanocredit_10.webp" alt="10만 원 1개월 원리현 상품" />
+    </a>
+    <!-- 카드 2: 20만 원 (배너 이미지 적용 완료) -->
+    <a class="product-card-banner" href="./20/">
+      <img src="../imgs/nanocredit/nanocredit_20.webp" alt="20만 원 1개월 상품" />
+    </a>
+    <!-- 카드 3: 30만 원 (배너 이미지 적용 완료) -->
+    <a class="product-card-banner" href="./30/">
+      <img src="../imgs/nanocredit/nanocredit_30.webp" alt="30만 원 1개월 원리포 상품" />
+    </a>
+    <!-- 카드 4: 50만 원 (배너 이미지 적용 완료) -->
+    <a class="product-card-banner" href="./50/">
+      <img src="../imgs/nanocredit/nanocredit_50.webp" alt="50만 원 1개월 원리포 상품" />
+    </a>
   </div>
-  <!-- 005.webp 카드 샘플 이미지 -->
-  <img class="monthly-sample-img"
-    src="../imgs/nanocredit/005.webp"
-    alt="이달의 특별 상품 샘플" />
 </section>
 
-<!-- ─── SEC-12: 배너 슬라이드쇼 (이미지 미확보 → placeholder) ─── -->
-<section id="slide-banner">
-  <p class="slide-banner-label">📌 배너 슬라이드쇼 — 이미지 에셋 확보 후 교체 예정</p>
-</section>
 
 <!-- ─── CTA 버튼 ─── -->
 <div class="cta-section">
