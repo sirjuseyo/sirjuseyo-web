@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>알뜰폰 | nanocredit</title>
+  <style>
+    :root {
+      --brand:     #380097;
+      --nc-purple: #4432A2;
+      --nc-btn:    #AFA9FD;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─── 페이지 타이틀 ─── */
+    .page-title-section {
+      padding: 40px 24px 28px;
+      background: #fff;
+    }
+    .page-title {
+      font-size: 30px; font-weight: 900;
+      color: #111; line-height: 1.3;
+      letter-spacing: -1.2px;
+      margin-bottom: 20px;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      color: #555;
+      text-decoration: none;
+      background: #fff;
+      cursor: pointer;
+    }
+    .back-btn:hover { background: #f5f5f5; }
+
+    /* ─── 섹션 공통 ─── */
+    .content-section {
+      padding: 0 20px 36px;
+    }
+    .section-title {
+      font-size: 23px; font-weight: 900;
+      color: #111; letter-spacing: -0.8px;
+      line-height: 1.4;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #E0E0E0;
+    }
+    .section-text {
+      font-size: 17px; color: #222;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+    }
+    .red-text { color: #D32F2F; font-weight: 700; }
+    .red-underline { color: #D32F2F; font-weight: 700; text-decoration: underline; }
+
+    /* ─── 불릿 리스트 ─── */
+    .bullet-list {
+      list-style: disc;
+      padding-left: 22px;
+      margin-bottom: 20px;
+    }
+    .bullet-list li {
+      font-size: 17px; color: #222;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+      margin-bottom: 8px;
+    }
+    .bullet-list .sub-list {
+      list-style: circle;
+      padding-left: 20px;
+      margin-top: 6px;
+    }
+    .bullet-list .sub-list li {
+      margin-bottom: 4px;
+    }
+
+    /* ─── 이미지 컨테이너 ─── */
+    .section-image {
+      margin-bottom: 20px;
+    }
+    .section-image img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    /* ─── 구분선 ─── */
+    .thick-divider {
+      height: 8px;
+      background: #E0E0E0;
+      margin: 0 0 36px;
+    }
+
+    /* ─── 하단 BACK ─── */
+    .bottom-back {
+      padding: 28px 24px;
+      background: #fff;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fff;
+      padding: 32px 20px 48px;
+      border-top: 1px solid #E5E7EB;
+    }
+    .footer-logo {
+      font-size: 18px; font-weight: 800;
+      color: var(--nc-purple);
+      margin-bottom: 12px;
+    }
+    .footer-info {
+      font-size: 12px; color: #888;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── 페이지 타이틀 ─── -->
+<div class="page-title-section">
+  <a class="back-btn" href="../index.html">⬅ BACK</a>
+</div>
+
+<!-- ─── 상단 배너 이미지 ─── -->
+<div style="padding: 0 0 24px;">
+  <img src="../../../imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-007_(1).webp" alt="알뜰폰 - M, 7, U+알뜰모바일, Mobing" style="width:100%; display:block;" />
+</div>
+
+<!-- ─── 페이지 타이틀 ─── -->
+<div style="padding: 0 24px 20px;">
+  <h1 class="page-title">알뜰폰</h1>
+</div>
+
+<!-- ─── 구분선 ─── -->
+<div class="thick-divider"></div>
+
+<!-- ─── SEC-01 약정 내용과 요금제 화면 ─── -->
+<div class="content-section">
+  <h3 class="section-title">1. 약정 내용과 요금제 화면</h3>
+  <ul class="bullet-list">
+    <li>통신사 앱에서 <span class="red-underline">현재 이용중인 약정내용 화면</span>을 앱에 첨부해 주세요.
+      <ul class="sub-list">
+        <li>반드시 가입날짜가 확인될 수 있는 내용이어야 합니다.</li>
+      </ul>
+    </li>
+    <li>통신사앱에서 <span class="red-underline">현재 이용중인 요금제 화면</span>을 앱에 첨부해 주세요.</li>
+  </ul>
+</div>
+
+<!-- ─── SEC-02 통신비 미납 내역 화면 ─── -->
+<div class="content-section">
+  <h3 class="section-title">2. 통신비 미납 내역 화면</h3>
+  <ul class="bullet-list">
+    <li>통신사 앱에서 <span class="red-underline">미납 요금 조회 화면</span>을 캡쳐 후 앱에 제출 부탁드립니다.</li>
+  </ul>
+</div>
+
+<!-- ─── SEC-03 6개월 통신비 납부 내역 화면 ─── -->
+<div class="content-section">
+  <h3 class="section-title">3. 6개월 통신비 납부 내역 화면</h3>
+  <ul class="bullet-list">
+    <li>통신사 앱에서 <span class="red-underline">최근 6개월 간 이용한 통신비 결제 내역</span> 화면을 제출해 주세요.
+      <ul class="sub-list">
+        <li>6개월 이내 개통했다면 지금까지 결제한 내역을 앱에 첨부해 주세요</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<!-- ─── MVNO 로고 그리드 이미지 ─── -->
+<div class="content-section">
+  <div class="section-image">
+    <img src="../../../imgs/nanocredit/Submissions/알뜰폰_통신비화면내역.png" alt="알뜰폰 통신사 로고 그리드" />
+  </div>
+</div>
+
+<!-- ─── 하단 BACK ─── -->
+<div class="bottom-back">
+  <a class="back-btn" href="../index.html">⬅ BACK</a>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">nanocredit</div>
+  <p class="footer-info">
+    써주세요.연계대부 | 대표 정희선<br>
+    서울시 강남구 테헤란로 427, 8층<br>
+    사업자등록번호 855-87-02303 | 대부업등록번호 2023-금감원-0074<br><br>
+    대출금리 연 12% ~ 연 39.9% (법정최고금리 이내)<br>
+    중개수수료를 요구하거나 받는 것은 불법입니다.
+  </p>
+</footer>
+
+</body>
+</html>

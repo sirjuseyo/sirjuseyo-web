@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>소통거리는 이렇게 제출해 주세요 | nanocredit</title>
+  <style>
+    :root {
+      --brand:     #380097;
+      --nc-purple: #4432A2;
+      --nc-btn:    #AFA9FD;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─── 페이지 타이틀 ─── */
+    .page-title-section {
+      padding: 40px 24px 28px;
+      background: #fff;
+    }
+    .page-title {
+      font-size: 30px; font-weight: 900;
+      color: #111; line-height: 1.3;
+      letter-spacing: -1.2px;
+      margin-bottom: 20px;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      color: #555;
+      text-decoration: none;
+      background: #fff;
+      cursor: pointer;
+    }
+    .back-btn:hover { background: #f5f5f5; }
+
+    /* ─── SEC-01 안내 배너 ─── */
+    .notice-banner {
+      margin: 20px 20px 0;
+      background: #FFF9E6;
+      border: 1px solid #F5E6B8;
+      border-radius: 12px;
+      padding: 20px 20px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .notice-banner .notice-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .notice-banner .notice-text {
+      font-size: 17px; color: #333;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+      font-weight: 700;
+    }
+    .notice-banner .notice-text .code-highlight {
+      background: #E8E8E8;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+
+    /* ─── SEC-02 히어로 이미지 ─── */
+    .hero-section {
+      padding: 32px 20px;
+    }
+    .hero-section img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    /* ─── SEC-03+04 통합 이미지 ─── */
+    .full-image-section {
+      padding: 0 20px 32px;
+    }
+    .full-image-section img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    /* ─── SEC-05 정석 헤더 (지침 배너) ─── */
+    .guide-header {
+      margin: 0 20px 32px;
+      padding: 16px 20px;
+      border-left: 4px solid var(--nc-purple);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .guide-header .guide-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .guide-header .guide-text {
+      font-size: 19px; font-weight: 800;
+      color: var(--nc-purple);
+      letter-spacing: -0.5px;
+    }
+
+    /* ─── 섹션 공통 ─── */
+    .content-section {
+      padding: 0 20px 36px;
+    }
+    .section-title {
+      font-size: 23px; font-weight: 900;
+      color: #111; letter-spacing: -0.8px;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    .section-text {
+      font-size: 17px; color: #222;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+    }
+    .red-text { color: #D32F2F; font-weight: 700; }
+    .red-underline { color: #D32F2F; font-weight: 700; text-decoration: underline; }
+    .green-text { color: #2E7D32; font-weight: 700; }
+
+    /* ─── 안내 박스 (콜아웃) ─── */
+    .info-box {
+      background: #F8F8F8;
+      border: 1px solid #E0E0E0;
+      border-radius: 12px;
+      padding: 20px 20px;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .info-box .callout-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      line-height: 1.75;
+    }
+    .info-box .callout-content {
+      flex: 1;
+    }
+    .info-box .callout-content p,
+    .info-box p {
+      font-size: 17px; color: #222;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+    }
+    .info-box-red {
+      background: #FFF0F0;
+      border: 1px solid #FFCDD2;
+      border-radius: 12px;
+      padding: 20px 20px;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .info-box-red .callout-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      line-height: 1.75;
+    }
+    .info-box-red .callout-content {
+      flex: 1;
+    }
+    .info-box-red .callout-content p,
+    .info-box-red p {
+      font-size: 17px; color: #D32F2F;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+      font-weight: 600;
+    }
+
+    /* ─── 인용 블록 ─── */
+    .quote-block {
+      border-left: 3px solid #E0E0E0;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .quote-block p {
+      font-size: 16px; color: #333;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+    }
+
+    /* ─── 이미지 컨테이너 ─── */
+    .section-image {
+      margin-bottom: 20px;
+    }
+    .section-image img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    /* ─── Q&A (부연 설명) ─── */
+    .qa-section {
+      padding: 20px 0 16px;
+    }
+    .qa-section .qa-title {
+      font-size: 16px; font-weight: 800;
+      color: #111; margin-bottom: 12px;
+    }
+    .qa-section .qa-divider {
+      border: none;
+      border-top: 1px solid #E0E0E0;
+      margin-bottom: 16px;
+    }
+    .qa-section .qa-q {
+      font-size: 16px; font-weight: 800;
+      color: #111; margin-bottom: 8px;
+    }
+    .qa-section .qa-answer p {
+      font-size: 15px; color: #333;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+    }
+
+    /* ─── 휴대폰 카드 (1열) ─── */
+    .phone-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    /* ─── 갤러리 그리드 ─── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .gallery-card {
+      background: #fff;
+      border: 1px solid #E0E0E0;
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+    }
+    .gallery-card .card-image {
+      width: 100%;
+      display: block;
+    }
+    .gallery-card .card-label {
+      padding: 12px 14px;
+      font-size: 14px; font-weight: 600;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .gallery-card .card-guide-btn {
+      display: inline-block;
+      margin: 0 14px 12px;
+      padding: 4px 12px;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      font-size: 12px; font-weight: 600;
+      color: #555;
+      background: #fff;
+      text-decoration: none;
+    }
+    .gallery-card-full {
+      grid-column: 1 / -1;
+    }
+
+    /* ─── 텍스트 카드 (직업과 소득) ─── */
+    .text-card {
+      background: #fff;
+      border: 1px solid #E0E0E0;
+      border-radius: 14px;
+      padding: 40px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 120px;
+    }
+    .text-card .card-label {
+      font-size: 14px; font-weight: 600;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ─── 군필여부 테이블 ─── */
+    .military-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+    .military-table th,
+    .military-table td {
+      padding: 14px 16px;
+      border: 1px solid #E0E0E0;
+      text-align: left;
+      line-height: 1.6;
+      letter-spacing: -0.3px;
+    }
+    .military-table th {
+      background: #F8F8F8;
+      font-weight: 700;
+      color: #111;
+    }
+    .military-table td {
+      color: #333;
+    }
+    .military-table .action-text {
+      color: var(--nc-purple);
+      font-weight: 700;
+    }
+
+    /* ─── 구분선 ─── */
+    .thick-divider {
+      height: 8px;
+      background: #E0E0E0;
+      margin: 20px 0 36px;
+    }
+
+    /* ─── 경고 박스 (절친/부모님) ─── */
+    .warning-box {
+      background: #F8F8F8;
+      border: 1px solid #E0E0E0;
+      border-radius: 12px;
+      padding: 24px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .warning-box .callout-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      line-height: 1.75;
+    }
+    .warning-box .callout-content {
+      flex: 1;
+    }
+    .warning-box .callout-content .warning-box-title {
+      font-size: 17px; font-weight: 800;
+      color: #D32F2F;
+      margin-bottom: 14px;
+    }
+    .warning-box .callout-content p {
+      font-size: 16px; color: #333;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+      margin-bottom: 8px;
+    }
+    .warning-box .callout-content p:last-child { margin-bottom: 0; }
+
+    /* ─── 제출 안내 리스트 ─── */
+    .submit-guide {
+      margin-bottom: 20px;
+    }
+    .submit-guide ol {
+      padding-left: 20px;
+    }
+    .submit-guide li {
+      font-size: 16px; color: #222;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+      margin-bottom: 12px;
+    }
+    .submit-guide .sub-list {
+      padding-left: 20px;
+      margin-top: 6px;
+      list-style-type: lower-alpha;
+    }
+    .submit-guide .sub-list li {
+      margin-bottom: 4px;
+    }
+    .submit-guide .sub-sub-list {
+      padding-left: 20px;
+      margin-top: 4px;
+      list-style-type: lower-roman;
+    }
+    .submit-guide .sub-sub-list li {
+      margin-bottom: 2px;
+    }
+    .submit-guide .sub-alpha-list {
+      padding-left: 20px;
+      margin-top: 4px;
+      list-style-type: lower-alpha;
+    }
+
+    /* ─── 체크리스트 (등초본) ─── */
+    .doc-checklist {
+      margin: 16px 0;
+    }
+    .doc-checklist p {
+      font-size: 15px; color: #222;
+      line-height: 2;
+      letter-spacing: -0.3px;
+    }
+
+    /* ─── 수신인 정보 (하이라이트) ─── */
+    .recipient-highlight {
+      margin-top: 20px;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--nc-purple);
+      padding: 16px 20px;
+    }
+    .recipient-highlight .recipient-label {
+      font-size: 16px; color: #333;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+      margin-bottom: 12px;
+    }
+    .recipient-highlight .recipient-info {
+      background: #F5F3FF;
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+    .recipient-highlight .recipient-info p {
+      font-size: 17px; color: #222;
+      line-height: 2.2;
+      letter-spacing: -0.3px;
+    }
+    .recipient-highlight .recipient-info .label {
+      font-weight: 700;
+      color: var(--nc-purple);
+    }
+
+    /* ─── 하단 BACK ─── */
+    .bottom-back {
+      padding: 28px 24px;
+      background: #fff;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fff;
+      padding: 32px 20px 48px;
+      border-top: 1px solid #E5E7EB;
+    }
+    .footer-logo {
+      font-size: 18px; font-weight: 800;
+      color: var(--nc-purple);
+      margin-bottom: 12px;
+    }
+    .footer-info {
+      font-size: 12px; color: #888;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── 페이지 타이틀 ─── -->
+<div class="page-title-section">
+  <h1 class="page-title">소통거리는 이렇게 제출해 주세요.</h1>
+  <a class="back-btn" href="../">⬅ BACK</a>
+</div>
+
+<!-- ─── SEC-01 안내 배너 ─── -->
+<div class="notice-banner">
+  <span class="notice-icon">📌</span>
+  <span class="notice-text">앱에서 <span class="code-highlight">크레딧 미션을 완료하면</span> 소통거리를 제출할 있는 화면으로 이동합니다.</span>
+</div>
+
+<!-- ─── SEC-02 히어로 이미지 (풀사이즈) ─── -->
+<div class="hero-section">
+  <img src="../../imgs/nanocredit/Submissions/노션_커버_배너_모바일최적화-038.png" alt="소통거리 제출 앱 화면" />
+</div>
+
+<!-- ─── SEC-03+04 통합 이미지 ─── -->
+<div class="full-image-section">
+  <img src="../../imgs/nanocredit/Submissions/4depth_page_소통거리-제출-가이드라인-002.png" alt="소통거리 제출 가이드라인 - 태그 뱃지, (한도)를 심사합니다, 로봇 캐릭터" />
+</div>
+
+<!-- ─── SEC-05 소통거리의 정석 (지침 배너) ─── -->
+<div class="guide-header">
+  <span class="guide-icon">✅</span>
+  <span class="guide-text">소통거리의 정석을 확인해요!</span>
+</div>
+
+<!-- ─── SEC-06 🪪 신분증 ─── -->
+<div class="content-section">
+  <h3 class="section-title">🪪 신분증</h3>
+  <div class="info-box">
+    <span class="callout-icon">📢</span>
+    <div class="callout-content">
+      <p>본인 확인을 위해 주민등록증, 운전면허증, 여권 중 택1</p>
+      <p style="margin-top: 8px;">❗ <span class="red-underline">주민등록번호 뒷자리와 식별번호는 반드시 가리고,</span> 나머지는 선명하게 보여야 합니다.</p>
+    </div>
+  </div>
+  <div class="section-image">
+    <img src="../../imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-005 (1).png" alt="주민등록증 샘플 - 주민등록번호 뒷자리 가림 처리" />
+  </div>
+  <div class="qa-section">
+    <p class="qa-title">💬 Q&A</p>
+    <hr class="qa-divider" />
+    <p class="qa-q">Q. 모바일 신분증도 가능한가요?</p>
+    <div class="qa-answer">
+      <p>A. 네 가능합니다.</p>
+      <p>행정안전부에서 운영하는 모바일 신분증 앱 또는 PASS 등에 등록된 모바일 신분증을 캡쳐해서 올려주시면 됩니다.</p>
+      <p>❗ 단, 모바일 신분증도 <span class="red-underline">주민등록번호 뒷자리와 식별번호</span>는 반드시 가리고 올려 주세요.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SEC-07 📱 휴대폰 증빙서류 ─── -->
+<div class="content-section">
+  <h3 class="section-title">📱 휴대폰 증빙서류</h3>
+  <p class="section-text" style="margin-bottom: 16px; font-weight: 800; font-size: 19px;">나의 통신사 정보를 클릭해 주세요</p>
+  <div class="phone-cards">
+    <a class="gallery-card" href="phone-docs/yakjeong.html">
+      <img class="card-image" src="../../imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-006.webp" alt="약정폰 - kt, SK, U+" />
+      <div class="card-label">📱 약정폰</div>
+      <span class="card-guide-btn">가이드</span>
+    </a>
+    <a class="gallery-card" href="phone-docs/alttul.html">
+      <img class="card-image" src="../../imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-007_(1).webp" alt="알뜰폰 - M, 7, U+알뜰모바일, Mobing" />
+      <div class="card-label">📱 알뜰폰</div>
+      <span class="card-guide-btn">가이드</span>
+    </a>
+    <a class="gallery-card" href="phone-docs/sunbul.html">
+      <img class="card-image" src="../../imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-008.webp" alt="선불폰" />
+      <div class="card-label">📱 선불폰</div>
+      <span class="card-guide-btn">가이드</span>
+    </a>
+  </div>
+</div>
+
+<!-- ─── SEC-08 🏠 실거주지 ─── -->
+<div class="content-section">
+  <h3 class="section-title">🏠 실거주지</h3>
+  <div class="info-box">
+    <span class="callout-icon">📢</span>
+    <div class="callout-content">
+      <p>① 본인이 실제 거주중인 주소</p>
+      <p>②주소 변동이 잘 안되는 본가 주소</p>
+      <p style="margin-top: 12px;"><span class="red-text">2가지를 동, 호수 상세 주소까지 정확히 기입해 주세요.</span></p>
+    </div>
+  </div>
+  <div class="quote-block">
+    <p>사실성과 신뢰성을 파악하기 위해</p>
+    <p>제출하신 등본, 초본 열람 실제 거주지 주소와 본가 주소지를 대조하여</p>
+    <p><span class="red-underline">주소지가 불일치할 경우 승인 거절 됩니다.</span></p>
+  </div>
+</div>
+
+<!-- ─── SEC-09 🧑 군필여부 ─── -->
+<div class="content-section">
+  <h3 class="section-title">🧑 군필여부</h3>
+  <div class="info-box">
+    <span class="callout-icon">📢</span>
+    <div class="callout-content">
+      <p>여성의 경우 해당없음으로 골라주세요.</p>
+      <p><span class="red-text">남성의 경우 반드시 현재 기준으로 병역 정보를 업데이트 해주세요.</span></p>
+    </div>
+  </div>
+  <table class="military-table">
+    <thead>
+      <tr>
+        <th>현재 상태</th>
+        <th>[병역 형태]은 이렇게 입력해 주세요.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>① 복무 대상이긴 하나 아직 입대 예정이 없는 분</td>
+        <td><span class="action-text">▶ [미필]로 변경</span></td>
+      </tr>
+      <tr>
+        <td>② 특정 사유로 인해 병역 자체가 면제된 분</td>
+        <td><span class="action-text">▶ [면제]로 변경</span></td>
+      </tr>
+      <tr>
+        <td>③ 입대 예정일이 정해진 분</td>
+        <td><span class="action-text">▶ [입대 예정]으로 변경</span></td>
+      </tr>
+      <tr>
+        <td>④ 현재 군복무 중이신 분</td>
+        <td><span class="action-text">▶ [군 복무중]으로 변경</span></td>
+      </tr>
+      <tr>
+        <td>⑤ 최근에 군대를 <u>제대했거나</u> 제대한지 오래된 분</td>
+        <td><span class="action-text">▶ [제대]로 변경</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ─── SEC-10 💼 직업과 소득 ─── -->
+<div class="content-section">
+  <h3 class="section-title">💼 직업과 소득</h3>
+  <p class="section-text" style="margin-bottom: 16px; font-weight: 800; font-size: 19px;">내가 해당되는 직업을 클릭해 주세요</p>
+  <div class="gallery-grid">
+    <a class="text-card" href="job-income/4dae-insured.html" style="text-decoration:none;">
+      <div class="card-label">💼 4대보험 가입 O 직장인/알바</div>
+    </a>
+    <a class="text-card" href="job-income/4dae-uninsured.html" style="text-decoration:none;">
+      <div class="card-label">💼 4대보험 가입 X 직장인/알바</div>
+    </a>
+    <a class="text-card" href="job-income/college.html" style="text-decoration:none;">
+      <div class="card-label">💼 대학생</div>
+    </a>
+    <a class="text-card" href="job-income/freelancer.html" style="text-decoration:none;">
+      <div class="card-label">💼 프리랜서</div>
+    </a>
+    <a class="text-card" href="job-income/business.html" style="text-decoration:none;">
+      <div class="card-label">💼 사업자</div>
+    </a>
+    <a class="text-card" href="job-income/daily-worker.html" style="text-decoration:none;">
+      <div class="card-label">💼 일용직</div>
+    </a>
+    <a class="text-card" href="job-income/unemployed.html" style="text-decoration:none;">
+      <div class="card-label">💼 무직</div>
+    </a>
+    <a class="text-card" href="job-income/etc.html" style="text-decoration:none;">
+      <div class="card-label">💼 기타</div>
+    </a>
+    <a class="text-card" href="job-income/military.html" style="text-decoration:none;">
+      <div class="card-label">💼 군복무중</div>
+    </a>
+    <a class="text-card" href="job-income/job-seeker.html" style="text-decoration:none;">
+      <div class="card-label">💼 취준생</div>
+    </a>
+    <a class="text-card" href="job-income/delivery.html" style="text-decoration:none;">
+      <div class="card-label">💼 배달/직/퀵서비스</div>
+    </a>
+    <a class="text-card" href="job-income/military-pro.html" style="text-decoration:none;">
+      <div class="card-label">💼 직업군인</div>
+    </a>
+  </div>
+</div>
+
+<!-- ─── 구분선 ─── -->
+<div class="thick-divider"></div>
+
+<!-- ─── SEC-11 🔥 상환계획 ─── -->
+<div class="content-section">
+  <h3 class="section-title">🔥 상환계획</h3>
+  <div class="info-box">
+    <span class="callout-icon">📢</span>
+    <div class="callout-content">
+      <p>상환계획은 상환 의지를 표현할 수 있는 가장 중요한 부분입니다.</p>
+      <p style="margin-top: 6px;">각 항목 별로 자세하게 앱에 기재해 주세요.</p>
+      <p style="margin-top: 10px;"><span class="red-text">❗ 특히 재신청할 경우 새로운 상환 계획으로 업데이트 해주셔야 승인이 됩니다.</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SEC-12 👯 절친 소통내역 ─── -->
+<div class="content-section">
+  <h3 class="section-title">👯 절친 소통내역</h3>
+  <div class="warning-box">
+    <span class="callout-icon">📢</span>
+    <div class="callout-content">
+      <p class="warning-box-title">절친 소통내역을 받는 이유</p>
+      <p>❗ 지난 써주세요 연체 이력을 다 조사해본 결과 연체자님들의 공통적인 하나의 특징이 있습니다.</p>
+      <p><span class="red-text">❌ 바로 절친과 가족과 소통을 전혀 하지 않는다는 것입니다.</span></p>
+      <p>이러한 이유로 '사회성'이라는 대안신용평가 기준이 만들어졌으며, 이를 평가하기 위해 자료를 받고 있습니다. 이 자료는 개인정보보호법에 따라 심사 목적 외에는 사용되지 않습니다.</p>
+    </div>
+  </div>
+  <div class="submit-guide">
+    <ol>
+      <li>지인 카톡 프로필에서 '통화하기' 기능을 눌렀을 때 보이는 <span class="red-underline">전화번호가 확인되도록</span> 전체 화면을 캡처해 올려주세요.</li>
+    </ol>
+  </div>
+  <div class="section-image">
+    <img src="../../imgs/nanocredit/Submissions/노션_랜딩페이지_이미지_모바일최적화-007 (1).png" alt="절친 소통내역 - Best Friends 차은우 프로필, 통화하기 가이드" />
+  </div>
+  <div class="submit-guide">
+    <ol start="2">
+      <li>절친과 나눈 카톡은 <span class="red-underline">최근 2달 ~ 15일 이내</span>의 소통내용으로 3장 이상 첨부해 주세요. 기존에 꾸준히 소통 해왔다는 걸 보여주시면 됩니다.
+        <ol class="sub-list">
+          <li>가이드라인
+            <ol class="sub-sub-list">
+              <li>2달 전 카톡 1장</li>
+              <li>1달 전 카톡 1장</li>
+              <li>최근 15일 이내 카톡 1장</li>
+            </ol>
+          </li>
+          <li><strong>반드시 이 부분이 확인되도록 해주세요!</strong>
+            <ol class="sub-alpha-list">
+              <li>절친 이름 또는 저장명, 날짜, 대화를 주고받으신 내용</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li>절친과의 통화 내역은 <span class="red-underline">최근 2달 ~ 15일 이내</span>의 소통내용으로 3장 이상 첨부해 주세요. 기존에 꾸준히 소통 해왔다는 걸 보여주시면 됩니다.
+        <ol class="sub-list">
+          <li>가이드라인
+            <ol class="sub-sub-list">
+              <li>2달 전 통화기록 1장</li>
+              <li>1달 전 통화기록 1장</li>
+              <li>최근 15일 이내 통화기록 1장</li>
+            </ol>
+          </li>
+          <li><strong>반드시 이 부분이 확인되도록 해주세요!</strong>
+            <ol class="sub-alpha-list">
+              <li>절친 이름 또는 저장명, 통화 날짜, 통화 시간</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<!-- ─── SEC-13 🧑‍🧑‍🧒 부모님 소통내역 ─── -->
+<div class="content-section">
+  <h3 class="section-title">🧑‍🧑‍🧒 부모님 소통내역</h3>
+  <div class="warning-box">
+    <span class="callout-icon">📢</span>
+    <div class="callout-content">
+      <p class="warning-box-title">부모님 소통내역을 받는 이유</p>
+      <p>❗ 지난 써주세요 연체 이력을 다 조사해본 결과 연체자님들의 공통적인 하나의 특징이 있습니다.</p>
+      <p><span class="red-text">❌ 바로 절친과 가족과 소통을 전혀 하지 않는다는 것입니다.</span></p>
+      <p>이러한 이유로 '사회성'이라는 대안신용평가 기준이 만들어졌으며, 이를 평가하기 위해 자료를 받고 있습니다. 이 자료는 개인정보보호법에 따라 심사 목적 외에는 사용되지 않습니다.</p>
+    </div>
+  </div>
+  <div class="submit-guide">
+    <ol>
+      <li>부모님 카톡 프로필에서 '통화하기' 기능을 눌렀을 때 보이는 <span class="red-underline">전화번호가 확인되도록</span> 전체 화면을 캡처해 올려주세요.</li>
+    </ol>
+  </div>
+  <div class="section-image">
+    <img src="../../imgs/nanocredit/Submissions/노션_랜딩페이지_이미지_모바일최적화-007 (2).png" alt="부모님 소통내역 - HOLE IN ONE 울엄마 프로필, 통화하기 가이드" />
+  </div>
+  <div class="submit-guide">
+    <ol start="2">
+      <li>부모님과 카톡은 <span class="red-underline">최근 2달 ~ 15일 이내</span>의 소통내용으로 3장 이상 첨부해 주세요. 기존에 꾸준히 소통 해왔다는 걸 보여주시면 됩니다.
+        <ol class="sub-list">
+          <li>가이드라인
+            <ol class="sub-sub-list">
+              <li>2달 전 카톡 1장</li>
+              <li>1달 전 카톡 1장</li>
+              <li>최근 15일 이내 카톡 1장</li>
+            </ol>
+          </li>
+          <li><strong>반드시 이 부분이 확인되도록 해주세요!</strong>
+            <ol class="sub-alpha-list">
+              <li>부모님 저장명, 날짜, 대화를 주고받으신 내용</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li>부모님과의 통화 내역은 <span class="red-underline">최근 2달 ~ 15일 이내</span>의 소통내용으로 3장 이상 첨부해 주세요. 기존에 꾸준히 소통 해왔다는 걸 보여주시면 됩니다.
+        <ol class="sub-list">
+          <li>가이드라인
+            <ol class="sub-sub-list">
+              <li>2달 전 통화기록 1장</li>
+              <li>1달 전 통화기록 1장</li>
+              <li>최근 15일 이내 통화기록 1장</li>
+            </ol>
+          </li>
+          <li><strong>반드시 이 부분이 확인되도록 해주세요!</strong>
+            <ol class="sub-alpha-list">
+              <li>부모님 저장명, 통화 날짜, 통화 시간</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<!-- ─── SEC-14 📋 등·초본 ─── -->
+<div class="content-section">
+  <h3 class="section-title">📋 등·초본</h3>
+  <div class="info-box">
+    <span class="callout-icon">📢</span>
+    <div class="callout-content">
+      <p style="font-weight: 700; margin-bottom: 10px;">등·초본 제출하는 방법</p>
+      <p>① 정부24에 접속합니다.</p>
+      <p>② 정부24 메인 화면 > 자주 찾는 서비스 > 주민등록표 등본(초본) 발급을 클릭합니다.</p>
+      <p>③ 주민등록표 등본과 초본 각각 발급합니다. (발급일자 1개월 이내만 인정)</p>
+      <p>④ [발급형태]는 선택 발급으로 설정 후, 문서에 표시할 정보를 아래에 맞게 선택해 주세요.</p>
+      <p style="margin-top: 12px;">✅ <strong>포함</strong> 과거의 주소 변동 사항</p>
+      <p>✅ <strong>포함</strong> 세대 구성 정보</p>
+      <p>✅ <strong>포함</strong> 세대 구성원 정보</p>
+      <p>❌ <strong>불포함</strong> 주민등록번호 뒷자리</p>
+      <p style="margin-top: 12px;">⑤ [수령방법]에서 <strong>온라인발급(제3자제출)</strong>로 선택 후 발급해 주세요.</p>
+    </div>
+  </div>
+  <div class="recipient-highlight">
+    <p class="recipient-label">📢 제3자 제출을 위해 필요한 수신인 아이디는 아래에 따라 등록해 주세요.</p>
+    <div class="recipient-info">
+      <p><span class="label">ID :</span> sirjuseyofi</p>
+      <p><span class="label">성명 :</span> 정희선</p>
+      <p><span class="label">연락처 :</span> 010-2153-6193</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 하단 BACK ─── -->
+<div class="bottom-back">
+  <a class="back-btn" href="../">⬅ BACK</a>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">nanocredit</div>
+  <p class="footer-info">
+    써주세요.연계대부 | 대표 정희선<br>
+    서울시 강남구 테헤란로 427, 8층<br>
+    사업자등록번호 855-87-02303 | 대부업등록번호 2023-금감원-0074<br><br>
+    대출금리 연 12% ~ 연 39.9% (법정최고금리 이내)<br>
+    중개수수료를 요구하거나 받는 것은 불법입니다.
+  </p>
+</footer>
+
+</body>
+</html>
