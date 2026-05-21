@@ -272,6 +272,10 @@
 | T-007 | WT-007 | 5669a91 | **검증완료** | nanocredit 메인 30만/50만 배너 이미지 교체 + 슬라이드 배너 삭제 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/index.html` / 머지 `4c5da2d` / 배포 완료 |
 | T-008 | WT-008 | ae74f0c | **검증완료** | nanocredit pre-check 페이지 신규 제작 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/pre-check/index.html` / 머지 `4c5da2d` / 배포 완료 |
 | T-009 | WT-009 | 1542e17 | **검증완료** | nanocredit 소통거리 제출 페이지 기획안 작성 | 쮸티5호 | 2026-05-19 | 【파일】`project-docs/10_plan/기획안_nanocredit_소통거리제출_페이지.md` / 머지 `4c5da2d` / 배포 완료 |
+| T-010 | WT-010 | - | **In-Progress** | nanocredit 소통거리 제출 페이지 HTML 빌드 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/submissions/index.html` |
+| T-011 | WT-011 | - | **In-Progress** | nanocredit 휴대폰 증빙서류 하위 페이지 3개 신규 제작 (약정폰·알뜰폰·선불폰) | 쮸티5호 | 2026-05-19 14:30 | 【파일】`nanocredit/submissions/phone-docs/yakjeong.html, alttul.html, sunbul.html` |
+| T-012 | WT-012 | - | **In-Progress** | nanocredit 직업과 소득 하위 페이지 12개 신규 제작 | 쮸티5호 | 2026-05-19 15:45 | 【파일】`nanocredit/submissions/job-income/*.html` (12개) |
+| T-013 | WT-013 | - | **In-Progress** | 홈 페이지 About us 박스 순서 변경 + 등록번호 PDF 링크 연결 | 쮸티5호 | 2026-05-21 | 【파일】`index.html` |
 
 
 ---
@@ -289,6 +293,9 @@
 | W-007 | P0 | T-007 | 완료 | **nanocredit 메인 30만/50만 배너 이미지 교체 + 슬라이드 삭제** | `nanocredit/index.html` | 30만·50만 텍스트 카드→배너 이미지 카드, 슬라이드 배너 섹션 삭제 | 2026-05-19 | 쮸티5호 |
 | W-008 | P0 | T-008 | 완료 | **nanocredit pre-check 페이지 신규 제작** | `nanocredit/pre-check/index.html` | "대출 심사 시작 전, 반드시 확인해요" 페이지 원본 기반 신규 생성 | 2026-05-19 | 쮸티5호 |
 | W-009 | P0 | T-009 | 완료 | **nanocredit 소통거리 제출 페이지 기획안 작성** | `project-docs/10_plan/기획안_nanocredit_소통거리제출_페이지.md` | 스크린샷 8장 분석, 이미지 8개 매핑, 14개 섹션 기획안 완성 | 2026-05-19 | 쮸티5호 |
+| W-010 | P0 | T-010 | 완료 | **nanocredit 소통거리 제출 페이지 HTML 빌드** | `nanocredit/submissions/index.html` | 기획안 기반 14개 섹션 + 8개 이미지 매핑, pre-check CSS 가이드 적용 | 2026-05-19 | 쮸티5호 |
+| W-011 | P0 | T-011 | 완료 | **nanocredit 휴대폰 증빙서류 하위 페이지 3개 신규 제작** | `nanocredit/submissions/phone-docs/yakjeong.html, alttul.html, sunbul.html` | 약정폰·알뜰폰·선불폰 상세 가이드 페이지, 원본 노션 스크린샷 기반, 이미지 7개 매핑 | 2026-05-19 | 쮸티5호 |
+| W-012 | P0 | T-012 | 완료 | **nanocredit 직업과 소득 하위 페이지 12개 신규 제작** | `nanocredit/submissions/job-income/*.html` (12개 파일) | SEC-10 갤러리 카드 클릭 시 이동하는 직업별 소득 증빙 가이드 페이지 12개 신규 생성 (콘텐츠 8개 + 빈 페이지 4개), 기획안 section 8 기반 | 2026-05-19 15:40 | 쮸티5호 |
 
 ---
 

@@ -781,3 +781,311 @@ sirjuseyo-web T-001~T-009 반영 완료했습니다.
 한 줄 버전:
 - `sirjuseyo-web T-001~T-009 feature/home-footer-privacy-updates -> main 반영 완료, GitHub Pages 배포 및 주요 URL 확인 완료했습니다.`
 
+---
+
+### WT-010: nanocredit 소통거리 제출 페이지 HTML 빌드
+
+| 항목 | 내용 |
+|---|---|
+| 작업일 | 2026-05-19 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-010 |
+| 커밋 해시 | - |
+| 작업 이력 | 1차 작업 |
+| 상태 | **In-Progress** |
+
+[문제 위치]
+파일: `nanocredit/submissions/index.html` (신규 생성)
+
+[증상(문제 설명)]
+nanocredit 소통거리 제출 안내 페이지가 아직 존재하지 않음
+
+[원인]
+기획안(W-009/T-009)은 완료되었으나 실제 HTML 페이지 미구현 상태
+
+[진단(수정 이유)]
+기획안(`project-docs/10_plan/기획안_nanocredit_소통거리제출_페이지.md`)과 원본 스크린샷 8장을 기반으로 HTML 페이지 신규 빌드 필요
+
+[처방(수정 코드)]
+**신규 파일 생성:** `nanocredit/submissions/index.html`
+
+구현 내역 (14개 섹션):
+- **타이틀 + BACK**: "소통거리는 이렇게 제출해 주세요." + ⬅ BACK 버튼
+- **SEC-01**: 📌 노란 안내 배너 (크레딧 미션 완료 시 화면 이동 안내)
+- **SEC-02**: 히어로 섹션 (초록 뱃지 + "소통거리 버튼이 활성화되요!" + 앱 스크린샷)
+- **SEC-03+04**: 통합 이미지 1장 (태그 뱃지 + 한도 심사 + 로봇 캐릭터)
+- **SEC-05**: "[ ㅋ클릭 ] 소통거리의 정석을 확인해요!" 헤더 (처음부터 펼침)
+- **SEC-06**: 🪪 신분증 (안내 + 주민등록증 샘플 이미지 + Q&A)
+- **SEC-07**: 📱 휴대폰 증빙서류 (2열 그리드: 약정폰/알뜰폰 + 1열: 선불폰)
+- **SEC-08**: 🏠 실거주지 (안내 박스 + 인용 블록)
+- **SEC-09**: 🧑 군필여부 (안내 2종 + 5행 테이블)
+- **SEC-10**: 💼 직업과 소득 (2열 그리드, 12개 텍스트 카드)
+- **구분선**: 굵은 가로선
+- **SEC-11**: 🔥 상환계획 (안내 박스)
+- **SEC-12**: 👯 절친 소통내역 (경고 박스 + 이미지 + 3개 제출 안내)
+- **SEC-13**: 🧑‍🧑‍🧒 부모님 소통내역 (경고 박스 + 이미지 + 3개 제출 안내)
+- **SEC-14**: 📋 등·초본 (안내 박스 + 체크리스트 + 수신인 정보)
+- **하단 BACK + FOOTER**: pre-check 페이지와 동일 스타일
+
+이미지 매핑 (8개 모두 적용):
+1. `노션_커버_배너_모바일최적화-038.png` → SEC-02
+2. `4depth_page_소통거리-제출-가이드라인-002.png` → SEC-03+04
+3. `_노션_랜딩페이지_배너_모바일최적화-005 (1).png` → SEC-06
+4. `_노션_랜딩페이지_배너_모바일최적화-006.webp` → SEC-07 약정폰
+5. `_노션_랜딩페이지_배너_모바일최적화-007_(1).webp` → SEC-07 알뜰폰
+6. `_노션_랜딩페이지_배너_모바일최적화-008.webp` → SEC-07 선불폰
+7. `노션_랜딩페이지_이미지_모바일최적화-007 (1).png` → SEC-12 절친
+8. `노션_랜딩페이지_이미지_모바일최적화-007 (2).png` → SEC-13 부모님
+
+CSS 스타일: pre-check 페이지 CSS 가이드 100% 준수
+- body 배경 #fff, 페이지 타이틀 30px/900, 섹션 타이틀 23px/900
+- 경고 박스 #F8F8F8 + 1px #E0E0E0 + 12px radius
+- BACK 버튼 1.5px #D1D5DB + 8px radius + 13px/600
+- 빨간 강조 #D32F2F, 초록 강조 #2E7D32
+
+---
+
+### WT-011: nanocredit 휴대폰 증빙서류 하위 페이지 3개 신규 제작
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-05-19, 14:30 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-011 |
+| 커밋 해시 | - (테스트 전) |
+| 작업 이력 | 1차 작업 |
+| 상태 | In-Progress |
+
+#### 작업 개요
+SEC-07 휴대폰 증빙서류 배너 카드(약정폰·알뜰폰·선불폰) 클릭 시 이동하는 상세 가이드 페이지 3개 신규 제작
+
+#### 생성 파일 목록
+
+| # | 파일 | 설명 |
+|---|------|------|
+| 1 | `nanocredit/submissions/phone-docs/yakjeong.html` | 약정폰 가이드 (KT/SKT/LG U+ 토글 포함, 이미지 6개) |
+| 2 | `nanocredit/submissions/phone-docs/alttul.html` | 알뜰폰 가이드 (26개 MVNO 로고 그리드 이미지 1개) |
+| 3 | `nanocredit/submissions/phone-docs/sunbul.html` | 선불폰 가이드 (PASS 뱃지, Q&A 섹션, 이미지 없음) |
+
+#### 수정 파일
+
+| # | 파일 | 수정 내용 |
+|---|------|----------|
+| 1 | `nanocredit/submissions/index.html` | SEC-07 phone-cards 3개 카드를 `<div>` → `<a>` 태그로 변경, 각 phone-docs/ 페이지 링크 연결 |
+
+#### 상세 변경 내용
+
+**1. yakjeong.html (약정폰)**
+- 3개 섹션: ① 약정 내용과 요금제 화면, ② 통신비 미납 내역 확인, ③ 6개월 통신비 납부 내역 화면
+- `<details><summary>` 토글 4개 (KT/SKT/LG U+ 조회 방법 3개 + 미납 조회 방법 1개)
+- 캐리어별 컬러 뱃지: KT(#E52528), SKT(#E4002B), LG U+(#E6007E)
+- 이미지 6개 매핑:
+  - `약정폰_가입정보.png` → KT 토글
+  - `약정폰_요금제.png` → SKT 토글
+  - `약정폰_노션_랜딩페이지_이미지_모바일최적화-007.png` → LG U+ 토글
+  - `약정폰_노션_랜딩페이지_배너_모바일최적화-010 (1).png` → 미납 KT
+  - `약정폰_노션_랜딩페이지_배너_모바일최적화-009 (1).png` → 미납 SKT
+  - `약정폰_노션_랜딩페이지_배너_모바일최적화-011 (1).png` → 미납 LG U+
+
+**2. alttul.html (알뜰폰)**
+- 3개 섹션: ① 약정 내용과 요금제 화면, ② 통신비 미납 내역 화면, ③ 6개월 통신비 납부 내역 화면
+- 토글 없음, 텍스트 + 불릿 리스트만
+- 하단에 MVNO 26개 통신사 로고 그리드 이미지 (`알뜰폰_통신비화면내역.png`)
+
+**3. sunbul.html (선불폰)**
+- 3개 섹션 + Q&A: ① 약정 내용과 요금제 화면, ② 통신비 미납 내역 화면 (PASS), ③ 6개월 통신비 납부 내역 화면, 😊 Q&A
+- PASS 뱃지: `background: #D32F2F, color: #fff, 13px/700, 4px radius`
+- Q&A: 박스 없이 💬 타이틀 + hr 구분선 + Q./A. 왼쪽 정렬
+- 이미지 없음
+
+**4. submissions/index.html 수정**
+- 519행: `<div class="gallery-card">` → `<a class="gallery-card" href="phone-docs/yakjeong.html">`
+- 524행: `<div class="gallery-card">` → `<a class="gallery-card" href="phone-docs/alttul.html">`
+- 529행: `<div class="gallery-card">` → `<a class="gallery-card" href="phone-docs/sunbul.html">`
+
+#### CSS 스타일
+- submissions/index.html과 동일한 CSS 변수·클래스 계승
+- 추가 스타일: 토글(`<details>` bg #F8F8F8, 1px #E0E0E0, 12px radius), 캐리어 뱃지, PASS 뱃지, 불릿 리스트
+
+---
+
+### WT-011: 2차 — 약정폰(yakjeong.html) 다수 수정
+
+| 항목 | 값 |
+|------|-----|
+| 작업일 | 2026-05-21 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-011 |
+| 커밋 해시 | (미커밋 — 댄디어빠쮸너야님 테스트 대기) |
+| 작업 이력 | 2차 작업 |
+| 상태 | In-Progress |
+
+#### 수정 파일
+
+**파일:** `nanocredit/submissions/phone-docs/yakjeong.html`
+
+#### 수정 내용
+
+**1. SEC-01 약정 내용과 요금제 화면 — 토글 3개 텍스트 및 스타일 수정**
+
+- KT 토글: 텍스트 → "앱스토어 (또는 구글 플레이 스토어)에서 마이케이티 앱을 설치하여 실행해요." / "로그인 후 메뉴 > 마이 > 요금/서비스 > 요금 조회 > 요금명세서 > 약정 정보에서 확인할 수 있어요."
+- SKT 토글: 텍스트 → "앱스토어 (또는 구글 플레이 스토어)에서 T월드 앱을 설치하여 실행해요." / "로그인 후 메뉴 > 마이 > 나의 가입 정보에서 확인할 수 있어요."
+- LG U+ 토글: 텍스트 → "앱스토어 (또는 구글 플레이 스토어)에서 당신의 U+ 앱을 설치하여 실행해요." / "로그인 후 상단 우측 메뉴 > 마이페이지 > 가입정보 관리 > 가입 정보 조회/변경에서 확인할 수 있어요."
+- 3개 토글 모두 `list-style: circle` (원형 불릿) 적용
+
+**2. SEC-01 — KT/SKT 이미지 교환**
+
+- KT 토글 이미지: `약정폰_가입정보.png` → `약정폰_요금제.png`
+- SKT 토글 이미지: `약정폰_요금제.png` → `약정폰_가입정보.png`
+
+**3. SEC-02 — 문장 수정**
+
+- "앱에서 캡쳐 후 앱에 제출" → "캡쳐 후 앱에 제출" ("앱에서" 삭제)
+
+**4. SEC-03 — 서브 불릿 문장 수정**
+
+- "6개월 이내 개통했다면 지금까지 결제한 내역을 앱에 첨부해 주세요"
+
+**5. SEC-03 — 빈 토글 추가**
+
+- "통신사 앱에서 통신비 결제 내역 조회하는 방법" 토글 신규 추가 (콘텐츠 준비중)
+
+**6. SEC-01 — 삭제 복구**
+
+- "통신사앱에서 현재 이용중인 요금제 화면을 앱에 첨부해 주세요." 실수 삭제 → 다시 복구
+
+---
+
+### WT-011: 3차 — 기획안 section 8 (직업과 소득 12개 페이지) 상세 내용 추가
+
+| 항목 | 값 |
+|------|-----|
+| 작업일 | 2026-05-19, 15:30 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-011 |
+| 커밋 해시 | (미커밋 — 기획안 문서 수정) |
+| 작업 이력 | 3차 작업 |
+| 상태 | In-Progress |
+
+#### 작업 내용
+
+**수정 파일**: `project-docs/10_plan/기획안_nanocredit_소통거리제출_페이지.md`
+
+- Section 8 placeholder(`⏳ 12개 페이지 원본 콘텐츠가 확인되면 기획안 상세 내용 추가 예정`)를 상세 내용으로 교체
+- 12개 원본 스크린샷 기반으로 각 페이지 콘텐츠 명세 작성:
+  - 8-1: 카드 목록 (12개, 콘텐츠 유무 표시)
+  - 8-2: 공통 레이아웃
+  - 8-3: 공통 반복 섹션 — 건강보험 자격 득실 확인서 가이드
+  - 8-4 ~ 8-11: 콘텐츠 있는 8개 페이지 상세 (4대보험O, 4대보험X, 대학생, 프리랜서, 사업자, 일용직, 무직, 기타)
+  - 8-12 ~ 8-15: 콘텐츠 없는 4개 빈 페이지 (군복무중, 취준생, 배달직, 직업군인)
+  - 8-16: 원본 스크린샷 매핑 테이블
+
+---
+
+### WT-012: nanocredit 직업과 소득 하위 페이지 12개 신규 제작
+
+| 항목 | 값 |
+|------|-----|
+| 작업일 | 2026-05-19, 21:50 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-012 |
+| 커밋 해시 | (미커밋 — 댄디어빠쮸너야님 테스트 대기) |
+| 작업 이력 | 1차 작업 |
+| 상태 | In-Progress |
+
+#### 작업 내용
+
+**신규 생성 파일 (12개)**:
+- `nanocredit/submissions/job-income/4dae-insured.html` — 4대보험 가입 O 직장인/알바
+- `nanocredit/submissions/job-income/4dae-uninsured.html` — 4대보험 가입 X 직장인/알바
+- `nanocredit/submissions/job-income/college.html` — 대학생
+- `nanocredit/submissions/job-income/freelancer.html` — 프리랜서
+- `nanocredit/submissions/job-income/business.html` — 사업자
+- `nanocredit/submissions/job-income/daily-worker.html` — 일용직
+- `nanocredit/submissions/job-income/unemployed.html` — 무직
+- `nanocredit/submissions/job-income/etc.html` — 기타
+- `nanocredit/submissions/job-income/military.html` — 군복무중 (빈 페이지)
+- `nanocredit/submissions/job-income/job-seeker.html` — 취준생 (빈 페이지)
+- `nanocredit/submissions/job-income/delivery.html` — 배달직/퀵서비스 (빈 페이지)
+- `nanocredit/submissions/job-income/military-pro.html` — 직업군인 (빈 페이지)
+
+**수정 파일 (1개)**:
+- `nanocredit/submissions/index.html` — SEC-10 직업과 소득 갤러리 카드 12개를 `<div>` → `<a>` 태그로 변경, 각 job-income 하위 페이지로 링크 연결
+
+#### 콘텐츠 있는 8개 페이지 공통 구조
+
+- BACK 버튼 (../index.html) → 페이지 타이틀 (30px/900) → 8px 구분선 → 콘텐츠 섹션 → BACK 버튼 → 푸터
+- 섹션 타이틀: 23px/900, border-bottom 1px solid #E0E0E0
+- 공통 건강보험 자격 득실 확인서 가이드 블록 (4대보험X, 대학생, 프리랜서, 사업자, 일용직, 무직, 기타에 포함)
+- 이미지 없음, 텍스트만 구성
+
+#### 빈 페이지 4개
+
+- 군복무중, 취준생, 배달직/퀵서비스, 직업군인
+- 타이틀 + "콘텐츠 준비중입니다." + BACK 버튼 + 푸터만 배치
+- 추후 댄디어빠쮸너야님 콘텐츠 확보 후 추가 예정
+
+#### CSS 스타일
+- submissions/index.html 및 phone-docs 페이지와 동일한 CSS 변수·클래스 계승
+- 추가 스타일: info-box (건강보험 가이드 컨테이너), 불릿 리스트, 서브 리스트
+
+---
+
+### WT-013: 홈 페이지 About us 박스 순서 변경 + 등록번호 PDF 링크 연결
+
+| 항목 | 값 |
+|------|-----|
+| 작업일 | 2026-05-21 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-013 |
+| 커밋 해시 | (미커밋 — 댄디어빠쮸너야님 테스트 대기) |
+| 작업 이력 | 1차 작업 |
+| 상태 | In-Progress |
+
+#### 문제 위치
+
+**파일:** `index.html` (홈 페이지)
+**라인:** About us 섹션 — 회사 정보 박스 2개
+
+#### 증상 (문제 설명)
+
+- About us 섹션 회사 박스 순서가 써주세요연계대부(ALBITF) → 주식회사 혁사호재(ALBIT Inc.) 순이었으나, 혁사호재를 먼저 표시해야 함
+- 써주세요연계대부의 사업자/대부업/대부중개업 등록번호가 텍스트만 있고 PDF 확인 불가
+
+#### 원인
+
+- 초기 작업 시 순서 미정렬 + PDF 링크 미연결
+
+#### 진단 (수정 이유)
+
+- 댄디어빠쮸너야님 지시: 박스 순서 변경 + 등록번호 클릭 시 PDF 열리도록
+
+#### 처방 (수정 코드)
+
+**1. 박스 순서 변경**
+
+변경 전: 써주세요연계대부(ALBITF) → 주식회사 혁사호재(ALBIT Inc.)
+변경 후: 주식회사 혁사호재(ALBIT Inc.) → 써주세요연계대부(ALBITF)
+
+- 두 `<div class="corp-info">` 블록의 HTML 순서를 swap
+
+**2. 등록번호 3개 PDF 링크 연결**
+
+변경 전:
+```html
+사업자 등록번호 : 778-28-01770
+대부업 등록번호 : 2024-서울강남-0087-대부
+대부중개업 등록번호 : 2024-서울강남-0088-대부중개
+```
+
+변경 후:
+```html
+사업자 등록번호 : <a href="imgs/home/써주세요연계대부 사업자등록증.pdf" target="_blank" rel="noopener" style="color:#380097; text-decoration:underline;">778-28-01770</a>
+대부업 등록번호 : <a href="imgs/home/써주세요연계대부 대부업 등록증.pdf" target="_blank" rel="noopener" style="color:#380097; text-decoration:underline;">2024-서울강남-0087-대부</a>
+대부중개업 등록번호 : <a href="imgs/home/써주세요연계대부 대부중개업 등록증.pdf" target="_blank" rel="noopener" style="color:#380097; text-decoration:underline;">2024-서울강남-0088-대부중개</a>
+```
+
+- 색상: 브랜드 보라색(#380097), 밑줄 스타일
+- target="_blank"로 새 탭에서 PDF 열림
+- PDF 파일 위치: `imgs/home/` 디렉토리 (댄디어빠쮸너야님이 사전 배치)
+
