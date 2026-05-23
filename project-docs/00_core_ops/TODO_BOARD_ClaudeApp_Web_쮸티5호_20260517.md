@@ -255,10 +255,11 @@
 | T-007 | nanocredit 메인 배너 교체 + 슬라이드 삭제 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-19 | merge `4c5da2d`, deploy `26053429902` success |
 | T-008 | nanocredit pre-check 페이지 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-19 | merge `4c5da2d`, deploy `26053429902` success |
 | T-009 | nanocredit 소통거리 기획안 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-19 | merge `4c5da2d`, deploy `26053429902` success |
-| T-010 | nanocredit 소통거리 제출 페이지 HTML 빌드 | 완료 | 완료 | - | - | - | - | 쮸티5호 | 2026-05-22 | commit `06f61da`, PR `#6` |
-| T-011 | nanocredit 휴대폰 증빙서류 하위 페이지 3개 + 약정폰 수정 | 완료 | 완료 | - | - | - | - | 쮸티5호 | 2026-05-22 | commit `06f61da`, PR `#6` |
-| T-012 | nanocredit 직업과 소득 하위 페이지 12개 | 완료 | 완료 | - | - | - | - | 쮸티5호 | 2026-05-22 | commit `06f61da`, PR `#6` |
-| T-013 | 홈 About us 박스 순서 변경 + 등록번호 PDF 링크 | 완료 | 완료 | - | - | - | - | 쮸티5호 | 2026-05-22 | commit `06f61da`, PR `#6` |
+| T-010 | nanocredit 소통거리 제출 페이지 HTML 빌드 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-22 | merge `ba7a2c8`, deploy `26238316663` success |
+| T-011 | nanocredit 휴대폰 증빙서류 하위 페이지 3개 + 약정폰 수정 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-22 | merge `ba7a2c8`, deploy `26238316663` success |
+| T-012 | nanocredit 직업과 소득 하위 페이지 12개 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-22 | merge `ba7a2c8`, deploy `26238316663` success |
+| T-013 | 홈 About us 박스 순서 변경 + 등록번호 PDF 링크 | 완료 | 완료 | - | 완료 | - | 완료 | 쮸티5호 | 2026-05-22 | merge `ba7a2c8`, deploy `26238316663` success |
+| T-014 | 홈 히어로 슬라이더 crossfade 제거 + Slide 2 이동 | 완료 | 완료 | - | - | - | - | 쮸티5호 | 2026-05-24 | PR `#7`, 커밋 `5f894b0` |
 
 
 ---
@@ -276,10 +277,11 @@
 | T-007 | WT-007 | 5669a91 | **검증완료** | nanocredit 메인 30만/50만 배너 이미지 교체 + 슬라이드 배너 삭제 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/index.html` / 머지 `4c5da2d` / 배포 완료 |
 | T-008 | WT-008 | ae74f0c | **검증완료** | nanocredit pre-check 페이지 신규 제작 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/pre-check/index.html` / 머지 `4c5da2d` / 배포 완료 |
 | T-009 | WT-009 | 1542e17 | **검증완료** | nanocredit 소통거리 제출 페이지 기획안 작성 | 쮸티5호 | 2026-05-19 | 【파일】`project-docs/10_plan/기획안_nanocredit_소통거리제출_페이지.md` / 머지 `4c5da2d` / 배포 완료 |
-| T-010 | WT-010 | 06f61da | **테스트 완료(DONE)** | nanocredit 소통거리 제출 페이지 HTML 빌드 | 쮸티5호 | 2026-05-19 | 【파일】`nanocredit/submissions/index.html` |
-| T-011 | WT-011 | 06f61da | **테스트 완료(DONE)** | nanocredit 휴대폰 증빙서류 하위 페이지 3개 신규 제작 (약정폰·알뜰폰·선불폰) + 약정폰 다수 수정 | 쮸티5호 | 2026-05-19 14:30 | 【파일】`nanocredit/submissions/phone-docs/yakjeong.html, alttul.html, sunbul.html` |
-| T-012 | WT-012 | 06f61da | **테스트 완료(DONE)** | nanocredit 직업과 소득 하위 페이지 12개 신규 제작 | 쮸티5호 | 2026-05-19 15:45 | 【파일】`nanocredit/submissions/job-income/*.html` (12개) |
-| T-013 | WT-013 | 06f61da | **테스트 완료(DONE)** | 홈 페이지 About us 박스 순서 변경 + 등록번호 PDF 링크 연결 | 쮸티5호 | 2026-05-21 | 【파일】`index.html` |
+| T-010 | WT-010 | 06f61da | **검증완료** | nanocredit 소통거리 제출 페이지 HTML 빌드 | 쮸티5호 | 2026-05-22 | 【파일】`nanocredit/submissions/index.html` / 머지 `ba7a2c8` / 배포 완료 |
+| T-011 | WT-011 | 06f61da | **검증완료** | nanocredit 휴대폰 증빙서류 하위 페이지 3개 신규 제작 (약정폰·알뜰폰·선불폰) + 약정폰 다수 수정 | 쮸티5호 | 2026-05-22 | 【파일】`nanocredit/submissions/phone-docs/yakjeong.html, alttul.html, sunbul.html` / 머지 `ba7a2c8` / 배포 완료 |
+| T-012 | WT-012 | 06f61da | **검증완료** | nanocredit 직업과 소득 하위 페이지 12개 신규 제작 | 쮸티5호 | 2026-05-22 | 【파일】`nanocredit/submissions/job-income/*.html` (12개) / 머지 `ba7a2c8` / 배포 완료 |
+| T-013 | WT-013 | 06f61da | **검증완료** | 홈 페이지 About us 박스 순서 변경 + 등록번호 PDF 링크 연결 | 쮸티5호 | 2026-05-22 | 【파일】`index.html` / 머지 `ba7a2c8` / 배포 완료 |
+| T-014 | WT-014 | 5f894b0 | **테스트 완료(DONE)** | 홈 히어로 슬라이더 crossfade 제거 + Slide 2 이미지 SEC-07 하단 이동 | 쮸티5호 | 2026-05-24 | 【파일】`index.html` |
 
 
 ---
@@ -300,6 +302,7 @@
 | W-010 | P0 | T-010 | 완료 | **nanocredit 소통거리 제출 페이지 HTML 빌드** | `nanocredit/submissions/index.html` | 기획안 기반 14개 섹션 + 8개 이미지 매핑, pre-check CSS 가이드 적용 | 2026-05-19 | 쮸티5호 |
 | W-011 | P0 | T-011 | 완료 | **nanocredit 휴대폰 증빙서류 하위 페이지 3개 신규 제작** | `nanocredit/submissions/phone-docs/yakjeong.html, alttul.html, sunbul.html` | 약정폰·알뜰폰·선불폰 상세 가이드 페이지, 원본 노션 스크린샷 기반, 이미지 7개 매핑 | 2026-05-19 | 쮸티5호 |
 | W-012 | P0 | T-012 | 완료 | **nanocredit 직업과 소득 하위 페이지 12개 신규 제작** | `nanocredit/submissions/job-income/*.html` (12개 파일) | SEC-10 갤러리 카드 클릭 시 이동하는 직업별 소득 증빙 가이드 페이지 12개 신규 생성 (콘텐츠 8개 + 빈 페이지 4개), 기획안 section 8 기반 | 2026-05-19 15:40 | 쮸티5호 |
+| W-014 | P0 | T-014 | 완료 | **홈 히어로 슬라이더 crossfade 제거 + Slide 2 이미지 SEC-07 하단 이동** | `index.html` | ① SEC-01 히어로 crossfade 슬라이더 제거 → Slide 1만 단순 이미지로 표시, ② Slide 2 "어차피 물건을 구매한다면..." 이미지를 SEC-07 "특히 이렇게 쓰면 꿀이에요" 바로 아래에 새 섹션으로 삽입 | 2026-05-23 | 쮸티5호 |
 
 ---
 
