@@ -48,31 +48,7 @@
       display: block;
     }
 
-    /* ─── SEC-01: HERO CROSSFADE SLIDER ─── */
-    .hero-slider { position: relative; width: 100%; overflow: hidden; }
-    .slides-wrap { position: relative; width: 100%; }
-    .slide {
-      position: absolute; top: 0; left: 0;
-      width: 100%; opacity: 0;
-      transition: opacity 1s ease;
-      pointer-events: none;
-    }
-    .slide.active {
-      position: relative; opacity: 1;
-      pointer-events: auto;
-    }
-    /* indicator dots */
-    .hero-indicators {
-      display: flex; justify-content: center;
-      gap: 8px; padding: 14px 0 20px;
-      background: #fff;
-    }
-    .dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: #D0D0D0; cursor: pointer;
-      transition: background 0.3s;
-    }
-    .dot.active { background: var(--ind); }
+    /* ─── SEC-01: HERO ─── */
 
     /* ─── FOOTER ─── */
     footer {
@@ -253,32 +229,12 @@
 </nav>
 
 <!-- ══════════════════════════════
-     SEC-01: HERO — crossfade slider
-     oopy:slide / crossfade / 6000ms
+     SEC-01: HERO
      ══════════════════════════════ -->
-<section class="hero-slider">
-  <div class="slides-wrap" id="slidesWrap">
-
-    <!-- Slide 1 -->
-    <div class="slide active">
-      <img class="sec-img"
-           src="imgs/home/sjy_web_home.png"
-           alt="신용이 낮아도 (돈을) 빌릴 수 있으니까" />
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="slide">
-      <img class="sec-img"
-           src="imgs/home/sjy_web_home (2) (1).png"
-           alt="써주세요 슬라이드 2" />
-    </div>
-
-  </div>
-  <!-- 인디케이터 dots (color:#6196FF) -->
-  <div class="hero-indicators" id="indicators">
-    <div class="dot active" onclick="goSlide(0)"></div>
-    <div class="dot"        onclick="goSlide(1)"></div>
-  </div>
+<section>
+  <img class="sec-img"
+       src="imgs/home/sjy_web_home.png"
+       alt="신용이 낮아도 (돈을) 빌릴 수 있으니까" />
 </section>
 
 <!-- ══════════════════════════════
@@ -333,6 +289,15 @@
   <img class="sec-img"
        src="imgs/home/sjy_web_home-014.png"
        alt="특히 이렇게 쓰면 끝이에요" />
+</section>
+
+<!-- ══════════════════════════════
+     SEC-07-2: PURCHASE CTA (T-014: Slide 2 이동)
+     ══════════════════════════════ -->
+<section>
+  <img class="sec-img"
+       src="imgs/home/sjy_web_home (2) (1).png"
+       alt="어차피 물건을 구매한다면 써주세요" />
 </section>
 
 <!-- ══════════════════════════════
@@ -523,29 +488,6 @@
   </div>
 </footer>
 
-<!-- ══════════════════════════════
-     CROSSFADE JS
-     speed:1000 / autoplay:6000
-     ══════════════════════════════ -->
-<script>
-  var current = 0;
-  var slides  = document.querySelectorAll('.slide');
-  var dots    = document.querySelectorAll('.dot');
-  var total   = slides.length;
-  var timer;
-
-  function goSlide(n) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = (n + total) % total;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-    clearInterval(timer);
-    timer = setInterval(function(){ goSlide(current + 1); }, 6000);
-  }
-
-  timer = setInterval(function(){ goSlide(current + 1); }, 6000);
-</script>
 
 </body>
 </html>

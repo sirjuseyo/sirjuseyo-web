@@ -59,7 +59,7 @@
 | 연관 T-ID | T-001 |
 | 커밋 해시 | abc1234 |
 | 작업 이력 | 1차 작업 |
-| 상태 | 테스트 완료(DONE) |
+| 상태 | 검증완료 |
 
 ### 문제 위치
 
@@ -792,7 +792,7 @@ sirjuseyo-web T-001~T-009 반영 완료했습니다.
 | 연관 T-ID | T-010 |
 | 커밋 해시 | 06f61da |
 | 작업 이력 | 1차 작업 |
-| 상태 | 테스트 완료(DONE) |
+| 상태 | 검증완료 |
 
 [문제 위치]
 파일: `nanocredit/submissions/index.html` (신규 생성)
@@ -854,7 +854,7 @@ CSS 스타일: pre-check 페이지 CSS 가이드 100% 준수
 | 연관 T-ID | T-011 |
 | 커밋 해시 | 06f61da |
 | 작업 이력 | 1차 작업 |
-| 상태 | 테스트 완료(DONE) |
+| 상태 | 검증완료 |
 
 #### 작업 개요
 SEC-07 휴대폰 증빙서류 배너 카드(약정폰·알뜰폰·선불폰) 클릭 시 이동하는 상세 가이드 페이지 3개 신규 제작
@@ -918,7 +918,7 @@ SEC-07 휴대폰 증빙서류 배너 카드(약정폰·알뜰폰·선불폰) 클
 | 연관 T-ID | T-011 |
 | 커밋 해시 | 06f61da |
 | 작업 이력 | 2차 작업 |
-| 상태 | 테스트 완료(DONE) |
+| 상태 | 검증완료 |
 
 #### 수정 파일
 
@@ -965,7 +965,7 @@ SEC-07 휴대폰 증빙서류 배너 카드(약정폰·알뜰폰·선불폰) 클
 | 연관 T-ID | T-011 |
 | 커밋 해시 | 06f61da |
 | 작업 이력 | 3차 작업 |
-| 상태 | 테스트 완료(DONE) |
+| 상태 | 검증완료 |
 
 #### 작업 내용
 
@@ -991,7 +991,7 @@ SEC-07 휴대폰 증빙서류 배너 카드(약정폰·알뜰폰·선불폰) 클
 | 연관 T-ID | T-012 |
 | 커밋 해시 | 06f61da |
 | 작업 이력 | 1차 작업 |
-| 상태 | 테스트 완료(DONE) |
+| 상태 | 검증완료 |
 
 #### 작업 내용
 
@@ -1040,7 +1040,7 @@ SEC-07 휴대폰 증빙서류 배너 카드(약정폰·알뜰폰·선불폰) 클
 | 연관 T-ID | T-013 |
 | 커밋 해시 | 06f61da |
 | 작업 이력 | 1차 작업 |
-| 상태 | 테스트 완료(DONE) |
+| 상태 | 검증완료 |
 
 #### 문제 위치
 
@@ -1088,4 +1088,68 @@ SEC-07 휴대폰 증빙서류 배너 카드(약정폰·알뜰폰·선불폰) 클
 - 색상: 브랜드 보라색(#380097), 밑줄 스타일
 - target="_blank"로 새 탭에서 PDF 열림
 - PDF 파일 위치: `imgs/home/` 디렉토리 (댄디어빠쮸너야님이 사전 배치)
+
+---
+
+### 깃 & 배포 관리자 작업 완료 보고서 (T-010~T-013)
+
+[PRD : 깃 관리자 -> 개발자 전달]
+
+sirjuseyo-web T-010~T-013 반영 완료했습니다.
+
+- 원격 머지:
+  - `feature/home-footer-privacy-updates -> main`
+  - merge commit: `ba7a2c877c375fb412b91aeceffcbabe6316951d`
+
+- 배포:
+  - GitHub Pages 완료
+  - Pages run: `26238316663`
+
+- 확인:
+  - `https://www.sirjuseyo.com/` `HTTP/2 200`
+  - `https://www.sirjuseyo.com/nanocredit/submissions/` `HTTP/2 200`
+  - `https://www.sirjuseyo.com/nanocredit/submissions/phone-docs/yakjeong.html` `HTTP/2 200`
+  - `https://www.sirjuseyo.com/nanocredit/submissions/job-income/business.html` `HTTP/2 200`
+
+- 문서:
+  - GitDeployOps TODO/WORK_THROUGH 업데이트 완료
+  - 완료 보고서 `WT-076` 기록 완료
+  - 문서 커밋/푸시: `a0e7f31`
+
+한 줄 버전:
+- `sirjuseyo-web T-010~T-013 feature/home-footer-privacy-updates -> main 반영 완료, GitHub Pages 배포 및 주요 URL 검증 완료했습니다.`
+
+---
+
+## WT-014 — 홈 히어로 슬라이더 crossfade 제거 + Slide 2 이미지 SEC-07 하단 이동
+
+| 항목 | 내용 |
+|------|------|
+| **T-ID** | T-014 |
+| **WT-ID** | WT-014 |
+| **작업자** | 쮸티5호 |
+| **작업일시** | 2026-05-24 |
+| **상태** | 테스트 완료(DONE) |
+| **로컬 커밋** | `5f894b0` |
+| **브랜치** | `feature/T-014-hero-slider-cleanup` |
+| **원격 푸시** | 완료 |
+| **PR** | `#7` |
+
+### 수정 내역
+
+#### 대상 파일: `index.html`
+
+#### 1회차 수정 (2026-05-24)
+
+| # | 수정 위치 | 수정 내용 |
+|---|----------|----------|
+| ① | CSS (line 51) | crossfade 슬라이더 스타일 24줄 삭제 (`.hero-slider`, `.slides-wrap`, `.slide`, `.slide.active`, `.hero-indicators`, `.dot`, `.dot.active`) |
+| ② | HTML SEC-01 (line 231~238) | `<section class="hero-slider">` 슬라이더 구조 → `<section>` 단순 이미지로 변경. Slide 2 + indicators + slides-wrap 제거 |
+| ③ | HTML SEC-07 아래 (line 295~301) | SEC-07-2 신규 섹션 추가: Slide 2 이미지(`sjy_web_home (2) (1).png`)를 SEC-07과 SEC-08 사이에 삽입 |
+| ④ | JS (파일 하단) | crossfade JS 전체 삭제 (23줄): `goSlide()`, `setInterval`, `current/slides/dots/total/timer` 변수 |
+
+#### 변경 요약
+- **삭제**: crossfade CSS 24줄 + HTML 슬라이더 구조 20줄 + JS 23줄 = **총 73줄 삭제**
+- **추가**: 단순 이미지 섹션 6줄 + SEC-07-2 신규 섹션 9줄 = **총 15줄 추가**
+- **결과**: 순 감소 58줄, 불필요한 슬라이더 코드 완전 제거
 
