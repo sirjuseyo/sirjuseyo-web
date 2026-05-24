@@ -1195,7 +1195,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 | **WT-ID** | WT-015 |
 | **작업자** | 쮸티5호 |
 | **작업일시** | 2026-05-24 |
-| **상태** | 테스트 완료(DONE) |
+| **상태** | 검증완료 |
 | **로컬 커밋** | `4e5663c` |
 | **브랜치** | `feature/T-014-hero-slider-cleanup` |
 
@@ -1226,7 +1226,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 | **WT-ID** | WT-016 |
 | **작업자** | 쮸티5호 |
 | **작업일시** | 2026-05-24 |
-| **상태** | 테스트 완료(DONE) |
+| **상태** | 검증완료 |
 | **로컬 커밋** | `cea8691` |
 | **브랜치** | `feature/T-014-hero-slider-cleanup` |
 
@@ -1408,4 +1408,41 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 - 취준생: 1.구직 활동 증빙(수험표/학원등록증 등) + 2.이전 경력 확인 신규 추가, 졸업증명서 삭제, 기존→3,4번, 건강보험 (선택)→필수
 - 기타: 1.현재 상황 확인 + 2.이전 경력 확인 신규 추가, 기존→3,4번, 건강보험 (선택)→필수
 - 직업이 없는 대상자에 대한 정성 평가 관점 반영: "왜 지금 이 상태인가?" + "이전에 뭘 했는가?"
+
+---
+
+### 깃 & 배포 관리자 작업 완료 보고서 (T-015/T-016)
+
+[MAIN : 깃 관리자 -> 개발자 전달]
+
+`sirjuseyo-web` T-015/T-016 main 반영 완료했습니다.
+
+- 원격 머지:
+  - `feature/T-014-hero-slider-cleanup -> main`
+  - merge commit: `1747938`
+
+- 포함 작업:
+  - T-015 선불폰 Q&A 텍스트 스타일 통일
+  - T-016 직업과 소득 12개 페이지 콘텐츠/UI/오타/공식문서/정성 평가 섹션 수정
+
+- 배포:
+  - GitHub Pages run `26370524918` success
+
+- 확인:
+  - `/nanocredit/submissions/` `HTTP/2 200`
+  - `/phone-docs/sunbul.html` `HTTP/2 200`
+  - `/job-income/college.html` `HTTP/2 200`
+  - `/job-income/unemployed.html` `HTTP/2 200`
+  - `/job-income/military.html` `HTTP/2 200`
+
+- 로컬 정합:
+  - `sirjuseyo-web` local `main` = `origin/main`
+  - HEAD `1747938`
+
+- 문서:
+  - GitDeployOps TODO/WORK_THROUGH 업데이트 완료
+  - 문서 commit/push: `3109d17 docs(gitops): record web t015 t016 deployment`
+
+한 줄 버전:
+- `sirjuseyo-web T-015/T-016` PR #8 main 반영 완료, GitHub Pages 배포 success, 주요 submissions/phone-docs/job-income URL 200 확인 및 로컬 main 최신화 완료했습니다.
 
