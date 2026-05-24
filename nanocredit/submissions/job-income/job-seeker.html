@@ -18,10 +18,15 @@
     }
 
     /* ─── 페이지 타이틀 ─── */
+    .page-title-section {
+      padding: 40px 24px 28px;
+      background: #fff;
+    }
     .page-title {
       font-size: 30px; font-weight: 900;
       color: #111; line-height: 1.3;
       letter-spacing: -1.2px;
+      margin-bottom: 20px;
     }
     .back-btn {
       display: inline-flex; align-items: center; gap: 6px;
@@ -36,6 +41,48 @@
     }
     .back-btn:hover { background: #f5f5f5; }
 
+    /* ─── 섹션 공통 ─── */
+    .content-section {
+      padding: 0 20px 36px;
+    }
+    .section-title {
+      font-size: 23px; font-weight: 900;
+      color: #111; letter-spacing: -0.8px;
+      line-height: 1.4;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #E0E0E0;
+    }
+    .section-text {
+      font-size: 17px; color: #222;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+    }
+    .red-text { color: #D32F2F; font-weight: 700; }
+    .red-underline { color: #D32F2F; font-weight: 700; text-decoration: underline; }
+    .green-text { color: #2E7D32; font-weight: 700; }
+
+    /* ─── 불릿 리스트 ─── */
+    .bullet-list {
+      list-style: disc;
+      padding-left: 22px;
+      margin-bottom: 20px;
+    }
+    .bullet-list li {
+      font-size: 17px; color: #222;
+      line-height: 1.75;
+      letter-spacing: -0.3px;
+      margin-bottom: 8px;
+    }
+    .bullet-list .sub-list {
+      list-style: circle;
+      padding-left: 20px;
+      margin-top: 6px;
+    }
+    .bullet-list .sub-list li {
+      margin-bottom: 4px;
+    }
+
     /* ─── 구분선 ─── */
     .thick-divider {
       height: 8px;
@@ -43,7 +90,13 @@
       margin: 0 0 36px;
     }
 
-    /* ─── 푸터 ─── */
+    /* ─── 하단 BACK ─── */
+    .bottom-back {
+      padding: 28px 24px;
+      background: #fff;
+    }
+
+    /* ─── FOOTER ─── */
     footer {
       background: #fff;
       padding: 32px 20px 48px;
@@ -55,38 +108,88 @@
       margin-bottom: 12px;
     }
     .footer-info {
-      font-size: 12px;
-      color: #888;
+      font-size: 12px; color: #888;
       line-height: 1.8;
     }
   </style>
 </head>
 <body>
 
-<!-- Page title section with BACK -->
-<div style="padding: 40px 24px 28px;">
+<!-- ─── 페이지 타이틀 ─── -->
+<div class="page-title-section">
   <a class="back-btn" href="../index.html">⬅ BACK</a>
 </div>
 
-<!-- Page title -->
+<!-- ─── 페이지 타이틀 ─── -->
 <div style="padding: 0 24px 20px;">
   <h1 class="page-title">취준생</h1>
 </div>
 
-<!-- Thick divider -->
+<!-- ─── 구분선 ─── -->
 <div class="thick-divider"></div>
 
-<!-- Empty content area - just a message -->
-<div style="padding: 0 20px 36px;">
-  <p style="font-size: 17px; color: #888; line-height: 1.75;">콘텐츠 준비중입니다.</p>
+<!-- ─── SEC-01 구직 활동 증빙 ─── -->
+<div class="content-section">
+  <h3 class="section-title">1. 구직 활동 증빙</h3>
+  <ul class="bullet-list">
+    <li>✅ 현재 어떤 분야를 준비하고 있는지 <span class="red-underline">카톡으로 알려주세요.</span></li>
+    <li>✅ 관련 증빙을 앱에 첨부해 주세요.
+      <ul class="sub-list">
+        <li><span class="red-underline">수험표, 학원 등록증, 시험 접수 확인서, 자격증 준비 화면</span> 등</li>
+      </ul>
+    </li>
+  </ul>
 </div>
 
-<!-- Bottom BACK -->
-<div style="padding: 28px 24px;">
+<!-- ─── SEC-02 이전 경력 확인 ─── -->
+<div class="content-section">
+  <h3 class="section-title">2. 이전 경력 확인</h3>
+  <ul class="bullet-list">
+    <li>✅ 이전에 어떤 일을 하셨는지 확인이 필요합니다.
+      <ul class="sub-list">
+        <li><span class="red-underline">건강보험 자격 득실 확인서</span>로 이전 직장/알바 경력을 증빙해 주세요.</li>
+        <li><span class="red-underline">채용사이트에 등록된 이력서</span>를 캡처하여 앱에 첨부해 주세요.</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<!-- ─── SEC-03 소득 증빙 (선택) ─── -->
+<div class="content-section">
+  <h3 class="section-title">3. 소득 증빙 (선택)</h3>
+  <ul class="bullet-list">
+    <li>✅ 아르바이트 또는 기타 소득이 있다면, 소득 증빙 서류는 최근 3개월 가량 소득의 <span class="red-underline">(1) 입금 금액</span> <span class="red-underline">(2) 입금 날짜</span> <span class="red-underline">(3) 입금자명</span>이 확인 될 수 있도록 앱에 첨부해 주세요.
+      <ul class="sub-list">
+        <li>알바비, 용돈, 프리랜서 수입 등 어떤 형태의 소득이든 증빙 가능합니다.</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<!-- ─── SEC-04 건강보험 자격 득실 확인서 ─── -->
+<div class="content-section">
+  <h3 class="section-title">4. 건강보험 자격 득실 확인서</h3>
+  <ul class="bullet-list">
+    <li><span class="red-text">❗한도가 높아지려면 건강보험 자격 득실 확인서로 이전 직장/알바 경력을 증빙해 주세요!</span></li>
+    <li><span class="green-text">✅ 건강보험 자격 득실 확인서를 발급 해주셔야 합니다.</span></li>
+    <li>
+      <ul class="sub-list">
+        <li>스토어에서 [The건강보험] 앱 다운로드 → 로그인[*인증서필수/등록]</li>
+        <li>앱 상단 '민원여기요', 1️⃣자격득실확인서 발급</li>
+        <li>전체 선택 확인 후 하단 왼쪽 미리보기(다운로드) 클릭</li>
+        <li>PDF 다운로드 → 파일 열기(암호는 주민등록번호 앞6자리 입니다)</li>
+        <li>모든 페이지 스크린샷 후 카톡으로 첨부</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<!-- ─── 하단 BACK ─── -->
+<div class="bottom-back">
   <a class="back-btn" href="../index.html">⬅ BACK</a>
 </div>
 
-<!-- Footer -->
+<!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-logo">nanocredit</div>
   <p class="footer-info">
