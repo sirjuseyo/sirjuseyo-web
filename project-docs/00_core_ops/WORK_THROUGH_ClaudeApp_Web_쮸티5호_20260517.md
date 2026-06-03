@@ -1409,3 +1409,132 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 - 기타: 1.현재 상황 확인 + 2.이전 경력 확인 신규 추가, 기존→3,4번, 건강보험 (선택)→필수
 - 직업이 없는 대상자에 대한 정성 평가 관점 반영: "왜 지금 이 상태인가?" + "이전에 뭘 했는가?"
 
+---
+
+### 깃 & 배포 관리자 작업 완료 보고서 (T-015/T-016)
+
+[MAIN : 깃 관리자 -> 개발자 전달]
+
+`sirjuseyo-web` T-015/T-016 main 반영 완료했습니다.
+
+- 원격 머지:
+  - `feature/T-014-hero-slider-cleanup -> main`
+  - merge commit: `1747938`
+
+- 포함 작업:
+  - T-015 선불폰 Q&A 텍스트 스타일 통일
+  - T-016 직업과 소득 12개 페이지 콘텐츠/UI/오타/공식문서/정성 평가 섹션 수정
+
+- 배포:
+  - GitHub Pages run `26370524918` success
+
+- 확인:
+  - `/nanocredit/submissions/` `HTTP/2 200`
+  - `/phone-docs/sunbul.html` `HTTP/2 200`
+  - `/job-income/college.html` `HTTP/2 200`
+  - `/job-income/unemployed.html` `HTTP/2 200`
+  - `/job-income/military.html` `HTTP/2 200`
+
+- 로컬 정합:
+  - `sirjuseyo-web` local `main` = `origin/main`
+  - HEAD `1747938`
+
+- 문서:
+  - GitDeployOps TODO/WORK_THROUGH 업데이트 완료
+  - 문서 commit/push: `3109d17 docs(gitops): record web t015 t016 deployment`
+
+한 줄 버전:
+- `sirjuseyo-web T-015/T-016` PR #8 main 반영 완료, GitHub Pages 배포 success, 주요 submissions/phone-docs/job-income URL 200 확인 및 로컬 main 최신화 완료했습니다.
+
+---
+
+## WT-017 | T-017 loan-match 메인 페이지 신규 제작
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-017 |
+| WT-ID | WT-017 |
+| 상태 | **In-Progress** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-05-30 |
+| 파일 | `loan-match/index.html` (신규) |
+| 기획서 | `project-docs/10_plan/기획안_loan-match_나에게맞는대출상품.md` |
+| 로컬 커밋 | `ed9ee47` |
+
+### 작업 내용
+
+"나에게 맞는 대출 상품" 메인 랜딩 페이지 신규 생성
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | 기획안 기반 `loan-match/index.html` 신규 생성 — SEC-01~07 + FOOTER 전체 구현 | `ed9ee47` |
+| 2차 | 캐릭터 이미지 max-width 제거 → 기존 페이지와 동일하게 `width:100%` 풀사이즈 적용 | 미커밋 |
+| 3차 | ① 타이틀 한 줄로 변경 + 이미지 간격 확보 ② 이미지↔CTA 간격 확대(48px) ③ 아이콘 변경: ⌛️→⚡(즉시), ⏰→🍵(여유) | 미커밋 |
+
+### 1차 상세
+
+- **SEC-01**: 상단 BACK 버튼 (→ 홈)
+- **SEC-02**: 페이지 타이틀 "어떻게 돈을 빌릴지부터 확인해요!"
+- **SEC-03**: 캐릭터 이미지 (`imgs/loan-match/짤-001.png`)
+- **SEC-04**: 서브 텍스트 "AI 기술로 나만의 신용점수를 만들어요!"
+- **SEC-05**: 초록 버튼 "⌛️ 즉시 빌리기" → `../nanocredit/index.html`
+- **SEC-06**: 회색 버튼 "⏰ 여유있게 빌리기" → Tally 모달 (`w4Nxe5`)
+- **SEC-07**: 하단 BACK 버튼
+- **FOOTER**: 써주세요. 공통 푸터
+- **Tally**: `embed.js` 스크립트 `</body>` 직전 삽입
+- **이미지 경로 수정**: 기획서 `imgs/lloan-match/` → 실제 `imgs/loan-match/` (오타 폴더 없음 확인)
+
+---
+
+## WT-018 | T-018 loan-match 여유있게 빌리기 페이지 신규 제작
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-018 |
+| WT-ID | WT-018 |
+| 상태 | **In-Progress** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-04 |
+| 파일 | `loan-match/browse.html` (신규), `loan-match/index.html` (수정) |
+| 기획서 | `project-docs/10_plan/기획안_loan-match_여유있게빌리기.md` |
+| 로컬 커밋 | 미커밋 |
+
+### 작업 내용
+
+Tally 모달(w4Nxe5)을 HTML 페이지로 전환. 4개 설문 질문 + 4개 대출방식 이미지 카드 페이지 신규 생성.
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | `loan-match/browse.html` 신규 생성 + `loan-match/index.html` 회색 버튼 Tally→browse.html 링크 변경 + Tally embed.js 제거 | 미커밋 |
+| 2차 | Tally 원본 조건 로직 반영 — JS 순차 노출 구현: Q1만 먼저 표시→답변 시 Q2 나타남→…→Q4 답변 시 "결과 확인" 버튼→클릭 시 4개 카드 노출. 선택 옵션 스타일(보라 border/배경) 추가 | 미커밋 |
+| 3차 | ① 질문 텍스트 수정(소통→쇼핑 오타, 순서 변경: 신용→쇼핑→평판→기여) ② 질문 간격 확대(28→44px) ③ 결과 타이틀 크기 확대(23→30px, 서브 15→17px) ④ 카드 순서 변경(신용→쇼핑→평판→기여) ⑤ 매핑 업데이트(Q1→신용, Q2→쇼핑, Q3→평판, Q4→기여) | 미커밋 |
+| 4차 | 원본 Tally 대비 UI 수정: ① 타이틀 한 줄로 ② 질문 폰트 원본 매칭(20px/400, 색상 #111) ③ 예/아니오 세로 2행 배치(flex-direction: column, 패딩 14px) ④ 결과 타이틀 원본 매칭(26px/400, "딱 맞는" 보라 밑줄 강조) | 미커밋 |
+
+### 1차 상세
+
+**browse.html (신규 생성)**:
+- **SEC-01**: 상단 BACK 버튼 (→ index.html)
+- **SEC-02**: 페이지 타이틀 "🔍 그렇다면 고객님에게 적절한 대출 방식을 찾아드릴게요." (보라색 밑줄 강조)
+- **SEC-03**: 설문 영역 — 4개 예/아니오 질문 (라디오 버튼)
+  - Q1: 평소에 소통을 많이 하는 편인가요?
+  - Q2: 타인이 보기에 나의 평판이 괜찮은 편인가요?
+  - Q3: 신용점수가 높은 편인가요?
+  - Q4: 평소에 좋은 앱이나 서비스를 주변에 소개하는 편인가요?
+- **구분선**: 굵은 구분선 (8px, #E0E0E0)
+- **SEC-04**: 결과 타이틀 "🏆 고객님에게 딱 맞는 대출방식이 있어요!" + 서브 "원하는 대출 방식을 클릭해요."
+- **SEC-05**: 이미지 카드 4종 (각각 하위 페이지로 링크)
+  - `쇼핑내역을제출하고돈빌리기.png` → `shopping.html`
+  - `앱성장을기여하고돈빌리기.png` → `contribution.html`
+  - `신용점수만민고돈빌리기.png` → `credit.html`
+  - `내평판을검증받고돈빌리기.png` → `reputation.html`
+- **SEC-06**: 하단 BACK 버튼
+- **FOOTER**: 써주세요. 공통 푸터
+
+**index.html (수정)**:
+- SEC-06 회색 버튼: `href` Tally URL → `browse.html` 변경
+- `data-tally-open`, `data-tally-layout`, `data-tally-auto-close` 속성 제거
+- Tally `embed.js` 스크립트 태그 제거

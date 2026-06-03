@@ -284,8 +284,10 @@
 | T-012 | WT-012 | 06f61da | **검증완료** | nanocredit 직업과 소득 하위 페이지 12개 신규 제작 | 쮸티5호 | 2026-05-22 | 【파일】`nanocredit/submissions/job-income/*.html` (12개) / 머지 `ba7a2c8` / 배포 완료 |
 | T-013 | WT-013 | 06f61da | **검증완료** | 홈 페이지 About us 박스 순서 변경 + 등록번호 PDF 링크 연결 | 쮸티5호 | 2026-05-22 | 【파일】`index.html` / 머지 `ba7a2c8` / 배포 완료 |
 | T-014 | WT-014 | 5f894b0 | **검증완료** | 홈 히어로 슬라이더 crossfade 제거 + Slide 2 이미지 SEC-07 하단 이동 | 쮸티5호 | 2026-05-24 | 【파일】`index.html` / 머지 `c1173e4` / 배포 완료 |
-| T-015 | WT-015 | 4e5663c | **테스트 완료(DONE)** | 선불폰 페이지 Q&A 텍스트 스타일 통일 | 쮸티5호 | 2026-05-25 | 【파일】`nanocredit/submissions/phone-docs/sunbul.html` |
-| T-016 | WT-016 | cea8691 | **테스트 완료(DONE)** | 직업과 소득 전체 페이지 일괄 수정 (문구/UI통일/오타/빈페이지 콘텐츠/재직증빙 공식문서/정성평가 섹션) | 쮸티5호 | 2026-05-25 | 【파일】`nanocredit/submissions/job-income/*.html` (12개) + `submissions/index.html` / 9차 수정 |
+| T-015 | WT-015 | 4e5663c | **검증완료** | 선불폰 페이지 Q&A 텍스트 스타일 통일 | 쮸티5호 | 2026-05-25 | 【파일】`nanocredit/submissions/phone-docs/sunbul.html` / 머지 `1747938` / 배포 완료 |
+| T-016 | WT-016 | cea8691 | **검증완료** | 직업과 소득 전체 페이지 일괄 수정 (문구/UI통일/오타/빈페이지 콘텐츠/재직증빙 공식문서/정성평가 섹션) | 쮸티5호 | 2026-05-25 | 【파일】`nanocredit/submissions/job-income/*.html` (12개) + `submissions/index.html` / 머지 `1747938` / 배포 완료 |
+| T-017 | WT-017 | ed9ee47 | **In-Progress** | loan-match 메인 페이지 신규 제작 | 쮸티5호 | 2026-05-30 | 【파일】`loan-match/index.html` / 기획안 기반 신규 생성 |
+| T-018 | WT-018 | - | **In-Progress** | loan-match 여유있게 빌리기 페이지 신규 제작 | 쮸티5호 | 2026-06-04 | 【파일】`loan-match/browse.html` (신규) + `loan-match/index.html` (링크 변경) |
 
 
 ---
@@ -309,6 +311,8 @@
 | W-014 | P0 | T-014 | 완료 | **홈 히어로 슬라이더 crossfade 제거 + Slide 2 이미지 SEC-07 하단 이동** | `index.html` | ① SEC-01 히어로 crossfade 슬라이더 제거 → Slide 1만 단순 이미지로 표시, ② Slide 2 "어차피 물건을 구매한다면..." 이미지를 SEC-07 "특히 이렇게 쓰면 꿀이에요" 바로 아래에 새 섹션으로 삽입 | 2026-05-23 | 쮸티5호 |
 | W-015 | P0 | T-015 | 완료 | **선불폰 페이지 Q&A 텍스트 스타일 통일** | `nanocredit/submissions/phone-docs/sunbul.html` | Q&A 섹션 텍스트 크기·색상을 1~3번 섹션과 동일하게 통일 (qa-title 16→23px, qa-q 16→17px, qa-answer 15→17px, 색상 #333→#222) | 2026-05-24 | 쮸티5호 |
 | W-016 | P0 | T-016 | 완료 | **대학생 페이지 SEC-01 재학증명 문구 수정** | `nanocredit/submissions/job-income/college.html` | ① ✔ sub-list 문구: 원본 문장으로 교체 (학사정보시스템 접속해 발급한 재학증명서 화면...) ② ❗ 문구: 원본 문장으로 교체 (오늘 날짜가 보이게 학사정보시스템에 등록된...) | 2026-05-24 | 쮸티5호 |
+| W-017 | P0 | T-017 | 진행중 | **loan-match 메인 페이지 신규 제작** | `loan-match/index.html` | 기획안 기반 "어떻게 돈을 빌릴지부터 확인해요!" 메인 랜딩 페이지 신규 생성 (BACK + 캐릭터 이미지 + 초록 버튼 "즉시 빌리기" + 회색 버튼 "여유있게 빌리기") | 2026-05-30 | 쮸티5호 |
+| W-018 | P0 | T-018 | 진행중 | **loan-match 여유있게 빌리기 페이지 신규 제작** | `loan-match/browse.html` | Tally 모달→HTML 전환, 4개 질문 설문 + 4개 대출방식 카드 (쇼핑/기여/신용/평판) + index.html 회색 버튼 링크 변경 | 2026-06-04 | 쮸티5호 |
 
 ---
 
