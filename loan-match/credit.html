@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>신용점수만 믿고 돈 빌리기 | 써주세요.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand:     #380097;
+      --nc-purple: #4432A2;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─── 공통 ─── */
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      color: #555;
+      text-decoration: none;
+      background: #fff;
+      cursor: pointer;
+    }
+    .back-btn:hover { background: #f5f5f5; }
+    .back-btn-dark {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      border: 1.5px solid #555;
+      border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      color: #ccc;
+      text-decoration: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    .back-btn-dark:hover { background: #222; }
+
+    .sec-img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ─── SEC-01 상단 BACK (다크) ─── */
+    .top-back-dark {
+      padding: 40px 24px 20px;
+      background: #000;
+    }
+
+    /* ─── SEC-02~03 신용관리 + 채팅 (이미지) ─── */
+    .sec-dark-img {
+      background: #000;
+    }
+
+    /* ─── SEC-04 혜택 2가지 (이미지) ─── */
+    .sec-dark-img-full {
+      background: #000;
+    }
+
+    /* ─── SEC-05~06 혜택 상세 (이미지) ─── */
+    .sec-light-img {
+      background: #F5F5F5;
+    }
+
+    /* ─── SEC-07 KCB 850점 (이미지) ─── */
+
+    /* ─── SEC-08 한도 상향 (이미지) ─── */
+
+    /* ─── SEC-09 출시 예정 (이미지) ─── */
+
+    /* ─── SEC-10 CTA 버튼 ─── */
+    .cta-section {
+      padding: 0 24px 40px;
+      background: #fff;
+    }
+    .btn-credit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 60px;
+      border: 1px solid #3475F0;
+      border-radius: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #3475F0;
+      transition: 200ms;
+    }
+    .btn-credit:hover {
+      color: #3475F0;
+      background-color: #ffffff;
+    }
+
+    /* ─── 하단 BACK ─── */
+    .bottom-back {
+      padding: 28px 24px;
+      background: #fff;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fff;
+      padding: 32px 20px 48px;
+      border-top: 1px solid #E5E7EB;
+    }
+    .footer-logo {
+      font-size: 18px; font-weight: 800;
+      color: var(--nc-purple);
+      margin-bottom: 12px;
+    }
+    .footer-info {
+      font-size: 12px; color: #888;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── SEC-01 상단 BACK ─── -->
+<div class="top-back-dark">
+  <a class="back-btn-dark" href="browse.html">⬅ BACK</a>
+</div>
+
+<!-- ─── SEC-02~03 신용관리 잘하셨군요 + 채팅 버블 (이미지) ─── -->
+<div class="sec-dark-img">
+  <img class="sec-img" src="../imgs/loan-match/신용관리잘햐셨군요_신용.png" alt="지금껏 신용관리 잘하셨군요! 신용이 좋으니까 앞으로도 계속 지켜야죠! - 써주세요. 소액대출서비스는 신용정보에 절대 기록되지 않아요" />
+</div>
+
+<!-- ─── SEC-04 혜택 2가지 요약 (이미지) ─── -->
+<div class="sec-dark-img-full">
+  <img class="sec-img" src="../imgs/loan-match/혜택2가지_신용.png" alt="써주세요.에서 소액을 신용으로 빌리고 싶어질 거에요! 혜택 2가지 요약 - 1번 무이자 대출, 2번 중복 대출 OK!" />
+</div>
+
+<!-- ─── SEC-05 #1번 혜택 — 무이자 대출 (이미지) ─── -->
+<div class="sec-light-img">
+  <img class="sec-img" src="../imgs/loan-match/1번혜택_무이자대출_신용.png" alt="#1번 혜택 무이자 대출 - 첫 이용 시 30일 무이자! 써주세요에서 대출 이용 내역이 쌓이면 60일, 90일 무이자로 혜택이 더 커져요" />
+</div>
+
+<!-- ─── SEC-06 #2번 혜택 — 중복 대출 OK! (이미지) ─── -->
+<div class="sec-light-img">
+  <img class="sec-img" src="../imgs/loan-match/2번혜택_중복대출_신용.png" alt="#2번 혜택 중복 대출 OK! - 첫 이용 시 2건까지 중복 대출 가능! 써주세요에서 대출 이용 내역이 쌓이면 더 많은 대출방식을 중복으로 이용할 수 있어요" />
+</div>
+
+<!-- ─── SEC-07 KCB 기준 신용점수 850점 이상 (이미지) ─── -->
+<div class="sec-light-img">
+  <img class="sec-img" src="../imgs/loan-match/KCB_850점이상_신용.png" alt="KCB 기준 신용점수 850점 이상" />
+</div>
+
+<!-- ─── SEC-08 한도 상향 로드맵 (이미지) ─── -->
+<div class="sec-dark-img-full">
+  <img class="sec-img" src="../imgs/loan-match/한도상향_신용.png" alt="한도 상향 로드맵 - START 10만 원 → 20만 원 → 30만 원 → MAX 50만 원" />
+</div>
+
+<!-- ─── SEC-09 출시 예정 안내 + Coming Soon (이미지) ─── -->
+<div>
+  <img class="sec-img" src="../imgs/loan-match/신용대출출시예정.png" alt="우리의 월간 대출자금이 1억 원을 돌파하면 출시할 예정이에요! Coming Soon" />
+</div>
+
+<!-- ─── SEC-10 CTA 버튼 — 웨이팅하러 가기 ─── -->
+<div class="cta-section">
+  <a class="btn-credit" href="https://tally.so/r/mJD5ad" data-tally-open="mJD5ad" data-tally-layout="modal" data-tally-width="800" data-tally-hide-title="1" data-tally-emoji-text="🙋🏻" data-tally-emoji-animation="bounce">웨이팅하러 가기 ></a>
+</div>
+
+<!-- ─── SEC-11 하단 BACK ─── -->
+<div class="bottom-back">
+  <a class="back-btn" href="browse.html">⬅ BACK</a>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">써주세요.</div>
+  <p class="footer-info">
+    써주세요.연계대부 | 대표 정희선<br>
+    서울시 강남구 테헤란로 427, 8층<br>
+    사업자등록번호 855-87-02303 | 대부업등록번호 2023-금감원-0074<br><br>
+    대출금리 연 12% ~ 연 39.9% (법정최고금리 이내)<br>
+    중개수수료를 요구하거나 받는 것은 불법입니다.
+  </p>
+</footer>
+
+<!-- ─── Tally 임베드 스크립트 ─── -->
+<script src="https://tally.so/widgets/embed.js"></script>
+
+</body>
+</html>
