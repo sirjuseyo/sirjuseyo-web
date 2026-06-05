@@ -289,7 +289,8 @@
 | T-017 | WT-017 | ed9ee47 | **In-Progress** | loan-match 메인 페이지 신규 제작 | 쮸티5호 | 2026-05-30 | 【파일】`loan-match/index.html` / 기획안 기반 신규 생성 |
 | T-018 | WT-018 | d1989bc | **In-Progress** | loan-match 여유있게 빌리기 페이지 신규 제작 | 쮸티5호 | 2026-06-04 | 【파일】`loan-match/browse.html` (신규) + `loan-match/index.html` (링크 변경) |
 | T-019 | WT-019 | a27b6e5 | **In-Progress** | loan-match 신용 대출 페이지 신규 제작 | 쮸티5호 | 2026-06-05 | 【파일】`loan-match/credit.html` (신규) / 기획안(W-017-3) 기반 Coming Soon 페이지 |
-| T-020 | WT-020 | - | **In-Progress** | 신용 대출 페이지 타이틀 섹션 추가 | 쮸티5호 | 2026-06-05 | 【파일】`loan-match/credit.html` / BACK 아래 페이지 타이틀 추가 (문구 변경: AI→인간미 풀풀 풍기는 사람) |
+| T-020 | WT-020 | 5d0cca3 | **In-Progress** | 신용 대출 페이지 타이틀 섹션 추가 | 쮸티5호 | 2026-06-05 | 【파일】`loan-match/credit.html` / BACK 아래 페이지 타이틀 추가 (문구 변경: AI→인간미 풀풀 풍기는 사람) |
+| T-021 | WT-021 | - | **In-Progress** | 전체 HTML 파일 푸터 정식 버전으로 교체 | 쮸티5호 | 2026-06-06 | 【파일】전체 39개 HTML / 기존 간단 푸터 → footer.js 공용 정식 푸터 (Contact+법률+About us+저작권) |
 
 
 ---
@@ -317,6 +318,7 @@
 | W-018 | P0 | T-018 | 진행중 | **loan-match 여유있게 빌리기 페이지 신규 제작** | `loan-match/browse.html` | Tally 모달→HTML 전환, 4개 질문 설문 + 4개 대출방식 카드 (쇼핑/기여/신용/평판) + index.html 회색 버튼 링크 변경 | 2026-06-04 | 쮸티5호 |
 | W-019 | P0 | T-019 | 진행중 | **loan-match 신용 대출 페이지 신규 제작** | `loan-match/credit.html` | 기획안(W-017-3) 기반 "신용이 좋으면 AI가 무이자로 돈을 빌려 드려요" Coming Soon 페이지 신규 생성 (10개 섹션 + Tally 웨이팅 mJD5ad) | 2026-06-05 | 쮸티5호 |
 | W-020 | P0 | T-020 | 진행중 | **신용 대출 페이지 타이틀 섹션 추가** | `loan-match/credit.html` | 페이지 상단에 타이틀 텍스트 섹션 추가: "신용은 중요하지 않아요, 그러나 신용이 좋으면 인간미 풀풀 풍기는 사람이 무이자로 돈을 빌려 드려요." (원본 대비 문구 변경) | 2026-06-05 | 쮸티5호 |
+| W-021 | P0 | T-021 | 진행중 | **전체 HTML 파일 푸터 정식 버전으로 교체** | 전체 HTML 파일 (38개+) | 기존 간단 푸터 → monthly-loan 정식 푸터로 일괄 교체 (Contact 3열 카드 + 대출금리/부대비용/경고 법률문구 + About us 회사정보 2개 + 저작권 박스). 원본: `monthly-loan-repo/footer.js` | 2026-06-06 | 쮸티5호 |
 
 ---
 

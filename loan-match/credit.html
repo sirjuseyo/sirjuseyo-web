@@ -77,6 +77,57 @@
 
     /* ─── SEC-09 출시 예정 (이미지) ─── */
 
+    /* ─── SEC-03-1 대부업체 걱정 해소 ─── */
+    .worry-section {
+      padding: 40px 24px;
+      background: #fff;
+    }
+    .worry-title {
+      font-size: 22px;
+      font-weight: 700;
+      font-style: italic;
+      color: #111;
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+    .worry-title .underline {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .worry-card {
+      background: #F5F5F5;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .worry-card:last-child {
+      margin-bottom: 0;
+    }
+    .worry-check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: var(--brand);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 14px;
+      margin-top: 2px;
+    }
+    .worry-text {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.7;
+    }
+    .worry-text .highlight {
+      background: linear-gradient(transparent 60%, #B3E5FC 60%);
+    }
+
     /* ─── SEC-10 CTA 버튼 ─── */
     .cta-section {
       padding: 0 24px 40px;
@@ -104,15 +155,16 @@
 
     /* ─── 페이지 타이틀 ─── */
     .page-title-section {
-      padding: 32px 24px 36px;
+      padding: 40px 24px 36px;
       background: #fff;
     }
     .page-title {
-      font-size: 28px;
+      font-size: 36px;
       font-weight: 900;
       color: #111;
-      line-height: 1.4;
-      letter-spacing: -1px;
+      line-height: 1.35;
+      letter-spacing: -1.5px;
+      margin-top: 28px;
     }
 
     /* ─── 하단 BACK ─── */
@@ -140,19 +192,40 @@
 </head>
 <body>
 
-<!-- ─── SEC-01 상단 BACK ─── -->
-<div class="top-back-dark">
-  <a class="back-btn-dark" href="browse.html">⬅ BACK</a>
-</div>
-
-<!-- ─── SEC-01-1 페이지 타이틀 ─── -->
+<!-- ─── SEC-01 상단 BACK + 페이지 타이틀 ─── -->
 <div class="page-title-section">
+  <a class="back-btn" href="browse.html">⬅ BACK</a>
   <h1 class="page-title">신용은 중요하지 않아요, 그러나 신용이 좋으면 인간미 풀풀 풍기는 사람이 무이자로 돈을 빌려 드려요.</h1>
 </div>
 
 <!-- ─── SEC-02~03 신용관리 잘하셨군요 + 채팅 버블 (이미지) ─── -->
 <div class="sec-dark-img">
   <img class="sec-img" src="../imgs/loan-match/신용관리잘햐셨군요_신용.png" alt="지금껏 신용관리 잘하셨군요! 신용이 좋으니까 앞으로도 계속 지켜야죠! - 써주세요. 소액대출서비스는 신용정보에 절대 기록되지 않아요" />
+</div>
+
+<!-- ─── SEC-03-1 대부업체 걱정 해소 ─── -->
+<div class="worry-section">
+  <p class="worry-title">😟 혹시, 고객님께 돈을 빌려주는 대상이 대부업체라서 <span class="underline">걱정되시나요?</span></p>
+
+  <div class="worry-card">
+    <div class="worry-check">✓</div>
+    <p class="worry-text">써주세요.는 IT 회사입니다. IT회사가 소액대출을 제공하려면 <span class="highlight">국내 금융법상 반드시 대부업 라이센스가 필요해요.</span></p>
+  </div>
+
+  <div class="worry-card">
+    <div class="worry-check">✓</div>
+    <p class="worry-text">그래서 저희와 독점 계약을 맺은 공동운영사 '써주세요연계대부' 자금으로 돈을 빌려드리고 있어요.</p>
+  </div>
+
+  <div class="worry-card" style="background: #E3F2FD;">
+    <div class="worry-check">✓</div>
+    <p class="worry-text">안전한 개인정보 보호를 약속드려요. <span class="highlight">고객님의 개인정보는 오직 대출 심사와 계약에만 사용하고 있어요.</span></p>
+  </div>
+
+  <div class="worry-card" style="background: #E8F5E9;">
+    <div class="worry-check">✓</div>
+    <p class="worry-text">지난 7년 동안 단 한 건의 유출 사례도 없었으며, 민원을 받아본 적도 없었습니다.<br>그랬다면 이미 운영정지로 써주세요. 자체는 사라졌을거에요!</p>
+  </div>
 </div>
 
 <!-- ─── SEC-04 혜택 2가지 요약 (이미지) ─── -->
@@ -195,17 +268,8 @@
   <a class="back-btn" href="browse.html">⬅ BACK</a>
 </div>
 
-<!-- ─── FOOTER ─── -->
-<footer>
-  <div class="footer-logo">써주세요.</div>
-  <p class="footer-info">
-    써주세요.연계대부 | 대표 정희선<br>
-    서울시 강남구 테헤란로 427, 8층<br>
-    사업자등록번호 855-87-02303 | 대부업등록번호 2023-금감원-0074<br><br>
-    대출금리 연 12% ~ 연 39.9% (법정최고금리 이내)<br>
-    중개수수료를 요구하거나 받는 것은 불법입니다.
-  </p>
-</footer>
+<!-- ─── FOOTER (공용 footer.js) ─── -->
+<script src="/footer.js"></script>
 
 <!-- ─── Tally 임베드 스크립트 ─── -->
 <script src="https://tally.so/widgets/embed.js"></script>
