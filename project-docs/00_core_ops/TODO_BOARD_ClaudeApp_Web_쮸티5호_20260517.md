@@ -290,7 +290,7 @@
 | T-018 | WT-018 | d1989bc | **In-Progress** | loan-match 여유있게 빌리기 페이지 신규 제작 | 쮸티5호 | 2026-06-04 | 【파일】`loan-match/browse.html` (신규) + `loan-match/index.html` (링크 변경) |
 | T-019 | WT-019 | a27b6e5 | **In-Progress** | loan-match 신용 대출 페이지 신규 제작 | 쮸티5호 | 2026-06-05 | 【파일】`loan-match/credit.html` (신규) / 기획안(W-017-3) 기반 Coming Soon 페이지 |
 | T-020 | WT-020 | 5d0cca3 | **In-Progress** | 신용 대출 페이지 타이틀 섹션 추가 | 쮸티5호 | 2026-06-05 | 【파일】`loan-match/credit.html` / BACK 아래 페이지 타이틀 추가 (문구 변경: AI→인간미 풀풀 풍기는 사람) |
-| T-021 | WT-021 | - | **In-Progress** | 전체 HTML 파일 푸터 정식 버전으로 교체 | 쮸티5호 | 2026-06-06 | 【파일】전체 39개 HTML / 기존 간단 푸터 → footer.js 공용 정식 푸터 (Contact+법률+About us+저작권) |
+| T-021 | WT-021 | 09a424e | **In-Progress** | 전체 HTML 파일 푸터 정식 버전으로 교체 | 쮸티5호 | 2026-06-06 | 【파일】전체 39개 HTML / 기존 간단 푸터 → footer.js 공용 정식 푸터 (Contact+법률+About us+저작권) |
 
 
 ---
