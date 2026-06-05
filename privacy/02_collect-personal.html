@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>개인(신용)정보 수집·이용 동의서 | 써주세요 Privacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --brand: #380097;
@@ -22,10 +25,12 @@
     }
     .page { max-width: 800px; margin: 0 auto; padding: 32px 20px 80px; }
     .back-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 13px; color: var(--brand); text-decoration: none; margin-bottom: 28px;
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 22px; font-weight: 800; letter-spacing: -0.5px;
+      color: var(--brand); text-decoration: none;
+      margin-bottom: 32px; line-height: 1;
     }
-    .back-link:hover { opacity: 0.7; }
+    .back-link:hover { opacity: 0.6; }
     h1 {
       font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
       margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--divider);
@@ -67,7 +72,7 @@
 </head>
 <body>
 <div class="page">
-  <a href="index.html" class="back-link">← Privacy 정책으로 돌아가기</a>
+  <a href="javascript:history.back()" class="back-link">← BACK</a>
   <h1>개인(신용)정보 수집·이용 동의서</h1>
   <div class="doc-content">
     <p class="recipient"><strong>(주)혁사호재, 써주세요연계대부 귀중</strong></p>
@@ -94,5 +99,8 @@
     <p>회원님 및 법정 대리인은 인증센터(연락처 : 02-2054-3003) 에게 언제든지 등록되어 있는 자신 혹은 당해 만 19세 미만 아동의 개인정보를 조회하거나 수정, 가입해지를 요청할 수 있습니다. 회원님 및 법정대리인의 개인정보 조회, 수정은 회사의 개인정보관리책임자에게 서면, 전화, 전자우편, FAX 등을 통하여 하실 수 있으며 회사는 이에 대해 지체없이 조치하겠습니다. 회원님께서 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제공하지 않습니다. 또한 잘못된 개인정보를 제3 자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체 없이 통지하여 정정이 이루어지도록 하겠습니다.</p>
   </div>
 </div>
+<!-- ─── FOOTER (공용 footer.js) ─── -->
+<script src="/footer.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>적절한 대출 방식 찾기 | 써주세요.</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <style>
+    :root {
+      --brand:     #380097;
+      --nc-purple: #4432A2;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─── 공통 ─── */
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      color: #555;
+      text-decoration: none;
+      background: #fff;
+      cursor: pointer;
+    }
+    .back-btn:hover { background: #f5f5f5; }
+
+    .page-title {
+      font-size: 30px; font-weight: 400;
+      color: #111; line-height: 1.3;
+      letter-spacing: -1.2px;
+    }
+    .page-title .highlight {
+      color: var(--brand);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* ─── SEC-01 상단 BACK ─── */
+    .top-back {
+      padding: 40px 24px 28px;
+    }
+
+    /* ─── SEC-02 타이틀 ─── */
+    .title-section {
+      padding: 0 24px 36px;
+    }
+
+    /* ─── SEC-03 설문 영역 ─── */
+    .survey-section {
+      padding: 0 24px 40px;
+    }
+    .survey-q {
+      margin-bottom: 44px;
+      display: none;
+    }
+    .survey-q.visible {
+      display: block;
+    }
+    .survey-q:last-child {
+      margin-bottom: 0;
+    }
+    .survey-q-text {
+      font-size: 18px;
+      font-weight: 400;
+      color: #111;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .survey-q-text .required {
+      color: #D32F2F;
+      margin-left: 4px;
+    }
+    .survey-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .survey-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 17px;
+      color: #333;
+      padding: 14px 20px;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 10px;
+      transition: 200ms;
+    }
+    .survey-option:hover {
+      border-color: var(--brand);
+      background: #F8F5FF;
+    }
+    .survey-option.selected {
+      border-color: var(--brand);
+      background: #F0EBFF;
+      color: var(--brand);
+      font-weight: 700;
+    }
+    .survey-option input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--brand);
+      cursor: pointer;
+    }
+
+    /* ─── 결과 확인 버튼 ─── */
+    .result-btn-section {
+      padding: 0 24px 40px;
+      display: none;
+    }
+    .result-btn-section.visible {
+      display: block;
+    }
+    .btn-result {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 60px;
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      background-color: var(--brand);
+      cursor: pointer;
+      transition: 200ms;
+    }
+    .btn-result:hover {
+      background-color: #2A0073;
+    }
+
+    /* ─── 굵은 구분선 ─── */
+    .thick-divider {
+      height: 8px;
+      background: #E0E0E0;
+      display: none;
+    }
+    .thick-divider.visible {
+      display: block;
+    }
+
+    /* ─── SEC-04 결과 타이틀 ─── */
+    .result-title-section {
+      padding: 40px 24px 12px;
+      display: none;
+    }
+    .result-title-section.visible {
+      display: block;
+    }
+    .result-title {
+      font-size: 28px;
+      font-weight: 400;
+      color: #111;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .result-title .accent {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      color: var(--brand);
+    }
+    .result-sub {
+      font-size: 22px;
+      font-weight: 400;
+      color: #555;
+    }
+
+    /* ─── SEC-05 카드 영역 ─── */
+    .card-section {
+      padding: 24px 24px 40px;
+      display: none;
+    }
+    .card-section.visible {
+      display: block;
+    }
+    .card-link {
+      display: block;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 200ms;
+    }
+    .card-link:last-child {
+      margin-bottom: 0;
+    }
+    .card-link:hover {
+      transform: scale(1.01);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .card-link img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ─── 하단 BACK ─── */
+    .bottom-back {
+      padding: 28px 24px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fff;
+      padding: 32px 20px 48px;
+      border-top: 1px solid #E5E7EB;
+    }
+    .footer-logo {
+      font-size: 18px; font-weight: 800;
+      color: var(--nc-purple);
+      margin-bottom: 12px;
+    }
+    .footer-info {
+      font-size: 12px; color: #888;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── SEC-01 상단 BACK ─── -->
+<div class="top-back">
+  <a class="back-btn" href="index.html">⬅ BACK</a>
+</div>
+
+<!-- ─── SEC-02 페이지 타이틀 ─── -->
+<div class="title-section">
+  <h1 class="page-title">🔍 그렇다면 고객님에게 <span class="highlight">적절한 대출 방식을 찾아드릴게요.</span></h1>
+</div>
+
+<!-- ─── SEC-03 설문 영역 ─── -->
+<div class="survey-section">
+
+  <div class="survey-q visible" id="q1">
+    <p class="survey-q-text">1. 신용점수가 높은 편인가요?<span class="required">*</span></p>
+    <div class="survey-options">
+      <label class="survey-option"><input type="radio" name="q1" value="yes"> 예</label>
+      <label class="survey-option"><input type="radio" name="q1" value="no"> 아니오</label>
+    </div>
+  </div>
+
+  <div class="survey-q" id="q2">
+    <p class="survey-q-text">2. 평소에 쇼핑을 많이 하는 편인가요?<span class="required">*</span></p>
+    <div class="survey-options">
+      <label class="survey-option"><input type="radio" name="q2" value="yes"> 예</label>
+      <label class="survey-option"><input type="radio" name="q2" value="no"> 아니오</label>
+    </div>
+  </div>
+
+  <div class="survey-q" id="q3">
+    <p class="survey-q-text">3. 지인들 사이에서 나름 평판이 괜찮은 편인가요?<span class="required">*</span></p>
+    <div class="survey-options">
+      <label class="survey-option"><input type="radio" name="q3" value="yes"> 예</label>
+      <label class="survey-option"><input type="radio" name="q3" value="no"> 아니오</label>
+    </div>
+  </div>
+
+  <div class="survey-q" id="q4">
+    <p class="survey-q-text">4. 평소에 좋은 앱이나 서비스를 주변에 소개하는 편인가요?<span class="required">*</span></p>
+    <div class="survey-options">
+      <label class="survey-option"><input type="radio" name="q4" value="yes"> 예</label>
+      <label class="survey-option"><input type="radio" name="q4" value="no"> 아니오</label>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─── 결과 확인 버튼 ─── -->
+<div class="result-btn-section" id="resultBtn">
+  <button class="btn-result" onclick="showResults()">👀 결과 확인해요 →</button>
+</div>
+
+<!-- ─── 굵은 구분선 ─── -->
+<div class="thick-divider" id="divider"></div>
+
+<!-- ─── SEC-04 결과 타이틀 ─── -->
+<div class="result-title-section" id="resultTitle">
+  <h2 class="result-title">🏆 고객님에게 <span class="accent">딱 맞는 대출방식이 있어요!</span></h2>
+  <p class="result-sub">원하는 대출 방식을 클릭해요.</p>
+</div>
+
+<!-- ─── SEC-05 카드 영역 ─── -->
+<div class="card-section" id="cardSection">
+  <a class="card-link" id="card-credit" href="credit.html">
+    <img src="../imgs/loan-match/신용점수만민고돈빌리기.png" alt="신용점수만 믿고 돈 빌리기" />
+  </a>
+  <a class="card-link" id="card-shopping" href="shopping.html">
+    <img src="../imgs/loan-match/쇼핑내역을제출하고돈빌리기.png" alt="쇼핑 내역을 제출하고 돈 빌리기" />
+  </a>
+  <a class="card-link" id="card-reputation" href="reputation.html">
+    <img src="../imgs/loan-match/내평판을검증받고돈빌리기.png" alt="내 평판을 검증받고 돈 빌리기" />
+  </a>
+  <a class="card-link" id="card-contribution" href="contribution.html">
+    <img src="../imgs/loan-match/앱성장을기여하고돈빌리기.png" alt="앱 성장에 기여하고 돈 빌리기" />
+  </a>
+</div>
+
+<!-- ─── SEC-06 하단 BACK ─── -->
+<div class="bottom-back">
+  <a class="back-btn" href="index.html">⬅ BACK</a>
+</div>
+
+<!-- ─── FOOTER (공용 footer.js) ─── -->
+<script src="/footer.js"></script>
+
+<script>
+  /* ═══════════════════════════════════════════════
+     📋 설정 영역 — 여기만 수정하면 순서·매핑 변경 가능
+     ═══════════════════════════════════════════════ */
+
+  // 질문 순서 (HTML의 id와 매칭)
+  // → 순서를 바꾸고 싶으면 배열 순서만 변경
+  var QUESTION_ORDER = ['q1', 'q2', 'q3', 'q4'];
+
+  // 질문별 "예" 선택 시 → 표시할 카드 매핑
+  // → 카드 id: card-shopping, card-contribution, card-credit, card-reputation
+  // → 매핑을 바꾸고 싶으면 질문 키와 카드 id만 변경
+  var YES_CARD_MAP = {
+    'q1': 'card-credit',         // Q1 예 → 신용점수만 믿고
+    'q2': 'card-shopping',       // Q2 예 → 쇼핑 내역을 제출하고
+    'q3': 'card-reputation',     // Q3 예 → 내 평판을 검증받고
+    'q4': 'card-contribution'    // Q4 예 → 앱 성장에 기여하고
+  };
+
+  // 전부 "아니오"일 때 → 모든 카드 표시 여부
+  var SHOW_ALL_IF_NONE = true;
+
+  /* ═══════════════════════════════════════════════
+     ⚙️ 로직 영역 — 수정 불필요
+     ═══════════════════════════════════════════════ */
+
+  // 라디오 버튼 클릭 시 → 다음 질문 순차 노출
+  document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      // 선택된 옵션 스타일
+      var options = this.closest('.survey-options').querySelectorAll('.survey-option');
+      options.forEach(function(opt) { opt.classList.remove('selected'); });
+      this.closest('.survey-option').classList.add('selected');
+
+      var currentQ = this.name;
+      var currentIndex = QUESTION_ORDER.indexOf(currentQ);
+
+      // 다음 질문 표시
+      if (currentIndex < QUESTION_ORDER.length - 1) {
+        var nextQ = document.getElementById(QUESTION_ORDER[currentIndex + 1]);
+        nextQ.classList.add('visible');
+        setTimeout(function() {
+          nextQ.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 150);
+      }
+
+      // 마지막 질문 답변 시 → "결과 확인" 버튼 표시
+      if (currentIndex === QUESTION_ORDER.length - 1) {
+        var btn = document.getElementById('resultBtn');
+        btn.classList.add('visible');
+        setTimeout(function() {
+          btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 150);
+      }
+    });
+  });
+
+  // 결과 확인 버튼 클릭
+  function showResults() {
+    // "예" 선택한 질문에 매핑된 카드만 표시
+    var allCards = document.querySelectorAll('.card-link');
+    var visibleCards = [];
+
+    QUESTION_ORDER.forEach(function(qName) {
+      var selected = document.querySelector('input[name="' + qName + '"]:checked');
+      if (selected && selected.value === 'yes' && YES_CARD_MAP[qName]) {
+        visibleCards.push(YES_CARD_MAP[qName]);
+      }
+    });
+
+    // "예"가 하나도 없으면 → 설정에 따라 전체 표시 or 전체 숨김
+    if (visibleCards.length === 0 && SHOW_ALL_IF_NONE) {
+      allCards.forEach(function(card) { card.style.display = 'block'; });
+    } else {
+      allCards.forEach(function(card) { card.style.display = 'none'; });
+      visibleCards.forEach(function(cardId) {
+        var card = document.getElementById(cardId);
+        if (card) card.style.display = 'block';
+      });
+    }
+
+    // 결과 영역 표시
+    document.getElementById('divider').classList.add('visible');
+    document.getElementById('resultTitle').classList.add('visible');
+    document.getElementById('cardSection').classList.add('visible');
+
+    setTimeout(function() {
+      document.getElementById('resultTitle').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
+  }
+</script>
+
+</body>
+</html>

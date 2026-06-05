@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>20만 원 1개월 | 이포 상품 | nanocredit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand:     #380097;
+      --nc-purple: #4432A2;
+      --nc-btn:    #AFA9FD;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #E5E7EB;
+      padding: 0 24px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 800; color: var(--nc-purple);
+      text-decoration: none; letter-spacing: -0.5px;
+    }
+    .nav-hamburger {
+      background: none; border: none; cursor: pointer; padding: 4px;
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--nc-purple); border-radius: 2px;
+    }
+
+    /* ─── 공통 이미지 ─── */
+    .sec-img { width: 100%; display: block; }
+
+    /* ─── 상품 정보 ─── */
+    #product-info {
+      padding: 32px 24px 28px;
+      background: #fff;
+      border-bottom: 1px solid #F0EDF8;
+    }
+    .product-name {
+      font-size: 30px; font-weight: 900;
+      color: #111; letter-spacing: -1px; line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .product-sub {
+      font-size: 16px; color: #666;
+      letter-spacing: -0.3px;
+    }
+
+    /* ─── 비교 테이블 공통 ─── */
+    .compare-section {
+      padding: 40px 24px 20px;
+      background: #fff;
+    }
+    .compare-title {
+      font-size: 22px; font-weight: 900;
+      color: #111; letter-spacing: -0.8px;
+      margin-bottom: 20px; line-height: 1.4;
+    }
+    .table-wrap { overflow-x: auto; }
+    .nc-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 13px; min-width: 480px;
+    }
+    .nc-table th {
+      background: #F87171; color: #fff;
+      padding: 10px 8px; text-align: center;
+      font-weight: 700; border: 1px solid #fca5a5;
+      white-space: nowrap;
+    }
+    .nc-table td {
+      padding: 10px 8px; text-align: center;
+      border: 1px solid #F0EDF8; color: #222;
+      vertical-align: middle; line-height: 1.6;
+      white-space: nowrap;
+    }
+    .nc-table tr:nth-child(odd)  { background: #fff; }
+    .nc-table tr:nth-child(even) { background: #FFF7F7; }
+    .nc-table .td-left { text-align: left; }
+    .nc-table .total-cell { font-weight: 800; color: var(--nc-purple); text-align: right; }
+    .nc-table .small-note { font-size: 11px; color: #888; display: block; }
+    .seat-dot {
+      display: inline-block; width: 12px; height: 12px;
+      border-radius: 2px; margin-right: 4px; vertical-align: middle;
+    }
+
+    /* ─── 대출 옵션 카드 ─── */
+    .option-section {
+      padding: 0 24px 32px;
+      background: #fff;
+    }
+    .option-card {
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 20px;
+      background: #fff;
+    }
+    .option-card-title {
+      font-size: 18px; font-weight: 900;
+      color: #111; letter-spacing: -0.5px;
+      margin-bottom: 14px; line-height: 1.5;
+    }
+    .option-list {
+      list-style: none; padding: 0; margin: 0;
+    }
+    .option-list > li {
+      display: flex; align-items: flex-start; gap: 8px;
+      margin-bottom: 10px;
+      font-size: 16px; color: #333; line-height: 1.7;
+    }
+    .option-list > li::before {
+      content: '✓'; color: #888;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .option-li-body { flex: 1; }
+    .option-sub {
+      list-style: none; padding: 0;
+      margin: 6px 0 4px 20px;
+    }
+    .option-sub li {
+      display: flex; align-items: flex-start; gap: 6px;
+      margin-bottom: 4px;
+      font-size: 15px; color: #555; line-height: 1.7;
+    }
+    .option-sub li::before {
+      content: '○'; flex-shrink: 0; margin-top: 1px;
+    }
+    .option-red {
+      color: #DC2626; font-weight: 800;
+    }
+
+    /* ─── 대출 이력과 상태 설명 ─── */
+    .ls-box {
+      margin: 20px 0 20px;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .ls-title { font-size: 16px; font-weight: 900; color: #111; margin-bottom: 12px; }
+    .ls-main { list-style: none; padding: 0; margin: 0; }
+    .ls-main > li { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 8px; }
+    .ls-sub { list-style: none; padding: 0; margin: 4px 0 0 12px; }
+    .ls-sub li { font-size: 15px; font-weight: 400; color: #444; margin-bottom: 3px; padding-left: 1.2em; text-indent: -1.2em; line-height: 1.6; }
+    .ls-sub li::before { content: "○  "; font-size: 10px; color: #888; }
+
+    /* ─── 웨이팅 포인트 구독 안내 ─── */
+    .wn-wrap { margin: 16px 24px 32px; }
+    .wn-title { font-size: 18px; font-weight: 900; color: #C0392B; margin-bottom: 20px; line-height: 1.4; }
+    .wn-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 16px; }
+    .wn-num {
+      flex-shrink: 0; width: 20px; height: 20px;
+      background: #C0392B; color: #fff;
+      border-radius: 4px; font-size: 12px; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .wn-body { font-size: 14px; line-height: 1.6; color: #111; }
+    .wn-body strong { font-size: 15px; font-weight: 900; display: block; margin-bottom: 2px; }
+
+    /* ─── 크레딧 미션이란? ─── */
+    .cm-box {
+      margin: 16px 24px 0;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 18px 16px;
+    }
+    .cm-title { font-size: 18px; font-weight: 900; color: #111; margin-bottom: 14px; }
+    .cm-list { list-style: none; padding: 0; margin: 0 0 14px 0; }
+    .cm-list li {
+      font-size: 14px; line-height: 1.65; color: #111;
+      padding: 5px 0 5px 20px; position: relative;
+      border-bottom: 0.5px solid #E5E7EB;
+    }
+    .cm-list li:last-child { border-bottom: none; }
+    .cm-list li::before { content: "✓"; position: absolute; left: 0; color: var(--nc-purple); font-weight: 700; }
+    .cm-highlight {
+      background: #FFF3F3; border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 15px; font-weight: 800; color: #DC2626; line-height: 1.5;
+    }
+
+    /* ─── 한도상향 안내 섹션 ─── */
+    .limit-up-section { padding: 32px 24px 40px; }
+    .limit-up-box {
+      border: 1.5px solid #D1D5DB;
+      border-radius: 12px;
+      padding: 18px 16px;
+    }
+    .limit-up-check {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: #F0FDF4; border: 1px solid #86EFAC;
+      border-radius: 10px; padding: 14px 16px; margin-bottom: 16px;
+    }
+    .limit-up-check-icon { font-size: 20px; flex-shrink: 0; }
+    .limit-up-check p { font-size: 16px; font-weight: 700; color: #166534; line-height: 1.5; margin: 0; }
+    .limit-up-underline { text-decoration: underline; }
+    .limit-up-quote {
+      background: #F9FAFB; border-left: 3px solid #D1D5DB;
+      border-radius: 6px; padding: 14px 16px;
+      font-size: 14px; color: #6B7280;
+      line-height: 1.6; margin-bottom: 20px; font-style: italic;
+    }
+    .limit-up-title { font-size: 16px; font-weight: 800; color: #111; margin-bottom: 10px; margin-top: 4px; }
+    .limit-up-list { list-style: none; padding: 0; margin: 0 0 0 0; }
+    .limit-up-list li {
+      font-size: 15px; line-height: 1.6; color: #111;
+      padding: 5px 0 5px 20px; position: relative;
+      border-bottom: 0.5px solid #E5E7EB;
+    }
+    .limit-up-list li:last-child { border-bottom: none; }
+    .limit-up-list li::before { content: "✓"; position: absolute; left: 0; color: var(--nc-purple); font-weight: 700; }
+    .limit-red { color: #DC2626; font-weight: 700; }
+    .limit-bold { font-weight: 800; }
+
+    /* ─── 웨이팅 보상 섹션 ─── */
+    .waiting-section {
+      padding: 0 24px 40px;
+      background: #fff;
+    }
+    .waiting-main-title {
+      font-size: 22px; font-weight: 900;
+      color: #111; letter-spacing: -0.8px;
+      margin: 8px 0 20px;
+    }
+    .waiting-sub-title {
+      background: #FFF0F0;
+      border-left: 4px solid #F87171;
+      padding: 12px 16px;
+      font-size: 15px; font-weight: 700;
+      color: #333; border-radius: 0 6px 6px 0;
+      margin-bottom: 12px; margin-top: 28px;
+    }
+
+    /* ─── 메인 섹션 ─── */
+    .main-section {
+      padding: 36px 24px 0;
+      background: #fff;
+    }
+    .main-heading {
+      font-size: 26px; font-weight: 900;
+      color: #111; letter-spacing: -0.8px; line-height: 1.4;
+      margin-bottom: 24px;
+    }
+
+    /* ─── 콜아웃 박스 (노란/베이지) ─── */
+    .callout-yellow {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      font-size: 16px; color: #222;
+      line-height: 1.85; letter-spacing: -0.2px;
+    }
+    .callout-yellow .callout-head {
+      font-weight: 900; font-size: 22px;
+      color: #111; margin-bottom: 0; letter-spacing: -0.5px;
+    }
+    .callout-yellow ul { padding-left: 20px; margin-top: 12px; }
+    .callout-yellow ul li { margin-bottom: 8px; font-size: 17px; }
+    .callout-yellow .highlight-link {
+      color: #4432A2; font-weight: 700;
+      text-decoration: underline; cursor: pointer;
+    }
+
+    /* ─── 소통거리 추가 콘텐츠 ─── */
+    .content-block {
+      padding: 0 24px;
+      margin-bottom: 16px;
+    }
+    .content-text { display: none; }
+    .info-box {
+      background: #F3F4F6;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 12px 0;
+      font-size: 18px; font-weight: 700; color: #222;
+      line-height: 1.8; letter-spacing: -0.3px;
+    }
+    .info-box .info-sub {
+      font-size: 17px; font-weight: 400; color: #444;
+      margin-top: 8px; line-height: 1.85;
+    }
+    .question-box { display: none; }
+    .howto-box { display: none; }
+    .howto-box .howto-title { display: none; }
+    .warning-block {
+      padding: 4px 24px 8px;
+    }
+    .warning-title {
+      font-size: 20px; font-weight: 800;
+      color: #111; margin-bottom: 10px;
+    }
+    .warning-block ul {
+      padding-left: 18px;
+      font-size: 17px; color: #333; line-height: 1.85;
+    }
+    .warning-block ul li { margin-bottom: 10px; }
+    .badge-red {
+      display: inline;
+      background: #FEE2E2; color: #B91C1C;
+      padding: 1px 6px; border-radius: 4px;
+      font-size: 14px;
+    }
+    .badge-red-bold {
+      display: inline;
+      background: #FEE2E2; color: #B91C1C;
+      padding: 1px 6px; border-radius: 4px;
+      font-size: 14px; font-weight: 800;
+    }
+
+    /* ─── 화살표 ─── */
+    .arrow-wrap {
+      text-align: center;
+      padding: 20px 0 12px;
+      background: #fff;
+    }
+    .arrow-img { width: auto; height: auto; display: inline-block; max-width: 100%; }
+
+    /* ─── 심사 완료 후 소제목 섹션 ─── */
+    .review-sections {
+      padding: 28px 24px 8px;
+      background: #fff;
+    }
+    .review-item { margin-bottom: 24px; }
+    .review-item-title {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 22px; font-weight: 900;
+      color: #111; letter-spacing: -0.5px;
+      background: #FFFBEB; border: 1px solid #FDE68A;
+      border-radius: 8px; padding: 14px 18px;
+      margin-bottom: 12px;
+    }
+    .review-item p {
+      font-size: 17px; color: #444;
+      line-height: 1.85; letter-spacing: -0.2px;
+      padding-left: 4px;
+    }
+
+    /* ─── 하단 CTA ─── */
+    .cta-section {
+      padding: 32px 24px 48px;
+      background: #fff;
+    }
+    .nanocreditButton {
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; height: 80px;
+      border: 1px solid; border-radius: 10px;
+      font-size: 25px; font-weight: bold;
+      text-decoration: none;
+      color: #4432A2; background-color: #AFA9FD; border-color: #AFA9FD;
+      transition: 200ms;
+    }
+    .nanocreditButton:hover { color: #4432A2; background-color: #fff; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fff;
+      padding: 32px 20px 48px;
+      border-top: 1px solid #E5E7EB;
+    }
+    .footer-logo {
+      font-size: 18px; font-weight: 800;
+      color: var(--nc-purple); margin-bottom: 12px;
+    }
+    .footer-info { font-size: 12px; color: #888; line-height: 1.8; }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a class="nav-logo" href="../">nanocredit</a>
+  <button class="nav-hamburger" aria-label="메뉴">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── 상품 배너 ─── -->
+<img class="sec-img"
+  src="../../imgs/nanocredit/nanocredit_20.webp"
+  alt="20만 원 1개월 원리현 상품" />
+
+<!-- ─── 상품 정보 ─── -->
+<section id="product-info">
+  <h1 class="product-name">이포 상품</h1>
+  <p class="product-sub">이자를 포인트로 갚는 방식</p>
+  <p class="product-sub">기본 상품은 웨이팅 대출입니다.</p>
+</section>
+
+<!-- ─── 비교 테이블 ─── -->
+<div class="compare-section">
+  <h2 class="compare-title">🔍 비교하세요.<br>웨이팅 🆚 롸잇나우 🆚 블랙찬스 🆚 이벤트</h2>
+
+  <!-- 대출 옵션 카드 -->
+  <div style="margin-bottom: 24px;">
+
+    <div class="option-card">
+      <p class="option-card-title">⏳ 웨이팅 대출 → 포인트 적립이 힘들다면.</p>
+      <ul class="option-list">
+        <li><div class="option-li-body">매월 1일 ~ 25일 기간에 대출을 미리 신청하고, 다음 달 1일 ~ 5일에 대출 심사를 받아요.</div></li>
+        <li><div class="option-li-body">일찍 웨이팅 할수록 포인트 할인 및 인하 폭이 커져요.</div></li>
+        <li><div class="option-li-body"><span class="option-red">Tip! 신청을 서두르면, 포인트 거의 적립 하지 않고 대출을 받을 수도 있어요!</span></div></li>
+      </ul>
+    </div>
+
+    <div class="option-card">
+      <p class="option-card-title">🚴 롸잇나우 대출 → 한도상향이 필요하다면.</p>
+      <ul class="option-list">
+        <li><div class="option-li-body">모든 대출 금액이 원리포 상품 입니다.</div></li>
+        <li><div class="option-li-body">원리포 상품이란?
+          <ul class="option-sub">
+            <li>원금의 일부와 이자를 포인트로 상환합니다.</li>
+            <li>크레딧 미션 + 이자 미션 (1%) + 원금 미션 (10%)</li>
+          </ul>
+        </div></li>
+        <li><div class="option-li-body"><span class="option-red">모든 미션 완료하면 바로 대출 심사 진행합니다.</span></div></li>
+      </ul>
+    </div>
+
+    <div class="option-card">
+      <p class="option-card-title">👑 블랙찬스 티켓 → 대우받고 싶다면.</p>
+      <ul class="option-list">
+        <li><div class="option-li-body">블랙찬스 티켓 보유 고객님만 이용가능합니다.</div></li>
+        <li><div class="option-li-body">모든 금액을 원리현, 이포, 원리포 상품으로 이용 가능합니다.
+          <ul class="option-sub">
+            <li>원리현 상품 : 크레딧 미션</li>
+            <li>이포 상품 : 크레딧 미션 + 이자 미션(1%)</li>
+            <li>원리포 상품 : 크레딧 미션 + 이자 미션(1%) + 원금 미션(4%)</li>
+          </ul>
+        </div></li>
+        <li><div class="option-li-body">
+          <span class="option-red">모든 미션 완료하면 바로 대출 심사 진행합니다.</span>
+          <ul class="option-sub">
+            <li>단, 원리현은 다음 달 1~5일 심사</li>
+          </ul>
+        </div></li>
+      </ul>
+    </div>
+
+    <div class="option-card">
+      <p class="option-card-title">🎊 이벤트 대출 → 빠르게 대출 받고 싶다면.</p>
+      <ul class="option-list">
+        <li><div class="option-li-body">모든 대출 금액이 이포 상품 입니다.</div></li>
+        <li><div class="option-li-body">이포 상품이란?
+          <ul class="option-sub">
+            <li>원금은 현금으로 이자는 포인트로 상환합니다.</li>
+            <li>크레딧 미션 + 이자 미션 (1%)</li>
+            <li>월별 대출 신청 페이지에서 안내드린 바와 같이, 변경된 크레딧 미션을 따라 주셔야 합니다.</li>
+          </ul>
+        </div></li>
+        <li><div class="option-li-body"><span class="option-red">모든 미션 완료하면 바로 대출 심사 진행합니다.</span></div></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="table-wrap">
+    <table class="nc-table">
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>좌석</th>
+          <th>심사</th>
+          <th>상품</th>
+          <th>크레딧 미션</th>
+          <th>이자 미션</th>
+          <th>원금 미션</th>
+          <th>합계</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-left">웨이팅 대출</td>
+          <td class="td-left">🟧 Box Seat</td>
+          <td>매월 1 ~ 5일</td>
+          <td>이포 상품</td>
+          <td>2,500포<span class="small-note">(최대 50% 할인)</span></td>
+          <td>2,000포<span class="small-note">(1%)</span></td>
+          <td>없음</td>
+          <td class="total-cell">최소 4,500포</td>
+        </tr>
+        <tr>
+          <td class="td-left">롸잇나우 대출</td>
+          <td class="td-left">🟥 Free Seat</td>
+          <td>매일</td>
+          <td>원리포 상품</td>
+          <td>5,000포<span class="small-note">(할인 없음)</span></td>
+          <td>2,000포<span class="small-note">(1%)</span></td>
+          <td>20,000포<span class="small-note">(10%)</span></td>
+          <td class="total-cell">27,000포</td>
+        </tr>
+        <tr>
+          <td class="td-left">블랙찬스 대출</td>
+          <td class="td-left">⬛ Thanks Seat</td>
+          <td>매일</td>
+          <td>이포 상품</td>
+          <td>5,000포<span class="small-note">(할인 없음)</span></td>
+          <td>2,000포<span class="small-note">(1%)</span></td>
+          <td>감면</td>
+          <td class="total-cell">7,000포</td>
+        </tr>
+        <tr>
+          <td class="td-left">이벤트 대출</td>
+          <td class="td-left">🟪 Special Seat</td>
+          <td>매일</td>
+          <td>이포 상품</td>
+          <td>8,000포<span class="small-note">(할인 없음)</span></td>
+          <td>2,000포<span class="small-note">(1%)</span></td>
+          <td>감면</td>
+          <td class="total-cell">10,000포</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ─── 한도상향 안내 ─── -->
+<div class="limit-up-section">
+  <div class="limit-up-box">
+
+    <div class="limit-up-check">
+      <span class="limit-up-check-icon">✅</span>
+      <p>한도상향은 승인 여부와 상관없이 무조건 <span class="limit-up-underline">원리포 상품으로 신청해야 합니다.</span></p>
+    </div>
+
+    <div class="limit-up-quote">
+      고객님 왈, "마지막에 10만 원을 이용했어요. 그리고 블랙찬스 티켓을 보유하고 있지 않아요. 지금 20만 원으로 신청하고 싶어요. 어떻게 하면 되나요?"
+    </div>
+
+    <p class="limit-up-title">1. 웨이팅 대출 20만 원 :</p>
+    <ul class="limit-up-list">
+      <li>크레딧 미션 : 5,000포 → 신청 시기별 최대 50% <span class="limit-red">2,500포까지</span> 할인</li>
+      <li>이자 미션 : 1% 2,000포</li>
+      <li>원금 미션 : 10% 20,000포 → 신청 시기별 최대 1% <span class="limit-red">2,000포까지</span> 인하</li>
+      <li>블랙찬스 티켓 지급 : 다음 대출에 (1)원금 미션 인하된 원리포 상품 (2)이자 미션만 있는 이포 상품 (3)크레딧 미션만 있는 원리현 상품 중 하나 이용 가능</li>
+      <li class="limit-red limit-bold">다음 달 1일 ~ 5일 심사</li>
+    </ul>
+
+    <p class="limit-up-title">2. 롸잇나우 대출 20만 원 :</p>
+    <ul class="limit-up-list">
+      <li>크레딧 미션 5,000포 + 이자 미션 1% 2,000포 + 원금 미션 10% 20,000포</li>
+      <li>블랙찬스 티켓 지급 : 다음 대출에 (1)원금 미션 인하된 원리포 상품 (2)이자 미션만 있는 이포 상품 (3)크레딧 미션만 있는 원리현 상품 중 하나 이용 가능</li>
+      <li class="limit-red limit-bold">바로 심사</li>
+    </ul>
+
+  </div>
+</div>
+
+<!-- ─── 웨이팅 대출 보상 두 가지 ─── -->
+<div class="waiting-section">
+  <h2 class="waiting-main-title">💛 웨이팅 대출 보상 두 가지</h2>
+
+  <!-- 첫 번째 보상 -->
+  <div class="waiting-sub-title">(1)첫 번째 보상 : 크레딧 미션 할인</div>
+  <div class="table-wrap">
+    <table class="nc-table">
+      <thead>
+        <tr>
+          <th>좌석명</th>
+          <th>신청기간</th>
+          <th>심사</th>
+          <th>Clean</th>
+          <th>Non-Clean</th>
+          <th>One</th>
+          <th>Several</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-left">Box Seat (귀빈석)</td>
+          <td>1일 ~ 5일</td>
+          <td>매월 1 ~ 5일</td>
+          <td>2,500포<span class="small-note">(50%▼)</span></td>
+          <td>3,750포<span class="small-note">(25%▼)</span></td>
+          <td>3,000포<span class="small-note">(40%▼)</span></td>
+          <td>4,000포<span class="small-note">(20%▼)</span></td>
+        </tr>
+        <tr>
+          <td class="td-left">VIP Seat (1열)</td>
+          <td>6일 ~ 10일</td>
+          <td>매월 1 ~ 5일</td>
+          <td>2,750포<span class="small-note">(45%▼)</span></td>
+          <td>4,000포<span class="small-note">(20%▼)</span></td>
+          <td>3,250포<span class="small-note">(35%▼)</span></td>
+          <td>4,250포<span class="small-note">(15%▼)</span></td>
+        </tr>
+        <tr>
+          <td class="td-left">Royal Seat (2열)</td>
+          <td>11일 ~ 15일</td>
+          <td>매월 1 ~ 5일</td>
+          <td>3,000포<span class="small-note">(40%▼)</span></td>
+          <td>4,250포<span class="small-note">(15%▼)</span></td>
+          <td>3,500포<span class="small-note">(30%▼)</span></td>
+          <td>4,500포<span class="small-note">(10%▼)</span></td>
+        </tr>
+        <tr>
+          <td class="td-left">Standard Seat (3열)</td>
+          <td>16일 ~ 20일</td>
+          <td>매월 1 ~ 5일</td>
+          <td>3,250포<span class="small-note">(35%▼)</span></td>
+          <td>4,500포<span class="small-note">(10%▼)</span></td>
+          <td>3,750포<span class="small-note">(25%▼)</span></td>
+          <td>4,750포<span class="small-note">(5%▼)</span></td>
+        </tr>
+        <tr>
+          <td class="td-left">Original Seat (입석)</td>
+          <td>21일 ~ 25일</td>
+          <td>매월 1 ~ 5일</td>
+          <td>3,500포<span class="small-note">(30%▼)</span></td>
+          <td>4,750포<span class="small-note">(5%▼)</span></td>
+          <td>4,000포<span class="small-note">(20%▼)</span></td>
+          <td>5,000포<span class="small-note">(0%▼)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 대출 이력과 상태 설명 -->
+  <div class="ls-box">
+    <p class="ls-title">✅ 대출 이력과 상태는 뭔가요?</p>
+    <ul class="ls-main">
+      <li>웨이팅 &gt; 재대출 : 이용 경험 있음
+        <ul class="ls-sub">
+          <li>Clean : 마지막 상환이 정상 상환</li>
+          <li>Non-Clean : 마지막 상환이 연장, 연체 상환</li>
+        </ul>
+      </li>
+      <li>웨이팅 &gt; 신규 : 이용 경험 없음
+        <ul class="ls-sub">
+          <li>One : 오늘이 생애 처음 신청</li>
+          <li>Several : 예전에 신청은 해 본 적 있음</li>
+        </ul>
+      </li>
+      <li>롸잇나우 &gt; 모든 고객 : 이용했던 안했던
+        <ul class="ls-sub">
+          <li>No Matter : 누구나 이용 가능</li>
+        </ul>
+      </li>
+      <li>블랙찬스 &gt; 바로 재대출 : 원리포 상품 상환 후 바로 이용
+        <ul class="ls-sub">
+          <li>블찬원 : 원금 미션을 4%로 인하</li>
+          <li>블찬이 : 30, 50만 원을 이포 상환 방식으로 이용</li>
+          <li>블찬현 : 20, 30, 50만 원을 원리현 상환 방식으로 이용</li>
+        </ul>
+      </li>
+      <li>이벤트 대출 &gt; 매월 한정 스페셜티 : 바로 심사 가능
+        <ul class="ls-sub">
+          <li>벚꽃🌸대출, 장미🌹대출, 월드컵⚽️대출 등등 : 원금 미션 감면</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 두 번째 보상 -->
+  <div class="waiting-sub-title">(2)두 번째 보상 : 원리포 상품 이용 시 원금 미션 인하</div>
+  <div class="table-wrap">
+    <table class="nc-table">
+      <thead>
+        <tr>
+          <th>좌석명</th>
+          <th>신청 기간</th>
+          <th>심사</th>
+          <th>포인트</th>
+          <th>인하율</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-left">Box Seat (귀빈석)</td>
+          <td>1일 ~ 5일</td>
+          <td>매월 1 ~ 5일</td>
+          <td>20,000포 → 2,000포</td>
+          <td>10% → 1%<span class="small-note">(90%▼)</span></td>
+        </tr>
+        <tr>
+          <td class="td-left">VIP Seat (1열)</td>
+          <td>6일 ~ 10일</td>
+          <td>매월 1 ~ 5일</td>
+          <td>20,000포 → 4,000포</td>
+          <td>10% → 2%<span class="small-note">(80%▼)</span></td>
+        </tr>
+        <tr>
+          <td class="td-left">Royal Seat (2열)</td>
+          <td>11일 ~ 15일</td>
+          <td>매월 1 ~ 5일</td>
+          <td>20,000포 → 8,000포</td>
+          <td>10% → 4%<span class="small-note">(60%▼)</span></td>
+        </tr>
+        <tr>
+          <td class="td-left">Standard Seat (3열)</td>
+          <td>16일 ~ 20일</td>
+          <td>매월 1 ~ 5일</td>
+          <td>20,000포 → 12,000포</td>
+          <td>10% → 6%<span class="small-note">(40%▼)</span></td>
+        </tr>
+        <tr>
+          <td class="td-left">Original Seat (입석)</td>
+          <td>21일 ~ 25일</td>
+          <td>매월 1 ~ 5일</td>
+          <td>20,000포 → 16,000포</td>
+          <td>10% → 8%<span class="small-note">(20%▼)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ─── 웨이팅 포인트 구독 안내 ─── -->
+<div class="wn-wrap">
+  <p class="wn-title">🔻 웨이팅 대출은 대신에 이거 하나만 해주세요!</p>
+
+  <div class="wn-item">
+    <div class="wn-num">1</div>
+    <div class="wn-body">
+      <strong>언제부터 언제까지?</strong>
+      툭 접수일(웨이팅 신청일)부터 입금일까지 이어집니다.
+    </div>
+  </div>
+
+  <div class="wn-item">
+    <div class="wn-num">2</div>
+    <div class="wn-body">
+      <strong>포인트 구독을 왜 해야 하나요?</strong>
+      크레딧 할인과 원금 감면 혜택을 유지하려면 고객님의 포인트 구독이 필수에요.
+    </div>
+  </div>
+
+  <div class="wn-item">
+    <div class="wn-num">3</div>
+    <div class="wn-body">
+      <strong>포인트 구독을 하지 않으면?</strong>
+      애석하게도 신청한 대출 건은 거절 처리되며, 모든 미션을 완료해도 심사에서 제외됩니다.
+    </div>
+  </div>
+</div>
+
+<!-- ─── 메인 섹션 ─── -->
+<div class="main-section">
+  <h2 class="main-heading">⬇️ 대출 심사는 이런 순서로 진행돼요.</h2>
+
+  <!-- 콜아웃 1: 크레딧 미션 -->
+  <div class="callout-yellow">
+    <p class="callout-head">1️⃣ 우선 앱에서 크레딧 미션을 완료하세요.</p>
+  </div>
+</div>
+
+<!-- 1️⃣ 크레딧 미션 하위 콘텐츠 -->
+<div style="border-left: 4px solid #FDE68A; margin: 0 24px 16px; padding-left: 16px;">
+  <div class="info-box">
+    심사에 필요한 소통거리를 제출하기 위해서는 크레딧 미션 포인트가 필요합니다. (소통거리 = 심사 자료)
+  </div>
+</div>
+
+<!-- 크레딧 미션이란? -->
+<div class="cm-box">
+  <p class="cm-title">✨ 크레딧 미션이란?</p>
+  <ul class="cm-list">
+    <li>고객님의 신용 정보를 안전하게 조회하여 현재 연체 중인지 확인하는 과정입니다.</li>
+    <li>악성 연체자 여부를 확인합니다. (악성 연체자는 대출이 거절되지만, 미션이란 방법으로 서로간 신뢰를 쌓는다면 대출이 불가능한 것도 아니에요.)</li>
+    <li>연체 원인이 신용회복이나 개인회생 때문인지 구별합니다.</li>
+    <li>이를 통해 현재 상황에 맞는 적절한 대출 조건을 제공할 수 있어요!</li>
+  </ul>
+  <div class="cm-highlight">👍 신용정보조회 비용을 현금 부담 없이 포인트로 해결해요!</div>
+</div>
+
+<!-- 포인트 적립 앱 화면 -->
+<img class="sec-img" style="display:block; margin:0;"
+  src="../../imgs/nanocredit/nanocredit_point.png"
+  alt="포인트 적립 앱 화면 — 마이페이지 신청 확인 / 크레딧 미션 / 포인트 적립소" />
+
+<!-- 크레딧 미션 주의사항 -->
+<div class="warning-block">
+  <p class="warning-title">⚠️ 꼭! 확인해요.</p>
+  <ul>
+    <li><span class="badge-red">48시간 내</span>에 앱에서, 크레딧 미션을 클릭하지 않으면 자동 거절됩니다.</li>
+  </ul>
+</div>
+
+<!-- ─── 화살표 ─── -->
+<div class="arrow-wrap">
+  <img class="arrow-img"
+    src="../../imgs/nanocredit/진행_원형_하단방향화살.png"
+    alt="다음 단계" />
+</div>
+
+<!-- 콜아웃 2: 소통거리 제출 -->
+<div style="padding: 0 24px;">
+  <div class="callout-yellow">
+    <p class="callout-head">2️⃣ 앱에서 소통거리를 제출해주세요.</p>
+  </div>
+</div>
+
+<!-- 2️⃣ 소통거리 하위 콘텐츠 -->
+<div style="border-left: 4px solid #FDE68A; margin: 0 24px 16px; padding-left: 16px;">
+
+  <div class="info-box">
+    심사에 필요한 자료를 받는 과정입니다.
+  </div>
+
+  <div class="info-box">
+    써주세요.는 신용보다 '애티튜드'를 중요시 여겨요.
+    <p class="info-sub">고객님의 소통거리를 통해 상환 능력과 의지를 여러 측면으로 파악해요.</p>
+  </div>
+
+  <div class="info-box">
+    이렇게 하면 우선 심사 대상이 됩니다.
+    <p class="info-sub">① 소통거리를 제출 요건에 맞춰서 앱에 업로드하기<br>② 최신 자료를 최대한 많이 제출하기</p>
+  </div>
+
+</div>
+
+<!-- 소통거리 앱 화면 -->
+<img class="sec-img"
+  src="../../imgs/nanocredit/nanocredit_communication.png"
+  alt="소통거리 제출 앱 화면 — 제출 기한 / 체크리스트 / 검토 중" />
+
+<!-- 소통거리 주의사항 -->
+<div class="warning-block">
+  <p class="warning-title">⚠️ 꼭! 확인해요.</p>
+  <ul>
+    <li><span class="badge-red">48시간 내</span>에 앱에서, 소통거리를 제출하지 않으면 자동 거절됩니다.</li>
+    <li><span class="badge-red-bold">소통거리 반려 2회 초과</span>되면, 자동으로 거절됩니다.</li>
+  </ul>
+</div>
+
+<!-- ─── 화살표 ─── -->
+<div class="arrow-wrap">
+  <img class="arrow-img"
+    src="../../imgs/nanocredit/진행_원형_하단방향화살.png"
+    alt="다음 단계" />
+</div>
+
+<!-- ─── 심사 진행 배너 ─── -->
+<img class="sec-img"
+  src="../../imgs/nanocredit/nanocredit_심사진행.png"
+  alt="여기까지 완료되어야 고객님의 대출 심사가 진행돼요!" />
+
+<!-- ─── 심사 결과 소제목 섹션 ─── -->
+<div class="review-sections">
+
+  <div class="review-item">
+    <h3 class="review-item-title">3️⃣ 대안신용평가</h3>
+    <div style="border-left: 4px solid #FDE68A; padding-left: 16px; margin-bottom: 8px;">
+      <div class="info-box">고객님이 제출한 소통거리로 대출 가능 여부를 파악합니다.</div>
+    </div>
+  </div>
+
+  <div class="review-item">
+    <h3 class="review-item-title">4️⃣ 승인 여부</h3>
+    <div style="border-left: 4px solid #FDE68A; padding-left: 16px; margin-bottom: 8px;">
+      <div class="info-box">대출 승인 여부가 결정되고 최종 한도를 알 수 있습니다.</div>
+    </div>
+  </div>
+
+  <div class="review-item">
+    <h3 class="review-item-title">5️⃣ 계약</h3>
+    <div style="border-left: 4px solid #FDE68A; padding-left: 16px; margin-bottom: 8px;">
+      <div class="info-box">앱에서 계약 체결 후, 고객님 계좌로 지정 시간까지 입금됩니다.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 심사 결과 앱 화면 -->
+<img class="sec-img"
+  src="../../imgs/nanocredit/nanocredit_심사.png"
+  alt="심사 결과 앱 화면 — 심사 중 / 축하합니다 / 계약서 작성" />
+
+<!-- ─── 하단 CTA ─── -->
+<div class="cta-section">
+  <a class="nanocreditButton" href="https://monthly-loan.sirjuseyo.com/apply/apply.html">
+    지금 신청하러 가기
+  </a>
+</div>
+
+<!-- ─── FOOTER (공용 footer.js) ─── -->
+<script src="/footer.js"></script>
+
+</body>
+</html>

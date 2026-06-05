@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>대출 심사 시작 전, 반드시 확인해요 | nanocredit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand:     #380097;
+      --nc-purple: #4432A2;
+      --nc-btn:    #AFA9FD;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─── 페이지 타이틀 ─── */
+    .page-title-section {
+      padding: 40px 24px 28px;
+      background: #fff;
+    }
+    .page-title {
+      font-size: 30px; font-weight: 900;
+      color: #111; line-height: 1.3;
+      letter-spacing: -1.2px;
+      margin-bottom: 20px;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      color: #555;
+      text-decoration: none;
+      background: #fff;
+      cursor: pointer;
+    }
+    .back-btn:hover { background: #f5f5f5; }
+
+    /* ─── 경고 안내 ─── */
+    .warning-notice {
+      margin: 20px 20px 0;
+      background: #F8F8F8;
+      border: 1px solid #E0E0E0;
+      border-radius: 12px;
+      padding: 24px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .warning-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .warning-text .warning-first {
+      font-size: 17px; color: #222;
+      line-height: 1.75; letter-spacing: -0.3px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .warning-text .warning-second {
+      font-size: 18px; color: #222;
+      line-height: 1.75; letter-spacing: -0.3px;
+      font-weight: 500;
+    }
+    .warning-text .red-text {
+      color: #D32F2F; font-weight: 800;
+    }
+    .warning-text .green-text {
+      color: #2E7D32; font-weight: 700;
+    }
+
+    /* ─── 섹션 구분 ─── */
+    .section-divider {
+      height: 10px;
+      background: #F0EDF8;
+    }
+    .section-divider-first {
+      display: none;
+    }
+
+    /* ─── 상품 선택 ─── */
+    .product-select-section {
+      padding: 40px 20px 36px;
+      background: #fff;
+    }
+    .product-select-title {
+      font-size: 19px; font-weight: 800;
+      color: #111; letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .badge-popular {
+      display: inline-block;
+      background: #4CAF50;
+      color: #fff;
+      font-size: 14px; font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      letter-spacing: -0.2px;
+    }
+    .cards-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .product-card-banner {
+      display: block;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 14px rgba(68,50,162,0.12);
+      text-decoration: none;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .product-card-banner:hover {
+      box-shadow: 0 6px 24px rgba(68,50,162,0.22);
+      transform: translateY(-2px);
+    }
+    .product-card-banner img {
+      width: 100%; display: block;
+    }
+
+    /* ─── 카톡 진행상황 ─── */
+    .katalk-section-title {
+      font-size: 23px; font-weight: 900;
+      color: #111; letter-spacing: -0.8px;
+      line-height: 1.4;
+      padding: 22px 20px;
+      margin: 0;
+    }
+
+    /* ─── 카톡 박스 ─── */
+    .katalk-box {
+      margin: 0 20px;
+      margin-top: 40px;
+      background: #fff;
+      border: 1px solid #E0E0E0;
+      border-radius: 14px;
+      padding: 0;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .katalk-box img {
+      width: 100%; display: block;
+    }
+
+    /* ─── 채널 버튼 ─── */
+    .channel-btns {
+      display: flex; flex-direction: column;
+      gap: 12px;
+      padding: 24px 20px 32px;
+      background: #fff;
+    }
+    .channel-btn {
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 16px 0;
+      border-radius: 12px;
+      font-size: 15px; font-weight: 700;
+      text-decoration: none;
+      transition: 200ms;
+      letter-spacing: -0.3px;
+    }
+    .channel-btn-add {
+      background: #FEE500;
+      color: #3C1E1E;
+      border: none;
+    }
+    .channel-btn-add:hover { background: #F5DC00; }
+    .channel-btn-chat {
+      background: #3C1E1E;
+      color: #FEE500;
+      border: none;
+    }
+    .channel-btn-chat:hover { background: #2A1515; }
+
+    /* ─── 하단 BACK ─── */
+    .bottom-back {
+      padding: 28px 24px;
+      background: #fff;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fff;
+      padding: 32px 20px 48px;
+      border-top: 1px solid #E5E7EB;
+    }
+    .footer-logo {
+      font-size: 18px; font-weight: 800;
+      color: var(--nc-purple);
+      margin-bottom: 12px;
+    }
+    .footer-info {
+      font-size: 12px; color: #888;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── 페이지 타이틀 ─── -->
+<div class="page-title-section">
+  <h1 class="page-title">대출 심사 시작 전, 반드시 확인해요.</h1>
+  <a class="back-btn" href="../">⬅ BACK</a>
+</div>
+
+<!-- ─── 경고 안내 ─── -->
+<div class="warning-notice">
+  <span class="warning-icon">⚠️</span>
+  <div class="warning-text">
+    <p class="warning-first">이 내용은 대출 심사가 진행되는 필수 절차를 안내합니다.</p>
+    <p class="warning-second">
+      필수 절차를 제대로 완료하지 않을 경우, <span class="red-text">심사가 거절</span>되오니 <span class="green-text">내용을 꼼꼼히 확인해주세요.</span>
+    </p>
+  </div>
+</div>
+
+<!-- ─── 상품 선택 ─── -->
+<section class="product-select-section">
+  <p class="product-select-title">고객님이 희망하는 금액을 확인해 보세요.</p>
+  <span class="badge-popular">인기 상품은 나노크레딧</span>
+  <div class="cards-grid">
+    <a class="product-card-banner" href="../10/">
+      <img src="../../imgs/nanocredit/nanocredit_10.webp" alt="10만 원 1개월 원리현 상품" />
+    </a>
+    <a class="product-card-banner" href="../20/">
+      <img src="../../imgs/nanocredit/nanocredit_20.webp" alt="20만 원 1개월 이포 상품" />
+    </a>
+    <a class="product-card-banner" href="../30/">
+      <img src="../../imgs/nanocredit/nanocredit_30.webp" alt="30만 원 1개월 원리포 상품" />
+    </a>
+    <a class="product-card-banner" href="../50/">
+      <img src="../../imgs/nanocredit/nanocredit_50.webp" alt="50만 원 1개월 원리포 상품" />
+    </a>
+  </div>
+</section>
+
+<!-- ─── 카톡 박스 ─── -->
+<div class="katalk-box">
+  <h2 class="katalk-section-title">🏁 고객님의 진행상황은 카톡에서 확인해요.</h2>
+  <hr style="border: none; border-top: 1px solid #E0E0E0; margin: 0 20px;" />
+  <div style="padding: 16px 20px 0;">
+    <img src="../../imgs/nanocredit/대출시작전반드시확인해요.png" style="width:100%; display:block; border-radius: 8px;"
+    alt="AI 소통사가 대출 신청부터 심사까지 모두 관리해요" />
+  </div>
+  <div class="channel-btns">
+    <a class="channel-btn channel-btn-add" href="https://pf.kakao.com/_AcXXxl" target="_blank">
+      ✚ 신규 채널 추가하기
+    </a>
+    <a class="channel-btn channel-btn-chat" href="https://pf.kakao.com/_AcXXxl/chat" target="_blank">
+      💬 1:1 채팅을 시작하기
+    </a>
+  </div>
+</div>
+
+<!-- ─── 하단 BACK ─── -->
+<div class="bottom-back">
+  <a class="back-btn" href="../">⬅ BACK</a>
+</div>
+
+<!-- ─── FOOTER (공용 footer.js) ─── -->
+<script src="/footer.js"></script>
+
+</body>
+</html>
