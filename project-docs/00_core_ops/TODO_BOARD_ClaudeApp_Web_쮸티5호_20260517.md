@@ -288,7 +288,8 @@
 | T-016 | WT-016 | cea8691 | **검증완료** | 직업과 소득 전체 페이지 일괄 수정 (문구/UI통일/오타/빈페이지 콘텐츠/재직증빙 공식문서/정성평가 섹션) | 쮸티5호 | 2026-05-25 | 【파일】`nanocredit/submissions/job-income/*.html` (12개) + `submissions/index.html` / 머지 `1747938` / 배포 완료 |
 | T-017 | WT-017 | ed9ee47 | **In-Progress** | loan-match 메인 페이지 신규 제작 | 쮸티5호 | 2026-05-30 | 【파일】`loan-match/index.html` / 기획안 기반 신규 생성 |
 | T-018 | WT-018 | d1989bc | **In-Progress** | loan-match 여유있게 빌리기 페이지 신규 제작 | 쮸티5호 | 2026-06-04 | 【파일】`loan-match/browse.html` (신규) + `loan-match/index.html` (링크 변경) |
-| T-019 | WT-019 | - | **In-Progress** | loan-match 신용 대출 페이지 신규 제작 | 쮸티5호 | 2026-06-05 | 【파일】`loan-match/credit.html` (신규) / 기획안(W-017-3) 기반 Coming Soon 페이지 |
+| T-019 | WT-019 | a27b6e5 | **In-Progress** | loan-match 신용 대출 페이지 신규 제작 | 쮸티5호 | 2026-06-05 | 【파일】`loan-match/credit.html` (신규) / 기획안(W-017-3) 기반 Coming Soon 페이지 |
+| T-020 | WT-020 | - | **In-Progress** | 신용 대출 페이지 타이틀 섹션 추가 | 쮸티5호 | 2026-06-05 | 【파일】`loan-match/credit.html` / BACK 아래 페이지 타이틀 추가 (문구 변경: AI→인간미 풀풀 풍기는 사람) |
 
 
 ---
@@ -315,6 +316,7 @@
 | W-017 | P0 | T-017 | 진행중 | **loan-match 메인 페이지 신규 제작** | `loan-match/index.html` | 기획안 기반 "어떻게 돈을 빌릴지부터 확인해요!" 메인 랜딩 페이지 신규 생성 (BACK + 캐릭터 이미지 + 초록 버튼 "즉시 빌리기" + 회색 버튼 "여유있게 빌리기") | 2026-05-30 | 쮸티5호 |
 | W-018 | P0 | T-018 | 진행중 | **loan-match 여유있게 빌리기 페이지 신규 제작** | `loan-match/browse.html` | Tally 모달→HTML 전환, 4개 질문 설문 + 4개 대출방식 카드 (쇼핑/기여/신용/평판) + index.html 회색 버튼 링크 변경 | 2026-06-04 | 쮸티5호 |
 | W-019 | P0 | T-019 | 진행중 | **loan-match 신용 대출 페이지 신규 제작** | `loan-match/credit.html` | 기획안(W-017-3) 기반 "신용이 좋으면 AI가 무이자로 돈을 빌려 드려요" Coming Soon 페이지 신규 생성 (10개 섹션 + Tally 웨이팅 mJD5ad) | 2026-06-05 | 쮸티5호 |
+| W-020 | P0 | T-020 | 진행중 | **신용 대출 페이지 타이틀 섹션 추가** | `loan-match/credit.html` | 페이지 상단에 타이틀 텍스트 섹션 추가: "신용은 중요하지 않아요, 그러나 신용이 좋으면 인간미 풀풀 풍기는 사람이 무이자로 돈을 빌려 드려요." (원본 대비 문구 변경) | 2026-06-05 | 쮸티5호 |
 
 ---
 
