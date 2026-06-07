@@ -128,6 +128,79 @@
       background: linear-gradient(transparent 60%, #B3E5FC 60%);
     }
 
+    /* ─── SEC-07-1 꼭! 확인해요 ─── */
+    .notice-section {
+      padding: 40px 24px;
+      background: #fff;
+    }
+    .notice-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .notice-list {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+    .notice-list > li {
+      font-size: 18px;
+      color: #222;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .notice-list > li:last-child {
+      margin-bottom: 0;
+    }
+    .notice-sub-list {
+      list-style: circle;
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    .notice-sub-list li {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 4px;
+    }
+    .notice-link {
+      color: #D32F2F;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    /* ─── SEC-07-2 추가 혜택 ─── */
+    .benefit-section {
+      padding: 40px 24px;
+      background: #fff;
+      border-top: 1px solid #E5E7EB;
+    }
+    .benefit-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .benefit-box {
+      background: #F8F8F8;
+      border: 1px solid #E0E0E0;
+      border-radius: 12px;
+      padding: 24px 20px;
+    }
+    .benefit-box p {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.7;
+    }
+    .benefit-box .red-accent {
+      color: #D32F2F;
+      font-weight: 700;
+    }
+
     /* ─── SEC-10 CTA 버튼 ─── */
     .cta-section {
       padding: 0 24px 40px;
@@ -246,6 +319,32 @@
 <!-- ─── SEC-07 KCB 기준 신용점수 850점 이상 (이미지) ─── -->
 <div class="sec-light-img">
   <img class="sec-img" src="../imgs/loan-match/KCB_850점이상_신용.png" alt="KCB 기준 신용점수 850점 이상" />
+</div>
+
+<!-- ─── SEC-07-1 꼭! 확인해요 ─── -->
+<div class="notice-section">
+  <p class="notice-title">⚠️ 꼭! 확인해요.</p>
+  <ul class="notice-list">
+    <li>대출 심사가 시작되면 신용평가가 진행돼요.
+      <ul class="notice-sub-list">
+        <li>시중 은행과 동일하게 소득, 직업 등 정량적인 자료로 신용을 평가하여 한도가 결정돼요.</li>
+      </ul>
+    </li>
+    <li>만약 해당 상품에서 애석하게도 승인이 안 될 경우에는 <a class="notice-link" href="browse.html">나머지 대출 방식을 통해</a> 대출을 받을 수 있어요.
+      <ul class="notice-sub-list">
+        <li>오히려 이 방법이 더 빠를 수도 있어요.</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<!-- ─── SEC-07-2 신용이 좋으면 받는 추가 혜택 ─── -->
+<div class="benefit-section">
+  <p class="benefit-title">🔄 신용은 중요하지 않지만, 그러나 신용이 좋으면 받는 추가 혜택</p>
+  <div class="benefit-box">
+    <p>[신용점수만 믿고 돈 빌리기] 방식으로 대출 승인이 된 후,</p>
+    <p style="margin-top: 12px;"><span class="red-accent">정상 상환 1번 할 때마다</span><br>한도가 올라가요!</p>
+  </div>
 </div>
 
 <!-- ─── SEC-08 한도 상향 로드맵 (이미지) ─── -->
