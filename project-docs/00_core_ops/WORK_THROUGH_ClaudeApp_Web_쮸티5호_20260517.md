@@ -1818,6 +1818,7 @@ GitHub Pages 배포:
 | 회차 | 내용 | 커밋 |
 |------|------|------|
 | 1차 | 기획안 기반 `loan-match/shopping.html` 신규 생성 — SEC-01~11 + FOOTER 전체 구현 | `a9639d0` |
+| 2차 | 상단 톤앤매너 신용 페이지와 통일 — 다크 배경→흰색, BACK 라이트, 타이틀 #111 검정. credit.html `.page-title-section` 동일 구조 | `639418e` |
 
 ### 1차 상세
 
