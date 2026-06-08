@@ -301,6 +301,7 @@
 | T-022 | WT-022 | 78f72fc | **진행중(In-Progress)** | 신용 대출 페이지 누락 섹션 2개 추가 | 쮸티5호 | 2026-06-08 | 【파일】`loan-match/credit.html` / feature 원격 푸시 완료 |
 | T-023 | WT-023 | 5389279 | **진행중(In-Progress)** | 신용 대출 페이지 출시 전환 — 웨이팅→신청 변경 | 쮸티5호 | 2026-06-08 | 【파일】`loan-match/credit.html` / feature 원격 푸시 완료 |
 | T-024 | WT-024 | - | **진행중(In-Progress)** | loan-match 쇼핑 대출 페이지 신규 제작 | 쮸티5호 | 2026-06-08 | 【파일】`loan-match/shopping.html` |
+| T-025 | WT-025 | - | **진행중(In-Progress)** | loan-match 페이지 타이틀 font-weight 경량화 (900→700) | 쮸티5호 | 2026-06-08 | 【파일】`loan-match/credit.html`, `loan-match/shopping.html` |
 
 
 ---
@@ -332,6 +333,7 @@
 | W-023 | P0 | T-023 | 완료 | **신용 대출 페이지 출시 전환 — 웨이팅→신청 변경** | `loan-match/credit.html` | ① SEC-09 출시예정+Coming Soon 이미지 삭제 ② CTA 버튼명 "웨이팅하러 가기 >" → "신용 점수만 믿고 돈 빌리기 >" ③ Tally 링크/스크립트 삭제 (신청 링크는 추후 지정) | 2026-06-08 | 쮸티5호 |
 | W-022 | P0 | T-022 | 완료 | **신용 대출 페이지 누락 섹션 2개 추가** | `loan-match/credit.html` | 원본 대비 SEC-07(KCB 850점)과 SEC-08(한도상향) 사이에 텍스트 섹션 2개 통째 누락 — ① "⚠️ 꼭! 확인해요." (신용평가 안내 + 나머지 대출 방식 링크) ② "🔄 신용은 중요하지 않지만, 신용이 좋으면 받는 추가 혜택" (정상 상환 1번 할 때마다 한도 상승 안내). 기획서에도 미반영 상태 → 기획서 업데이트 포함 | 2026-06-08 | 쮸티5호 |
 | W-024 | P0 | T-024 | 완료 | **loan-match 쇼핑 대출 페이지 신규 제작** | `loan-match/shopping.html` | 기획안(W-017-4) 기반 "쇼핑 내역을 제출하고 돈 빌리기" 페이지 신규 생성. 이미지 7종 매핑, SEC-01~11 + FOOTER 구현. 신용(credit.html) 페이지와 동일한 이미지 기반 구조 | 2026-06-08 | 쮸티5호 |
+| W-025 | P0 | T-025 | 완료 | **loan-match 페이지 타이틀 font-weight 경량화** | `loan-match/credit.html`, `loan-match/shopping.html` | 페이지 타이틀 `.page-title` font-weight 900(Black)→700(Bold) 변경. 36px+900 조합이 둔탁하고 답답 → 700으로 원본 노션 느낌에 가깝게 경량화 | 2026-06-08 | 쮸티5호 |
 
 ---
 
