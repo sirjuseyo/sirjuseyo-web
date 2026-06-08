@@ -302,6 +302,7 @@
 | T-023 | WT-023 | 5389279 | **진행중(In-Progress)** | 신용 대출 페이지 출시 전환 — 웨이팅→신청 변경 | 쮸티5호 | 2026-06-08 | 【파일】`loan-match/credit.html` / feature 원격 푸시 완료 |
 | T-024 | WT-024 | - | **진행중(In-Progress)** | loan-match 쇼핑 대출 페이지 신규 제작 | 쮸티5호 | 2026-06-08 | 【파일】`loan-match/shopping.html` |
 | T-025 | WT-025 | - | **진행중(In-Progress)** | loan-match 페이지 타이틀 font-weight 경량화 (900→700) | 쮸티5호 | 2026-06-08 | 【파일】`loan-match/credit.html`, `loan-match/shopping.html` |
+| T-026 | WT-026 | - | **진행중(In-Progress)** | 쇼핑 대출 페이지 누락 문구 추가 | 쮸티5호 | 2026-06-08 | 【파일】`loan-match/shopping.html` |
 
 
 ---
@@ -334,6 +335,7 @@
 | W-022 | P0 | T-022 | 완료 | **신용 대출 페이지 누락 섹션 2개 추가** | `loan-match/credit.html` | 원본 대비 SEC-07(KCB 850점)과 SEC-08(한도상향) 사이에 텍스트 섹션 2개 통째 누락 — ① "⚠️ 꼭! 확인해요." (신용평가 안내 + 나머지 대출 방식 링크) ② "🔄 신용은 중요하지 않지만, 신용이 좋으면 받는 추가 혜택" (정상 상환 1번 할 때마다 한도 상승 안내). 기획서에도 미반영 상태 → 기획서 업데이트 포함 | 2026-06-08 | 쮸티5호 |
 | W-024 | P0 | T-024 | 완료 | **loan-match 쇼핑 대출 페이지 신규 제작** | `loan-match/shopping.html` | 기획안(W-017-4) 기반 "쇼핑 내역을 제출하고 돈 빌리기" 페이지 신규 생성. 이미지 7종 매핑, SEC-01~11 + FOOTER 구현. 신용(credit.html) 페이지와 동일한 이미지 기반 구조 | 2026-06-08 | 쮸티5호 |
 | W-025 | P0 | T-025 | 완료 | **loan-match 페이지 타이틀 font-weight 경량화** | `loan-match/credit.html`, `loan-match/shopping.html` | 페이지 타이틀 `.page-title` font-weight 900(Black)→700(Bold) 변경. 36px+900 조합이 둔탁하고 답답 → 700으로 원본 노션 느낌에 가깝게 경량화 | 2026-06-08 | 쮸티5호 |
+| W-026 | P0 | T-026 | 완료 | **쇼핑 대출 페이지 누락 문구 추가** | `loan-match/shopping.html` | SEC-02~04(WHY 이미지)와 SEC-05(이런생각 이미지) 사이에 "🗣️ 매달 꾸준히 돈을 벌고 있고, 상환능력도 충분하다고 생각하는데 말이죠.." 텍스트 섹션 누락 → 추가 | 2026-06-08 | 쮸티5호 |
 
 ---
 
