@@ -303,6 +303,7 @@
 | T-024 | WT-024 | - | **진행중(In-Progress)** | loan-match 쇼핑 대출 페이지 신규 제작 | 쮸티5호 | 2026-06-08 | 【파일】`loan-match/shopping.html` |
 | T-025 | WT-025 | - | **진행중(In-Progress)** | loan-match 페이지 타이틀 font-weight 경량화 (900→700) | 쮸티5호 | 2026-06-08 | 【파일】`loan-match/credit.html`, `loan-match/shopping.html` |
 | T-026 | WT-026 | - | **진행중(In-Progress)** | 쇼핑 대출 페이지 누락 문구 추가 | 쮸티5호 | 2026-06-08 | 【파일】`loan-match/shopping.html` |
+| T-027 | WT-027 | - | **진행중(In-Progress)** | 쇼핑 대출 페이지 누락 콘텐츠 2개 섹션 추가 | 쮸티5호 | 2026-06-09 | 【파일】`loan-match/shopping.html` |
 
 
 ---
@@ -336,6 +337,7 @@
 | W-024 | P0 | T-024 | 완료 | **loan-match 쇼핑 대출 페이지 신규 제작** | `loan-match/shopping.html` | 기획안(W-017-4) 기반 "쇼핑 내역을 제출하고 돈 빌리기" 페이지 신규 생성. 이미지 7종 매핑, SEC-01~11 + FOOTER 구현. 신용(credit.html) 페이지와 동일한 이미지 기반 구조 | 2026-06-08 | 쮸티5호 |
 | W-025 | P0 | T-025 | 완료 | **loan-match 페이지 타이틀 font-weight 경량화** | `loan-match/credit.html`, `loan-match/shopping.html` | 페이지 타이틀 `.page-title` font-weight 900(Black)→700(Bold) 변경. 36px+900 조합이 둔탁하고 답답 → 700으로 원본 노션 느낌에 가깝게 경량화 | 2026-06-08 | 쮸티5호 |
 | W-026 | P0 | T-026 | 완료 | **쇼핑 대출 페이지 누락 문구 추가** | `loan-match/shopping.html` | SEC-02~04(WHY 이미지)와 SEC-05(이런생각 이미지) 사이에 "🗣️ 매달 꾸준히 돈을 벌고 있고, 상환능력도 충분하다고 생각하는데 말이죠.." 텍스트 섹션 누락 → 추가 | 2026-06-08 | 쮸티5호 |
+| W-027 | P0 | T-027 | 완료 | **쇼핑 대출 페이지 누락 콘텐츠 2개 섹션 추가** | `loan-match/shopping.html` | SEC-06(소비력과구매력)과 SEC-07(쇼핑내역제출) 사이에 원본 텍스트 섹션 2개 누락 → ① "🔥 써주세요.에선 달라요." (불릿 2개) ② "📍 신청 조건은 딱 1가지 만 있으면 돼요." | 2026-06-09 | 쮸티5호 |
 
 ---
 
