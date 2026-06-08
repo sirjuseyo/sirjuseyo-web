@@ -1852,6 +1852,30 @@ GitHub Pages 배포:
 | `credit.html` | `.page-title` | font-weight: 900 | font-weight: 700 |
 | `shopping.html` | `.page-title` | font-weight: 900 | font-weight: 700 |
 
+---
+
+## WT-026 | T-026 쇼핑 대출 페이지 누락 문구 추가
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-026 |
+| WT-ID | WT-026 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-08 |
+| 파일 | `loan-match/shopping.html` |
+| 로컬 커밋 | `821bcb9` |
+
+### 작업 내용
+
+원본 대비 SEC-02~04(WHY 이미지)와 SEC-05(이런생각 이미지) 사이에 텍스트 섹션 누락 → 추가
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | SEC-04-1 전환 문구 신규 추가: "🗣️ 매달 꾸준히 돈을 벌고 있고, 상환능력도 충분하다고 생각하는데 말이죠.." (22px/700, 흰색 배경, 중앙 정렬, padding 48px) | `821bcb9` |
+
 ### 1차 상세
 
 - **SEC-01**: 상단 BACK 버튼 (다크 배경, → browse.html)
