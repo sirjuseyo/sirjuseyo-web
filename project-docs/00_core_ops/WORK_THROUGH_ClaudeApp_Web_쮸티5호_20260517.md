@@ -1819,6 +1819,38 @@ GitHub Pages 배포:
 |------|------|------|
 | 1차 | 기획안 기반 `loan-match/shopping.html` 신규 생성 — SEC-01~11 + FOOTER 전체 구현 | `a9639d0` |
 | 2차 | 상단 톤앤매너 신용 페이지와 통일 — 다크 배경→흰색, BACK 라이트, 타이틀 #111 검정. credit.html `.page-title-section` 동일 구조 | `639418e` |
+| 3차 | 페이지 타이틀 텍스트 원본 복원 — "쇼핑 내역을 제출하고 돈 빌리기" → "신용은 중요하지 않아요, 쇼핑 내역을 제출하면 인간미 풀풀 풍기는 사람이 돈을 빌려 드려요." | `c0d6801` |
+
+---
+
+## WT-025 | T-025 loan-match 페이지 타이틀 font-weight 경량화 (900→700)
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-025 |
+| WT-ID | WT-025 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-08 |
+| 파일 | `loan-match/credit.html`, `loan-match/shopping.html` |
+| 로컬 커밋 | `8166daa` |
+
+### 작업 내용
+
+페이지 타이틀 `.page-title`의 font-weight를 900(Black)→700(Bold)로 경량화. 36px + 900 조합이 둔탁하고 답답해 보이는 문제 해결.
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | credit.html + shopping.html `.page-title` font-weight: 900→700 | `8166daa` |
+
+### 1차 상세
+
+| 파일 | 수정 위치 | 수정 전 | 수정 후 |
+|------|----------|---------|---------|
+| `credit.html` | `.page-title` | font-weight: 900 | font-weight: 700 |
+| `shopping.html` | `.page-title` | font-weight: 900 | font-weight: 700 |
 
 ### 1차 상세
 
