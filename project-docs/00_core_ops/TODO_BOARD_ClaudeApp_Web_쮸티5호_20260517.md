@@ -346,6 +346,7 @@
 | W-029 | P0 | T-029 | 완료 | **쇼핑 대출 페이지 누락 콘텐츠 "꼭! 확인해요" 추가** | `loan-match/shopping.html` | SEC-08(써주세요적사고)과 SEC-09(새로운기회) 사이에 "⚠️ 꼭! 확인해요." 텍스트 섹션(불릿 5개 + 서브불릿) 누락 → 추가 (동일 패턴) | 2026-06-09 | 쮸티5호 |
 | W-030 | P0 | T-030 | 완료 | **쇼핑 대출 페이지 SEC-10 출시예정 이미지 섹션 삭제** | `loan-match/shopping.html` | SEC-10 출시예정+Coming Soon 이미지 섹션 전체 삭제 | 2026-06-09 | 쮸티5호 |
 | W-031 | P0 | T-031 | 완료 | **쇼핑 대출 페이지 CTA 버튼 위치 변경 + 버튼명 변경** | `loan-match/shopping.html` | CTA 버튼을 SEC-09(새로운기회) 바로 아래로 이동 + 버튼명 "웨이팅하러 가기 >" → "쇼핑 내역 제출하고 돈 빌리기 >" 변경 | 2026-06-09 | 쮸티5호 |
+| W-032 | **P0** | - | **대기** | **GitHub Pages Jekyll 빌드로 `_` 시작 이미지 파일 404 오류 수정** | 레포 루트 `.nojekyll` | GitHub Pages는 Jekyll이 기본 활성화되어 `_`(언더스코어)로 시작하는 파일을 무시함. `imgs/nanocredit/Submissions/` 내 `_노션_*.webp`, `_노션_*.png` 5개 파일이 라이브에서 404. 레포 루트에 `.nojekyll` 빈 파일 추가로 해결. 영향 범위: `nanocredit/submissions/index.html` SEC-02,06,07 이미지 + `phone-docs/yakjeong.html` 배너 + `phone-docs/alttul.html` 배너 + `phone-docs/sunbul.html` 배너 | 2026-06-10 | 쮸티5호 |
 
 ---
 
