@@ -25,7 +25,7 @@
     .legal-top {
       background: linear-gradient(135deg, #FFFDE7 0%, #FFF9C4 100%);
       padding: 18px 20px;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       color: #333;
       line-height: 1.6;
@@ -48,7 +48,7 @@
     }
     .logo-copy {
       font-size: 14px;
-      color: #555;
+      color: #7C3AED;
       line-height: 1.5;
       font-weight: 500;
     }
@@ -237,10 +237,10 @@
     .card-hero2 {
       margin: 10px 16px 14px;
       padding: 32px 24px;
-      background: linear-gradient(160deg, #059669 0%, #10B981 50%, #34D399 100%);
+      background: linear-gradient(160deg, #B45309 0%, #D97706 50%, #F59E0B 100%);
       border-radius: 16px;
       text-align: center;
-      box-shadow: 0 8px 32px rgba(5, 150, 105, 0.25);
+      box-shadow: 0 8px 32px rgba(180, 83, 9, 0.25);
     }
     .card-hero2 .hero-line {
       font-size: 16px;
@@ -306,19 +306,24 @@
       border-bottom: none;
     }
     .legal-group-title {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       color: #000;
       margin-bottom: 12px;
     }
     .legal-group-body {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 400;
       color: #000;
       line-height: 1.8;
     }
     .legal-group-body p {
       margin-bottom: 6px;
+      padding-left: 1em;
+      text-indent: -1em;
+    }
+    .legal-group-body p::before {
+      content: "• ";
     }
     .legal-group-body p:last-child {
       margin-bottom: 0;
@@ -425,6 +430,35 @@
       display: flex;
       align-items: center;
       gap: 4px;
+      width: 75px;
+      flex-shrink: 0;
+    }
+
+    /* ─── EXPLORE 배너 ─── */
+    .explore-banner {
+      margin: 20px 16px 10px;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .explore-banner--purple {
+      background: linear-gradient(135deg, #380097 0%, #7C3AED 100%);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(56,0,151,0.3);
+    }
+    .explore-banner--mint {
+      background: linear-gradient(135deg, #7BC8D4 0%, #A6D6DE 100%);
+      color: #1A5C5C;
+      box-shadow: 0 4px 12px rgba(166,214,222,0.4);
+    }
+    .explore-banner--orange {
+      background: linear-gradient(135deg, #FF5400 0%, #FF7A33 100%);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(255,84,0,0.3);
     }
 
     /* ─── 저작권 ─── */
@@ -462,7 +496,10 @@
 
   <!-- ═══ 법적 고지 — 상단 ═══ -->
   <div class="legal-top">
-    써주세요연계대부 : 2024-서울강남-0087-대부, 2024-서울강남-0088-대부중개
+    <span style="display:inline-block;background:#7C3AED;color:#fff;padding:4px 12px;border-radius:6px;margin-bottom:8px">써주세요연계대부</span><br>
+    2024-서울강남-0087-대부<br>
+    2024-서울강남-0088-대부중개<br>
+    등록시・도 명칭 : 서울시 강남구청(대부업 담당 : 02-123-4567)
   </div>
 
   <!-- ═══ 로고 & 카피 ═══ -->
@@ -473,14 +510,17 @@
     <div class="logo-copy">20~33세 청년 서민에게 친화적인 창의적 대안금융</div>
   </div>
 
+  <!-- ═══ EXPLORE 1 ═══ -->
+  <div class="explore-banner explore-banner--purple">EXPLORE 1</div>
+
   <!-- ═══ A. 히어로 ═══ -->
-  <div class="card-hero">
-    <div class="hero-line">
+  <div class="card-hero" style="background: #F3F0FF; box-shadow: 0 4px 16px rgba(56,0,151,0.1); border: 2px solid #DDD6FE;">
+    <div class="hero-line" style="color: #380097;">
       신용이 낮아도<br>
       (돈을) 빌릴 수 있으니까
     </div>
-    <div class="hero-divider"></div>
-    <div class="hero-brand">써주세요.</div>
+    <div class="hero-divider" style="background: #C4B5FD;"></div>
+    <div class="hero-brand" style="color: #380097;">써주세요.</div>
   </div>
 
   <!-- ═══ B. 평가 방식 ═══ -->
@@ -499,7 +539,7 @@
       <div class="stat-capsule">
         <span class="stat-dot"></span>
         <span class="stat-label">누적 대출 승인자 수</span>
-        <span class="stat-value">21만 명이 빌려갔어요.</span>
+        <span class="stat-value">몇 만 명의 청년 서민이 빌려갔어요.</span>
       </div>
       <div class="stat-capsule">
         <span class="stat-dot"></span>
@@ -510,86 +550,111 @@
   </div>
 
   <!-- ═══ D. 나쁘지않은 조건 ═══ -->
-  <div class="card card--dark">
-    <div class="card-body" style="font-weight:700; color:#fff; font-size:16px;">
+  <div class="card" style="background: linear-gradient(135deg, #F3F0FF 0%, #EDE9FE 100%); border: 2px solid #DDD6FE;">
+    <div class="card-body" style="font-weight:700; color:#380097; font-size:16px;">
       나쁘지않은 조건일걸요?
     </div>
   </div>
 
+  <!-- ═══ EXPLORE 2 ═══ -->
+  <div class="explore-banner explore-banner--mint">EXPLORE 2</div>
+
   <!-- ═══ E. 대출 방식 ═══ -->
-  <div class="card">
-    <div class="card-title">지금껏 본 적 없는 대출 방식</div>
-    <div class="card-body">
-      신용뿐만 아니라<br>
-      다양한 미션을 통해<br>
-      돈을 빌릴 수 있어요!
+  <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #A6D6DE; box-shadow: 0 4px 16px rgba(166,214,222,0.2);">
+    <div style="padding: 24px 24px 10px;">
+      <div class="card-title" style="color: #1A7A7A;">지금껏 본 적 없는 대출 방식</div>
+      <div class="card-body">
+        신용뿐만 아니라<br>
+        다양한 미션을 통해<br>
+        돈을 빌릴 수 있어요!
+      </div>
     </div>
-    <ul class="mission-list">
-      <li class="mission-item"><span class="mission-num">1</span>신용 점수만 믿고</li>
-      <li class="mission-item"><span class="mission-num">2</span>소비 내역을 제출하고</li>
-      <li class="mission-item"><span class="mission-num">3</span>앱 성장에 기여하고</li>
-      <li class="mission-item"><span class="mission-num">4</span>지인에게 추천받고</li>
-      <li class="mission-item"><span class="mission-num">5</span>포인트를 적립하고</li>
-    </ul>
+    <div style="padding: 0 20px 16px; display: flex; justify-content: center;">
+      <img src="/imgs/home/sjy_web_home_loan_method.png"
+           alt="무엇을 보고 빌려줄까요? — 앱 화면"
+           style="width: 75%; max-width: 210px; display: block;" />
+    </div>
   </div>
 
   <!-- ═══ F. AI ═══ -->
-  <div class="card card--accent">
-    <div class="card-title">어떻게 도와주는 AI</div>
-    <div class="card-body">
-      나의 실제 상환 능력과<br>
-      의지를 데이터로 분석해서 파악해요
+  <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #A6D6DE; box-shadow: 0 4px 16px rgba(166,214,222,0.2);">
+    <div style="padding: 24px 24px 10px;">
+      <div class="card-title" style="color: #1A7A7A;">어떻게든 도와주는 AI</div>
+      <div class="card-body">
+        나의 실제 상환 능력과<br>
+        의지를 데이터로 분석해서 파악해요
+      </div>
     </div>
-    <div class="card-quote">
-      "AI가 소통거리를 검토한 후,<br>
-      현재 심사 중입니다."
+    <div style="padding: 0 20px 16px; display: flex; justify-content: center;">
+      <img src="/imgs/home/sjy_web_home_ai_chat.png"
+           alt="AI 심사 화면 — 앱 목업"
+           style="width: 75%; max-width: 210px; display: block;" />
     </div>
   </div>
 
   <!-- ═══ G. 소액대출 ═══ -->
-  <div class="card card--highlight">
-    <div class="card-title">부담없는 소액대출</div>
-    <div class="card-body">
-      50만 원을 빌려도<br>
-      신용 정보에 기록하지 않아요.
+  <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #A6D6DE; box-shadow: 0 4px 16px rgba(166,214,222,0.2);">
+    <div style="padding: 24px 24px 10px;">
+      <div class="card-title" style="color: #1A7A7A;">부담없는 소액대출</div>
+      <div class="card-body">
+        50만 원을 빌려도<br>
+        신용 정보에 기록하지 않아요.
+      </div>
+    </div>
+    <div style="padding: 0 20px 16px; display: flex; justify-content: center;">
+      <img src="/imgs/home/sjy_web_home_small_loan.png"
+           alt="소액대출 금액 선택 — 앱 목업"
+           style="width: 75%; max-width: 210px; display: block;" />
     </div>
   </div>
 
+  <!-- ═══ EXPLORE 3 ═══ -->
+  <div class="explore-banner explore-banner--orange">EXPLORE 3</div>
+
   <!-- ═══ H. 현금이 아니어도 ═══ -->
-  <div class="card-hero2">
-    <div class="hero-line">
+  <div class="card-hero2" style="background: #FFF5F0; box-shadow: 0 4px 16px rgba(255,84,0,0.1); border: 2px solid #FFCDB2;">
+    <div class="hero-line" style="color: #CC4300;">
       현금이 아니어도<br>
       (돈을) 갚을 수 있으니까
     </div>
-    <div class="hero-divider"></div>
-    <div class="hero-brand">또 써주세요.</div>
-    <div class="hero-sub">
+    <div class="hero-divider" style="background: #FFAA80;"></div>
+    <div class="hero-brand" style="color: #CC4300;">또 써주세요.</div>
+    <div class="hero-sub" style="color: #99522B;">
       적립한 포인트로 대출 원금과 이자를<br>
       상환할 수 있는 국내 최초 금융앱
     </div>
   </div>
 
   <!-- ═══ I. 꿀이에요 ═══ -->
-  <div class="card card--accent">
+  <div class="card" style="border-left: 4px solid #FF5400; background: linear-gradient(90deg, #FFF5F0 0%, #FFFFFF 40%);">
     <div class="card-body" style="font-weight:700; color:#111; font-size:16px;">
       특히 이렇게 쓰면 꿀이에요.
     </div>
   </div>
 
   <!-- ═══ J. 포인트 적립소 + 3가지 혜택 ═══ -->
-  <div class="card">
-    <div class="card-title">어차피 물건을 구매한다면,<br>써주세요. 포인트 적립소에서 구매해요.</div>
-    <div class="benefit-item"><span class="benefit-check">✓</span>적립된 포인트로 빌린 돈을 갚을 수 있어요.</div>
-    <div class="benefit-item"><span class="benefit-check">✓</span>구매 이력으로 대출 승인될 확률이 높아요.</div>
-    <div class="benefit-item"><span class="benefit-check">✓</span>한도 상향의 기회가 생겨요.</div>
+  <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #FF5400; box-shadow: 0 4px 16px rgba(255,84,0,0.15);">
+    <div style="padding: 24px 24px 10px;">
+      <div class="card-title" style="color: #CC4300;">어차피 물건을 구매한다면,<br>써주세요. 포인트 적립소에서 구매해요.</div>
+      <div class="benefit-item"><span class="benefit-check">✓</span>적립된 포인트로 빌린 돈을 갚을 수 있어요.</div>
+      <div class="benefit-item"><span class="benefit-check">✓</span>구매 이력으로 대출 승인될 확률이 높아요.</div>
+      <div class="benefit-item"><span class="benefit-check">✓</span>한도 상향의 기회가 생겨요.</div>
+    </div>
+    <div style="padding: 0 20px 16px; display: flex; justify-content: center;">
+      <img src="/imgs/home/sjy_web_home_point_store.png"
+           alt="포인트 적립소 — 앱 목업"
+           style="width: 75%; max-width: 210px; display: block;" />
+    </div>
   </div>
 
+  <!-- ═══ ARRIVE ═══ -->
+  <div class="explore-banner explore-banner--purple">ARRIVE</div>
+
   <!-- ═══ L. 클로징 ═══ -->
-  <div class="card-closing">
-    <div class="closing-text">
-      당신의 모든 활동과 경험이<br>
-      당신의 대출을 이룹니다.
-    </div>
+  <div style="margin: 10px 16px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.12);">
+    <img src="/imgs/home/sjy_web_home_closing.jpg"
+         alt="당신의 모든 활동과 경험이 당신의 대출을 이룹니다"
+         style="width:100%; display:block;" />
   </div>
 
   <!-- ═══ M. 법적 고지 — 하단 ═══ -->
@@ -616,7 +681,7 @@
     </div>
 
     <div class="legal-group">
-      <div class="legal-group-title">중개수수료를 요구하거나 받는 것은 불법입니다. 과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다. 대출시 신용등급 또는 개인신용평점 하락으로 다른 금융거래가 제약 받을 수 있습니다.</div>
+      <div class="legal-group-title">"중개수수료를 요구하거나 받는 것은 불법입니다."<br>"과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다."<br>"대출시 신용등급 또는 개인신용평점 하락으로 다른 금융거래가 제약 받을 수 있습니다."</div>
       <div class="legal-group-body">
         <p>일정기간 원리금이 연체될 경우 기한의 이익을 상실할 수 있습니다. 대출조건을 정확히 확인해주세요</p>
         <p>대출기간 : 1개월~3개월</p>
@@ -656,9 +721,10 @@
   <div class="bottom-section">
     <div class="bottom-title-wrap"><span class="bottom-title">About us</span></div>
 
-    <div class="corp-box">
-      <strong>써주세요연계대부 (ALBITF)</strong><br>
+    <div class="corp-box" style="font-size:22px;color:#000">
+      <strong style="color:#000">써주세요연계대부 (ALBITF)</strong><br>
       대표 : 정희선 / JUNG HEE SUN<br>
+      대표전화 : 010-2153-6193<br>
       주소 : 서울특별시 강남구 도곡로 112, 2층 C2-7호(도곡동, 서한빌딩)<br>
       사업자 등록번호 : <a href="https://www.sirjuseyo.com/imgs/home/써주세요연계대부 사업자등록증.pdf" target="_blank" rel="noopener" class="corp-link">778-28-01770</a><br>
       대부업 등록번호 : <a href="https://www.sirjuseyo.com/imgs/home/써주세요연계대부 대부업 등록증.pdf" target="_blank" rel="noopener" class="corp-link">2024-서울강남-0087-대부</a><br>
