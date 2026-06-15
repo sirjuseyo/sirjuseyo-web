@@ -2394,3 +2394,25 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 
 **변경:** card-title "어떻게 도와주는 AI" → "어떻게든 도와주는 AI". card-quote ("AI가 소통거리를 검토한 후, 현재 심사 중입니다.") 삭제 — 핸드폰 목업 이미지 내 동일 텍스트와 중복
 
+---
+
+### WT-046: 홈 이미지 5개 누락 추가 (T-045 반려 대응)
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-046 (T-045 반려 대응) |
+| 커밋 해시 | `20126dd` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 테스트 완료(DONE) |
+
+**반려 사유:** GitDeployOps T-045에서 `index.html`이 참조하는 홈 이미지 5개가 main/feature 양쪽에 git 미추적 상태로 확인. 배포 시 404 위험.
+
+**변경:** 로컬 디스크에 존재하나 git에 커밋되지 않았던 이미지 5개를 git add + commit:
+- `imgs/home/sjy_web_home_loan_method.png`
+- `imgs/home/sjy_web_home_ai_chat.png`
+- `imgs/home/sjy_web_home_small_loan.png`
+- `imgs/home/sjy_web_home_point_store.png`
+- `imgs/home/sjy_web_home_closing.jpg`
+
