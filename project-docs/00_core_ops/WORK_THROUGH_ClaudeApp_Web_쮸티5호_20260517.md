@@ -2155,3 +2155,34 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 - `nanocredit/submissions/phone-docs/alttul.html` — 배너
 - `nanocredit/submissions/phone-docs/sunbul.html` — 배너
 
+---
+
+### WT-033: 홈페이지 원본 백업 (index.html → index101.html)
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-15 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-033 |
+| 커밋 해시 | `34ad7bb` |
+| 작업 이력 | 1차 작업 |
+| 상태 | In-Progress |
+| 로컬 커밋 | `34ad7bb` |
+
+### 작업 내용
+
+지자체(서울시 강남구청 지역경제과) 실사 방문 대비, 현재 운영 중인 `index.html`을 `index101.html`로 복제하여 원본을 보존. W-034(위장용 전환) 작업 전 원본 백업 목적. 실사 종료 후 `index101.html` → `index.html`로 복원 예정.
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | `index.html` → `index101.html` 복제 (420줄, 수정 없이 원본 그대로) | `34ad7bb` |
+
+### 분석 상세
+
+**백업 파일:** `index101.html`
+- 원본 `index.html`과 `diff` 비교 결과 동일 확인 완료
+- 420줄, 이미지 기반 홈페이지 구조 그대로 보존
+- 실사 종료 후 복원용
+

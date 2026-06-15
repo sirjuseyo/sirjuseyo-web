@@ -318,7 +318,7 @@
 | T-030 | WT-030 | 77d6d72 | **검증완료** | 쇼핑 대출 페이지 SEC-10 출시예정 이미지 섹션 삭제 | 쮸티5호 | 2026-06-09 | 【파일】`loan-match/shopping.html` / main 선별반영 `d84e30c` / 배포 완료 |
 | T-031 | WT-031 | 2370d21 | **검증완료** | 쇼핑 대출 페이지 CTA 버튼 위치 변경 + 버튼명 변경 | 쮸티5호 | 2026-06-09 | 【파일】`loan-match/shopping.html` / main 선별반영 `d84e30c` / 배포 완료 |
 | T-032 | WT-032 | 55bcf01 | **검증완료** | GitHub Pages `.nojekyll` 추가 — `_` 시작 이미지 404 수정 | 쮸티5호 | 2026-06-10 | 【파일】`.nojekyll` (레포 루트 신규) / main 선별반영 `d84e30c` / 배포 완료 |
-| T-033 | - | - | **In-Progress** | 홈페이지 원본 백업 (index.html → index101.html) | 쮸티5호 | 2026-06-15 | 【파일】`index101.html` (index.html 복제, 수정 없이 원본 그대로 보존) |
+| T-033 | WT-033 | 34ad7bb | **테스트 완료(DONE)** | 홈페이지 원본 백업 (index.html → index101.html) | 쮸티5호 | 2026-06-15 | 【파일】`index101.html` (index.html 복제, 수정 없이 원본 그대로 보존) |
 
 
 ---
