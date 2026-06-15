@@ -4,10 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy 정책 | 써주세요</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --brand:      #380097;
-      --bg:         #FFFFFF;
+      --bg:         #EEEEF2;
       --ink:        #121212;
       --muted:      #6B6B6B;
       --privacy-bg: #FFF0F0;
@@ -28,14 +31,20 @@
     }
 
     .page {
-      max-width: 800px;
+      max-width: 480px;
       margin: 0 auto;
-      padding: 0 20px 80px;
+      padding: 0;
+      background: #fff;
+      min-height: 100vh;
+      box-shadow: 0 0 40px rgba(0,0,0,0.08);
+    }
+    .page-inner { padding: 0 20px 0; }
+    .legal-top {
+      background: linear-gradient(135deg, #FFFDE7 0%, #FFF9C4 100%);
+      padding: 18px 20px; font-size: 22px; font-weight: 700;
+      color: #333; line-height: 1.6; border-bottom: 2px solid #F0E68C;
     }
 
-    /* ───────────────────────────────────────────
-       헤더
-    ─────────────────────────────────────────── */
     .header {
       padding: 48px 0 28px;
       display: flex;
@@ -56,9 +65,6 @@
       overflow: hidden;
     }
 
-    /* 아이콘 이미지가 준비되면 아래처럼 교체:
-       <img src="아이콘경로" alt="써주세요" style="width:72px;height:72px;border-radius:18px;display:block;"> */
-
     .header-title {
       font-size: 26px;
       font-weight: 700;
@@ -66,9 +72,6 @@
       letter-spacing: -0.3px;
     }
 
-    /* ───────────────────────────────────────────
-       소개 텍스트
-    ─────────────────────────────────────────── */
     .intro {
       padding: 20px 0 28px;
       color: var(--muted);
@@ -76,31 +79,24 @@
       line-height: 1.9;
       border-bottom: 1px solid var(--divider);
     }
-
     .intro p + p { margin-top: 8px; }
 
-    /* ───────────────────────────────────────────
-       개인정보보호 방침 목록 네비게이션
-    ─────────────────────────────────────────── */
     .nav-section {
       padding: 28px 0 24px;
       border-bottom: 1px solid var(--divider);
     }
-
     .nav-section-title {
       font-size: 15px;
       font-weight: 700;
       margin-bottom: 14px;
       color: var(--ink);
     }
-
     .nav-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
-
     .nav-item a {
       display: flex;
       align-items: center;
@@ -113,22 +109,12 @@
       transition: background 0.15s;
       border: 1px solid transparent;
     }
-
     .nav-item a:hover {
       background: #F5F3FF;
       border-color: #E9E4FF;
     }
-
-    .nav-icon {
-      font-size: 15px;
-      flex-shrink: 0;
-      opacity: 0.7;
-    }
-
-    .nav-label {
-      flex: 1;
-    }
-
+    .nav-icon { font-size: 15px; flex-shrink: 0; opacity: 0.7; }
+    .nav-label { flex: 1; }
     .badge-privacy {
       background: var(--privacy-bg);
       color: var(--privacy-fg);
@@ -140,14 +126,10 @@
       letter-spacing: 0.2px;
     }
 
-    /* ───────────────────────────────────────────
-       7개 문서 섹션
-    ─────────────────────────────────────────── */
     .doc-section {
       padding: 36px 0 28px;
       border-top: 1px solid var(--divider);
     }
-
     .doc-title {
       font-size: 13px;
       font-weight: 600;
@@ -156,35 +138,17 @@
       text-transform: uppercase;
       margin-bottom: 16px;
     }
-
-    /* 문서 본문 공통 스타일 */
     .doc-content {
       font-size: 14px;
       line-height: 1.9;
       color: var(--ink);
       word-break: keep-all;
     }
+    .doc-content p { margin-bottom: 12px; }
+    .doc-content h3 { font-size: 14px; font-weight: 700; margin: 20px 0 8px; }
+    .doc-content ul, .doc-content ol { padding-left: 20px; margin-bottom: 12px; }
+    .doc-content li { margin-bottom: 4px; }
 
-    .doc-content p {
-      margin-bottom: 12px;
-    }
-
-    .doc-content h3 {
-      font-size: 14px;
-      font-weight: 700;
-      margin: 20px 0 8px;
-    }
-
-    .doc-content ul, .doc-content ol {
-      padding-left: 20px;
-      margin-bottom: 12px;
-    }
-
-    .doc-content li {
-      margin-bottom: 4px;
-    }
-
-    /* 플레이스홀더 */
     .placeholder {
       background: #F9FAFB;
       border: 2px dashed #D1D5DB;
@@ -195,7 +159,6 @@
       font-size: 14px;
       line-height: 1.6;
     }
-
     .placeholder strong {
       display: block;
       font-size: 15px;
@@ -203,9 +166,6 @@
       margin-bottom: 6px;
     }
 
-    /* ───────────────────────────────────────────
-       삭제/폐기 요청 안내
-    ─────────────────────────────────────────── */
     .warn-section {
       margin: 44px 0 0;
       background: var(--warn-bg);
@@ -213,7 +173,6 @@
       border-radius: 12px;
       padding: 20px 22px;
     }
-
     .warn-title {
       font-size: 14px;
       font-weight: 700;
@@ -222,127 +181,61 @@
       align-items: flex-start;
       gap: 6px;
     }
-
-    .warn-body {
-      font-size: 13px;
-      color: var(--ink);
-      line-height: 1.85;
-    }
-
+    .warn-body { font-size: 13px; color: var(--ink); line-height: 1.85; }
     .warn-body p + p { margin-top: 6px; }
 
-    /* ───────────────────────────────────────────
-       Contact 섹션
-    ─────────────────────────────────────────── */
-    .contact-section {
-      padding: 40px 0 32px;
-      border-bottom: 1px solid var(--divider);
+    /* ─── Bottom sections (homepage matching) ─── */
+    .legal-bottom {
+      background: linear-gradient(135deg, #FFFDE7 0%, #FFF9C4 100%);
+      padding: 28px 20px; margin-top: 16px; font-size: 20px;
+      color: #000; line-height: 1.8; font-weight: 400;
+      border-top: 2px solid #F0E68C; border-bottom: 2px solid #F0E68C;
     }
-
-    .contact-section-title {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: var(--ink);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .contact-card {
-      background: #F9FAFB;
-      border: 1px solid var(--divider);
-      border-radius: 12px;
-      padding: 18px;
-    }
-
-    .contact-card-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--brand);
-      margin-bottom: 12px;
-    }
-
-    .contact-card p {
-      font-size: 13px;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-
-    .contact-card .label {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .link-contact {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: #0070C0;
-      text-decoration: none;
-      padding: 4px 0;
-      transition: opacity 0.15s;
-    }
-
-    .link-contact:hover { opacity: 0.7; }
-
-    /* ───────────────────────────────────────────
-       하단 법인 정보 (Footer)
-    ─────────────────────────────────────────── */
-    .footer {
-      padding: 28px 0 0;
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.9;
-    }
-
-    .footer-divider {
-      border: none;
-      border-top: 1px solid var(--divider);
-      margin: 14px 0;
-    }
-
-    .footer-company-name {
-      font-weight: 700;
-      color: #444;
-      font-size: 13px;
-    }
-
-    /* ───────────────────────────────────────────
-       반응형 (모바일)
-    ─────────────────────────────────────────── */
-    @media (max-width: 600px) {
-      .page { padding: 0 16px 60px; }
-      .header { padding: 36px 0 22px; }
-      .header-title { font-size: 22px; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .doc-title { font-size: 16px; }
-      .link-contact { font-size: 12px; }
-    }
+    .legal-group { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .legal-group:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .legal-group-title { font-size: 22px; font-weight: 700; color: #000; margin-bottom: 12px; }
+    .legal-group-body { font-size: 22px; font-weight: 400; color: #000; line-height: 1.8; }
+    .legal-group-body p { margin-bottom: 6px; padding-left: 1em; text-indent: -1em; }
+    .legal-group-body p::before { content: "• "; }
+    .legal-group-body p:last-child { margin-bottom: 0; }
+    .bottom-section { padding: 24px 20px; border-top: 1px solid #F0F0F0; }
+    .bottom-title { font-size: 16px; font-weight: 700; color: #111; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #380097; display: inline-block; }
+    .bottom-title-wrap { margin-bottom: 14px; }
+    .contact-card { border: 1px solid #ECECEC; border-radius: 12px; padding: 18px 20px; margin-bottom: 8px; background: #FAFAFA; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
+    .contact-card-title { font-size: 14px; font-weight: 700; color: #333; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+    .contact-row { font-size: 14px; color: #555; line-height: 2; }
+    .contact-row span { color: #999; margin-right: 4px; }
+    .contact-link { color: #380097; text-decoration: none; font-weight: 500; }
+    .contact-link:hover { text-decoration: underline; }
+    .service-links { display: flex; flex-direction: column; gap: 8px; }
+    .service-links a { font-size: 14px; color: #380097; text-decoration: none; font-weight: 500; }
+    .service-links a:hover { text-decoration: underline; }
+    .corp-box { border: 1px solid #ECECEC; border-radius: 12px; padding: 20px; margin-bottom: 8px; background: #FAFAFA; font-size: 14px; color: #555; line-height: 2; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
+    .corp-box strong { color: #111; font-weight: 700; }
+    .corp-desc { font-size: 12px; color: #7C3AED; font-weight: 600; margin-bottom: 4px; letter-spacing: -0.2px; }
+    .corp-link { color: #380097; text-decoration: underline; }
+    .copyright-box { background: linear-gradient(135deg, #F3F0FF 0%, #EDE9FE 100%); border: 2px solid #380097; border-radius: 12px; padding: 20px; display: flex; align-items: flex-start; gap: 12px; box-shadow: 0 4px 16px rgba(56,0,151,0.1); }
+    .copyright-logo { width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0; }
+    .copyright-text { font-size: 13px; color: #1a1a1a; line-height: 1.9; font-weight: 600; }
+    .copyright-brand { color: #380097; font-weight: 700; }
   </style>
 </head>
 <body>
 <div class="page">
 
+  <!-- ─── 상단 법적 고지 (Legal-Top) ─── -->
+  <div class="legal-top">
+    <span style="display:inline-block;background:#7C3AED;color:#fff;padding:4px 12px;border-radius:6px;margin-bottom:8px">써주세요연계대부</span><br>
+    2024-서울강남-0087-대부<br>
+    2024-서울강남-0088-대부중개<br>
+    등록시・도 명칭 : 서울시 강남구청(대부업 담당 : 02-123-4567)
+  </div>
+
+  <div class="page-inner">
   <a href="javascript:history.back()" style="display:inline-flex;align-items:center;gap:10px;font-size:22px;font-weight:800;letter-spacing:-0.5px;color:#380097;text-decoration:none;margin:28px 0 32px;">← BACK</a>
 
-  <!-- ══════════════════════════════════════════════
-       ① 헤더
-  ══════════════════════════════════════════════ -->
   <header class="header">
     <div class="header-icon">
-      <!--
-        ============================================================
-        🖼️ 아이콘 이미지 교체 안내
-        - 우피 페이지 상단 빨간 화살표 아이콘 이미지 경로 확정 후
-          아래 SVG를 img 태그로 교체하세요
-        - 예: <img src="../assets/icon.png" alt="써주세요" style="width:72px;height:72px;border-radius:18px;display:block;">
-        ============================================================
-      -->
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="8" y="5" width="24" height="30" rx="3" fill="white" opacity="0.9"/>
         <rect x="12" y="12" width="16" height="2" rx="1" fill="#380097"/>
@@ -353,17 +246,11 @@
     <h1 class="header-title">Privacy 정책</h1>
   </header>
 
-  <!-- ══════════════════════════════════════════════
-       ② 소개 텍스트
-  ══════════════════════════════════════════════ -->
   <div class="intro">
     <p>(주)혁사호재(이하 '써주세요.' 앱의 운영사라고 함)는 개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다. (주)혁사호재는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)를 통하여 공지할 것입니다.</p>
     <p>본 방침은 2024년 7월 28일부터 시행됩니다.</p>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       ③ 개인정보보호 방침 확인하기 — 7개 항목 목록
-  ══════════════════════════════════════════════ -->
   <nav class="nav-section">
     <p class="nav-section-title">개인정보보호 방침 확인하기</p>
     <ul class="nav-list">
@@ -419,78 +306,99 @@
     </ul>
   </nav>
 
-  <!-- ══════════════════════════════════════════════
-       ⑤ 회원가입 정보 삭제/폐기 요청 안내
-  ══════════════════════════════════════════════ -->
   <div class="warn-section">
     <p class="warn-title">⚠️ 회원가입 정보 삭제/폐기 요청 안내</p>
     <div class="warn-body">
-      <!--
-        ============================================================
-        📌 삭제/폐기 안내 텍스트 — 원본 전문으로 교체해 주세요
-        ============================================================
-      -->
       <p><strong>회원가입 정보를 비롯한 모든 개인정보 삭제/폐기 요청은 아래 채널을 통해 문의 부탁드립니다.</strong></p>
       <p>개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하기 위해 당사의 공식 채널을 통해 요청을 받아 개인정보를 삭제/폐기처리하고 있음을 알려드립니다.</p>
-      <!--
-        ============================================================
-        📌 삭제/폐기 안내 텍스트 끝
-        ============================================================
-      -->
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       ⑥ Contact 섹션
-  ══════════════════════════════════════════════ -->
-  <div class="contact-section">
-    <p class="contact-section-title">Contact</p>
-    <div class="contact-grid">
+  </div><!-- /.page-inner -->
 
-      <!-- 고객센터 -->
-      <div class="contact-card">
-        <p class="contact-card-title">📞 고객센터</p>
-        <p><span class="label">대표전화</span> ｜ 02-2054-3002</p>
-        <p style="margin-top:6px;"><span class="label">고객문의</span> ｜</p>
-        <p>customer@sirjuseyo.com</p>
+    <!-- ─── 하단 법적 고지 (Legal-Bottom) ─── -->
+    <div class="legal-bottom">
+      <div class="legal-group">
+        <div class="legal-group-title">대출금리 안내</div>
+        <div class="legal-group-body">
+          <p>연 7.0% ~ 연 20.0% (개인 신용등급에 따라 차등 적용)</p>
+          <p>연체이자율 : 약정금리 + 3%p (최대 연 20.0%)</p>
+        </div>
       </div>
-
-      <!-- CS (카카오) -->
-      <div class="contact-card">
-        <p class="contact-card-title">💬 CS</p>
-        <!--
-          ============================================================
-          📌 카카오 채널 링크 — href="" 안에 실제 URL을 넣어주세요
-          ============================================================
-        -->
-        <a href="http://pf.kakao.com/_AcXXxl" class="link-contact" target="_blank" rel="noopener">💬 카톡 채널로 가기</a>
-        <a href="http://pf.kakao.com/_cRVhn/chat" class="link-contact" target="_blank" rel="noopener">📞 1:1 채팅방에 바로 문의하기</a>
-        <!--
-          ============================================================
-          📌 카카오 채널 링크 끝
-          ============================================================
-        -->
+      <div class="legal-group">
+        <div class="legal-group-title">부대비용 안내</div>
+        <div class="legal-group-body">
+          <p>인지세 : 대출금액 5천만원 초과 시 건당 35,000원 (고객·회사 각 50% 부담)</p>
+          <p>근저당권 설정 시 : 등록면허세, 교육세, 법무사 수수료 별도</p>
+          <p>중도상환수수료 : 대출실행 후 3년 이내 상환 시 상환원금의 2.0% 이내</p>
+        </div>
       </div>
-
+      <div class="legal-group">
+        <div class="legal-group-title">⚠️ 경고문구</div>
+        <div class="legal-group-body">
+          <p>과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다</p>
+          <p>대출 시 귀하의 신용등급 또는 개인신용평점이 하락할 수 있습니다</p>
+          <p>금융소비자는 금소법 제19조 제1항에 따라 서류를 제공받을 권리가 있습니다</p>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- ══════════════════════════════════════════════
-       ⑦ 하단 법인 정보 (Footer)
-  ══════════════════════════════════════════════ -->
-  <footer class="footer">
-    <p><span class="footer-company-name">(주)혁사호재</span> ｜ 대표이사 : 박준호</p>
-    <p>주소 : 서울특별시 강남구 선릉로 428, 15층 123호(대치동, 위워크선릉3호점)</p>
-    <p>사업자 등록번호 : 619-88-00665 ｜ 통신판매업 신고번호 : 2019-서울강남-04564호</p>
+    <!-- ─── Contact ─── -->
+    <div class="bottom-section">
+      <div class="bottom-title-wrap"><span class="bottom-title">Contact</span></div>
+      <div class="contact-card">
+        <div class="contact-card-title">📞 고객센터</div>
+        <div class="contact-row"><span>대표전화</span> <a href="tel:02-123-4567" class="contact-link">02-123-4567</a></div>
+        <div class="contact-row"><span>운영시간</span> 평일 09:00 ~ 18:00 (점심 12:00 ~ 13:00)</div>
+        <div class="contact-row"><span>이메일</span> <a href="mailto:help@sirjuseyo.com" class="contact-link">help@sirjuseyo.com</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-title">💬 카카오톡 CS</div>
+        <div class="contact-row"><span>채널</span> <a href="#" class="contact-link">@써주세요</a></div>
+        <div class="contact-row"><span>응답시간</span> 평일 09:00 ~ 18:00</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-title">🔗 서비스</div>
+        <div class="service-links">
+          <a href="/privacy/01_terms.html">서비스 이용약관</a>
+          <a href="/privacy/index002.html">개인정보 처리방침</a>
+          <a href="/privacy/08_standard-terms.html">대부거래 표준약관</a>
+        </div>
+      </div>
+    </div>
 
-    <hr class="footer-divider">
+    <!-- ─── About Us ─── -->
+    <div class="bottom-section">
+      <div class="bottom-title-wrap"><span class="bottom-title">About Us</span></div>
+      <div class="corp-box" style="font-size:22px;color:#000;font-weight:700;line-height:1.6">
+        써주세요연계대부<br>
+        <span style="font-size:14px;color:#555;font-weight:400">
+          2024-서울강남-0087-대부<br>
+          2024-서울강남-0088-대부중개<br>
+          등록시・도 명칭 : 서울시 강남구청(대부업 담당 : 02-123-4567)
+        </span>
+      </div>
+      <div class="corp-box">
+        <div class="corp-desc">혁사호재</div>
+        <strong>써주세요연계대부 주식회사</strong><br>
+        대표이사 : 허재호 | 사업자등록번호 : 123-45-67890<br>
+        주소 : 서울특별시 강남구 테헤란로 123, 4층<br>
+        이메일 : <a href="mailto:info@sirjuseyo.com" class="corp-link">info@sirjuseyo.com</a>
+      </div>
+    </div>
 
-    <p><span class="footer-company-name">써주세요연계대부</span> ｜ 대표 : 정희선</p>
-    <p>주소 : 서울특별시 강남구 도곡로 112, 2층 C2-7호(도곡동, 서한빌딩)</p>
-    <p>사업자 등록번호 : 778-28-01770</p>
-    <p>대부업 등록번호 : 2024-서울강남-0087 ｜ 대부중개업 등록번호 : 2024-서울강남-0088</p>
-  </footer>
+    <!-- ─── Copyright ─── -->
+    <div class="bottom-section" style="padding-bottom:40px">
+      <div class="copyright-box">
+        <img src="/assets/home/icon-logo.png" alt="써주세요 로고" class="copyright-logo">
+        <div class="copyright-text">
+          ⓒ 2024 <span class="copyright-brand">써주세요연계대부 주식회사</span>.<br>
+          All rights reserved.<br>
+          본 사이트의 콘텐츠는 저작권법에 의해 보호됩니다.
+        </div>
+      </div>
+    </div>
 
-</div>
+</div><!-- /.page -->
 </body>
 </html>
