@@ -29,11 +29,6 @@
       box-shadow: 0 0 40px rgba(0,0,0,0.08);
     }
     .page-inner { padding: 32px 20px 0; }
-    .legal-top {
-      background: linear-gradient(135deg, #FFFDE7 0%, #FFF9C4 100%);
-      padding: 18px 20px; font-size: 22px; font-weight: 700;
-      color: #333; line-height: 1.6; border-bottom: 2px solid #F0E68C;
-    }
     .back-link {
       display: inline-flex; align-items: center; gap: 10px;
       font-size: 22px; font-weight: 800; letter-spacing: -0.5px;
@@ -63,51 +58,10 @@
     p.sub-item { padding-left: 16px; color: var(--muted); margin-bottom: 6px; }
     p.url a { color: var(--brand); font-size: 13px; }
     p.addendum { margin-top: 6px; }
-    .legal-bottom {
-      background: linear-gradient(135deg, #FFFDE7 0%, #FFF9C4 100%);
-      padding: 28px 20px; margin-top: 16px; font-size: 20px;
-      color: #000; line-height: 1.8; font-weight: 400;
-      border-top: 2px solid #F0E68C; border-bottom: 2px solid #F0E68C;
-    }
-    .legal-group { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,0.08); }
-    .legal-group:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-    .legal-group-title { font-size: 22px; font-weight: 700; color: #000; margin-bottom: 12px; }
-    .legal-group-body { font-size: 22px; font-weight: 400; color: #000; line-height: 1.8; }
-    .legal-group-body p { margin-bottom: 6px; padding-left: 1em; text-indent: -1em; }
-    .legal-group-body p::before { content: "• "; }
-    .legal-group-body p:last-child { margin-bottom: 0; }
-    .bottom-section { padding: 24px 20px; border-top: 1px solid #F0F0F0; }
-    .bottom-title { font-size: 16px; font-weight: 700; color: #111; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #380097; display: inline-block; }
-    .bottom-title-wrap { margin-bottom: 14px; }
-    .contact-card { border: 1px solid #ECECEC; border-radius: 12px; padding: 18px 20px; margin-bottom: 8px; background: #FAFAFA; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
-    .contact-card-title { font-size: 14px; font-weight: 700; color: #333; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
-    .contact-row { font-size: 14px; color: #555; line-height: 2; }
-    .contact-row span { color: #999; margin-right: 4px; }
-    .contact-link { color: #380097; text-decoration: none; font-weight: 500; }
-    .contact-link:hover { text-decoration: underline; }
-    .service-links { display: flex; flex-direction: column; gap: 8px; }
-    .service-links a { font-size: 14px; color: #380097; text-decoration: none; font-weight: 500; }
-    .service-links a:hover { text-decoration: underline; }
-    .corp-box { border: 1px solid #ECECEC; border-radius: 12px; padding: 20px; margin-bottom: 8px; background: #FAFAFA; font-size: 14px; color: #555; line-height: 2; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
-    .corp-box strong { color: #111; font-weight: 700; }
-    .corp-desc { font-size: 12px; color: #7C3AED; font-weight: 600; margin-bottom: 4px; letter-spacing: -0.2px; }
-    .corp-link { color: #380097; text-decoration: underline; }
-    .copyright-box { background: linear-gradient(135deg, #F3F0FF 0%, #EDE9FE 100%); border: 2px solid #380097; border-radius: 12px; padding: 20px; display: flex; align-items: flex-start; gap: 12px; box-shadow: 0 4px 16px rgba(56,0,151,0.1); }
-    .copyright-logo { width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0; }
-    .copyright-text { font-size: 13px; color: #1a1a1a; line-height: 1.9; font-weight: 600; }
-    .copyright-brand { color: #380097; font-weight: 700; }
   </style>
 </head>
 <body>
 <div class="page">
-
-  <!-- ─── 상단 법적 고지 (Legal-Top) ─── -->
-  <div class="legal-top">
-    <span style="display:inline-block;background:#7C3AED;color:#fff;padding:4px 12px;border-radius:6px;margin-bottom:8px">써주세요연계대부</span><br>
-    2024-서울강남-0087-대부<br>
-    2024-서울강남-0088-대부중개<br>
-    등록시・도 명칭 : 서울시 강남구청(대부업 담당 : 02-123-4567)
-  </div>
 
   <div class="page-inner">
   <a href="javascript:history.back()" class="back-link">← BACK</a>
@@ -315,89 +269,7 @@
 
   </div><!-- /.page-inner -->
 
-    <!-- ─── 하단 법적 고지 (Legal-Bottom) ─── -->
-    <div class="legal-bottom">
-      <div class="legal-group">
-        <div class="legal-group-title">대출금리 안내</div>
-        <div class="legal-group-body">
-          <p>연 7.0% ~ 연 20.0% (개인 신용등급에 따라 차등 적용)</p>
-          <p>연체이자율 : 약정금리 + 3%p (최대 연 20.0%)</p>
-        </div>
-      </div>
-      <div class="legal-group">
-        <div class="legal-group-title">부대비용 안내</div>
-        <div class="legal-group-body">
-          <p>인지세 : 대출금액 5천만원 초과 시 건당 35,000원 (고객·회사 각 50% 부담)</p>
-          <p>근저당권 설정 시 : 등록면허세, 교육세, 법무사 수수료 별도</p>
-          <p>중도상환수수료 : 대출실행 후 3년 이내 상환 시 상환원금의 2.0% 이내</p>
-        </div>
-      </div>
-      <div class="legal-group">
-        <div class="legal-group-title">⚠️ 경고문구</div>
-        <div class="legal-group-body">
-          <p>과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다</p>
-          <p>대출 시 귀하의 신용등급 또는 개인신용평점이 하락할 수 있습니다</p>
-          <p>금융소비자는 금소법 제19조 제1항에 따라 서류를 제공받을 권리가 있습니다</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── Contact ─── -->
-    <div class="bottom-section">
-      <div class="bottom-title-wrap"><span class="bottom-title">Contact</span></div>
-      <div class="contact-card">
-        <div class="contact-card-title">📞 고객센터</div>
-        <div class="contact-row"><span>대표전화</span> <a href="tel:02-123-4567" class="contact-link">02-123-4567</a></div>
-        <div class="contact-row"><span>운영시간</span> 평일 09:00 ~ 18:00 (점심 12:00 ~ 13:00)</div>
-        <div class="contact-row"><span>이메일</span> <a href="mailto:help@sirjuseyo.com" class="contact-link">help@sirjuseyo.com</a></div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-card-title">💬 카카오톡 CS</div>
-        <div class="contact-row"><span>채널</span> <a href="#" class="contact-link">@써주세요</a></div>
-        <div class="contact-row"><span>응답시간</span> 평일 09:00 ~ 18:00</div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-card-title">🔗 서비스</div>
-        <div class="service-links">
-          <a href="/privacy/01_terms.html">서비스 이용약관</a>
-          <a href="/privacy/index002.html">개인정보 처리방침</a>
-          <a href="/privacy/08_standard-terms.html">대부거래 표준약관</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── About Us ─── -->
-    <div class="bottom-section">
-      <div class="bottom-title-wrap"><span class="bottom-title">About Us</span></div>
-      <div class="corp-box" style="font-size:22px;color:#000;font-weight:700;line-height:1.6">
-        써주세요연계대부<br>
-        <span style="font-size:14px;color:#555;font-weight:400">
-          2024-서울강남-0087-대부<br>
-          2024-서울강남-0088-대부중개<br>
-          등록시・도 명칭 : 서울시 강남구청(대부업 담당 : 02-123-4567)
-        </span>
-      </div>
-      <div class="corp-box">
-        <div class="corp-desc">혁사호재</div>
-        <strong>써주세요연계대부 주식회사</strong><br>
-        대표이사 : 허재호 | 사업자등록번호 : 123-45-67890<br>
-        주소 : 서울특별시 강남구 테헤란로 123, 4층<br>
-        이메일 : <a href="mailto:info@sirjuseyo.com" class="corp-link">info@sirjuseyo.com</a>
-      </div>
-    </div>
-
-    <!-- ─── Copyright ─── -->
-    <div class="bottom-section" style="padding-bottom:40px">
-      <div class="copyright-box">
-        <img src="/assets/home/icon-logo.png" alt="써주세요 로고" class="copyright-logo">
-        <div class="copyright-text">
-          ⓒ 2024 <span class="copyright-brand">써주세요연계대부 주식회사</span>.<br>
-          All rights reserved.<br>
-          본 사이트의 콘텐츠는 저작권법에 의해 보호됩니다.
-        </div>
-      </div>
-    </div>
-
 </div><!-- /.page -->
+<script src="/js/legal-shared.js"></script>
 </body>
 </html>
