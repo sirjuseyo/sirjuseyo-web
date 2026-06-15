@@ -290,10 +290,38 @@
       margin-top: 16px;
       font-size: 20px;
       color: #000;
-      line-height: 2;
+      line-height: 1.8;
       font-weight: 400;
       border-top: 2px solid #F0E68C;
       border-bottom: 2px solid #F0E68C;
+    }
+    .legal-group {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .legal-group:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .legal-group-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 12px;
+    }
+    .legal-group-body {
+      font-size: 20px;
+      font-weight: 400;
+      color: #000;
+      line-height: 1.8;
+    }
+    .legal-group-body p {
+      margin-bottom: 6px;
+    }
+    .legal-group-body p:last-child {
+      margin-bottom: 0;
     }
 
     /* ─── 하단 섹션 ─── */
@@ -566,20 +594,36 @@
 
   <!-- ═══ M. 법적 고지 — 하단 ═══ -->
   <div class="legal-bottom">
-    대출금리 연 12% (연체금리는 약정이자율 +6%P 이내, 연 18%이내)<br><br>
-    단, 2025년 2월 1일부터 신규체결, 갱신, 연장되는 계약에 한함. 해당 상품은 소액신용대출 상품입니다.<br><br>
-    만 20세 이상 고객 대상으로 개인신용평점 등 신용도 및 당사 평가 기준에 따라 대출 가능 여부 및 이자율 산출<br><br>
-    단, 채무 불이행 등록자는 제외<br><br>
-    이자는 매월 약정일에 부과하고, 상품에 따라 원금자유상환(만기일시상환), 원리금균등분할상환 등의 방법으로 상환<br><br>
-    조기상환 조건 없음<br><br>
-    대출계약을 체결하기전에 관계법령에 따라 금융상품에 관한 중요사항을 설명받을 수 있습니다.<br><br>
-    부대비용 : 채무확인서 발급비, 신용조회비용 등 채무자 부담<br><br>
-    수수료 없음<br><br>
-    대출계약 전 상품설명서 및 약관을 읽어보세요.<br><br>
-    중개수수료를 요구하거나 받는 것은 불법입니다. 과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다. 대출시 신용등급 또는 개인신용평점 하락으로 다른 금융거래가 제약 받을 수 있습니다.<br><br>
-    일정기간 원리금이 연체될 경우 기한의 이익을 상실할 수 있습니다. 대출조건을 정확히 확인해주세요<br><br>
-    대출기간 : 1개월~3개월<br><br>
-    예시 : 10만원을 연 12%로 3개월 원리금 균등 상환시 총 납부금액 33,956원
+
+    <div class="legal-group">
+      <div class="legal-group-title">대출금리 연 12% (연체금리는 약정이자율 +6%P 이내, 연 18%이내)</div>
+      <div class="legal-group-body">
+        <p>단, 2025년 2월 1일부터 신규체결, 갱신, 연장되는 계약에 한함. 해당 상품은 소액신용대출 상품입니다.</p>
+        <p>만 20세 이상 고객 대상으로 개인신용평점 등 신용도 및 당사 평가 기준에 따라 대출 가능 여부 및 이자율 산출</p>
+        <p>단, 채무 불이행 등록자는 제외</p>
+        <p>이자는 매월 약정일에 부과하고, 상품에 따라 원금자유상환(만기일시상환), 원리금균등분할상환 등의 방법으로 상환</p>
+        <p>조기상환 조건 없음</p>
+        <p>대출계약을 체결하기전에 관계법령에 따라 금융상품에 관한 중요사항을 설명받을 수 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="legal-group">
+      <div class="legal-group-title">부대비용 : 채무확인서 발급비, 신용조회비용 등 채무자 부담</div>
+      <div class="legal-group-body">
+        <p>수수료 없음</p>
+        <p>대출계약 전 상품설명서 및 약관을 읽어보세요.</p>
+      </div>
+    </div>
+
+    <div class="legal-group">
+      <div class="legal-group-title">중개수수료를 요구하거나 받는 것은 불법입니다. 과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다. 대출시 신용등급 또는 개인신용평점 하락으로 다른 금융거래가 제약 받을 수 있습니다.</div>
+      <div class="legal-group-body">
+        <p>일정기간 원리금이 연체될 경우 기한의 이익을 상실할 수 있습니다. 대출조건을 정확히 확인해주세요</p>
+        <p>대출기간 : 1개월~3개월</p>
+        <p>예시 : 10만원을 연 12%로 3개월 원리금 균등 상환시 총 납부금액 33,956원</p>
+      </div>
+    </div>
+
   </div>
 
   <!-- ═══ N. Contact ═══ -->
