@@ -1256,7 +1256,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 | 연관 T-ID | T-016 |
 | 커밋 해시 | `4244d00` |
 | 작업 이력 | 2차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **파일:** `nanocredit/submissions/job-income/college.html`
 
@@ -1276,7 +1276,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 | 연관 T-ID | T-016 |
 | 커밋 해시 | `61461f5` |
 | 작업 이력 | 3차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **수정 파일 (7개):**
 - `4dae-uninsured.html`: sub-list ✔ 3개 + 건강보험 ✔/→ 5개 제거 + SEC-03 번호 추가
@@ -1298,7 +1298,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 | 연관 T-ID | T-016 |
 | 커밋 해시 | `53b8e37` |
 | 작업 이력 | 4차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **수정 파일 (4개):** `business.html`, `daily-worker.html`, `unemployed.html`, `etc.html`
 
@@ -1318,7 +1318,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 | 연관 T-ID | T-016 |
 | 커밋 해시 | `28b3906` |
 | 작업 이력 | 5차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **수정 파일 (3개):** `daily-worker.html`, `unemployed.html`, `etc.html`
 
@@ -1335,7 +1335,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 | 연관 T-ID | T-016 |
 | 커밋 해시 | `7e764c8` |
 | 작업 이력 | 6차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **수정 파일 (4개):**
 
@@ -2250,7 +2250,7 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 | 연관 T-ID | T-035 |
 | 커밋 해시 | `cbca6c2` |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **변경:** `.store-badge` flex:1 복원 (width:200px 제거), `.store-platform` width:75px 추가로 Google Play / App Store 배지 사이즈 균등화
 
@@ -2265,7 +2265,7 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 | 연관 T-ID | T-036 |
 | 커밋 해시 | `cbca6c2` |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **변경:** "써주세요연계대부" 보라 배지(#7C3AED) + 대부/대부중개 등록번호 각 줄 분리 + "등록시・도 명칭 : 서울시 강남구청(대부업 담당 : 02-123-4567)" 추가
 
@@ -2280,7 +2280,7 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 | 연관 T-ID | T-037 |
 | 커밋 해시 | `cbca6c2` |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **변경:** `.logo-copy` color: #555 → #7C3AED
 
@@ -2295,7 +2295,7 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 | 연관 T-ID | T-038 |
 | 커밋 해시 | `cbca6c2` |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **변경:** `.legal-group-title` 22px Bold, `.legal-group-body` 22px Normal, `p::before` 글머리 기호(•) 추가, 3번째 그룹 타이틀 쌍따옴표("") 3줄 분리
 
@@ -2310,7 +2310,7 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 | 연관 T-ID | T-039 |
 | 커밋 해시 | `cbca6c2` |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **변경:** 1번째 corp-box(써주세요연계대부)만 inline style로 font-size:22px, color:#000, 대표전화 라인 추가. 2번째 corp-box(혁사호재)는 미변경
 
@@ -2325,7 +2325,7 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 | 연관 T-ID | T-040 |
 | 커밋 해시 | `cbca6c2` |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **변경:** `.stat-value` 텍스트 "21만 명이 빌려갔어요." → "몇 만 명의 청년 서민이 빌려갔어요."
 
@@ -2340,7 +2340,7 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 | 연관 T-ID | T-041 |
 | 커밋 해시 | `cbca6c2` |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **변경:**
 - `.explore-banner` CSS 신규 추가 (라운드 배너 스타일)
@@ -2360,7 +2360,7 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 | 연관 T-ID | T-042 |
 | 커밋 해시 | `cbca6c2` |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **변경:** EXPLORE 배너와 히어로 박스 색상 충돌 해소. 그룹1 히어로: 진보라 그라데이션 → 연보라 #F3F0FF + 진보라 텍스트. 그룹3 히어로: 진오렌지 그라데이션 → 연오렌지 #FFF5F0 + 진오렌지 텍스트
 
@@ -2375,7 +2375,7 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 | 연관 T-ID | T-043 |
 | 커밋 해시 | `cbca6c2` |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **변경:** 클로징 이미지 상단에 보라 배너 "ARRIVE" 추가. EXPLORE 1→2→3→ARRIVE 여정 흐름 완성. 보라색(출발점과 동일)으로 종착역 표현
 
@@ -2390,7 +2390,7 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 | 연관 T-ID | T-044 |
 | 커밋 해시 | `cbca6c2` |
 | 작업 이력 | 1차 작업 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **변경:** card-title "어떻게 도와주는 AI" → "어떻게든 도와주는 AI". card-quote ("AI가 소통거리를 검토한 후, 현재 심사 중입니다.") 삭제 — 핸드폰 목업 이미지 내 동일 텍스트와 중복
 
@@ -2405,7 +2405,7 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 | 연관 T-ID | T-046 (T-045 반려 대응) |
 | 커밋 해시 | `20126dd` |
 | 작업 이력 | 1차 작업 |
-| 상태 | 테스트 완료(DONE) |
+| 상태 | 검증완료 |
 
 **반려 사유:** GitDeployOps T-045에서 `index.html`이 참조하는 홈 이미지 5개가 main/feature 양쪽에 git 미추적 상태로 확인. 배포 시 404 위험.
 
@@ -2415,4 +2415,19 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 - `imgs/home/sjy_web_home_small_loan.png`
 - `imgs/home/sjy_web_home_point_store.png`
 - `imgs/home/sjy_web_home_closing.jpg`
+
+**완료 보고서 (GitDeployOps → 개발자, 2026-06-16):**
+
+> `sirjuseyo-web` T-046 반려 대응분 확인 후, T-035~T-044 홈페이지 4차 수정 main 선별 반영 및 GitHub Pages 배포 완료.
+>
+> - 원격 반영:
+>   - 전체 `dev -> main` 병합 안 함 / 전체 `feature -> main` 병합 안 함
+>   - 사유: PR #10은 여전히 `DIRTY`, feature는 main 대비 누적 diverged 상태
+>   - 선별 반영 커밋: `cbca6c2` (홈페이지 4차 수정 코드) + `20126dd` (홈 이미지 5개 누락 추가)
+>   - 문서 커밋 `6f92b39`는 운영 반영 제외
+>   - 최종 main commit: `6f18a9a`
+> - 배포: GitHub Pages `pages build and deployment` 성공, run `27581621405`
+> - 확인: `git diff --check` 통과, 운영 홈 `https://www.sirjuseyo.com/` HTTP/2 200, 홈 이미지 5개 모두 HTTP/2 200
+> - 로컬 `sirjuseyo-web/main` 최신화 완료: `HEAD = origin/main = 6f18a9a`
+> - GitDeployOps `W-046/T-046/WT-046` 기록 완료, project-docs 원격 업데이트: `a7026d7`
 
