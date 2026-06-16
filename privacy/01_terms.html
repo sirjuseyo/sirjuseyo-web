@@ -4,14 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>서비스 이용약관 | 써주세요 Privacy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --brand: #380097;
-      --bg:    #FFFFFF;
-      --ink:   #121212;
+      --bg: #EEEEF2;
+      --ink: #121212;
       --muted: #6B6B6B;
       --divider: #E5E7EB;
     }
@@ -24,10 +21,14 @@
       font-size: 14px;
     }
     .page {
-      max-width: 800px;
+      max-width: 480px;
       margin: 0 auto;
-      padding: 32px 20px 80px;
+      padding: 0;
+      background: #fff;
+      min-height: 100vh;
+      box-shadow: 0 0 40px rgba(0,0,0,0.08);
     }
+    .page-inner { padding: 32px 20px 0; }
     .back-link {
       display: inline-flex; align-items: center; gap: 10px;
       font-size: 22px; font-weight: 800; letter-spacing: -0.5px;
@@ -36,59 +37,33 @@
     }
     .back-link:hover { opacity: 0.6; }
     h1 {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      margin-bottom: 28px;
-      padding-bottom: 16px;
+      font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+      margin-bottom: 28px; padding-bottom: 16px;
       border-bottom: 1px solid var(--divider);
     }
     .doc-content { word-break: keep-all; }
     .doc-content p { margin-bottom: 10px; }
     h2.chapter {
-      font-size: 15px;
-      font-weight: 700;
-      margin: 32px 0 12px;
-      padding: 8px 12px;
-      background: #F3F0FF;
-      border-left: 3px solid var(--brand);
-      border-radius: 0 6px 6px 0;
+      font-size: 15px; font-weight: 700; margin: 32px 0 12px;
+      padding: 8px 12px; background: #F3F0FF;
+      border-left: 3px solid var(--brand); border-radius: 0 6px 6px 0;
       color: var(--brand);
     }
-    h3.article {
-      font-size: 14px;
-      font-weight: 700;
-      margin: 24px 0 8px;
-      color: var(--ink);
-    }
-    .doc-content ol {
-      padding-left: 24px;
-      margin-bottom: 10px;
-    }
+    h3.article { font-size: 14px; font-weight: 700; margin: 24px 0 8px; color: var(--ink); }
+    .doc-content ol { padding-left: 24px; margin-bottom: 10px; }
     .doc-content ol li { margin-bottom: 6px; }
-    .doc-content ul.dot-list {
-      list-style: none;
-      padding-left: 12px;
-      margin-bottom: 10px;
-    }
+    .doc-content ul.dot-list { list-style: none; padding-left: 12px; margin-bottom: 10px; }
     .doc-content ul.dot-list li::before { content: "· "; }
     .doc-content ul.dot-list li { margin-bottom: 6px; }
-    p.sub-item {
-      padding-left: 16px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
+    p.sub-item { padding-left: 16px; color: var(--muted); margin-bottom: 6px; }
     p.url a { color: var(--brand); font-size: 13px; }
     p.addendum { margin-top: 6px; }
-    @media (max-width: 600px) {
-      .page { padding: 24px 16px 60px; }
-      h1 { font-size: 19px; }
-    }
   </style>
 </head>
 <body>
 <div class="page">
 
+  <div class="page-inner">
   <a href="javascript:history.back()" class="back-link">← BACK</a>
 
   <h1>서비스 이용약관</h1>
@@ -292,9 +267,9 @@
     <p class="addendum">2. 본 약관은 2024년 7월 28일 수정 공포하고, 2024년 7월 31일부터 적용한다.</p>
   </div>
 
-</div>
-<!-- ─── FOOTER (공용 footer.js) ─── -->
-<script src="/footer.js"></script>
+  </div><!-- /.page-inner -->
 
+</div><!-- /.page -->
+<script src="/js/legal-shared.js"></script>
 </body>
 </html>
