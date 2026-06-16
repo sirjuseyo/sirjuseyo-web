@@ -1,7 +1,7 @@
 (function () {
   var css = document.createElement('style');
   css.textContent =
-    '.legal-top{background:linear-gradient(135deg,#FFFDE7 0%,#FFF9C4 100%);padding:18px 20px;font-size:24px;font-weight:700;color:#333;line-height:1.6;border-bottom:2px solid #F0E68C}' +
+    '.legal-top{background:linear-gradient(135deg,#FFFDE7 0%,#FFF9C4 100%);padding:18px 20px;font-size:24px;font-weight:400;color:#333;line-height:1.6;border-bottom:2px solid #F0E68C}' +
     '.legal-bottom{background:linear-gradient(135deg,#FFFDE7 0%,#FFF9C4 100%);padding:28px 20px;margin-top:16px;font-size:20px;color:#000;line-height:1.8;font-weight:400;border-top:2px solid #F0E68C;border-bottom:2px solid #F0E68C}' +
     '.legal-group{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(0,0,0,0.08)}' +
     '.legal-group:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}' +
