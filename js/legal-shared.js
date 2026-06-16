@@ -1,12 +1,12 @@
 (function () {
   var css = document.createElement('style');
   css.textContent =
-    '.legal-top{background:linear-gradient(135deg,#FFFDE7 0%,#FFF9C4 100%);padding:18px 20px;font-size:22px;font-weight:700;color:#333;line-height:1.6;border-bottom:2px solid #F0E68C}' +
+    '.legal-top{background:linear-gradient(135deg,#FFFDE7 0%,#FFF9C4 100%);padding:18px 20px;font-size:24px;font-weight:700;color:#333;line-height:1.6;border-bottom:2px solid #F0E68C}' +
     '.legal-bottom{background:linear-gradient(135deg,#FFFDE7 0%,#FFF9C4 100%);padding:28px 20px;margin-top:16px;font-size:20px;color:#000;line-height:1.8;font-weight:400;border-top:2px solid #F0E68C;border-bottom:2px solid #F0E68C}' +
     '.legal-group{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(0,0,0,0.08)}' +
     '.legal-group:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}' +
-    '.legal-group-title{font-size:22px;font-weight:700;color:#000;margin-bottom:12px}' +
-    '.legal-group-body{font-size:22px;font-weight:400;color:#000;line-height:1.8}' +
+    '.legal-group-title{font-size:24px;font-weight:700;color:#000;margin-bottom:12px}' +
+    '.legal-group-body{font-size:24px;font-weight:400;color:#000;line-height:1.8}' +
     '.legal-group-body p{margin-bottom:6px;padding-left:1em;text-indent:-1em}' +
     '.legal-group-body p::before{content:"• "}' +
     '.legal-group-body p:last-child{margin-bottom:0}' +
@@ -33,7 +33,7 @@
     '.store-badge-name{font-size:16px;font-weight:700;color:#fff}' +
     '.store-platform{font-size:13px;color:#555;display:flex;align-items:center;gap:4px;width:75px;flex-shrink:0}' +
     '.copyright-box{background:linear-gradient(135deg,#F3F0FF 0%,#EDE9FE 100%);border:2px solid #380097;border-radius:12px;padding:20px;display:flex;align-items:flex-start;gap:12px;box-shadow:0 4px 16px rgba(56,0,151,0.1)}' +
-    '.copyright-logo{width:44px;height:44px;border-radius:50%;flex-shrink:0}' +
+    '.copyright-logo{width:16px;height:16px;border-radius:50%;flex-shrink:0}' +
     '.copyright-text{font-size:13px;color:#1a1a1a;line-height:1.9;font-weight:600}' +
     '.copyright-brand{color:#380097;font-weight:700}';
   document.head.appendChild(css);
@@ -47,7 +47,7 @@
       '<span style="display:inline-block;background:#7C3AED;color:#fff;padding:4px 12px;border-radius:6px;margin-bottom:8px">써주세요연계대부</span><br>' +
       '2024-서울강남-0087-대부<br>' +
       '2024-서울강남-0088-대부중개<br>' +
-      '등록시・도 명칭 : 서울시 강남구청(대부업 담당 : 02-123-4567)' +
+      '등록시・도 명칭 : 서울시 강남구청(대부업 담당 : 02-3423-5524)' +
     '</div>';
   page.insertAdjacentHTML('afterbegin', legalTop);
 
@@ -62,7 +62,7 @@
           '<p>단, 2025년 2월 1일부터 신규체결, 갱신, 연장되는 계약에 한함. 해당 상품은 소액신용대출 상품입니다.</p>' +
           '<p>만 20세 이상 고객 대상으로 개인신용평점 등 신용도 및 당사 평가 기준에 따라 대출 가능 여부 및 이자율 산출</p>' +
           '<p>단, 채무 불이행 등록자는 제외</p>' +
-          '<p>이자는 매월 약정일에 부과하고, 상품에 따라 원금자유상환(만기일시상환), 원리금균등분할상환 등의 방법으로 상환</p>' +
+          '<p>이자는 매월 약정일에 부과하고, 상품에 따라 원금자유상환(만기일시상환), 원리금균등분할상환, 이자전부 포인트상환, 이자전부와 원금일부 포인트상환 등의 방법으로 상환</p>' +
           '<p>조기상환 조건 없음</p>' +
           '<p>대출계약을 체결하기전에 관계법령에 따라 금융상품에 관한 중요사항을 설명받을 수 있습니다.</p>' +
         '</div>' +
@@ -71,6 +71,7 @@
         '<div class="legal-group-title">부대비용 : 채무확인서 발급비, 신용조회비용 등 채무자 부담</div>' +
         '<div class="legal-group-body">' +
           '<p>수수료 없음</p>' +
+          '<p>신용조회비용은 포인트로 결제</p>' +
           '<p>대출계약 전 상품설명서 및 약관을 읽어보세요.</p>' +
         '</div>' +
       '</div>' +
@@ -89,7 +90,7 @@
       '<div class="bottom-title-wrap"><span class="bottom-title">Contact</span></div>' +
       '<div class="contact-card">' +
         '<div class="contact-card-title"><span>📞</span> 고객센터</div>' +
-        '<div class="contact-row"><span>대표전화 ｜</span>010-2153-6193</div>' +
+        '<div class="contact-row" style="font-size:24px"><span>대표전화 ｜</span>010-2153-6193</div>' +
         '<div class="contact-row"><span>고객문의 ｜</span><a href="mailto:customer@sirjuseyo.com" class="contact-link">customer@sirjuseyo.com</a></div>' +
       '</div>' +
       '<div class="contact-card">' +
