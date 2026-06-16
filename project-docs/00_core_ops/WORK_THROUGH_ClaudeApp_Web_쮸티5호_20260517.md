@@ -2731,3 +2731,57 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 - ② `monthly-loan-repo` `font-family` 통일: `'Noto Sans KR',sans-serif` → `'Apple SD Gothic Neo','Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif` — `index.html`, `index-dev.html` 동시 수정
 - 원인: monthly-loan-repo는 `Noto Sans KR`만 1순위여서 Apple 기기에서도 Noto Sans KR로 렌더링 → sirjuseyoWeb과 폰트 굵기 체감 차이 발생
 
+---
+
+### T-054 / T-055 배포 완료 보고서
+
+**수신일:** 2026-06-16
+**발신:** 깃 & 배포 관리자 → 개발자
+
+#### 1) monthly-loan T-054
+
+| 항목 | 내용 |
+|------|------|
+| PR | #15 (feature/T-001-jun-loan-landing → main) |
+| PR 상태 | MERGED |
+| Merge commit | `8aff1e66` |
+| PRD 반영 | GitHub Pages 배포 성공 (`27617724292`) |
+| 결과 | T-054 운영 반영/검증 완료 |
+
+#### 2) sirjuseyo-web T-055
+
+| 항목 | 내용 |
+|------|------|
+| PR | #11 (claude/great-driscoll-c92419), OPEN + DIRTY, 전체 병합 불가 |
+| 선별 반영 | `js/legal-shared.js`만 선별 반영 |
+| 로컬 커밋 | `2e91a3f` (`fix(legal): remove legal top bold weight [T-055]`) |
+| 상태 | main 푸시 완료, GitHub Pages 배포 완료 |
+
+**비고:**
+- monthly-loan T-054: PR #15 merge commit `8aff1e66`, main 반영 + Pages 배포 완료
+- sirjuseyo-web T-055: PR #11 전체 병합 없이 `js/legal-shared.js`만 선별 반영, 커밋 `2e91a3f` main 푸시 완료, Pages run `27619529917` success
+- 최초 HTTPS 443 장애 → 복구 후 깃 & 배포 관리자가 main 푸시 완료
+- 프로덕션 검증: `sirjuseyo.com/js/legal-shared.js` font-weight:400 확인 완료
+
+---
+
+### WT-056: 저작권 표기 수정 — 주식회사 혁사호재(ALBIT Inc.) 삭제
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 레포 | `sirjuseyoWeb` + `monthly-loan-repo` (2개 레포 동시) |
+| 대상 파일 | `sirjuseyoWeb/js/legal-shared.js`, `monthly-loan-repo/js/legal-shared.js` |
+| 연관 W-ID | W-056 |
+| 연관 T-ID | T-056 |
+| 커밋 해시 | 커밋 후 기입 |
+| 작업 이력 | 1차 작업 |
+| 상태 | 완료 |
+
+**변경 (3건):**
+- ① `This website is owned and operated by ALBITF & ALBIT Inc.` → `This website is owned and operated by ALBITF.`
+- ② `© 2026 ALBITF & ALBIT Inc. All rights reserved.` → `© 2026 ALBITF. All rights reserved.`
+- ③ `써주세요.(sirjuseyo.com)는 써주세요연계대부(ALBITF)와 주식회사 혁사호재(ALBIT Inc.)의 공동운영 서비스입니다.` → `써주세요.(sirjuseyo.com)는 써주세요연계대부(ALBITF)의 서비스입니다.`
+- 양쪽 `legal-shared.js` 동시 수정, Live Server 육안 확인 완료
+
