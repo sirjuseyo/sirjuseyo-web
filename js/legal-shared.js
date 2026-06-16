@@ -33,7 +33,7 @@
     '.store-badge-name{font-size:16px;font-weight:700;color:#fff}' +
     '.store-platform{font-size:13px;color:#555;display:flex;align-items:center;gap:4px;width:75px;flex-shrink:0}' +
     '.copyright-box{background:linear-gradient(135deg,#F3F0FF 0%,#EDE9FE 100%);border:2px solid #380097;border-radius:12px;padding:20px;display:flex;align-items:flex-start;gap:12px;box-shadow:0 4px 16px rgba(56,0,151,0.1)}' +
-    '.copyright-logo{width:16px;height:16px;border-radius:50%;flex-shrink:0}' +
+    '.copyright-logo{width:25px;height:25px;border-radius:50%;flex-shrink:0}' +
     '.copyright-text{font-size:13px;color:#1a1a1a;line-height:1.9;font-weight:600}' +
     '.copyright-brand{color:#380097;font-weight:700}';
   document.head.appendChild(css);
@@ -115,7 +115,7 @@
         '<strong style="color:#000">써주세요연계대부 (ALBITF)</strong><br>' +
         '대표 : 정희선 / JUNG HEE SUN<br>' +
         '대표전화 : 010-2153-6193<br>' +
-        '주소 : 서울특별시 강남구 도곡로 112, 2층 C2-7호(도곡동, 서한빌딩)<br>' +
+        '주소 : 서울특별시 강남구 논현로72길 16, 4층 424호 (역삼동, 초원빌딩)<br>' +
         '사업자 등록번호 : <a href="https://www.sirjuseyo.com/imgs/home/써주세요연계대부 사업자등록증.pdf" target="_blank" rel="noopener" class="corp-link">778-28-01770</a><br>' +
         '대부업 등록번호 : <a href="https://www.sirjuseyo.com/imgs/home/써주세요연계대부 대부업 등록증.pdf" target="_blank" rel="noopener" class="corp-link">2024-서울강남-0087-대부</a><br>' +
         '대부중개업 등록번호 : <a href="https://www.sirjuseyo.com/imgs/home/써주세요연계대부 대부중개업 등록증.pdf" target="_blank" rel="noopener" class="corp-link">2024-서울강남-0088-대부중개</a>' +
