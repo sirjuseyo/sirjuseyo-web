@@ -2580,3 +2580,110 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 - 수정 파일: `index.html` (상단 로고 + 텍스트), `js/legal-shared.js` (하단 로고 + 주소)
 - 프리뷰 서버(port 8080) 검증 완료
 
+---
+
+**깃 & 배포 관리자 완료 보고서 (GitHub Pages PRD)**
+
+[GitHub Pages PRD : 깃 & 배포 관리자 -> 개발자]
+
+`sirjuseyo-web` T-051 홈 로고/주소/문구 수정 main 선별 반영 및 GitHub Pages 배포 완료했습니다.
+
+- 원격 반영:
+  - PR #11은 `OPEN / DIRTY`
+  - 전체 `dev -> main` 병합 안 함
+  - PR #11 전체 merge 안 함
+  - 사유: PR diff에 `js/legal-shared.js`, `privacy/*`, 개발자 문서 등 누적 변경 포함
+  - 운영 반영은 현재 `main/index.html` 기준 요청 4개 항목만 최소 선별 반영
+  - 최종 main commit: `47a07c0`
+
+- 반영 내용:
+  - 상단 `.logo-img` `25px`
+  - 하단 `.copyright-logo` `25px`
+  - 써주세요연계대부 주소 `논현로72길 16, 4층 424호 (역삼동, 초원빌딩)` 반영
+  - `수 만 명의 청년 서민이 빌려갔어요.` 반영
+
+- 배포:
+  - GitHub Pages `pages build and deployment` 성공
+  - run: `27596429413`
+
+- 확인:
+  - 운영 홈 `https://www.sirjuseyo.com/` `HTTP/2 200`
+  - 운영 HTML에서 `.logo-img`, `.copyright-logo`, `수 만 명`, 새 주소 확인
+  - 로컬 `sirjuseyo-web/main` 최신화 완료: `HEAD = origin/main = 47a07c0`
+
+- 문서:
+  - GitDeployOps `W-047/T-047/WT-047` 기록 완료
+  - project-docs 원격 업데이트 완료: `1b480e5`
+
+한 줄 버전:
+- `sirjuseyo-web` T-051 요청 4개 항목만 main 선별 반영 완료, GitHub Pages 배포 성공 및 운영 홈 200/문구/주소 확인했습니다.
+
+---
+
+**깃 & 배포 관리자 완료 보고서 (T-052 — GitHub Pages PRD)**
+
+[GitHub Pages PRD : 깃 & 배포 관리자 -> 개발자]
+
+`sirjuseyo-web` T-052 법적고지 공통화/Privacy 3페이지 main 선별 반영 및 GitHub Pages 배포 완료했습니다.
+
+- 원격 반영:
+  - PR #11은 `OPEN / DIRTY`
+  - 전체 `feature -> main` 병합 안 함
+  - 전체 `dev -> main` 병합 안 함
+  - 사유: PR #11에는 개발자 문서와 누적 변경이 포함되어 있어 전체 병합 위험
+  - 운영 반영 파일 5개만 선별 반영:
+    - `index.html`
+    - `js/legal-shared.js`
+    - `privacy/01_terms.html`
+    - `privacy/index002.html`
+    - `privacy/08_standard-terms.html`
+  - 최종 main commit: `5bab8db`
+
+- 배포:
+  - GitHub Pages `pages build and deployment` 성공
+  - run: `27597570883`
+
+- 확인:
+  - 운영 홈 `https://www.sirjuseyo.com/`에서 `/js/legal-shared.js` 참조 및 `수 만 명` 문구 확인
+  - `https://www.sirjuseyo.com/js/legal-shared.js`에서 24px/전화번호/주소/상환방법/신용조회비용 확인
+  - privacy 3페이지 모두 `HTTP/2 200` 및 `/js/legal-shared.js` 참조 확인
+  - 로컬 `sirjuseyo-web/main` 최신화 완료: `HEAD = origin/main = 5bab8db`
+
+- 문서:
+  - GitDeployOps TODO/WORK_THROUGH 업데이트 완료
+  - `W-048 / T-048 / WT-048` 기록 완료
+  - 원격 project-docs 반영 완료:
+    - TODO_BOARD commit `4079a1e`
+    - WORK_THROUGH commit `0787dd1`
+
+한 줄 버전:
+- `sirjuseyo-web` T-052 요청 운영 파일 5개만 main 선별 반영 완료, GitHub Pages 배포 성공 및 홈/공통 JS/privacy 3페이지 운영 확인했습니다.
+
+---
+
+### WT-053: Privacy 6페이지 `legal-shared.js` 상단·하단 법적고지 연결
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `privacy/02~07_*.html` (6개) |
+| 연관 W-ID | W-053 |
+| 연관 T-ID | T-053 |
+| 커밋 해시 | 커밋 대기 |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**변경 (3건):**
+- ① 6개 파일에 `<script src="/js/legal-shared.js"></script>` 추가 → 상단·하단 법적고지 자동 주입
+  - `privacy/02_collect-personal.html` (개인(신용)정보 수집·이용 동의서)
+  - `privacy/03_collect-unique.html` (고유식별정보 수집·이용 동의서)
+  - `privacy/04_inquiry-personal.html` (개인(신용)정보 조회 동의서)
+  - `privacy/05_inquiry-unique.html` (고유식별정보 조회 동의서)
+  - `privacy/06_provide-personal.html` (개인(신용)정보 제공 동의서)
+  - `privacy/07_provide-unique.html` (고유식별정보 제공 동의서)
+- ② 6개 파일에서 기존 `footer.js` 참조 제거 (하단 중복 방지)
+  - `<script src="/footer.js"></script>` 및 관련 주석 삭제
+- ③ 6개 파일 `.back-link`에 `margin-top: 20px` 추가 (상단 법적고지와 BACK 버튼 간격 확보)
+- 프리뷰 서버(port 8080) 검증 완료: 상단·하단 1세트만 표시, 중복 없음
+
