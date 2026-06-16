@@ -2687,3 +2687,47 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 - ③ 6개 파일 `.back-link`에 `margin-top: 20px` 추가 (상단 법적고지와 BACK 버튼 간격 확보)
 - 프리뷰 서버(port 8080) 검증 완료: 상단·하단 1세트만 표시, 중복 없음
 
+---
+
+### WT-054: monthly-loan 홈페이지 1열 전환 + `legal-shared.js` 연결
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 레포 | `monthly-loan-repo` |
+| 대상 파일 | `index.html`, `index-dev.html`, `js/legal-shared.js` (신규) |
+| 연관 W-ID | W-054 |
+| 연관 T-ID | T-054 |
+| 커밋 해시 | f1301ef (monthly-loan-repo) |
+| 작업 이력 | 1차 작업 |
+| 상태 | 완료 |
+
+**변경 (3건):**
+- ① `.wrap`에 `max-width:480px; margin:0 auto;` 추가 → PC에서도 1열 고정 (sirjuseyoWeb 홈과 동일)
+- ② 데스크탑 2열 미디어쿼리 전체 제거 (`@media(min-width:768px)`, `@media(min-width:1280px)`)
+- ③ `footer.js` 참조 → `js/legal-shared.js` 참조로 교체 (상단·하단 법적고지 자동 주입)
+- `js/legal-shared.js` 파일은 sirjuseyoWeb에서 복사 (동일 원본)
+- `index.html`, `index-dev.html` 2개 파일 동일 수정 적용
+
+---
+
+### WT-055: 상단 법적고지 볼드 제거 + monthly-loan 폰트 통일
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 레포 | `sirjuseyoWeb` + `monthly-loan-repo` (2개 레포 동시) |
+| 대상 파일 | `sirjuseyoWeb/js/legal-shared.js`, `monthly-loan-repo/js/legal-shared.js`, `monthly-loan-repo/index.html`, `monthly-loan-repo/index-dev.html` |
+| 연관 W-ID | W-055 |
+| 연관 T-ID | T-055 |
+| 커밋 해시 | 8b6fca2 (sirjuseyoWeb), f1301ef (monthly-loan-repo) |
+| 작업 이력 | 1차 작업 |
+| 상태 | 완료 |
+
+**변경 (2건):**
+- ① `.legal-top` CSS `font-weight:700` → `font-weight:400` (상단 법적고지 볼드 제거) — 양쪽 `legal-shared.js` 동시 수정
+- ② `monthly-loan-repo` `font-family` 통일: `'Noto Sans KR',sans-serif` → `'Apple SD Gothic Neo','Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif` — `index.html`, `index-dev.html` 동시 수정
+- 원인: monthly-loan-repo는 `Noto Sans KR`만 1순위여서 Apple 기기에서도 Noto Sans KR로 렌더링 → sirjuseyoWeb과 폰트 굵기 체감 차이 발생
+
