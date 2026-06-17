@@ -33,7 +33,7 @@
     '.store-badge-name{font-size:16px;font-weight:700;color:#fff}' +
     '.store-platform{font-size:13px;color:#555;display:flex;align-items:center;gap:4px;width:75px;flex-shrink:0}' +
     '.copyright-box{background:linear-gradient(135deg,#F3F0FF 0%,#EDE9FE 100%);border:2px solid #380097;border-radius:12px;padding:20px;display:flex;align-items:flex-start;gap:12px;box-shadow:0 4px 16px rgba(56,0,151,0.1)}' +
-    '.copyright-logo{width:25px;height:25px;border-radius:50%;flex-shrink:0}' +
+    '.copyright-logo{width:34px;height:34px;border-radius:50%;flex-shrink:0}' +
     '.copyright-text{font-size:13px;color:#1a1a1a;line-height:1.9;font-weight:600}' +
     '.copyright-brand{color:#380097;font-weight:700}';
   document.head.appendChild(css);
