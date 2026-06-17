@@ -2829,4 +2829,44 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
      - 2-1. 텍스트 라인 수정: "급할 때 빌려쓰는" + "나노크레딧" (줄바꿈)
      - 2-2. 나노크레딧과 아래 박스 사이 여백 추가
   3. "20~33세 청년 서민에게 친화적인 창의적 대안 금융" 볼드체 제거
+- 1차 피드백 수정 후 재피드백: monthly-loan index.html/index-dev.html 원본 복구 → 나머지 항목은 별도 검토
+- 로고 34px + 저작권 로고 절대URL만 우선 커밋/배포 요청
+
+---
+
+### T-057 배포 완료 보고서
+
+**수신일:** 2026-06-17
+**발신:** 깃 & 배포 관리자 → 개발자
+
+| 레포 | 선별 반영 커밋 | Pages run | 상태 |
+|------|--------------|-----------|------|
+| `sirjuseyo-web` | `3eedf27` | `27668587979` success | 완료 |
+| `monthly-loan` | `961e2d1` | `27668588080` success | 완료 |
+
+- 라이브 검증: 웹 상단 로고 34px, 양쪽 하단 저작권 로고 34px, 월간 저작권 로고 절대 URL 반영 확인 완료
+
+---
+
+### WT-057 3차: monthly-loan 히어로 영역 전면 수정
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-17 |
+| 작업자 | 쮸티5호 |
+| 대상 레포 | `monthly-loan-repo` |
+| 대상 파일 | `index.html`, `index-dev.html` |
+| 연관 W-ID | W-057 (3차) |
+| 커밋 해시 | 커밋 후 기입 |
+| 상태 | 로컬 검증 대기 |
+
+**수정 내역 (6건):**
+
+1. **상단 로고 이미지 교체**: base64 인코딩 PNG(1200×1200) → `https://www.sirjuseyo.com/imgs/home/logoPurpleSplash@2x.png` 절대 URL (300×300)
+   - 근본 원인: base64 이미지와 sirjuseyoWeb 이미지가 다른 파일, 여백 포함 1200×1200이라 `object-fit:contain` 시 로고 본체가 작게 렌더링됨
+2. **로고 CSS**: `width:44px;height:44px` → `34px` + `max-width/max-height:34px` + `border-radius:50%` 추가 (sirjuseyoWeb과 동일 원형 스타일)
+3. **`.brand` 텍스트**: `써주세요.` → `20~33세 청년 서민에게 친화적인 창의적 대안금융` / `font-weight:800→400`
+4. **`.sub` 투명화**: `color:var(--cream)` inline style 추가 (텍스트 비가시화, 레이아웃 공간 보전)
+5. **h1 텍스트 2줄 변경**: `급할 때<br>빌려쓰는<br><em>나노크레딧.</em>` → `급할 때 빌려쓰는,<br><em>나노크레딧</em>`
+6. **h1 CSS 조정**: `font-size:2rem→18px` / `line-height:1.25→1.8` / `padding-top:20px` / `min-height:120px` 추가 (원래 3줄 높이 보전, 빈 공간 최소화, 영역 침범 방지)
 
