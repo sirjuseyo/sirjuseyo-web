@@ -2785,3 +2785,48 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 - ③ `써주세요.(sirjuseyo.com)는 써주세요연계대부(ALBITF)와 주식회사 혁사호재(ALBIT Inc.)의 공동운영 서비스입니다.` → `써주세요.(sirjuseyo.com)는 써주세요연계대부(ALBITF)의 서비스입니다.`
 - 양쪽 `legal-shared.js` 동시 수정, Live Server 육안 확인 완료
 
+---
+
+### T-056 배포 완료 보고서
+
+**수신일:** 2026-06-16
+**발신:** 깃 & 배포 관리자 → 개발자
+
+| 레포 | 선별 반영 커밋 | Pages run | 상태 |
+|------|--------------|-----------|------|
+| `sirjuseyo-web` | `8d803b4` | `27621401188` success | 완료 |
+| `monthly-loan` | `fe1a63d` | `27621395896` success | 완료 |
+
+- 라이브 검증: 양쪽 `legal-shared.js`에서 저작권/서비스 문구 3줄 교체 확인 완료
+
+---
+
+### WT-057: 로고 사이즈 통일 + monthly-loan UI 수정
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-17 |
+| 작업자 | 쮸티5호 |
+| 대상 레포 | `sirjuseyoWeb` + `monthly-loan-repo` |
+| 대상 파일 | `sirjuseyoWeb/index.html`, `sirjuseyoWeb/js/legal-shared.js`, `monthly-loan-repo/index.html`, `monthly-loan-repo/index-dev.html`, `monthly-loan-repo/js/legal-shared.js` |
+| 연관 W-ID | W-057 |
+| 연관 T-ID | T-057 |
+| 커밋 해시 | 커밋 후 기입 |
+| 작업 이력 | 2차 작업 |
+| 상태 | 진행중 |
+
+**1차 작업 (4건):**
+- ① 상단·하단 로고 34px 통일 (sirjuseyoWeb `index.html` + 양쪽 `legal-shared.js` 하단 저작권 로고)
+- ② h1 "급할 때 빌려쓰는 나노크레딧." `2rem(32px)` → `18px` (monthly-loan)
+- ③ 저작권 로고 경로 절대 URL로 변경 (monthly-loan `legal-shared.js`)
+- ④ 로고 옆 "써주세요." → "20~33세 청년 서민에게 친화적인 창의적 대안 금융" 교체 + 나노크레딧 아래 동일 문구 삭제
+
+**1차 피드백 (로컬 검증):**
+- sirjuseyoWeb: 상단·하단 로고 34px 정상 반영 ✅
+- monthly-loan 이슈 3건:
+  1. 상단 로고 사이즈 미반영 (하단은 반영됨) → CSS 확인 필요
+  2. h1 18px + 로고 옆 문구 이동으로 여백 사라짐 → 총 이미지가 상단 텍스트 침범
+     - 2-1. 텍스트 라인 수정: "급할 때 빌려쓰는" + "나노크레딧" (줄바꿈)
+     - 2-2. 나노크레딧과 아래 박스 사이 여백 추가
+  3. "20~33세 청년 서민에게 친화적인 창의적 대안 금융" 볼드체 제거
+
