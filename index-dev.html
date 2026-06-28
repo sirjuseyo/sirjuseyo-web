@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>써주세요. | 신용이 낮아도 빌릴 수 있으니까</title>
+  <title>🚧 DEV | 써주세요. | 신용이 낮아도 빌릴 수 있으니까</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -428,6 +428,8 @@
 </head>
 <body>
 
+<div style="background:#FF5400;color:#fff;text-align:center;padding:10px;font-weight:700;font-size:14px;position:sticky;top:0;z-index:10000;">🚧 DEV 테스트 환경 — 실사용자 접근 금지</div>
+
 <div class="wrap">
 
   <!-- ═══ 로고 & 카피 ═══ -->
@@ -587,7 +589,7 @@
 
 </div>
 
-<!-- 써주세요. 강제 고지 팝업 -->
+<!-- 써주세요. 강제 고지 팝업 — DEV(재노출 방지 비활성화) -->
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="coreKey">
   <div class="popup">
     <header class="pop-head">
@@ -698,7 +700,6 @@
   </div>
 </div>
 <script>
-  (function(){var t=new Date().toISOString().slice(0,10);if(localStorage.getItem('sjy_popup_hidden')===t){document.getElementById('overlay').hidden=true;}})();
   var overlay=document.getElementById('overlay'),body=document.getElementById('body'),bar=document.getElementById('bar'),
       cta=document.getElementById('cta'),status=document.getElementById('status'),statusTxt=document.getElementById('statusTxt'),
       cbs=[...document.querySelectorAll('.cb')];
@@ -712,7 +713,7 @@
     if(ready){status.classList.add('ready');statusTxt.textContent='확인 완료 — 닫을 수 있어요';}
     else{status.classList.remove('ready');statusTxt.textContent=!scrolledBottom?'끝까지 스크롤해서 읽어주세요':'확인 항목 '+checked+'/'+cbs.length+' — 남은 항목을 체크해주세요';}
   }
-  function closePopup(){if(cta.disabled)return;overlay.hidden=true;localStorage.setItem('sjy_popup_hidden',new Date().toISOString().slice(0,10));}
+  function closePopup(){if(cta.disabled)return;overlay.hidden=true;}
   body.addEventListener('scroll',refreshPopup,{passive:true});
   cbs.forEach(function(c){c.addEventListener('change',refreshPopup);});
   cta.addEventListener('click',closePopup);
