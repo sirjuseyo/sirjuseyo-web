@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>쇼핑 내역을 제출하고 돈 빌리기 | 써주세요.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand:     #380097;
+      --nc-purple: #4432A2;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* --- 공통 --- */
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      color: #555;
+      text-decoration: none;
+      background: #fff;
+      cursor: pointer;
+    }
+    .back-btn:hover { background: #f5f5f5; }
+
+    .back-btn-dark {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      border: 1.5px solid #555;
+      border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      color: #ccc;
+      text-decoration: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    .back-btn-dark:hover { background: #222; }
+
+    .sec-img {
+      width: 100%;
+      display: block;
+    }
+
+    /* --- 페이지 타이틀 (신용 페이지와 동일 톤앤매너) --- */
+    .page-title-section {
+      padding: 40px 24px 36px;
+      background: #fff;
+    }
+    .page-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.35;
+      letter-spacing: -1.5px;
+      margin-top: 28px;
+    }
+
+    /* --- SEC-02~04 네이버랑 쿠팡 + 그라디언트 + WHY (이미지) --- */
+    .sec-dark-img {
+      background: #000;
+    }
+
+    /* --- SEC-05 이런생각 (이미지) --- */
+    .sec-dark-transition {
+      background: #333;
+    }
+
+    /* --- SEC-06 소비력과 구매력 (이미지) --- */
+    .sec-light-gray {
+      background: #EFEFEF;
+    }
+
+    /* --- SEC-07 쇼핑 내역 제출 (이미지) --- */
+    .sec-white {
+      background: #fff;
+    }
+
+    /* --- SEC-08 써주세요적 사고 (이미지) --- */
+
+    /* --- SEC-09 새로운 기회 (이미지) --- */
+    .sec-gradient {
+      background: linear-gradient(135deg, #7FFF00, #FFD700);
+    }
+
+    /* --- SEC-04-1 전환 문구 --- */
+    .transition-text {
+      padding: 48px 24px;
+      background: #fff;
+      text-align: center;
+    }
+    .transition-text p {
+      font-size: 22px;
+      font-weight: 700;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* --- SEC-06-1 써주세요.에선 달라요 (텍스트) --- */
+    .sec-differ {
+      padding: 48px 24px;
+      background: #fff;
+    }
+    .sec-differ h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #111;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #E0E0E0;
+    }
+    .sec-differ ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+    .sec-differ ul li {
+      font-size: 17px;
+      font-weight: 500;
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .sec-differ .highlight-badge {
+      background: #E8DEF8;
+      color: #4432A2;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    /* --- SEC-06-2 신청 조건은 딱 1가지 (텍스트) --- */
+    .sec-condition {
+      padding: 36px 24px 48px;
+      background: #fff;
+    }
+    .sec-condition h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #111;
+      line-height: 1.5;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #E0E0E0;
+    }
+    .sec-condition .highlight-red {
+      background: #FFE0E0;
+      color: #D32F2F;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 900;
+    }
+
+    /* --- SEC-07-1 이 대출방식이 특별한 이유 (텍스트) --- */
+    .sec-special {
+      padding: 48px 24px;
+      background: #fff;
+    }
+    .sec-special h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #111;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #E0E0E0;
+    }
+
+    /* --- SEC-08-1 꼭! 확인해요 (텍스트) --- */
+    .sec-check {
+      padding: 48px 24px;
+      background: #fff;
+    }
+    .sec-check h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #111;
+      margin-bottom: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #E0E0E0;
+    }
+    .sec-check > ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+    .sec-check > ul > li {
+      font-size: 17px;
+      font-weight: 700;
+      color: #222;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .sec-check > ul > li > ul {
+      list-style: circle;
+      padding-left: 18px;
+      margin-top: 4px;
+      margin-bottom: 16px;
+    }
+    .sec-check > ul > li > ul > li {
+      font-size: 15px;
+      font-weight: 400;
+      color: #555;
+      line-height: 1.7;
+    }
+    .sec-check .link-highlight {
+      color: #4432A2;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    /* --- SEC-11 CTA 버튼 --- */
+    .cta-section {
+      padding: 40px 24px;
+      background: #fff;
+    }
+    .btn-shopping {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 70px;
+      border: 1px solid #5BCB50;
+      border-radius: 10px;
+      font-size: 23px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #5BCB50;
+      transition: 200ms;
+    }
+    .btn-shopping:hover {
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    /* --- 하단 BACK --- */
+    .bottom-back {
+      padding: 28px 24px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- SEC-01 상단 BACK + 페이지 타이틀 (흰색 배경 — 신용 페이지와 동일) -->
+<div class="page-title-section">
+  <a class="back-btn" href="browse.html">&#x2B05; BACK</a>
+  <h1 class="page-title">신용은 중요하지 않아요, 쇼핑 내역을 제출하면 인간미 풀풀 풍기는 사람이 돈을 빌려 드려요.</h1>
+</div>
+
+<!-- SEC-02~04 네이버랑 쿠팡 + 그라디언트 + WHY (이미지) -->
+<div class="sec-dark-img">
+  <img class="sec-img" src="../imgs/loan-match/쇼핑_네이버랑쿠팡에서.png" alt="나는 네이버랑 쿠팡에서 자주 쇼핑을 할 정도로 지불 능력이 있어." />
+</div>
+
+<!-- SEC-04-1 전환 문구 (원본 누락 복원) -->
+<div class="transition-text">
+  <p>🗣️ 매달 꾸준히 돈을 벌고 있고,<br>상환능력도 충분하다고 생각하는데 말이죠..</p>
+</div>
+
+<!-- SEC-05 이런 생각 해봤을 걸요? (이미지) -->
+<div class="sec-dark-transition">
+  <img class="sec-img" src="../imgs/loan-match/쇼핑_이런생각.png" alt="다들 이런생각 해봤을 걸요?" />
+</div>
+
+<!-- SEC-06 소비력과 구매력 (이미지) -->
+<div class="sec-light-gray">
+  <img class="sec-img" src="../imgs/loan-match/쇼핑_소비력과구매력.png" alt="왜 나의 소비력과 구매력은 대출 심사에 고려하지 않는걸까?" />
+</div>
+
+<!-- SEC-06-1 써주세요.에선 달라요 (원본 텍스트) -->
+<div class="sec-differ">
+  <h2>🔥 써주세요.에선 달라요.</h2>
+  <ul>
+    <li>AI가 고객님의 쇼핑 내역을 보고 <span class="highlight-badge">소비 패턴과 구매력을 분석</span> 해 상환 능력을 평가해요.</li>
+    <li>신용점수가 낮아도, 소비력과 구매력이 있다면 충분히 대출을 이용할 수 있어요.</li>
+  </ul>
+</div>
+
+<!-- SEC-06-2 신청 조건은 딱 1가지 (원본 텍스트) -->
+<div class="sec-condition">
+  <h2>📍 신청 조건은 딱 <span class="highlight-red">1가지</span> 만 있으면 돼요.</h2>
+</div>
+
+<!-- SEC-07 쇼핑 내역 제출 (이미지) -->
+<div class="sec-white">
+  <img class="sec-img" src="../imgs/loan-match/쇼핑_쇼핑내역제출.png" alt="최근 3개월 간 쇼핑 내역 제출 - 온라인 몰 또는 오프라인 매장에서 쇼핑하고 결제한 내역을 제출하면 돼요." />
+</div>
+
+<!-- SEC-07-1 이 대출방식이 특별한 이유 (원본 텍스트) -->
+<div class="sec-special">
+  <h2>✨ 이 대출방식이 특별한 이유</h2>
+</div>
+
+<!-- SEC-08 써주세요.적 사고 (이미지) -->
+<div class="sec-dark-img">
+  <img class="sec-img" src="../imgs/loan-match/쇼핑_써주세요적사고.png" alt="써주세요.적 사고 - 기존 신용 평가로 대출이 어려웠던 고객님들도 소비력과 구매력으로 대출을 이용할 수 있다는 것" />
+</div>
+
+<!-- SEC-08-1 꼭! 확인해요 (원본 텍스트) -->
+<div class="sec-check">
+  <h2>⚠️ 꼭! 확인해요.</h2>
+  <ul>
+    <li>신용 점수가 높다면, 소비 데이터로 한도를 결정해요.
+      <ul>
+        <li>AI는 제출된 소비 내역을 분석하여 한도를 책정해요. 신용 점수가 높다면 추가적인 대안신용평가는 필요하지 않아요.</li>
+      </ul>
+    </li>
+    <li>신용 점수가 낮다면, 대안신용평가가 함께 진행돼요.
+      <ul>
+        <li>신용 점수가 낮더라도 걱정하지 마세요. 대안신용평가를 통해 추가적인 상환 능력을 분석하고, 적절한 한도를 결정해요.</li>
+      </ul>
+    </li>
+    <li>신용정보는 열람해요.
+      <ul>
+        <li>악성 연체 가능성 등을 파악하기 위해 신용정보를 확인하고 있어요.</li>
+      </ul>
+    </li>
+    <li>단순히 쇼핑 기록만 많다고 해서 한도가 부여되는 것은 아니에요.
+      <ul>
+        <li>쇼핑 내역이 일정하고 안정적인 소비 습관을 보여주면 신용도에 관계없이 적절한 한도를 받을 수 있어요.</li>
+      </ul>
+    </li>
+    <li>만약 해당 상품에서 애석하게도 승인이 안 될 경우에는 <span class="link-highlight">포인트를 적립하고 돈 빌리기</span> 방식을 통해 대출을 받을 수 있어요.
+      <ul>
+        <li>오히려 이 방법이 더 빠를 수도 있어요.</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<!-- SEC-09 새로운 기회 (이미지) -->
+<div class="sec-gradient">
+  <img class="sec-img" src="../imgs/loan-match/쇼핑_새로운기회.png" alt="프리랜서, 자영업자, 대학생 등 누구에게나 열리는 새로운 기회" />
+</div>
+
+<!-- SEC-11 CTA 버튼 -->
+<div class="cta-section">
+  <a class="btn-shopping"
+     href="https://tally.so/r/mRJEvK"
+     data-tally-open="mRJEvK"
+     data-tally-layout="modal"
+     data-tally-width="800"
+     data-tally-hide-title="1"
+     data-tally-emoji-text="&#x1F64B;&#x1F3FB;"
+     data-tally-emoji-animation="bounce">쇼핑 내역 제출하고 돈 빌리기 &gt;</a>
+</div>
+
+<!-- 하단 BACK -->
+<div class="bottom-back">
+  <a class="back-btn" href="browse.html">&#x2B05; BACK</a>
+</div>
+
+<!-- FOOTER (공용 footer.js) -->
+<script src="/footer.js"></script>
+
+<!-- Tally 모달 -->
+<script src="https://tally.so/widgets/embed.js"></script>
+
+</body>
+</html>
