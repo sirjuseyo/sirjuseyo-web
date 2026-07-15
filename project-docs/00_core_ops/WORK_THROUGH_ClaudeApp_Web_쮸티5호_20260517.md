@@ -2431,3 +2431,347 @@ GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언
 > - 로컬 `sirjuseyo-web/main` 최신화 완료: `HEAD = origin/main = 6f18a9a`
 > - GitDeployOps `W-046/T-046/WT-046` 기록 완료, project-docs 원격 업데이트: `a7026d7`
 
+---
+
+### WT-047: 서비스 이용약관 페이지 법적고지 UI 모바일 전환
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `privacy/01_terms.html` |
+| 연관 W-ID | W-047 |
+| 연관 T-ID | T-047 |
+| 커밋 해시 | - (PR 대기) |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**1차 변경:**
+- CSS: `.page` max-width 800px → 480px, `--bg: #EEEEF2`, white background + box-shadow
+- `.page-inner` 래퍼 추가 (padding: 32px 24px)
+- 상단: legal-top 블록 추가 (써주세요연계대부 보라 배지 + 등록번호 + 등록시도명칭)
+- 하단: footer.js 제거 → 인라인 legal-bottom (3그룹) + Contact (3카드) + About Us (2 corp-box) + Copyright 추가
+- 홈페이지와 동일한 480px 모바일 앱형 UI 통일
+
+**2차 변경 (legal-shared.js v3 전환):**
+- 인라인 법적고지 HTML/CSS 전체 삭제 → `<script src="/js/legal-shared.js"></script>` 참조로 전환
+- `js/legal-shared.js` v3 완전 재작성: 홈페이지(`index.html`) 최신 CSS/HTML을 100% 동일하게 동적 주입
+- 주입 대상: legal-top(상단) + legal-bottom(하단 3그룹) + Contact(3카드) + About Us(2 corp-box, 써주세요연계대부 ALBITF 선두) + 앱 다운로드(Google Play/App Store) + Copyright(이미지 로고 + ALBITF & ALBIT Inc.)
+- 등록번호 PDF 링크, corp-box 22px 인라인 스타일, 대표전화 등 홈페이지 세부사항 완벽 일치 확인
+- 로컬 검증 완료 (port 5501 + port 8080)
+
+---
+
+### WT-048: 개인정보 처리방침 페이지 법적고지 UI 모바일 전환
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `privacy/index002.html` |
+| 연관 W-ID | W-048 |
+| 연관 T-ID | T-048 |
+| 커밋 해시 | - (PR 대기) |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**1차 변경:**
+- CSS: `.page` max-width 800px → 480px, `--bg: #EEEEF2`, white background + box-shadow
+- `.page-inner` 래퍼 추가 (padding: 32px 24px)
+- 상단: legal-top 블록 추가 (써주세요연계대부 보라 배지 + 등록번호 + 등록시도명칭)
+- 하단: 기존 인라인 Contact 섹션(2카드, 카카오 링크) + footer.js 제거 → 홈페이지 동일 인라인 legal-bottom + Contact (3카드) + About Us (2 corp-box) + Copyright 교체
+- 기존 헤더(Privacy 정책 아이콘+타이틀), warn-section, 7개 링크 목록 보존
+
+**2차 변경 (legal-shared.js v3 전환):**
+- 인라인 법적고지 HTML/CSS 전체 삭제 → `<script src="/js/legal-shared.js"></script>` 참조로 전환
+- `js/legal-shared.js` v3 공유: WT-047과 동일한 JS 파일 참조
+- 로컬 검증 완료 (port 5501 + port 8080)
+
+---
+
+### WT-049: 대부거래 표준약관 페이지 법적고지 UI 모바일 전환
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `privacy/08_standard-terms.html` |
+| 연관 W-ID | W-049 |
+| 연관 T-ID | T-049 |
+| 커밋 해시 | - (PR 대기) |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**1차 변경:**
+- CSS: `.page` max-width 800px → 480px, `--bg: #EEEEF2`, white background + box-shadow
+- `.page-inner` 래퍼 추가 (padding: 32px 24px)
+- 상단: legal-top 블록 추가 (써주세요연계대부 보라 배지 + 등록번호 + 등록시도명칭)
+- 하단: footer.js 제거 → 인라인 legal-bottom (3그룹) + Contact (3카드) + About Us (2 corp-box) + Copyright 추가
+- 기존 chapter 스타일(h2.chapter border-bottom: 2px solid var(--brand)) 보존
+
+**2차 변경 (legal-shared.js v3 전환):**
+- 인라인 법적고지 HTML/CSS 전체 삭제 → `<script src="/js/legal-shared.js"></script>` 참조로 전환
+- `js/legal-shared.js` v3 공유: WT-047과 동일한 JS 파일 참조
+- 로컬 검증 완료 (port 5501 + port 8080)
+
+---
+
+### WT-050: 홈페이지 상단/하단 법적고지 `legal-shared.js` 참조 리팩터링
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `index.html`, `js/legal-shared.js` |
+| 연관 W-ID | W-050 |
+| 연관 T-ID | T-050 |
+| 커밋 해시 | `5a18bd3` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**변경:**
+- `index.html`에서 법적고지 관련 인라인 CSS 전체 제거: `.legal-top`, `.legal-bottom`, `.legal-group`, `.bottom-section`, `.bottom-title`, `.contact-card`, `.contact-row`, `.contact-link`, `.service-links`, `.corp-box`, `.corp-desc`, `.corp-link`, `.store-card`, `.store-badge`, `.store-platform`, `.copyright-box`, `.copyright-logo`, `.copyright-text`, `.copyright-brand`
+- `index.html`에서 법적고지 관련 인라인 HTML 전체 제거: 상단 legal-top (보라 배지 + 등록번호) + 하단 6개 섹션 (법적고지하단 3그룹 + Contact 3카드 + About Us 2 corp-box + 앱 다운로드 2 store-card + 저작권 copyright-box)
+- `index.html`에 `<script src="/js/legal-shared.js"></script>` 추가 (`</body>` 직전)
+- `legal-shared.js`는 `.page` 또는 `.wrap` 컨테이너를 자동 감지하여 동작 (홈: `.wrap`, privacy: `.page`)
+- 결과: `legal-shared.js` 1곳 수정으로 홈페이지 + privacy 3개 페이지 법적고지 일괄 반영 가능
+- 프리뷰 서버(port 8080) 검증 완료: 상단/하단 모든 섹션 정상 렌더링 확인
+
+---
+
+### WT-051: 법적고지 폰트 24px 확대 + 전화번호/문구 수정 (전체 페이지 일괄)
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `js/legal-shared.js` |
+| 연관 W-ID | W-051 |
+| 연관 T-ID | T-051 |
+| 커밋 해시 | `85764a2` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**변경 (7건):**
+- ① 상단 법적고지(`.legal-top`) 폰트 22px → 24px
+- ② 하단 법적고지(`.legal-group-title`, `.legal-group-body`) 폰트 22px → 24px
+- ③ 상단 대부업 담당 전화번호 02-123-4567 → 02-3423-5524
+- ④ 상단·하단 써 로고(`.copyright-logo`) 44px → 16px (24px의 1/3 작게)
+- ⑤ 고객센터 대표전화 인라인 style로 24px 적용
+- ⑥ 상환방법 문구에 "이자전부 포인트상환, 이자전부와 원금일부 포인트상환" 추가
+- ⑦ 부대비용 그룹에 "신용조회비용은 포인트로 결제" 항목 추가
+- `legal-shared.js` 1곳 수정으로 홈+privacy 4페이지 일괄 반영
+- 프리뷰 서버(port 8080) 검증 완료
+
+---
+
+**2차 변경 (3건) — 2026-06-16, 쮸티5호**
+
+| 항목 | 내용 |
+|------|------|
+| 작업 이력 | 2차 작업 |
+| 커밋 해시 | 미커밋 (커밋 대기) |
+| 상태 | 로컬검증완료 |
+
+- ⑧ 상단 써 로고(`.logo-img` in `index.html`) 44px → 25px (육안 비교 후 확정: 16px 너무 작음 → 24px → 30px → 25px)
+- ⑨ 하단 써 로고(`.copyright-logo` in `legal-shared.js`) 16px → 25px (상단과 동일 사이즈로 통일)
+- ⑩ 써주세요연계대부 주소 변경: `서울특별시 강남구 도곡로 112, 2층 C2-7호(도곡동, 서한빌딩)` → `서울특별시 강남구 논현로72길 16, 4층 424호 (역삼동, 초원빌딩)`
+- ⑪ 홈페이지 텍스트 변경: `몇 만 명의 청년 서민이 빌려갔어요.` → `수 만 명의 청년 서민이 빌려갔어요.` (`index.html` line 346)
+- 수정 파일: `index.html` (상단 로고 + 텍스트), `js/legal-shared.js` (하단 로고 + 주소)
+- 프리뷰 서버(port 8080) 검증 완료
+
+---
+
+**깃 & 배포 관리자 완료 보고서 (GitHub Pages PRD)**
+
+[GitHub Pages PRD : 깃 & 배포 관리자 -> 개발자]
+
+`sirjuseyo-web` T-051 홈 로고/주소/문구 수정 main 선별 반영 및 GitHub Pages 배포 완료했습니다.
+
+- 원격 반영:
+  - PR #11은 `OPEN / DIRTY`
+  - 전체 `dev -> main` 병합 안 함
+  - PR #11 전체 merge 안 함
+  - 사유: PR diff에 `js/legal-shared.js`, `privacy/*`, 개발자 문서 등 누적 변경 포함
+  - 운영 반영은 현재 `main/index.html` 기준 요청 4개 항목만 최소 선별 반영
+  - 최종 main commit: `47a07c0`
+
+- 반영 내용:
+  - 상단 `.logo-img` `25px`
+  - 하단 `.copyright-logo` `25px`
+  - 써주세요연계대부 주소 `논현로72길 16, 4층 424호 (역삼동, 초원빌딩)` 반영
+  - `수 만 명의 청년 서민이 빌려갔어요.` 반영
+
+- 배포:
+  - GitHub Pages `pages build and deployment` 성공
+  - run: `27596429413`
+
+- 확인:
+  - 운영 홈 `https://www.sirjuseyo.com/` `HTTP/2 200`
+  - 운영 HTML에서 `.logo-img`, `.copyright-logo`, `수 만 명`, 새 주소 확인
+  - 로컬 `sirjuseyo-web/main` 최신화 완료: `HEAD = origin/main = 47a07c0`
+
+- 문서:
+  - GitDeployOps `W-047/T-047/WT-047` 기록 완료
+  - project-docs 원격 업데이트 완료: `1b480e5`
+
+한 줄 버전:
+- `sirjuseyo-web` T-051 요청 4개 항목만 main 선별 반영 완료, GitHub Pages 배포 성공 및 운영 홈 200/문구/주소 확인했습니다.
+
+---
+
+**깃 & 배포 관리자 완료 보고서 (T-052 — GitHub Pages PRD)**
+
+[GitHub Pages PRD : 깃 & 배포 관리자 -> 개발자]
+
+`sirjuseyo-web` T-052 법적고지 공통화/Privacy 3페이지 main 선별 반영 및 GitHub Pages 배포 완료했습니다.
+
+- 원격 반영:
+  - PR #11은 `OPEN / DIRTY`
+  - 전체 `feature -> main` 병합 안 함
+  - 전체 `dev -> main` 병합 안 함
+  - 사유: PR #11에는 개발자 문서와 누적 변경이 포함되어 있어 전체 병합 위험
+  - 운영 반영 파일 5개만 선별 반영:
+    - `index.html`
+    - `js/legal-shared.js`
+    - `privacy/01_terms.html`
+    - `privacy/index002.html`
+    - `privacy/08_standard-terms.html`
+  - 최종 main commit: `5bab8db`
+
+- 배포:
+  - GitHub Pages `pages build and deployment` 성공
+  - run: `27597570883`
+
+- 확인:
+  - 운영 홈 `https://www.sirjuseyo.com/`에서 `/js/legal-shared.js` 참조 및 `수 만 명` 문구 확인
+  - `https://www.sirjuseyo.com/js/legal-shared.js`에서 24px/전화번호/주소/상환방법/신용조회비용 확인
+  - privacy 3페이지 모두 `HTTP/2 200` 및 `/js/legal-shared.js` 참조 확인
+  - 로컬 `sirjuseyo-web/main` 최신화 완료: `HEAD = origin/main = 5bab8db`
+
+- 문서:
+  - GitDeployOps TODO/WORK_THROUGH 업데이트 완료
+  - `W-048 / T-048 / WT-048` 기록 완료
+  - 원격 project-docs 반영 완료:
+    - TODO_BOARD commit `4079a1e`
+    - WORK_THROUGH commit `0787dd1`
+
+한 줄 버전:
+- `sirjuseyo-web` T-052 요청 운영 파일 5개만 main 선별 반영 완료, GitHub Pages 배포 성공 및 홈/공통 JS/privacy 3페이지 운영 확인했습니다.
+
+---
+
+### WT-053: Privacy 6페이지 `legal-shared.js` 상단·하단 법적고지 연결
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `privacy/02~07_*.html` (6개) |
+| 연관 W-ID | W-053 |
+| 연관 T-ID | T-053 |
+| 커밋 해시 | 커밋 대기 |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**변경 (3건):**
+- ① 6개 파일에 `<script src="/js/legal-shared.js"></script>` 추가 → 상단·하단 법적고지 자동 주입
+  - `privacy/02_collect-personal.html` (개인(신용)정보 수집·이용 동의서)
+  - `privacy/03_collect-unique.html` (고유식별정보 수집·이용 동의서)
+  - `privacy/04_inquiry-personal.html` (개인(신용)정보 조회 동의서)
+  - `privacy/05_inquiry-unique.html` (고유식별정보 조회 동의서)
+  - `privacy/06_provide-personal.html` (개인(신용)정보 제공 동의서)
+  - `privacy/07_provide-unique.html` (고유식별정보 제공 동의서)
+- ② 6개 파일에서 기존 `footer.js` 참조 제거 (하단 중복 방지)
+  - `<script src="/footer.js"></script>` 및 관련 주석 삭제
+- ③ 6개 파일 `.back-link`에 `margin-top: 20px` 추가 (상단 법적고지와 BACK 버튼 간격 확보)
+- 프리뷰 서버(port 8080) 검증 완료: 상단·하단 1세트만 표시, 중복 없음
+
+---
+
+**깃 & 배포 관리자 완료 보고서 (T-053 — GitHub Pages PRD)**
+
+[GitHub Pages PRD : 깃 & 배포 관리자 -> 개발자]
+
+`sirjuseyo-web` T-053 Privacy 6개 동의서 `legal-shared.js` 연결 main 선별 반영 및 GitHub Pages 배포 완료했습니다.
+
+- 원격 반영:
+  - PR #11은 `OPEN / DIRTY`
+  - 전체 `feature -> main` 병합 안 함
+  - 전체 `dev -> main` 병합 안 함
+  - 운영 반영 파일 6개만 선별 반영:
+    - `privacy/02_collect-personal.html`
+    - `privacy/03_collect-unique.html`
+    - `privacy/04_inquiry-personal.html`
+    - `privacy/05_inquiry-unique.html`
+    - `privacy/06_provide-personal.html`
+    - `privacy/07_provide-unique.html`
+  - 최종 main commit: `7f6bc0a`
+
+- 배포:
+  - GitHub Pages `pages build and deployment` 성공
+  - run: `27601005241`
+
+- 확인:
+  - 6개 운영 페이지 모두 `/js/legal-shared.js` 참조 확인
+  - 6개 운영 페이지 모두 `.back-link margin-top: 20px` 확인
+  - 6개 운영 페이지 모두 `footer.js` 미검출
+  - `sirjuseyo-web` 로컬 main 최신화 완료: `HEAD = origin/main = 7f6bc0a`
+
+- GitHub 연결 장애:
+  - 원인: `/etc/hosts`에 죽은 IP `140.82.112.3 github.com` 고정
+  - 조치: `140.82.112.4 github.com`으로 변경 후 DNS cache flush
+  - 검증: `curl https://github.com`, `git ls-remote`, `git fetch origin main` 정상
+  - T-053 로컬 ref 정합도 최종 완료
+
+- 문서:
+  - GitDeployOps TODO/WORK_THROUGH 업데이트 완료
+  - `W-049 / T-049 / WT-049` 기록 완료
+
+한 줄 버전:
+- `sirjuseyo-web` T-053 요청 privacy 동의서 6개 HTML만 main 선별 반영 완료, GitHub Pages 배포 성공, GitHub HTTPS 장애 복구 및 로컬 main 최신화까지 완료했습니다.
+
+---
+
+### WT-054: monthly-loan 홈페이지 1열 전환 + `legal-shared.js` 연결
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 레포 | `monthly-loan-repo` |
+| 대상 파일 | `index.html`, `index-dev.html`, `js/legal-shared.js` (신규) |
+| 연관 W-ID | W-054 |
+| 연관 T-ID | T-054 |
+| 커밋 해시 | 커밋 후 기입 |
+| 작업 이력 | 1차 작업 |
+| 상태 | 완료 |
+
+**변경 (3건):**
+- ① `.wrap`에 `max-width:480px; margin:0 auto;` 추가 → PC에서도 1열 고정 (sirjuseyoWeb 홈과 동일)
+- ② 데스크탑 2열 미디어쿼리 전체 제거 (`@media(min-width:768px)`, `@media(min-width:1280px)`)
+- ③ `footer.js` 참조 → `js/legal-shared.js` 참조로 교체 (상단·하단 법적고지 자동 주입)
+- `js/legal-shared.js` 파일은 sirjuseyoWeb에서 복사 (동일 원본)
+- `index.html`, `index-dev.html` 2개 파일 동일 수정 적용
+
+---
+
+### WT-055: 상단 법적고지 볼드 제거 + monthly-loan 폰트 통일
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 레포 | `sirjuseyoWeb` + `monthly-loan-repo` (2개 레포 동시) |
+| 대상 파일 | `sirjuseyoWeb/js/legal-shared.js`, `monthly-loan-repo/js/legal-shared.js`, `monthly-loan-repo/index.html`, `monthly-loan-repo/index-dev.html` |
+| 연관 W-ID | W-055 |
+| 연관 T-ID | T-055 |
+| 커밋 해시 | 커밋 후 기입 |
+| 작업 이력 | 1차 작업 |
+| 상태 | 완료 |
+
+**변경 (2건):**
+- ① `.legal-top` CSS `font-weight:700` → `font-weight:400` (상단 법적고지 볼드 제거) — 양쪽 `legal-shared.js` 동시 수정
+- ② `monthly-loan-repo` `font-family` 통일: `'Noto Sans KR',sans-serif` → `'Apple SD Gothic Neo','Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif` — `index.html`, `index-dev.html` 동시 수정
+- 원인: monthly-loan-repo는 `Noto Sans KR`만 1순위여서 Apple 기기에서도 Noto Sans KR로 렌더링 → sirjuseyoWeb과 폰트 굵기 체감 차이 발생
+
