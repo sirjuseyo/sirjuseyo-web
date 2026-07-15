@@ -101,9 +101,9 @@
       '<div class="contact-card">' +
         '<div class="contact-card-title"><span>📄</span> 서비스</div>' +
         '<div class="service-links">' +
-          '<a href="/privacy/01_terms.html">서비스 이용약관</a>' +
-          '<a href="/privacy/index002.html">개인정보 처리방침</a>' +
-          '<a href="/privacy/08_standard-terms.html">대부거래 표준약관</a>' +
+          '<a href="https://www.sirjuseyo.com/privacy/01_terms.html" target="_blank" rel="noopener">서비스 이용약관</a>' +
+          '<a href="https://www.sirjuseyo.com/privacy/index002.html" target="_blank" rel="noopener">개인정보 처리방침</a>' +
+          '<a href="https://www.sirjuseyo.com/privacy/08_standard-terms.html" target="_blank" rel="noopener">대부거래 표준약관</a>' +
         '</div>' +
       '</div>' +
     '</div>' +
@@ -176,7 +176,7 @@
     /* ── 저작권 ── */
     '<div class="bottom-section" style="padding-bottom:40px">' +
       '<div class="copyright-box">' +
-        '<img class="copyright-logo" src="/imgs/home/logoPurpleSplash@2x.png" alt="써주세요 로고" />' +
+        '<img class="copyright-logo" src="https://www.sirjuseyo.com/imgs/home/logoPurpleSplash@2x.png" alt="써주세요 로고" />' +
         '<div class="copyright-text">' +
           'This website is owned and operated by ALBITF.<br>' +
           '© 2026 ALBITF. All rights reserved.<br>' +
