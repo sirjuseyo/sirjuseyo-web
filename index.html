@@ -1,306 +1,110 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>써주세요. | 신용이 낮아도 빌릴 수 있으니까</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
-      background: #EEEEF2;
-      color: #333;
-      -webkit-font-smoothing: antialiased;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>써주세요. · Monthly Loan</title>
+<meta name="description" content="20~33세 청년 서민을 위한 나노크레딧. 급할 때 빌려쓰는 써주세요.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --purple:#380097;
+  --orange:#FF5400;
+  --mint:#A6D6DE;
+  --cream:#FAF7F2;
+  --text:#1A1A2E;
+  --gray:#888;
+}
+html,body{background:var(--cream);min-height:100vh;font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;}
 
-    .wrap {
-      max-width: 480px;
-      margin: 0 auto;
-      background: #fff;
-      min-height: 100vh;
-      box-shadow: 0 0 40px rgba(0,0,0,0.08);
-    }
+/* wrap = 전체 페이지 컨테이너 */
+.wrap{
+  position:relative;
+  overflow:hidden;
+  min-height:100vh;
+  max-width:480px;
+  margin:0 auto;
+}
 
-    /* ─── 로고 & 카피 ─── */
-    .logo-section {
-      padding: 24px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-bottom: 1px solid #F0F0F0;
-    }
-    .logo-img {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .logo-copy {
-      font-size: 14px;
-      color: #7C3AED;
-      line-height: 1.5;
-      font-weight: 500;
-    }
+/* 배경 orb */
+.orb-big{position:fixed;top:-70px;right:-70px;width:220px;height:220px;background:var(--orange);border-radius:50%;opacity:.08;pointer-events:none;z-index:0;}
+.orb-sm{position:fixed;top:200px;left:-30px;width:80px;height:80px;background:var(--mint);border-radius:50%;opacity:.18;pointer-events:none;z-index:0;}
 
-    /* ─── 섹션 간격 ─── */
-    .sec-gap { padding: 0 16px; }
+/* nav */
+.nav{
+  position:relative;z-index:2;
+  padding:28px 24px 0;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-left{display:flex;align-items:center;gap:9px;}
+.logo-img{width:34px;height:34px;max-width:34px;max-height:34px;object-fit:contain;border-radius:50%;}
+.brand{font-size:.9rem;font-weight:400;color:var(--purple);}
+.nav-menu{font-size:1.3rem;color:var(--purple);cursor:pointer;}
 
-    /* ─── 히어로 카드 ─── */
-    .card-hero {
-      margin: 20px 16px 14px;
-      padding: 36px 24px;
-      background: linear-gradient(160deg, #380097 0%, #5B21B6 40%, #7C3AED 100%);
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 8px 32px rgba(56, 0, 151, 0.25);
-    }
-    .card-hero .hero-line {
-      font-size: 16px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.92);
-      line-height: 1.8;
-    }
-    .card-hero .hero-divider {
-      width: 40px;
-      height: 2px;
-      background: rgba(255,255,255,0.4);
-      margin: 14px auto;
-      border-radius: 1px;
-    }
-    .card-hero .hero-brand {
-      font-size: 16px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.3px;
-    }
+/* content 영역: 모바일은 세로 스택, 데스크탑은 좌우 분할 */
+.content{
+  position:relative;z-index:2;
+  display:flex;
+  flex-direction:column;
+  padding:0;
+}
 
-    /* ─── 일반 카드 ─── */
-    .card {
-      margin: 0 16px 10px;
-      padding: 22px 20px;
-      background: #fff;
-      border: 1px solid #ECECEC;
-      border-radius: 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-    .card--accent {
-      border-left: 4px solid #380097;
-      background: linear-gradient(90deg, #F8F6FF 0%, #FFFFFF 40%);
-    }
-    .card--dark {
-      background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
-      border: none;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    }
-    .card--highlight {
-      background: linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 60%);
-      border: 1px solid #BBF7D0;
-    }
-    .card-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-    .card-body {
-      font-size: 14px;
-      color: #333;
-      line-height: 1.8;
-    }
-    .card-sub {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.7;
-      margin-top: 10px;
-    }
-    .card-quote {
-      font-size: 13px;
-      color: #7C3AED;
-      font-style: italic;
-      margin-top: 10px;
-      padding-left: 12px;
-      border-left: 3px solid #DDD6FE;
-      line-height: 1.7;
-    }
+/* hero */
+.hero{padding:16px 24px 0;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;gap:0 12px;align-items:start;}
+h1{grid-column:1;grid-row:1;font-size:18px;font-weight:900;color:var(--text);line-height:1.8;min-height:120px;padding-top:20px;margin-bottom:10px;letter-spacing:-1px;}
+h1 em{font-style:normal;color:var(--purple);}
+.sub{grid-column:1 / -1;grid-row:2;font-size:.85rem;font-weight:300;color:var(--gray);line-height:1.8;margin-bottom:28px;}
+/* live badge */
+.badge-wrap{grid-column:2;grid-row:1;display:flex;align-items:flex-start;padding-top:4px;}
+.live-badge{display:flex;flex-direction:column;align-items:center;gap:6px;border:2px solid var(--orange);border-radius:16px;padding:10px 12px;background:rgba(255,84,0,.05);min-width:68px;animation:badge-breathe 3s ease-in-out infinite;}
+@keyframes badge-breathe{0%,100%{box-shadow:0 0 0 0 rgba(255,84,0,0);}50%{box-shadow:0 0 0 6px rgba(255,84,0,.12);}}
+.live-badge-top{display:flex;align-items:center;gap:5px;}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--orange);animation:dot-pulse 1.4s ease-in-out infinite;flex-shrink:0;}
+@keyframes dot-pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.7);}}
+.live-text-main{font-size:.72rem;font-weight:700;color:var(--orange);white-space:nowrap;}
+.live-divider{width:100%;height:1px;background:rgba(255,84,0,.2);}
+.live-text-sub{font-size:.68rem;font-weight:500;color:var(--orange);opacity:.75;white-space:nowrap;}
 
-    /* ─── 통계 캡슐 ─── */
-    .stat-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 12px;
-    }
-    .stat-capsule {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(90deg, #F5F3FF 0%, #EDE9FE 100%);
-      border: 1px solid #DDD6FE;
-      border-radius: 10px;
-      padding: 12px 14px;
-    }
-    .stat-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #7C3AED;
-      flex-shrink: 0;
-    }
-    .stat-label {
-      font-size: 12px;
-      color: #666;
-      flex-shrink: 0;
-    }
-    .stat-value {
-      font-size: 14px;
-      font-weight: 700;
-      color: #380097;
-    }
+/* cards */
+.cards{padding:0 24px;display:flex;flex-direction:column;gap:14px;position:relative;}
+.gift-box{position:absolute;top:-110px;right:-55px;width:min(341px,90vw);pointer-events:none;z-index:5;}
+.cards-header{display:flex;justify-content:flex-end;margin-bottom:8px;}
+.main-card{
+  background:#fff;border:2px solid var(--purple);border-radius:22px;padding:30px;
+  position:relative;overflow:hidden;
+}
+.main-card::before{content:'';position:absolute;top:-22px;right:-22px;width:88px;height:88px;background:var(--purple);border-radius:50%;opacity:.06;}
+.main-card::after{content:'';position:absolute;bottom:-10px;left:28px;width:52px;height:52px;background:var(--purple);border-radius:50%;opacity:.04;}
+.main-tag{font-size:.85rem;font-weight:700;color:var(--purple);letter-spacing:.3px;margin-bottom:10px;position:relative;z-index:1;}
+.main-title{font-size:1.4rem;font-weight:900;color:var(--text);margin-bottom:6px;position:relative;z-index:1;letter-spacing:-.5px;}
+.main-sub{font-size:.85rem;font-weight:300;color:var(--gray);margin-bottom:20px;position:relative;z-index:1;}
+.main-btn{display:block;text-align:center;background:var(--orange);color:#fff;font-size:1.1rem;font-weight:700;border-radius:14px;padding:15px 20px;text-decoration:none;position:relative;z-index:1;letter-spacing:-.2px;}
+.checker-card{background:#fff;border:2px solid var(--mint);border-radius:22px;padding:30px;}
+.checker-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.checker-icon{width:46px;height:46px;background:rgba(166,214,222,.15);border:1.5px solid var(--mint);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.checker-name{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:4px;letter-spacing:-.3px;}
+.checker-desc{font-size:.85rem;font-weight:300;color:var(--gray);}
+.checker-btn{display:block;width:100%;text-align:center;font-size:1.1rem;font-weight:700;border-radius:14px;padding:15px;text-decoration:none;color:#3a9aaa;background:transparent;border:2px solid var(--mint);letter-spacing:-.2px;}
 
-    /* ─── 미션 리스트 ─── */
-    .mission-list {
-      list-style: none;
-      padding: 0;
-      margin-top: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .mission-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      color: #333;
-      padding: 8px 12px;
-      background: #FAFAFA;
-      border-radius: 8px;
-      transition: background 0.2s;
-    }
-    .mission-num {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #380097, #7C3AED);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 2px 6px rgba(56,0,151,0.3);
-    }
 
-    /* ─── 혜택 체크 리스트 ─── */
-    .benefit-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14px;
-      color: #333;
-      padding: 10px 12px;
-      background: linear-gradient(90deg, #F0FDF4 0%, #FFFFFF 60%);
-      border: 1px solid #BBF7D0;
-      border-radius: 8px;
-      margin-bottom: 6px;
-      line-height: 1.5;
-    }
-    .benefit-check {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #16A34A, #22C55E);
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 2px 6px rgba(22,163,74,0.3);
-    }
+/* 월드컵 이벤트 카드 (6월 한정) */
+.worldcup-card{background:#fff;border:2px solid #CD2E3A;border-radius:22px;overflow:hidden;}
+.worldcup-visual{width:100%;height:180px;object-fit:cover;display:block;}
+.worldcup-body{padding:18px 20px 20px;}
+.worldcup-tag{display:inline-block;background:rgba(205,46,58,.1);color:#CD2E3A;font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:6px;margin-bottom:10px;}
+.worldcup-title{font-size:1.2rem;font-weight:900;color:#1A1A2E;margin-bottom:4px;letter-spacing:-.3px;}
+.worldcup-sub{font-size:.9rem;font-weight:700;color:#CD2E3A;margin-bottom:16px;line-height:1.6;}
+.worldcup-subcopy{font-style:italic;font-size:.92rem;color:#CD2E3A;font-weight:700;margin-bottom:14px;}
+.worldcup-desc{font-size:.85rem;color:#555;font-weight:500;line-height:1.65;margin-bottom:16px;}
+.worldcup-btn{display:block;width:100%;text-align:center;font-size:1rem;font-weight:700;border-radius:14px;padding:13px;text-decoration:none;color:#CD2E3A;border:2px solid #CD2E3A;background:#fff;letter-spacing:-.2px;}
+/* footer */
+.footer{padding:24px 24px 32px;display:flex;justify-content:center;position:relative;z-index:2;}
+.grad-bar{width:48%;height:3px;border-radius:10px;background:linear-gradient(90deg,var(--purple),var(--mint),var(--orange));}
 
-    /* ─── 세컨드 히어로 (현금이 아니어도) ─── */
-    .card-hero2 {
-      margin: 10px 16px 14px;
-      padding: 32px 24px;
-      background: linear-gradient(160deg, #B45309 0%, #D97706 50%, #F59E0B 100%);
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 8px 32px rgba(180, 83, 9, 0.25);
-    }
-    .card-hero2 .hero-line {
-      font-size: 16px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.95);
-      line-height: 1.8;
-    }
-    .card-hero2 .hero-divider {
-      width: 40px;
-      height: 2px;
-      background: rgba(255,255,255,0.4);
-      margin: 14px auto;
-      border-radius: 1px;
-    }
-    .card-hero2 .hero-brand {
-      font-size: 16px;
-      font-weight: 700;
-      color: #fff;
-    }
-    .card-hero2 .hero-sub {
-      font-size: 13px;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.7;
-      margin-top: 14px;
-    }
-
-    /* ─── 클로징 ─── */
-    .card-closing {
-      margin: 10px 16px 0;
-      padding: 32px 24px;
-      background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%);
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 6px 24px rgba(30,27,75,0.2);
-    }
-    .card-closing .closing-text {
-      font-size: 14px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.9);
-      line-height: 1.8;
-    }
-
-    /* ─── 법적 고지 하단 ─── */
-    /* ─── EXPLORE 배너 ─── */
-    .explore-banner {
-      margin: 20px 16px 10px;
-      padding: 10px 18px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-align: center;
-      text-transform: uppercase;
-    }
-    .explore-banner--purple {
-      background: linear-gradient(135deg, #380097 0%, #7C3AED 100%);
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(56,0,151,0.3);
-    }
-    .explore-banner--mint {
-      background: linear-gradient(135deg, #7BC8D4 0%, #A6D6DE 100%);
-      color: #1A5C5C;
-      box-shadow: 0 4px 12px rgba(166,214,222,0.4);
-    }
-    .explore-banner--orange {
-      background: linear-gradient(135deg, #FF5400 0%, #FF7A33 100%);
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(255,84,0,0.3);
-    }
-
-  </style>
+/* gift-box 모바일 보정 */
+.gift-box{width:min(250px,68vw);top:-125px;right:-25px;}
+</style>
 <style>
   /* ── 써주세요. 강제 고지 팝업 v5 ── */
   :root{--brand:#6429E0;--brand-deep:#3A1693;--brand-soft:#F2ECFE;--brand-mist:#FAF8FE;--lilac:#A98BFF;--ink:#1C1530;--ink-soft:#6A6280;--line:#ECE7F5;--paper:#FFFFFF;--safe:#11A07A;--safe-soft:#E4F6F0;--warn:#D9480F;--warn-soft:#FBEEE6;--gold:#FFD84D;--shadow:0 24px 60px -20px rgba(58,22,147,.45),0 8px 24px -12px rgba(28,21,48,.25);--r:18px;}
@@ -427,173 +231,76 @@
 </style>
 </head>
 <body>
-
 <div class="wrap">
+  <div class="orb-big"></div>
+  <div class="orb-sm"></div>
 
-  <!-- ═══ 로고 & 카피 ═══ -->
-  <div class="logo-section">
-    <img class="logo-img"
-         src="/imgs/home/logoPurpleSplash@2x.png"
-         alt="써주세요 로고" />
-    <div class="logo-copy">20~33세 청년 서민에게 친화적인 창의적 대안금융</div>
-  </div>
-
-  <!-- ═══ EXPLORE 1 ═══ -->
-  <div class="explore-banner explore-banner--purple">EXPLORE 1</div>
-
-  <!-- ═══ A. 히어로 ═══ -->
-  <div class="card-hero" style="background: #F3F0FF; box-shadow: 0 4px 16px rgba(56,0,151,0.1); border: 2px solid #DDD6FE;">
-    <div class="hero-line" style="color: #380097;">
-      신용이 낮아도<br>
-      (돈을) 빌릴 수 있으니까
+  <nav class="nav">
+    <div class="nav-left">
+      <img class="logo-img" src="https://www.sirjuseyo.com/imgs/home/logoPurpleSplash@2x.png" alt="써주세요. 로고">
+      <span class="brand">20~33세 청년 서민에게 친화적인 창의적 대안금융</span>
     </div>
-    <div class="hero-divider" style="background: #C4B5FD;"></div>
-    <div class="hero-brand" style="color: #380097;">써주세요.</div>
-  </div>
+    <span class="nav-menu">≡</span>
+  </nav>
 
-  <!-- ═══ B. 평가 방식 ═══ -->
-  <div class="card card--accent">
-    <div class="card-body">
-      신용 점수 대신<br>
-      실제 상환 가능성을 읽는<br>
-      평가 방식을 적용해요!
-    </div>
-  </div>
-
-  <!-- ═══ C. 실적 통계 ═══ -->
-  <div class="card">
-    <div class="card-title">그래서 지금까지</div>
-    <div class="stat-group">
-      <div class="stat-capsule">
-        <span class="stat-dot"></span>
-        <span class="stat-label">누적 대출 승인자 수</span>
-        <span class="stat-value">수 만 명의 청년 서민이 빌려갔어요.</span>
+  <div class="content">
+    <section class="hero">
+      <h1>급할 때 빌려쓰는,<br><em>나노크레딧</em></h1>
+      <div class="badge-wrap">
+        <div class="live-badge">
+          <div class="live-badge-top">
+            <div class="live-dot"></div>
+            <span class="live-text-main">7월 대출</span>
+          </div>
+          <div class="live-divider"></div>
+          <span class="live-text-sub">신청중</span>
+        </div>
       </div>
-      <div class="stat-capsule">
-        <span class="stat-dot"></span>
-        <span class="stat-label">대출 승인 고객 신용등급</span>
-        <span class="stat-value">1등급부터 10등급까지</span>
+      <p class="sub" style="color:var(--cream)">20~33세 청년 서민에게<br>친화적인 창의적 대안 금융</p>
+    </section>
+
+    <div class="cards">
+      <img class="gift-box" src="./2026-07/assets/Palm-Surf_Jul-Loan.png" alt="">
+      <div class="main-card">
+        <div class="main-tag">☀️ 이달의 대출</div>
+        <div class="main-title">7️⃣🈷️ 썸머 🏖️베케이션</div>
+        <div class="main-sub">이벤트 · 웨이팅 · 롸잇나우</div>
+        <a class="main-btn" href="./2026-07/">신청하기 →</a>
       </div>
-    </div>
-  </div>
-
-  <!-- ═══ D. 나쁘지않은 조건 ═══ -->
-  <div class="card" style="background: linear-gradient(135deg, #F3F0FF 0%, #EDE9FE 100%); border: 2px solid #DDD6FE;">
-    <div class="card-body" style="font-weight:700; color:#380097; font-size:16px;">
-      나쁘지않은 조건일걸요?
-    </div>
-  </div>
-
-  <!-- ═══ EXPLORE 2 ═══ -->
-  <div class="explore-banner explore-banner--mint">EXPLORE 2</div>
-
-  <!-- ═══ E. 대출 방식 ═══ -->
-  <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #A6D6DE; box-shadow: 0 4px 16px rgba(166,214,222,0.2);">
-    <div style="padding: 24px 24px 10px;">
-      <div class="card-title" style="color: #1A7A7A;">지금껏 본 적 없는 대출 방식</div>
-      <div class="card-body">
-        신용뿐만 아니라<br>
-        다양한 미션을 통해<br>
-        돈을 빌릴 수 있어요!
+      <div class="worldcup-card" style="display:none">
+        <img class="worldcup-visual" src="./2026-06/assets/2026_worldcup_type102.jpg" alt="2026 북중미 월드컵">
+        <div class="worldcup-body">
+          <div class="worldcup-tag">🔮 예언 챌린지</div>
+          <div class="worldcup-title">추가 대출,<br>최대 50만 원의 행운을!</div>
+          <div class="worldcup-subcopy">"나는야 문어🐙 파울, 감다살!"</div>
+          <div class="worldcup-desc">2026 북중미 월드컵<br>🇰🇷 대한민국 축구 국가대표팀의 성적을 맞추세요.</div>
+          <a class="worldcup-btn" href="./2026-06/worldcup-challenge/">🐙 승무패 예언하기 →</a>
+        </div>
+      </div>
+            <div class="checker-card">
+        <div class="checker-header">
+          <div class="checker-icon">🔍</div>
+          <div>
+            <div class="checker-name">대출 가능성 검사기</div>
+            <div class="checker-desc">내가 받을 수 있는지 확인해봐.</div>
+          </div>
+        </div>
+        <a class="checker-btn" href="./loan-checker/">검사 시작하기 →</a>
       </div>
     </div>
-    <div style="padding: 0 20px 16px; display: flex; justify-content: center;">
-      <img src="/imgs/home/sjy_web_home_loan_method.png"
-           alt="무엇을 보고 빌려줄까요? — 앱 화면"
-           style="width: 75%; max-width: 210px; display: block;" />
-    </div>
   </div>
 
-  <!-- ═══ F. AI ═══ -->
-  <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #A6D6DE; box-shadow: 0 4px 16px rgba(166,214,222,0.2);">
-    <div style="padding: 24px 24px 10px;">
-      <div class="card-title" style="color: #1A7A7A;">어떻게든 도와주는 AI</div>
-      <div class="card-body">
-        나의 실제 상환 능력과<br>
-        의지를 데이터로 분석해서 파악해요
-      </div>
-    </div>
-    <div style="padding: 0 20px 16px; display: flex; justify-content: center;">
-      <img src="/imgs/home/sjy_web_home_ai_chat.png"
-           alt="AI 심사 화면 — 앱 목업"
-           style="width: 75%; max-width: 210px; display: block;" />
-    </div>
+  <div class="footer">
+    <div class="grad-bar"></div>
   </div>
-
-  <!-- ═══ G. 소액대출 ═══ -->
-  <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #A6D6DE; box-shadow: 0 4px 16px rgba(166,214,222,0.2);">
-    <div style="padding: 24px 24px 10px;">
-      <div class="card-title" style="color: #1A7A7A;">부담없는 소액대출</div>
-      <div class="card-body">
-        50만 원을 빌려도<br>
-        신용 정보에 기록하지 않아요.
-      </div>
-    </div>
-    <div style="padding: 0 20px 16px; display: flex; justify-content: center;">
-      <img src="/imgs/home/sjy_web_home_small_loan.png"
-           alt="소액대출 금액 선택 — 앱 목업"
-           style="width: 75%; max-width: 210px; display: block;" />
-    </div>
-  </div>
-
-  <!-- ═══ EXPLORE 3 ═══ -->
-  <div class="explore-banner explore-banner--orange">EXPLORE 3</div>
-
-  <!-- ═══ H. 현금이 아니어도 ═══ -->
-  <div class="card-hero2" style="background: #FFF5F0; box-shadow: 0 4px 16px rgba(255,84,0,0.1); border: 2px solid #FFCDB2;">
-    <div class="hero-line" style="color: #CC4300;">
-      현금이 아니어도<br>
-      (돈을) 갚을 수 있으니까
-    </div>
-    <div class="hero-divider" style="background: #FFAA80;"></div>
-    <div class="hero-brand" style="color: #CC4300;">또 써주세요.</div>
-    <div class="hero-sub" style="color: #99522B;">
-      적립한 포인트로 대출 원금과 이자를<br>
-      상환할 수 있는 국내 최초 금융앱
-    </div>
-  </div>
-
-  <!-- ═══ I. 꿀이에요 ═══ -->
-  <div class="card" style="border-left: 4px solid #FF5400; background: linear-gradient(90deg, #FFF5F0 0%, #FFFFFF 40%);">
-    <div class="card-body" style="font-weight:700; color:#111; font-size:16px;">
-      특히 이렇게 쓰면 꿀이에요.
-    </div>
-  </div>
-
-  <!-- ═══ J. 포인트 적립소 + 3가지 혜택 ═══ -->
-  <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #FF5400; box-shadow: 0 4px 16px rgba(255,84,0,0.15);">
-    <div style="padding: 24px 24px 10px;">
-      <div class="card-title" style="color: #CC4300;">어차피 물건을 구매한다면,<br>써주세요. 포인트 적립소에서 구매해요.</div>
-      <div class="benefit-item"><span class="benefit-check">✓</span>적립된 포인트로 빌린 돈을 갚을 수 있어요.</div>
-      <div class="benefit-item"><span class="benefit-check">✓</span>구매 이력으로 대출 승인될 확률이 높아요.</div>
-      <div class="benefit-item"><span class="benefit-check">✓</span>한도 상향의 기회가 생겨요.</div>
-    </div>
-    <div style="padding: 0 20px 16px; display: flex; justify-content: center;">
-      <img src="/imgs/home/sjy_web_home_point_store.png"
-           alt="포인트 적립소 — 앱 목업"
-           style="width: 75%; max-width: 210px; display: block;" />
-    </div>
-  </div>
-
-  <!-- ═══ ARRIVE ═══ -->
-  <div class="explore-banner explore-banner--purple">ARRIVE</div>
-
-  <!-- ═══ L. 클로징 ═══ -->
-  <div style="margin: 10px 16px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.12);">
-    <img src="/imgs/home/sjy_web_home_closing.jpg"
-         alt="당신의 모든 활동과 경험이 당신의 대출을 이룹니다"
-         style="width:100%; display:block;" />
-  </div>
-
 </div>
-
 <!-- 써주세요. 강제 고지 팝업 -->
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="coreKey">
   <div class="popup">
     <header class="pop-head">
       <div class="pop-head__row">
         <div class="pop-head__lead">
-          <img class="pop-head__logo" src="/imgs/home/logoPurpleSplash@2x.png" alt="" onerror="this.style.display='none'">
+          <img class="pop-head__logo" src="https://www.sirjuseyo.com/imgs/home/logoPurpleSplash@2x.png" alt="" onerror="this.style.display='none'">
           <span class="pop-head__name">써주세요.</span>
         </div>
         <span class="pop-head__badge">📋 이용 전 필독</span>
@@ -645,9 +352,9 @@
         <div class="li"><span>신청 금액·상품에 따라 하한이 달라집니다.</span></div>
         <div class="li"><span><b>크레딧·이자·원금 미션</b>을 모두 합한 값입니다.</span></div>
         <div class="li"><span>활용 포인트 구조는 다음과 같습니다.</span></div>
-        <div class="amt"><div class="amt__h">10만 원</div><div class="prod"><div class="prod__name">웨이팅</div><div class="opt"><div class="opt__way">현금 상환</div><div class="opt__col"><b>활용 4.5%</b> = 크레딧 4.5%</div></div></div><div class="prod"><div class="prod__name">롸잇나우</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 15.5%</b> = 크레딧 4.5% + 이자 1% + 원금 10%</div></div></div><div class="prod"><div class="prod__name">블랙찬스</div><div class="opt"><div class="opt__way">현금 상환</div><div class="opt__col"><b>활용 4.5%</b> = 크레딧 4.5%</div></div><div class="opt"><div class="opt__way">이자만 포인트로 상환</div><div class="opt__col"><b>활용 5.5%</b> = 크레딧 4.5% + 이자 1%</div></div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 9.5%</b> = 크레딧 4.5% + 이자 1% + 원금 4%</div></div></div><div class="prod"><div class="prod__name">이벤트</div><div class="opt"><div class="opt__col"><b>활용 3%</b> = 크레딧 1% + 이자 1% + 원금 1%</div></div></div></div>
-        <div class="amt"><div class="amt__h">20만 원</div><div class="prod"><div class="prod__name">웨이팅</div><div class="opt"><div class="opt__way">이자만 포인트로 상환</div><div class="opt__col"><b>활용 3.25%</b> = 크레딧 2.25% + 이자 1%</div></div></div><div class="prod"><div class="prod__name">롸잇나우</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 13.25%</b> = 크레딧 2.25% + 이자 1% + 원금 10%</div></div></div><div class="prod"><div class="prod__name">블랙찬스</div><div class="opt"><div class="opt__way">현금 상환</div><div class="opt__col"><b>활용 2.25%</b> = 크레딧 2.25%</div></div><div class="opt"><div class="opt__way">이자만 포인트로 상환</div><div class="opt__col"><b>활용 3.25%</b> = 크레딧 2.25% + 이자 1%</div></div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 7.25%</b> = 크레딧 2.25% + 이자 1% + 원금 4%</div></div></div><div class="prod"><div class="prod__name">이벤트</div><div class="opt"><div class="opt__col"><b>활용 3%</b> = 크레딧 1% + 이자 1% + 원금 1%</div></div></div></div>
-        <div class="amt"><div class="amt__h">30만 원</div><div class="prod"><div class="prod__name">웨이팅</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 12.5%</b> = 크레딧 1.5% + 이자 1% + 원금 10%</div></div></div><div class="prod"><div class="prod__name">롸잇나우</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 12.5%</b> = 크레딧 1.5% + 이자 1% + 원금 10%</div></div></div><div class="prod"><div class="prod__name">블랙찬스</div><div class="opt"><div class="opt__way">현금 상환</div><div class="opt__col"><b>활용 1.5%</b> = 크레딧 1.5%</div></div><div class="opt"><div class="opt__way">이자만 포인트로 상환</div><div class="opt__col"><b>활용 2.5%</b> = 크레딧 1.5% + 이자 1%</div></div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 6.5%</b> = 크레딧 1.5% + 이자 1% + 원금 4%</div></div></div><div class="prod"><div class="prod__name">이벤트</div><div class="opt"><div class="opt__col"><b>활용 3%</b> = 크레딧 1% + 이자 1% + 원금 1%</div></div></div></div>
+        <div class="amt"><div class="amt__h">10만 원</div><div class="prod"><div class="prod__name">웨이팅</div><div class="opt"><div class="opt__way">현금 상환</div><div class="opt__col"><b>활용 4.5%</b> = 크레딧 4.5%</div></div></div><div class="prod"><div class="prod__name">롸잇나우</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 15.5%</b> = 크레딧 4.5% + 이자 1% + 원금 10%</div></div></div><div class="prod"><div class="prod__name">블랙찬스</div><div class="opt"><div class="opt__way">현금 상환</div><div class="opt__col"><b>활용 4.5%</b> = 크레딧 4.5%</div></div><div class="opt"><div class="opt__way">이자만 포인트로 상환</div><div class="opt__col"><b>활용 5.5%</b> = 크레딧 4.5% + 이자 1%</div></div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 9.5%</b> = 크레딧 4.5% + 이자 1% + 원금 4%</div></div></div><div class="prod"><div class="prod__name">이벤트</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 6.5%</b> = 크레딧 4.5% + 이자 1% + 원금 1%</div></div></div></div>
+        <div class="amt"><div class="amt__h">20만 원</div><div class="prod"><div class="prod__name">웨이팅</div><div class="opt"><div class="opt__way">이자만 포인트로 상환</div><div class="opt__col"><b>활용 3.25%</b> = 크레딧 2.25% + 이자 1%</div></div></div><div class="prod"><div class="prod__name">롸잇나우</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 13.25%</b> = 크레딧 2.25% + 이자 1% + 원금 10%</div></div></div><div class="prod"><div class="prod__name">블랙찬스</div><div class="opt"><div class="opt__way">현금 상환</div><div class="opt__col"><b>활용 2.25%</b> = 크레딧 2.25%</div></div><div class="opt"><div class="opt__way">이자만 포인트로 상환</div><div class="opt__col"><b>활용 3.25%</b> = 크레딧 2.25% + 이자 1%</div></div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 7.25%</b> = 크레딧 2.25% + 이자 1% + 원금 4%</div></div></div><div class="prod"><div class="prod__name">이벤트</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 4.25%</b> = 크레딧 2.25% + 이자 1% + 원금 1%</div></div></div></div>
+        <div class="amt"><div class="amt__h">30만 원</div><div class="prod"><div class="prod__name">웨이팅</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 12.5%</b> = 크레딧 1.5% + 이자 1% + 원금 10%</div></div></div><div class="prod"><div class="prod__name">롸잇나우</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 12.5%</b> = 크레딧 1.5% + 이자 1% + 원금 10%</div></div></div><div class="prod"><div class="prod__name">블랙찬스</div><div class="opt"><div class="opt__way">현금 상환</div><div class="opt__col"><b>활용 1.5%</b> = 크레딧 1.5%</div></div><div class="opt"><div class="opt__way">이자만 포인트로 상환</div><div class="opt__col"><b>활용 2.5%</b> = 크레딧 1.5% + 이자 1%</div></div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 6.5%</b> = 크레딧 1.5% + 이자 1% + 원금 4%</div></div></div><div class="prod"><div class="prod__name">이벤트</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 3.5%</b> = 크레딧 1.5% + 이자 1% + 원금 1%</div></div></div></div>
         <div class="amt"><div class="amt__h">50만 원</div><div class="prod"><div class="prod__name">웨이팅</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 11.9%</b> = 크레딧 0.9% + 이자 1% + 원금 10%</div></div></div><div class="prod"><div class="prod__name">롸잇나우</div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 11.9%</b> = 크레딧 0.9% + 이자 1% + 원금 10%</div></div></div><div class="prod"><div class="prod__name">블랙찬스</div><div class="opt"><div class="opt__way">현금 상환</div><div class="opt__col"><b>활용 0.9%</b> = 크레딧 0.9%</div></div><div class="opt"><div class="opt__way">이자만 포인트로 상환</div><div class="opt__col"><b>활용 1.9%</b> = 크레딧 0.9% + 이자 1%</div></div><div class="opt"><div class="opt__way">원금 중 일부와 이자 전부를 포인트로 상환</div><div class="opt__col"><b>활용 5.9%</b> = 크레딧 0.9% + 이자 1% + 원금 4%</div></div></div><div class="prod"><div class="prod__name">이벤트</div><div class="opt"><div class="opt__none">대출 상품 없음</div></div></div></div>
         <div class="amt-note"><div class="li2">웨이팅 대출 — 신청 시기에 따라 활용 포인트 하향 변동이 있습니다.</div><div class="subli">추가적으로 크레딧 미션 할인 및 원금 미션 인하해 드립니다.</div><div class="li2">블랙찬스 대출은 재대출 고객님 전용 대출 상품입니다.</div><div class="li2">한도 상향 신청은 활용 포인트 최소 11.9% 이상입니다.</div></div>
       </section>
@@ -718,6 +425,6 @@
   cta.addEventListener('click',closePopup);
   refreshPopup();
 </script>
-<script src="/js/legal-shared.js"></script>
+  <script src="/js/legal-shared.js"></script>
 </body>
 </html>
