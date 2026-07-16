@@ -3836,6 +3836,10 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 - overlay z-index 1010 → 10001, drawer z-index 1020 → 10002 (DEV 배너 z-index:10000 위로 조정)
 - 햄버거 버튼 font-size 1.5rem → 2rem, padding 4px 6px → 6px 10px
 
+### 커밋
+
+- `0d26a54` `feat(T-072): 햄버거 메뉴 menu.js 신규 + 1Depth 드로어 UI 구현 (index-dev.html 적용)`
+
 ---
 
 ## WT-084 · T-071 / W-073 [레포 통합] sirjuseyoWeb에 monthly-loan-repo 파일 복사
