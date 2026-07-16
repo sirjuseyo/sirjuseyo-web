@@ -3820,6 +3820,117 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-085 · T-072 / W-077 [햄버거 메뉴] menu.js + 1Depth 메뉴 UI 구현
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-17
+- **작업자:** 쮸티12-1호
+- **연관 T-ID:** T-072
+- **연관 W-ID:** W-077
+
+### 작업 내용
+
+- `js/menu.js` 신규 생성 — IIFE 패턴, CURRENT_MONTH 단일 소스, 1Depth 7개 메뉴 항목, 드로어 슬라이드 UI
+- `home/` → `sirjuseyo/` 폴더명 변경 (git mv)
+- `index-dev.html` 기존 `/* nav */` CSS 블록 + `<nav class="nav">` HTML 제거 + `<script src="/js/menu.js"></script>` 추가
+- overlay z-index 1010 → 10001, drawer z-index 1020 → 10002 (DEV 배너 z-index:10000 위로 조정)
+- 햄버거 버튼 font-size 1.5rem → 2rem, padding 4px 6px → 6px 10px
+
+---
+
+## WT-084 · T-071 / W-073 [레포 통합] sirjuseyoWeb에 monthly-loan-repo 파일 복사
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-17
+- **작업자:** 쮸티12-1호
+- **연관 T-ID:** T-071
+- **연관 W-ID:** W-073
+
+### 작업 내용
+
+- STEP 2: 기존 sirjuseyoWeb 홈 3개 파일(`index.html`, `index-dev.html`, `index-origin.html`) → `/home/` 이동 커밋 `826ba57`
+- STEP 3: rsync로 monthly-loan-repo 파일 복사 (CNAME·.git·.vscode 제외)
+  - G1 판정: `js/legal-shared.js`, `footer.js` → monthly-loan 버전 채택
+  - 루트 `index.html` / `index-dev.html` → 월별 대출 PRD/DEV 화면으로 교체
+  - 신규 폴더: `2026-04~07/`, `apply/`, `apply-review/`, `loan-checker/`
+- 커밋: `826ba57` (STEP 2) + `f9c63d4` (STEP 3)
+- 대표이사 로컬 테스트 완료 (G2)
+- 원격 피처 브랜치 푸시 완료 → PR #13 (선별반영 후 close)
+
+### 📤 깃 & 배포 관리자 작업요청서 (보관, 양식 6-⑥)
+
+[개발자 -> 깃 관리자 전달]
+
+sirjuseyo-web T-071 작업 완료했습니다.
+`feature/T-028-popup-html-content-update` 원격 푸시 완료했고 PR은 `#13`입니다.
+
+작업 내용:
+- STEP 2: `index.html`, `index-dev.html`, `index-origin.html` 3개 → `/home/` 이동 (`826ba57`)
+- STEP 3: monthly-loan-repo rsync 복사 — 루트 메인 PRD/DEV 교체, `2026-04~07/`, `apply/`, `apply-review/`, `loan-checker/` 신규 반영, `js/legal-shared.js`·`footer.js` monthly-loan 버전 채택, `CNAME`·`.nojekyll` 유지 (`f9c63d4`)
+
+검증:
+- DEV 브라우저 확인 완료 (사장님 로컬 테스트 완료 / G2)
+- `www.sirjuseyo.com/` → 월별 대출 화면, `/home/` → 써주세요. 소개 확인
+
+커밋:
+- `826ba57` `feat(T-071/STEP2): 기존 sirjuseyoWeb 홈 3개 파일 /home/ 이동 (W-073)`
+- `f9c63d4` `feat(T-071/STEP3): monthly-loan-repo rsync 복사 — 루트 메인 교체 + 신규 폴더 반영 (W-073)`
+
+문서:
+- `project-docs`
+- 브랜치: `feature/T-028-popup-html-content-update`
+- PR: `#13`
+
+한 줄 버전:
+- `sirjuseyo-web T-071 완료, feature/T-028-popup-html-content-update 푸시 및 PR #13 포함 완료, 대표이사 로컬 테스트 완료. 깃 & 배포 관리자님 T-071 운영 파일 main 선별 반영 부탁드립니다.`
+
+### 📥 완료 보고서 (Ser7-1호 → 개발자)
+
+[GitHub Pages PRD : 깃 & 배포 관리자 → 개발자]
+
+sirjuseyo-web T-071 반영 완료했습니다.
+
+작업 내용:
+- PR #13은 T-028 팝업 작업과 T-071 레포 통합 작업이 같은 브랜치에 혼재되어 있어 전체 merge하지 않았습니다.
+- `main...feature/T-028-popup-html-content-update`가 diverged 상태라 전체 branch merge도 하지 않았습니다.
+- T-071 운영 배포에 필요한 파일만 `main`에 선별 반영했습니다.
+
+반영 내용:
+- 루트 `index.html`, `index-dev.html`을 monthly-loan PRD/DEV 화면으로 교체
+- 기존 sirjuseyo-web 홈 3개 파일을 `/home/`으로 이동
+- `2026-04~07/`, `apply/`, `apply-review/`, `loan-checker/` 반영
+- `footer.js`, `js/legal-shared.js` monthly-loan 버전 반영
+- `CNAME`은 기존 `www.sirjuseyo.com` 그대로 유지
+- `.nojekyll` 유지
+
+제외:
+- `.DS_Store`, `.claude/`, `CLAUDE.md`, `project-docs/`, `.gitignore`
+
+커밋:
+- sirjuseyo-web main: `9ee3371`
+- project-docs 문서 커밋: `b4dc759`
+
+배포:
+- GitHub Pages run: `29523973769`
+- 결과: success
+
+검증:
+- `https://www.sirjuseyo.com/` → HTTP/2 200
+- `https://www.sirjuseyo.com/home/` → HTTP/2 200
+- `https://www.sirjuseyo.com/2026-07/` → HTTP/2 200
+- 앞서 `/loan-checker/`, `/apply/apply.html`, `.nojekyll`, `CNAME`도 200/정상 확인 완료
+
+후속 처리:
+- PR #13은 main 선별 반영 완료 및 혼재 PR 재병합 방지를 위해 close 처리했습니다.
+- GitDeployOps TODO/WORK_THROUGH에 `W-036 / T-036 / WT-036` 기록 완료했습니다.
+- `sirjuseyo-web` 로컬은 main `9ee3371` 기준 clean 상태입니다.
+- `project-docs` 원격은 `b4dc759`까지 최신화했습니다. 로컬 project-docs에는 기존 무관 미정리 변경들이 남아 있어 이번 작업 커밋에는 포함하지 않았습니다.
+
+한 줄 버전:
+- `sirjuseyo-web T-071 완료, PR #13 전체 merge 없이 운영 파일만 main에 선별 반영했고 main commit은 \`9ee3371\`입니다. GitHub Pages 배포 success 및 주요 라이브 URL 200 확인 완료했습니다.`
+
+---
+
 ## WT-083 · T-070 / W-072 [메인 페이지] 대출 가능성 검사기 박스 숨김 해제 (DEV+PRD)
 
 - **브랜치:** `feature/T-030-credit-mission-4500`
