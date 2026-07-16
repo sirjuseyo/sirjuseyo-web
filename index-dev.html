@@ -281,7 +281,7 @@ h1 em{font-style:normal;color:var(--purple);}
     <div class="grad-bar"></div>
   </div>
 </div>
-<!-- 써주세요. 강제 고지 팝업 — DEV(재노출 방지 비활성화) -->
+<!-- 써주세요. 강제 고지 팝업 — DEV -->
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="coreKey">
   <div class="popup">
     <header class="pop-head">
@@ -392,6 +392,7 @@ h1 em{font-style:normal;color:var(--purple);}
   </div>
 </div>
 <script>
+  (function(){var t=new Date().toISOString().slice(0,10);if(localStorage.getItem('sjy_popup_hidden')===t){document.getElementById('overlay').hidden=true;}})();
   var overlay=document.getElementById('overlay'),body=document.getElementById('body'),bar=document.getElementById('bar'),
       cta=document.getElementById('cta'),status=document.getElementById('status'),statusTxt=document.getElementById('statusTxt'),
       cbs=[...document.querySelectorAll('.cb')];
@@ -405,7 +406,7 @@ h1 em{font-style:normal;color:var(--purple);}
     if(ready){status.classList.add('ready');statusTxt.textContent='확인 완료 — 닫을 수 있어요';}
     else{status.classList.remove('ready');statusTxt.textContent=!scrolledBottom?'끝까지 스크롤해서 읽어주세요':'확인 항목 '+checked+'/'+cbs.length+' — 남은 항목을 체크해주세요';}
   }
-  function closePopup(){if(cta.disabled)return;overlay.hidden=true;}
+  function closePopup(){if(cta.disabled)return;overlay.hidden=true;localStorage.setItem('sjy_popup_hidden',new Date().toISOString().slice(0,10));}
   body.addEventListener('scroll',refreshPopup,{passive:true});
   cbs.forEach(function(c){c.addEventListener('change',refreshPopup);});
   cta.addEventListener('click',closePopup);

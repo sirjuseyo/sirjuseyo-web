@@ -3820,6 +3820,23 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-086 · T-073 / W-078 [메인 DEV 팝업] 재노출 방지 활성화 (하루 1회)
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-17
+- **작업자:** 쮸티12-1호
+- **연관 T-ID:** T-073
+- **연관 W-ID:** W-078
+
+### 작업 내용
+
+- `index-dev.html` 팝업 스크립트에 localStorage 하루 1회 제한 로직 추가 (PRD와 동일)
+  - 오픈 시: `sjy_popup_hidden` 키 오늘 날짜 체크 → 이미 봤으면 overlay hidden
+  - 닫을 때: `closePopup()` 함수에 `localStorage.setItem('sjy_popup_hidden', 오늘날짜)` 추가
+- 주석 `DEV(재노출 방지 비활성화)` → `DEV` 로 변경
+
+---
+
 ## WT-085 · T-072 / W-077 [햄버거 메뉴] menu.js + 1Depth 메뉴 UI 구현
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
