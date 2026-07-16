@@ -3835,6 +3835,10 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
   - 닫을 때: `closePopup()` 함수에 `localStorage.setItem('sjy_popup_hidden', 오늘날짜)` 추가
 - 주석 `DEV(재노출 방지 비활성화)` → `DEV` 로 변경
 
+### 커밋
+
+- `9bf803d` `feat(T-073): index-dev.html 팝업 하루 1회 재노출 방지 활성화 (localStorage)`
+
 ---
 
 ## WT-085 · T-072 / W-077 [햄버거 메뉴] menu.js + 1Depth 메뉴 UI 구현
