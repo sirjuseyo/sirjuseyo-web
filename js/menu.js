@@ -6,13 +6,13 @@
   // ─────────────────────────────────────────────────────────────────
 
   var ITEMS = [
-    { label: '써주세요. 소개',         href: '/sirjuseyo/' },
-    { label: '인기 상품은 나노크레딧',  href: '/nanocredit/' },
-    { label: '나에게 맞는 대출 방식',  href: '/loan-match/' },
-    { label: '월별 대출 신청하기',     href: '/' + CURRENT_MONTH + '/' },
-    { label: '챌린지',                href: '/challenge/' },
-    { label: '꿀정보',               href: '/tip/' },
-    { label: '공지사항',              href: '/notice/' },
+    { emoji: '🏠', label: '써주세요.가 뭔데?',       href: '/sirjuseyo/' },
+    { emoji: '⚡', label: '인기 상품은 나노크레딧',   href: '/nanocredit/' },
+    { emoji: '🔍', label: '나에게 맞는 대출 방식',    href: '/loan-match/' },
+    { emoji: '📋', label: '월별 대출 신청하기',       href: '/' + CURRENT_MONTH + '/' },
+    { emoji: '🏆', label: '챌린지',                  href: '/challenge/' },
+    { emoji: '🍯', label: '꿀정보',                  href: '/tip/' },
+    { emoji: '📢', label: '공지사항',                href: '/notice/' },
   ];
 
   var CSS =
@@ -30,19 +30,32 @@
     '#sjy-overlay.sjy-open{display:block;opacity:1}' +
 
     /* drawer */
-    '#sjy-drawer{position:fixed;top:0;right:0;width:280px;height:100%;background:#fff;z-index:10002;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}' +
+    '#sjy-drawer{position:fixed;top:0;right:0;width:288px;height:100%;background:#F5F3FF;z-index:10002;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}' +
     '#sjy-drawer.sjy-open{transform:translateX(0)}' +
-    '#sjy-drawer-head{display:flex;justify-content:flex-end;align-items:center;padding:14px 16px;border-bottom:1px solid #F0F0F0}' +
-    '#sjy-drawer-close{background:none;border:none;font-size:1.3rem;color:#666;cursor:pointer;padding:4px 8px;line-height:1}' +
-    '#sjy-drawer-nav{display:flex;flex-direction:column;overflow-y:auto;flex:1}' +
-    '.sjy-item{display:block;padding:17px 24px;font-size:1rem;font-weight:500;color:#1A1A2E;text-decoration:none;border-bottom:1px solid #F5F5F5}' +
-    '.sjy-item:active,.sjy-item:hover{background:#F3F0FF;color:#380097}' +
 
-    /* body 상단 여백 (nav bar 높이만큼) */
+    /* drawer 헤더 — 보라 배경 */
+    '#sjy-drawer-head{display:flex;justify-content:space-between;align-items:center;padding:20px 20px 18px;background:#380097}' +
+    '#sjy-drawer-title{color:#fff;font-size:1rem;font-weight:700;letter-spacing:-.3px}' +
+    '#sjy-drawer-close{background:rgba(255,255,255,.18);border:none;color:#fff;font-size:1rem;cursor:pointer;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0}' +
+
+    /* drawer 메뉴 리스트 */
+    '#sjy-drawer-nav{display:flex;flex-direction:column;overflow-y:auto;flex:1;padding:12px}' +
+    '.sjy-item{display:flex;align-items:center;gap:12px;padding:13px 14px;text-decoration:none;color:#1A1A2E;background:#fff;border-radius:14px;margin-bottom:6px;box-shadow:0 1px 4px rgba(0,0,0,.06)}' +
+    '.sjy-item:last-child{margin-bottom:0}' +
+    '.sjy-item:active{background:#F3F0FF}' +
+    '.sjy-item-icon{width:40px;height:40px;background:#EDE9FF;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}' +
+    '.sjy-item-text{font-size:.95rem;font-weight:700;letter-spacing:-.3px;flex:1}' +
+    '.sjy-item-arrow{color:#380097;font-size:1.3rem;font-weight:300;flex-shrink:0}' +
+
+    /* body 상단 여백 */
     'body.sjy-ready{padding-top:52px}';
 
   var itemsHTML = ITEMS.map(function (i) {
-    return '<a class="sjy-item" href="' + i.href + '">' + i.label + '</a>';
+    return '<a class="sjy-item" href="' + i.href + '">' +
+      '<div class="sjy-item-icon">' + i.emoji + '</div>' +
+      '<span class="sjy-item-text">' + i.label + '</span>' +
+      '<span class="sjy-item-arrow">›</span>' +
+    '</a>';
   }).join('');
 
   function inject() {
@@ -66,6 +79,7 @@
       '<div id="sjy-overlay"></div>' +
       '<div id="sjy-drawer">' +
         '<div id="sjy-drawer-head">' +
+          '<span id="sjy-drawer-title">메뉴를 선택하세요.</span>' +
           '<button id="sjy-drawer-close" aria-label="메뉴 닫기">✕</button>' +
         '</div>' +
         '<nav id="sjy-drawer-nav">' + itemsHTML + '</nav>' +
@@ -74,7 +88,7 @@
     document.body.insertAdjacentElement('afterbegin', wrap);
     document.body.classList.add('sjy-ready');
 
-    var btn     = document.getElementById('sjy-nav-btn');
+    var btn      = document.getElementById('sjy-nav-btn');
     var closeBtn = document.getElementById('sjy-drawer-close');
     var overlay  = document.getElementById('sjy-overlay');
     var drawer   = document.getElementById('sjy-drawer');

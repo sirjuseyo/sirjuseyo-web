@@ -3820,6 +3820,25 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-087 · T-074 / W-079 [햄버거 메뉴] menu.js B안 디자인 적용
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-17
+- **작업자:** 쮸티12-1호
+- **연관 T-ID:** T-074
+- **연관 W-ID:** W-079
+
+### 작업 내용
+
+- `js/menu.js` B안 디자인 전면 적용
+  - 드로어 배경 #F5F3FF (연보라), width 288px
+  - 드로어 헤더: 보라(#380097) 배경 + "메뉴를 선택하세요." + 반투명 원형 ✕ 버튼
+  - 카드 타일 아이템: 흰 카드(border-radius:14px, shadow) + 이모지 박스(#EDE9FF, 40px) + 텍스트(700) + 보라 화살표(›, 1.3rem)
+  - 메뉴명 변경: "써주세요. 소개" → "써주세요.가 뭔데?"
+  - ITEMS에 emoji 필드 추가
+
+---
+
 ## WT-086 · T-073 / W-078 [메인 DEV 팝업] 재노출 방지 활성화 (하루 1회)
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
