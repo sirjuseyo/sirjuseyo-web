@@ -38,14 +38,14 @@
     '#sjy-drawer-title{color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:-.3px}' +
     '#sjy-drawer-close{background:rgba(255,255,255,.2);border:none;color:#fff;font-size:1.1rem;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0}' +
 
-    /* drawer 메뉴 리스트 — 목업 B안 CSS 그대로 */
-    '#sjy-drawer-nav{background:#F5F3FF;display:flex;flex-direction:column;overflow-y:auto;flex:1;padding:12px}' +
-    '.sjy-item{display:flex;align-items:center;gap:12px;padding:13px 14px;text-decoration:none;color:#1A1A2E;background:#fff;border-radius:14px;margin-bottom:6px;box-shadow:0 1px 4px rgba(0,0,0,.06)}' +
+    /* drawer 메뉴 리스트 */
+    '#sjy-drawer-nav{background:#F5F3FF;display:flex;flex-direction:column;overflow-y:auto;flex:1;padding:16px}' +
+    '.sjy-item{display:flex;align-items:center;gap:16px;padding:20px 20px;text-decoration:none;color:#1A1A2E;background:#fff;border-radius:16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.07)}' +
     '.sjy-item:last-child{margin-bottom:0}' +
     '.sjy-item:active{background:#F3F0FF}' +
-    '.sjy-item-icon{width:40px;height:40px;background:#F3F0FF;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}' +
-    '.sjy-item-text{font-size:.95rem;font-weight:700;letter-spacing:-.3px;flex:1}' +
-    '.sjy-item-arrow{margin-left:auto;color:#380097;font-size:1.3rem;font-weight:300}' +
+    '.sjy-item-icon{width:52px;height:52px;background:#F3F0FF;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}' +
+    '.sjy-item-text{font-size:1rem;font-weight:700;letter-spacing:-.4px;flex:1}' +
+    '.sjy-item-arrow{margin-left:auto;color:#380097;font-size:1.4rem;font-weight:300;padding-right:4px}' +
 
     /* body 상단 여백 */
     'body.sjy-ready{padding-top:52px}';
