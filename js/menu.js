@@ -16,7 +16,8 @@
   ];
 
   var CSS =
-    '#sjy-menu,#sjy-menu *{box-sizing:border-box;margin:0;padding:0}' +
+    '#sjy-menu{box-sizing:border-box;margin:0;padding:0;font-family:\'Apple SD Gothic Neo\',\'Noto Sans KR\',sans-serif}' +
+    '#sjy-menu *{box-sizing:border-box;font-family:\'Apple SD Gothic Neo\',\'Noto Sans KR\',sans-serif}' +
 
     /* nav bar */
     '#sjy-nav-bar{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;height:52px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:1000;border-bottom:1px solid #EBEBEB;box-shadow:0 1px 6px rgba(0,0,0,.07)}' +
@@ -30,22 +31,22 @@
     '#sjy-overlay.sjy-open{display:block;opacity:1}' +
 
     /* drawer — 화면 전체 덮기 */
-    '#sjy-drawer{position:fixed;top:0;right:0;width:100%;max-width:480px;height:100%;background:#F5F3FF;z-index:10002;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}' +
+    '#sjy-drawer{position:fixed;top:0;left:0;right:0;bottom:0;background:#F5F3FF;z-index:10002;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}' +
     '#sjy-drawer.sjy-open{transform:translateX(0)}' +
 
     /* drawer 헤더 — 보라 배경 */
-    '#sjy-drawer-head{display:flex;justify-content:space-between;align-items:center;padding:22px 24px 20px;background:#380097}' +
+    '#sjy-drawer-head{display:flex;justify-content:space-between;align-items:center;padding:20px 20px 18px;background:#380097}' +
     '#sjy-drawer-title{color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:-.3px}' +
-    '#sjy-drawer-close{background:rgba(255,255,255,.2);border:none;color:#fff;font-size:1.1rem;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0}' +
+    '#sjy-drawer-close{background:rgba(255,255,255,.2);border:none;color:#fff;font-size:1.1rem;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0;padding:0}' +
 
     /* drawer 메뉴 리스트 */
-    '#sjy-drawer-nav{background:#F5F3FF;display:flex;flex-direction:column;overflow-y:auto;flex:1;padding:16px}' +
-    '.sjy-item{display:flex;align-items:center;gap:16px;padding:20px 20px;text-decoration:none;color:#1A1A2E;background:#fff;border-radius:16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.07)}' +
+    '#sjy-drawer-nav{background:#F5F3FF;display:flex;flex-direction:column;overflow-y:auto;flex:1;padding:12px;width:100%;max-width:480px;margin:0 auto}' +
+    '.sjy-item{display:flex;align-items:center;gap:12px;padding:13px 14px;text-decoration:none;color:#1A1A2E;background:#fff;border-radius:14px;margin-bottom:6px;box-shadow:0 1px 4px rgba(0,0,0,.06)}' +
     '.sjy-item:last-child{margin-bottom:0}' +
     '.sjy-item:active{background:#F3F0FF}' +
-    '.sjy-item-icon{width:52px;height:52px;background:#F3F0FF;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}' +
-    '.sjy-item-text{font-size:1rem;font-weight:700;letter-spacing:-.4px;flex:1}' +
-    '.sjy-item-arrow{margin-left:auto;color:#380097;font-size:1.4rem;font-weight:300;padding-right:4px}' +
+    '.sjy-item-icon{width:40px;height:40px;background:#F3F0FF;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}' +
+    '.sjy-item-text{font-size:.95rem;font-weight:700;letter-spacing:-.3px;flex:1}' +
+    '.sjy-item-arrow{margin-left:auto;color:#380097;font-size:1.3rem;font-weight:300}' +
 
     /* body 상단 여백 */
     'body.sjy-ready{padding-top:52px}';
@@ -94,14 +95,17 @@
     var drawer   = document.getElementById('sjy-drawer');
 
     function openMenu() {
+      var sw = window.innerWidth - document.documentElement.clientWidth;
+      if (sw > 0) document.body.style.paddingRight = sw + 'px';
+      document.body.style.overflow = 'hidden';
       drawer.classList.add('sjy-open');
       overlay.classList.add('sjy-open');
-      document.body.style.overflow = 'hidden';
     }
     function closeMenu() {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
       drawer.classList.remove('sjy-open');
       overlay.classList.remove('sjy-open');
-      document.body.style.overflow = '';
     }
 
     btn.addEventListener('click', openMenu);

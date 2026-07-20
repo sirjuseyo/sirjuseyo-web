@@ -3843,6 +3843,20 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 - `3361227` `fix(T-074): 드로어 카드 CSS 목업 B안과 동일하게 수정 (1회차 수정)` — 카드 간격·세로·화살표 목업과 일치 시도 (480px 폭 미반영으로 효과 미흡)
 - `1c6f032` `fix(T-074): 카드 사이즈 480px 전체폭 기준으로 확대 (2회차 수정)` — nav padding 16px, 카드 padding 20px, 아이콘 52px, 간격 12px, 화살표 padding-right 4px
 
+### 3회차 수정 (2026-07-20) — 코덱스 리뷰 기반
+
+**핵심 원인 (코덱스 발견):** `#sjy-menu *{margin:0;padding:0}` 리셋 선택자가 ID 우선순위로 인해 `.sjy-item`의 `padding:13px 14px`와 `margin-bottom:6px`를 전부 0으로 덮어쓰고 있었음 → 카드가 납작하고 간격 없이 보이던 근본 원인
+
+**수정 내용:**
+- `#sjy-menu *` 리셋에서 margin/padding 제거, box-sizing + font-family만 유지
+- 폰트 패밀리 명시: `'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif`
+- 드로어 전체화면 덮기: `left:0; right:0; bottom:0`
+- `#sjy-drawer-nav` max-width:480px; margin:0 auto 추가
+- 헤더 padding 목업 일치: `20px 20px 18px`
+- 카드 margin-bottom: 6px (목업 일치)
+- 닫기 버튼 padding:0 명시
+- 스크롤바 보정 코드 추가 (openMenu 함수)
+
 ---
 
 ## WT-086 · T-073 / W-078 [메인 DEV 팝업] 재노출 방지 활성화 (하루 1회)
