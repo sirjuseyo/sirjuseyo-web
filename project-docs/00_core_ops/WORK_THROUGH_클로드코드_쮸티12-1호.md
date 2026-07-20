@@ -3820,6 +3820,38 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-090 · T-077 / W-076 [나에게 맞는 대출 방식] 레이아웃 앱 사이즈 전환
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-21
+- **작업자:** 쮸티12-1호
+- **연관 T-ID:** T-077
+- **연관 W-ID:** W-076
+
+### 작업 내용
+
+**파일:** `loan-match/index.html`
+
+**변경 사항:** body에 `max-width:480px; margin:0 auto` 추가 — 웹 와이드 레이아웃 → 앱 사이즈(모바일 폭 480px) 전환
+
+---
+
+## WT-089 · T-076 / W-075 [나노크레딧] 레이아웃 앱 사이즈 전환
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-21
+- **작업자:** 쮸티12-1호
+- **연관 T-ID:** T-076
+- **연관 W-ID:** W-075
+
+### 작업 내용
+
+**파일:** `nanocredit/index.html`
+
+**변경 사항:** body에 `max-width:480px; margin:0 auto` 추가 — 웹 와이드 레이아웃 → 앱 사이즈(모바일 폭 480px) 전환
+
+---
+
 ## WT-088 · T-075 / W-080 [햄버거 메뉴] menu.js 햄버거 버튼 CSS span 방식 변경 + 크기 확대
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
