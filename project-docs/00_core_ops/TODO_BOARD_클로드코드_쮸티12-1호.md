@@ -539,6 +539,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-039 | P0 | T-039 | **테스트 완료(DONE)** `0ee40b0` | **[홈 페이지] index-dev.html gift-box 서핑 이미지 교체** | `index-dev.html`, `PLAN_2026-07_홈페이지_7월전환_기획서.md` | gift-box 이미지: `summer-jul-001.jpg` → `Palm-Surf_Jul-Loan.png` (269번 줄) / 기획서 v0.4 반영 / 커밋 `0ee40b0` ✅ WT-049 | 2026-07-01 | 쮸티12-1호 |
 | W-042 | P0 | T-030~T-039 (PRD) | **검증완료** `815964b` → main `cf89006` |
 | W-043 | P0 | T-039 (자산) | **검증완료** `84b62f4` → main `cf89006` |
+| W-084 | P1 | - | **대기** | **[menu-dev.js] DEV 전용 메뉴 JS 신규 생성 + 전체 DEV 파일 적용** | `js/menu-dev.js`(신규), `index-dev.html`, `sirjuseyo/index-dev.html`, `nanocredit/index-dev.html`, `loan-match/index-dev.html`, `2026-07/index-dev.html`, `apply/apply-dev.html`, `loan-checker/index-dev.html` | menu.js 복사 → 모든 링크를 DEV 버전(`index-dev.html`)으로 변경 / 로고 href `/` → `/index-dev.html` / 7개 DEV 파일의 `menu.js` → `menu-dev.js` 교체 | 2026-07-21 | 쮸티12-1호 |
 | W-083 | P1 | T-079 | **완료** | **[나에게 맞는 대출 방식] loan-match/index-dev.html 신규 생성** | `loan-match/index-dev.html` | PRD(`loan-match/index.html`) 복사 후 `<body>` 직후 DEV 오렌지 배너 삽입 — menu.js 이미 적용됨 | 2026-07-21 | 쮸티12-1호 |
 | W-082 | P1 | T-078 | **완료** | **[나노크레딧] nanocredit/index-dev.html 신규 생성** | `nanocredit/index-dev.html` | PRD(`nanocredit/index.html`) 복사 후 `<body>` 직후 DEV 오렌지 배너 삽입 — menu.js 이미 적용됨 | 2026-07-21 | 쮸티12-1호 |
 | W-080 | P1 | T-075 | **테스트 완료(DONE)** `5813f2c` | **[햄버거 메뉴] menu.js 햄버거 버튼 CSS span 방식 변경 + 크기 확대** | `js/menu.js` | `≡` 유니코드 문자 → CSS `<span>` 3개 방식으로 변경 — 선 너비 28px/두께 3px/간격 6px, 나노크레딧 버튼 참고 | 2026-07-20 | 쮸티12-1호 |
