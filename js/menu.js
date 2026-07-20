@@ -24,7 +24,8 @@
     '#sjy-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}' +
     '#sjy-nav-logo img{width:28px;height:28px;object-fit:contain;border-radius:50%}' +
     '#sjy-nav-logo span{font-size:.92rem;font-weight:700;color:#380097;letter-spacing:-.3px}' +
-    '#sjy-nav-btn{background:none;border:none;font-size:2rem;color:#380097;cursor:pointer;line-height:1;padding:6px 10px;display:flex;align-items:center}' +
+    '#sjy-nav-btn{background:none;border:none;cursor:pointer;padding:8px 10px;display:flex;flex-direction:column;align-items:center;gap:6px}' +
+    '#sjy-nav-btn span{display:block;width:28px;height:3px;background:#380097;border-radius:2px}' +
 
     /* overlay */
     '#sjy-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10001;transition:opacity .3s;opacity:0}' +
@@ -75,7 +76,7 @@
           '<img src="https://www.sirjuseyo.com/imgs/home/logoPurpleSplash@2x.png" alt="써주세요.">' +
           '<span>써주세요.</span>' +
         '</a>' +
-        '<button id="sjy-nav-btn" aria-label="메뉴 열기">≡</button>' +
+        '<button id="sjy-nav-btn" aria-label="메뉴 열기"><span></span><span></span><span></span></button>' +
       '</div>' +
       '<div id="sjy-overlay"></div>' +
       '<div id="sjy-drawer">' +

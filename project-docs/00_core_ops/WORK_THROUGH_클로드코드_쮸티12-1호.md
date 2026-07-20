@@ -3820,6 +3820,43 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-088 · T-075 / W-080 [햄버거 메뉴] menu.js 햄버거 버튼 CSS span 방식 변경 + 크기 확대
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-20
+- **작업자:** 쮸티12-1호
+- **연관 T-ID:** T-075
+- **연관 W-ID:** W-080
+
+### 작업 내용
+
+**파일:** `js/menu.js`
+
+**변경 사항:**
+- 햄버거 버튼 방식 변경: `≡` 유니코드 문자 → CSS `<span>` 3개 (나노크레딧 방식과 동일)
+- 버튼 CSS: `font-size:2rem` 방식 → `flex-direction:column; gap:6px` 방식으로 전환
+- 선 규격: `width:28px; height:3px; background:#380097; border-radius:2px`
+- 기존보다 크고 또렷하게 — 나노크레딧(`24px/2px`) 대비 조금 더 크게 설정
+
+**Before:**
+```css
+#sjy-nav-btn { font-size:2rem; color:#380097; padding:6px 10px; display:flex; align-items:center }
+```
+```html
+<button id="sjy-nav-btn">≡</button>
+```
+
+**After:**
+```css
+#sjy-nav-btn { cursor:pointer; padding:8px 10px; display:flex; flex-direction:column; align-items:center; gap:6px }
+#sjy-nav-btn span { display:block; width:28px; height:3px; background:#380097; border-radius:2px }
+```
+```html
+<button id="sjy-nav-btn"><span></span><span></span><span></span></button>
+```
+
+---
+
 ## WT-087 · T-074 / W-079 [햄버거 메뉴] menu.js B안 디자인 적용
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
@@ -3856,6 +3893,8 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 - 카드 margin-bottom: 6px (목업 일치)
 - 닫기 버튼 padding:0 명시
 - 스크롤바 보정 코드 추가 (openMenu 함수)
+
+**커밋:** `e833bdc` `fix(T-074): #sjy-menu * 리셋 선택자 충돌 수정 — 카드 padding/margin 0 덮어쓰기 버그 해결 (3회차)`
 
 ---
 
