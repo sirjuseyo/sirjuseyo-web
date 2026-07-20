@@ -3820,6 +3820,48 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-092 · T-079 / W-083 [나에게 맞는 대출 방식] loan-match/index-dev.html 신규 생성
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-21
+- **작업자:** 쮸티12-1호
+- **연관 T-ID:** T-079
+- **연관 W-ID:** W-083
+
+### 작업 내용
+
+**파일:** `loan-match/index-dev.html` (신규 생성)
+
+**변경 사항:**
+1. PRD(`loan-match/index.html`) 복사
+2. `<body>` 태그 직후 DEV 배너 삽입:
+   - `background:#FF5400` 오렌지 배너
+   - `position:sticky; top:0; z-index:10000`
+   - 문구: `🚧 DEV 테스트 환경 — 실사용자 접근 금지`
+
+---
+
+## WT-091 · T-078 / W-082 [나노크레딧] nanocredit/index-dev.html 신규 생성
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-21
+- **작업자:** 쮸티12-1호
+- **연관 T-ID:** T-078
+- **연관 W-ID:** W-082
+
+### 작업 내용
+
+**파일:** `nanocredit/index-dev.html` (신규 생성)
+
+**변경 사항:**
+1. PRD(`nanocredit/index.html`) 복사
+2. `<body>` 태그 직후 DEV 배너 삽입:
+   - `background:#FF5400` 오렌지 배너
+   - `position:sticky; top:0; z-index:10000`
+   - 문구: `🚧 DEV 테스트 환경 — 실사용자 접근 금지`
+
+---
+
 ## WT-090 · T-077 / W-076 [나에게 맞는 대출 방식] 레이아웃 앱 사이즈 전환
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
