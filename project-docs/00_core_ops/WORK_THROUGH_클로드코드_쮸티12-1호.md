@@ -3839,6 +3839,11 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
    - `position:sticky; top:0; z-index:10000`
    - 문구: `🚧 DEV 테스트 환경 — 실사용자 접근 금지`
 
+### 커밋 정보
+
+- 로컬 커밋: `954c9ad` `[T-078/T-079] nanocredit, loan-match index-dev.html 신규 생성`
+- 브랜치: `feature/T-028-popup-html-content-update`
+
 ---
 
 ## WT-091 · T-078 / W-082 [나노크레딧] nanocredit/index-dev.html 신규 생성
@@ -3859,6 +3864,11 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
    - `background:#FF5400` 오렌지 배너
    - `position:sticky; top:0; z-index:10000`
    - 문구: `🚧 DEV 테스트 환경 — 실사용자 접근 금지`
+
+### 커밋 정보
+
+- 로컬 커밋: `954c9ad` `[T-078/T-079] nanocredit, loan-match index-dev.html 신규 생성`
+- 브랜치: `feature/T-028-popup-html-content-update`
 
 ---
 

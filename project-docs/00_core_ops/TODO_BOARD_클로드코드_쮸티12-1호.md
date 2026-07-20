@@ -380,8 +380,8 @@ git checkout -b feature/T-001-jun-loan-landing
 | T-063 | [대출 검사기] 이벤트 대출 시 크미 인하 비율% 표시 | ✅ `4e89da1` | ✅ PR#24 | 검증완료 | ✅ 선별반영 `7149ee2` | ✅ Pages run `28696555200` | 쮸티12-1호 | 2026-07-04 | PR#24 선별반영, loan-checker 6개 파일 main 반영, live 확인 완료 |
 | T-064 | [대출 검사기] result-panel pointHintBox 아래 대표 거절 사유 박스 추가 (DEV+PRD) | ✅ `4e89da1` | ✅ PR#24 | 검증완료 | ✅ 선별반영 `7149ee2` | ✅ Pages run `28696555200` | 쮸티12-1호 | 2026-07-04 | PR#24 선별반영, loan-checker 6개 파일 main 반영, live 확인 완료 |
 | T-070 | [메인 페이지] 대출 가능성 검사기 박스 숨김 해제 (DEV+PRD) | ✅ `be22aee` | ✅ PR#24 | 검증완료 | ✅ 선별반영 `78bb8fa` | ✅ Pages run `28699720665` | 쮸티12-1호 | 2026-07-04 | PR#24 선별반영, index.html/index-dev.html main 반영, live 확인 완료 |
-| T-079 | [나에게 맞는 대출 방식] loan-match/index-dev.html 신규 생성 | ✅ `-` | - | 진행중 | - | - | 쮸티12-1호 | 2026-07-21 | PRD 복사 + DEV 배너 삽입 |
-| T-078 | [나노크레딧] nanocredit/index-dev.html 신규 생성 | ✅ `-` | - | 진행중 | - | - | 쮸티12-1호 | 2026-07-21 | PRD 복사 + DEV 배너 삽입 |
+| T-079 | [나에게 맞는 대출 방식] loan-match/index-dev.html 신규 생성 | ✅ `954c9ad` | - | 진행중 | - | - | 쮸티12-1호 | 2026-07-21 | PRD 복사 + DEV 배너 삽입 |
+| T-078 | [나노크레딧] nanocredit/index-dev.html 신규 생성 | ✅ `954c9ad` | - | 진행중 | - | - | 쮸티12-1호 | 2026-07-21 | PRD 복사 + DEV 배너 삽입 |
 | T-077 | [나에게 맞는 대출 방식] 레이아웃 앱 사이즈 전환 | ✅ `c3638fe` | - | 테스트 완료(DONE) | - | - | 쮸티12-1호 | 2026-07-21 | loan-match/index.html body max-width:480px 추가 |
 | T-076 | [나노크레딧] 레이아웃 앱 사이즈 전환 | ✅ `c3638fe` | - | 테스트 완료(DONE) | - | - | 쮸티12-1호 | 2026-07-21 | nanocredit/index.html body max-width:480px 추가 |
 | T-075 | [햄버거 메뉴] menu.js 햄버거 버튼 CSS span 방식 변경 + 크기 확대 | ✅ `5813f2c` | - | 테스트 완료(DONE) | - | - | 쮸티12-1호 | 2026-07-20 | ≡ 유니코드 → span 3개 CSS 방식, 28px/3px/6px — 나노크레딧 방식 참고 |
@@ -400,8 +400,8 @@ git checkout -b feature/T-001-jun-loan-landing
 | **T-045** | WT-057 | W-047 | `e3b5e0c` | **테스트 완료(DONE)** | **[신청 폼] 50만 원 선택 시 인라인 경고 2종 추가 (DEV+PRD)** | 쮸티12-1호 | 2026-07-04 | 【파일】`apply/apply-dev.html`, `apply/apply.html` / S3 경험-없음 50만 원 조합 → 경고② 표시+차단, S4 이벤트 대출 50만 원 조합 → 경고① 표시+차단 / `.inline-warn` CSS + `selectExperienceNo()` + `selectMethodEvent()` 함수 추가 |
 | **T-046** | WT-058 | W-048 | `bd10089` | **테스트 완료(DONE)** | **[대출 검사기] 7월 썸머 베케이션 전환 (DEV+PRD)** | 쮸티12-1호 | 2026-07-04 | 【파일】`loan-checker/month-config.js`, `loan-checker/app.js`, `loan-checker/index-dev.html`, `loan-checker/index.html` / ①2026-07 설정 추가 ②이벤트 대출 원리포 전환+50만 행 삭제 ③경험 패널 신규+패널 재배치 ④`updateAmountWarnings()` JS ⑤7월 텍스트 전환 |
 | **T-070** | WT-083 | W-072 | `be22aee` | **테스트 완료(DONE)** | **[메인 페이지] 대출 가능성 검사기 박스 숨김 해제 (DEV+PRD)** | 쮸티12-1호 | 2026-07-04 | 【파일】`index-dev.html`, `index.html` / `checker-card` div `style="display:none"` 제거 |
-| **T-079** | WT-092 | W-083 | `-` | **진행중(In-Progress)** | **[나에게 맞는 대출 방식] loan-match/index-dev.html 신규 생성** | 쮸티12-1호 | 2026-07-21 | 【파일】`loan-match/index-dev.html` / PRD 복사 + `<body>` 직후 DEV 오렌지 배너(#FF5400) 삽입 |
-| **T-078** | WT-091 | W-082 | `-` | **진행중(In-Progress)** | **[나노크레딧] nanocredit/index-dev.html 신규 생성** | 쮸티12-1호 | 2026-07-21 | 【파일】`nanocredit/index-dev.html` / PRD 복사 + `<body>` 직후 DEV 오렌지 배너(#FF5400) 삽입 |
+| **T-079** | WT-092 | W-083 | `954c9ad` | **진행중(In-Progress)** | **[나에게 맞는 대출 방식] loan-match/index-dev.html 신규 생성** | 쮸티12-1호 | 2026-07-21 | 【파일】`loan-match/index-dev.html` / PRD 복사 + `<body>` 직후 DEV 오렌지 배너(#FF5400) 삽입 |
+| **T-078** | WT-091 | W-082 | `954c9ad` | **진행중(In-Progress)** | **[나노크레딧] nanocredit/index-dev.html 신규 생성** | 쮸티12-1호 | 2026-07-21 | 【파일】`nanocredit/index-dev.html` / PRD 복사 + `<body>` 직후 DEV 오렌지 배너(#FF5400) 삽입 |
 | **T-077** | WT-090 | W-076 | `c3638fe` | **테스트 완료(DONE)** | **[나에게 맞는 대출 방식] 레이아웃 앱 사이즈 전환** | 쮸티12-1호 | 2026-07-21 | 【파일】`loan-match/index.html` / body에 `max-width:480px; margin:0 auto` 추가 |
 | **T-076** | WT-089 | W-075 | `c3638fe` | **테스트 완료(DONE)** | **[나노크레딧] 레이아웃 앱 사이즈 전환** | 쮸티12-1호 | 2026-07-21 | 【파일】`nanocredit/index.html` / body에 `max-width:480px; margin:0 auto` 추가 |
 | **T-075** | WT-088 | W-080 | `5813f2c` | **테스트 완료(DONE)** | **[햄버거 메뉴] menu.js 햄버거 버튼 CSS span 방식 변경 + 크기 확대** | 쮸티12-1호 | 2026-07-20 | 【파일】`js/menu.js` / `≡` 유니코드 → `<span>` 3개 CSS 방식, 선 28px×3px/gap 6px/보라 #380097 |
