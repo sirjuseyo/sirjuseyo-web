@@ -3859,6 +3859,7 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 - 로컬 커밋: `6015e2b` `[T-080] menu-dev.js 신규 생성 + 전체 DEV 파일 적용`
 - 브랜치: `feature/T-028-popup-html-content-update`
+- **상태: ✅ 테스트 완료(DONE)**
 
 ---
 
