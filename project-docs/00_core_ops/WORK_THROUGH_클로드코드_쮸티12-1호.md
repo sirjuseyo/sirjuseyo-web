@@ -3820,6 +3820,48 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-093 · T-080 / W-084 [menu-dev.js] DEV 전용 메뉴 JS 신규 생성 + 전체 DEV 파일 적용
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-21
+- **작업자:** 쮸티12-1호
+- **연관 T-ID:** T-080
+- **연관 W-ID:** W-084
+
+### 작업 내용
+
+**[이슈]** menu.js 드로어 링크가 모두 PRD 절대경로(`/sirjuseyo/` 등)를 가리켜, DEV 페이지에서 메뉴 클릭 시 PRD(DEV 배너 없음)로 이동
+
+**[해결]** `js/menu-dev.js` 신규 생성 — 모든 링크를 DEV 버전으로 변경
+
+**변경 내역:**
+| 항목 | menu.js (PRD) | menu-dev.js (DEV) |
+|---|---|---|
+| 로고 | `/` | `/index-dev.html` |
+| 써주세요.가 뭔데? | `/sirjuseyo/` | `/sirjuseyo/index-dev.html` |
+| 인기 상품은 나노크레딧 | `/nanocredit/` | `/nanocredit/index-dev.html` |
+| 나에게 맞는 대출 방식 | `/loan-match/` | `/loan-match/index-dev.html` |
+| 월별 대출 신청하기 | `/2026-07/` | `/2026-07/index-dev.html` |
+| 챌린지 | `/challenge/` | `/challenge/index-dev.html` |
+| 꿀정보 | `/tip/` | `/tip/index-dev.html` |
+| 공지사항 | `/notice/` | `/notice/index-dev.html` |
+
+**교체/추가 대상 파일 (7개):**
+- `index-dev.html` — 교체
+- `sirjuseyo/index-dev.html` — 추가 (기존 미적용)
+- `nanocredit/index-dev.html` — 교체
+- `loan-match/index-dev.html` — 교체
+- `2026-07/index-dev.html` — 교체
+- `apply/apply-dev.html` — 교체
+- `loan-checker/index-dev.html` — 교체
+
+### 커밋 정보
+
+- 로컬 커밋: `6015e2b` `[T-080] menu-dev.js 신규 생성 + 전체 DEV 파일 적용`
+- 브랜치: `feature/T-028-popup-html-content-update`
+
+---
+
 ## WT-092 · T-079 / W-083 [나에게 맞는 대출 방식] loan-match/index-dev.html 신규 생성
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
