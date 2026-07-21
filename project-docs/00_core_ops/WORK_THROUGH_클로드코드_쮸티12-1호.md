@@ -3844,7 +3844,7 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 - 로컬 커밋: `5af84d6`(초기) → `d049be8`(소스 교체 수정) `[W-085 수정] worldcup-challenge 기반으로 재생성`
 - 브랜치: `feature/T-028-popup-html-content-update`
-- **상태: 코딩완료(TEST WAIT)**
+- **상태: ✅ 테스트 완료(DONE)**
 
 ---
 

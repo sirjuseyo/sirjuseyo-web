@@ -445,6 +445,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | T-039 | [홈] index-dev.html + index.html gift-box 서핑 이미지 교체 | ✅ `0ee40b0` | ✅ PR#24 | 검증완료 | ✅ 선별반영 `cf89006` | ✅ Pages run `28564430240` | 쮸티12-1호 | 2026-07-01 | PR#24 선별반영 |
 | W-042 | [7월 PRD] 홈 index.html + 2026-07/index.html 신규 생성 | ✅ `815964b` | ✅ PR#24 | - | ✅ 선별반영 `cf89006` | ✅ Pages run `28564430240` | 쮸티12-1호 | 2026-07-02 | PR#24 선별반영, `2026-07/index.html` 200 확인 |
 | W-043 | [T-039 자산] Palm-Surf_Jul-Loan.png 커밋 추가 | ✅ `84b62f4` | ✅ PR#24 | - | ✅ 선별반영 `cf89006` | ✅ Pages run `28564430240` | 쮸티12-1호 | 2026-07-02 | PR#24 선별반영, `2026-07/assets/Palm-Surf_Jul-Loan.png` 200 확인 |
+| **W-085** | WT-094 | W-085 | `d049be8` | **테스트 완료(DONE)** | **[챌린지 대표 페이지] challenge/index.html + index-dev.html 신규 생성** | 쮸티12-1호 | 2026-07-22 | 【파일】`challenge/index.html`(신규), `challenge/index-dev.html`(신규) / 소스: `2026-06/worldcup-challenge` / PRD: menu.js + `/apply/` 절대경로 / DEV: menu-dev.js + DEV배너(sticky) + `/apply/index-dev.html` 절대경로 / 이미지: `/2026-06/worldcup-challenge/assets/` |
 
 
 ---
@@ -541,7 +542,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-039 | P0 | T-039 | **테스트 완료(DONE)** `0ee40b0` | **[홈 페이지] index-dev.html gift-box 서핑 이미지 교체** | `index-dev.html`, `PLAN_2026-07_홈페이지_7월전환_기획서.md` | gift-box 이미지: `summer-jul-001.jpg` → `Palm-Surf_Jul-Loan.png` (269번 줄) / 기획서 v0.4 반영 / 커밋 `0ee40b0` ✅ WT-049 | 2026-07-01 | 쮸티12-1호 |
 | W-042 | P0 | T-030~T-039 (PRD) | **검증완료** `815964b` → main `cf89006` |
 | W-043 | P0 | T-039 (자산) | **검증완료** `84b62f4` → main `cf89006` |
-| W-085 | P1 | - | **코딩완료(TEST WAIT)** `d049be8` | **[챌린지 대표 페이지] challenge/index.html + index-dev.html 신규 생성** | `challenge/index.html`(신규), `challenge/index-dev.html`(신규) | 현재 챌린지 1개(월드컵)뿐 → `2026-06/index-dev.html` 내용을 챌린지 대표 페이지로 이식 / PRD + DEV 각 1개 생성 / menu.js(PRD)·menu-dev.js(DEV) 적용 | 2026-07-22 | 쮸티12-1호 |
+| W-085 | P1 | - | **테스트 완료(DONE)** `d049be8` | **[챌린지 대표 페이지] challenge/index.html + index-dev.html 신규 생성** | `challenge/index.html`(신규), `challenge/index-dev.html`(신규) | 현재 챌린지 1개(월드컵)뿐 → `2026-06/index-dev.html` 내용을 챌린지 대표 페이지로 이식 / PRD + DEV 각 1개 생성 / menu.js(PRD)·menu-dev.js(DEV) 적용 | 2026-07-22 | 쮸티12-1호 |
 | W-084 | P1 | T-080 | **테스트 완료(DONE)** `6015e2b` | **[menu-dev.js] DEV 전용 메뉴 JS 신규 생성 + 전체 DEV 파일 적용** | `js/menu-dev.js`(신규), `index-dev.html`, `sirjuseyo/index-dev.html`, `nanocredit/index-dev.html`, `loan-match/index-dev.html`, `2026-07/index-dev.html`, `apply/apply-dev.html`, `loan-checker/index-dev.html` | menu.js 복사 → 모든 링크를 DEV 버전(`index-dev.html`)으로 변경 / 로고 href `/` → `/index-dev.html` / 7개 DEV 파일의 `menu.js` → `menu-dev.js` 교체 | 2026-07-21 | 쮸티12-1호 |
 | W-083 | P1 | T-079 | **완료** | **[나에게 맞는 대출 방식] loan-match/index-dev.html 신규 생성** | `loan-match/index-dev.html` | PRD(`loan-match/index.html`) 복사 후 `<body>` 직후 DEV 오렌지 배너 삽입 — menu.js 이미 적용됨 | 2026-07-21 | 쮸티12-1호 |
 | W-082 | P1 | T-078 | **완료** | **[나노크레딧] nanocredit/index-dev.html 신규 생성** | `nanocredit/index-dev.html` | PRD(`nanocredit/index.html`) 복사 후 `<body>` 직후 DEV 오렌지 배너 삽입 — menu.js 이미 적용됨 | 2026-07-21 | 쮸티12-1호 |
