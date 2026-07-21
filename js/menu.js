@@ -28,8 +28,8 @@
     '#sjy-nav-btn span{display:block;width:28px;height:3px;background:#380097;border-radius:2px}' +
 
     /* overlay */
-    '#sjy-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10001;transition:opacity .3s;opacity:0}' +
-    '#sjy-overlay.sjy-open{display:block;opacity:1}' +
+    '#sjy-menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10001;transition:opacity .3s;opacity:0}' +
+    '#sjy-menu-overlay.sjy-open{display:block;opacity:1}' +
 
     /* drawer — 화면 전체 덮기 */
     '#sjy-drawer{position:fixed;top:0;left:0;right:0;bottom:0;background:#F5F3FF;z-index:10002;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}' +
@@ -78,7 +78,7 @@
         '</a>' +
         '<button id="sjy-nav-btn" aria-label="메뉴 열기"><span></span><span></span><span></span></button>' +
       '</div>' +
-      '<div id="sjy-overlay"></div>' +
+      '<div id="sjy-menu-overlay"></div>' +
       '<div id="sjy-drawer">' +
         '<div id="sjy-drawer-head">' +
           '<span id="sjy-drawer-title">메뉴를 선택하세요.</span>' +
@@ -92,7 +92,7 @@
 
     var btn      = document.getElementById('sjy-nav-btn');
     var closeBtn = document.getElementById('sjy-drawer-close');
-    var overlay  = document.getElementById('sjy-overlay');
+    var overlay  = document.getElementById('sjy-menu-overlay');
     var drawer   = document.getElementById('sjy-drawer');
 
     function openMenu() {

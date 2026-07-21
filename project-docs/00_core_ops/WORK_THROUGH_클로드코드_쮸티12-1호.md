@@ -3848,6 +3848,25 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-096 · T-081 / W-087 [팝업 오버레이] 내비바 가림 문제 수정 — top:52px
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-22
+- **작업자:** 쮸티12-1호
+- **연관 W-ID:** W-087
+
+### 작업 내용
+
+**[배경]** 팝업 오버레이(`#sjy-overlay`)가 `z-index:9999`로 내비바(`z-index:1000`)를 전체 덮어 햄버거 버튼이 안 보이는 문제. 오버레이 시작점을 내비바 높이(52px) 아래로 내려 내비바가 항상 보이도록 수정.
+
+**[변경 파일]**
+- `js/popup.js`
+
+**[변경 내용]**
+- `#sjy-overlay` CSS: `inset:0` → `inset:52px 0 0 0`
+
+---
+
 ## WT-095 · W-086 [공통 팝업 JS] popup.js 신규 생성 + 전체 페이지 적용 + KST 날짜 수정
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
