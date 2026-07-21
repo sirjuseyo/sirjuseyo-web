@@ -3879,7 +3879,7 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ### 커밋 정보
 
-- 로컬 커밋: (테스트 완료 후 기록)
+- 로컬 커밋: `b5abdc7` `[W-086] popup.js 신규 생성 + 전체 페이지 적용 + KST 날짜 수정`
 - 브랜치: `feature/T-028-popup-html-content-update`
 - **상태: ⏳ 테스트 대기**
 
