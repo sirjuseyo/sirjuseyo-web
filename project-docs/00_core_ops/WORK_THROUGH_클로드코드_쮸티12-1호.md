@@ -3842,7 +3842,7 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ### 커밋 정보
 
-- 로컬 커밋: (테스트 완료 후 기록)
+- 로컬 커밋: `5af84d6` `[W-085] 챌린지 대표 페이지 신규 생성 (challenge/index.html + index-dev.html)`
 - 브랜치: `feature/T-028-popup-html-content-update`
 - **상태: 코딩완료(TEST WAIT)**
 
