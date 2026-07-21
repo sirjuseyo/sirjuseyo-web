@@ -3848,6 +3848,43 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-095 · W-086 [공통 팝업 JS] popup.js 신규 생성 + 전체 페이지 적용 + KST 날짜 수정
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-22
+- **작업자:** 쮸티12-1호
+- **연관 W-ID:** W-086
+
+### 작업 내용
+
+**[배경]** 기존 팝업은 홈(`index.html`, `index-dev.html`) 인라인에만 존재 → 서브 페이지 직접 진입 시 팝업 미노출. 어떤 경로로 진입해도 하루 1회 팝업이 표시되도록 공통 JS 파일로 분리 + 전체 페이지 적용.
+
+**[변경 내역]**
+- `js/popup.js` **신규 생성** — IIFE 패턴, CSS `#sjy-overlay` 스코핑, HTML 동적 주입, KST 날짜 계산
+  - CSS 변수: `:root{}` → `#sjy-overlay{}`로 이동 (스코프 격리)
+  - ID 충돌 방지: `overlay`→`sjy-overlay`, `bar`→`sjy-bar`, `body`→`sjy-body`, `cta`→`sjy-cta`, `status`→`sjy-status`, `statusTxt`→`sjy-status-txt`, `coreKey`→`sjy-coreKey`
+  - 애니메이션 이름 충돌 방지: `fade`→`sjyfade`, `pop`→`sjypop`
+  - KST 날짜: `new Date().toISOString().slice(0,10)` → `new Date(new Date().getTime() + 9*60*60*1000).toISOString().slice(0,10)`
+  - localStorage 키: `sjy_popup_hidden` (기존 동일)
+- `index.html` — 인라인 팝업 CSS(98~221줄) + HTML(279~388줄) + JS(389~409줄) 3블록 제거 → `<script src="/js/popup.js"></script>` 추가
+- `index-dev.html` — 동일 처리
+- 서브 페이지 12개 파일에 `<script src="/js/popup.js"></script>` 추가:
+  - `sirjuseyo/index.html`, `sirjuseyo/index-dev.html`
+  - `nanocredit/index.html`, `nanocredit/index-dev.html`
+  - `loan-match/index.html`, `loan-match/index-dev.html`
+  - `2026-07/index.html`, `2026-07/index-dev.html`
+  - `challenge/index.html`, `challenge/index-dev.html`
+  - `loan-checker/index.html`, `loan-checker/index-dev.html`
+- `apply/` 폴더 제외 (신청 폼은 팝업 불필요)
+
+### 커밋 정보
+
+- 로컬 커밋: (테스트 완료 후 기록)
+- 브랜치: `feature/T-028-popup-html-content-update`
+- **상태: ⏳ 테스트 대기**
+
+---
+
 ## WT-093 · T-080 / W-084 [menu-dev.js] DEV 전용 메뉴 JS 신규 생성 + 전체 DEV 파일 적용
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
