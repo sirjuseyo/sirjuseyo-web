@@ -3820,6 +3820,34 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-094 · W-085 [챌린지 대표 페이지] challenge/index.html + index-dev.html 신규 생성
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-22
+- **작업자:** 쮸티12-1호
+- **연관 W-ID:** W-085
+
+### 작업 내용
+
+**[배경]** 챌린지 메뉴 링크(`/challenge/`)에 해당하는 대표 페이지가 없음. 현재 챌린지는 월드컵 챌린지 1개뿐이므로, `2026-06/index-dev.html`(월드컵 챌린지 내용 포함)을 소스로 챌린지 대표 페이지 생성.
+
+**[변경 내역]**
+- `challenge/` 폴더 신규 생성
+- `challenge/index-dev.html` (DEV) — 소스 기반 + DEV 배너(`#FF5400`, sticky) + `menu-dev.js` 적용
+- `challenge/index.html` (PRD) — 소스 기반 + DEV 배너 없음 + `menu.js` 적용
+- 마감 처리 div 제거 + `display:none` wrapper 제거 → 실제 콘텐츠만 사용
+- 이미지 경로 절대 경로 변환: `./assets/` → `/2026-06/assets/`
+- 신청 링크: DEV `/apply/apply-dev.html`, PRD `/apply/apply.html`
+- `<title>` → `챌린지 | 써주세요.`
+
+### 커밋 정보
+
+- 로컬 커밋: (테스트 완료 후 기록)
+- 브랜치: `feature/T-028-popup-html-content-update`
+- **상태: 코딩완료(TEST WAIT)**
+
+---
+
 ## WT-093 · T-080 / W-084 [menu-dev.js] DEV 전용 메뉴 JS 신규 생성 + 전체 DEV 파일 적용
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
