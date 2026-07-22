@@ -3848,6 +3848,23 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-098 · T-084 / W-089 [UI 통일] 상단 고지 풀사이즈 통일 — legal-shared.js
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-22
+- **상태: 🔄 In-Progress**
+
+### 회차 1
+
+| 항목 | 내용 |
+|------|------|
+| 수정 파일 | `js/legal-shared.js` |
+| 수정 내용 | `.legal-top` CSS에 `width:100vw; margin-left:calc(50% - 50vw)` 추가 |
+| 커밋 해시 | `9c117ea` |
+| 커밋 메시지 | [T-084] legal-shared.js 상단 고지 풀사이즈 통일 |
+
+---
+
 ## WT-097 · T-083 / W-088 [꿀정보] tip/index.html + index-dev.html 신규 생성
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
