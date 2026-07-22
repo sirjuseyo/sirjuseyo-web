@@ -3848,6 +3848,39 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-097 · T-083 / W-088 [꿀정보] tip/index.html + index-dev.html 신규 생성
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-22
+- **작업자:** 쮸티12-1호
+- **연관 W-ID:** W-088
+- **상태:** 테스트 완료(DONE)
+- **최종 커밋:** `38da632`
+
+### 작업 내용
+
+**[배경]** 꿀정보 대표 페이지(`/tip/`) 신규 제작. 목업(`목업_tip_index_20260722.html`) 기반 PRD + DEV 2파일 생성.
+
+**[변경 파일]**
+- `tip/index.html` (신규)
+- `tip/index-dev.html` (신규)
+
+**[변경 내용]**
+- 목업 그대로 배치, 최소 수정만 적용
+  - `<main class="tip-page">` → `<main class="tip-page page">` (legal-shared.js `.page` 감지 클래스)
+  - `<div id="legal-top">`, `<div id="footer">` 불필요 div 제거
+  - `<script src="/footer.js">` 제거 (deprecated)
+  - `<script src="/js/popup.js">` 추가
+- DEV: menu-dev.js + 오렌지 배너(`#FF5400`) 삽입
+
+### 테스트 완료
+
+- 2026-07-22 KST 09:50 댄디어빠쮸너야님 테스트 완료
+- 팝업 정상 표시·3체크+닫기 동작 확인
+- 다른 페이지(index-dev.html 등) 팝업 미표시 확인 (localStorage `sjy_popup_hidden` 저장 확인)
+
+---
+
 ## WT-096 · T-081 / W-087 [팝업 오버레이] 내비바 가림 문제 수정 — top:52px
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
