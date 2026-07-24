@@ -3863,6 +3863,15 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 > DEV 2개(`loan-match/index-dev.html`, `nanocredit/index-dev.html`)는 W-089(T-084) 에서 기처리 완료
 
+### 회차수정 (커밋 `d4ec4a9`)
+
+| 파일 | 변경 내용 |
+|---|---|
+| `loan-match/index.html` | `<body data-back>` → `<body class="page" data-back>` |
+| `nanocredit/index.html` | `<body data-back>` → `<body class="page" data-back>` |
+
+> 원인: `legal-shared.js`가 `.page` 클래스 감지 후 고지 삽입 — PRD body에 클래스 누락으로 미표시
+
 ---
 
 ## WT-100 · T-086 / W-091 [UI 통일] ← 버튼 통합 + 회차수정 (크기·센터·apply)
