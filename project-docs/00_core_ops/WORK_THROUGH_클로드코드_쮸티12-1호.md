@@ -3848,6 +3848,21 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-099 · T-085 / W-090 [UI 통일] tip→loan-checker DEV 링크 수정
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-25
+- **상태: 테스트 완료(DONE)**
+
+### 작업 내용
+
+- **파일:** `tip/index-dev.html` line 134
+- **변경:** `href="/loan-checker/"` → `href="/loan-checker/index-dev.html"`
+- **커밋:** `3d9e7e4`
+- **이유:** 꿀정보 페이지에서 대출 가능성 검사기 클릭 시 PRD(index.html)로 연결되던 버그 수정 → DEV(index-dev.html) 경로로 수정
+
+---
+
 ## WT-098 · T-084 / W-089 [UI 통일] 상단 고지 풀사이즈 통일 — legal-shared.js
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
