@@ -3848,6 +3848,34 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-100 · T-086 / W-091 [UI 통일] ← 버튼 통합 + 회차수정 (크기·센터·apply)
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-25
+- **상태: 진행중(In-Progress)**
+
+### 1차 작업 내용 (커밋 `95a9815`)
+
+| 항목 | 내용 |
+|---|---|
+| menu.js / menu-dev.js | `#sjy-nav-back` ← 버튼 추가 + `data-back` 감지 + history.back() fallback |
+| 하위 PRD 7개 | `data-back="/index.html"` 추가 |
+| 하위 DEV 7개 | `data-back="/index-dev.html"` 추가 |
+| nanocredit PRD·DEV | 기존 `.back-btn` CSS + `<a class="back-btn">` 제거 |
+| loan-match PRD·DEV | 기존 `.back-btn`, `.bottom-back`, SEC-01·SEC-07 div 제거 |
+
+### 회차수정 (커밋 `e671798`)
+
+| 항목 | 변경 내용 |
+|---|---|
+| `#sjy-nav-back` 크기 | `font-size:1.4rem` → `1.8rem` |
+| 로고 센터 이동 CSS | `#sjy-nav-bar.sjy-has-back #sjy-nav-logo{position:absolute;left:50%;transform:translateX(-50%)}` 추가 |
+| `sjy-has-back` 클래스 | `data-back` 감지 시 `#sjy-nav-bar`에 추가 |
+| `apply/apply.html` | `<body data-back="/2026-07/index.html">` 추가 |
+| `apply/apply-dev.html` | `<body data-back="/2026-07/index-dev.html">` 추가 |
+
+---
+
 ## WT-099 · T-085 / W-090 [UI 통일] tip→loan-checker DEV 링크 수정
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
