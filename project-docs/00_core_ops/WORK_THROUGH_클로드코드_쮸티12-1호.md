@@ -3852,7 +3852,7 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
 - **작업일시:** 2026-07-22
-- **상태: 🔄 In-Progress**
+- **상태: 테스트 완료(DONE)**
 
 ### 회차 1
 
@@ -3873,7 +3873,7 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 | C. nanocredit | `<body class="page">` 추가 + DEV 바 `top:52px` + `footer.js` 주석처리 + `legal-shared.js` 추가 (popup.js → menu-dev.js → legal-shared.js 순) |
 | D. loan-match | C와 동일 |
 | 수정 파일 | `js/legal-shared.js`, `index-dev.html`, `sirjuseyo/index-dev.html`, `2026-07/index-dev.html`, `challenge/index-dev.html`, `tip/index-dev.html`, `nanocredit/index-dev.html`, `loan-match/index-dev.html` |
-| 커밋 해시 | (테스트 완료 후 기록) |
+| 커밋 해시 | `e73d94b` |
 
 ### 회차 수정 2 (사장님 테스트 피드백 반영)
 
@@ -3884,7 +3884,7 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 | A. legal-shared.js | DEV 바 감지 로직 제거 → 항상 `afterbegin`으로 상단 고지 삽입. 컨테이너 `paddingLeft/Right` 감지 → padding > 0이면 `.legal-top`·`.legal-bottom`에 negative margin 동적 보정 |
 | B. DEV 바 5개 파일 | 컨테이너 밖(body 직하위)으로 이동 + `max-width:480px;margin:0 auto;` 추가 — `index-dev.html`, `sirjuseyo/index-dev.html`, `2026-07/index-dev.html`, `challenge/index-dev.html`, `tip/index-dev.html` |
 | 변경 없는 파일 | `nanocredit/index-dev.html`, `loan-match/index-dev.html` — body 자체가 480px 컨테이너 + DEV 바 이미 body 직하위 |
-| 커밋 해시 | (테스트 완료 후 기록) |
+| 커밋 해시 | `222ce6d` |
 
 ### 회차 수정 3 (사장님 테스트 피드백 반영)
 
@@ -3893,7 +3893,7 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 | 수정 배경 | nanocredit·loan-match: `body class="page"` + `afterbegin` → 상단 고지가 DEV 바 **앞**에 삽입 → 렌더링 순서 역전([상단 고지]→[DEV 바]). 월별 대출: main `p-8`의 padding-top(32px)이 DEV 바와 상단 고지 사이 빈 공간 생성 |
 | 수정 1 | `js/legal-shared.js` — DEV 바 감지 로직 재추가: `page.firstElementChild.style.position === 'sticky'` → `afterend` 삽입. nanocredit·loan-match body 직하위 DEV 바 정확 감지 |
 | 수정 2 | `2026-07/index-dev.html` — `p-8` → `px-8 pb-10` (padding-top 제거, 빈 공간 해소) |
-| 커밋 해시 | (테스트 완료 후 기록) |
+| 커밋 해시 | `fad4793` |
 
 ---
 
