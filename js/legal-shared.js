@@ -49,11 +49,16 @@
       '2024-서울강남-0088-대부중개<br>' +
       '등록시・도 명칭 : 서울시 강남구청(대부업 담당 : 02-3423-5524)' +
     '</div>';
-  var devBar = page.firstElementChild;
-  if (devBar && devBar.style && devBar.style.position === 'sticky') {
-    devBar.insertAdjacentHTML('afterend', legalTop);
-  } else {
-    page.insertAdjacentHTML('afterbegin', legalTop);
+  page.insertAdjacentHTML('afterbegin', legalTop);
+
+  var padL = parseFloat(window.getComputedStyle(page).paddingLeft) || 0;
+  var padR = parseFloat(window.getComputedStyle(page).paddingRight) || 0;
+  var padStyle = (padL > 0 || padR > 0)
+    ? 'margin-left:-' + padL + 'px;margin-right:-' + padR + 'px;width:calc(100% + ' + (padL + padR) + 'px);'
+    : '';
+  if (padStyle) {
+    var topEl = page.querySelector('.legal-top');
+    if (topEl) topEl.style.cssText += padStyle;
   }
 
   /* ── 하단 전체 ── */
@@ -191,4 +196,8 @@
     '</div>';
 
   page.insertAdjacentHTML('beforeend', html);
+  if (padStyle) {
+    var botEl = page.querySelector('.legal-bottom');
+    if (botEl) botEl.style.cssText += padStyle;
+  }
 })();

@@ -3875,6 +3875,17 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 | 수정 파일 | `js/legal-shared.js`, `index-dev.html`, `sirjuseyo/index-dev.html`, `2026-07/index-dev.html`, `challenge/index-dev.html`, `tip/index-dev.html`, `nanocredit/index-dev.html`, `loan-match/index-dev.html` |
 | 커밋 해시 | (테스트 완료 후 기록) |
 
+### 회차 수정 2 (사장님 테스트 피드백 반영)
+
+| 항목 | 내용 |
+|------|------|
+| 수정 배경 | 홈·챌린지: 컨테이너(`overflow:hidden`) 안에서 `position:sticky` 비작동 → DEV 바가 상단 고지 침범. 월별 대출: 컨테이너 `p-8` 패딩으로 DEV 바-메뉴바 사이 공간 + 상단·하단 고지 좌우 여백 발생 |
+| 근본 원인 | `overflow:hidden` 조상 안 `position:sticky` CSS 스펙 비작동. 해결: DEV 바를 body 직하위로 이동 |
+| A. legal-shared.js | DEV 바 감지 로직 제거 → 항상 `afterbegin`으로 상단 고지 삽입. 컨테이너 `paddingLeft/Right` 감지 → padding > 0이면 `.legal-top`·`.legal-bottom`에 negative margin 동적 보정 |
+| B. DEV 바 5개 파일 | 컨테이너 밖(body 직하위)으로 이동 + `max-width:480px;margin:0 auto;` 추가 — `index-dev.html`, `sirjuseyo/index-dev.html`, `2026-07/index-dev.html`, `challenge/index-dev.html`, `tip/index-dev.html` |
+| 변경 없는 파일 | `nanocredit/index-dev.html`, `loan-match/index-dev.html` — body 자체가 480px 컨테이너 + DEV 바 이미 body 직하위 |
+| 커밋 해시 | (테스트 완료 후 기록) |
+
 ---
 
 ## WT-097 · T-083 / W-088 [꿀정보] tip/index.html + index-dev.html 신규 생성
