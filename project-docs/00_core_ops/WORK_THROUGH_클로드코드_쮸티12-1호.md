@@ -3848,6 +3848,23 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-101 · T-087 / W-092 [UI 통일] PRD footer.js → legal-shared.js 교체
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-25
+- **상태: 진행중(In-Progress)**
+
+### 작업 내용 (커밋 `c88a8ad`)
+
+| 파일 | 변경 내용 |
+|---|---|
+| `loan-match/index.html` | `<script src="/footer.js">` 주석 처리 + `<script src="/js/legal-shared.js">` 추가 |
+| `nanocredit/index.html` | `<script src="/footer.js">` 주석 처리 + `<script src="/js/legal-shared.js">` 추가 |
+
+> DEV 2개(`loan-match/index-dev.html`, `nanocredit/index-dev.html`)는 W-089(T-084) 에서 기처리 완료
+
+---
+
 ## WT-100 · T-086 / W-091 [UI 통일] ← 버튼 통합 + 회차수정 (크기·센터·apply)
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
