@@ -3852,7 +3852,7 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
 - **작업일시:** 2026-07-25
-- **상태: 진행중(In-Progress)**
+- **상태: 테스트 완료(DONE)**
 
 ### 작업 내용 (커밋 `c88a8ad`)
 
