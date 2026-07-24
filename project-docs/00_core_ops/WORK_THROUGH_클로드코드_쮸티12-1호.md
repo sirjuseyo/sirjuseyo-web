@@ -3848,6 +3848,24 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-102 · T-088 / W-094 [UI 통일] 상단 고지↔콘텐츠 간격 통일
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-25 07:45
+- **상태: 진행중(In-Progress)**
+
+### 작업 내용 (커밋 `c69f2c9`)
+
+| 파일 | 변경 내용 |
+|---|---|
+| `js/legal-shared.js` | `.legal-top` CSS에 `margin-bottom:20px` 추가 |
+
+> 적용 범위: legal-shared.js를 사용하는 전 페이지 일괄 적용
+> 이미 파일 내 override 있는 페이지(2026-07·challenge·loan-checker-DEV)는 동일값이므로 무해
+> B 작업(중복 제거) 불필요 — grep-c 2 카운트는 주석 내 텍스트 포함이었음
+
+---
+
 ## WT-101 · T-087 / W-092 [UI 통일] PRD footer.js → legal-shared.js 교체
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
