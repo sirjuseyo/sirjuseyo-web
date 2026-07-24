@@ -3886,6 +3886,15 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 | 변경 없는 파일 | `nanocredit/index-dev.html`, `loan-match/index-dev.html` — body 자체가 480px 컨테이너 + DEV 바 이미 body 직하위 |
 | 커밋 해시 | (테스트 완료 후 기록) |
 
+### 회차 수정 3 (사장님 테스트 피드백 반영)
+
+| 항목 | 내용 |
+|------|------|
+| 수정 배경 | nanocredit·loan-match: `body class="page"` + `afterbegin` → 상단 고지가 DEV 바 **앞**에 삽입 → 렌더링 순서 역전([상단 고지]→[DEV 바]). 월별 대출: main `p-8`의 padding-top(32px)이 DEV 바와 상단 고지 사이 빈 공간 생성 |
+| 수정 1 | `js/legal-shared.js` — DEV 바 감지 로직 재추가: `page.firstElementChild.style.position === 'sticky'` → `afterend` 삽입. nanocredit·loan-match body 직하위 DEV 바 정확 감지 |
+| 수정 2 | `2026-07/index-dev.html` — `p-8` → `px-8 pb-10` (padding-top 제거, 빈 공간 해소) |
+| 커밋 해시 | (테스트 완료 후 기록) |
+
 ---
 
 ## WT-097 · T-083 / W-088 [꿀정보] tip/index.html + index-dev.html 신규 생성
