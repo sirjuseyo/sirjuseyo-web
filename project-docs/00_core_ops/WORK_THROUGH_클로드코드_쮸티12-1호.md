@@ -3863,6 +3863,18 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 | 커밋 해시 | `9c117ea` |
 | 커밋 메시지 | [T-084] legal-shared.js 상단 고지 풀사이즈 통일 |
 
+### 회차 수정 (사장님 피드백 반영)
+
+| 항목 | 내용 |
+|------|------|
+| 수정 배경 | 회차 1에서 `width:100vw; margin-left:calc(50% - 50vw)` 추가가 역효과 — 웹 보기에서 상단 고지 더 넓어지고 홈에서는 `.wrap`의 `overflow:hidden`으로 잘려 안 보임. 근본 원인: DEV 바·상단 고지가 컨테이너 밖에 있어 웹 보기에서 풀사이즈 렌더링됨. nanocredit·loan-match는 구버전 `footer.js` 사용 중 (연체금리 +6%P·18% 법적 오류 상태) |
+| A. legal-shared.js | `.legal-top` CSS `width:100vw; margin-left:calc(50% - 50vw)` 제거 + DEV 바 감지 로직 추가 (`firstElementChild.style.position === 'sticky'` → `afterend` 삽입) |
+| B. DEV 바 5개 파일 | 컨테이너 안 첫 번째 자식으로 이동 + `top:0 → top:52px` — `index-dev.html`, `sirjuseyo/index-dev.html`, `2026-07/index-dev.html`, `challenge/index-dev.html`, `tip/index-dev.html` |
+| C. nanocredit | `<body class="page">` 추가 + DEV 바 `top:52px` + `footer.js` 주석처리 + `legal-shared.js` 추가 (popup.js → menu-dev.js → legal-shared.js 순) |
+| D. loan-match | C와 동일 |
+| 수정 파일 | `js/legal-shared.js`, `index-dev.html`, `sirjuseyo/index-dev.html`, `2026-07/index-dev.html`, `challenge/index-dev.html`, `tip/index-dev.html`, `nanocredit/index-dev.html`, `loan-match/index-dev.html` |
+| 커밋 해시 | (테스트 완료 후 기록) |
+
 ---
 
 ## WT-097 · T-083 / W-088 [꿀정보] tip/index.html + index-dev.html 신규 생성
