@@ -3851,8 +3851,8 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 ## WT-102 · T-088 / W-094 [UI 통일] 상단 고지↔콘텐츠 간격 통일
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
-- **작업일시:** 2026-07-25 07:45
-- **상태: 진행중(In-Progress)**
+- **작업일시:** 2026-07-25 07:59
+- **상태: 테스트 완료(DONE)**
 
 ### 작업 내용 (커밋 `c69f2c9`)
 
@@ -3863,6 +3863,18 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 > 적용 범위: legal-shared.js를 사용하는 전 페이지 일괄 적용
 > 이미 파일 내 override 있는 페이지(2026-07·challenge·loan-checker-DEV)는 동일값이므로 무해
 > B 작업(중복 제거) 불필요 — grep-c 2 카운트는 주석 내 텍스트 포함이었음
+
+### 회차수정 (커밋 `c401d33`)
+
+| 파일 | 변경 내용 |
+|---|---|
+| `js/legal-shared.js` | `.legal-top` CSS `margin-bottom:20px` → `margin-bottom:40px` |
+| `index.html` | h1 CSS `padding-top:20px` → `padding-top:0` |
+
+> 배경: legal-shared.js margin-bottom 하나의 값만으로는 박스 페이지와 텍스트 페이지의 실제 gap이 달라짐
+> - 텍스트 페이지(홈): margin-bottom 20px + h1 padding-top 20px = gap 40px → h1 padding-top 0으로 제거
+> - 박스 페이지: margin-bottom만 → 40px로 올려야 동일한 40px gap 확보
+> 결과: 전 페이지 실제 gap 정확히 40px로 규격 통일
 
 ---
 
