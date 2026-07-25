@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>30만 원 1개월 | 원리포 상품 | nanocredit</title>
+  <title>30만 원 1개월 | 원리포 상품 | 써주세요.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
@@ -18,28 +18,8 @@
       font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #fff;
       overflow-x: hidden;
-    }
-
-    /* ─── NAV ─── */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #E5E7EB;
-      padding: 0 24px; height: 60px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo {
-      font-size: 20px; font-weight: 800; color: var(--nc-purple);
-      text-decoration: none; letter-spacing: -0.5px;
-    }
-    .nav-hamburger {
-      background: none; border: none; cursor: pointer; padding: 4px;
-      display: flex; flex-direction: column; gap: 5px;
-    }
-    .nav-hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--nc-purple); border-radius: 2px;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
     /* ─── 공통 이미지 ─── */
@@ -381,15 +361,8 @@
     .footer-info { font-size: 12px; color: #888; line-height: 1.8; }
   </style>
 </head>
-<body>
+<body data-back="/nanocredit/">
 
-<!-- ─── NAV ─── -->
-<nav>
-  <a class="nav-logo" href="../">nanocredit</a>
-  <button class="nav-hamburger" aria-label="메뉴">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
 
 <!-- ─── 상품 배너 ─── -->
 <img class="sec-img"
@@ -884,13 +857,12 @@
 
 <!-- ─── 하단 CTA ─── -->
 <div class="cta-section">
-  <a class="nanocreditButton" href="/monthly-loan/apply/apply.html">
+  <a class="nanocreditButton" href="/monthly-loan/2026-07/">
     지금 신청하러 가기
   </a>
 </div>
 
-<!-- ─── FOOTER (공용 footer.js) ─── -->
-<script src="/footer.js"></script>
+<script src="/js/menu.js"></script>
 
 </body>
 </html>
