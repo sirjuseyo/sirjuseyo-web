@@ -3848,6 +3848,32 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-104 · T-091 / W-096 [PRD 정합] 대출 가능성 검사기 PRD → DEV 정합 (이미지 제거 + 1열)
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-25 21:14
+- **상태: 진행중(In-Progress) — 사장님 테스트 대기**
+
+### 배경
+
+대출 가능성 검사기 PRD(`loan-checker/index.html`)가 DEV(`index-dev.html`)와 화면 차이 2가지. 사장님 지시: **PRD를 DEV와 똑같이 만들 것.** 직전 W-095에서 `.app-main` 480px 인라인만 반영한 상태의 연장선.
+
+### 작업 내용 (커밋 `aee1e72`)
+
+| 파일 | 변경 내용 |
+|---|---|
+| `loan-checker/index.html` | ① `loan-eligibility-checker-02.jpg`("대출이 필요하신 분, 주목") `<section class="hero-banner">` → `style="display:none;"` 추가로 숨김 (DEV `index-dev.html:38-40`과 동일) |
+| `loan-checker/index.html` | ② `<head>` 인라인 `<style>` 블록에 `.form-grid { grid-template-columns: 1fr !important; }` 추가 → `styles.css:237-241` `@media(min-width:960px)` 2열을 1열로 강제 (DEV `index-dev.html:12`와 동일) |
+
+> `styles.css`(공용 파일) 무수정. DEV와 동일한 인라인 override 방식 유지.
+
+### 검증 (사장님 테스트 항목)
+
+1. PRD 브라우저에서 상단 이미지 밑 "대출이 필요하신 분, 주목" 이미지가 사라지는지 (DEV와 동일)
+2. PC(960px↑) 화면에서 콘텐츠 박스가 1열 세로 배치되는지
+
+---
+
 ## WT-103 · T-090 / W-095 [PRD 레이아웃] loan-checker PRD 앱 사이즈 480px 적용
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
