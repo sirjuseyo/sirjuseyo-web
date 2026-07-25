@@ -3848,6 +3848,48 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-107 · T-094 / W-099 [디렉토리 개편 1단계] 월별대출 2026-04~07 + apply → monthly-loan/ 하위 통합
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-25 22:45
+- **상태: 진행중(In-Progress)** — 코드 커밋 완료, 사장님 테스트 대기
+
+### 배경
+- 홈페이지 상단 메뉴 구조(월별 대출 / 챌린지 / 꿀정보)와 워크스페이스 폴더 위치를 일치시키는 **3단계 디렉토리 개편의 1단계**.
+- 이 `sirjuseyoWeb`(CNAME `www.sirjuseyo.com`)가 새 통합 운영 워크스페이스. 구 `monthly-loan` 레포/도메인은 방치.
+- 1단계 대상: 월별 대출 폴더(`2026-04`~`2026-07`) + 신청 폼(`apply/`)을 신규 `monthly-loan/` 하위로 통합.
+- (2단계: 챌린지 worldcup-challenge → `challenge/` / 3단계: 꿀정보 loan-checker·apply-review → `tip/` — 예정)
+
+### 작업 내용
+1. **폴더 이동 (git mv, 히스토리 보존)**: `2026-04/`,`2026-05/`,`2026-06/`,`2026-07/`,`apply/` → `monthly-loan/` 하위
+2. **참조 경로 전수 수정 (라이브 파일)**
+   - `index.html`·`index-dev.html`: `./2026-0X/…` → `./monthly-loan/2026-0X/…` (각 4곳)
+   - `js/menu.js`·`js/menu-dev.js`: `'/'+CURRENT_MONTH+'/'` → `'/monthly-loan/'+CURRENT_MONTH+'/'`
+   - `loan-checker/index-dev.html`: `../2026-07/…` → `../monthly-loan/2026-07/…`, DEV CTA replace 로직의 죽은 스테일 도메인 문자열 제거(동작 동일)
+   - `loan-checker/index.html`: 정적 CTA href → `/monthly-loan/2026-07/` (런타임은 `cfg.detailUrl` 사용, 정합)
+   - `loan-checker/month-config.js`: `detailUrl` 3곳 `https://monthly-loan.sirjuseyo.com/2026-0X/` → `/monthly-loan/2026-0X/`
+   - `challenge/index.html`·`index-dev.html`: worldcup 이미지·신청 링크 `/2026-06/…` → `/monthly-loan/2026-06/…`
+   - `monthly-loan/apply/apply.html`·`apply-dev.html`: `data-back="/2026-07/…"` → `/monthly-loan/2026-07/…`
+   - `monthly-loan/2026-06/index.html`: apply 링크 풀 URL → `/monthly-loan/apply/apply.html`
+   - `nanocredit/index.html`·`index-dev.html`·`10·20·30·50/index.html`: 스테일 도메인 링크 → 사이트 내부 경로(`/`·`/index-dev.html`·`/monthly-loan/apply/apply.html`)
+3. **스테일 구 도메인 정리**: 라이브 파일 내 `https://monthly-loan.sirjuseyo.com/…` 풀 URL(기능 링크) 전량 → 사이트 내부 루트 상대경로 통일
+
+### 검증
+- 이동 대상 5개 폴더 + 링크 대상 파일 12종 새 경로 존재 확인 ✅
+- 이동 폴더 내부 `../apply/`·`./assets/` 상대경로: apply·자산이 함께 이동해 정상 resolve ✅
+- 라이브 파일 스테일 도메인 잔존 = santaApply `<option>` **표시 텍스트 3곳만**(폴더 이동 무관), 기능 링크 잔존 0 ✅
+- git rename(R) 추적으로 히스토리 보존 확인 ✅
+
+### 커밋
+- 코드 커밋: `bc93486` (62 files — git mv rename + 참조 수정)
+- 브랜치: `feature/T-028-popup-html-content-update`
+
+### 미결 / 보고 사항
+- **santaApply 셀렉트 플레이스홀더** `<option>` 표시 텍스트에 구 도메인 문자열 잔존(`loan-checker/index.html:258`, `index-dev.html:281`, `2026-05/index.html:234`) — 폴더 이동과 무관한 기존 콘텐츠 이상. 수정 여부 사장님 결정 대기.
+- **계획 외 확장 반영분**(근거: 사장님 "새 워크스페이스에 맞춰라" 지시): nanocredit 스테일 링크 6곳 + DEV replace 로직 정리 — 이견 시 조정 가능.
+
+---
+
 ## WT-106 · T-093 / W-098 [DEV 배너 정합] nanocredit·loan-match DEV 바 앱 사이즈(480px) 고정
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
