@@ -5809,3 +5809,53 @@ monthly-loan T-045 완료, PR #24 전체 병합 없이 `apply/apply-dev.html`, `
 ```
 
 ---
+
+## WT-112 · T-099 / W-104 [나노크레딧] 상품 상세 페이지 전면 개편 (10/20/30/50 — 4개 파일)
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-26
+- **상태: ⏳ 진행중(In-Progress)** — 코드 수정 완료, 커밋 대기
+
+### 배경
+- 나노크레딧 상품 상세 페이지 4개(`10/`, `20/`, `30/`, `50/`)가 써주세요 통합 구조로 전환되지 않은 채 방치됨.
+- 문제: ①구 nanocredit 자체 `<nav>` 헤더 ②menu.js 미포함 ③PC 풀화면(max-width 없음) ④data-back 없음.
+- 사장님 지시: 최소 수정 금지, 기존 페이지들처럼 똑같은 구조로 전면 개편.
+
+### 처방 (4개 파일 동일)
+
+| 항목 | Before | After |
+|---|---|---|
+| title | `nanocredit` | `써주세요.` |
+| body CSS | `overflow-x:hidden` | + `max-width:480px;margin:0 auto` 추가 |
+| nav CSS | `nav/.nav-logo/.nav-hamburger` 블록 | 전체 제거 |
+| `<body>` 태그 | `<body>` | `<body data-back="/nanocredit/">` |
+| `<nav>` HTML | `<nav>...</nav>` 블록 | 전체 제거 |
+| CTA href | `/monthly-loan/apply/apply.html` | `/monthly-loan/2026-07/` |
+| script | `<script src="/footer.js">` | `<script src="/js/menu.js">` |
+
+### 수정 파일
+- `nanocredit/10/index.html`
+- `nanocredit/20/index.html`
+- `nanocredit/30/index.html`
+- `nanocredit/50/index.html`
+
+---
+
+## WT-113 · T-100 / W-105 [나노크레딧] "이 달의 대출 신청하러 가기" 링크 수정 (PRD+DEV)
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-26
+- **상태: ⏳ 진행중(In-Progress)** — 코드 수정 완료, 커밋 대기
+
+### 배경
+- 나노크레딧 메인 페이지 하단 CTA 버튼 "이 달의 대출 신청하러 가기"의 href가 홈("/", "/index-dev.html")으로 잘못 연결되어 있었음.
+- 클릭 시 월별 대출 신청 페이지가 아닌 홈으로 이동하는 UX 결함.
+
+### 처방
+
+| 파일 | Before | After |
+|---|---|---|
+| `nanocredit/index.html` | `href="/"` | `href="/monthly-loan/2026-07/"` |
+| `nanocredit/index-dev.html` | `href="/index-dev.html"` | `href="/monthly-loan/2026-07/index-dev.html"` |
+
+---
