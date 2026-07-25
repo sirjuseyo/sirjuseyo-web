@@ -9,7 +9,7 @@
     { emoji: '🏠', label: '써주세요.가 뭔데?',       href: '/sirjuseyo/' },
     { emoji: '⚡', label: '인기 상품은 나노크레딧',   href: '/nanocredit/' },
     { emoji: '🔍', label: '나에게 맞는 대출 방식',    href: '/loan-match/' },
-    { emoji: '📋', label: '월별 대출 신청하기',       href: '/' + CURRENT_MONTH + '/' },
+    { emoji: '📋', label: '월별 대출 신청하기',       href: '/monthly-loan/' + CURRENT_MONTH + '/' },
     { emoji: '🏆', label: '챌린지',                  href: '/challenge/' },
     { emoji: '🍯', label: '꿀정보',                  href: '/tip/' },
     { emoji: '📢', label: '공지사항',                href: '/notice/' },

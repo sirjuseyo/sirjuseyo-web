@@ -46,7 +46,7 @@ const MONTH_CONFIGS = {
     // 포인트 구독 시작일
     subscribeStart: '2026.03.18',
     // 랜딩 페이지 URL
-    detailUrl: 'https://monthly-loan.sirjuseyo.com/2026-05/',
+    detailUrl: '/monthly-loan/2026-05/',
     // CTA 버튼 텍스트
     ctaText: '❤️ 가정의 달 대출 신청하기 →',
     // 웨이팅 캘린더 기본 노출값 (Royal Seat 기준)
@@ -81,7 +81,7 @@ const MONTH_CONFIGS = {
     },
     pointDeadline: '2026년 7월 25일',
     subscribeStart: '2026.05.18',
-    detailUrl: 'https://monthly-loan.sirjuseyo.com/2026-06/',
+    detailUrl: '/monthly-loan/2026-06/',
     ctaText: '🪖 호국보훈의 달 대출 신청하기 →',
     defaultWaitingDate: '2026년 6월 11일',
     defaultWaitingPeriod: '2026년 6월 11일 ~ 15일',
@@ -112,7 +112,7 @@ const MONTH_CONFIGS = {
     },
     pointDeadline: '2026년 8월 25일',
     subscribeStart: '2026.06.18',
-    detailUrl: 'https://monthly-loan.sirjuseyo.com/2026-07/',
+    detailUrl: '/monthly-loan/2026-07/',
     ctaText: '7️⃣🈷️ 썸머🏖️ 베케이션 대출 신청하기 →',
     defaultWaitingDate: '2026년 7월 11일',
     defaultWaitingPeriod: '2026년 7월 11일 ~ 15일',

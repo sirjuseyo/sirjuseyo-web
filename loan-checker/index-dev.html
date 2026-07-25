@@ -591,7 +591,7 @@
 
         <div class="script-cta">
           <a class="script-cta-button-text" id="ctaButton"
-            href="../2026-07/index-dev.html"
+            href="../monthly-loan/2026-07/index-dev.html"
             target="_blank" rel="noopener noreferrer">
             7️⃣🈷️ 썸머🏖️ 베케이션 대출 신청하기 →
           </a>
@@ -684,7 +684,6 @@
       if (cta) {
         // [DEV] PRD detailUrl을 DEV 경로로 변환 (PRD 무영향 — index-dev 전용 스크립트)
         cta.href = cfg.detailUrl
-          .replace('https://monthly-loan.sirjuseyo.com/', '../')
           .replace(/\/$/, '/index-dev.html');
         cta.textContent = cfg.ctaText;
       }
