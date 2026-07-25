@@ -3848,6 +3848,39 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-109 · T-096 / W-101 [디렉토리 개편 3단계] apply-review·loan-checker·unsuspend → tip/ 하위 통합
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-26
+- **상태: 진행중(In-Progress)** — 코드 커밋 완료, 사장님 테스트 대기
+
+### 배경
+- 홈페이지 상단 메뉴 구조(꿀정보/tip)와 워크스페이스 폴더 위치 일치 **3단계 디렉토리 개편**.
+- 사장님 스크린샷 검토 후 `apply-review/`, `loan-checker/`, `unsuspend/`가 루트에 남아 있음을 확인.
+
+### 작업 내용
+1. **폴더 이동 (git mv, 히스토리 보존)**
+   - `apply-review/` → `tip/apply-review/`
+   - `loan-checker/` → `tip/loan-checker/`
+   - `unsuspend/` → `tip/unsuspend/`
+2. **참조 경로 수정 (7건)**
+   - `index.html:146` — `./loan-checker/` → `./tip/loan-checker/`
+   - `index-dev.html:151` — `./loan-checker/index-dev.html` → `./tip/loan-checker/index-dev.html`
+   - `tip/index.html:129` — `/loan-checker/` → `/tip/loan-checker/`
+   - `tip/index.html:168` — `/apply-review/apply-review.html` → `/tip/apply-review/apply-review.html`
+   - `tip/index-dev.html:134` — `/loan-checker/index-dev.html` → `/tip/loan-checker/index-dev.html`
+   - `tip/index-dev.html:173` — `/apply-review/apply-review.html` → `/tip/apply-review/apply-review.html`
+   - `tip/unsuspend/index.html` — `../imgs/unsuspend/` → `../../imgs/unsuspend/` (4곳, 상위 1단계 추가)
+3. **무수정 확인** — `loan-checker/index(-dev).html` `data-back="/index(-dev).html"` 루트 절대경로로 변경 불필요
+
+### 검증
+- `http://localhost:8080/` → 꿀정보 → 대출 가능성 검사기 진입.
+- `http://localhost:8080/tip/loan-checker/` 직접 접근.
+- `http://localhost:8080/tip/apply-review/apply-review.html` 직접 접근.
+- `http://localhost:8080/tip/unsuspend/index.html` → 이미지(007·008·009·006) 정상 표시.
+
+---
+
 ## WT-108 · T-095 / W-100 [잠복 버그 수정] menu.js·menu-dev.js `history.back()` → `window.history.back()` 한정
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
