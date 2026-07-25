@@ -35,8 +35,8 @@
     '#sjy-menu-overlay.sjy-open{display:block;opacity:1}' +
 
     /* drawer — 화면 전체 덮기 */
-    '#sjy-drawer{position:fixed;top:0;left:0;right:0;bottom:0;background:#F5F3FF;z-index:10002;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}' +
-    '#sjy-drawer.sjy-open{transform:translateX(0)}' +
+    '#sjy-drawer{position:fixed;top:0;bottom:0;left:50%;width:100%;max-width:480px;background:#F5F3FF;z-index:10002;transform:translateX(200%);transition:transform .3s ease;display:flex;flex-direction:column}' +
+    '#sjy-drawer.sjy-open{transform:translateX(-50%)}' +
 
     /* drawer 헤더 — 보라 배경 */
     '#sjy-drawer-head{display:flex;justify-content:space-between;align-items:center;padding:20px 20px 18px;background:#380097;max-width:480px;margin:0 auto;width:100%}' +
