@@ -3852,7 +3852,7 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
 - **작업일시:** 2026-07-26
-- **상태: 진행중(In-Progress)** — 코드 커밋 완료, 사장님 테스트 대기
+- **상태: ✅ 테스트 완료(DONE)** — 코드 커밋 `95b6cf0`(회차수정), 문서 커밋 `b18976c`
 
 ### 배경
 - T-097로 드로어 헤더(480px)는 수정했으나, 드로어 본체(`#sjy-drawer`)가 여전히 PC 뷰포트 전체(`left:0;right:0;top:0;bottom:0`)를 덮음.
@@ -3887,7 +3887,7 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
 - **작업일시:** 2026-07-26
-- **상태: 진행중(In-Progress)** — 코드 커밋 완료, 사장님 테스트 대기
+- **상태: ✅ 테스트 완료(DONE)** — 코드 커밋 `2ffda52`, 문서 커밋 `7241026`
 
 ### 배경
 - PC에서 햄버거 메뉴 클릭 시 드로어 헤더(보라 배경 "메뉴를 선택하세요.")가 풀사이즈로 표시됨.
