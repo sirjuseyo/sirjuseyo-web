@@ -3848,6 +3848,37 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-106 · T-093 / W-098 [DEV 배너 정합] nanocredit·loan-match DEV 바 앱 사이즈(480px) 고정
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-25 22:05
+- **상태: 진행중(In-Progress) — 사장님 테스트 대기**
+
+### 배경
+
+W-097(loan-checker) 처리 중 발견 — `nanocredit`·`loan-match` DEV 배너도 웹 풀사이즈. 사장님 지시로 loan-checker와 분리해 별도 W-098로 처리.
+
+### 원인 (코드 근거)
+
+- 두 파일 배너 `<div>`는 `position:sticky;top:52px;z-index:10000;`는 이미 있으나 `max-width:480px;margin:0 auto;`가 누락되어 풀사이즈.
+- W-097(loan-checker)은 5속성 전부 누락이었으나, 이 두 파일은 폭 2속성만 누락 (차이점).
+
+### 작업 내용 (커밋 `4fef5cf`)
+
+| 파일 | 변경 내용 |
+|---|---|
+| `nanocredit/index-dev.html` (배너 div, 420번 줄) | style 끝에 `max-width:480px;margin:0 auto;` 2속성 추가 |
+| `loan-match/index-dev.html` (배너 div, 130번 줄) | style 끝에 `max-width:480px;margin:0 auto;` 2속성 추가 |
+
+> 결과적으로 tip/challenge/sirjuseyo/loan-checker와 완전 동일 규격(480px + 스크롤 고정). DEV 전용 배너라 PRD 영향 없음, `styles.css` 무관.
+
+### 검증 (사장님 테스트 항목)
+
+1. `nanocredit/index-dev.html` DEV 바가 풀사이즈 → 480px 앱 사이즈로 좁혀졌는지
+2. `loan-match/index-dev.html` DEV 바가 풀사이즈 → 480px 앱 사이즈로 좁혀졌는지
+
+---
+
 ## WT-105 · T-092 / W-097 [DEV 배너 정합] loan-checker DEV 바 앱 사이즈(480px) + 스크롤 고정
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
