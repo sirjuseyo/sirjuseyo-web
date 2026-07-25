@@ -3848,6 +3848,43 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-105 · T-092 / W-097 [DEV 배너 정합] loan-checker DEV 바 앱 사이즈(480px) + 스크롤 고정
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-25 21:50
+- **상태: 진행중(In-Progress) — 사장님 테스트 대기**
+
+### 배경
+
+`loan-checker/index-dev.html` DEV 배너(🚧 DEV 테스트 환경)가 웹 풀사이즈로 표시됨. tip/challenge/sirjuseyo DEV 페이지는 앱 사이즈(480px)+스크롤 고정인데 loan-checker만 어긋남. 사장님 지시: 다른 페이지와 동일 규격으로 통일(A안 5속성 전부).
+
+### 원인 (코드 근거)
+
+- DEV 배너 `<div>`는 `.app-main`(480px) 밖 형제 요소인데 자체 폭 제한이 없어 브라우저 전체 너비로 늘어남.
+- 앞부분(`background`~`letter-spacing:0.5px`)은 tip/challenge(`tip/index-dev.html:121`)와 완전 동일, 뒤 5속성만 누락.
+
+### 작업 내용 (커밋 `b549c35`)
+
+| 파일 | 변경 내용 |
+|---|---|
+| `loan-checker/index-dev.html` (배너 div, 30번 줄) | style 끝에 `position:sticky;top:52px;z-index:10000;max-width:480px;margin:0 auto;` 5속성 추가 |
+
+- **효과 ①** `max-width:480px;margin:0 auto;` → 앱 사이즈 폭 고정 (사장님 요청)
+- **효과 ②** `position:sticky;top:52px;z-index:10000;` → 스크롤 시 나비바(52px) 아래 고정 (tip/challenge와 동일 규격)
+
+> DEV 전용 배너라 PRD(`index.html`)에는 배너 자체가 없음 → 단일 파일, 단일 라인 수정. `styles.css` 무관.
+
+### 검증 (사장님 테스트 항목)
+
+1. PC 브라우저에서 DEV 바가 화면 꽉 참(풀사이즈) → 480px 앱 사이즈로 좁혀져 콘텐츠와 폭 일치하는지
+2. 페이지를 아래로 스크롤할 때 DEV 바가 나비바 밑에 붙어 계속 보이는지 (tip/challenge와 동일)
+
+### 참고 (별도 작업)
+
+- `nanocredit`·`loan-match` DEV 배너도 동일 풀사이즈 문제 → **W-098 별도 대기** 등록 완료 (이번 범위 제외)
+
+---
+
 ## WT-104 · T-091 / W-096 [PRD 정합] 대출 가능성 검사기 PRD → DEV 정합 (이미지 제거 + 1열)
 
 - **브랜치:** `feature/T-028-popup-html-content-update`

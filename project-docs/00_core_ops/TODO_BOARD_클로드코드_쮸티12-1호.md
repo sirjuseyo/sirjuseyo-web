@@ -482,6 +482,7 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
+| **T-092** | WT-105 | W-097 | `b549c35` | **진행중(In-Progress)** | **[DEV 배너 정합] loan-checker DEV 바 앱 사이즈(480px) + 스크롤 고정** | 쮸티12-1호 | 2026-07-25 21:50 | 【파일】`loan-checker/index-dev.html` / DEV 배너 div에 `position:sticky;top:52px;z-index:10000;max-width:480px;margin:0 auto;` 5속성 추가 — tip/challenge 규격 정합, DEV 전용(PRD 배너 없음) |
 | **T-091** | WT-104 | W-096 | `aee1e72` | **테스트 완료(DONE)** | **[PRD 정합] 대출 가능성 검사기 PRD → DEV 정합 (이미지 제거 + 1열)** | 쮸티12-1호 | 2026-07-25 21:14 | 【파일】`loan-checker/index.html` / ①loan-eligibility-checker-02.jpg display:none 숨김 ②.form-grid 1열 인라인 추가 — DEV와 동일, styles.css 무수정 |
 | **T-001** | WT-001 | W-001 | `1339e07` | **진행중(In-Progress)** | **6월 대출 프로모션 페이지 상단·하단 `legal-shared.js` 연결** | 쮸티12-1호 | 2026-06-18 23:00 | 【파일】`2026-06/index.html`, `2026-06/index-dev.html` / wrap 클래스 추가 + footer.js → js/legal-shared.js 교체 |
 | **T-002** | WT-002 | W-002 | `6fa6dbb` | **진행중(In-Progress)** | **6월 대출 페이지 PC 좌우 너비 480px 고정** | 쮸티12-1호 | 2026-06-18 23:30 | 【파일】`2026-06/index.html`, `2026-06/index-dev.html` / `.wrap { max-width:480px; margin:0 auto; }` CSS 추가 |
@@ -562,6 +563,8 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-039 | P0 | T-039 | **테스트 완료(DONE)** `0ee40b0` | **[홈 페이지] index-dev.html gift-box 서핑 이미지 교체** | `index-dev.html`, `PLAN_2026-07_홈페이지_7월전환_기획서.md` | gift-box 이미지: `summer-jul-001.jpg` → `Palm-Surf_Jul-Loan.png` (269번 줄) / 기획서 v0.4 반영 / 커밋 `0ee40b0` ✅ WT-049 | 2026-07-01 | 쮸티12-1호 |
 | W-042 | P0 | T-030~T-039 (PRD) | **검증완료** `815964b` → main `cf89006` |
 | W-043 | P0 | T-039 (자산) | **검증완료** `84b62f4` → main `cf89006` |
+| W-098 | P2 | - | **대기** | **[DEV 배너 정합] nanocredit·loan-match DEV 바 웹 풀사이즈 → 앱 사이즈(480px) 고정** | `nanocredit/index-dev.html`, `loan-match/index-dev.html` | 두 파일 DEV 배너 `<div>`에 `max-width:480px;margin:0 auto;` 누락으로 풀사이즈 (position:sticky는 이미 있음) → W-097과 동일 방식으로 앱 사이즈 고정 / W-097 loan-checker와 분리한 별도 작업 | 2026-07-25 21:45 | 쮸티12-1호 |
+| W-097 | P2 | T-092 | **진행중(In-Progress)** `b549c35` | **[DEV 배너 정합] loan-checker DEV 바 웹 풀사이즈 → 앱 사이즈(480px) 고정** | `loan-checker/index-dev.html` | DEV 배너 `<div>`에 `position:sticky;top:52px;z-index:10000;max-width:480px;margin:0 auto;` 추가 → tip/challenge/sirjuseyo DEV 배너와 동일 규격 (현재 이 5개 속성 누락으로 풀사이즈 + 스크롤 미고정) | 2026-07-25 21:40 | 쮸티12-1호 |
 | W-096 | P2 | T-091 | **테스트 완료(DONE)** `aee1e72` | **[PRD 정합] 대출 가능성 검사기 PRD → DEV 정합 (이미지 제거 + 1열)** | `loan-checker/index.html` | ①`loan-eligibility-checker-02.jpg`("대출이 필요하신 분, 주목") `style="display:none;"` 숨김 (DEV `index-dev.html:38-40`과 동일) ②`<head>` 인라인 style에 `.form-grid { grid-template-columns: 1fr !important; }` 추가 → 960px↑ 2열을 1열로 (DEV `index-dev.html:12`와 동일) / styles.css 무수정 | 2026-07-25 | 쮸티12-1호 |
 | W-095 | P2 | T-090 | **테스트 완료(DONE)** `412c3c2` | **[PRD 레이아웃] loan-checker/index.html 앱 사이즈(480px) 적용** | `loan-checker/index.html` | .app-main max-width:480px !important; margin:0 auto !important — DEV와 동일, styles.css 무수정 | 2026-07-25 | 쮸티12-1호 |
 | W-094 | P1 | T-088 | **테스트 완료(DONE)** `c69f2c9` `c401d33` | **[UI 통일] 상단 고지 ↔ 콘텐츠 간격 불일치** | `js/legal-shared.js`, `index.html` | legal-shared.js margin-bottom 20px→40px + index.html h1 padding-top 0 — 박스·텍스트 전 페이지 gap 40px 규격 통일 | 2026-07-25 | 쮸티12-1호 |
