@@ -3848,6 +3848,48 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-108 · T-095 / W-100 [잠복 버그 수정] menu.js·menu-dev.js `history.back()` → `window.history.back()` 한정
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-26
+- **상태: 진행중(In-Progress)** — 코드 커밋 완료, 사장님 테스트 대기
+
+### 배경
+- 사장님 테스트 중 발견: 홈 > 월별 대출 신청하기 > 7월 대출 상세 > 신청하기(apply.html)에서 상단 좌측 ← 네비 클릭 무반응.
+- "월별 대출 신청 페이지의 상단 ←는 모두 작동 안 하는 것 같다"고 보고.
+- 이번 Step 1 재배치로 생긴 것이 아닌 apply.html이 menu 스크립트를 로드하던 시점부터 존재하던 **잠복 버그**임(테스트 중 최초 발견).
+
+### 원인 분석 (코드 근거)
+- `monthly-loan/apply/apply.html:884` / `apply-dev.html` 동일: `const history = [];` — 마법사 스텝 추적용 배열, `<script>` **최상위** 선언.
+- 클래식 `<script>` 최상위 `const`는 **전역 렉시컬 바인딩**이라 같은 페이지의 모든 클래식 스크립트가 공유.
+- `js/menu.js:105` / `js/menu-dev.js:105`: `history.back();` — **한정자 없는(bare) 참조** → 이 배열로 해석됨.
+- 배열에 `.back()` 없음 → `TypeError: history.back is not a function` → 클릭 핸들러 예외 중단 → ← 무반응.
+- 104행 `window.history.length`는 한정돼 있어 정상 통과(true) → 105행에서 터짐.
+
+### 영향 범위
+| 페이지 | menu 스크립트 | `const history` | ← 상태 |
+|---|---|---|---|
+| `monthly-loan/apply/apply.html` | menu.js | 있음 | **깨짐** |
+| `monthly-loan/apply/apply-dev.html` | menu-dev.js | 있음 | **깨짐** |
+| worldcup apply 2개 | 미로드 | 있음 | 무관 |
+| 월별 랜딩 pages | menu(-dev).js | 없음 | 정상 |
+
+### 처방 (파일 2개, 각 1행)
+```js
+// js/menu.js:105 / js/menu-dev.js:105
+history.back();        // Before
+window.history.back(); // After — 명시적 전역 window 한정
+```
+- apply 배열(`const history`)은 **의도된 코드**이므로 무수정. 상단 ←(페이지 이탈)과 마법사 스텝 뒤로(goBack) 독립 공존.
+
+### 검증
+- PRD: `http://localhost:8080/` → 월별 대출 신청 → 7월 대출 상세 → 신청하기 → 상단 ← 클릭 → 7월 대출 페이지 복귀.
+- DEV: 동일 동선 index-dev.html 계열.
+- 콘솔 `TypeError: history.back is not a function` 오류 없음.
+- 마법사 스텝 뒤로(goBack) 회귀 없음.
+
+---
+
 ## WT-107 · T-094 / W-099 [디렉토리 개편 1단계] 월별대출 2026-04~07 + apply → monthly-loan/ 하위 통합
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
