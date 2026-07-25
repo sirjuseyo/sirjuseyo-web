@@ -3848,6 +3848,29 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-110 · T-097 / W-102 [메뉴 드로어] 헤더 풀사이즈 → 앱 사이즈(480px) 고정
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-26
+- **상태: 진행중(In-Progress)** — 코드 커밋 완료, 사장님 테스트 대기
+
+### 배경
+- PC에서 햄버거 메뉴 클릭 시 드로어 헤더(보라 배경 "메뉴를 선택하세요.")가 풀사이즈로 표시됨.
+- 드로어 내 `#sjy-drawer-nav`(메뉴 리스트)는 이미 `max-width:480px;margin:0 auto` 적용돼 앱 사이즈이나, `#sjy-drawer-head`에 해당 속성 누락.
+
+### 처방
+```css
+/* menu.js:42 / menu-dev.js:42 — Before */
+#sjy-drawer-head { ... background:#380097 }
+/* After */
+#sjy-drawer-head { ... background:#380097; max-width:480px; margin:0 auto; width:100% }
+```
+
+### 검증
+- PC 브라우저에서 햄버거 메뉴(≡) 클릭 → 드로어 헤더와 메뉴 리스트가 모두 480px 폭으로 중앙 정렬되는지 확인.
+
+---
+
 ## WT-109 · T-096 / W-101 [디렉토리 개편 3단계] apply-review·loan-checker·unsuspend → tip/ 하위 통합
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
