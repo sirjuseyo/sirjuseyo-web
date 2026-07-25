@@ -39,7 +39,7 @@
     '#sjy-drawer.sjy-open{transform:translateX(0)}' +
 
     /* drawer 헤더 — 보라 배경 */
-    '#sjy-drawer-head{display:flex;justify-content:space-between;align-items:center;padding:20px 20px 18px;background:#380097}' +
+    '#sjy-drawer-head{display:flex;justify-content:space-between;align-items:center;padding:20px 20px 18px;background:#380097;max-width:480px;margin:0 auto;width:100%}' +
     '#sjy-drawer-title{color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:-.3px}' +
     '#sjy-drawer-close{background:rgba(255,255,255,.2);border:none;color:#fff;font-size:1.1rem;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0;padding:0}' +
 
