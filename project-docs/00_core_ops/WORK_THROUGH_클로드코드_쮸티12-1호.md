@@ -3848,6 +3848,23 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-103 · T-090 / W-095 [PRD 레이아웃] loan-checker PRD 앱 사이즈 480px 적용
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-25 20:54
+- **상태: 테스트 완료(DONE)**
+
+### 작업 내용 (커밋 `412c3c2`)
+
+| 파일 | 변경 내용 |
+|---|---|
+| `loan-checker/index.html` | `<head>` 인라인 `<style>` 추가 — `.app-main { max-width:480px !important; margin:0 auto !important; }` |
+
+> PRD `.app-main`이 `styles.css` 기준 max-width:1100px → 웹 너비 full-width로 표시됨
+> DEV(`index-dev.html`)와 동일한 인라인 override 방식 적용, `styles.css` 무수정
+
+---
+
 ## WT-102 · T-088 / W-094 [UI 통일] 상단 고지↔콘텐츠 간격 통일
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
