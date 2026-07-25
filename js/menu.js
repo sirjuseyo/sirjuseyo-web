@@ -102,7 +102,7 @@
       document.getElementById('sjy-nav-bar').classList.add('sjy-has-back');
       backBtn.addEventListener('click', function () {
         if (window.history.length > 1) {
-          history.back();
+          window.history.back();
         } else {
           location.href = backUrl;
         }
