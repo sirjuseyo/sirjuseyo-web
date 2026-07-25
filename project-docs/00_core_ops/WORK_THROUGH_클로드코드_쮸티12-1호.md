@@ -3848,6 +3848,36 @@ GitHub Pages run `28674000011` success 및 live 신청 폼 DEV/PRD 7월 문구 �
 
 ---
 
+## WT-111 · T-098 / W-103 [메뉴 드로어] 드로어 본체 480px 제한 — PC 전체 화면 덮음 수정 (B안)
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-07-26
+- **상태: 진행중(In-Progress)** — 코드 커밋 완료, 사장님 테스트 대기
+
+### 배경
+- T-097로 드로어 헤더(480px)는 수정했으나, 드로어 본체(`#sjy-drawer`)가 여전히 PC 뷰포트 전체(`left:0;right:0;top:0;bottom:0`)를 덮음.
+- 사장님 지시: 드로어 자체를 480px 앱 영역으로 제한(B안), 양옆은 반투명 오버레이.
+
+### 처방
+```js
+// Before
+'#sjy-drawer{...top:0;left:0;right:0;bottom:0;...transform:translateX(100%)...}'
+'#sjy-drawer.sjy-open{transform:translateX(0)}'
+
+// After
+'#sjy-drawer{...top:0;bottom:0;left:50%;width:100%;max-width:480px;...transform:translateX(200%)...}'
+'#sjy-drawer.sjy-open{transform:translateX(-50%)}'
+```
+- `left:50%` + `translateX(-50%)` → 480px 드로어 중앙 정렬
+- 닫힌 상태 `translateX(200%)` → 드로어 폭(480px) × 2 = 960px 오른쪽으로 밀어 숨김
+- 오버레이(`#sjy-menu-overlay`)는 기존 뷰포트 전체 유지 — 양옆 어둡게 처리
+
+### 검증
+- PC 브라우저에서 ≡ 클릭 → 드로어가 480px 앱 영역에만 슬라이드 인, 양옆은 반투명 어두운 오버레이.
+- 모바일(375px 미만)에서 드로어가 전체 폭으로 정상 표시.
+
+---
+
 ## WT-110 · T-097 / W-102 [메뉴 드로어] 헤더 풀사이즈 → 앱 사이즈(480px) 고정
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
