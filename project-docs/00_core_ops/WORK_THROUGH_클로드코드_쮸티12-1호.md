@@ -5814,7 +5814,7 @@ monthly-loan T-045 완료, PR #24 전체 병합 없이 `apply/apply-dev.html`, `
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
 - **작업일시:** 2026-07-26
-- **상태: ⏳ 진행중(In-Progress)** — 코드 수정 완료, 커밋 대기
+- **상태: ⏳ 진행중(In-Progress)** — 본 커밋 + 회차 수정 커밋 완료, 사장님 테스트 대기
 
 ### 배경
 - 나노크레딧 상품 상세 페이지 4개(`10/`, `20/`, `30/`, `50/`)가 써주세요 통합 구조로 전환되지 않은 채 방치됨.
@@ -5828,16 +5828,22 @@ monthly-loan T-045 완료, PR #24 전체 병합 없이 `apply/apply-dev.html`, `
 | title | `nanocredit` | `써주세요.` |
 | body CSS | `overflow-x:hidden` | + `max-width:480px;margin:0 auto` 추가 |
 | nav CSS | `nav/.nav-logo/.nav-hamburger` 블록 | 전체 제거 |
-| `<body>` 태그 | `<body>` | `<body data-back="/nanocredit/">` |
+| `<body>` 태그 | `<body>` | `<body class="page" data-back="/nanocredit/">` |
 | `<nav>` HTML | `<nav>...</nav>` 블록 | 전체 제거 |
 | CTA href | `/monthly-loan/apply/apply.html` | `/monthly-loan/2026-07/` |
-| script | `<script src="/footer.js">` | `<script src="/js/menu.js">` |
+| script | `<script src="/footer.js">` | popup.js → menu.js → legal-shared.js (3개) |
 
 ### 수정 파일
 - `nanocredit/10/index.html`
 - `nanocredit/20/index.html`
 - `nanocredit/30/index.html`
 - `nanocredit/50/index.html`
+
+### 회차 수정 (2회차)
+- **원인:** 초기 구현 시 `class="page"`, `popup.js`, `legal-shared.js` 3가지 누락.
+- **발견:** 사장님 확인 — "상단과 하단에 법적 고지 안 넣는 이유가 뭐야?"
+- **조치:** `<body class="page" ...>` 추가 + 스크립트 3개(popup.js/menu.js/legal-shared.js)로 교체.
+- **회차 수정 커밋:** `b50cd97`
 
 ---
 
