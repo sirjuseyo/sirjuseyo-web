@@ -6,6 +6,29 @@
 
 ---
 
+## WT-120 · T-107 [소통거리 제출 가이드] nanocredit/submissions → tip/submissions 이동 + 꿀정보 06번 + 나노크레딧 CTA
+
+| 항목 | 내용 |
+|---|---|
+| T-ID | T-107 |
+| W-ID | W-107 |
+| 상태 | 진행중(In-Progress) |
+| 작업자 | 쮸티12-1호 |
+| 작업일 | 2026-07-28 |
+
+### 작업 목차 (컨펌 완료)
+- A. `nanocredit/submissions/` → `tip/submissions/` git mv 이동
+- B. `tip/submissions/index.html` 표준 UI 적용 (body.page, max-width:480px, 이미지 절대경로, back-btn /tip/, popup.js+menu.js+legal-shared.js)
+- C. 서브페이지 15개 표준 UI 적용 (body.page, max-width, 이미지 절대경로, back-btn /tip/submissions/, scripts)
+- D. `tip/submissions/index-dev.html` 신규 생성 (DEV 배너, menu-dev.js, back-btn /tip/index-dev.html)
+- E. `tip/index.html` + `tip/index-dev.html` — "5가지" → "6가지", 06번 항목(소통거리 제출 방법 📋) 추가
+- F. `nanocredit/10·20·30·50/index.html` — 하단 CTA에 소통거리 제출 방법 안내 보조 링크 삽입
+
+### 로컬 커밋 (테스트 전)
+`d5322c9` (코드 커밋)
+
+---
+
 ## WT-119 · T-106 [Deep Dive] 진입 보안코드 overlay 구현
 
 | 항목 | 내용 |

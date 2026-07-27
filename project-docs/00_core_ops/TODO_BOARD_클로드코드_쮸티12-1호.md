@@ -217,6 +217,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | T-ID | 작업 타이틀 | 로컬커밋 | 원격푸시 | DEV 빌드 | PRD 코드배포 | PRD 빌드 | PRD 운영배포 | PRD 스토어배포 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | T-ID | 작업 설명 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 담당자 | 연-월-일 시:분 | 메모 |
+| **T-107** | [소통거리 제출 가이드] tip/submissions 이동 + 꿀정보 06번 + 나노크레딧 10~50 CTA | ✅ `d5322c9` | 대기 | 진행중(DEV) | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | nanocredit/submissions→tip/submissions, index-dev.html 신규, tip/index×2 06번, nanocredit 4개 CTA |
 | **T-106** | Deep Dive 보안코드 overlay — 항상 표시 | ✅ `461097e` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | display:none 초기화 + inline script 무조건 표시 + sessionStorage 저장 제거 |
 | **T-105** | Deep Dive apply-review-dev.html UI 통합 | ✅ `684fc43` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | old top-bar 제거 + popup.js 제거 + DEV 링크 정합 + DEV 배너 inline 이동 + 법적고지 480px |
 | **T-104** | 월별대출 apply-dev.html DEV 배너 풀사이즈 수정 | ✅ `c6e47dc` | 대기 | ✅ 검증완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | apply-dev.html DEV 배너 sticky+480px 누락 추가 / 2026-07/index-dev.html !important 추가 |
@@ -496,6 +497,7 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
+| **T-107** | WT-120 | W-107 | `d5322c9` | **진행중(In-Progress)** | **[소통거리 제출 가이드] nanocredit/submissions → tip/submissions 이동 + 꿀정보 06번 항목 + 나노크레딧 10~50 CTA 삽입** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/submissions/`(이동+표준UI 16개), `tip/submissions/index-dev.html`(신규), `tip/index.html·index-dev.html`(06번 항목), `nanocredit/10·20·30·50/index.html`(CTA) |
 | **T-106** | WT-119 | - | `461097e` | **테스트 완료(DONE)** | **[Deep Dive] 진입 보안코드 overlay 구현** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/apply-review/apply-review-dev.html` / overlay 항상 표시: sessionStorage 저장 제거 + inline script 무조건 display:flex / 진입 경로 무관 항상 overlay 표시 |
 | **T-105** | WT-118 | - | `684fc43` | **테스트 완료(DONE)** | **[Deep Dive] apply-review-dev.html UI 통합** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/apply-review/apply-review-dev.html` / ①s1~s5 .top-bar old nav div 제거(menu-dev.js nav 대체) ②popup.js 제거(강제팝업 간섭 제거) ③body.page+data-back="/tip/index-dev.html"+max-width:480px+dev-banner sticky+menu-dev.js+legal-shared.js 유지 |
 | **T-104** | WT-117 | - | `c6e47dc` | **테스트 완료(DONE)** | **[월별대출] 2026-07/index-dev.html DEV 배너 풀사이즈 수정** | 쮸티12-1호 | - | 【파일】`monthly-loan/2026-07/index-dev.html` / position:sticky DEV 배너가 .wrap 구조로 인해 풀사이즈 렌더링 → T-092 방식으로 수정 |
@@ -591,6 +593,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-039 | P0 | T-039 | **테스트 완료(DONE)** `0ee40b0` | **[홈 페이지] index-dev.html gift-box 서핑 이미지 교체** | `index-dev.html`, `PLAN_2026-07_홈페이지_7월전환_기획서.md` | gift-box 이미지: `summer-jul-001.jpg` → `Palm-Surf_Jul-Loan.png` (269번 줄) / 기획서 v0.4 반영 / 커밋 `0ee40b0` ✅ WT-049 | 2026-07-01 | 쮸티12-1호 |
 | W-042 | P0 | T-030~T-039 (PRD) | **검증완료** `815964b` → main `cf89006` |
 | W-043 | P0 | T-039 (자산) | **검증완료** `84b62f4` → main `cf89006` |
+| W-107 | P1 | - | **대기** | **[nanocredit/submissions] 소통거리 제출 가이드 — 꿀정보 2Depth 이동 + 나노크레딧 금액 페이지 CTA 이중 접근 경로 구성** | `nanocredit/submissions/` → `tip/submissions/` 이동, `tip/index.html`, `tip/index-dev.html`, `nanocredit/10~50/index.html` 4개 | 꿀정보 메인 6번째 항목(메인 접근) + 나노크레딧 10/20/30/50만 상세 페이지 CTA(보조 접근) 이중 경로 구성 / 표준 UI(menu.js·legal-shared.js·DEV 배너) 통합 필요 | 2026-07-28 | 쮸티12-1호 |
 | W-106 | P1 | T-101 | **진행중(In-Progress)** | **[나노크레딧 상세] 수치 전면 업데이트 — 7월 썸머 베케이션 기준 반영 (10/20/30/50)** | `nanocredit/10/index.html`, `20/index.html`, `30/index.html`, `50/index.html` | 크레딧 미션 금액별 다른 기준값(4,000/5,000/6,000/12,000포)→4,500포 공통 통일 + 이벤트 이포→원리포 + 원금 미션 추가 + 비교 테이블·웨이팅 할인 테이블·한도상향 수치 전면 재산정 | 2026-07-26 | 쮸티12-1호 |
 | W-105 | P1 | T-100 | **테스트 완료(DONE)** `29a7ec0` | **[나노크레딧] "이 달의 대출 신청하러 가기" 링크 수정 (PRD+DEV)** | `nanocredit/index.html`, `nanocredit/index-dev.html` | 나노크레딧 메인 CTA 버튼 href가 홈("/", "/index-dev.html")으로 잘못 연결 / PRD: "/"→"/monthly-loan/2026-07/" / DEV: "/index-dev.html"→"/monthly-loan/2026-07/index-dev.html" | 2026-07-26 | 쮸티12-1호 |
 | W-104 | P1 | T-099 | **테스트 완료(DONE)** `af2879c` | **[나노크레딧] 상품 상세 페이지 전면 개편 (10/20/30/50)** | `nanocredit/10/index.html`, `nanocredit/20/index.html`, `nanocredit/30/index.html`, `nanocredit/50/index.html` | 4개 상세 페이지 menu.js 미포함·구 nav 헤더·PC 풀화면 / 써주세요 구조로 개편: ①title ②body 480px ③nav CSS 제거 ④class=page+data-back ⑤nav HTML 제거 ⑥CTA→2026-07 ⑦popup.js+menu.js+legal-shared.js / 회차수정: class=page+popup.js+legal-shared.js(`b50cd97`) | 2026-07-26 | 쮸티12-1호 |
