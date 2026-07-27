@@ -6,6 +6,32 @@
 
 ---
 
+## WT-115 · T-102 [꿀정보] 연체 이력 해제 페이지 통합 개편 (PRD 업데이트 + DEV 신규)
+
+| 항목 | 내용 |
+|---|---|
+| 회차 | 1회차 |
+| 작성일시 | 2026-07-28 |
+| 작성자 | 쮸티12-1호 |
+| T-ID | T-102 |
+| 로컬 커밋 | - |
+| 상태 | 대기(Pending) |
+
+[배경]
+`tip/unsuspend/index.html` — "꿀정보 > 연체 이력 해제" 페이지. 레포 통합 전 제작된 파일로, 현재 표준 통합 구성 미적용 상태.
+
+[현황]
+- PRD만 있고 DEV 버전 없음
+- `footer.js`만 로드 — `menu.js`, `popup.js`, `legal-shared.js` 미탑재
+- `<body class="page">` 아닌 `<div class="page">` — 표준 미통일
+- `data-back` 미설정 (상단 ← 동작 불가)
+
+[작업 예정]
+① `tip/unsuspend/index.html` PRD 표준 통합 (menu·popup·legal-shared 탑재, footer.js 제거, body.page + data-back="/tip/")
+② `tip/unsuspend/index-dev.html` DEV 신규 생성 (DEV 배너 + menu-dev.js)
+
+---
+
 ## WT-114 · T-101 [나노크레딧 상세] 수치 전면 업데이트 — 7월 썸머 베케이션 기준 반영
 
 | 항목 | 내용 |
