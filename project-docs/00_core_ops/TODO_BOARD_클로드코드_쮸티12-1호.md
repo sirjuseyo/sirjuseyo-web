@@ -495,7 +495,7 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
-| **T-106** | WT-119 | - | - | **대기(Pending)** | **[Deep Dive] 진입 보안코드 overlay 구현** | 쮸티12-1호 | - | 【파일】`tip/apply-review/apply-review-dev.html` / T-105 테스트 완료 후 착수 / 보안코드 overlay(z-index:99999) 동작 검증 + sessionStorage 로직 확인·수정 |
+| **T-106** | WT-119 | - | `5315650` | **진행중(In-Progress)** | **[Deep Dive] 진입 보안코드 overlay 구현** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/apply-review/apply-review-dev.html` / overlay flash 수정: display:none 초기화 + overlay HTML 직후 inline script 즉시 체크 / 미사용 .dev-banner CSS 제거 |
 | **T-105** | WT-118 | - | `684fc43` | **테스트 완료(DONE)** | **[Deep Dive] apply-review-dev.html UI 통합** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/apply-review/apply-review-dev.html` / ①s1~s5 .top-bar old nav div 제거(menu-dev.js nav 대체) ②popup.js 제거(강제팝업 간섭 제거) ③body.page+data-back="/tip/index-dev.html"+max-width:480px+dev-banner sticky+menu-dev.js+legal-shared.js 유지 |
 | **T-104** | WT-117 | - | `c6e47dc` | **테스트 완료(DONE)** | **[월별대출] 2026-07/index-dev.html DEV 배너 풀사이즈 수정** | 쮸티12-1호 | - | 【파일】`monthly-loan/2026-07/index-dev.html` / position:sticky DEV 배너가 .wrap 구조로 인해 풀사이즈 렌더링 → T-092 방식으로 수정 |
 | **T-103** | WT-116 | - | - | **대기(Pending)** | **[월전환] 8월 대출 페이지 생성 + menu.js CURRENT_MONTH 2026-08 전환** | 쮸티12-1호 | 2026-07-29 예정 | 【순서】①`monthly-loan/2026-08/` 폴더+페이지 신규 생성 ②`menu.js·menu-dev.js` `CURRENT_MONTH='2026-07'`→`'2026-08'` / 폴더 먼저 → 링크 나중 규칙 필수 / 사이트 통합 완료 후 착수 |

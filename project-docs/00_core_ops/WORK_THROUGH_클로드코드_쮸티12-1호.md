@@ -10,17 +10,25 @@
 
 | 항목 | 내용 |
 |---|---|
+| 회차 | 1회차 |
 | 작성일시 | 2026-07-28 |
 | 작성자 | 쮸티12-1호 |
 | T-ID | T-106 |
-| 로컬 커밋 | - |
-| 상태 | 대기(Pending) — T-105 테스트 완료 후 착수 |
+| 로컬 커밋 | `5315650` |
+| 상태 | 진행중(In-Progress) — 코드 커밋 완료, 사장님 테스트 대기 |
 
-[작업 예정]
-① 보안코드 overlay(z-index:99999) 동작 검증
-② sessionStorage('sjy-deep-dive-auth') 로직 확인·수정
-   - ⚠️ 테스트 시 주의: 동일 탭에서 코드 입력 후 새로고침 시 overlay 안 뜸(정상) → 재테스트는 새 탭/시크릿 창 사용
-③ 필요 시 코드 수정
+[코드 검토 결과]
+- 기존 overlay HTML: `display:flex` 초기값 → 인증된 사용자 재방문 시 overlay 잠깐 번쩍임(flash) 이슈
+- `.dev-banner` CSS 클래스: T-105에서 inline style로 교체됐으나 CSS 블록은 미삭제 상태
+
+[1회차 처방 — 5315650]
+① overlay HTML `display:flex` → `display:none` 초기값 변경 (flash 방지)
+② overlay HTML 직후 inline script 추가 (overlay 렌더링 직후 즉시 sessionStorage 체크):
+   `<script>if(sessionStorage.getItem('sjy-deep-dive-auth')!=='1')document.getElementById('sjy-security-overlay').style.display='flex';</script>`
+③ body 끝 보안코드 IIFE에서 초기화 로직 제거 (중복 제거 — inline script가 대체)
+④ 미사용 `.dev-banner` CSS 블록 제거
+
+⚠️ 테스트 시 주의: 동일 탭에서 코드 입력 후 새로고침 시 overlay 안 뜸(정상 sessionStorage 동작) → 재테스트는 새 탭/시크릿 창 사용
 
 ---
 
