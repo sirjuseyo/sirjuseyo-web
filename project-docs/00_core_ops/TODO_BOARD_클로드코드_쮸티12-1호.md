@@ -493,6 +493,7 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
+| **T-103** | WT-116 | - | - | **대기(Pending)** | **[월전환] 8월 대출 페이지 생성 + menu.js CURRENT_MONTH 2026-08 전환** | 쮸티12-1호 | 2026-07-29 예정 | 【순서】①`monthly-loan/2026-08/` 폴더+페이지 신규 생성 ②`menu.js·menu-dev.js` `CURRENT_MONTH='2026-07'`→`'2026-08'` / 폴더 먼저 → 링크 나중 규칙 필수 / 사이트 통합 완료 후 착수 |
 | **T-102** | WT-115 | W-107 | `d81803a` | **테스트 완료(DONE)** | **[꿀정보] 연체 이력 해제 페이지 통합 개편 (PRD 업데이트 + DEV 신규)** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/unsuspend/index.html`(PRD 수정) + `tip/unsuspend/index-dev.html`(DEV 신규) + `tip/index.html·index-dev.html` 링크 연결 / body.page+data-back+480px+폰트+menu·popup·legal-shared / DEV 배너+menu-dev.js / 04 연체이력해제 href 연결 |
 | **T-101** | WT-114 | W-106 | `8919686` | **테스트 완료(DONE)** | **[나노크레딧 상세] 수치 전면 업데이트 — 7월 썸머 베케이션 기준 반영 (10/20/30/50 — 4개 파일)** | 쮸티12-1호 | 2026-07-28 | 【파일】`nanocredit/10/index.html`, `20/index.html`, `30/index.html`, `50/index.html` + 동일 DEV 4개 / ①크레딧 미션 4,500포 공통 통일 ②이벤트 대출 이포 유지 + 원금 미션(1%) 수치 추가 ③50만 이벤트 행 삭제 ④비교 테이블 전 행 합계 재계산 ⑤웨이팅 보상 할인 테이블 4,500포 기준 통일 ⑥한도상향 크레딧 미션 수치 수정 ⑦DEV 4개 파일 신규 생성 / [회차수정2]⑧옵션카드 타이틀 4개 변경 ⑨롸잇나우 블찬티켓 문장 추가 ⑩크레딧미션이란? 전면교체 ⑪주의사항 문구 변경 |
 | **T-100** | WT-113 | W-105 | `29a7ec0` | **테스트 완료(DONE)** | **[나노크레딧] "이 달의 대출 신청하러 가기" 링크 수정 (PRD+DEV)** | 쮸티12-1호 | 2026-07-26 | 【파일】`nanocredit/index.html`, `nanocredit/index-dev.html` / PRD: href="/"→"/monthly-loan/2026-07/" / DEV: href="/index-dev.html"→"/monthly-loan/2026-07/index-dev.html" |
