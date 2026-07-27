@@ -14,8 +14,8 @@
 | 작성일시 | 2026-07-28 |
 | 작성자 | 쮸티12-1호 |
 | T-ID | T-102 |
-| 로컬 커밋 | - |
-| 상태 | 대기(Pending) |
+| 로컬 커밋 | `1c5b04e` |
+| 상태 | 진행중(In-Progress) — 사장님 테스트 대기 |
 
 [배경]
 `tip/unsuspend/index.html` — "꿀정보 > 연체 이력 해제" 페이지. 레포 통합 전 제작된 파일로, 현재 표준 통합 구성 미적용 상태.
@@ -26,9 +26,13 @@
 - `<body class="page">` 아닌 `<div class="page">` — 표준 미통일
 - `data-back` 미설정 (상단 ← 동작 불가)
 
-[작업 예정]
-① `tip/unsuspend/index.html` PRD 표준 통합 (menu·popup·legal-shared 탑재, footer.js 제거, body.page + data-back="/tip/")
-② `tip/unsuspend/index-dev.html` DEV 신규 생성 (DEV 배너 + menu-dev.js)
+[처방 — 1c5b04e]
+① PRD `tip/unsuspend/index.html` 표준 통합
+   - body.page + data-back="/tip/" / max-width 600→480px / 폰트순서 통일
+   - footer.js 제거 → popup.js + menu.js + legal-shared.js 탑재
+   - "2025년도에 서비스를 재개하고," 문구 제거
+② DEV `tip/unsuspend/index-dev.html` 신규 생성
+   - DEV 배너(주황) / data-back="/tip/index-dev.html" / menu-dev.js
 
 ---
 
