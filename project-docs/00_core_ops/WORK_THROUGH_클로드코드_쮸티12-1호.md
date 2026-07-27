@@ -52,6 +52,13 @@
 [추가 처방 — d7b6511] (이슈: DEV tip/index-dev.html에서 Deep Dive가 PRD로 연결)
 - `tip/index-dev.html` L172: `href="/tip/apply-review/apply-review.html"` → `apply-review-dev.html`
 
+[회차 수정 처방 — 684fc43] (이슈: 상단·하단 법적 고지 풀사이즈 + DEV 바 위치 오류)
+- 원인: legal-shared.js가 body 첫 번째 child의 inline style `position:sticky` 여부로 삽입 위치 결정
+  → 첫 child가 `#sjy-security-overlay`(position:fixed)여서 체크 실패 → 법적 고지 body 최상단 주입 → 풀사이즈
+- 처방①: DEV 배너를 CSS class → inline style + body 첫 번째 child로 이동 (sticky 체크 통과)
+- 처방②: `.legal-top` / `.legal-bottom` / `.bottom-section` CSS에 `max-width:480px; margin:0 auto` 추가
+- 처방③: 구 `.dev-banner` HTML div 제거
+
 ---
 
 ## WT-117 · T-104 [월별대출] 2026-07/index-dev.html DEV 배너 풀사이즈 수정
