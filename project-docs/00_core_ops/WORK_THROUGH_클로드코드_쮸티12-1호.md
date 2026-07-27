@@ -30,6 +30,12 @@
 
 ⚠️ 테스트 시 주의: 동일 탭에서 코드 입력 후 새로고침 시 overlay 안 뜸(정상 sessionStorage 동작) → 재테스트는 새 탭/시크릿 창 사용
 
+[회차 수정 — 461097e] (사장님 요구: 들어갈 때마다 항상 overlay 표시)
+- sessionStorage 기반 "세션 내 재입력 불필요" 정책 → 폐기
+- 수정①: overlay 직후 inline script에서 sessionStorage 조건 제거 → 무조건 `display:flex` (항상 표시)
+- 수정②: `sjyCheckCode()` 내 `sessionStorage.setItem` 제거 (더 이상 인증 저장 안 함)
+- 결과: 딥다이브 클릭 → overlay / 이전 버튼 → 꿀정보 → 딥다이브 → overlay / URL 직접 입력 → overlay / 새로고침 → overlay
+
 ---
 
 ## WT-118 · T-105 [Deep Dive] apply-review-dev.html UI 통합
