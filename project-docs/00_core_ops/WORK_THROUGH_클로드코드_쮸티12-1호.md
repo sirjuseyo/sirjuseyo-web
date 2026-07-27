@@ -6,6 +6,36 @@
 
 ---
 
+## WT-118 · T-105 [Deep Dive] apply-review-dev.html UI 통합 + 진입 보안코드 overlay 구현
+
+| 항목 | 내용 |
+|---|---|
+| 작성일시 | 2026-07-28 |
+| 작성자 | 쮸티12-1호 |
+| T-ID | T-105 |
+| 로컬 커밋 | - |
+| 상태 | 대기(Pending) |
+
+[작업 예정]
+① UI 통합: max-width 520→480px / body.page+data-back="/tip/" / DEV 배너 인라인 sticky 방식 통일 / menu-dev.js+legal-shared.js 탑재
+② 보안코드 overlay: 페이지 로드 시 전체화면 overlay → 코드 일치 시 해제 + sessionStorage 저장 / 하드코딩 1줄, 서버 연동 없음
+
+---
+
+## WT-117 · T-104 [월별대출] 2026-07/index-dev.html DEV 배너 풀사이즈 수정
+
+| 항목 | 내용 |
+|---|---|
+| 작성일시 | 2026-07-28 |
+| 작성자 | 쮸티12-1호 |
+| T-ID | T-104 |
+| 로컬 커밋 | - |
+| 상태 | 대기(Pending) |
+
+[배경] `position:sticky` DEV 배너가 `.wrap` 래퍼 구조로 인해 body 전체 너비로 렌더링됨. T-092 방식(max-width:480px;margin:0 auto 인라인) 동일 적용.
+
+---
+
 ## WT-116 · T-103 [월전환] 8월 대출 페이지 생성 + menu.js CURRENT_MONTH 2026-08 전환
 
 | 항목 | 내용 |
