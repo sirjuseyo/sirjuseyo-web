@@ -49,6 +49,9 @@
 - 원인②: s1~s5 전 화면에 old `.top-bar` nav div 잔존 → `menu-dev.js` 주입 nav와 중복
 - 처방: `popup.js` 스크립트 태그 제거 / `.top-bar` div 5개 전부 제거
 
+[추가 처방 — d7b6511] (이슈: DEV tip/index-dev.html에서 Deep Dive가 PRD로 연결)
+- `tip/index-dev.html` L172: `href="/tip/apply-review/apply-review.html"` → `apply-review-dev.html`
+
 ---
 
 ## WT-117 · T-104 [월별대출] 2026-07/index-dev.html DEV 배너 풀사이즈 수정
