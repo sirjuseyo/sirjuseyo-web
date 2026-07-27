@@ -217,7 +217,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | T-ID | 작업 타이틀 | 로컬커밋 | 원격푸시 | DEV 빌드 | PRD 코드배포 | PRD 빌드 | PRD 운영배포 | PRD 스토어배포 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | T-ID | 작업 설명 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 담당자 | 연-월-일 시:분 | 메모 |
-| **T-105** | Deep Dive apply-review-dev.html UI 통합 | ✅ `684fc43` | 대기 | ✅ 검증완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | old top-bar 제거 + popup.js 제거 + DEV 링크 정합 + DEV 배너 inline 이동 + 법적고지 480px |
+| **T-105** | Deep Dive apply-review-dev.html UI 통합 | ✅ `684fc43` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | old top-bar 제거 + popup.js 제거 + DEV 링크 정합 + DEV 배너 inline 이동 + 법적고지 480px |
 | **T-104** | 월별대출 apply-dev.html DEV 배너 풀사이즈 수정 | ✅ `c6e47dc` | 대기 | ✅ 검증완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | apply-dev.html DEV 배너 sticky+480px 누락 추가 / 2026-07/index-dev.html !important 추가 |
 | **T-102** | 꿀정보 연체이력해제 New UI 통합 + DEV 신규 + 링크 연결 | ✅ `d81803a` | 대기 | ✅ 검증완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | PRD·DEV 통합개편 + tip/index PRD·DEV 링크 연결 |
 | **T-101** | 나노크레딧 상세 수치 전면 업데이트 (10~50만 PRD+DEV 8개) | ✅ `8919686` | 대기 | ✅ 검증완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | 7월 썸머베케이션 기준 / 옵션카드·크레딧미션이란?·주의사항·워딩 전면 업데이트 |
@@ -496,7 +496,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
 | **T-106** | WT-119 | - | - | **대기(Pending)** | **[Deep Dive] 진입 보안코드 overlay 구현** | 쮸티12-1호 | - | 【파일】`tip/apply-review/apply-review-dev.html` / T-105 테스트 완료 후 착수 / 보안코드 overlay(z-index:99999) 동작 검증 + sessionStorage 로직 확인·수정 |
-| **T-105** | WT-118 | - | `7d8da3d` | **진행중(In-Progress)** | **[Deep Dive] apply-review-dev.html UI 통합** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/apply-review/apply-review-dev.html` / ①s1~s5 .top-bar old nav div 제거(menu-dev.js nav 대체) ②popup.js 제거(강제팝업 간섭 제거) ③body.page+data-back="/tip/index-dev.html"+max-width:480px+dev-banner sticky+menu-dev.js+legal-shared.js 유지 |
+| **T-105** | WT-118 | - | `684fc43` | **테스트 완료(DONE)** | **[Deep Dive] apply-review-dev.html UI 통합** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/apply-review/apply-review-dev.html` / ①s1~s5 .top-bar old nav div 제거(menu-dev.js nav 대체) ②popup.js 제거(강제팝업 간섭 제거) ③body.page+data-back="/tip/index-dev.html"+max-width:480px+dev-banner sticky+menu-dev.js+legal-shared.js 유지 |
 | **T-104** | WT-117 | - | `c6e47dc` | **테스트 완료(DONE)** | **[월별대출] 2026-07/index-dev.html DEV 배너 풀사이즈 수정** | 쮸티12-1호 | - | 【파일】`monthly-loan/2026-07/index-dev.html` / position:sticky DEV 배너가 .wrap 구조로 인해 풀사이즈 렌더링 → T-092 방식으로 수정 |
 | **T-103** | WT-116 | - | - | **대기(Pending)** | **[월전환] 8월 대출 페이지 생성 + menu.js CURRENT_MONTH 2026-08 전환** | 쮸티12-1호 | 2026-07-29 예정 | 【순서】①`monthly-loan/2026-08/` 폴더+페이지 신규 생성 ②`menu.js·menu-dev.js` `CURRENT_MONTH='2026-07'`→`'2026-08'` / 폴더 먼저 → 링크 나중 규칙 필수 / 사이트 통합 완료 후 착수 |
 | **T-102** | WT-115 | W-107 | `d81803a` | **테스트 완료(DONE)** | **[꿀정보] 연체 이력 해제 페이지 통합 개편 (PRD 업데이트 + DEV 신규)** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/unsuspend/index.html`(PRD 수정) + `tip/unsuspend/index-dev.html`(DEV 신규) + `tip/index.html·index-dev.html` 링크 연결 / body.page+data-back+480px+폰트+menu·popup·legal-shared / DEV 배너+menu-dev.js / 04 연체이력해제 href 연결 |
