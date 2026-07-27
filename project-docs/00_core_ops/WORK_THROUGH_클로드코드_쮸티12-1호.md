@@ -29,10 +29,11 @@
 | 작성일시 | 2026-07-28 |
 | 작성자 | 쮸티12-1호 |
 | T-ID | T-104 |
-| 로컬 커밋 | - |
-| 상태 | 대기(Pending) |
+| 로컬 커밋 | `4c3afe8` |
+| 상태 | 진행중(In-Progress) — 사장님 테스트 대기 |
 
-[배경] `position:sticky` DEV 배너가 `.wrap` 래퍼 구조로 인해 body 전체 너비로 렌더링됨. T-092 방식(max-width:480px;margin:0 auto 인라인) 동일 적용.
+[배경] Tailwind CDN 로드로 인해 DEV 배너의 `max-width:480px`가 무시되어 풀사이즈 렌더링됨.
+[처방 — 4c3afe8] 인라인 스타일에 `width:480px !important; max-width:480px !important;` 추가
 
 ---
 
