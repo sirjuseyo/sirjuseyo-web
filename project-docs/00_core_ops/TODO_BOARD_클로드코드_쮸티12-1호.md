@@ -217,6 +217,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | T-ID | 작업 타이틀 | 로컬커밋 | 원격푸시 | DEV 빌드 | PRD 코드배포 | PRD 빌드 | PRD 운영배포 | PRD 스토어배포 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | T-ID | 작업 설명 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 담당자 | 연-월-일 시:분 | 메모 |
+| **T-104** | 월별대출 apply-dev.html DEV 배너 풀사이즈 수정 | ✅ `c6e47dc` | 대기 | ✅ 검증완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | apply-dev.html DEV 배너 sticky+480px 누락 추가 / 2026-07/index-dev.html !important 추가 |
 | **T-102** | 꿀정보 연체이력해제 New UI 통합 + DEV 신규 + 링크 연결 | ✅ `d81803a` | 대기 | ✅ 검증완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | PRD·DEV 통합개편 + tip/index PRD·DEV 링크 연결 |
 | **T-101** | 나노크레딧 상세 수치 전면 업데이트 (10~50만 PRD+DEV 8개) | ✅ `8919686` | 대기 | ✅ 검증완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | 7월 썸머베케이션 기준 / 옵션카드·크레딧미션이란?·주의사항·워딩 전면 업데이트 |
 | **T-039** | 감다살 상세 카피·UI 일괄 수정(DEV+PRD) | ✅ `2e72d17` | ✅ | ✅ 반영완료 | ✅ **main merge `183ac46`** | - (웹) | ✅ **Pages 배포(run `26898681849`)** | - (웹) | 쮸티12호 | 2026-06-04 | **완료** — PR#14 main merge·GitHub Pages 운영배포 / PRD·DEV `HTTP 200` / 본문 `대한민국 운명`·`추가 대출 최대 50만 원`·`한국 시간`·`신청 전 필수 확인` 확인·`총 최대` 미검출 / `한국`은 `한국 시간`만 잔존 / 완료보고서 WT-039 하단 보관 |
@@ -494,7 +495,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
 | **T-105** | WT-118 | - | - | **대기(Pending)** | **[Deep Dive] apply-review-dev.html UI 통합 + 진입 보안코드 overlay 구현** | 쮸티12-1호 | - | 【파일】`tip/apply-review/apply-review-dev.html` / ①UI통합: max-width 520→480px, body.page+data-back="/tip/", DEV배너 sticky 방식 통일, menu-dev.js+legal-shared.js 탑재 ②보안코드: 페이지 로드 시 overlay modal → 코드 일치 시 해제 + sessionStorage 저장 (하드코딩, 서버연동 없음) |
-| **T-104** | WT-117 | - | `4c3afe8` | **진행중(In-Progress)** | **[월별대출] 2026-07/index-dev.html DEV 배너 풀사이즈 수정** | 쮸티12-1호 | - | 【파일】`monthly-loan/2026-07/index-dev.html` / position:sticky DEV 배너가 .wrap 구조로 인해 풀사이즈 렌더링 → T-092 방식으로 수정 |
+| **T-104** | WT-117 | - | `c6e47dc` | **테스트 완료(DONE)** | **[월별대출] 2026-07/index-dev.html DEV 배너 풀사이즈 수정** | 쮸티12-1호 | - | 【파일】`monthly-loan/2026-07/index-dev.html` / position:sticky DEV 배너가 .wrap 구조로 인해 풀사이즈 렌더링 → T-092 방식으로 수정 |
 | **T-103** | WT-116 | - | - | **대기(Pending)** | **[월전환] 8월 대출 페이지 생성 + menu.js CURRENT_MONTH 2026-08 전환** | 쮸티12-1호 | 2026-07-29 예정 | 【순서】①`monthly-loan/2026-08/` 폴더+페이지 신규 생성 ②`menu.js·menu-dev.js` `CURRENT_MONTH='2026-07'`→`'2026-08'` / 폴더 먼저 → 링크 나중 규칙 필수 / 사이트 통합 완료 후 착수 |
 | **T-102** | WT-115 | W-107 | `d81803a` | **테스트 완료(DONE)** | **[꿀정보] 연체 이력 해제 페이지 통합 개편 (PRD 업데이트 + DEV 신규)** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/unsuspend/index.html`(PRD 수정) + `tip/unsuspend/index-dev.html`(DEV 신규) + `tip/index.html·index-dev.html` 링크 연결 / body.page+data-back+480px+폰트+menu·popup·legal-shared / DEV 배너+menu-dev.js / 04 연체이력해제 href 연결 |
 | **T-101** | WT-114 | W-106 | `8919686` | **테스트 완료(DONE)** | **[나노크레딧 상세] 수치 전면 업데이트 — 7월 썸머 베케이션 기준 반영 (10/20/30/50 — 4개 파일)** | 쮸티12-1호 | 2026-07-28 | 【파일】`nanocredit/10/index.html`, `20/index.html`, `30/index.html`, `50/index.html` + 동일 DEV 4개 / ①크레딧 미션 4,500포 공통 통일 ②이벤트 대출 이포 유지 + 원금 미션(1%) 수치 추가 ③50만 이벤트 행 삭제 ④비교 테이블 전 행 합계 재계산 ⑤웨이팅 보상 할인 테이블 4,500포 기준 통일 ⑥한도상향 크레딧 미션 수치 수정 ⑦DEV 4개 파일 신규 생성 / [회차수정2]⑧옵션카드 타이틀 4개 변경 ⑨롸잇나우 블찬티켓 문장 추가 ⑩크레딧미션이란? 전면교체 ⑪주의사항 문구 변경 |

@@ -29,11 +29,12 @@
 | 작성일시 | 2026-07-28 |
 | 작성자 | 쮸티12-1호 |
 | T-ID | T-104 |
-| 로컬 커밋 | `4c3afe8` |
-| 상태 | 진행중(In-Progress) — 사장님 테스트 대기 |
+| 로컬 커밋 | `4c3afe8` (2026-07/index-dev) / `c6e47dc` (apply-dev) |
+| 상태 | ✅ 테스트 완료(DONE) — 2026-07-28 |
 
-[배경] Tailwind CDN 로드로 인해 DEV 배너의 `max-width:480px`가 무시되어 풀사이즈 렌더링됨.
-[처방 — 4c3afe8] 인라인 스타일에 `width:480px !important; max-width:480px !important;` 추가
+[처방]
+- `4c3afe8` monthly-loan/2026-07/index-dev.html: Tailwind CDN 충돌 → `width:480px !important` 추가
+- `c6e47dc` monthly-loan/apply/apply-dev.html: sticky+max-width+margin 누락 → 추가 (실제 문제 파일)
 
 ---
 
