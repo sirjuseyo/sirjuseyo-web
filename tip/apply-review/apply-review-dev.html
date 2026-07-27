@@ -41,7 +41,7 @@
     }
 
     .wrap {
-      max-width: 520px;
+      max-width: 480px;
       margin: 0 auto;
       background: #fff;
       min-height: 100vh;
@@ -489,8 +489,10 @@
       padding: 8px 16px;
       letter-spacing: 0.5px;
       position: sticky;
-      top: 0;
-      z-index: 100;
+      top: 52px;
+      z-index: 10000;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
     /* ── T-042: 생년월일 인라인 캘린더 피커 ── */
@@ -569,7 +571,23 @@
     .bc-day.empty { cursor: default; }
   </style>
 </head>
-<body>
+<body class="page" data-back="/tip/index-dev.html">
+
+<!-- 보안코드 overlay -->
+<div id="sjy-security-overlay" style="position:fixed;inset:0;background:rgba(56,0,151,0.96);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#fff;border-radius:20px;padding:36px 28px;max-width:360px;width:100%;text-align:center;">
+    <div style="font-size:40px;margin-bottom:16px;">🔒</div>
+    <p style="font-size:20px;font-weight:900;color:#380097;margin-bottom:10px;">Deep Dive 심층 분석</p>
+    <p style="font-size:14px;color:#555;line-height:1.7;margin-bottom:24px;">소통거리 검토 중인 고객님만<br>입장할 수 있습니다.<br><br>카카오 톡에서 안내받은<br>보안코드를 입력해 주세요.</p>
+    <input id="sjy-security-input" type="password" inputmode="numeric" placeholder="보안코드 입력"
+      style="width:100%;padding:14px 16px;border:2px solid #e5e7eb;border-radius:12px;font-size:18px;text-align:center;letter-spacing:4px;outline:none;font-family:inherit;margin-bottom:12px;"
+      onkeydown="if(event.key==='Enter')sjyCheckCode()">
+    <p id="sjy-security-err" style="display:none;color:#ef4444;font-size:13px;margin-bottom:12px;font-weight:700;">보안코드가 올바르지 않습니다.</p>
+    <button onclick="sjyCheckCode()"
+      style="width:100%;padding:15px;background:#380097;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;">확인</button>
+  </div>
+</div>
+
 <div class="dev-banner">🚧 DEV 환경 — 실제 데이터가 저장됩니다 (테스트 전용) 🚧</div>
 <div class="wrap">
 
@@ -1533,6 +1551,31 @@ async function submitForm() {
   document.getElementById('tc-toss').classList.add('on');
 })();
 </script>
+
+<script>
+/* ── 보안코드 overlay ── */
+(function() {
+  var CODE = '20543003';
+  if (sessionStorage.getItem('sjy-deep-dive-auth') === '1') {
+    document.getElementById('sjy-security-overlay').style.display = 'none';
+  }
+  window.sjyCheckCode = function() {
+    var val = document.getElementById('sjy-security-input').value.trim();
+    if (val === CODE) {
+      sessionStorage.setItem('sjy-deep-dive-auth', '1');
+      document.getElementById('sjy-security-overlay').style.display = 'none';
+    } else {
+      document.getElementById('sjy-security-err').style.display = 'block';
+      document.getElementById('sjy-security-input').value = '';
+      document.getElementById('sjy-security-input').focus();
+    }
+  };
+})();
+</script>
+
+<script src="/js/popup.js"></script>
+<script src="/js/menu-dev.js"></script>
+<script src="/js/legal-shared.js"></script>
 
 </body>
 </html>
