@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>선불폰 | nanocredit</title>
+  <title>선불폰 | 써주세요.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
       font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #fff;
       overflow-x: hidden;
+      max-width: 480px; margin: 0 auto;
     }
 
     /* ─── 페이지 타이틀 ─── */
@@ -135,16 +136,16 @@
     }
   </style>
 </head>
-<body>
+<body class="page" data-back="/tip/submissions/">
 
 <!-- ─── 페이지 타이틀 ─── -->
 <div class="page-title-section">
-  <a class="back-btn" href="../index.html">⬅ BACK</a>
+  <a class="back-btn" href="/tip/submissions/">⬅ BACK</a>
 </div>
 
 <!-- ─── 상단 배너 이미지 ─── -->
 <div style="padding: 0 0 24px;">
-  <img src="../../../imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-008.webp" alt="선불폰" style="width:100%; display:block;" />
+  <img src="/imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-008.webp" alt="선불폰" style="width:100%; display:block;" />
 </div>
 
 <!-- ─── 페이지 타이틀 ─── -->
@@ -201,11 +202,13 @@
 
 <!-- ─── 하단 BACK ─── -->
 <div class="bottom-back">
-  <a class="back-btn" href="../index.html">⬅ BACK</a>
+  <a class="back-btn" href="/tip/submissions/">⬅ BACK</a>
 </div>
 
-<!-- ─── FOOTER (공용 footer.js) ─── -->
-<script src="/footer.js"></script>
+
+<script src="/js/popup.js"></script>
+<script src="/js/menu.js"></script>
+<script src="/js/legal-shared.js"></script>
 
 </body>
 </html>

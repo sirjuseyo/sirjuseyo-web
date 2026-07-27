@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>직업군인 | nanocredit</title>
+  <title>사업자 | 써주세요.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
       font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #fff;
       overflow-x: hidden;
+      max-width: 480px; margin: 0 auto;
     }
 
     /* ─── 페이지 타이틀 ─── */
@@ -86,6 +87,14 @@
       margin-bottom: 4px;
     }
 
+    /* ─── info-box ─── */
+    .info-box {
+      background: #F8F8F8;
+      border: 1px solid #E0E0E0;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
     /* ─── 구분선 ─── */
     .thick-divider {
       height: 8px;
@@ -116,16 +125,16 @@
     }
   </style>
 </head>
-<body>
+<body class="page" data-back="/tip/submissions/">
 
 <!-- ─── 페이지 타이틀 ─── -->
 <div class="page-title-section">
-  <a class="back-btn" href="../index.html">⬅ BACK</a>
+  <a class="back-btn" href="/tip/submissions/">⬅ BACK</a>
 </div>
 
 <!-- ─── 페이지 타이틀 ─── -->
 <div style="padding: 0 24px 20px;">
-  <h1 class="page-title">직업군인</h1>
+  <h1 class="page-title">사업자</h1>
 </div>
 
 <!-- ─── 구분선 ─── -->
@@ -135,14 +144,8 @@
 <div class="content-section">
   <h3 class="section-title">1. 재직증빙</h3>
   <ul class="bullet-list">
-    <li>✅ 재직증빙을 위해 <span class="red-underline">재직증명서(복무확인서)</span> 또는 <span class="red-underline">군경력증명서</span>를 앱에 첨부해 주세요.
-      <ul class="sub-list">
-        <li>재직증명서(복무확인서)는 부대 인사과에서 발급받으실 수 있습니다.</li>
-        <li>군경력증명서는 국방부 증명서 발급시스템(DCIS)에서 발급받으실 수 있습니다.</li>
-        <li>고객님 성함, 생년월일 등 개인 식별 정보가 확인되어야 합니다.</li>
-        <li><span class="red-underline">서류는 반드시 주민번호 뒤 6자리가 안나오게 가려주셔야 합니다.</span></li>
-      </ul>
-    </li>
+    <li>✅ <span class="red-underline">전년도 소득금액증명원</span>을 제출해 주세요.</li>
+    <li>❗ 만약 올해 사업자를 개설했다면 <span class="red-underline">사업자 등록증</span>을 제출해 주세요.</li>
   </ul>
 </div>
 
@@ -150,11 +153,7 @@
 <div class="content-section">
   <h3 class="section-title">2. 소득 증빙</h3>
   <ul class="bullet-list">
-    <li>✅ 소득 증빙 서류는 최근 3개월 가량 소득의 <span class="red-underline">(1) 입금 금액</span> <span class="red-underline">(2) 입금 날짜</span> <span class="red-underline">(3) 입금자명</span>이 확인 될 수 있도록 앱에 첨부해 주세요.
-      <ul class="sub-list">
-        <li>급여통장 입출금 내역 또는 급여명세서를 제출해 주세요.</li>
-      </ul>
-    </li>
+    <li>✅ 최근 3개월 사업 소득 통장 내역을 제출해 주세요.</li>
   </ul>
 </div>
 
@@ -178,11 +177,13 @@
 
 <!-- ─── 하단 BACK ─── -->
 <div class="bottom-back">
-  <a class="back-btn" href="../index.html">⬅ BACK</a>
+  <a class="back-btn" href="/tip/submissions/">⬅ BACK</a>
 </div>
 
-<!-- ─── FOOTER (공용 footer.js) ─── -->
-<script src="/footer.js"></script>
+
+<script src="/js/popup.js"></script>
+<script src="/js/menu.js"></script>
+<script src="/js/legal-shared.js"></script>
 
 </body>
 </html>

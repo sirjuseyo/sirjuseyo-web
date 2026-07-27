@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>소통거리는 이렇게 제출해 주세요 | nanocredit</title>
+  <title>소통거리는 이렇게 제출해 주세요 | 써주세요.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
@@ -18,6 +18,16 @@
       font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #fff;
       overflow-x: hidden;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── legal-shared.js 주입 요소 480px 제한 ── */
+    .legal-top, .legal-bottom, .bottom-section {
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
     }
 
     /* ─── 페이지 타이틀 ─── */
@@ -442,29 +452,14 @@
       background: #fff;
     }
 
-    /* ─── FOOTER ─── */
-    footer {
-      background: #fff;
-      padding: 32px 20px 48px;
-      border-top: 1px solid #E5E7EB;
-    }
-    .footer-logo {
-      font-size: 18px; font-weight: 800;
-      color: var(--nc-purple);
-      margin-bottom: 12px;
-    }
-    .footer-info {
-      font-size: 12px; color: #888;
-      line-height: 1.8;
-    }
   </style>
 </head>
-<body>
+<body class="page" data-back="/tip/">
 
 <!-- ─── 페이지 타이틀 ─── -->
 <div class="page-title-section">
   <h1 class="page-title">소통거리는 이렇게 제출해 주세요.</h1>
-  <a class="back-btn" href="../">⬅ BACK</a>
+  <a class="back-btn" href="/tip/">⬅ BACK</a>
 </div>
 
 <!-- ─── SEC-01 안내 배너 ─── -->
@@ -475,12 +470,12 @@
 
 <!-- ─── SEC-02 히어로 이미지 (풀사이즈) ─── -->
 <div class="hero-section">
-  <img src="../../imgs/nanocredit/Submissions/노션_커버_배너_모바일최적화-038.png" alt="소통거리 제출 앱 화면" />
+  <img src="/imgs/nanocredit/Submissions/노션_커버_배너_모바일최적화-038.png" alt="소통거리 제출 앱 화면" />
 </div>
 
 <!-- ─── SEC-03+04 통합 이미지 ─── -->
 <div class="full-image-section">
-  <img src="../../imgs/nanocredit/Submissions/4depth_page_소통거리-제출-가이드라인-002.png" alt="소통거리 제출 가이드라인 - 태그 뱃지, (한도)를 심사합니다, 로봇 캐릭터" />
+  <img src="/imgs/nanocredit/Submissions/4depth_page_소통거리-제출-가이드라인-002.png" alt="소통거리 제출 가이드라인 - 태그 뱃지, (한도)를 심사합니다, 로봇 캐릭터" />
 </div>
 
 <!-- ─── SEC-05 소통거리의 정석 (지침 배너) ─── -->
@@ -500,7 +495,7 @@
     </div>
   </div>
   <div class="section-image">
-    <img src="../../imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-005 (1).png" alt="주민등록증 샘플 - 주민등록번호 뒷자리 가림 처리" />
+    <img src="/imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-005 (1).png" alt="주민등록증 샘플 - 주민등록번호 뒷자리 가림 처리" />
   </div>
   <div class="qa-section">
     <p class="qa-title">💬 Q&A</p>
@@ -520,17 +515,17 @@
   <p class="section-text" style="margin-bottom: 16px; font-weight: 800; font-size: 19px;">나의 통신사 정보를 클릭해 주세요</p>
   <div class="phone-cards">
     <a class="gallery-card" href="phone-docs/yakjeong.html">
-      <img class="card-image" src="../../imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-006.webp" alt="약정폰 - kt, SK, U+" />
+      <img class="card-image" src="/imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-006.webp" alt="약정폰 - kt, SK, U+" />
       <div class="card-label">📱 약정폰</div>
       <span class="card-guide-btn">가이드</span>
     </a>
     <a class="gallery-card" href="phone-docs/alttul.html">
-      <img class="card-image" src="../../imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-007_(1).webp" alt="알뜰폰 - M, 7, U+알뜰모바일, Mobing" />
+      <img class="card-image" src="/imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-007_(1).webp" alt="알뜰폰 - M, 7, U+알뜰모바일, Mobing" />
       <div class="card-label">📱 알뜰폰</div>
       <span class="card-guide-btn">가이드</span>
     </a>
     <a class="gallery-card" href="phone-docs/sunbul.html">
-      <img class="card-image" src="../../imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-008.webp" alt="선불폰" />
+      <img class="card-image" src="/imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-008.webp" alt="선불폰" />
       <div class="card-label">📱 선불폰</div>
       <span class="card-guide-btn">가이드</span>
     </a>
@@ -675,7 +670,7 @@
     </ol>
   </div>
   <div class="section-image">
-    <img src="../../imgs/nanocredit/Submissions/노션_랜딩페이지_이미지_모바일최적화-007 (1).png" alt="절친 소통내역 - Best Friends 차은우 프로필, 통화하기 가이드" />
+    <img src="/imgs/nanocredit/Submissions/노션_랜딩페이지_이미지_모바일최적화-007 (1).png" alt="절친 소통내역 - Best Friends 차은우 프로필, 통화하기 가이드" />
   </div>
   <div class="submit-guide">
     <ol start="2">
@@ -733,7 +728,7 @@
     </ol>
   </div>
   <div class="section-image">
-    <img src="../../imgs/nanocredit/Submissions/노션_랜딩페이지_이미지_모바일최적화-007 (2).png" alt="부모님 소통내역 - HOLE IN ONE 울엄마 프로필, 통화하기 가이드" />
+    <img src="/imgs/nanocredit/Submissions/노션_랜딩페이지_이미지_모바일최적화-007 (2).png" alt="부모님 소통내역 - HOLE IN ONE 울엄마 프로필, 통화하기 가이드" />
   </div>
   <div class="submit-guide">
     <ol start="2">
@@ -803,11 +798,12 @@
 
 <!-- ─── 하단 BACK ─── -->
 <div class="bottom-back">
-  <a class="back-btn" href="../">⬅ BACK</a>
+  <a class="back-btn" href="/tip/">⬅ BACK</a>
 </div>
 
-<!-- ─── FOOTER (공용 footer.js) ─── -->
-<script src="/footer.js"></script>
+<script src="/js/popup.js"></script>
+<script src="/js/menu.js"></script>
+<script src="/js/legal-shared.js"></script>
 
 </body>
 </html>
