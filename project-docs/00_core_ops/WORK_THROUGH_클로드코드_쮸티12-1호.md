@@ -10,15 +10,30 @@
 
 | 항목 | 내용 |
 |---|---|
+| 회차 | 1회차 |
 | 작성일시 | 2026-07-28 |
 | 작성자 | 쮸티12-1호 |
 | T-ID | T-105 |
-| 로컬 커밋 | - |
-| 상태 | 대기(Pending) |
+| 로컬 커밋 | `480001e` |
+| 상태 | 진행중(In-Progress) — 코드 커밋 완료, 사장님 테스트 대기 |
 
-[작업 예정]
-① UI 통합: max-width 520→480px / body.page+data-back="/tip/" / DEV 배너 인라인 sticky 방식 통일 / menu-dev.js+legal-shared.js 탑재
-② 보안코드 overlay: 페이지 로드 시 전체화면 overlay → 코드 일치 시 해제 + sessionStorage 저장 / 하드코딩 1줄, 서버 연동 없음
+[처방 — 480001e]
+① UI 통합
+   - `.wrap { max-width: 520px }` → `480px`
+   - `<body>` → `<body class="page" data-back="/tip/index-dev.html">`
+   - `.dev-banner` CSS: `top:0` → `top:52px`, `max-width:480px; margin:0 auto` 추가
+   - `</body>` 직전: `popup.js` + `menu-dev.js` + `legal-shared.js` 스크립트 추가
+
+② 보안코드 overlay HTML (`<body>` 직후)
+   - id="sjy-security-overlay" / 보라 배경(rgba(56,0,151,0.96)) / 전체화면 fixed
+   - 타이틀: 🔒 Deep Dive 심층 분석
+   - 안내: "카카오 톡에서 안내받은 보안코드를 입력해 주세요."
+   - input: type="password" inputmode="numeric" / Enter키 지원
+
+③ 보안코드 JS (`sjyCheckCode()` IIFE)
+   - CODE: '20543003' (써주세요 대표번호, 하드코딩)
+   - sessionStorage('sjy-deep-dive-auth') === '1' → 페이지 로드 시 overlay 즉시 해제 (세션 내 재입력 불필요)
+   - 오류 시 에러 메시지 표시 + input 초기화 + focus
 
 ---
 
