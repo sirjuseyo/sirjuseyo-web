@@ -479,22 +479,6 @@
     /* ── 스페이서 ── */
     .sp { height: 20px; }
 
-    /* ── DEV 배너 ── */
-    .dev-banner {
-      background: var(--orange);
-      color: #fff;
-      text-align: center;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 8px 16px;
-      letter-spacing: 0.5px;
-      position: sticky;
-      top: 52px;
-      z-index: 10000;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-
     /* ── T-042: 생년월일 인라인 캘린더 피커 ── */
     .birth-picker { position: relative; }
     .birth-cal {
@@ -586,7 +570,7 @@
 </div>
 
 <!-- 보안코드 overlay -->
-<div id="sjy-security-overlay" style="position:fixed;inset:0;background:rgba(56,0,151,0.96);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;">
+<div id="sjy-security-overlay" style="position:fixed;inset:0;background:rgba(56,0,151,0.96);z-index:99999;display:none;align-items:center;justify-content:center;padding:24px;">
   <div style="background:#fff;border-radius:20px;padding:36px 28px;max-width:360px;width:100%;text-align:center;">
     <div style="font-size:40px;margin-bottom:16px;">🔒</div>
     <p style="font-size:20px;font-weight:900;color:#380097;margin-bottom:10px;">Deep Dive 심층 분석</p>
@@ -599,6 +583,7 @@
       style="width:100%;padding:15px;background:#380097;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;">확인</button>
   </div>
 </div>
+<script>if(sessionStorage.getItem('sjy-deep-dive-auth')!=='1')document.getElementById('sjy-security-overlay').style.display='flex';</script>
 
 <div class="wrap">
 
@@ -1562,9 +1547,6 @@ async function submitForm() {
 /* ── 보안코드 overlay ── */
 (function() {
   var CODE = '20543003';
-  if (sessionStorage.getItem('sjy-deep-dive-auth') === '1') {
-    document.getElementById('sjy-security-overlay').style.display = 'none';
-  }
   window.sjyCheckCode = function() {
     var val = document.getElementById('sjy-security-input').value.trim();
     if (val === CODE) {
