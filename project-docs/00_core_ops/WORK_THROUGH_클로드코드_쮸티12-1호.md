@@ -6,34 +6,48 @@
 
 ---
 
-## WT-118 · T-105 [Deep Dive] apply-review-dev.html UI 통합 + 진입 보안코드 overlay 구현
+## WT-119 · T-106 [Deep Dive] 진입 보안코드 overlay 구현
 
 | 항목 | 내용 |
 |---|---|
-| 회차 | 1회차 |
+| 작성일시 | 2026-07-28 |
+| 작성자 | 쮸티12-1호 |
+| T-ID | T-106 |
+| 로컬 커밋 | - |
+| 상태 | 대기(Pending) — T-105 테스트 완료 후 착수 |
+
+[작업 예정]
+① 보안코드 overlay(z-index:99999) 동작 검증
+② sessionStorage('sjy-deep-dive-auth') 로직 확인·수정
+   - ⚠️ 테스트 시 주의: 동일 탭에서 코드 입력 후 새로고침 시 overlay 안 뜸(정상) → 재테스트는 새 탭/시크릿 창 사용
+③ 필요 시 코드 수정
+
+---
+
+## WT-118 · T-105 [Deep Dive] apply-review-dev.html UI 통합
+
+| 항목 | 내용 |
+|---|---|
+| 회차 | 2회차 |
 | 작성일시 | 2026-07-28 |
 | 작성자 | 쮸티12-1호 |
 | T-ID | T-105 |
-| 로컬 커밋 | `480001e` |
+| 로컬 커밋 | `480001e` (1회차) / `7d8da3d` (2회차) |
 | 상태 | 진행중(In-Progress) — 코드 커밋 완료, 사장님 테스트 대기 |
 
-[처방 — 480001e]
+[1회차 처방 — 480001e]
 ① UI 통합
    - `.wrap { max-width: 520px }` → `480px`
    - `<body>` → `<body class="page" data-back="/tip/index-dev.html">`
    - `.dev-banner` CSS: `top:0` → `top:52px`, `max-width:480px; margin:0 auto` 추가
-   - `</body>` 직전: `popup.js` + `menu-dev.js` + `legal-shared.js` 스크립트 추가
+   - `popup.js` + `menu-dev.js` + `legal-shared.js` 스크립트 추가
 
-② 보안코드 overlay HTML (`<body>` 직후)
-   - id="sjy-security-overlay" / 보라 배경(rgba(56,0,151,0.96)) / 전체화면 fixed
-   - 타이틀: 🔒 Deep Dive 심층 분석
-   - 안내: "카카오 톡에서 안내받은 보안코드를 입력해 주세요."
-   - input: type="password" inputmode="numeric" / Enter키 지원
+② 보안코드 overlay HTML + JS (T-106으로 분리됨)
 
-③ 보안코드 JS (`sjyCheckCode()` IIFE)
-   - CODE: '20543003' (써주세요 대표번호, 하드코딩)
-   - sessionStorage('sjy-deep-dive-auth') === '1' → 페이지 로드 시 overlay 즉시 해제 (세션 내 재입력 불필요)
-   - 오류 시 에러 메시지 표시 + input 초기화 + focus
+[2회차 처방 — 7d8da3d] (이슈: 테스트 시 overlay 미표시 + UI 미변경)
+- 원인①: `popup.js` 가 강제 법적 고지 팝업을 띄워 간섭 → `popup.js` 제거
+- 원인②: s1~s5 전 화면에 old `.top-bar` nav div 잔존 → `menu-dev.js` 주입 nav와 중복
+- 처방: `popup.js` 스크립트 태그 제거 / `.top-bar` div 5개 전부 제거
 
 ---
 
