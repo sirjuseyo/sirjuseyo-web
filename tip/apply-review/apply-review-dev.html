@@ -583,7 +583,7 @@
       style="width:100%;padding:15px;background:#380097;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;">확인</button>
   </div>
 </div>
-<script>if(sessionStorage.getItem('sjy-deep-dive-auth')!=='1')document.getElementById('sjy-security-overlay').style.display='flex';</script>
+<script>document.getElementById('sjy-security-overlay').style.display='flex';</script>
 
 <div class="wrap">
 
@@ -1550,7 +1550,6 @@ async function submitForm() {
   window.sjyCheckCode = function() {
     var val = document.getElementById('sjy-security-input').value.trim();
     if (val === CODE) {
-      sessionStorage.setItem('sjy-deep-dive-auth', '1');
       document.getElementById('sjy-security-overlay').style.display = 'none';
     } else {
       document.getElementById('sjy-security-err').style.display = 'block';
