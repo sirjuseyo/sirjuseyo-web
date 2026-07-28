@@ -217,7 +217,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | T-ID | 작업 타이틀 | 로컬커밋 | 원격푸시 | DEV 빌드 | PRD 코드배포 | PRD 빌드 | PRD 운영배포 | PRD 스토어배포 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | T-ID | 작업 설명 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 담당자 | 연-월-일 시:분 | 메모 |
-| **T-107** | [소통거리 제출 가이드] tip/submissions 이동 + 꿀정보 06번 + 나노크레딧 10~50 CTA | ✅ `d5322c9` | 대기 | 진행중(DEV) | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | nanocredit/submissions→tip/submissions, index-dev.html 신규, tip/index×2 06번, nanocredit 4개 CTA |
+| **T-107** | [소통거리 제출 가이드] tip/submissions 이동 + 꿀정보 06번 + 나노크레딧 10~50 CTA | ✅ `9f450d9` | 대기 | 진행중(DEV) | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | nanocredit/submissions→tip/submissions, index-dev.html 신규, tip/index×2 06번, nanocredit 4개 CTA / [회차수정] submissions 17개 back-btn·CSS 완전 제거 `9f450d9` |
 | **T-106** | Deep Dive 보안코드 overlay — 항상 표시 | ✅ `461097e` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | display:none 초기화 + inline script 무조건 표시 + sessionStorage 저장 제거 |
 | **T-105** | Deep Dive apply-review-dev.html UI 통합 | ✅ `684fc43` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | old top-bar 제거 + popup.js 제거 + DEV 링크 정합 + DEV 배너 inline 이동 + 법적고지 480px |
 | **T-104** | 월별대출 apply-dev.html DEV 배너 풀사이즈 수정 | ✅ `c6e47dc` | 대기 | ✅ 검증완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | apply-dev.html DEV 배너 sticky+480px 누락 추가 / 2026-07/index-dev.html !important 추가 |
@@ -497,7 +497,7 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
-| **T-107** | WT-120 | W-107 | `d5322c9` | **진행중(In-Progress)** | **[소통거리 제출 가이드] nanocredit/submissions → tip/submissions 이동 + 꿀정보 06번 항목 + 나노크레딧 10~50 CTA 삽입** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/submissions/`(이동+표준UI 16개), `tip/submissions/index-dev.html`(신규), `tip/index.html·index-dev.html`(06번 항목), `nanocredit/10·20·30·50/index.html`(CTA) |
+| **T-107** | WT-120 | W-107 | `9f450d9` | **진행중(In-Progress)** | **[소통거리 제출 가이드] nanocredit/submissions → tip/submissions 이동 + 꿀정보 06번 항목 + 나노크레딧 10~50 CTA 삽입** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/submissions/`(이동+표준UI 16개), `tip/submissions/index-dev.html`(신규), `tip/index.html·index-dev.html`(06번 항목), `nanocredit/10·20·30·50/index.html`(CTA) / [회차수정] `d5322c9`→`9f450d9` submissions 17개 back-btn/CSS 완전 제거 |
 | **T-106** | WT-119 | - | `461097e` | **테스트 완료(DONE)** | **[Deep Dive] 진입 보안코드 overlay 구현** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/apply-review/apply-review-dev.html` / overlay 항상 표시: sessionStorage 저장 제거 + inline script 무조건 display:flex / 진입 경로 무관 항상 overlay 표시 |
 | **T-105** | WT-118 | - | `684fc43` | **테스트 완료(DONE)** | **[Deep Dive] apply-review-dev.html UI 통합** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/apply-review/apply-review-dev.html` / ①s1~s5 .top-bar old nav div 제거(menu-dev.js nav 대체) ②popup.js 제거(강제팝업 간섭 제거) ③body.page+data-back="/tip/index-dev.html"+max-width:480px+dev-banner sticky+menu-dev.js+legal-shared.js 유지 |
 | **T-104** | WT-117 | - | `c6e47dc` | **테스트 완료(DONE)** | **[월별대출] 2026-07/index-dev.html DEV 배너 풀사이즈 수정** | 쮸티12-1호 | - | 【파일】`monthly-loan/2026-07/index-dev.html` / position:sticky DEV 배너가 .wrap 구조로 인해 풀사이즈 렌더링 → T-092 방식으로 수정 |

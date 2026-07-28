@@ -25,7 +25,14 @@
 - F. `nanocredit/10·20·30·50/index.html` — 하단 CTA에 소통거리 제출 방법 안내 보조 링크 삽입
 
 ### 로컬 커밋 (테스트 전)
-`d5322c9` (코드 커밋)
+`d5322c9` (코드 커밋 1차)
+`9f450d9` (회차수정 — back-btn 완전 제거)
+
+[회차수정 — 9f450d9]
+- `tip/submissions/` 17개 파일(index.html, index-dev.html, job-income 12개, phone-docs 3개)에서 내부 back-btn 완전 제거
+- HTML 제거: `<!-- ─── 하단 BACK ─── -->` 주석 + `<div class="bottom-back"></div>` 빈 컨테이너
+- CSS 제거: `.back-btn { ... }` + `.back-btn:hover { ... }` + `/* ─── 하단 BACK ─── */` + `.bottom-back { ... }` 규칙
+- 근거: menu.js가 ← 버튼 자동 주입 → 내부 back-btn 중복 불필요 (T-086 방식)
 
 ---
 
