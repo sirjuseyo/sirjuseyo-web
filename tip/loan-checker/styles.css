@@ -1,14 +1,14 @@
 :root {
-  --bg:      #FFFFFF;      /* 상단1 배너 여백 — 화이트 */
+  --bg:      #FFFFFF;
   --panel:   #FFFFFF;
   --accent:  #380097;      /* 써주세요. 보라 */
   --orange:  #FF5400;      /* 써주세요. 오렌지 */
   --text:    #2D1B4E;
   --muted:   #9B8EA8;
-  --border:  #DDD0F5;      /* 연보라 테두리 */
-  --pink-border: #F2B8D0;
-  --mid-bg:  #FAF7F2;      /* 중단 크림 */
-  --bot-bg:  #F3EEFF;      /* 하단 라일락 */
+  --border:  #E5E0F0;
+  --pink-border: #E5E0F0;  /* 핑크 보더 → 연보라 통일 */
+  --mid-bg:  #FFFFFF;      /* 섹션 배경 단일화 */
+  --bot-bg:  #FFFFFF;
 }
 
 * {
@@ -80,10 +80,10 @@ body {
   align-items: center;
   gap: 8px;
   padding: 6px 12px;
-  border: 1.5px solid var(--pink-border);
+  border: 1.5px solid var(--border);
   border-radius: 999px;
   background: #fff;
-  box-shadow: 0 4px 10px rgba(194, 100, 160, 0.1);
+  box-shadow: 0 2px 6px rgba(56, 0, 151, 0.07);
 }
 
 #liveClock::before {
@@ -94,25 +94,10 @@ body {
   margin: 12px 0 20px;
   padding: 16px 20px;
   border-radius: 16px;
-  border: 1.5px solid var(--pink-border);
-  background: linear-gradient(135deg, #FDE8F0 0%, #F3D0EA 45%, #E8C8F5 100%);
-  box-shadow: 0 8px 24px rgba(194, 100, 160, 0.15);
+  border: 1.5px solid var(--border);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(56, 0, 151, 0.06);
   text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.title-bar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(
-    circle at 12% 20%,
-    rgba(255, 255, 255, 0.5),
-    transparent 55%
-  );
-  opacity: 0.9;
-  pointer-events: none;
 }
 
 .title-bar-text {
@@ -126,14 +111,14 @@ body {
   position: relative;
 }
 
-/* ── 상단2: 알림 — 벚꽃 핑크 ── */
+/* ── 안내 박스 ── */
 .tone-note {
   margin: 0 0 26px;
   padding: 14px 18px;
-  border: 1.5px solid var(--pink-border);
+  border: 1.5px solid var(--border);
   border-radius: 16px;
-  background: linear-gradient(135deg, #FFF0F7, #F5E0FF);
-  box-shadow: 0 6px 18px rgba(194, 100, 160, 0.12);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(56, 0, 151, 0.05);
   display: grid;
   gap: 6px;
 }
@@ -142,15 +127,15 @@ body {
   margin: 0;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #C2507A;
+  color: var(--accent);
   letter-spacing: 0.02em;
 }
 
 .tone-note-body {
   margin: 0;
   font-size: 0.95rem;
-  color: #7A3A8A;
-  line-height: 1.5;
+  color: var(--text);
+  line-height: 1.6;
 }
 
 /* ── 중단: 폼 — 크림/연보라 ── */
@@ -563,34 +548,30 @@ textarea:focus {
   width: 100%;
   border: none;
   border-radius: 16px;
-  padding: 0;
-  background: transparent;
-  color: inherit;
+  padding: 18px 24px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .primary-button:hover,
 .primary-button:focus {
   transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(56, 0, 151, 0.25);
 }
 
 .primary-button:active {
   transform: translateY(0);
 }
 
-.primary-button img {
-  width: min(560px, 100%);
-  height: auto;
-  display: block;
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(24, 36, 52, 0.18);
-}
-
 .waiting-info-box {
-  border: 1.5px solid var(--pink-border);
+  border: 1.5px solid var(--border);
   border-radius: 12px;
-  background: linear-gradient(135deg, #FDE8F5, #EDE0FF);
+  background: #F7F2FF;
   padding: 14px;
   margin-top: 12px;
 }

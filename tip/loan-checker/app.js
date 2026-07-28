@@ -7,16 +7,16 @@ const LOAN_CONFIG = {
         interestBonus: 5,
         principalBonus: 4,
         statuses: {
-          "Clean ✌️": 6,
-          "Non-Clean 😪": 2,
+          "Clean": 6,
+          "Non-Clean": 2,
         },
       },
       "난 처음": {
         interestBonus: 3,
         principalBonus: 5,
         statuses: {
-          "지금 처음 (One ☝️)": 4,
-          "몇 번 (Several 😋)": 6,
+          "지금 처음 (One)": 4,
+          "몇 번 (Several)": 6,
         },
       },
     },
@@ -147,7 +147,7 @@ const LOAN_OPTION_STATUS_TABLE = {
   "롸잇나우 대출": {
     "모든 고객": ["No Matter"],
   },
-  "블랙찬스 티캣": {
+  "블랙찬스 티켓 사용": {
     "바로 재대출": ["블찬원", "블찬이", "블찬현"],
   },
   "이벤트 대출": {
@@ -842,12 +842,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (option === "웨이팅 대출") {
       if (history === "난 재대출") {
         setSelectPlaceholder(loanStatus, "깔끔하게 갚았어?");
-        addSelectOption(loanStatus, "Clean ✌️", "Clean ✌️");
-        addSelectOption(loanStatus, "Non-Clean 😪", "Non-Clean 😪");
+        addSelectOption(loanStatus, "Clean", "Clean");
+        addSelectOption(loanStatus, "Non-Clean", "Non-Clean");
       } else if (history === "난 처음") {
         setSelectPlaceholder(loanStatus, "신청헤 본 적은?");
-        addSelectOption(loanStatus, "지금 처음 (One ☝️)", "지금 처음 (One ☝️)");
-        addSelectOption(loanStatus, "몇 번 (Several 😋)", "몇 번 (Several 😋)");
+        addSelectOption(loanStatus, "지금 처음 (One)", "지금 처음 (One)");
+        addSelectOption(loanStatus, "몇 번 (Several)", "몇 번 (Several)");
       } else {
         setSelectPlaceholder(loanStatus, "대출 옵션과 이력 쌍으로 선택하고 오기!");
       }
@@ -1252,8 +1252,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (benefitTitle) {
       benefitTitle.textContent = optionLabel
-        ? `✨ ${optionLabel}의 가장 큰 혜택`
-        : "✨ 대출의 가장 큰 혜택";
+        ? `🌟 ${optionLabel}의 가장 큰 혜택`
+        : "🌟 대출의 가장 큰 혜택";
       const benefit = LOAN_BENEFITS[optionLabel] || "";
       setBenefitLines([benefit, "", "", ""]);
     }
@@ -1382,7 +1382,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const repaymentTotal = interestValue + principalValue;
 
     if (step1) {
-      const done = santaApply.value.includes("신청했어");
+      const done = santaApply.value.includes("신청했습니다");
       step1.textContent = formatChecklistLine(
         "⓵ 7️⃣🈷️ 썸머 🏖️베케이션 대출 신청",
         "완료",
@@ -1391,7 +1391,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
     if (step2) {
-      const done = appApply.value.includes("신청했어");
+      const done = appApply.value.includes("신청했습니다");
       const amountText = state.requestAmount
         ? `${state.requestAmount}만 원`
         : "-";
@@ -1436,7 +1436,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (step4Warning) {
       const periodText = reviewText !== "-" ? reviewText : "심사 기간";
-      step4Warning.textContent = `⚠️⚠️여기까지 했다면 앱에선 '검토중'으로 보이겠지만, 실제로는 검토를 안 합니다. 아래 ⓹번까지 완료해야 익일(평일 18:00 ~ 22:00)에 검토 시작됩니다.⚠️⚠️`;
+      step4Warning.textContent = `⚠️ 여기까지 했다면 앱에선 '검토중'으로 보이겠지만, 실제로는 검토를 안 합니다. 아래 ⓹번까지 완료해야 익일(평일 18:00 ~ 22:00)에 검토 시작됩니다. ⚠️`;
     }
     if (step5) {
       const done = repaymentTotal > 0 && state.currentPoints >= repaymentTotal;
@@ -1484,14 +1484,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (showDeadline) {
         step5Deadline.textContent = `적립 기한 : ${formatKoreanDate(
           waitingSeat.principalDeadline
-        )}까지❗️`;
+        )}까지`;
       } else {
         step5Deadline.textContent = "";
       }
     }
     if (step5Warning) {
       step5Warning.textContent =
-        "⚠️⚠️앱에서는 포인트 상환 미션이 따로 보이지 않으니, 포인트 적립소에서 적립하시면 됩니다.⚠️⚠️";
+        "⚠️ 앱에서는 포인트 상환 미션이 따로 보이지 않으니, 포인트 적립소에서 적립하시면 됩니다. ⚠️";
     }
 
     if (summaryCredit) {
@@ -1552,10 +1552,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     if (summaryTotal) {
-      summaryTotal.textContent = `🟰 총 ${formatPoints(result.total, "🅿")} 필요`;
+      summaryTotal.textContent = `총 ${formatPoints(result.total, "🅿")} 필요`;
     }
     if (summaryCurrent) {
-      summaryCurrent.textContent = `🛢️ 현재 ${formatPoints(
+      summaryCurrent.textContent = `현재 ${formatPoints(
         state.currentPoints,
         "🅿"
       )} 보유`;
@@ -1563,8 +1563,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (summaryAdditional) {
       summaryAdditional.textContent =
         result.additional > 0
-          ? `➕ 추가 포인트 ${formatPoints(result.additional, "🅿")} 적립 필요`
-          : "➕ 추가 포인트 적립 필요 없음";
+          ? `추가 포인트 ${formatPoints(result.additional, "🅿")} 적립 필요`
+          : "추가 포인트 적립 필요 없음";
     }
 
     if (pointHintBox) {
