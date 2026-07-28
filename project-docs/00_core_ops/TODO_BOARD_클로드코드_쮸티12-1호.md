@@ -217,6 +217,8 @@ git checkout -b feature/T-001-jun-loan-landing
 | T-ID | 작업 타이틀 | 로컬커밋 | 원격푸시 | DEV 빌드 | PRD 코드배포 | PRD 빌드 | PRD 운영배포 | PRD 스토어배포 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | T-ID | 작업 설명 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 담당자 | 연-월-일 시:분 | 메모 |
+| **T-112** | [대출 가능성 검사기] Phase B 데이터 보정 (B-1~B-7) | - | 대기 | 대기(Pending) | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | Phase A 승인 후 착수 / B-5 CEO 원본 제공 필요 |
+| **T-111** | [대출 가능성 검사기] Phase A 톤·비주얼 개편 | - | 대기 | 대기(Pending) | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | styles.css·index.html·index-dev.html·app.js / 기획안 §2·5·6·7 전면 적용 |
 | **T-110** | [소통거리 제출 가이드] SEC-12·SEC-13 타이틀 서브라인 추가 | ✅ `2880556` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | index.html·index-dev.html / 👯 절친·🧑‍🧑‍🧒 부모님 h3 서브라인 "대안신용평가 항목 중 사회성 검증 대상 전용" B안(15px·700·#333) |
 | **T-109** | [소통거리 제출 가이드] phone-docs·job-income DEV 버전 15개 신규 생성 + index-dev.html 링크 연결 | ✅ `d21c053` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | phone-docs 3개 + job-income 12개 *-dev.html 신규 / DEV 배너+menu-dev.js / index-dev.html SEC-07·10 링크 -dev.html 연결 |
 | **T-108** | [소통거리 제출 가이드] 등·초본 → 초본 텍스트 수정 | ✅ `b37d348` | - | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | tip/submissions/index.html·index-dev.html SEC-14 / 섹션제목·소제목·③항목 "등본+초본"→"초본"만 |
@@ -500,6 +502,8 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
+| **T-112** | - | W-112 | - | **대기(Pending)** | **[대출 가능성 검사기 리디자인] Phase B — 데이터 보정 (B-1~B-7)** | 쮸티12-1호 | 2026-07-28 | 기획안 §8 Phase B / B-1 크미 4,500 일괄·B-2 이벤트 30만 안내·B-3 워터밤 이포 표기·B-4 좌석 할인 매트릭스·B-6 하드코딩1·B-7 하드코딩2 / B-5 포인트_요약_20260701 원본 대조는 CEO 제공 후 진행 / Phase A 승인 후 착수 |
+| **T-111** | - | W-111 | - | **대기(Pending)** | **[대출 가능성 검사기 리디자인] Phase A — 톤·비주얼 개편** | 쮸티12-1호 | 2026-07-28 | 기획안 §2·5·6·7 / styles.css 팔레트·컴포넌트 정비(핑크·그라데이션·섹션배경 제거, 경고블록·텍스트CTA 신설) + index.html 배너→타이틀블록·목적안내박스·라이브시계삭제·카피전면교체(5.1~5.6) + §5.7 주의 3건(value결합·JS주입·오타) + index-dev.html 동일 적용 / 대상: `tip/loan-checker/styles.css·index.html·index-dev.html·app.js` |
 | **T-110** | WT-123 | W-110 | `2880556` | **테스트 완료(DONE)** | **[소통거리 제출 가이드] SEC-12·SEC-13 섹션 타이틀 서브라인 추가** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/submissions/index.html`, `index-dev.html` / 👯 절친·🧑‍🧑‍🧒 부모님 h3 서브라인 "대안신용평가 항목 중 사회성 검증 대상 전용" (B안: 15px·700·#333) / [회차수정] 문구+스타일 B안 확정 `2880556` |
 | **T-109** | WT-122 | W-109 | `d21c053` | **테스트 완료(DONE)** | **[소통거리 제출 가이드] phone-docs·job-income 서브페이지 DEV 버전 15개 신규 생성 + index-dev.html 링크 연결** | 쮸티12-1호 | 2026-07-28 | 【신규】phone-docs: sunbul-dev/alttul-dev/yakjeong-dev.html (3개) / job-income: 4dae-insured-dev·4dae-uninsured-dev·business-dev·college-dev·daily-worker-dev·delivery-dev·etc-dev·freelancer-dev·job-seeker-dev·military-pro-dev·military-dev·unemployed-dev.html (12개) / 각 = PRD 복사 + DEV 배너 + menu-dev.js / 【수정】submissions/index-dev.html SEC-07·SEC-10 링크 -dev.html 연결 |
 | **T-108** | WT-121 | W-108 | `b37d348` | **테스트 완료(DONE)** | **[소통거리 제출 가이드] 등·초본 → 초본 텍스트 수정** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/submissions/index.html`, `tip/submissions/index-dev.html` / SEC-14 섹션제목(📋 등·초본→초본) + 소제목(등·초본 제출하는 방법→초본 제출하는 방법) + ③항목(등본과 초본 각각→초본을) |
@@ -599,6 +603,8 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-039 | P0 | T-039 | **테스트 완료(DONE)** `0ee40b0` | **[홈 페이지] index-dev.html gift-box 서핑 이미지 교체** | `index-dev.html`, `PLAN_2026-07_홈페이지_7월전환_기획서.md` | gift-box 이미지: `summer-jul-001.jpg` → `Palm-Surf_Jul-Loan.png` (269번 줄) / 기획서 v0.4 반영 / 커밋 `0ee40b0` ✅ WT-049 | 2026-07-01 | 쮸티12-1호 |
 | W-042 | P0 | T-030~T-039 (PRD) | **검증완료** `815964b` → main `cf89006` |
 | W-043 | P0 | T-039 (자산) | **검증완료** `84b62f4` → main `cf89006` |
+| W-112 | P1 | T-112 | **대기** | **[대출 가능성 검사기 리디자인] Phase B — 데이터 보정** | `tip/loan-checker/app.js`, `month-config.js`, `index.html` | 기획안 §8 B-1~B-7 / Phase A 승인 후 착수. B-5는 CEO 포인트_요약_20260701 원본 대조 필요 | 2026-07-28 | 쮸티12-1호 |
+| W-111 | P1 | T-111 | **대기** | **[대출 가능성 검사기 리디자인] Phase A — 톤·비주얼 개편** | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html`, `app.js` | 기획안_tip_loan-checker_리디자인_v1_20260728.md §2·5·6·7 전면 적용 / STEP 0(파일삭제금지) → STEP 1(styles) → STEP 2(상단재구성) → STEP 3(카피전면교체 5.1~5.6·§5.7주의3건) → STEP 4(index-dev 동일) | 2026-07-28 | 쮸티12-1호 |
 | W-110 | P1 | T-110 | **대기** | **[소통거리 제출 가이드] SEC-12·SEC-13 섹션 타이틀 서브라인 추가** | `tip/submissions/index.html`, `tip/submissions/index-dev.html` | 현재 타이틀이 짧아 괄호 설명 추가 시 두 줄로 넘침 → 서브라인 분리(A안) 적용 / SEC-12 👯 절친·SEC-13 🧑‍🧑‍🧒 부모님 h3 각각 span 서브라인 추가 | 2026-07-28 | 쮸티12-1호 |
 | W-109 | P1 | T-109 | **대기** | **[소통거리 제출 가이드] phone-docs·job-income 서브페이지 DEV 버전 15개 신규 생성** | phone-docs: sunbul-dev/alttul-dev/yakjeong-dev.html(신규 3개) / job-income: *-dev.html(신규 12개) / submissions/index-dev.html(수정) | 현재 phone-docs·job-income 서브페이지 DEV 버전 없음 / 각 PRD 파일 복사 + DEV 배너 + menu-dev.js 교체 / submissions/index-dev.html SEC-07·10 링크 -dev.html 연결 | 2026-07-28 | 쮸티12-1호 |
 | W-108 | P1 | T-108 | **대기** | **[소통거리 제출 가이드] SEC-14 등·초본 → 초본 텍스트 수정** | `tip/submissions/index.html`, `tip/submissions/index-dev.html` | ①📋 등·초본 h3 제목 → 📋 초본 ②등·초본 제출하는 방법 소제목 → 초본 제출하는 방법 ③주민등록표 등본과 초본 각각 발급합니다. → 주민등록표 초본을 발급합니다. (2개 파일 동일 적용) | 2026-07-28 | 쮸티12-1호 |
