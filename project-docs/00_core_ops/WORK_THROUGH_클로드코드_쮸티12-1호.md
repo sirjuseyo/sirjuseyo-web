@@ -6,6 +6,30 @@
 
 ---
 
+## WT-122 · T-109 / W-109 [소통거리 제출 가이드] phone-docs·job-income DEV 버전 15개 신규 생성
+
+| 항목 | 내용 |
+|---|---|
+| 회차 | 1회차 |
+| 작성일시 | 2026-07-28 |
+| 작성자 | 쮸티12-1호 |
+| T-ID | T-109 |
+| 로컬 커밋 | `7a60f06` |
+| 상태 | 진행중 — 사장님 테스트 대기 |
+
+[배경]
+소통거리는 이렇게 제출해 주세요 페이지(submissions)에서 phone-docs·job-income 서브페이지들의
+DEV 버전이 존재하지 않아 DEV 환경에서 검증 불가.
+
+[처방 — 7a60f06]
+① phone-docs/sunbul-dev.html, alttul-dev.html, yakjeong-dev.html 신규 생성 (PRD 복사 + DEV 배너 + menu-dev.js)
+② job-income 12개 *-dev.html 신규 생성 (동일 방식)
+③ submissions/index-dev.html SEC-07·SEC-10 링크 15개 → -dev.html 버전 연결
+
+[검증 대기] 사장님 브라우저 테스트 대기 중
+
+---
+
 ## WT-121 · T-108 [소통거리 제출 가이드] SEC-14 등·초본 → 초본 텍스트 수정
 
 | 항목 | 내용 |
