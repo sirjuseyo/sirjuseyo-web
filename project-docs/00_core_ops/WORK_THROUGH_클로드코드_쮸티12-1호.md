@@ -6,6 +6,23 @@
 
 ---
 
+## WT-124 · T-111 / W-111 [대출 가능성 검사기] Phase A 톤·비주얼 개편
+
+**작업일시:** 2026-07-29
+**상태:** 진행중(In-Progress)
+**로컬 커밋:** `c49caec` T-111 Phase A: loan-checker 말투 정제 + 장식 이모지 제거
+
+### 변경 내역
+
+| # | 회차 | 파일 | 변경 내용 |
+|---|---|---|---|
+| 1 | 1회차 | `tip/loan-checker/styles.css` | `:root` 핑크 변수 제거·섹션배경 단일화, `.title-bar` 화이트, `.tone-note` 화이트, `#liveClock` 연보라 보더, `.waiting-info-box` #F7F2FF, `.primary-button` 텍스트 버튼 스타일 |
+| 2 | 1회차 | `tip/loan-checker/index.html` | 배너5장→`.title-bar` 텍스트 블록, `.tone-note` 존댓말 안내문 교체, ①~⑦ 섹션 이모지 제거, 라벨·placeholder 말투 정제, 소통거리·크레딧·포인트 가이드 정제, 결과패널 이모지 제거, CTA 이미지→텍스트 버튼, 스크립트 섹션 이모지·반말 제거 |
+| 3 | 1회차 | `tip/loan-checker/app.js` | `LOAN_CONFIG` 상태 키 이모지 제거, `LOAN_OPTION_STATUS_TABLE` 오타(`블랙찬스 티캣`→`블랙찬스 티켓 사용`) 수정, `addSelectOption` 상태 이모지 제거, `benefitTitle` ✨→🌟, `santaApply/appApply` 체크 value 변경, 이중⚠️ 단일화, `까지❗️`→`까지`, `🟰🛢️➕` 이모지 제거 |
+| 4 | 1회차 | `tip/loan-checker/index-dev.html` | index.html과 동일 변경 + DEV 배너 유지 + `menu-dev.js` 유지 + CTA href DEV 경로 변환 유지 |
+
+---
+
 ## WT-123 · T-110 / W-110 [소통거리 제출 가이드] SEC-12·SEC-13 타이틀 서브라인 추가
 
 | 항목 | 내용 |
