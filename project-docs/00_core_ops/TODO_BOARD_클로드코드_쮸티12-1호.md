@@ -217,6 +217,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | T-ID | 작업 타이틀 | 로컬커밋 | 원격푸시 | DEV 빌드 | PRD 코드배포 | PRD 빌드 | PRD 운영배포 | PRD 스토어배포 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | T-ID | 작업 설명 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 담당자 | 연-월-일 시:분 | 메모 |
+| **T-110** | [소통거리 제출 가이드] SEC-12·SEC-13 타이틀 서브라인 추가 | - | 대기 | 대기(Pending) | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | index.html·index-dev.html / 👯 절친·🧑‍🧑‍🧒 부모님 h3 서브라인 (대안신용평가 항목 중 사회성 검증 대상) 추가 |
 | **T-109** | [소통거리 제출 가이드] phone-docs·job-income DEV 버전 15개 신규 생성 + index-dev.html 링크 연결 | ✅ `d21c053` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | phone-docs 3개 + job-income 12개 *-dev.html 신규 / DEV 배너+menu-dev.js / index-dev.html SEC-07·10 링크 -dev.html 연결 |
 | **T-108** | [소통거리 제출 가이드] 등·초본 → 초본 텍스트 수정 | ✅ `b37d348` | - | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | tip/submissions/index.html·index-dev.html SEC-14 / 섹션제목·소제목·③항목 "등본+초본"→"초본"만 |
 | **T-107** | [소통거리 제출 가이드] tip/submissions 이동 + 꿀정보 06번 + 나노크레딧 10~50 CTA | ✅ `9f450d9` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | nanocredit/submissions→tip/submissions, index-dev.html 신규, tip/index×2 06번, nanocredit 4개 CTA / [회차수정] submissions 17개 back-btn·CSS 완전 제거 `9f450d9` |
@@ -499,6 +500,7 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
+| **T-110** | - | W-110 | - | **대기(Pending)** | **[소통거리 제출 가이드] SEC-12·SEC-13 섹션 타이틀 서브라인 추가** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/submissions/index.html`, `index-dev.html` / 👯 절친 소통내역·🧑‍🧑‍🧒 부모님 소통내역 h3에 서브라인(대안신용평가 항목 중 사회성 검증 대상) 추가 (A안: display:block 14px #555) |
 | **T-109** | WT-122 | W-109 | `d21c053` | **테스트 완료(DONE)** | **[소통거리 제출 가이드] phone-docs·job-income 서브페이지 DEV 버전 15개 신규 생성 + index-dev.html 링크 연결** | 쮸티12-1호 | 2026-07-28 | 【신규】phone-docs: sunbul-dev/alttul-dev/yakjeong-dev.html (3개) / job-income: 4dae-insured-dev·4dae-uninsured-dev·business-dev·college-dev·daily-worker-dev·delivery-dev·etc-dev·freelancer-dev·job-seeker-dev·military-pro-dev·military-dev·unemployed-dev.html (12개) / 각 = PRD 복사 + DEV 배너 + menu-dev.js / 【수정】submissions/index-dev.html SEC-07·SEC-10 링크 -dev.html 연결 |
 | **T-108** | WT-121 | W-108 | `b37d348` | **테스트 완료(DONE)** | **[소통거리 제출 가이드] 등·초본 → 초본 텍스트 수정** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/submissions/index.html`, `tip/submissions/index-dev.html` / SEC-14 섹션제목(📋 등·초본→초본) + 소제목(등·초본 제출하는 방법→초본 제출하는 방법) + ③항목(등본과 초본 각각→초본을) |
 | **T-107** | WT-120 | W-107 | `9f450d9` | **테스트 완료(DONE)** | **[소통거리 제출 가이드] nanocredit/submissions → tip/submissions 이동 + 꿀정보 06번 항목 + 나노크레딧 10~50 CTA 삽입** | 쮸티12-1호 | 2026-07-28 | 【파일】`tip/submissions/`(이동+표준UI 16개), `tip/submissions/index-dev.html`(신규), `tip/index.html·index-dev.html`(06번 항목), `nanocredit/10·20·30·50/index.html`(CTA) / [회차수정] `d5322c9`→`9f450d9` submissions 17개 back-btn/CSS 완전 제거 |
@@ -597,6 +599,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-039 | P0 | T-039 | **테스트 완료(DONE)** `0ee40b0` | **[홈 페이지] index-dev.html gift-box 서핑 이미지 교체** | `index-dev.html`, `PLAN_2026-07_홈페이지_7월전환_기획서.md` | gift-box 이미지: `summer-jul-001.jpg` → `Palm-Surf_Jul-Loan.png` (269번 줄) / 기획서 v0.4 반영 / 커밋 `0ee40b0` ✅ WT-049 | 2026-07-01 | 쮸티12-1호 |
 | W-042 | P0 | T-030~T-039 (PRD) | **검증완료** `815964b` → main `cf89006` |
 | W-043 | P0 | T-039 (자산) | **검증완료** `84b62f4` → main `cf89006` |
+| W-110 | P1 | T-110 | **대기** | **[소통거리 제출 가이드] SEC-12·SEC-13 섹션 타이틀 서브라인 추가** | `tip/submissions/index.html`, `tip/submissions/index-dev.html` | 현재 타이틀이 짧아 괄호 설명 추가 시 두 줄로 넘침 → 서브라인 분리(A안) 적용 / SEC-12 👯 절친·SEC-13 🧑‍🧑‍🧒 부모님 h3 각각 span 서브라인 추가 | 2026-07-28 | 쮸티12-1호 |
 | W-109 | P1 | T-109 | **대기** | **[소통거리 제출 가이드] phone-docs·job-income 서브페이지 DEV 버전 15개 신규 생성** | phone-docs: sunbul-dev/alttul-dev/yakjeong-dev.html(신규 3개) / job-income: *-dev.html(신규 12개) / submissions/index-dev.html(수정) | 현재 phone-docs·job-income 서브페이지 DEV 버전 없음 / 각 PRD 파일 복사 + DEV 배너 + menu-dev.js 교체 / submissions/index-dev.html SEC-07·10 링크 -dev.html 연결 | 2026-07-28 | 쮸티12-1호 |
 | W-108 | P1 | T-108 | **대기** | **[소통거리 제출 가이드] SEC-14 등·초본 → 초본 텍스트 수정** | `tip/submissions/index.html`, `tip/submissions/index-dev.html` | ①📋 등·초본 h3 제목 → 📋 초본 ②등·초본 제출하는 방법 소제목 → 초본 제출하는 방법 ③주민등록표 등본과 초본 각각 발급합니다. → 주민등록표 초본을 발급합니다. (2개 파일 동일 적용) | 2026-07-28 | 쮸티12-1호 |
 | W-107 | P1 | - | **대기** | **[nanocredit/submissions] 소통거리 제출 가이드 — 꿀정보 2Depth 이동 + 나노크레딧 금액 페이지 CTA 이중 접근 경로 구성** | `nanocredit/submissions/` → `tip/submissions/` 이동, `tip/index.html`, `tip/index-dev.html`, `nanocredit/10~50/index.html` 4개 | 꿀정보 메인 6번째 항목(메인 접근) + 나노크레딧 10/20/30/50만 상세 페이지 CTA(보조 접근) 이중 경로 구성 / 표준 UI(menu.js·legal-shared.js·DEV 배너) 통합 필요 | 2026-07-28 | 쮸티12-1호 |
