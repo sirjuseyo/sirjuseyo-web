@@ -6,6 +6,40 @@
 
 ---
 
+## WT-128 · T-116 / W-116 [공지사항] 공지사항 안내 페이지 신규 생성
+
+**작업일시:** 2026-07-30
+**상태:** ✅ 테스트 완료(DONE) — 2026-07-30
+**로컬 커밋 (코드):** `43b70e2`
+**로컬 커밋 (문서):** DONE 커밋 예정
+
+### 변경 내역
+
+| # | 파일 | 변경 내용 |
+|---|---|---|
+| 1 | `notice/index.html` (신규) | 공지사항 안내 PRD / 아이콘 📢 / "지금은 앱에서 확인해 주세요." / 앱 경로 안내 + Play Store 버튼 / 웹 이전 예정 안내 / data-breadcrumb="공지사항" (`43b70e2`) |
+| 2 | `notice/index-dev.html` (신규) | PRD 동일 + DEV 배너 + menu-dev.js (`43b70e2`) |
+
+---
+
+## WT-127 · T-115 / W-115 [한도 상향] 한도 상향 Coming Soon 페이지 신규 생성
+
+**작업일시:** 2026-07-30
+**상태:** ✅ 테스트 완료(DONE) — 2026-07-30
+**로컬 커밋 (코드):** `43b70e2`
+**로컬 커밋 (문서):** DONE 커밋 예정
+
+### 변경 내역
+
+| # | 파일 | 변경 내용 |
+|---|---|---|
+| 1 | `tip/credit-limit/index.html` (신규) | 한도 상향 Coming Soon PRD / ✨ 곧 공개 예정 배지 / 예고 카드(미션·산정·사례) / 앱 공지 알림 안내 / data-breadcrumb="꿀정보,/tip/\|한도 상향" (`43b70e2`) |
+| 2 | `tip/credit-limit/index-dev.html` (신규) | PRD 동일 + DEV 배너 + menu-dev.js / data-back="/tip/index-dev.html" (`43b70e2`) |
+| 3 | `tip/index.html` | 03번 항목 href `#` → `/tip/credit-limit/` 연결 (`43b70e2`) |
+| 4 | `tip/index-dev.html` | 03번 항목 href `#` → `/tip/credit-limit/index-dev.html` 연결 (`43b70e2`) |
+
+---
+
 ## WT-126 · T-114 / W-114 [브레드크럼] 전체 페이지 브레드크럼 추가 (menu.js·menu-dev.js + 71개 HTML)
 
 **작업일시:** 2026-07-30
