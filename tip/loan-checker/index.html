@@ -250,9 +250,7 @@
         <div class="field">
           <label for="santaApply" id="santaApplyLabel">써주세요. 대출을 신청하셨나요?</label>
           <select id="santaApply" name="santaApply">
-            <option disabled selected>
-              https://www.sirjuseyo.com/monthly-loan/2026-07/index.html
-            </option>
+            <option disabled selected>신청 링크를 확인하세요</option>
             <option value="네, 신청했습니다.">네, 신청했습니다.</option>
             <option value="아니요, 아직 신청하지 않았습니다.">
               아니요, 아직 신청하지 않았습니다.
@@ -608,6 +606,9 @@
       // 대출 상품명
       var el = document.getElementById('loanProductName');
       if (el) el.textContent = cfg.loan.name;
+      // santaApply placeholder URL
+      var sa = document.getElementById('santaApply');
+      if (sa) sa.options[0].text = 'https://www.sirjuseyo.com' + cfg.detailUrl + 'index.html';
       // santaApply 라벨
       var lbl = document.getElementById('santaApplyLabel');
       if (lbl) lbl.textContent = cfg.loan.name + '을 신청하셨나요?';
