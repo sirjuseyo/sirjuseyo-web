@@ -25,6 +25,7 @@
 | 7 | 3회차 | `tip/loan-checker/index.html`, `index-dev.html` | 회차 수정 — santaApply placeholder PRD·DEV 모두 https://www.sirjuseyo.com/monthly-loan/2026-07/index.html 통일 / 크레딧 미션 select: 아직 적립→적립 전·현재 적립 진행 중→적립 중·미션 완료→적립 완료했습니다. / 소통거리 select: 아직 제출 전→제출 전·자료 업로드 중→제출 중 (`2c64f0f`) |
 | 8 | 4회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 영역 구분 강화 — .concept-image(연보라 160px placeholder, "🏖️ 7월 썸머 베케이션 대출 이미지 준비 중") 신규 / .clock-label(시계 위 맥락 레이블) 신규 / .section-divider(본문 구분선) 신규 / .tone-note 왼쪽 보더 4px accent 강화 (`13ba21c`) |
 | 9 | 5회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 시계 박스화·문장 재구성·divider 정렬 — .page-intro 박스화 / .clock-sentence 신규("대출을 희망하는 지금 시간은 [chip] 입니다.") / clock-label 시계 아래로 이동 / section-divider grid-column:1/-1 + form 첫 번째 자식으로 이동 (`1064e32`) |
+| 10 | 6회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 박스 너비 통일 — page-intro·tone-note를 form 밖 → form 첫 번째 자식으로 이동 / .page-intro·.tone-note에 grid-column:1/-1 추가 / panel·section-divider와 동일 container로 너비 완전 일치 (`2498399`) |
 
 ---
 
