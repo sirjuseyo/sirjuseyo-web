@@ -53,7 +53,13 @@
     '.sjy-item-arrow{margin-left:auto;color:#380097;font-size:1.3rem;font-weight:300}' +
 
     /* body 상단 여백 */
-    'body.sjy-ready{padding-top:52px}';
+    'body.sjy-ready{padding-top:52px}' +
+
+    /* breadcrumb */
+    '#sjy-breadcrumb{padding:8px 20px;background:#fff;border-bottom:1px solid #EBEBEB;font-size:.78rem;max-width:480px;margin:0 auto}' +
+    '#sjy-breadcrumb a{color:#888;text-decoration:none}' +
+    '.sjy-bc-sep{margin:0 4px;color:#bbb}' +
+    '.sjy-bc-current{color:#380097;font-weight:600}';
 
   var itemsHTML = ITEMS.map(function (i) {
     return '<a class="sjy-item" href="' + i.href + '">' +
@@ -107,6 +113,39 @@
           location.href = backUrl;
         }
       });
+    }
+
+    var bcStr = document.body.getAttribute('data-breadcrumb');
+    if (bcStr) {
+      var bcEl = document.createElement('nav');
+      bcEl.id = 'sjy-breadcrumb';
+      bcEl.setAttribute('aria-label', '현재 위치');
+      var parts = bcStr.split('|');
+      var bcHtml = '<a href="/index-dev.html">홈</a>';
+      parts.forEach(function(part) {
+        bcHtml += '<span class="sjy-bc-sep">›</span>';
+        var segs = part.split(',');
+        if (segs.length === 2) {
+          bcHtml += '<a href="' + segs[1] + '">' + segs[0] + '</a>';
+        } else {
+          bcHtml += '<span class="sjy-bc-current">' + segs[0] + '</span>';
+        }
+      });
+      bcEl.innerHTML = bcHtml;
+
+      var devBanner = null;
+      var bodyChildren = document.body.children;
+      for (var k = 0; k < bodyChildren.length; k++) {
+        if (bodyChildren[k] !== wrap && bodyChildren[k].style && bodyChildren[k].style.position === 'sticky') {
+          devBanner = bodyChildren[k];
+          break;
+        }
+      }
+      if (devBanner) {
+        devBanner.insertAdjacentElement('afterend', bcEl);
+      } else {
+        wrap.insertAdjacentElement('afterend', bcEl);
+      }
     }
 
     var btn      = document.getElementById('sjy-nav-btn');
