@@ -116,6 +116,7 @@ body {
   background: #fff;
   box-shadow: 0 2px 8px rgba(56, 0, 151, 0.06);
   text-align: center;
+  grid-column: 1 / -1;
 }
 
 /* ── 컨셉 이미지 placeholder ── */
@@ -128,6 +129,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  grid-column: 1 / -1;
 }
 
 .concept-image-text {
