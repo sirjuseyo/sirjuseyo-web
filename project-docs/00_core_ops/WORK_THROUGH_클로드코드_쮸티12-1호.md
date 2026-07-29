@@ -9,24 +9,26 @@
 ## WT-124 · T-111 / W-111 [대출 가능성 검사기] Phase A 톤·비주얼 개편
 
 **작업일시:** 2026-07-29
-**상태:** 진행중(In-Progress)
-**로컬 커밋:** `c49caec` T-111 Phase A: loan-checker 말투 정제 + 장식 이모지 제거
+**상태:** ✅ 테스트 완료(DONE) — 2026-07-29
+**로컬 커밋 (코드):** `c49caec` → `e0e4565` → `2c64f0f` → `13ba21c` → `1064e32` → `2498399` → `2d5e3f2` (최종)
+**로컬 커밋 (기획서):** `0fb0153`
+**로컬 커밋 (문서):** `16a35f7` → `8b2a320` → `c1867d6` → `202a27b` → `b196f8c` → `aa92031` → `44be2a8`
 
 ### 변경 내역
 
 | # | 회차 | 파일 | 변경 내용 |
 |---|---|---|---|
-| 1 | 1회차 | `tip/loan-checker/styles.css` | `:root` 핑크 변수 제거·섹션배경 단일화, `.title-bar` 화이트, `.tone-note` 화이트, `#liveClock` 연보라 보더, `.waiting-info-box` #F7F2FF, `.primary-button` 텍스트 버튼 스타일 |
-| 2 | 1회차 | `tip/loan-checker/index.html` | 배너5장→`.title-bar` 텍스트 블록, `.tone-note` 존댓말 안내문 교체, ①~⑦ 섹션 이모지 제거, 라벨·placeholder 말투 정제, 소통거리·크레딧·포인트 가이드 정제, 결과패널 이모지 제거, CTA 이미지→텍스트 버튼, 스크립트 섹션 이모지·반말 제거 |
-| 3 | 1회차 | `tip/loan-checker/app.js` | `LOAN_CONFIG` 상태 키 이모지 제거, `LOAN_OPTION_STATUS_TABLE` 오타(`블랙찬스 티캣`→`블랙찬스 티켓 사용`) 수정, `addSelectOption` 상태 이모지 제거, `benefitTitle` ✨→🌟, `santaApply/appApply` 체크 value 변경, 이중⚠️ 단일화, `까지❗️`→`까지`, `🟰🛢️➕` 이모지 제거 |
-| 4 | 1회차 | `tip/loan-checker/index-dev.html` | index.html과 동일 변경 + DEV 배너 유지 + `menu-dev.js` 유지 + CTA href DEV 경로 변환 유지 |
-| 5 | 문서수정 | `project-docs/120_plan/기획안_tip_loan-checker_리디자인_v1_20260728.md` | v1.4 업데이트: 작업 핵심 재정의(톤&매너만·뼈대·콘텐츠·값 유지·이미지 제거), Phase B 전체 취소 확정, §12 신설, 8월 썸머 베케이션 대출 Ⅱ 별도 작업 계획 기록 |
+| 1 | 1회차 | `tip/loan-checker/styles.css` | `:root` 핑크 변수 제거·섹션배경 단일화, `.title-bar` 화이트, `.tone-note` 화이트, `#liveClock` 연보라 보더, `.waiting-info-box` #F7F2FF, `.primary-button` 텍스트 버튼 스타일 (`c49caec`) |
+| 2 | 1회차 | `tip/loan-checker/index.html` | 배너5장→`.title-bar` 텍스트 블록, `.tone-note` 존댓말 안내문 교체, ①~⑦ 섹션 이모지 제거, 라벨·placeholder 말투 정제, 소통거리·크레딧·포인트 가이드 정제, 결과패널 이모지 제거, CTA 이미지→텍스트 버튼, 스크립트 섹션 이모지·반말 제거 (`c49caec`) |
+| 3 | 1회차 | `tip/loan-checker/app.js` | `LOAN_CONFIG` 상태 키 이모지 제거, `LOAN_OPTION_STATUS_TABLE` 오타(`블랙찬스 티캣`→`블랙찬스 티켓 사용`) 수정, `addSelectOption` 상태 이모지 제거, `benefitTitle` ✨→🌟, `santaApply/appApply` 체크 value 변경, 이중⚠️ 단일화, `까지❗️`→`까지`, `🟰🛢️➕` 이모지 제거 (`c49caec`) |
+| 4 | 1회차 | `tip/loan-checker/index-dev.html` | index.html과 동일 변경 + DEV 배너 유지 + `menu-dev.js` 유지 + CTA href DEV 경로 변환 유지 (`c49caec`) |
+| 5 | 문서수정 | `project-docs/120_plan/기획안_tip_loan-checker_리디자인_v1_20260728.md` | v1.4 업데이트: 작업 핵심 재정의(톤&매너만·뼈대·콘텐츠·값 유지·이미지 제거), Phase B 전체 취소 확정, §12 신설, 8월 썸머 베케이션 대출 Ⅱ 별도 작업 계획 기록 (`0fb0153`) |
 | 6 | 2회차 | `tip/loan-checker/index.html`, `index-dev.html`, `app.js` | 회차 수정 — 목적 안내 박스 첫 줄·단락 문구 변경 / 대출 옵션 select 이모지 추가(⏳⚡🎫🎁) / 옵션 가이드 순서·문구 변경(웨이팅→롸잇나우→블찬→이벤트) / 이력/상태 가이드 14개 항목 (이력)/(상태) 표기 + 설명 개정 / 이벤트 가이드 6월→7월·워터밤 설명 변경 / 월별 신청 placeholder URL PRD·DEV 각각 변경 / 크레딧 미션 select 3개 장난식→정제 / 소통거리 select 3개 장난식→정제 / 소통거리 가이드 제목 변경 / app.js 반말 placeholder 6개 경어·communicationStatus "디 엔드"→"제출 완료" / 인라인 스크립트 eventGuideName PRD·DEV 공통 변경 (`e0e4565`) |
 | 7 | 3회차 | `tip/loan-checker/index.html`, `index-dev.html` | 회차 수정 — santaApply placeholder PRD·DEV 모두 https://www.sirjuseyo.com/monthly-loan/2026-07/index.html 통일 / 크레딧 미션 select: 아직 적립→적립 전·현재 적립 진행 중→적립 중·미션 완료→적립 완료했습니다. / 소통거리 select: 아직 제출 전→제출 전·자료 업로드 중→제출 중 (`2c64f0f`) |
 | 8 | 4회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 영역 구분 강화 — .concept-image(연보라 160px placeholder, "🏖️ 7월 썸머 베케이션 대출 이미지 준비 중") 신규 / .clock-label(시계 위 맥락 레이블) 신규 / .section-divider(본문 구분선) 신규 / .tone-note 왼쪽 보더 4px accent 강화 (`13ba21c`) |
-| 9 | 5회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 시계 박스화·문장 재구성·divider 정렬 — .page-intro 박스화 / .clock-sentence 신규("대출을 희망하는 지금 시간은 [chip] 입니다.") / clock-label 시계 아래로 이동 / section-divider grid-column:1/-1 + form 첫 번째 자식으로 이동 (`1064e32`) |
+| 9 | 5회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 시계 박스화·문장 재구성·divider 정렬 — .page-intro 박스화 / .clock-sentence 신규("대출을 희망하는 지금 시간은" / "[chip] 입니다." 2줄) / clock-label 시계 아래로 이동 / section-divider grid-column:1/-1 + form 첫 번째 자식으로 이동 (`1064e32`) |
 | 10 | 6회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 박스 너비 통일 — page-intro·tone-note를 form 밖 → form 첫 번째 자식으로 이동 / .page-intro·.tone-note에 grid-column:1/-1 추가 / panel·section-divider와 동일 container로 너비 완전 일치 (`2498399`) |
-| 11 | 7회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 전체 박스 너비 통일 완성 — title-bar·concept-image도 form 첫 번째 자식으로 이동 / .title-bar·.concept-image에 grid-column:1/-1 추가 / 시계 2줄 명시 분리("대출을 희망하는 지금 시간은" / "[chip] 입니다.") / clock-label 텍스트 변경("웨이팅 대출 옵션은 신청 시기에 따라 조건이 달라집니다.") (`2d5e3f2`) |
+| 11 | 7회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 전체 박스 너비 통일 완성 — title-bar·concept-image도 form 첫 번째 자식으로 이동 / .title-bar·.concept-image에 grid-column:1/-1 추가 / 시계 2줄 명시 분리 / clock-label 텍스트 "웨이팅 대출 옵션은 신청 시기에 따라 조건이 달라집니다." 변경 (`2d5e3f2`) |
 
 ---
 
