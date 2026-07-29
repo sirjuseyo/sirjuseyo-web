@@ -20,6 +20,7 @@
 | 2 | 1회차 | `tip/loan-checker/index.html` | 배너5장→`.title-bar` 텍스트 블록, `.tone-note` 존댓말 안내문 교체, ①~⑦ 섹션 이모지 제거, 라벨·placeholder 말투 정제, 소통거리·크레딧·포인트 가이드 정제, 결과패널 이모지 제거, CTA 이미지→텍스트 버튼, 스크립트 섹션 이모지·반말 제거 |
 | 3 | 1회차 | `tip/loan-checker/app.js` | `LOAN_CONFIG` 상태 키 이모지 제거, `LOAN_OPTION_STATUS_TABLE` 오타(`블랙찬스 티캣`→`블랙찬스 티켓 사용`) 수정, `addSelectOption` 상태 이모지 제거, `benefitTitle` ✨→🌟, `santaApply/appApply` 체크 value 변경, 이중⚠️ 단일화, `까지❗️`→`까지`, `🟰🛢️➕` 이모지 제거 |
 | 4 | 1회차 | `tip/loan-checker/index-dev.html` | index.html과 동일 변경 + DEV 배너 유지 + `menu-dev.js` 유지 + CTA href DEV 경로 변환 유지 |
+| 5 | 문서수정 | `project-docs/120_plan/기획안_tip_loan-checker_리디자인_v1_20260728.md` | v1.4 업데이트: 작업 핵심 재정의(톤&매너만·뼈대·콘텐츠·값 유지·이미지 제거), Phase B 전체 취소 확정, §12 신설, 8월 썸머 베케이션 대출 Ⅱ 별도 작업 계획 기록 |
 
 ---
 
