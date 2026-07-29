@@ -21,6 +21,7 @@
 | 3 | 1회차 | `tip/loan-checker/app.js` | `LOAN_CONFIG` 상태 키 이모지 제거, `LOAN_OPTION_STATUS_TABLE` 오타(`블랙찬스 티캣`→`블랙찬스 티켓 사용`) 수정, `addSelectOption` 상태 이모지 제거, `benefitTitle` ✨→🌟, `santaApply/appApply` 체크 value 변경, 이중⚠️ 단일화, `까지❗️`→`까지`, `🟰🛢️➕` 이모지 제거 |
 | 4 | 1회차 | `tip/loan-checker/index-dev.html` | index.html과 동일 변경 + DEV 배너 유지 + `menu-dev.js` 유지 + CTA href DEV 경로 변환 유지 |
 | 5 | 문서수정 | `project-docs/120_plan/기획안_tip_loan-checker_리디자인_v1_20260728.md` | v1.4 업데이트: 작업 핵심 재정의(톤&매너만·뼈대·콘텐츠·값 유지·이미지 제거), Phase B 전체 취소 확정, §12 신설, 8월 썸머 베케이션 대출 Ⅱ 별도 작업 계획 기록 |
+| 6 | 2회차 | `tip/loan-checker/index.html`, `index-dev.html`, `app.js` | 회차 수정 — 목적 안내 박스 첫 줄·단락 문구 변경 / 대출 옵션 select 이모지 추가(⏳⚡🎫🎁) / 옵션 가이드 순서·문구 변경(웨이팅→롸잇나우→블찬→이벤트) / 이력/상태 가이드 14개 항목 (이력)/(상태) 표기 + 설명 개정 / 이벤트 가이드 6월→7월·워터밤 설명 변경 / 월별 신청 placeholder URL PRD·DEV 각각 변경 / 크레딧 미션 select 3개 장난식→정제 / 소통거리 select 3개 장난식→정제 / 소통거리 가이드 제목 변경 / app.js 반말 placeholder 6개 경어·communicationStatus "디 엔드"→"제출 완료" / 인라인 스크립트 eventGuideName PRD·DEV 공통 변경 (`e0e4565`) |
 
 ---
 
