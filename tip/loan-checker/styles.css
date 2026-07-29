@@ -100,6 +100,28 @@ body {
   text-align: center;
 }
 
+/* ── 컨셉 이미지 placeholder ── */
+.concept-image {
+  margin: 0 0 20px;
+  border-radius: 16px;
+  background: #F0EBFF;
+  border: 1.5px dashed #C9A6E8;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.concept-image-text {
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.6;
+  line-height: 1.8;
+}
+
 .title-bar-text {
   margin: 0;
   font-size: clamp(1.3rem, 2.4vw, 1.85rem);
@@ -111,11 +133,28 @@ body {
   position: relative;
 }
 
+/* ── 시계 맥락 레이블 ── */
+.clock-label {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* ── 본문 영역 구분선 ── */
+.section-divider {
+  border: none;
+  border-top: 2px solid var(--border);
+  margin: 0 0 20px;
+}
+
 /* ── 안내 박스 ── */
 .tone-note {
   margin: 0 0 26px;
-  padding: 14px 18px;
+  padding: 14px 18px 14px 20px;
   border: 1.5px solid var(--border);
+  border-left: 4px solid var(--accent);
   border-radius: 16px;
   background: #fff;
   box-shadow: 0 2px 8px rgba(56, 0, 151, 0.05);
