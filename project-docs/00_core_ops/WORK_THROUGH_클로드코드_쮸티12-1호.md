@@ -10,7 +10,7 @@
 
 **작업일시:** 2026-07-30
 **상태:** 진행중(In-Progress)
-**로컬 커밋:** `8ea9913` → `ff41b3f` → `83ac678` (회차수정)
+**로컬 커밋:** `8ea9913` → `ff41b3f` → `83ac678` → `56614f4` → `7fdde17` (회차수정)
 
 ### 변경 내역
 
@@ -22,6 +22,8 @@
 | 4 | 2회차 | `index-dev.html` | p.sub 동일 변경 (`ff41b3f`) |
 | 5 | 3회차 | `index.html` | h1 `min-height:120px` 제거 → 면책 문구 h1 바로 아래 붙어 앱 레이아웃 동일하게 정렬 (`83ac678`) |
 | 6 | 3회차 | `index-dev.html` | h1 `min-height:120px` + `padding-top:20px` 제거 → 동일 (`83ac678`) |
+| 7 | 4회차 | `index.html`, `index-dev.html` | hero `padding-bottom` 0→120px — 야자수(gift-box top:-110px) 겹침 해소 (`56614f4`) |
+| 8 | 5회차 | `index.html`, `index-dev.html` | hero `padding-bottom` 120px→80px — 텍스트·야자수 간극 축소 (`7fdde17`) |
 
 ---
 
