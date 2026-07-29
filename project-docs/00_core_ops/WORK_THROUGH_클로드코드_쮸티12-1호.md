@@ -6,6 +6,43 @@
 
 ---
 
+## WT-126 · T-114 / W-114 [브레드크럼] 전체 페이지 브레드크럼 추가 (menu.js·menu-dev.js + 71개 HTML)
+
+**작업일시:** 2026-07-30
+**상태:** 🔄 진행중(In-Progress)
+**로컬 커밋 (코드):** `79e511c`
+**로컬 커밋 (문서):** 진행 중
+
+### 작업 개요
+
+| 항목 | 내용 |
+|---|---|
+| 구현방식 | B안 — `<body data-breadcrumb="...">` 속성 → menu.js 파싱·생성 |
+| 브레드크럼 형식 | `홈 › 꿀정보 › 원리포 상품의 메리트` (홈 자동 추가) |
+| PRD 삽입 위치 | GNB(`#sjy-nav-bar`) → 브레드크럼(`#sjy-breadcrumb`) → 콘텐츠 |
+| DEV 삽입 위치 | GNB → DEV 배너(sticky) → 브레드크럼 → 콘텐츠 |
+| 적용 범위 | 홈(index.html·index-dev.html)·개인정보(privacy/) 제외 전체 |
+| 적용 파일 수 | PRD 37개 + DEV 34개 = 71개 HTML |
+
+### 변경 내역
+
+| # | 파일 | 변경 내용 |
+|---|---|---|
+| 1 | `js/menu.js` | CSS 변수에 `#sjy-breadcrumb` 스타일 4줄 추가 / inject() 함수에 data-breadcrumb 파싱·`<nav id="sjy-breadcrumb">` 생성·삽입 로직 추가 (`79e511c`) |
+| 2 | `js/menu-dev.js` | menu.js와 동일 CSS + JS / 홈 링크 `/index-dev.html` / DEV 배너 감지(body 직접 자식 중 position:sticky) → 그 다음에 삽입 (`79e511c`) |
+| 3 | 71개 HTML 파일 | 각 `<body>` 태그에 `data-breadcrumb` 속성 추가 / 홈·개인정보 제외 / PRD는 상위 URL에 `/` 경로, DEV는 `/index-dev.html` 포함 경로 (`79e511c`) |
+
+### data-breadcrumb 형식 예시
+
+| 파일 | data-breadcrumb 값 |
+|---|---|
+| `sirjuseyo/index.html` | `써주세요.가 뭔데?` |
+| `tip/index.html` | `꿀정보` |
+| `tip/loan-checker/index.html` | `꿀정보,/tip/\|대출 가능성 검사기` |
+| `tip/submissions/job-income/4dae-insured.html` | `꿀정보,/tip/\|제출 서류,/tip/submissions/\|4대보험 O 직장인` |
+
+---
+
 ## WT-125 · T-113 / W-113 [홈 화면] 히어로 영역 문구 변경 (앱 동일)
 
 **작업일시:** 2026-07-30
