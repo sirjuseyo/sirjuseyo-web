@@ -217,7 +217,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | T-ID | 작업 타이틀 | 로컬커밋 | 원격푸시 | DEV 빌드 | PRD 코드배포 | PRD 빌드 | PRD 운영배포 | PRD 스토어배포 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | T-ID | 작업 설명 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 담당자 | 연-월-일 시:분 | 메모 |
-| **T-114** | [브레드크럼] 전체 페이지 브레드크럼 추가 (menu.js·menu-dev.js + 71개 HTML) | ✅ `79e511c` | 대기 | 진행중 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-30 | js/menu.js·menu-dev.js 브레드크럼 로직+CSS / 71개 HTML data-breadcrumb 속성 / PRD+DEV / 홈·개인정보 제외 |
+| **T-114** | [브레드크럼] 전체 페이지 브레드크럼 추가 (menu.js·menu-dev.js + 71개 HTML) | ✅ `79e511c` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-30 | js/menu.js·menu-dev.js 브레드크럼 로직+CSS / 71개 HTML data-breadcrumb 속성 / PRD+DEV / 홈·개인정보 제외 |
 | **T-113** | [홈 화면] 히어로 영역 문구 변경 (앱 동일) | ✅ `7fdde17` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-30 | index.html·index-dev.html h1+p.sub 앱 동일 변경 / 5회차: h1문구·면책문구·색상·min-height·padding-bottom 조정 |
 | **T-112** | [대출 가능성 검사기] Phase B 데이터 보정 (B-1~B-7) | - | 대기 | 대기(Pending) | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-28 | Phase A 승인 후 착수 / B-5 CEO 원본 제공 필요 |
 | **T-111** | [대출 가능성 검사기] Phase A 톤·비주얼 개편 | ✅ `2d5e3f2` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-29 | styles.css·index.html·index-dev.html·app.js / 기획안 §2·5·6·7 전면 적용 + 2~7회차 회차수정 완료 |
@@ -504,7 +504,7 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
-| **T-114** | WT-126 | W-114 | - | **진행중(In-Progress)** | **[브레드크럼] 전체 페이지 브레드크럼 추가 (menu.js·menu-dev.js + 71개 HTML)** | 쮸티12-1호 | 2026-07-30 | 【파일】`js/menu.js`, `js/menu-dev.js`, 71개 HTML 파일 / data-breadcrumb 파싱·생성·삽입 로직 + CSS #sjy-breadcrumb / DEV는 sticky 배너 감지 후 그 다음 삽입 / 홈·개인정보 제외 전체 적용 |
+| **T-114** | WT-126 | W-114 | `79e511c` | **테스트 완료(DONE)** | **[브레드크럼] 전체 페이지 브레드크럼 추가 (menu.js·menu-dev.js + 71개 HTML)** | 쮸티12-1호 | 2026-07-30 | 【파일】`js/menu.js`, `js/menu-dev.js`, 71개 HTML 파일 / data-breadcrumb 파싱·생성·삽입 로직 + CSS #sjy-breadcrumb / DEV는 sticky 배너 감지 후 그 다음 삽입 / 홈·개인정보 제외 전체 적용 |
 | **T-113** | WT-125 | W-113 | `7fdde17` | **테스트 완료(DONE)** | **[홈 화면] 히어로 영역 문구 변경 (앱 동일)** | 쮸티12-1호 | 2026-07-30 | 【파일】`index.html`, `index-dev.html` / h1 "신용 점수가 아니라, 미션과 대안신용으로 봐요." / p.sub 면책 문구 추가·color:var(--cream) 제거 / h1 min-height 제거·hero padding-bottom 80px / 5회차 수정 완료 |
 | **T-112** | - | W-112 | - | **대기(Pending)** | **[대출 가능성 검사기 리디자인] Phase B — 데이터 보정 (B-1~B-7)** | 쮸티12-1호 | 2026-07-28 | 기획안 §8 Phase B / B-1 크미 4,500 일괄·B-2 이벤트 30만 안내·B-3 워터밤 이포 표기·B-4 좌석 할인 매트릭스·B-6 하드코딩1·B-7 하드코딩2 / B-5 포인트_요약_20260701 원본 대조는 CEO 제공 후 진행 / Phase A 승인 후 착수 |
 | **T-111** | - | W-111 | - | **대기(Pending)** | **[대출 가능성 검사기 리디자인] Phase A — 톤·비주얼 개편** | 쮸티12-1호 | 2026-07-28 | 기획안 §2·5·6·7 / styles.css 팔레트·컴포넌트 정비(핑크·그라데이션·섹션배경 제거, 경고블록·텍스트CTA 신설) + index.html 배너→타이틀블록·목적안내박스·라이브시계삭제·카피전면교체(5.1~5.6) + §5.7 주의 3건(value결합·JS주입·오타) + index-dev.html 동일 적용 / 대상: `tip/loan-checker/styles.css·index.html·index-dev.html·app.js` |
@@ -607,7 +607,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-039 | P0 | T-039 | **테스트 완료(DONE)** `0ee40b0` | **[홈 페이지] index-dev.html gift-box 서핑 이미지 교체** | `index-dev.html`, `PLAN_2026-07_홈페이지_7월전환_기획서.md` | gift-box 이미지: `summer-jul-001.jpg` → `Palm-Surf_Jul-Loan.png` (269번 줄) / 기획서 v0.4 반영 / 커밋 `0ee40b0` ✅ WT-049 | 2026-07-01 | 쮸티12-1호 |
 | W-042 | P0 | T-030~T-039 (PRD) | **검증완료** `815964b` → main `cf89006` |
 | W-043 | P0 | T-039 (자산) | **검증완료** `84b62f4` → main `cf89006` |
-| W-114 | P1 | T-114 | **진행중(In-Progress)** | **[브레드크럼] 전체 페이지 브레드크럼 추가 (menu.js·menu-dev.js + 71개 HTML)** | `js/menu.js`, `js/menu-dev.js`, 71개 HTML 파일 | GNB 아래 "홈 › 꿀정보 › 페이지명" 형식 브레드크럼 삽입 / PRD: GNB→브레드크럼→콘텐츠 / DEV: GNB→DEV배너→브레드크럼→콘텐츠 / 구현방식 B안(data-breadcrumb 속성) / 홈·개인정보 제외 전체 적용 | 2026-07-30 | 쮸티12-1호 |
+| W-114 | P1 | T-114 | **테스트 완료(DONE)** `79e511c` | **[브레드크럼] 전체 페이지 브레드크럼 추가 (menu.js·menu-dev.js + 71개 HTML)** | `js/menu.js`, `js/menu-dev.js`, 71개 HTML 파일 | GNB 아래 "홈 › 꿀정보 › 페이지명" 형식 브레드크럼 삽입 / PRD: GNB→브레드크럼→콘텐츠 / DEV: GNB→DEV배너→브레드크럼→콘텐츠 / 구현방식 B안(data-breadcrumb 속성) / 홈·개인정보 제외 전체 적용 | 2026-07-30 | 쮸티12-1호 |
 | W-113 | P1 | T-113 | **테스트 완료(DONE)** `7fdde17` | **[홈 화면] 히어로 영역 문구 앱 동일 변경** | `index.html`, `index-dev.html` | 히어로 메인 카피 "급할 때 빌려쓰는, 나노크레딧" → "신용 점수가 아니라, 미션과 대안신용으로 봐요." + 서브 면책 문구 "미션 수행이 대출 승인을 보장하지 않으며, 심사 결과에 따라 제한될 수 있습니다." 추가 (앱 [이미지 #26] 기준) | 2026-07-30 | 쮸티12-1호 |
 | W-112 | P1 | T-112 | **대기** | **[대출 가능성 검사기 리디자인] Phase B — 데이터 보정** | `tip/loan-checker/app.js`, `month-config.js`, `index.html` | 기획안 §8 B-1~B-7 / Phase A 승인 후 착수. B-5는 CEO 포인트_요약_20260701 원본 대조 필요 | 2026-07-28 | 쮸티12-1호 |
 | W-111 | P1 | T-111 | **대기** | **[대출 가능성 검사기 리디자인] Phase A — 톤·비주얼 개편** | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html`, `app.js` | 기획안_tip_loan-checker_리디자인_v1_20260728.md §2·5·6·7 전면 적용 / STEP 0(파일삭제금지) → STEP 1(styles) → STEP 2(상단재구성) → STEP 3(카피전면교체 5.1~5.6·§5.7주의3건) → STEP 4(index-dev 동일) | 2026-07-28 | 쮸티12-1호 |
