@@ -217,6 +217,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | T-ID | 작업 타이틀 | 로컬커밋 | 원격푸시 | DEV 빌드 | PRD 코드배포 | PRD 빌드 | PRD 운영배포 | PRD 스토어배포 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | T-ID | 작업 설명 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 상태값 | 담당자 | 연-월-일 시:분 | 메모 |
+| **T-118** | [대출 검사기] ⑤신청 정보 URL month-config.js 자동 주입 + CLAUDE.md 매월 체크리스트 추가 | ✅ `5846239` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-30 | tip/loan-checker/index.html·index-dev.html santaApply URL 동적 주입 / CLAUDE.md 매월 대출 전환 체크리스트 3단계 추가 |
 | **T-116** | [공지사항] 공지사항 안내 페이지 신규 생성 | ✅ `43b70e2` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-30 | notice/index.html·index-dev.html 신규 / 앱 공지사항 이용 안내 + Play Store 링크 + 웹 이전 예정 안내 |
 | **T-115** | [한도 상향] 한도 상향 Coming Soon 페이지 신규 생성 | ✅ `43b70e2` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-30 | tip/credit-limit/index.html·index-dev.html 신규 / ✨ 곧 공개 예정 배지·예고 카드·앱 알림 안내 / tip/index 03번 href 연결 |
 | **T-114** | [브레드크럼] 전체 페이지 브레드크럼 추가 (menu.js·menu-dev.js + 71개 HTML) | ✅ `79e511c` | 대기 | ✅ 테스트완료 | - (웹) | - (웹) | 대기 | - (웹) | 쮸티12-1호 | 2026-07-30 | js/menu.js·menu-dev.js 브레드크럼 로직+CSS / 71개 HTML data-breadcrumb 속성 / PRD+DEV / 홈·개인정보 제외 |
@@ -506,6 +507,7 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
+| **T-118** | WT-129 | W-118 | `5846239` | **테스트 완료(DONE)** | **[대출 검사기] ⑤신청 정보 URL month-config.js 자동 주입 + CLAUDE.md 매월 체크리스트 추가** | 쮸티12-1호 | 2026-07-30 | 【파일】`tip/loan-checker/index.html·index-dev.html` / santaApply options[0].text cfg.detailUrl 동적 주입 / `CLAUDE.md` 매월 대출 전환 3단계 체크리스트 추가 (커밋 없이 파일 직접 저장) |
 | **T-116** | WT-128 | W-116 | `43b70e2` | **테스트 완료(DONE)** | **[공지사항] 공지사항 안내 페이지 신규 생성** | 쮸티12-1호 | 2026-07-30 | 【파일】`notice/index.html`, `notice/index-dev.html` / 앱 공지사항 이용 안내 + Play Store 링크 + 웹 이전 예정 안내 / data-breadcrumb="공지사항" |
 | **T-115** | WT-127 | W-115 | `43b70e2` | **테스트 완료(DONE)** | **[한도 상향] 한도 상향 Coming Soon 페이지 신규 생성** | 쮸티12-1호 | 2026-07-30 | 【파일】`tip/credit-limit/index.html`, `index-dev.html`, `tip/index.html·index-dev.html` / ✨ 곧 공개 예정 배지·예고 카드·앱 공지 알림 / 03번 href 연결 / data-breadcrumb 적용 |
 | **T-114** | WT-126 | W-114 | `79e511c` | **테스트 완료(DONE)** | **[브레드크럼] 전체 페이지 브레드크럼 추가 (menu.js·menu-dev.js + 71개 HTML)** | 쮸티12-1호 | 2026-07-30 | 【파일】`js/menu.js`, `js/menu-dev.js`, 71개 HTML 파일 / data-breadcrumb 파싱·생성·삽입 로직 + CSS #sjy-breadcrumb / DEV는 sticky 배너 감지 후 그 다음 삽입 / 홈·개인정보 제외 전체 적용 |
@@ -611,6 +613,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-039 | P0 | T-039 | **테스트 완료(DONE)** `0ee40b0` | **[홈 페이지] index-dev.html gift-box 서핑 이미지 교체** | `index-dev.html`, `PLAN_2026-07_홈페이지_7월전환_기획서.md` | gift-box 이미지: `summer-jul-001.jpg` → `Palm-Surf_Jul-Loan.png` (269번 줄) / 기획서 v0.4 반영 / 커밋 `0ee40b0` ✅ WT-049 | 2026-07-01 | 쮸티12-1호 |
 | W-042 | P0 | T-030~T-039 (PRD) | **검증완료** `815964b` → main `cf89006` |
 | W-043 | P0 | T-039 (자산) | **검증완료** `84b62f4` → main `cf89006` |
+| W-118 | P1 | T-118 | **테스트 완료(DONE)** `5846239` | **[대출 검사기] ⑤신청 정보 URL 자동 주입 + CLAUDE.md 매월 체크리스트** | `tip/loan-checker/index.html·index-dev.html`, `CLAUDE.md` | santaApply URL 하드코딩 → cfg.detailUrl 동적 생성 / CLAUDE.md 매월 대출 전환 3단계 체크리스트 기록 | 2026-07-30 | 쮸티12-1호 |
 | W-117 | P1 | - | **대기** | **[전체 사이트] 기본 폰트 사이즈 스케일업 — 본문 13~14px → 16px 수준 상향** | 전체 HTML 파일 + `js/menu.js`, `js/menu-dev.js`, `js/legal-shared.js` | 현재 본문 .85~.88rem(13~14px) / 카드 내 작은 텍스트 .75~.82rem(12~13px) — 전체적으로 너무 작음 / 목표: 기본 본문 16px, 섹션 설명 16~18px / 2단계 폰트 계층으로 단순화 / px 고정값(tip/index 13px 등) + rem 기반 전체 상향 | 2026-07-30 | 쮸티12-1호 |
 | W-116 | P1 | T-116 | **테스트 완료(DONE)** `43b70e2` | **[공지사항] 공지사항 안내 페이지 신규 생성** | `notice/index.html`, `notice/index-dev.html` | 앱 공지사항 이용 안내 + Play Store 링크 / 웹 이전 예정 안내 / data-breadcrumb="공지사항" | 2026-07-30 | 쮸티12-1호 |
 | W-115 | P1 | T-115 | **테스트 완료(DONE)** `43b70e2` | **[한도 상향] 한도 상향 Coming Soon 페이지 신규 생성** | `tip/credit-limit/index.html`, `index-dev.html`, `tip/index.html·index-dev.html` | ✨ 곧 공개 예정 배지·예고 카드·앱 공지 알림 / tip/index 03번 href 연결 / data-breadcrumb 적용 | 2026-07-30 | 쮸티12-1호 |

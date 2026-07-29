@@ -6,6 +6,27 @@
 
 ---
 
+## WT-129 · T-118 / W-118 [대출 검사기] ⑤신청 정보 URL 자동 주입 + CLAUDE.md 매월 체크리스트 추가
+
+**작업일시:** 2026-07-30
+**상태:** ✅ 테스트 완료(DONE) — 2026-07-30
+**로컬 커밋 (코드):** `5846239`
+**로컬 커밋 (문서):** DONE 커밋 예정
+
+### 작업 배경
+
+대출 가능성 검사기 ⑤ 신청 정보 섹션의 santaApply select placeholder URL이 `2026-07` 하드코딩 상태. month-config.js의 자동 감지 로직이 이미 있었으나 이 부분만 누락. 함께 CLAUDE.md에 매월 전환 시 잊지 않도록 체크리스트 기록.
+
+### 변경 내역
+
+| # | 파일 | 변경 내용 |
+|---|---|---|
+| 1 | `tip/loan-checker/index.html` | santaApply options[0] placeholder: 하드코딩 URL → `신청 링크를 확인하세요` / JS 동적 주입 추가: `sa.options[0].text = 'https://www.sirjuseyo.com' + cfg.detailUrl + 'index.html'` (`5846239`) |
+| 2 | `tip/loan-checker/index-dev.html` | 동일 적용 (`5846239`) |
+| 3 | `CLAUDE.md` | 📅 매월 대출 전환 체크리스트 3단계 추가 — git 커밋 없이 파일 직접 저장 (Claude 세션 시작 시 자동 로드) |
+
+---
+
 ## WT-128 · T-116 / W-116 [공지사항] 공지사항 안내 페이지 신규 생성
 
 **작업일시:** 2026-07-30
