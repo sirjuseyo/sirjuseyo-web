@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>놓치면 후회하는 원리포 혜택 | 써주세요</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.min.css"/>
+<style>
+:root{
+  --ink:#1B1622;
+  --ink-2:#6A6376;
+  --purple:#6C2BD9;
+  --paper:#F5F3EA;
+  --card:#FFFFFF;
+  --line:#E9E4D7;
+  --lime:#E4F566;
+  --lime-soft:#F4FACC;
+  --pale:#FAF6BE;
+  --yellow:#FFD23F;
+  --orange:#FFAE2E;
+  --tag:#DCEFC0;
+  --vip:#25E05B;
+  --red:#DE3B41;
+  --green-ink:#3E7A24;
+  --r:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  background:var(--paper); color:var(--ink); line-height:1.6;
+  -webkit-font-smoothing:antialiased; word-break:keep-all;
+}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--purple);outline-offset:2px;border-radius:6px}
+
+/* ---------- 프레임 ---------- */
+.page{max-width:480px;margin:0 auto;background:#FDFCF8;min-height:100vh;box-shadow:0 0 48px rgba(27,22,34,.08)}
+
+/* ---------- 히어로 ---------- */
+.hero{padding:20px 20px 8px}
+.chip{display:inline-block;font-size:13px;font-weight:700;color:var(--purple);background:#F1EAFE;border-radius:999px;padding:4px 12px;margin-bottom:12px}
+.hero h1{font-size:33px;line-height:1.22;font-weight:900;letter-spacing:-.03em}
+.hero p{margin-top:12px;font-size:16px;color:var(--ink-2)}
+.hero p b{color:var(--ink)}
+
+/* ---------- 공통 섹션 ---------- */
+.sec{padding:26px 20px 4px}
+.eyebrow{font-size:13px;font-weight:800;color:var(--purple);letter-spacing:.12em;margin-bottom:6px}
+.sec h2{font-size:24px;font-weight:900;letter-spacing:-.02em;line-height:1.3}
+.sec .lead{margin-top:6px;font-size:16px;color:var(--ink-2)}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);padding:20px;margin-top:14px}
+.sec > .btn{margin-top:12px}
+.mk{background:linear-gradient(transparent 60%,var(--lime) 60%);font-weight:800}
+
+/* 정의 리스트 */
+.def{display:flex;flex-direction:column;gap:14px}
+.def li{list-style:none;display:flex;gap:12px;font-size:16px}
+.def .n{flex:0 0 26px;height:26px;border-radius:8px;background:var(--ink);color:var(--lime);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+
+/* ---------- 메리트 01 : 빵원 ---------- */
+.zero-wrap{text-align:center;padding:6px 0 2px}
+.zero-wrap .cond{font-size:16px;font-weight:700}
+.zero{font-size:84px;font-weight:900;letter-spacing:-.04em;line-height:1.05;margin:2px 0 4px}
+.zero .mk{background:linear-gradient(transparent 62%,var(--lime) 62%)}
+.zero-wrap .sub{font-size:15px;color:var(--ink-2)}
+.amts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.amts span{font-size:14px;font-weight:700;border:1.5px solid var(--ink);border-radius:999px;padding:4px 12px;background:#fff}
+
+/* 표 공통 */
+table{width:100%;border-collapse:collapse;font-size:16px;margin-top:4px}
+caption{caption-side:top;text-align:left;font-size:14px;font-weight:800;color:var(--ink-2);padding-bottom:8px}
+th{font-size:14px;font-weight:700;color:var(--ink-2);text-align:left;padding:8px 10px;border-bottom:1.5px solid var(--ink)}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+td.num{text-align:right;font-weight:700;white-space:nowrap}
+tr.hl td{background:var(--lime-soft);font-weight:800}
+.tbl-note{margin-top:10px;font-size:14px;color:var(--ink-2)}
+.tbl-note b{color:var(--ink)}
+.tbl-note + .tbl-note{margin-top:6px}
+
+/* ---------- 래더 이미지 ---------- */
+.wonripo-ladder-img{width:100%;border-radius:16px;margin-top:14px;display:block}
+
+/* ---------- 경고 박스 ---------- */
+.warn{margin-top:14px;background:#FBEAEA;border:1.5px solid #EFC9CA;border-radius:14px;padding:14px 16px;font-size:15px}
+.warn b{color:var(--red)}
+
+/* ---------- VIP 이미지 ---------- */
+.wonripo-vip-img{width:100%;border-radius:18px;margin-top:14px;display:block}
+
+/* ---------- VIP 노트 카드 ---------- */
+.vip-note{margin-top:12px}
+.vip-note .gift{font-weight:800}
+.vip-note ul{margin-top:8px;padding-left:0}
+.vip-note li{list-style:none;font-size:16px;padding:6px 0;border-top:1px dashed var(--line)}
+.vip-note li:first-child{border-top:0}
+
+/* ---------- 업데이트 (원금 미션 인하) ---------- */
+.slash{display:flex;align-items:baseline;justify-content:center;gap:14px;padding:8px 0 2px}
+.slash .old{font-size:34px;font-weight:900;color:#B7AFA0;text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:3px}
+.slash .arrow{font-size:20px;color:var(--ink-2)}
+.slash .new{font-size:52px;font-weight:900;letter-spacing:-.03em}
+.slash .new small{font-size:20px;font-weight:800}
+.center{text-align:center}
+
+/* ---------- 유용성 예시 (500P 사다리) ---------- */
+.if-head{text-align:center}
+.if-pill{display:inline-block;background:var(--ink);color:#fff;font-size:14px;font-weight:800;border-radius:999px;padding:4px 16px}
+.if-title{font-size:20px;font-weight:900;margin:10px 0 6px}
+.start-tag{display:inline-block;margin-left:6px;font-size:13px;font-weight:700;color:var(--green-ink);background:var(--tag);border-radius:6px;padding:1px 7px;vertical-align:1px}
+
+/* ---------- 이건 실화 ---------- */
+.story{background:#0B0B0D;border-radius:var(--r);margin-top:14px;padding:30px 20px 26px;text-align:center;overflow:hidden}
+.story .b{display:inline-block;font-weight:900;padding:9px 18px;font-size:21px;letter-spacing:-.02em;line-height:1.3}
+.story .b1{background:#fff;color:var(--ink);transform:rotate(-2deg)}
+.story .b2{background:var(--yellow);color:var(--ink);transform:rotate(1.5deg);margin-top:12px}
+.story .yes{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#2F6BFF;color:#fff;font-weight:900;font-size:15px;transform:rotate(10deg);margin-top:14px;border:2px dashed #fff}
+.story .cap{color:#8B849C;font-size:14px;margin-top:14px}
+.play{padding-left:0;margin-top:4px}
+.play li{list-style:none;display:flex;align-items:center;gap:11px;padding:11px 0;border-top:1px dashed var(--line);font-size:16px}
+.play li:first-child{border-top:0}
+.play .pn{flex:0 0 26px;height:26px;border-radius:50%;background:var(--ink);color:var(--lime);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.play .res{margin-left:auto;font-weight:800;white-space:nowrap;font-size:15px}
+.play .res.zero{color:var(--green-ink);background:var(--lime-soft);border-radius:8px;padding:3px 10px}
+
+/* ---------- 실화 챌린지 ---------- */
+.duel{position:relative;background:#fff;border:2px solid var(--ink);border-radius:16px;margin-top:14px;padding:24px 20px 22px;box-shadow:6px 6px 0 var(--lime)}
+.duel .stamp{position:absolute;top:16px;right:14px;transform:rotate(8deg);border:2.5px solid var(--red);color:var(--red);font-weight:900;font-size:14px;letter-spacing:.3em;padding:5px 8px 5px 12px;border-radius:6px;opacity:.85}
+.duel h3{font-size:20px;font-weight:900;line-height:1.5;letter-spacing:-.01em;padding-right:70px}
+.terms{margin-top:16px;padding-left:0}
+.terms li{list-style:none;display:flex;gap:12px;padding:11px 0;border-top:1px dashed var(--line);font-size:16px;line-height:1.55}
+.terms li:first-child{border-top:0}
+.terms .k{flex:0 0 40px;font-weight:800;color:var(--purple);font-size:14px;padding-top:1px}
+.btn.call{margin-top:16px;background:var(--ink);color:var(--lime);box-shadow:0 4px 0 #000}
+button.btn{width:100%;border:0;cursor:pointer;font-family:inherit}
+
+/* ---------- 보너스 4종 ---------- */
+.bonus{margin-top:6px;padding-left:0}
+.bonus li{list-style:none;display:flex;gap:10px;align-items:center;font-size:16px;padding:9px 0;border-top:1px dashed var(--line)}
+.bonus li:first-child{border-top:0}
+.bonus .g{flex:0 0 auto;font-size:16px}
+.bonus .clickable{cursor:pointer;color:var(--purple);font-weight:700;display:inline-flex;align-items:center;gap:4px}
+.bonus .clickable::after{content:'›';font-size:18px;font-weight:900;transition:transform .15s}
+.bonus .clickable:hover::after,.bonus .clickable:active::after{transform:translateX(3px)}
+
+/* ---------- 팝업 공통 ---------- */
+.pop,.mpop,.tpop{position:fixed;inset:0;background:rgba(27,22,34,.55);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.pop.open,.mpop.open,.tpop.open{display:flex}
+.pop-card,.mpop-card,.tpop-card{position:relative;background:#fff;border:2px solid var(--ink);border-radius:20px;box-shadow:6px 6px 0 var(--lime);max-width:420px;width:100%;max-height:86vh;overflow:auto;padding:26px 20px 22px}
+.pop-close,.mpop-close,.tpop-close{position:absolute;top:12px;right:12px;width:32px;height:32px;border:1.5px solid var(--ink);border-radius:50%;background:#fff;font-size:15px;font-weight:800;cursor:pointer;line-height:1}
+
+/* 콜 팝업 */
+.pop-stamp{position:absolute;top:18px;left:16px;transform:rotate(-8deg);border:2.5px solid var(--red);color:var(--red);font-weight:900;font-size:14px;letter-spacing:.25em;padding:4px 6px 4px 10px;border-radius:6px;opacity:.85}
+.pop-card h4{margin-top:36px;font-size:20px;font-weight:900;line-height:1.4;letter-spacing:-.02em;text-align:center}
+.pop-sub{margin-top:10px;font-size:16px;color:var(--ink-2);text-align:center}
+.pop-sub b{color:var(--ink)}
+.pop-info{margin-top:16px;background:#F3EEFE;border:1.5px solid #E2D6FB;border-radius:14px;padding:16px 18px}
+.pop-info ol{padding-left:18px}
+.pop-info li{font-size:16px;padding:3px 0}
+.pop-info b{color:var(--purple)}
+.kakao-row{display:flex;gap:8px;margin-top:16px}
+.kakao-btn{flex:1;display:block;text-align:center;text-decoration:none;background:#FEE500;color:var(--ink);font-size:15px;font-weight:800;border-radius:12px;padding:13px 6px;border:1.5px solid var(--ink)}
+
+/* 사전 미션 팝업 */
+.mpop-card h4{font-size:21px;font-weight:900;line-height:1.4;letter-spacing:-.02em;margin-bottom:14px}
+.mpop-section{margin-top:14px}
+.mpop-label{font-size:15px;font-weight:800;color:var(--purple);margin-bottom:6px}
+.mpop-content{font-size:16px;line-height:1.6}
+.mpop-content strong{color:var(--ink)}
+.mpop-content ul,.mpop-content ol{padding-left:18px;margin-top:4px}
+.mpop-content li{padding:3px 0}
+.mpop-tbl{width:100%;border-collapse:collapse;font-size:15px;margin-top:8px}
+.mpop-tbl th{font-size:14px;font-weight:700;color:var(--ink-2);text-align:left;padding:6px 8px;border-bottom:1.5px solid var(--ink)}
+.mpop-tbl td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.mpop-tbl td.num{text-align:right;font-weight:700}
+.mpop-tbl tr.hl td{background:var(--lime-soft);font-weight:800}
+.sub-warn{margin-top:12px;background:#FBEAEA;border:1.5px solid #EFC9CA;border-radius:10px;padding:10px 12px;font-size:15px}
+.sub-warn b{color:var(--red)}
+
+/* 티켓 팝업 */
+.tpop-card h4{font-size:21px;font-weight:900;line-height:1.4;letter-spacing:-.02em;margin-bottom:14px}
+.tpop-section{margin-top:14px}
+.tpop-label{font-size:15px;font-weight:800;color:var(--purple);margin-bottom:6px}
+.tpop-content{font-size:16px;line-height:1.6}
+.tpop-content strong{color:var(--ink)}
+.tpop-content ul,.tpop-content ol{padding-left:18px;margin-top:4px}
+.tpop-content li{padding:3px 0}
+.tpop-content li ul{margin-top:2px}
+
+/* ---------- CTA ---------- */
+.cta{padding:30px 20px 26px;text-align:center}
+.cta h2{font-size:23px;font-weight:900;margin-bottom:16px}
+.btn{display:block;width:100%;text-align:center;text-decoration:none;font-weight:800;font-size:16px;border-radius:14px;padding:16px}
+.btn.primary{background:var(--purple);color:#fff;box-shadow:0 4px 0 #4C1D95}
+.btn.ghost{background:#fff;border:1.5px solid var(--ink);color:var(--ink);font-size:16px;padding:13px}
+
+@media (max-width:360px){
+  .hero h1{font-size:29px}
+  .zero{font-size:70px}
+  .story .b{font-size:18px}
+}
+</style>
+</head>
+<body data-back="/tip/" data-breadcrumb="꿀정보,/tip/|원리포 상품의 메리트">
+
+<main class="page">
+
+  <!-- ================= 페이지 제목 ================= -->
+  <section class="hero">
+    <span class="chip">꿀정보</span>
+    <h1>놓치면 후회하는<br/><span class="mk">원리포 혜택</span></h1>
+    <p>원금도 이자도, 현금 대신 <b>포인트</b>로 갚는 나노크레딧 전용 상품이에요.<br/>잘 쓰면 현금 상환분이 <b>빵원</b>이 됩니다.</p>
+  </section>
+
+  <!-- ================= 원리포 3줄 정의 ================= -->
+  <section class="sec">
+    <h2>원리포 상품, 처음이신가요?</h2>
+    <div class="card">
+      <ul class="def">
+        <li><span class="n">1</span><span>상환 원금은 <b>현금 + 포인트를 섞어서</b>, 이자는 <b>포인트로</b> 갚아요.</span></li>
+        <li><span class="n">2</span><span>포인트 상환은 원금의 <b>최소 10% ~ 최대 65%</b>까지 가능해요.</span></li>
+        <li><span class="n">3</span><span>상한선 <b>65%를 채우면?</b> 남은 원금은 써주세요.가 <b>선물 포인트로 대신 상환</b>해 드려요.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 메리트 01 : 빵원 ================= -->
+  <section class="sec">
+    <div class="eyebrow">메리트 01</div>
+    <h2>현금 상환분, 빵원.</h2>
+    <div class="card">
+      <div class="zero-wrap">
+        <p class="cond">원금의 65%를 포인트로 상환하면</p>
+        <p class="zero">현금 <span class="mk">0원</span></p>
+        <p class="sub">남은 원금 35%는 선물 포인트로 써주세요.가 대신 갚아 드립니다.</p>
+        <div class="amts"><span>10만 원</span><span>20만 원</span><span>30만 원</span><span>50만 원</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <table>
+        <caption>예시 · 원리포 상품 50만 원 × 3개월</caption>
+        <tbody>
+          <tr><td>나노크레딧(소액신용대출)</td><td class="num">500,000원</td></tr>
+          <tr><td>이자</td><td class="num">10,000원</td></tr>
+          <tr><td>포인트 상환 — 원금</td><td class="num">325,000P</td></tr>
+          <tr><td>포인트 상환 — 이자</td><td class="num">10,000P</td></tr>
+          <tr><td>선물 지원 포인트</td><td class="num">175,000P</td></tr>
+          <tr class="hl"><td>고객님 현금 상환 금액</td><td class="num">빵원</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================= 메리트 02 : 선물 포인트 ================= -->
+  <section class="sec">
+    <div class="eyebrow">메리트 02</div>
+    <h2>적립만 해도, 선물 포인트가 따라와요.</h2>
+    <p class="lead">적립한 포인트 + 선물 포인트를 합쳐서 상환에 사용합니다.</p>
+    <div class="card">
+      <table>
+        <thead><tr><th>원금 중 포인트 상환 비율</th><th style="text-align:right">선물 지원</th></tr></thead>
+        <tbody>
+          <tr><td>10% ~ 20% 미만</td><td class="num">적립 포인트의 +15%</td></tr>
+          <tr><td>20% ~ 30% 미만</td><td class="num">+20%</td></tr>
+          <tr><td>30% ~ 40% 미만</td><td class="num">+25%</td></tr>
+          <tr><td>40% ~ 50% 미만</td><td class="num">+35%</td></tr>
+          <tr><td>50% ~ 65% 미만</td><td class="num">+45%</td></tr>
+          <tr class="hl"><td>65% 도달</td><td class="num">남은 원금 전액 → 빵원</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <a class="btn ghost" href="https://docs.google.com/spreadsheets/d/1gFp-g350ev9rsIF5q4x1dHE3O51Y6XFrupqrCNaTr4Q/edit?usp=sharing">🧮 원리포 계산기 열어보기</a>
+  </section>
+
+  <!-- ================= 메리트 03 : 한도 래더 ================= -->
+  <section class="sec">
+    <div class="eyebrow">메리트 03</div>
+    <h2>딱 1번씩만 정상 상환하면,<br/>한도 고속 상향.</h2>
+    <img class="wonripo-ladder-img" src="/tip/wonripo/assets/wonripo-credit-ladder.png" alt="한도 10만→20만→30만→50만 원 고속 상향 래더"/>
+    <div class="warn">⚠️ 단, <b>1번이라도 연체가 발생할 경우</b> 한도는 10만 원으로 하향됩니다.</div>
+  </section>
+
+  <!-- ================= 메리트 04 : VIP ================= -->
+  <section class="sec">
+    <div class="eyebrow">메리트 04</div>
+    <h2>최고 한도 50만 원 = VIP.</h2>
+    <img class="wonripo-vip-img" src="/tip/wonripo/assets/wonripo-vip-banner.png" alt="VIP 도전 배너 — 도전 안 하고 뭐해? 추가대출 최대 100만 원"/>
+    <div class="card vip-note">
+      <p>써주세요.에서 <b>50만 원 한도</b>를 이용하는 고객님은 <b>VIP</b>로 불려요.</p>
+      <p class="gift" style="margin-top:10px">🎁 VIP만을 위한 혜택</p>
+      <ul>
+        <li>한 달 대출 예산 규모가 증가하면, VVIP 고객님들을 선정해</li>
+        <li><b>합산 대출 총 70만 원 ~ 최대 100만 원</b>까지 대출할 수 있는 기회를 드려요.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 업데이트 : 원금 미션 인하 ================= -->
+  <section class="sec">
+    <div class="eyebrow">업데이트</div>
+    <h2>원리포 상품.<br/>진입 장벽도 확 낮췄어요.</h2>
+    <p class="lead">서비스 재개(2025.2.24.) 후, 웨이팅 대출로 신청하면 원금 미션이 인하됩니다. 빨리 신청할수록 인하 폭이 커져요.</p>
+    <div class="card center">
+      <p style="font-size:14px;font-weight:700">원금 미션 (최소 포인트 상환 비율)</p>
+      <div class="slash">
+        <span class="old">10%</span>
+        <span class="arrow">→</span>
+        <span class="new">1%<small>까지</small></span>
+      </div>
+      <p class="tbl-note">웨이팅 대출 <b>Box Seat</b> 기준 (매월 1일 ~ 5일 신청)</p>
+    </div>
+    <div class="card">
+      <table>
+        <caption>웨이팅 대출 · 좌석별 원금 미션 인하</caption>
+        <thead><tr><th>신청 시기 (매월)</th><th>좌석</th><th style="text-align:right">원금 미션</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>1일 ~ 5일</td><td>🟨 Box Seat (귀빈석)</td><td class="num">10% → 1%</td></tr>
+          <tr><td>6일 ~ 10일</td><td>🟪 VIP Seat (1열)</td><td class="num">10% → 2%</td></tr>
+          <tr><td>11일 ~ 15일</td><td>🟩 Royal Seat (2열)</td><td class="num">10% → 4%</td></tr>
+          <tr><td>16일 ~ 20일</td><td>🟦 Standard Seat (3열)</td><td class="num">10% → 6%</td></tr>
+          <tr><td>21일 ~ 25일</td><td>⬛️ Original Seat (입석)</td><td class="num">10% → 8%</td></tr>
+        </tbody>
+      </table>
+      <p class="tbl-note">이자 미션이 있는 상품의 이자 미션은 <b>1%</b> 그대로예요.</p>
+    </div>
+    <a class="btn ghost js-current-month" href="/monthly-loan/2026-07/">이번 달 대출 옵션 자세히 보기 →</a>
+  </section>
+
+  <!-- ================= 얼마나 유용하냐면요 ================= -->
+  <section class="sec">
+    <div class="eyebrow">얼마나 유용하냐면요</div>
+    <h2>하루 500포인트의 힘.</h2>
+    <div class="card">
+      <div class="if-head">
+        <span class="if-pill">만약</span>
+        <p class="if-title">30만 원을 3개월 동안 빌리면</p>
+      </div>
+      <table>
+        <thead><tr><th>하루 적립</th><th style="text-align:right">내가 내는 현금</th></tr></thead>
+        <tbody>
+          <tr><td>500P<span class="start-tag">시작은 여기</span></td><td class="num">248,250원</td></tr>
+          <tr><td>1,000P</td><td class="num">187,500원</td></tr>
+          <tr><td>2,000P</td><td class="num">39,000원</td></tr>
+          <tr class="hl"><td>2,200P</td><td class="num">빵원</td></tr>
+        </tbody>
+      </table>
+      <p class="tbl-note">원금 미션 기준(선물 포인트 포함) · 이자 미션 1%와 크레딧 미션은 별도예요.</p>
+    </div>
+  </section>
+
+  <!-- ================= 이건 실화 ================= -->
+  <section class="sec">
+    <div class="eyebrow">이건 실화</div>
+    <h2>110만 원 빌리고, 50만 원만 갚는다?</h2>
+    <p class="lead">적립은 솔직히 빡셉니다. 하지만 전부 팩트입니다.</p>
+    <div class="story">
+      <span class="b b1">총 110만 원 빌리고</span><br/>
+      <span class="b b2">50만 원만 갚아도 되겠습니까?</span><br/>
+      <span class="yes">YES</span>
+      <p class="cap">10만 → 20만 → 30만 → 50만, 원리포 풀포인트 플레이</p>
+    </div>
+    <div class="card">
+      <ul class="play">
+        <li><span class="pn">1</span><span><b>10만 원</b> 빌리고 원금 65% 포인트 상환</span><span class="res zero">현금 빵원</span></li>
+        <li><span class="pn">2</span><span><b>20만 원</b> 빌리고 원금 65% 포인트 상환</span><span class="res zero">현금 빵원</span></li>
+        <li><span class="pn">3</span><span><b>30만 원</b> 빌리고 원금 65% 포인트 상환</span><span class="res zero">현금 빵원</span></li>
+        <li><span class="pn">4</span><span><b>50만 원</b> 빌리고 현금으로 상환</span><span class="res">500,000원</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <table>
+        <caption>정산해 보면</caption>
+        <tbody>
+          <tr><td>총 수령액</td><td class="num">1,100,000원</td></tr>
+          <tr><td>내가 적립한 포인트</td><td class="num">390,000P</td></tr>
+          <tr><td>써주세요. 선물 포인트</td><td class="num">210,000P</td></tr>
+          <tr class="hl"><td>현금 상환 합계</td><td class="num">500,000원</td></tr>
+        </tbody>
+      </table>
+      <p class="tbl-note">각 단계에서 원금의 65%를 연속으로 포인트 상환했을 때 기준이에요. 이자는 포인트로 별도 상환합니다.</p>
+    </div>
+  </section>
+
+  <!-- ================= 실화 챌린지 ================= -->
+  <section class="sec">
+    <div class="eyebrow">실화 챌린지</div>
+    <h2>원리포 65% 챌린지 콜?</h2>
+    <div class="duel">
+      <span class="stamp">도전장</span>
+      <h3><span class="mk">원리포 65%</span>,<br/>받으시겠습니까?</h3>
+      <ul class="terms">
+        <li><span class="k">금액</span><span><b>10, 20, 30, 50만 원 — 전 금액 개방.</b> 10만 원(원리현), 20만 원(이포), 30·50만 원(원리포) 모든 금액(상환 방식)을 '원리포 65%'로 사용 가능합니다.</span></li>
+        <li><span class="k">기간</span><span><b>3개월.</b> 좋은 혜택을 제공해 드리기 위해서예요.</span></li>
+        <li><span class="k">상환</span><span><b>원리금균등 + 원금 65% 와 이자 1% 포인트 상환.</b> 65%에 닿는 순간 현금 상환은 빵원.</span></li>
+      </ul>
+      <button type="button" class="btn call" id="btnCall">콜! 도전 받는다</button>
+    </div>
+  </section>
+
+  <!-- ================= 보너스 4종 ================= -->
+  <section class="sec">
+    <div class="eyebrow">보너스</div>
+    <h2>원리포 65% 챌린지를 성공하면,<br/>4가지가 더 옵니다.</h2>
+    <div class="card">
+      <ul class="bonus">
+        <li><span class="g">🎁</span><span>다음 단계 금액으로 <b>즉시 한도 상향</b></span></li>
+        <li><span class="g">🎁</span><span><b>빠른 입금</b> 혜택</span></li>
+        <li><span class="g">🎁</span><span class="clickable" id="btnTicket"><b>추가 대출 티켓</b> 5매</span></li>
+        <li><span class="g">🎁</span><span><b>크레딧 미션 PASS 티켓</b> 2매</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 신청 전 체크 ================= -->
+  <section class="sec">
+    <div class="eyebrow">신청 전 체크</div>
+    <h2>원리포 65% 챌린지 사전 미션</h2>
+    <div class="card">
+      <p style="font-size:14.5px">챌린지 시작 전, <b>1단계(10만 원) 사전 미션 포인트를 1번만 적립</b>하면 돼요. 크레딧미션처럼 차감되는 게 아니라, <b>상환할 때 그대로 사용하는 포인트</b>입니다.</p>
+      <table style="margin-top:12px">
+        <thead><tr><th>항목</th><th style="text-align:right">포인트</th></tr></thead>
+        <tbody>
+          <tr><td>크레딧 미션</td><td class="num">4,500P</td></tr>
+          <tr><td>이자 미션 1%</td><td class="num">1,000P</td></tr>
+          <tr><td>원금 미션 10%</td><td class="num">10,000P</td></tr>
+          <tr><td>포인트 구독</td><td class="num">매일 최소 500P</td></tr>
+          <tr class="hl"><td>합계</td><td class="num">15,500P + 구독</td></tr>
+        </tbody>
+      </table>
+      <p class="tbl-note">원금 미션 10%는 1단계에서만 · 2단계부터는 크레딧 + 이자 + 포인트 구독</p>
+    </div>
+    <button type="button" class="btn ghost" id="btnMission" style="margin-top:12px">사전 미션 자세히 보기</button>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="cta">
+    <h2>이번 달, 원리포로 빌려볼까요?</h2>
+    <a class="btn primary js-current-month" href="/monthly-loan/2026-07/">이달의 대출 신청하러 가기</a>
+  </section>
+
+</main>
+
+<!-- 사전 미션 팝업 -->
+<div class="mpop" id="missionPop" role="dialog" aria-modal="true" aria-labelledby="missionPopTitle">
+  <div class="mpop-card">
+    <button class="mpop-close" id="missionPopClose" aria-label="닫기">✕</button>
+    <h4 id="missionPopTitle">📋 원리포 65% 챌린지 사전 미션</h4>
+
+    <div class="mpop-section">
+      <div class="mpop-label">📊 단계별 사전 미션</div>
+      <div class="mpop-content">
+        <table class="mpop-tbl">
+          <thead><tr><th>항목</th><th class="num">1단계 (10만)</th><th class="num">2단계 (20만)</th><th class="num">3단계 (30만)</th><th class="num">4단계 (50만)</th></tr></thead>
+          <tbody>
+            <tr><td>크레딧 미션</td><td class="num">4,500P</td><td class="num">4,500P</td><td class="num">4,500P</td><td class="num">4,500P</td></tr>
+            <tr><td>이자 미션 1%</td><td class="num">1,000P</td><td class="num">2,000P</td><td class="num">3,000P</td><td class="num">5,000P</td></tr>
+            <tr class="hl"><td>원금 미션 10%</td><td class="num"><b>10,000P</b></td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>포인트 구독</td><td class="num">✓</td><td class="num">✓</td><td class="num">✓</td><td class="num">✓</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:8px;font-size:13px;color:var(--ink-2)">원금 미션 10%는 <b>1단계에서 딱 1번만</b>. 2단계부터는 크레딧 + 이자 + 포인트 구독만 진행합니다.</p>
+      </div>
+    </div>
+
+    <div class="mpop-section">
+      <div class="mpop-label">✌️ 포인트 구독이란</div>
+      <div class="mpop-content">
+        <ul>
+          <li><strong>시작일:</strong> 대출 입금일</li>
+          <li><strong>종료일:</strong> 상환일까지</li>
+          <li>써주세요. 앱 > <strong>포인트 적립소</strong> 방문</li>
+          <li>매일 <strong>최소 500포인트</strong> 이상 적립</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mpop-section">
+      <div class="mpop-label">☢️ 구독 깨짐 방지</div>
+      <div class="mpop-content">
+        <ul>
+          <li>미적립 시 <strong>보호막 3회</strong> 제공</li>
+          <li><strong>미적립 페널티:</strong> 미적립 다음 날은 보상으로 무조건 <strong>최소 1,000포인트</strong>를 적립해야 합니다.</li>
+          <li><strong>구독 깨짐:</strong> 다음 날 최소 1,000포인트를 적립하지 않으면 구독은 깨집니다.</li>
+        </ul>
+        <div class="sub-warn">⚠️ 구독이 깨지면 <b>원리포 65% 챌린지는 종료</b>되며, 해당 단계는 일반 대출로 상환 후 종료됩니다.</div>
+      </div>
+    </div>
+
+    <div class="mpop-section">
+      <div class="mpop-label">❗ 구독 시그널</div>
+      <div class="mpop-content">
+        매일 적립 후 써주세요. 톡에 <strong>"적립 날짜, 구독 완료"</strong> + 스크린샷 첨부로 톡을 남겨 주세요.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 티켓 팝업 -->
+<div class="tpop" id="ticketPop" role="dialog" aria-modal="true" aria-labelledby="ticketPopTitle">
+  <div class="tpop-card">
+    <button class="tpop-close" id="ticketPopClose" aria-label="닫기">✕</button>
+    <h4 id="ticketPopTitle">🎟️ 추가 대출 티켓 사용 방법</h4>
+
+    <div class="tpop-section">
+      <div class="tpop-label">🎫 티켓이란</div>
+      <div class="tpop-content">
+        상환 중인 대출 외에 <strong>새로운 대출 1건을 추가로</strong> 받을 수 있는 티켓이에요.<br/>
+        원리포 65% 챌린지를 성공하면 <strong>5매</strong>를 받습니다.
+      </div>
+    </div>
+
+    <div class="tpop-section">
+      <div class="tpop-label">⏰ 사용 가능 시점</div>
+      <div class="tpop-content">
+        챌린지 성공 후 <strong>6개월 이내</strong>
+      </div>
+    </div>
+
+    <div class="tpop-section">
+      <div class="tpop-label">📝 사용 방법</div>
+      <div class="tpop-content">
+        <ol>
+          <li>무조건 <strong>현재 상환 중</strong>이어야 합니다.
+            <ul><li>대출 신청 및 승인 후 사용 가능합니다.</li></ul>
+          </li>
+          <li>추가 대출 티켓 사용은 <strong>써주세요. 톡</strong>으로 문의주세요.</li>
+          <li>이후 기존 대출과 같은 방식으로 진행하는데요. 단,
+            <ul>
+              <li>⚡ <strong>신청 후 바로 심사! 바로 입금!</strong></li>
+              <li>💎 <strong>원리현 상품</strong> — 원금과 이자 전부를 현금으로 상환</li>
+            </ul>
+          </li>
+          <li>계약은 <strong>모두사인</strong>으로 진행</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="tpop-section">
+      <div class="tpop-label">🎫 사용 가능 티켓</div>
+      <div class="tpop-content">
+        <ul>
+          <li>한 번에 <strong>최대 2매</strong> 사용 가능</li>
+          <li>1매 = <strong>10만 원</strong> · 2매 = <strong>20만 원</strong></li>
+          <li>상환 중 일반 대출 금액이 50만 원이라면 추가 대출은 <strong>20만 원까지</strong> 가능</li>
+          <li>남은 티켓은 <strong>모든 대출(일반 대출 + 추가 대출) 상환 후 재대출 + 추가 대출</strong>에 사용</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tpop-section">
+      <div class="tpop-label">🔒 양도</div>
+      <div class="tpop-content">
+        본인 한정 (타인 양도 불가)
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 콜 팝업 -->
+<div class="pop" id="callPop" role="dialog" aria-modal="true" aria-labelledby="callPopTitle">
+  <div class="pop-card">
+    <button class="pop-close" id="callPopClose" aria-label="닫기">✕</button>
+    <span class="pop-stamp">준비 중</span>
+    <h4 id="callPopTitle">우리가 아직 도전 받을<br/>준비가 안 됐습니다 😅</h4>
+    <p class="pop-sub">톡으로 아래 정보를 남겨 주시면,<br/><b>8월 초에 연락드리겠습니다.</b></p>
+    <div class="pop-info">
+      <ol>
+        <li>성함: <b>홍길동</b></li>
+        <li>생년월일 6자리: <b>010101</b></li>
+        <li>휴대폰 번호: <b>010-0000-0000</b></li>
+        <li>도전 상품: <b>원리포 65% 챌린지</b></li>
+        <li>희망 금액: <b>30만 원</b></li>
+      </ol>
+    </div>
+    <div class="kakao-row">
+      <a class="kakao-btn" href="https://pf.kakao.com/_AcXXxl" target="_blank" rel="noopener">👥 카톡 채널 추가하기</a>
+      <a class="kakao-btn" href="https://pf.kakao.com/_AcXXxl/chat" target="_blank" rel="noopener">💬 1:1 채팅방 바로가기</a>
+    </div>
+  </div>
+</div>
+
+<script src="/js/popup.js"></script>
+<script src="/js/menu.js"></script>
+<script>
+(function(){
+  function bindPop(btnId,popId,closeId){
+    var pop=document.getElementById(popId),btn=document.getElementById(btnId),x=document.getElementById(closeId);
+    function open(){pop.classList.add('open');document.body.style.overflow='hidden';}
+    function close(){pop.classList.remove('open');document.body.style.overflow='';}
+    btn.addEventListener('click',open);
+    x.addEventListener('click',close);
+    pop.addEventListener('click',function(e){if(e.target===pop)close();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  }
+  bindPop('btnCall','callPop','callPopClose');
+  bindPop('btnTicket','ticketPop','ticketPopClose');
+  bindPop('btnMission','missionPop','missionPopClose');
+  if(typeof CURRENT_MONTH!=='undefined'){
+    var ls=document.querySelectorAll('.js-current-month');
+    ls.forEach(function(el){el.href='/monthly-loan/'+CURRENT_MONTH+'/';});
+  }
+})();
+</script>
+<script src="/js/legal-shared.js"></script>
+</body>
+</html>
