@@ -6,6 +6,36 @@
 
 ---
 
+## WT-130 · T-119 / W-119 [원리포 혜택] 원리포 상품의 메리트 페이지 신규 생성
+
+### 작업 요약
+
+| 항목 | 내용 |
+|---|---|
+| T-ID | T-119 |
+| W-ID | W-119 |
+| 작업자 | 쮸티12-1호 |
+| 작업일 | 2026-07-30 |
+| 상태 | 진행중(In-Progress) |
+
+### 작업 내용
+
+- **이미지 이동**: `37.png` → `tip/wonripo/assets/wonripo-vip-banner.png` / `38.png` → `tip/wonripo/assets/wonripo-credit-ladder.png`
+- **A. PRD 생성**: `tip/wonripo/index.html` — 목업 v0.15 기반, 메리트01~04 + 업데이트 + 유용성 예시 + 실화 + 챌린지 + 보너스4종 + 사전미션 + CTA / Pretendard 폰트 / 팝업 3종(callPop·ticketPop·missionPop) / CURRENT_MONTH 동적링크(.js-current-month) / 래더 이미지·VIP 배너 이미지 교체
+- **B. DEV 생성**: `tip/wonripo/index-dev.html` — PRD 기반 + DEV 오렌지 배너(sticky top:52px) + menu-dev.js + data-back="/tip/index-dev.html" + DEV breadcrumb 경로
+- **C. href 연결**: `tip/index.html` 02번 `href="#"` → `href="/tip/wonripo/"` / `tip/index-dev.html` 02번 `href="#"` → `href="/tip/wonripo/index-dev.html"`
+
+### 대상 파일
+
+- `tip/wonripo/index.html` (신규)
+- `tip/wonripo/index-dev.html` (신규)
+- `tip/wonripo/assets/wonripo-vip-banner.png` (신규)
+- `tip/wonripo/assets/wonripo-credit-ladder.png` (신규)
+- `tip/index.html` (02번 href 연결)
+- `tip/index-dev.html` (02번 href 연결)
+
+---
+
 ## WT-129 · T-118 / W-118 [대출 검사기] ⑤신청 정보 URL 자동 주입 + CLAUDE.md 매월 체크리스트 추가
 
 **작업일시:** 2026-07-30
