@@ -621,13 +621,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loanHistory.innerHTML = "";
     if (!config) {
-      setSelectPlaceholder(loanHistory, "대출 옵션 선택하고 오기!");
-      setSelectPlaceholder(loanStatus, "대출 옵션과 이력 쌍으로 선택하고 오기!");
+      setSelectPlaceholder(loanHistory, "대출 옵션을 선택하고 오세요.");
+      setSelectPlaceholder(loanStatus, "대출 옵션과 이력 두 가지를 선택하고 오세요.");
       return;
     }
 
     if (option === "웨이팅 대출") {
-      setSelectPlaceholder(loanHistory, "여기서 대출 받은 적 있어?");
+      setSelectPlaceholder(loanHistory, "이력을 선택하세요.");
       addSelectOption(loanHistory, "난 재대출", "난 재대출");
       addSelectOption(loanHistory, "난 처음", "난 처음");
     } else {
@@ -830,7 +830,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function populateLoanStatuses(option, history) {
     if (!LOAN_CONFIG[option]) {
-      setSelectPlaceholder(loanStatus, "대출 옵션과 이력 쌍으로 선택하고 오기!");
+      setSelectPlaceholder(loanStatus, "대출 옵션과 이력 두 가지를 선택하고 오세요.");
       return;
     }
 
@@ -841,15 +841,15 @@ document.addEventListener("DOMContentLoaded", () => {
     loanStatus.innerHTML = "";
     if (option === "웨이팅 대출") {
       if (history === "난 재대출") {
-        setSelectPlaceholder(loanStatus, "깔끔하게 갚았어?");
+        setSelectPlaceholder(loanStatus, "상환 상태를 선택하세요.");
         addSelectOption(loanStatus, "Clean", "Clean");
         addSelectOption(loanStatus, "Non-Clean", "Non-Clean");
       } else if (history === "난 처음") {
-        setSelectPlaceholder(loanStatus, "신청헤 본 적은?");
+        setSelectPlaceholder(loanStatus, "신청 횟수를 선택하세요.");
         addSelectOption(loanStatus, "지금 처음 (One)", "지금 처음 (One)");
         addSelectOption(loanStatus, "몇 번 (Several)", "몇 번 (Several)");
       } else {
-        setSelectPlaceholder(loanStatus, "대출 옵션과 이력 쌍으로 선택하고 오기!");
+        setSelectPlaceholder(loanStatus, "대출 옵션과 이력 두 가지를 선택하고 오세요.");
       }
     } else {
       statusValues.forEach((label, index) => {
@@ -864,7 +864,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!statusValues.length) {
       const emptyOption = document.createElement("option");
       emptyOption.value = "";
-      emptyOption.textContent = "대출 옵션과 이력 쌍으로 선택하고 오기!";
+      emptyOption.textContent = "대출 옵션과 이력 두 가지를 선택하고 오세요.";
       loanStatus.appendChild(emptyOption);
     }
   }
@@ -1423,7 +1423,7 @@ document.addEventListener("DOMContentLoaded", () => {
         waitingSeat?.creditDeadline || "신청 후 48시간 이내";
     }
     if (step4) {
-      const done = communicationStatus.value.includes("디 엔드");
+      const done = communicationStatus.value.includes("제출 완료");
       step4.textContent = formatChecklistLine(
         "⓸ 앱에서 소통거리 미션",
         "완료",

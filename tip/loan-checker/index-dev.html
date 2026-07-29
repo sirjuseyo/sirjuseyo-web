@@ -37,10 +37,10 @@
     </section>
 
     <section class="tone-note" aria-live="polite">
-      <p class="tone-note-title">무작정 신청하지 마세요.</p>
+      <p class="tone-note-title">대출을 받을 수 있는 [써주세요. 앱 &gt; 인기상품은 나노크레딧]은 무작정 신청하지 마세요.</p>
       <p class="tone-note-body">
         이 검사기는 써주세요.의 실제 대출 운영 절차를 그대로 옮긴 시뮬레이터입니다.<br>
-        금액, 기간, 대출 옵션, 신청 시기를 바꿔 가며 충분히 검사해 보시고,<br>
+        금액, 대출 옵션을 바꿔 가며 충분히 검사해 보시고,<br>
         본인에게 맞는 조건을 찾은 뒤 신청하시기 바랍니다.
       </p>
     </section>
@@ -105,10 +105,10 @@
           <label for="loanOption">대출 옵션</label>
           <select id="loanOption" name="loanOption">
             <option disabled selected>대출 옵션을 선택하세요</option>
-            <option value="웨이팅 대출">웨이팅 대출</option>
-            <option value="롸잇나우 대출">롸잇나우 대출</option>
-            <option value="블랙찬스 티켓 사용">블랙찬스 티켓 사용</option>
-            <option value="이벤트 대출">이벤트 대출</option>
+            <option value="웨이팅 대출">⏳ 웨이팅 대출</option>
+            <option value="롸잇나우 대출">⚡ 롸잇나우 대출</option>
+            <option value="블랙찬스 티켓 사용">🎫 블랙찬스 대출</option>
+            <option value="이벤트 대출">🎁 이벤트 대출</option>
           </select>
         </div>
 
@@ -181,26 +181,26 @@
           <h3>대출 옵션이 뭔가요?</h3>
           <ol>
             <li>
-              <strong>블랙찬스 티켓 사용</strong>
-              <span>대접받고 싶다면 (포인트 적립 PASS)</span>
+              <strong>⏳ 웨이팅 대출</strong>
+              <span>적립이 힘들다면 (포인트 적립 🐢널널)</span>
+            </li>
+            <li>
+              <strong>⚡ 롸잇나우 대출</strong>
+              <span>한도 상향이 필요하다면 (포인트 적립 🐶빡셈)</span>
+            </li>
+            <li>
+              <strong>🎫 블랙찬스 대출</strong>
+              <span>대우받고 싶다면 (포인트 적립 할인, 인하, 감면)</span>
               <p class="option-guide-note">
                 * 블랙찬스 티켓을 보유하고 계신 재대출 고객님 전용 상품입니다.
               </p>
             </li>
             <li>
-              <strong>이벤트 대출</strong>
-              <span>소소한 로또를 원한다면,(포인트 적립 배려)</span>
+              <strong>🎁 이벤트 대출</strong>
+              <span>대출을 빠르게 받고 싶다면 (포인트 적립 무난)</span>
               <p class="option-guide-note" id="eventAmountNote">
                 * 10만 원, 20만 원, 30만 원만 선택 가능합니다. (50만 원 제외)
               </p>
-            </li>
-            <li>
-              <strong>롸잇나우 대출</strong>
-              <span>대출이 급하다면 (포인트 적립 빡셈)</span>
-            </li>
-            <li>
-              <strong>웨이팅 대출</strong>
-              <span>적립이 부담스럽다면 (포인트 적립 널널)</span>
             </li>
           </ol>
         </aside>
@@ -219,37 +219,37 @@
           <h3>대출 이력과 상태는 뭔가요?</h3>
           <ul class="option-guide-list">
             <li>
-              <strong>웨이팅 &gt; 재대출</strong> : 이용 경험 있음
+              <strong>웨이팅 &gt; 재대출(이력)</strong> : 이용 경험 있음
               <ul>
-                <li>Clean : 마지막 상환이 정상 상환</li>
-                <li>Non-Clean : 마지막 상환이 연장, 연체 상환</li>
+                <li>Clean(상태) : 마지막 상환이 정상 상환</li>
+                <li>Non-Clean(상태) : 마지막 상환이 연장, 연체 상환</li>
               </ul>
             </li>
             <li>
-              <strong>웨이팅 &gt; 신규</strong> : 이용 경험 없음
+              <strong>웨이팅 &gt; 신규(이력)</strong> : 이용 경험 없음
               <ul>
-                <li>One : 오늘이 생애 처음 신청</li>
-                <li>Several : 예전에 신청은 해 본 적 있음</li>
+                <li>One(상태) : 오늘이 생애 처음 신청</li>
+                <li>Several(상태) : 예전에 신청은 해 본 적 있음</li>
               </ul>
             </li>
             <li>
-              <strong>롸잇나우 &gt; 모든 고객</strong> : 이용했던 안했던
+              <strong>롸잇나우 &gt; 모든 고객(이력)</strong> : 누구나 이용 가능
               <ul>
-                <li>No Matter : 누구나 이용 가능</li>
+                <li>No Matter(상태) : 원리포 상품으로 이용</li>
               </ul>
             </li>
             <li>
-              <strong>블랙찬스 &gt; 바로 재대출</strong> : 상환 후 바로 이용
+              <strong>블랙찬스 &gt; 바로 재대출(이력)</strong> : 상환 후 바로 이용
               <ul>
-                <li>블찬원 : 원금 미션을 4%로 인하</li>
-                <li>블찬이 : 30, 50만 원을 이포 상환 방식으로 이용</li>
-                <li>블찬현 : 20, 30, 50만 원을 원리현 상환 방식으로 이용</li>
+                <li>블찬원(상태) : 원리포 상품으로 이용</li>
+                <li>블찬이(상태) : 이포 상품으로 이용</li>
+                <li>블찬현(상태) : 원리현 상품으로 이용</li>
               </ul>
             </li>
             <li>
-              <strong id="eventGuideLabel">이벤트 대출 &gt; 6월 한정 스페셜티</strong> : 바로 심사 가능
+              <strong id="eventGuideLabel">이벤트 대출 &gt; 7월 한정 스페셜티(이력)</strong> : 누구나 이용 가능
               <ul>
-                <li id="eventGuideName">워터밤💦대출 : 모든 미션이 인하!</li>
+                <li id="eventGuideName">워터밤💦대출(상태) : 변형된 이포 상품으로 이용</li>
               </ul>
             </li>
           </ul>
@@ -262,7 +262,7 @@
           <label for="santaApply" id="santaApplyLabel">써주세요. 대출을 신청하셨나요?</label>
           <select id="santaApply" name="santaApply">
             <option disabled selected>
-              https://monthly-loan.sirjuseyo.com/
+              http://127.0.0.1:5501/monthly-loan/2026-07/index-dev.html
             </option>
             <option value="네, 신청했습니다.">네, 신청했습니다.</option>
             <option value="아니요, 아직 신청하지 않았습니다.">
@@ -286,15 +286,9 @@
           <label for="creditMission">크레딧 미션을 완료하셨나요?</label>
           <select id="creditMission" name="creditMission">
             <option disabled selected>진행 상태를 선택하세요</option>
-            <option value="지금 🍞 포인트야. 부끄부끄 🙈">
-              지금 🍞 포인트야. 부끄부끄 🙈
-            </option>
-            <option value="응, 열띠미 적립 중 🔥">
-              응, 열띠미 적립 중 🔥
-            </option>
-            <option value="미션 클리어! 💯 츄카츄카츄카 🎉">
-              미션 클리어! 💯 츄카츄카츄카 🎉
-            </option>
+            <option value="아직 적립하지 않았습니다.">아직 적립하지 않았습니다.</option>
+            <option value="현재 적립 진행 중입니다.">현재 적립 진행 중입니다.</option>
+            <option value="미션 완료했습니다.">미션 완료했습니다.</option>
           </select>
         </div>
         <aside class="option-guide option-guide-compact">
@@ -314,19 +308,13 @@
           <label for="communicationStatus">소통거리를 제출하셨나요?</label>
           <select id="communicationStatus" name="communicationStatus">
             <option disabled selected>제출 상태를 선택하세요</option>
-            <option value="낫 스타트. 아직 크레딧도 못 깼다니깐 😤">
-              낫 스타트. 아직 크레딧도 못 깼다니깐 😤
-            </option>
-            <option value="아이엔지. 지금 열띠미 자료 업로드 중 📤">
-              아이엔지. 지금 열띠미 자료 업로드 중 📤
-            </option>
-            <option value="디 엔드! 있는 자료 없는 자료 모두 업롣 끝! 🫡">
-              디 엔드! 있는 자료 없는 자료 모두 업롣 끝! 🫡
-            </option>
+            <option value="아직 제출 전입니다.">아직 제출 전입니다.</option>
+            <option value="자료 업로드 중입니다.">자료 업로드 중입니다.</option>
+            <option value="제출 완료했습니다.">제출 완료했습니다.</option>
           </select>
         </div>
         <aside class="option-guide option-guide-compact">
-          <h3>소통거리 미션이란?</h3>
+          <h3>소통거리란 무엇인가요?</h3>
           <p class="option-guide-note">
             '나이가 어려도', '대학생이어도', '직업이 없어도', '소득이 없어도', '연체이력이 있어도' 그럼에도 불구하고 나노크레딧.(소액신용대출)을 도와 드리려고 설립한 플랫폼입니다.
           </p>
@@ -657,7 +645,7 @@
       var egl = document.getElementById('eventGuideLabel');
       if (egl) egl.innerHTML = '이벤트 대출 &gt; ' + cfg.event.period;
       var egn = document.getElementById('eventGuideName');
-      if (egn) egn.textContent = cfg.event.name + ' : 모든 미션이 인하!';
+      if (egn) egn.textContent = cfg.event.name + '(상태) : 변형된 이포 상품으로 이용';
       // CTA 버튼
       var cta = document.getElementById('ctaButton');
       if (cta) {
