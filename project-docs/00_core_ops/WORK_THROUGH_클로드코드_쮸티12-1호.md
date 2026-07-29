@@ -26,6 +26,7 @@
 | 8 | 4회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 영역 구분 강화 — .concept-image(연보라 160px placeholder, "🏖️ 7월 썸머 베케이션 대출 이미지 준비 중") 신규 / .clock-label(시계 위 맥락 레이블) 신규 / .section-divider(본문 구분선) 신규 / .tone-note 왼쪽 보더 4px accent 강화 (`13ba21c`) |
 | 9 | 5회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 시계 박스화·문장 재구성·divider 정렬 — .page-intro 박스화 / .clock-sentence 신규("대출을 희망하는 지금 시간은 [chip] 입니다.") / clock-label 시계 아래로 이동 / section-divider grid-column:1/-1 + form 첫 번째 자식으로 이동 (`1064e32`) |
 | 10 | 6회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 박스 너비 통일 — page-intro·tone-note를 form 밖 → form 첫 번째 자식으로 이동 / .page-intro·.tone-note에 grid-column:1/-1 추가 / panel·section-divider와 동일 container로 너비 완전 일치 (`2498399`) |
+| 11 | 7회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 전체 박스 너비 통일 완성 — title-bar·concept-image도 form 첫 번째 자식으로 이동 / .title-bar·.concept-image에 grid-column:1/-1 추가 / 시계 2줄 명시 분리("대출을 희망하는 지금 시간은" / "[chip] 입니다.") / clock-label 텍스트 변경("웨이팅 대출 옵션은 신청 시기에 따라 조건이 달라집니다.") (`2d5e3f2`) |
 
 ---
 
