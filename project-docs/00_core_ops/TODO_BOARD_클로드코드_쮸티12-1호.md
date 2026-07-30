@@ -341,6 +341,7 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | 작업 타이틀 | 로컬커밋 | 원격푸시 | DEV | PRD 코드배포 | PRD 운영배포 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|---|
+| **T-122** | [8월 대출] 썸머 베케이션 Ⅱ 기획서 작성 | 대기 | 대기 | - (문서) | - | - | 쮸티12-1호 | 2026-07-30 | 기획서 PLAN_2026-08_썸머베케이션Ⅱ_기획서.md 초안 완성 / 사장님 컨펌 후 HTML 작업 착수 |
 | **T-121** | [원리포 계산기] UI 디테일 수정 3종 | ✅ `3f06a2d` | 대기 | ✅ 테스트완료 | - (웹) | 대기 | 쮸티12-1호 | 2026-07-30 | 섹션 구분선 / 슬라이더 bubble tooltip / 2개월 선택 불가 경고·3개월+65%미만 경고 분리 |
 | **T-120** | [원리포 계산기] calculator.html 신규 생성 + index 링크 변경 | ✅ `34c81ad` | 대기 | ✅ 테스트완료 | - (웹) | 대기 | 쮸티12-1호 | 2026-07-30 | tip/wonripo/calculator.html·calculator-dev.html 신규 / index 계산기 링크 자체 페이지로 교체 |
 | **T-119** | [원리포 혜택] 원리포 상품의 메리트 페이지 신규 생성 | ✅ `4cc5c56` | 대기 | ✅ 테스트완료 | - (웹) | 대기 | 쮸티12-1호 | 2026-07-30 | tip/wonripo/index.html·index-dev.html 신규 / assets 이미지2종 / tip/index 02번 href 연결 / Pretendard·팝업3종·CURRENT_MONTH 동적링크 |
@@ -510,6 +511,7 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
+| **T-122** | WT-133 | W-122 | - | **진행중** | **[8월 대출] 썸머 베케이션 Ⅱ 기획서 작성 + HTML 작업 예정** | 쮸티12-1호 | 2026-07-30 | 【파일】`project-docs/120_plan/PLAN_2026-08_썸머베케이션Ⅱ_기획서.md` / 기획서 초안 완성 / 사장님 컨펌 후 index-dev.html 작업 착수 예정 / 호캉스🏨✈️ 대출 10만·20만 한정 / 웨이팅 심사 09/01~09/05 |
 | **T-121** | WT-132 | W-121 | `3f06a2d` | **테스트 완료(DONE)** | **[원리포 계산기] UI 디테일 수정 3종 (PRD+DEV)** | 쮸티12-1호 | 2026-07-30 | 【파일】`tip/wonripo/calculator.html`, `tip/wonripo/calculator-dev.html` / ①섹션 구분선 hr.sec-div 기간↔포인트상환비율 사이 / ②슬라이더 우측 고정 span → thumb 위 bubble tooltip (absolute CSS + JS left 계산) / ③2개월 클릭 시 경고만 표시(active 전환 없음) / ④3개월+65%미만 조합 시 슬라이더 아래 경고 표시 |
 | **T-120** | WT-131 | W-120 | `34c81ad` | **테스트 완료(DONE)** | **[원리포 계산기] calculator.html 신규 생성 + index 링크 변경** | 쮸티12-1호 | 2026-07-30 | 【파일】`tip/wonripo/calculator.html`, `tip/wonripo/calculator-dev.html`, `tip/wonripo/index.html·index-dev.html` / 기획서 v0.1 기반 / 구글 스프레드시트 링크 → 자체 계산기 페이지 교체 / Pretendard·원리금균등 JS 계산 엔진 |
 | **T-119** | WT-130 | W-119 | `4cc5c56` | **테스트 완료(DONE)** | **[원리포 혜택] 원리포 상품의 메리트 페이지 신규 생성** | 쮸티12-1호 | 2026-07-30 | 【파일】`tip/wonripo/index.html`, `tip/wonripo/index-dev.html`, `tip/wonripo/assets/wonripo-vip-banner.png·wonripo-credit-ladder.png`, `tip/index.html·index-dev.html` / 목업 v0.15 기반 / 래더이미지(메리트03)·VIP배너이미지(메리트04) 교체 / tip/index 02번 href 연결 / Pretendard 폰트·팝업3종·CURRENT_MONTH 동적링크 |
@@ -619,6 +621,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-039 | P0 | T-039 | **테스트 완료(DONE)** `0ee40b0` | **[홈 페이지] index-dev.html gift-box 서핑 이미지 교체** | `index-dev.html`, `PLAN_2026-07_홈페이지_7월전환_기획서.md` | gift-box 이미지: `summer-jul-001.jpg` → `Palm-Surf_Jul-Loan.png` (269번 줄) / 기획서 v0.4 반영 / 커밋 `0ee40b0` ✅ WT-049 | 2026-07-01 | 쮸티12-1호 |
 | W-042 | P0 | T-030~T-039 (PRD) | **검증완료** `815964b` → main `cf89006` |
 | W-043 | P0 | T-039 (자산) | **검증완료** `84b62f4` → main `cf89006` |
+| W-122 | P1 | T-122 | **진행중** | **[8월 대출] 썸머 베케이션 Ⅱ 기획서 작성 + 8월 대출 페이지 HTML 작업** | `project-docs/120_plan/PLAN_2026-08_썸머베케이션Ⅱ_기획서.md`, `monthly-loan/2026-08/index-dev.html`, `index.html` | 기획서 초안 완성 / 사장님 컨펌 후 8월 대출 페이지 index-dev.html 작업 착수 | 2026-07-30 | 쮸티12-1호 |
 | W-121 | P1 | T-121 | **테스트 완료(DONE)** `3f06a2d` | **[원리포 계산기] UI 디테일 수정 3종** | `tip/wonripo/calculator.html`, `tip/wonripo/calculator-dev.html` | ①영역 구분 여백 추가 ②슬라이더 선택값 표시 개선 ③기간 1·2개월 선택 시 빨간 경고 문자 | 2026-07-30 | 쮸티12-1호 |
 | W-120 | P1 | T-120 | **테스트 완료(DONE)** `34c81ad` | **[원리포 계산기] calculator.html 신규 생성 + index 링크 변경** | `tip/wonripo/calculator.html`, `tip/wonripo/calculator-dev.html`, `tip/wonripo/index.html`, `tip/wonripo/index-dev.html` | 기획서 calculator_wonripo.html 기반 / PRD+DEV 생성 / index 구글 스프레드시트 링크 → /tip/wonripo/calculator.html 로 교체 | 2026-07-30 | 쮸티12-1호 |
 | W-119 | P1 | T-119 | **테스트 완료(DONE)** `4cc5c56` | **[원리포 혜택] 원리포 상품의 메리트 페이지 신규 생성** | `tip/wonripo/index.html`, `tip/wonripo/index-dev.html`, `tip/wonripo/assets/`, `tip/index.html·index-dev.html` | 목업 v0.15 기반 / 메리트03 래더 → 이미지38 교체 / 메리트04 VIP 배너 → 이미지37 교체 / tip/index 02번 href 연결 | 2026-07-30 | 쮸티12-1호 |
