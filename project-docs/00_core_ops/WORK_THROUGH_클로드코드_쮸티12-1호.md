@@ -6,6 +6,34 @@
 
 ---
 
+## WT-132 · T-121 / W-121 [원리포 계산기] UI 디테일 수정 3종 (PRD+DEV)
+
+### 작업 요약
+
+| 항목 | 내용 |
+|---|---|
+| T-ID | T-121 |
+| W-ID | W-121 |
+| 작업자 | 쮸티12-1호 |
+| 작업일 | 2026-07-30 |
+| 상태 | **테스트 완료(DONE)** |
+| 최종 커밋 | `3f06a2d` |
+
+### 작업 내용
+
+- **A. 섹션 구분선**: 기간 버튼↔포인트 상환 비율 레이블 사이 `<hr class="sec-div"/>` 추가 (위 20px / 아래 12px 여백 + 구분선)
+- **B. 슬라이더 bubble tooltip**: 우측 고정 `.slider-val` span 제거 → thumb 위 따라다니는 `.slider-bubble` (CSS absolute + JS `left` 동적 계산, `requestAnimationFrame` 초기화)
+- **C. 2개월 선택 불가 경고**: 2개월 클릭 시 active 전환 없이 경고만 표시 (`⚠️ 현행 대출은 1개월 상품입니다.`)
+- **D. 3개월+65%미만 경고**: 3개월 선택 + tier 0~4(10%~50%) 조합 시 슬라이더 아래 경고 표시 (`⚠️ 3개월은 원리포 65% 챌린지 전용 상품입니다.`)
+- **E. DEV 동일 적용**: `tip/wonripo/calculator-dev.html`에 A~D 전부 적용
+
+### 대상 파일
+
+- `tip/wonripo/calculator.html` (수정)
+- `tip/wonripo/calculator-dev.html` (수정)
+
+---
+
 ## WT-131 · T-120 / W-120 [원리포 계산기] calculator.html 신규 생성 + index 링크 변경
 
 ### 작업 요약
