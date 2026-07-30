@@ -6,6 +6,34 @@
 
 ---
 
+## WT-131 · T-120 / W-120 [원리포 계산기] calculator.html 신규 생성 + index 링크 변경
+
+### 작업 요약
+
+| 항목 | 내용 |
+|---|---|
+| T-ID | T-120 |
+| W-ID | W-120 |
+| 작업자 | 쮸티12-1호 |
+| 작업일 | 2026-07-30 |
+| 상태 | 진행중(In-Progress) |
+
+### 작업 내용
+
+- **A. PRD 생성**: `tip/wonripo/calculator.html` — 기획서 v0.1 기반, draft-bar·gnb·foot 제거, popup.js+menu.js+legal-shared.js 연결, data-back/breadcrumb 추가
+- **B. DEV 생성**: `tip/wonripo/calculator-dev.html` — PRD 기반, DEV 오렌지 배너(sticky top:52px) + menu-dev.js
+- **C. PRD 링크 변경**: `tip/wonripo/index.html` 272줄 구글 스프레드시트 URL → `/tip/wonripo/calculator.html`
+- **D. DEV 링크 변경**: `tip/wonripo/index-dev.html` 277줄 구글 스프레드시트 URL → `/tip/wonripo/calculator-dev.html`
+
+### 대상 파일
+
+- `tip/wonripo/calculator.html` (신규)
+- `tip/wonripo/calculator-dev.html` (신규)
+- `tip/wonripo/index.html` (링크 변경)
+- `tip/wonripo/index-dev.html` (링크 변경)
+
+---
+
 ## WT-130 · T-119 / W-119 [원리포 혜택] 원리포 상품의 메리트 페이지 신규 생성
 
 ### 작업 요약
