@@ -118,7 +118,38 @@ const MONTH_CONFIGS = {
     defaultWaitingPeriod: '2026년 7월 11일 ~ 15일',
     step4ReviewDisplay: '2026년 8월 1일 ~ 5일',
   },
-  // ← 8월 이후 여기에 추가 (activePeriod.start = 7월 26일, end = 8월 25일)
+  '2026-08': {
+    activePeriod: {
+      start: '2026-07-26',
+      end:   '2026-08-25',
+    },
+    loan: {
+      name: '8️⃣🈷️ 썸머 🏝️베케이션 Ⅱ 대출',
+      emoji: '🏝️',
+      concept: '썸머 베케이션 Ⅱ',
+    },
+    event: {
+      period: '8월 한정 스페셜티',
+      name: '호캉스🏨✈️대출',
+    },
+    applyPeriod: {
+      start: '2026-08-01',
+      end: '2026-08-25',
+    },
+    reviewPeriod: {
+      start: '2026-09-01',
+      end: '2026-09-05',
+      display: '2026년 9월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 9월 25일',
+    subscribeStart: '2026.07.26',
+    detailUrl: '/monthly-loan/2026-08/',
+    ctaText: '8️⃣🈷️ 썸머🏝️ 베케이션 Ⅱ 대출 신청하기 →',
+    defaultWaitingDate: '2026년 8월 11일',
+    defaultWaitingPeriod: '2026년 8월 11일 ~ 15일',
+    step4ReviewDisplay: '2026년 9월 1일 ~ 5일',
+  },
+  // ← 9월 이후 여기에 추가 (activePeriod.start = 8월 26일, end = 9월 25일)
 };
 
 // ✅ 자동 감지: 오늘이 activePeriod(전월 26일 ~ 당월 25일) 안에 있는 config 선택
