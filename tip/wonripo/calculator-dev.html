@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>원리포 계산기 | 써주세요</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.min.css"/>
+<style>
+:root{
+  --ink:#1B1622;
+  --ink-2:#6A6376;
+  --purple:#6C2BD9;
+  --paper:#F5F3EA;
+  --card:#FFFFFF;
+  --line:#E9E4D7;
+  --lime:#E4F566;
+  --lime-soft:#F4FACC;
+  --green-ink:#3E7A24;
+  --red:#DE3B41;
+  --r:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  background:var(--paper);color:var(--ink);line-height:1.6;
+  -webkit-font-smoothing:antialiased;word-break:keep-all;
+}
+a:focus-visible,button:focus-visible{outline:2px solid var(--purple);outline-offset:2px;border-radius:6px}
+
+.page{max-width:480px;margin:0 auto;background:#FDFCF8;min-height:100vh;box-shadow:0 0 48px rgba(27,22,34,.08)}
+
+/* 히어로 */
+.hero{padding:20px 20px 8px}
+.chip{display:inline-block;font-size:13px;font-weight:700;color:var(--purple);background:#F1EAFE;border-radius:999px;padding:4px 12px;margin-bottom:12px}
+.hero h1{font-size:28px;line-height:1.25;font-weight:900;letter-spacing:-.03em}
+.hero p{margin-top:10px;font-size:16px;color:var(--ink-2)}
+
+/* 컨트롤 */
+.ctrl{padding:20px}
+.ctrl-label{font-size:14px;font-weight:800;color:var(--ink-2);margin-bottom:8px}
+.ctrl-label+.ctrl-label{margin-top:18px}
+.btn-group{display:flex;gap:6px;flex-wrap:wrap}
+.btn-group button{flex:1;min-width:0;padding:12px 6px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:15px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit;transition:all .12s}
+.btn-group button.active{background:var(--ink);color:var(--lime);border-color:var(--ink)}
+.btn-group button:hover:not(.active){border-color:var(--ink)}
+
+/* 슬라이더 */
+.slider-wrap{margin-top:6px}
+.slider-row{display:flex;align-items:center;gap:12px}
+.slider-row input[type=range]{flex:1;-webkit-appearance:none;height:6px;border-radius:3px;background:var(--line);outline:none}
+.slider-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--ink);cursor:pointer;border:3px solid var(--lime)}
+.slider-val{font-size:24px;font-weight:900;min-width:54px;text-align:right;color:var(--purple)}
+.tier-labels{display:flex;justify-content:space-between;padding:0 2px;margin-top:4px}
+.tier-labels span{font-size:12px;color:var(--ink-2);font-weight:600}
+
+/* 결과 */
+.result{padding:0 20px 20px}
+.result-hero{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);padding:22px 20px;text-align:center;margin-bottom:14px}
+.result-hero .label{font-size:14px;font-weight:700;color:var(--ink-2)}
+.result-hero .val{font-size:48px;font-weight:900;letter-spacing:-.03em;margin:4px 0 2px}
+.result-hero .val.zero{color:var(--green-ink)}
+.result-hero .sub{font-size:14px;color:var(--ink-2)}
+.mk{background:linear-gradient(transparent 60%,var(--lime) 60%);font-weight:800}
+
+/* 회차 테이블 */
+.inst-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:14px}
+.inst-head{padding:14px 16px 10px;font-size:15px;font-weight:800;color:var(--purple);border-bottom:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{font-size:13px;font-weight:700;color:var(--ink-2);text-align:left;padding:8px 16px;border-bottom:1.5px solid var(--ink)}
+td{padding:10px 16px;border-bottom:1px solid var(--line)}
+td.num{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+tr.hl td{background:var(--lime-soft);font-weight:800}
+tr:last-child td{border-bottom:0}
+
+/* 요약 */
+.summary{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);padding:18px 16px;margin-bottom:14px}
+.summary .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.summary .row:last-child{border-bottom:0}
+.summary .row b{font-weight:800}
+.summary .row.total{font-size:17px;font-weight:900;border-bottom:0;padding-top:12px}
+
+/* 사전 미션 */
+.pre{background:#F3EEFE;border:1.5px solid #E2D6FB;border-radius:var(--r);padding:18px 16px;margin-bottom:14px}
+.pre h3{font-size:16px;font-weight:800;color:var(--purple);margin-bottom:10px}
+.pre .row{display:flex;justify-content:space-between;padding:6px 0;font-size:15px}
+.pre .row b{font-weight:700}
+
+/* 각주 */
+.note{padding:0 20px 20px;font-size:14px;color:var(--ink-2);line-height:1.7}
+
+@media(max-width:360px){
+  .hero h1{font-size:24px}
+  .result-hero .val{font-size:40px}
+}
+</style>
+</head>
+<body data-back="/tip/wonripo/index-dev.html" data-breadcrumb="꿀정보,/tip/index-dev.html|원리포 상품의 메리트,/tip/wonripo/index-dev.html|원리포 계산기">
+
+<!-- DEV 환경 표시 배너 -->
+<div style="background:#FF5400;color:#fff;text-align:center;padding:8px;font-size:13px;font-weight:700;font-family:'Noto Sans KR',sans-serif;letter-spacing:0.5px;position:sticky;top:52px;z-index:10000;max-width:480px;margin:0 auto;">
+  🚧 DEV 테스트 환경 — 실사용자 접근 금지
+</div>
+
+<main class="page">
+
+  <section class="hero">
+    <span class="chip">꿀정보</span>
+    <h1>🧮 원리포 계산기</h1>
+    <p>금액 · 기간 · 적립 비율을 선택하면<br/>회차별 상환 내역이 바로 나와요.</p>
+  </section>
+
+  <!-- 컨트롤 -->
+  <div class="ctrl">
+    <div class="ctrl-label">금액</div>
+    <div class="btn-group" id="amtGroup">
+      <button data-val="100000">10만</button>
+      <button data-val="200000">20만</button>
+      <button data-val="300000" class="active">30만</button>
+      <button data-val="500000">50만</button>
+    </div>
+
+    <div class="ctrl-label">기간</div>
+    <div class="btn-group" id="perGroup">
+      <button data-val="1">1개월</button>
+      <button data-val="2">2개월</button>
+      <button data-val="3" class="active">3개월</button>
+    </div>
+
+    <div class="ctrl-label">포인트 상환 비율</div>
+    <div class="slider-wrap">
+      <div class="slider-row">
+        <input type="range" id="tierSlider" min="0" max="5" step="1" value="0"/>
+        <span class="slider-val" id="tierVal">10%</span>
+      </div>
+      <div class="tier-labels">
+        <span>10%</span><span>20%</span><span>30%</span><span>40%</span><span>50%</span><span>65%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 결과 영역 -->
+  <div class="result" id="resultArea"></div>
+
+  <!-- 각주 -->
+  <div class="note">
+    * 원리금균등 상환 · 월 이자율 1% 기준<br/>
+    * 이자 미션은 원금 미션과 별도 트랙입니다.<br/>
+    * 65% 도달 시 남은 원금 35%는 선물 포인트로 전액 지원 → 현금 상환 빵원<br/>
+    * 실제 상환액은 심사 결과에 따라 달라질 수 있습니다.
+  </div>
+
+</main>
+
+<script src="/js/popup.js"></script>
+<script src="/js/menu-dev.js"></script>
+<script>
+(function(){
+  var TIERS = [0.10, 0.20, 0.30, 0.40, 0.50, 0.65];
+  var TIER_LABELS = ['10%','20%','30%','40%','50%','65%'];
+  var GIFT_RATES = [0.15, 0.20, 0.25, 0.35, 0.45, null];
+
+  var CREDIT_MISSION = 4500;
+
+  var PRE_MISSION = {
+    100000: {1:2400, 2:4550, 3:6300},
+    200000: {1:3000, 2:5850, 3:8400},
+    300000: {1:3600, 2:7150, 3:10500},
+    500000: {1:7200, 2:11700, 3:15400}
+  };
+
+  var state = { amt: 300000, per: 3, tier: 0 };
+
+  function fmt(n){ return n.toLocaleString('ko-KR'); }
+
+  function calc(){
+    var L = state.amt, n = state.per, tierIdx = state.tier;
+    var tierPct = TIERS[tierIdx];
+    var r = 0.01;
+
+    var pmt;
+    if(n === 1){ pmt = L * (1 + r); }
+    else { pmt = L * r * Math.pow(1+r, n) / (Math.pow(1+r, n) - 1); }
+    pmt = Math.round(pmt);
+
+    var bal = L;
+    var installments = [];
+    var totPrincipal=0, totInterest=0, totPoints=0, totGift=0, totCash=0;
+
+    for(var i=0; i<n; i++){
+      var interest = Math.round(bal * r);
+      var principal;
+      if(i === n-1){ principal = bal; }
+      else { principal = pmt - interest; }
+
+      var points = Math.round(principal * tierPct);
+      var gift;
+      if(tierIdx === 5){
+        gift = principal - points;
+      } else {
+        gift = Math.round(points * GIFT_RATES[tierIdx]);
+      }
+      var cash = principal - points - gift;
+      if(cash < 0) cash = 0;
+
+      installments.push({
+        num: i+1,
+        principal: principal,
+        interest: interest,
+        points: points,
+        gift: gift,
+        cash: cash
+      });
+
+      totPrincipal += principal;
+      totInterest += interest;
+      totPoints += points;
+      totGift += gift;
+      totCash += cash;
+      bal -= principal;
+    }
+
+    var interestMission = totInterest;
+    var preMission = PRE_MISSION[L] ? PRE_MISSION[L][n] || 0 : 0;
+
+    return {
+      installments: installments,
+      totPrincipal: totPrincipal,
+      totInterest: totInterest,
+      totPoints: totPoints,
+      totGift: totGift,
+      totCash: totCash,
+      interestMission: interestMission,
+      preMission: preMission,
+      creditMission: CREDIT_MISSION,
+      tierLabel: TIER_LABELS[state.tier],
+      isZero: tierIdx === 5
+    };
+  }
+
+  function render(){
+    var d = calc();
+    var html = '';
+
+    var valClass = d.isZero ? 'val zero' : 'val';
+    var valText = d.isZero ? '<span class="mk">빵원</span>' : fmt(d.totCash) + '원';
+    html += '<div class="result-hero">';
+    html += '<div class="label">내가 내는 현금 (원금)</div>';
+    html += '<div class="' + valClass + '">' + valText + '</div>';
+    html += '<div class="sub">포인트 ' + fmt(d.totPoints + d.totGift) + 'P가 대신 갚아요</div>';
+    html += '</div>';
+
+    for(var i=0; i<d.installments.length; i++){
+      var inst = d.installments[i];
+      html += '<div class="inst-card">';
+      html += '<div class="inst-head">' + inst.num + '회차 상환</div>';
+      html += '<table>';
+      html += '<tbody>';
+      html += '<tr><td>원금</td><td class="num">' + fmt(inst.principal) + '원</td></tr>';
+      html += '<tr><td>이자</td><td class="num">' + fmt(inst.interest) + '원</td></tr>';
+      html += '<tr><td>포인트 적립 (' + d.tierLabel + ')</td><td class="num">' + fmt(inst.points) + 'P</td></tr>';
+      html += '<tr><td>선물 포인트</td><td class="num">' + fmt(inst.gift) + 'P</td></tr>';
+      var cashText = inst.cash === 0 ? '빵원' : fmt(inst.cash) + '원';
+      var trClass = inst.cash === 0 ? ' class="hl"' : '';
+      html += '<tr' + trClass + '><td>현금 상환액</td><td class="num">' + cashText + '</td></tr>';
+      html += '</tbody></table>';
+      html += '</div>';
+    }
+
+    html += '<div class="summary">';
+    html += '<div class="row"><span>총 대출금</span><b>' + fmt(d.totPrincipal) + '원</b></div>';
+    html += '<div class="row"><span>총 이자</span><b>' + fmt(d.totInterest) + '원</b></div>';
+    html += '<div class="row"><span>총 포인트 적립</span><b>' + fmt(d.totPoints) + 'P</b></div>';
+    html += '<div class="row"><span>총 선물 포인트</span><b>' + fmt(d.totGift) + 'P</b></div>';
+    var totalCashText = d.isZero ? '빵원' : fmt(d.totCash) + '원';
+    html += '<div class="row total"><span>현금 상환 합계</span><b>' + totalCashText + '</b></div>';
+    html += '</div>';
+
+    html += '<div class="pre">';
+    html += '<h3>📋 사전 미션 필요 포인트</h3>';
+    html += '<div class="row"><span>크레딧 미션</span><b>' + fmt(d.creditMission) + 'P</b></div>';
+    html += '<div class="row"><span>원리포 사전 미션</span><b>' + fmt(d.preMission) + 'P</b></div>';
+    html += '<div class="row"><span>이자 미션 (1%)</span><b>' + fmt(d.interestMission) + 'P</b></div>';
+    var totalPre = d.creditMission + d.preMission + d.interestMission;
+    html += '<div class="row" style="border-top:1.5px solid var(--purple);margin-top:6px;padding-top:10px;font-weight:900"><span>합계</span><b>' + fmt(totalPre) + 'P</b></div>';
+    html += '</div>';
+
+    document.getElementById('resultArea').innerHTML = html;
+  }
+
+  function bindGroup(id, key){
+    var btns = document.getElementById(id).querySelectorAll('button');
+    btns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        btns.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        state[key] = parseInt(btn.dataset.val);
+        render();
+      });
+    });
+  }
+  bindGroup('amtGroup','amt');
+  bindGroup('perGroup','per');
+
+  var slider = document.getElementById('tierSlider');
+  var tierValEl = document.getElementById('tierVal');
+  slider.addEventListener('input', function(){
+    state.tier = parseInt(slider.value);
+    tierValEl.textContent = TIER_LABELS[state.tier];
+    render();
+  });
+
+  render();
+})();
+</script>
+<script src="/js/legal-shared.js"></script>
+</body>
+</html>
