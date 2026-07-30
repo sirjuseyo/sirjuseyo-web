@@ -42,7 +42,7 @@
 **③ tip/loan-checker/month-config.js**: `'2026-08'` 객체 추가 (activePeriod: 7/26~8/25)
 
 ### 다음 단계
-1. 사장님 로컬 테스트 (`monthly-loan.sirjuseyo.com/2026-08/index-dev.html`)
+1. 사장님 로컬 테스트
 2. 테스트 완료 → ①DONE 표기 ②커밋 해시 ③작업현황 요약표 ④원격 피처 브랜치 푸시
 
 ---
