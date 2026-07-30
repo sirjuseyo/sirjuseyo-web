@@ -45,14 +45,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--purple);outline-off
 .btn-group button.active{background:var(--ink);color:var(--lime);border-color:var(--ink)}
 .btn-group button:hover:not(.active){border-color:var(--ink)}
 
+/* 섹션 구분 */
+.sec-div{border:none;border-top:1.5px solid var(--line);margin:20px 0 12px}
+
 /* 슬라이더 */
-.slider-wrap{margin-top:6px}
-.slider-row{display:flex;align-items:center;gap:12px}
+.slider-wrap{margin-top:6px;padding-top:32px}
+.slider-row{display:flex;align-items:center;position:relative}
 .slider-row input[type=range]{flex:1;-webkit-appearance:none;height:6px;border-radius:3px;background:var(--line);outline:none}
 .slider-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--ink);cursor:pointer;border:3px solid var(--lime)}
-.slider-val{font-size:24px;font-weight:900;min-width:54px;text-align:right;color:var(--purple)}
+.slider-bubble{position:absolute;top:-32px;transform:translateX(-50%);background:var(--ink);color:var(--lime);font-size:14px;font-weight:900;padding:3px 8px;border-radius:8px;white-space:nowrap;pointer-events:none;z-index:1}
+.slider-bubble::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--ink)}
 .tier-labels{display:flex;justify-content:space-between;padding:0 2px;margin-top:4px}
 .tier-labels span{font-size:12px;color:var(--ink-2);font-weight:600}
+
+/* 기간 경고 */
+.per-warning{margin-top:8px;font-size:13px;font-weight:700;color:var(--red);display:none}
+.per-warning.show{display:block}
 
 /* 결과 */
 .result{padding:0 20px 20px}
@@ -126,17 +134,20 @@ tr:last-child td{border-bottom:0}
       <button data-val="2">2개월</button>
       <button data-val="3" class="active">3개월</button>
     </div>
+    <p class="per-warning" id="perWarning">⚠️ 현행 대출은 1개월 상품입니다.</p>
 
+    <hr class="sec-div"/>
     <div class="ctrl-label">포인트 상환 비율</div>
     <div class="slider-wrap">
       <div class="slider-row">
         <input type="range" id="tierSlider" min="0" max="5" step="1" value="0"/>
-        <span class="slider-val" id="tierVal">10%</span>
+        <span class="slider-bubble" id="tierBubble">10%</span>
       </div>
       <div class="tier-labels">
         <span>10%</span><span>20%</span><span>30%</span><span>40%</span><span>50%</span><span>65%</span>
       </div>
     </div>
+    <p class="per-warning" id="tierWarning">⚠️ 3개월은 원리포 65% 챌린지 전용 상품입니다.</p>
   </div>
 
   <!-- 결과 영역 -->
@@ -288,13 +299,37 @@ tr:last-child td{border-bottom:0}
     document.getElementById('resultArea').innerHTML = html;
   }
 
+  var perWarning = document.getElementById('perWarning');
+  var tierWarning = document.getElementById('tierWarning');
+  var tierBubble = document.getElementById('tierBubble');
+  var slider = document.getElementById('tierSlider');
+
+  function updateBubble(){
+    var pct = state.tier / 5;
+    var trackW = slider.offsetWidth;
+    var thumbR = 13;
+    tierBubble.style.left = (thumbR + pct * (trackW - thumbR * 2)) + 'px';
+    tierBubble.textContent = TIER_LABELS[state.tier];
+  }
+
+  function checkWarnings(){
+    tierWarning.classList.toggle('show', state.per === 3 && state.tier < 5);
+  }
+
   function bindGroup(id, key){
     var btns = document.getElementById(id).querySelectorAll('button');
     btns.forEach(function(btn){
       btn.addEventListener('click', function(){
+        var val = parseInt(btn.dataset.val);
+        if(key === 'per' && val === 2){
+          perWarning.classList.add('show');
+          return;
+        }
+        perWarning.classList.remove('show');
         btns.forEach(function(b){ b.classList.remove('active'); });
         btn.classList.add('active');
-        state[key] = parseInt(btn.dataset.val);
+        state[key] = val;
+        checkWarnings();
         render();
       });
     });
@@ -302,15 +337,15 @@ tr:last-child td{border-bottom:0}
   bindGroup('amtGroup','amt');
   bindGroup('perGroup','per');
 
-  var slider = document.getElementById('tierSlider');
-  var tierValEl = document.getElementById('tierVal');
   slider.addEventListener('input', function(){
     state.tier = parseInt(slider.value);
-    tierValEl.textContent = TIER_LABELS[state.tier];
+    updateBubble();
+    checkWarnings();
     render();
   });
 
   render();
+  requestAnimationFrame(updateBubble);
 })();
 </script>
 <script src="/js/legal-shared.js"></script>
