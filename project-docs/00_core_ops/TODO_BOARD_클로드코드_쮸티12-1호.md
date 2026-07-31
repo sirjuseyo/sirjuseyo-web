@@ -341,6 +341,7 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | 작업 타이틀 | 로컬커밋 | 원격푸시 | DEV | PRD 코드배포 | PRD 운영배포 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|---|
+| **T-126** | [대출 검사기] 30만 원 이벤트 대출 비활성 + 문구 수정 | ✅ `a5562d8` | 대기 | ⏳ 테스트 대기 | - (웹) | 대기 | 쮸티12-1호 | 2026-07-31 | ①30만 원 선택 시 이벤트 대출 disabled ②eventAmountNote 문구 수정 / 사장님 VS Code Live Server 테스트 대기 |
 | **T-125** | [홈 화면] 8월 전환 (7월→8월) | ✅ `487be1e` | 대기 | ✅ 테스트완료(DONE) | - (웹) | 대기 | 쮸티12-1호 | 2026-07-31 | ①live-badge 8월 대출 ②gift-box Plane-Luggage_Aug-Loan.png ③메인타이틀 8️⃣🈷️ 썸머 🏝️베케이션 Ⅱ ④href 2026-08 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-124** | [8월 대출] 대출 페이지 회차 수정 (9건) | ✅ `519351c` | 대기 | ✅ 테스트완료(DONE) | - (웹) | 대기 | 쮸티12-1호 | 2026-07-31 | ①이벤트박스 안내문구 2개 ②~④h4 3종 변경 ⑤블찬 2곳 교체 ⑥~⑦크레딧미션 수정 ⑧웨이팅h2 변경 ⑨거절사유4번 추가 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-123** | [8월 대출] 대출 페이지 index-dev.html 신규 생성 + 8월 전환 | ✅ `b309222` | 대기 | ✅ 테스트완료(DONE) | - (웹) | 대기 | 쮸티12-1호 | 2026-07-31 | ①index-dev.html 신규 ②menu.js·menu-dev.js CURRENT_MONTH='2026-08' ③month-config.js 2026-08 추가 / 사장님 VS Code Live Server 테스트 완료 |
@@ -514,6 +515,7 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | WT-ID | W-ID | 최종 해시 | 상태 | 작업 타이틀 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|
+| **T-126** | WT-137 | W-126 | - | **진행중** | **[대출 검사기] 30만 원 이벤트 대출 비활성 + 문구 수정** | 쮸티12-1호 | 2026-07-31 | 【파일】`tip/loan-checker/index-dev.html`, `index.html` / ①30만 원 선택 시 이벤트 대출 disabled ②eventAmountNote `10·20만 원만 선택 가능 (30·50만 원 제외)` / 로컬커밋 `a5562d8` / 사장님 테스트 대기 |
 | **T-125** | WT-136 | W-125 | `487be1e` | **테스트 완료(DONE)** | **[홈 화면] 8월 전환 (7월→8월)** | 쮸티12-1호 | 2026-07-31 | 【파일】`index-dev.html`, `index.html` / ①live-badge 8월 대출 ②gift-box Plane-Luggage_Aug-Loan.png ③메인타이틀 8️⃣🈷️ 썸머 🏝️베케이션 Ⅱ ④href 2026-08 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-124** | WT-135 | W-124 | `519351c` | **테스트 완료(DONE)** | **[8월 대출] 대출 페이지 회차 수정 (9건)** | 쮸티12-1호 | 2026-07-31 | 【파일】`monthly-loan/2026-08/index-dev.html` / 9건 텍스트 수정 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-123** | WT-134 | W-123 | `b309222` | **테스트 완료(DONE)** | **[8월 대출] 대출 페이지 index-dev.html 신규 생성 + 8월 전환** | 쮸티12-1호 | 2026-07-31 | 【파일】`monthly-loan/2026-08/index-dev.html` (신규), `js/menu.js`, `js/menu-dev.js`, `tip/loan-checker/month-config.js` / 3단계 체크리스트 완료 / 사장님 VS Code Live Server 테스트 완료 |
@@ -627,6 +629,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-039 | P0 | T-039 | **테스트 완료(DONE)** `0ee40b0` | **[홈 페이지] index-dev.html gift-box 서핑 이미지 교체** | `index-dev.html`, `PLAN_2026-07_홈페이지_7월전환_기획서.md` | gift-box 이미지: `summer-jul-001.jpg` → `Palm-Surf_Jul-Loan.png` (269번 줄) / 기획서 v0.4 반영 / 커밋 `0ee40b0` ✅ WT-049 | 2026-07-01 | 쮸티12-1호 |
 | W-042 | P0 | T-030~T-039 (PRD) | **검증완료** `815964b` → main `cf89006` |
 | W-043 | P0 | T-039 (자산) | **검증완료** `84b62f4` → main `cf89006` |
+| W-126 | P1 | T-126 | **진행중** | **[대출 검사기] 30만 원 이벤트 대출 비활성 + 이벤트 안내 문구 수정** | `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html` | ①updateAmountWarnings: 30만 원 선택 시 이벤트 대출 disabled ②eventAmountNote 문구 `10·20만 원만 선택 가능 (30·50만 원 제외)` / 목차컨펌완료·코드작업완료 | 2026-07-31 | 쮸티12-1호 |
 | W-125 | P1 | T-125 | **테스트 완료(DONE)** `487be1e` | **[홈 화면] 8월 전환 (7월→8월)** | `index-dev.html`, `index.html` | ①live-badge `7월 대출`→`8월 대출` ②gift-box 이미지 2026-07→2026-08 ③메인타이틀 `7️⃣🈷️ 썸머 🏖️베케이션`→`8️⃣🈷️ 썸머 🏝️베케이션 Ⅱ` ④신청하기 href 2026-07→2026-08 / 테스트 완료 | 2026-07-31 | 쮸티12-1호 |
 | W-124 | P1 | T-124 | **완료** | **[8월 대출] 썸머 베케이션 Ⅱ 대출 페이지 회차 수정 (9건)** | `monthly-loan/2026-08/index-dev.html` | ①이벤트박스 안내문구 2개 ②~④h4 3종 ⑤블찬 2곳 교체 ⑥~⑦크레딧미션 수정 ⑧웨이팅h2 ⑨거절사유4번 / 분석+컨펌 완료 | 2026-07-31 | 쮸티12-1호 |
 | W-123 | P1 | T-123 | **완료** | **[8월 대출] 썸머 베케이션 Ⅱ 대출 페이지 신규 생성 (index-dev.html) + CURRENT_MONTH 전환** | `monthly-loan/2026-08/index-dev.html`, `js/menu.js`, `js/menu-dev.js`, `tip/loan-checker/month-config.js` | 기획서 v0.4 기반 — ①2026-08/index-dev.html 신규 생성 ②CURRENT_MONTH='2026-08' 전환 ③month-config.js 2026-08 객체 추가 / 3단계 체크리스트 동시 처리 완료 | 2026-07-30 | 쮸티12-1호 |
