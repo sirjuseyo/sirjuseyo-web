@@ -205,7 +205,7 @@
               <strong>🎁 이벤트 대출</strong>
               <span>대출을 빠르게 받고 싶다면 (포인트 적립 무난)</span>
               <p class="option-guide-note" id="eventAmountNote">
-                * 10만 원, 20만 원, 30만 원만 선택 가능합니다. (50만 원 제외)
+                * 10만 원, 20만 원만 선택 가능합니다. (30만 원, 50만 원 제외)
               </p>
             </li>
           </ol>
@@ -603,13 +603,14 @@
             if (isNew && optionSel.value === '블랙찬스 티켓 사용') { optionSel.value = ''; }
           }
         }
-        // 50만 원 선택 시 이벤트 대출 옵션 비활성(회색) (리셋 후 재계산)
+        // 30만·50만 원 선택 시 이벤트 대출 옵션 비활성(회색)
         var is50 = amountSel && amountSel.value === '50';
+        var is30 = amountSel && amountSel.value === '30';
         if (optionSel) {
           var eventOpt = optionSel.querySelector('option[value="이벤트 대출"]');
           if (eventOpt) {
-            eventOpt.disabled = is50;
-            if (is50 && optionSel.value === '이벤트 대출') { optionSel.value = ''; }
+            eventOpt.disabled = is50 || is30;
+            if ((is50 || is30) && optionSel.value === '이벤트 대출') { optionSel.value = ''; }
           }
         }
         // 경험없음 + 50만 원 → 경고 (방어용)
