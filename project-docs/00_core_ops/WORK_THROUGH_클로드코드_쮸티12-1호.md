@@ -9,14 +9,18 @@
 ## WT-141 · T-130 / W-130 [신청 폼] 7월→8월 워딩 변경 + 이벤트 대출 30만 경고 추가 + 경고 문구 수정
 
 ### 작업 요약
-- **상태:** 대기(Pending) — 2026-08-01
+- **상태:** 진행중 — 2026-08-01
+- **로컬 커밋:** `a9b2747` (코드 커밋)
 - **대상 파일:** `monthly-loan/apply/apply-dev.html`, `monthly-loan/apply/apply.html`
 
-### 변경 내용 (예정)
+### 변경 내용
 1. 워딩 3곳: `7️⃣🈷️ 썸머 🏖️베케이션 대출` → `8️⃣🈷️ 썸머 🏝️베케이션 Ⅱ 대출`
-   - h1 `.landing-title`, `.현재 고객님` 안내 문구, API 전송 문자열
-2. `selectMethodEvent()` 경고 조건 추가: `state.amount === '50만 원'` → `state.amount === '50만 원' || state.amount === '30만 원'`
+   - h1 `.landing-title`, 현재 고객님 안내 문구, API 전송 문자열 4번 항목
+2. `selectMethodEvent()`: `state.amount === '50만 원'` → `state.amount === '50만 원' || state.amount === '30만 원'`
 3. `#warn-method-amount` 문구: `10, 20, 30만 원만` → `10, 20만 원만`
+
+### 테스트
+- VS Code Live Server → `monthly-loan/apply/apply-dev.html` 테스트 대기
 
 ---
 
