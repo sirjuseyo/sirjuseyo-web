@@ -243,6 +243,52 @@ DEV 테스트용 라이브 주소:
 이제 DEV 테스트는 위 URL에서 하시면 됩니다.
 ```
 
+### 완료 보고서 (Ser7-1호 → 개발자) — 2026-08-02 PRD 운영 배포
+
+```
+[PRD : 깃 & 배포 관리자 → 개발자]
+
+sirjuseyoWeb T-072~T-130 웹 통합 PRD 코드배포 및 GitHub Pages 운영 배포 완료했습니다.
+
+작업 내용:
+- `main...dev` 확인 결과 `diverged` 상태라 전체 `dev -> main` 단순 병합은 하지 않았습니다.
+- `origin/dev fc97aae` 기준 웹 코드/정적 자산만 `main`에 선별 반영했습니다.
+- `project-docs`, `.DS_Store`, `.claude`, `CLAUDE.md`, `.vscode`, `.gitignore` 등
+  운영 불필요 파일은 제외했습니다.
+- 배포 전 `monthly-loan/2026-08/index.html` 누락을 발견해 PRD용 파일을 생성했습니다.
+  - DEV 배너 제거
+  - `apply-dev.html` → `apply.html`
+  - `menu-dev.js` → `menu.js`
+
+커밋:
+- `d864ebc` `deploy(web): publish August summer vacation II pages [T-072~T-130]`
+
+배포:
+- GitHub Pages run `30691343721` success
+
+검증:
+- `https://www.sirjuseyo.com/` 8월 PRD 문구 확인
+- `https://www.sirjuseyo.com/index.html` 8월 PRD 문구 확인
+- `https://www.sirjuseyo.com/monthly-loan/2026-08/` 8월 상세 PRD 문구 확인
+- `https://www.sirjuseyo.com/monthly-loan/apply/apply.html` 8월 신청 PRD 문구 확인
+- `https://www.sirjuseyo.com/tip/loan-checker/index.html` HTTP 200
+- 8월 핵심 이미지 2개 HTTP 200
+
+4축:
+- ECR: 대상 없음
+- ArgoCD: 대상 없음
+- DevOps/GitOps: GitHub Pages main 배포 성공
+- Kubernetes: 대상 없음
+
+문서:
+- GitDeployOps TODO/WORK_THROUGH에 `W-040 / T-040 / WT-040` 기록 완료
+- 로컬 `sirjuseyo-web` 최신화 완료: `origin/main d864ebc`, `origin/dev fc97aae`
+
+한 줄 버전:
+sirjuseyoWeb T-072~T-130 PRD 운영 배포 완료, main commit `d864ebc`,
+GitHub Pages run `30691343721` success, 운영 주요 URL 200 및 8월 문구 확인했습니다.
+```
+
 ---
 
 ## WT-140 · T-129 / W-129 [대출 검사기] 상단 안내 문구 워딩 수정
