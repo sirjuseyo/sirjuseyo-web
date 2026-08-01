@@ -505,6 +505,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | **T-134** | [팝업] 8월 대출 작업 동기화 2종 | ✅ `ed8ec27` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 03:20 | ①거절 사유 4번 추가(최근 3개월 이상 무직 또는 과거 6개월 이상 무직) ②30만 원 이벤트 대출 상품 없음 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-135** | [긴급/Android] 헤더 가로 오버플로우 + 드로어 노출 버그 수정 | ✅ `ba78afb` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 03:20 | `#sjy-nav-bar`·`#sjy-drawer` width:100%→width:100vw / menu.js·menu-dev.js 각 2곳 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-136** | [신청 폼] 대출 가능성 검사기 안내 박스 추가 | ✅ `f78b872` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 04:06 | h1 아래 .apply-note 박스 삽입 / 8월 대출·나노크레딧 신청 전 검사기 이용 안내 + 경로 / apply-dev.html·apply.html 동시 적용 / 사장님 VS Code Live Server 테스트 완료 |
+| **T-137** | [loan-match] DEV 환경 미적용 페이지 수정 (즉시빌리기 PRD링크 + 여유있게빌리기 DEV화) | ✅ `1aee714` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 | ①index-dev.html 즉시빌리기 href PRD→DEV(nanocredit/index-dev.html) ②index-dev.html 여유있게빌리기 browse.html→browse-dev.html ③browse-dev.html 신규 생성(앱사이즈+DEV배너+메뉴바+상·하단고지) / body class="page" 누락·상단BACK버튼 중복 수정 포함 / 사장님 VS Code Live Server 테스트 완료 |
 | W-042 | [7월 PRD] 홈 index.html + 2026-07/index.html 신규 생성 | ✅ `815964b` | ✅ PR#24 | - | ✅ 선별반영 `cf89006` | ✅ Pages run `28564430240` | 쮸티12-1호 | 2026-07-02 | PR#24 선별반영, `2026-07/index.html` 200 확인 |
 | W-043 | [T-039 자산] Palm-Surf_Jul-Loan.png 커밋 추가 | ✅ `84b62f4` | ✅ PR#24 | - | ✅ 선별반영 `cf89006` | ✅ Pages run `28564430240` | 쮸티12-1호 | 2026-07-02 | PR#24 선별반영, `2026-07/assets/Palm-Surf_Jul-Loan.png` 200 확인 |
 | **W-085** | WT-094 | W-085 | `d049be8` | **테스트 완료(DONE)** | **[챌린지 대표 페이지] challenge/index.html + index-dev.html 신규 생성** | 쮸티12-1호 | 2026-07-22 | 【파일】`challenge/index.html`(신규), `challenge/index-dev.html`(신규) / 소스: `2026-06/worldcup-challenge` / PRD: menu.js + `/apply/` 절대경로 / DEV: menu-dev.js + DEV배너(sticky) + `/apply/index-dev.html` 절대경로 / 이미지: `/2026-06/worldcup-challenge/assets/` |
@@ -598,6 +599,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | **T-134** | - | W-134 | `ed8ec27` | **테스트 완료(DONE)** | **[팝업] 8월 대출 작업 동기화 2종** | 쮸티12-1호 | 2026-08-02 03:20 | 【파일】`js/popup.js` / ①거절 사유 4번 추가(최근 3개월 이상 무직 또는 과거 6개월 이상 무직 + em) ②30만 원 이벤트 `활용 3.5%` → `대출 상품 없음` / 사장님 VS Code Live Server 테스트 완료 |
 | **T-135** | - | W-135 | `ba78afb` | **테스트 완료(DONE)** | **[긴급/Android] 헤더 가로 오버플로우 + 드로어 노출 버그 수정** | 쮸티12-1호 | 2026-08-02 03:20 | 【파일】`js/menu.js`, `js/menu-dev.js` / `#sjy-nav-bar`·`#sjy-drawer` width:100%→100vw 각 2곳 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-136** | - | W-136 | `f78b872` | **테스트 완료(DONE)** | **[신청 폼] 대출 가능성 검사기 안내 박스 추가** | 쮸티12-1호 | 2026-08-02 04:06 | 【파일】`monthly-loan/apply/apply-dev.html`, `apply.html` / h1 아래 .apply-note 박스 삽입 / 8월 대출·나노크레딧 신청 전 검사기 이용 안내 + 경로 / 사장님 VS Code Live Server 테스트 완료 |
+| **T-137** | - | W-137 | `1aee714` | **테스트 완료(DONE)** | **[loan-match] DEV 환경 미적용 페이지 수정** | 쮸티12-1호 | 2026-08-02 | 【파일】`loan-match/index-dev.html`, `loan-match/browse-dev.html`(신규) / ①즉시빌리기 PRD→DEV ②여유있게빌리기 browse-dev.html 연결 ③browse-dev.html 신규(앱사이즈+DEV배너+메뉴바+상·하단고지) / body class누락·BACK버튼 중복 수정 포함 / 사장님 VS Code Live Server 테스트 완료 |
 
 
 ---
@@ -741,6 +743,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-134 | P1 | T-134 | **테스트 완료(DONE)** `ed8ec27` | **[팝업] 8월 대출 작업 동기화 2종** | `js/popup.js` | ①대표 거절 사유 4번 추가(최근 3개월 이상 무직 또는 과거 6개월 이상 무직 + em) ②30만 원 이벤트 대출 `활용 3.5%` → `대출 상품 없음` 변경 / 테스트 완료 | 2026-08-02 03:20 | 쮸티12-1호 |
 | W-135 | P0 | T-135 | **테스트 완료(DONE)** `ba78afb` | **[긴급/Android] 헤더 가로 오버플로우 + 드로어 노출 버그 수정** | `js/menu.js`, `js/menu-dev.js` | `#sjy-nav-bar`·`#sjy-drawer` width:100%→100vw / 테스트 완료 | 2026-08-02 03:20 | 쮸티12-1호 |
 | W-136 | P1 | T-136 | **테스트 완료(DONE)** `f78b872` | **[신청 폼] 대출 가능성 검사기 안내 박스 추가** | `monthly-loan/apply/apply-dev.html`, `apply.html` | h1 아래 .apply-note 박스 삽입 / 검사기 이용 안내 + 경로 / 테스트 완료 | 2026-08-02 04:06 | 쮸티12-1호 |
+| W-137 | P1 | T-137 | **테스트 완료(DONE)** `1aee714` | **[loan-match] DEV 환경 미적용 페이지 수정 (즉시빌리기 PRD링크 + 여유있게빌리기 DEV화)** | `loan-match/index-dev.html`, `loan-match/browse-dev.html`(신규) | ①즉시빌리기 PRD→DEV ②여유있게빌리기 browse-dev.html 연결 ③browse-dev.html 신규(앱사이즈+DEV배너+메뉴바+상·하단고지) / 테스트 완료 | 2026-08-02 | 쮸티12-1호 |
 
 
 
