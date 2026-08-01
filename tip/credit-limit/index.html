@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한도 상향 · 써주세요.</title>
+<meta name="description" content="더 많이 빌릴 수 있는 조건, 곧 알려드립니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  background: #FAF7F2;
+  color: #1A1A2E;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cl-page {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+/* ── 히어로 ── */
+.cl-hero {
+  padding: 44px 24px 32px;
+  text-align: center;
+}
+
+.cl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(56, 0, 151, .08);
+  color: #380097;
+  font-size: .75rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(56, 0, 151, .18);
+  margin-bottom: 24px;
+  letter-spacing: .2px;
+}
+
+.cl-icon {
+  width: 76px;
+  height: 76px;
+  background: linear-gradient(135deg, #F3F0FF, #E4DAFF);
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin: 0 auto 22px;
+  box-shadow: 0 6px 20px rgba(56, 0, 151, .12);
+}
+
+.cl-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #1A1A2E;
+  line-height: 1.55;
+  letter-spacing: -.5px;
+  margin-bottom: 12px;
+}
+
+.cl-title em {
+  font-style: normal;
+  color: #380097;
+}
+
+.cl-sub {
+  font-size: .88rem;
+  color: #888;
+  line-height: 1.85;
+}
+
+/* ── 예고 카드 ── */
+.cl-card {
+  margin: 0 20px 16px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+  border-left: 4px solid #380097;
+}
+
+.cl-card-title {
+  font-size: .8rem;
+  font-weight: 700;
+  color: #380097;
+  margin-bottom: 12px;
+  letter-spacing: .2px;
+}
+
+.cl-card-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cl-card-list li {
+  font-size: .88rem;
+  color: #1A1A2E;
+  line-height: 1.6;
+  padding-left: 14px;
+  position: relative;
+}
+
+.cl-card-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: #380097;
+  font-weight: 700;
+}
+
+/* ── 알림 안내 ── */
+.cl-notice {
+  margin: 0 20px;
+  background: rgba(255, 84, 0, .05);
+  border: 1.5px solid rgba(255, 84, 0, .2);
+  border-radius: 14px;
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.cl-notice-text {
+  font-size: .85rem;
+  color: #FF5400;
+  font-weight: 600;
+  line-height: 1.75;
+}
+</style>
+</head>
+<body data-back="/tip/" data-breadcrumb="꿀정보,/tip/|한도 상향">
+
+<main>
+  <div class="cl-page">
+
+    <div class="cl-hero">
+      <div class="cl-badge">✨ 곧 공개 예정</div>
+      <div class="cl-icon">📈</div>
+      <h1 class="cl-title"><em>한도 상향</em>의 모든 것,<br>곧 알려드릴게요.</h1>
+      <p class="cl-sub">더 넉넉하게 빌릴 수 있는 조건을<br>꼼꼼히 정리하고 있습니다.</p>
+    </div>
+
+    <div class="cl-card">
+      <div class="cl-card-title">📌 어떤 내용이 담길까요?</div>
+      <ul class="cl-card-list">
+        <li>한도를 높이는 미션과 조건</li>
+        <li>단계별 한도 산정 방식</li>
+        <li>실제 한도 상향 사례</li>
+      </ul>
+    </div>
+
+    <div class="cl-notice">
+      <p class="cl-notice-text">
+        공개되면 앱 공지사항에서<br>
+        가장 먼저 알려드릴게요 🔔
+      </p>
+    </div>
+
+  </div>
+</main>
+
+<script src="/js/popup.js"></script>
+<script src="/js/menu.js"></script>
+<script src="/js/legal-shared.js"></script>
+</body>
+</html>

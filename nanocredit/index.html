@@ -23,6 +23,8 @@
       font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #fff;
       overflow-x: hidden;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
     /* ─── PAGE TITLE SECTION ─── */
@@ -37,41 +39,7 @@
       letter-spacing: -1.2px;
       margin-bottom: 24px;
     }
-    .back-btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 8px 16px;
-      border: 1.5px solid #D1D5DB;
-      border-radius: 8px;
-      font-size: 13px; font-weight: 600;
-      color: #555;
-      text-decoration: none;
-      background: #fff;
-      cursor: pointer;
-    }
-    .back-btn:hover { background: #f5f5f5; }
 
-    /* ─── NAV ─── */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #E5E7EB;
-      padding: 0 24px; height: 60px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo {
-      font-size: 20px; font-weight: 800; color: var(--nc-purple);
-      text-decoration: none; letter-spacing: -0.5px;
-    }
-    .nav-hamburger {
-      background: none; border: none;
-      cursor: pointer; padding: 4px;
-      display: flex; flex-direction: column; gap: 5px;
-    }
-    .nav-hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--nc-purple); border-radius: 2px;
-    }
 
     /* ─── 섹션 공통 이미지 ─── */
     .sec-img {
@@ -446,20 +414,11 @@
     }
   </style>
 </head>
-<body>
-
-<!-- ─── NAV ─── -->
-<nav>
-  <a class="nav-logo" href="../home/">nanocredit</a>
-  <button class="nav-hamburger" aria-label="메뉴">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<body class="page" data-back="/index.html" data-breadcrumb="인기 상품은 나노크레딧">
 
 <!-- ─── 페이지 타이틀 ─── -->
 <div class="page-title-section">
   <h1 class="page-title-text">신용은 중요하지 않아요,<br>포인트를 적립하면<br>AI가 돈을 빌려 드려요.</h1>
-  <a class="back-btn" href="../home/">⬅ BACK</a>
 </div>
 
 <!-- ─── SEC-01: HERO ─── -->
@@ -618,13 +577,16 @@
 
 <!-- ─── CTA 버튼 ─── -->
 <div class="cta-section">
-  <a class="nanocreditButton" href="https://monthly-loan.sirjuseyo.com/">
+  <a class="nanocreditButton" href="/monthly-loan/2026-07/">
     이 달의 대출 신청하러 가기
   </a>
 </div>
 
 <!-- ─── FOOTER (공용 footer.js) ─── -->
-<script src="/footer.js"></script>
+<!-- <script src="/footer.js"></script> -->
+<script src="/js/popup.js"></script>
+<script src="/js/menu.js"></script>
+<script src="/js/legal-shared.js"></script>
 
 </body>
 </html>

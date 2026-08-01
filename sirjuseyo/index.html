@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>써주세요. | 신용이 낮아도 빌릴 수 있으니까</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+      background: #EEEEF2;
+      color: #333;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      background: #fff;
+      min-height: 100vh;
+      box-shadow: 0 0 40px rgba(0,0,0,0.08);
+    }
+
+    /* ─── 로고 & 카피 ─── */
+    .logo-section {
+      padding: 24px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #F0F0F0;
+    }
+    .logo-img {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .logo-copy {
+      font-size: 14px;
+      color: #7C3AED;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    /* ─── 섹션 간격 ─── */
+    .sec-gap { padding: 0 16px; }
+
+    /* ─── 히어로 카드 ─── */
+    .card-hero {
+      margin: 20px 16px 14px;
+      padding: 36px 24px;
+      background: linear-gradient(160deg, #380097 0%, #5B21B6 40%, #7C3AED 100%);
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(56, 0, 151, 0.25);
+    }
+    .card-hero .hero-line {
+      font-size: 16px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.8;
+    }
+    .card-hero .hero-divider {
+      width: 40px;
+      height: 2px;
+      background: rgba(255,255,255,0.4);
+      margin: 14px auto;
+      border-radius: 1px;
+    }
+    .card-hero .hero-brand {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.3px;
+    }
+
+    /* ─── 일반 카드 ─── */
+    .card {
+      margin: 0 16px 10px;
+      padding: 22px 20px;
+      background: #fff;
+      border: 1px solid #ECECEC;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .card--accent {
+      border-left: 4px solid #380097;
+      background: linear-gradient(90deg, #F8F6FF 0%, #FFFFFF 40%);
+    }
+    .card--dark {
+      background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+      border: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .card--highlight {
+      background: linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 60%);
+      border: 1px solid #BBF7D0;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .card-body {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.8;
+    }
+    .card-sub {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.7;
+      margin-top: 10px;
+    }
+    .card-quote {
+      font-size: 13px;
+      color: #7C3AED;
+      font-style: italic;
+      margin-top: 10px;
+      padding-left: 12px;
+      border-left: 3px solid #DDD6FE;
+      line-height: 1.7;
+    }
+
+    /* ─── 통계 캡슐 ─── */
+    .stat-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .stat-capsule {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(90deg, #F5F3FF 0%, #EDE9FE 100%);
+      border: 1px solid #DDD6FE;
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .stat-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7C3AED;
+      flex-shrink: 0;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: #666;
+      flex-shrink: 0;
+    }
+    .stat-value {
+      font-size: 14px;
+      font-weight: 700;
+      color: #380097;
+    }
+
+    /* ─── 미션 리스트 ─── */
+    .mission-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .mission-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: #333;
+      padding: 8px 12px;
+      background: #FAFAFA;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .mission-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #380097, #7C3AED);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(56,0,151,0.3);
+    }
+
+    /* ─── 혜택 체크 리스트 ─── */
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #333;
+      padding: 10px 12px;
+      background: linear-gradient(90deg, #F0FDF4 0%, #FFFFFF 60%);
+      border: 1px solid #BBF7D0;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+    .benefit-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #16A34A, #22C55E);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(22,163,74,0.3);
+    }
+
+    /* ─── 세컨드 히어로 (현금이 아니어도) ─── */
+    .card-hero2 {
+      margin: 10px 16px 14px;
+      padding: 32px 24px;
+      background: linear-gradient(160deg, #B45309 0%, #D97706 50%, #F59E0B 100%);
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(180, 83, 9, 0.25);
+    }
+    .card-hero2 .hero-line {
+      font-size: 16px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.95);
+      line-height: 1.8;
+    }
+    .card-hero2 .hero-divider {
+      width: 40px;
+      height: 2px;
+      background: rgba(255,255,255,0.4);
+      margin: 14px auto;
+      border-radius: 1px;
+    }
+    .card-hero2 .hero-brand {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .card-hero2 .hero-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      margin-top: 14px;
+    }
+
+    /* ─── 클로징 ─── */
+    .card-closing {
+      margin: 10px 16px 0;
+      padding: 32px 24px;
+      background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%);
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 24px rgba(30,27,75,0.2);
+    }
+    .card-closing .closing-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.8;
+    }
+
+    /* ─── 법적 고지 하단 ─── */
+    /* ─── EXPLORE 배너 ─── */
+    .explore-banner {
+      margin: 20px 16px 10px;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .explore-banner--purple {
+      background: linear-gradient(135deg, #380097 0%, #7C3AED 100%);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(56,0,151,0.3);
+    }
+    .explore-banner--mint {
+      background: linear-gradient(135deg, #7BC8D4 0%, #A6D6DE 100%);
+      color: #1A5C5C;
+      box-shadow: 0 4px 12px rgba(166,214,222,0.4);
+    }
+    .explore-banner--orange {
+      background: linear-gradient(135deg, #FF5400 0%, #FF7A33 100%);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(255,84,0,0.3);
+    }
+
+  </style>
+<style>
+  /* ── 써주세요. 강제 고지 팝업 v5 ── */
+  :root{--brand:#6429E0;--brand-deep:#3A1693;--brand-soft:#F2ECFE;--brand-mist:#FAF8FE;--lilac:#A98BFF;--ink:#1C1530;--ink-soft:#6A6280;--line:#ECE7F5;--paper:#FFFFFF;--safe:#11A07A;--safe-soft:#E4F6F0;--warn:#D9480F;--warn-soft:#FBEEE6;--gold:#FFD84D;--shadow:0 24px 60px -20px rgba(58,22,147,.45),0 8px 24px -12px rgba(28,21,48,.25);--r:18px;}
+  .overlay{position:fixed;inset:0;z-index:9999;background:rgba(20,12,46,.66);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:20px 0;animation:fade .28s ease both}
+  .overlay[hidden]{display:none}
+  .popup{width:100%;max-width:480px;max-height:calc(100dvh - 40px);background:var(--paper);border-radius:var(--r);box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden;animation:pop .42s cubic-bezier(.2,.9,.25,1.05) both}
+  .pop-head{flex:0 0 auto;padding:15px 18px 13px;background:linear-gradient(180deg,#6F36EC 0%,var(--brand) 100%);color:#fff}
+  .pop-head__row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px}
+  .pop-head__lead{display:flex;align-items:center;gap:8px;min-width:0}
+  .pop-head__logo{height:20px;filter:brightness(0) invert(1)}
+  .pop-head__name{font-weight:800;font-size:16px;letter-spacing:-.02em;white-space:nowrap}
+  .pop-head__badge{justify-self:center;font-size:14px;font-weight:700;background:rgba(255,255,255,.18);padding:6px 13px;border-radius:999px;white-space:nowrap}
+  .progress{height:3px;background:rgba(255,255,255,.22);border-radius:99px;margin-top:11px;overflow:hidden}
+  .progress__bar{height:100%;width:0;background:#fff;border-radius:99px;transition:width .12s linear}
+  .pop-body{flex:1 1 auto;overflow-y:auto;background:var(--brand-mist);overscroll-behavior:contain}
+  .pop-body::-webkit-scrollbar{width:7px}
+  .pop-body::-webkit-scrollbar-thumb{background:#d9cdf3;border-radius:99px}
+  .block{padding:20px 18px;background:var(--paper);border-bottom:8px solid var(--brand-mist)}
+  .eyebrow{font-size:16px;font-weight:800;letter-spacing:-.01em;color:var(--brand);display:inline-flex;align-items:center;gap:6px;margin-bottom:12px}
+  .entry{padding:20px 18px 18px;text-align:center;background:linear-gradient(180deg,#F6F1FF 0%,#FFFFFF 100%);border-bottom:8px solid var(--brand-mist)}
+  .entry__h{font-size:18px;font-weight:800;line-height:1.5;letter-spacing:-.02em;color:var(--ink)}
+  .entry__h b{color:var(--brand)}
+  .entry__checks{margin-top:14px;display:flex;flex-direction:column;gap:7px}
+  .ck{display:flex;align-items:center;gap:9px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px 14px;font-size:15px;font-weight:600;color:var(--ink)}
+  .ck i{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--safe);color:#fff;display:grid;place-items:center;font-size:12px;font-style:normal;font-weight:800}
+  .core{background:var(--paper);padding:22px 18px}
+  .core__card{border-radius:16px;padding:20px 18px;text-align:left;color:#fff;background:linear-gradient(140deg,#7B43F0 0%,#5A1FD6 60%,#4413B0 100%);box-shadow:0 18px 38px -18px rgba(68,19,176,.7);position:relative;overflow:hidden}
+  .core__card::after{content:'';position:absolute;right:-30px;top:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.08)}
+  .core__line{font-size:18px;font-weight:800;line-height:1.6;letter-spacing:-.02em;color:#fff;word-break:keep-all;position:relative}
+  .core__line + .core__line{margin-top:7px}
+  .core__line .num{color:var(--gold);margin-right:4px}
+  .core__line mark{background:var(--gold);color:#3A1693;padding:2px 8px;border-radius:7px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .core__note{margin-top:12px;background:var(--brand-soft);border-radius:13px;padding:14px 16px;border-left:3px solid var(--brand);font-size:16px;line-height:1.6;color:#39305a}
+  .core__note b{color:var(--brand-deep);font-weight:800}
+  .cred-note{margin:6px 0 4px 14px;padding:10px 12px;background:#FBF6FF;border-left:3px solid var(--brand);border-radius:0 9px 9px 0;font-size:15px;line-height:1.55;color:#4a4368}
+  .cred-note b{color:var(--brand-deep);font-weight:800}
+  .lede{font-size:15px;line-height:1.6;color:#39305a;font-weight:500}
+  .lede b{color:var(--brand-deep);font-weight:800}
+  .li{display:flex;gap:8px;font-size:15px;line-height:1.55;color:#4a4368;margin-top:7px}
+  .li::before{content:'';flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:var(--lilac);margin-top:8px}
+  .li b{color:var(--brand-deep);font-weight:700}
+  .li em{font-style:normal;color:#9a8fc0}
+  .p2{font-size:15px;line-height:1.6;color:#4a4368}.p2 b{color:var(--brand-deep)}
+  .law{background:linear-gradient(180deg,#FFFFFF 0%,#FBF9FF 100%)}
+  .facts{margin-top:6px;display:grid;gap:10px}
+  .fact{display:flex;gap:12px;background:#fff;border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:12px;padding:14px}
+  .fact__n{flex:0 0 auto;width:24px;height:24px;border-radius:7px;background:var(--brand);color:#fff;font-size:14px;font-weight:800;display:grid;place-items:center}
+  .fact__d{font-size:15px;line-height:1.62;color:#39305a;font-weight:500}
+  .fact__d b{color:var(--brand-deep);font-weight:700}
+  .missions{margin-top:14px;display:grid;gap:8px}
+  .m{display:flex;gap:11px;align-items:flex-start;background:var(--brand-soft);border-radius:13px;padding:13px 14px}
+  .m__n{flex:0 0 auto;width:23px;height:23px;border-radius:7px;background:var(--brand);color:#fff;font-size:13px;font-weight:800;display:grid;place-items:center}
+  .m__t{font-size:15px;line-height:1.5}
+  .m__t strong{font-size:16px;font-weight:800;color:var(--brand-deep)}
+  .m__t span{color:var(--ink-soft);display:block;margin-top:2px;font-size:15px}
+  .keep{margin-top:12px;padding:11px 13px;background:#fafafd;border:1px dashed var(--line);border-radius:10px}
+  .keep p{font-size:15px;color:var(--ink-soft);line-height:1.5}
+  .keep p + p{margin-top:5px}
+  .keep b{color:var(--brand-deep)}
+  .amt{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:12px}
+  .amt__h{background:var(--brand);color:#fff;font-size:16px;font-weight:800;padding:11px 14px}
+  .prod{padding:12px 14px;border-top:2px solid #CDBFEF}
+  .prod:first-of-type{border-top:0}
+  .prod__name{font-size:15px;font-weight:800;color:var(--brand-deep);margin-bottom:6px}
+  .opt + .opt{margin-top:9px;padding-top:9px;border-top:1px dashed #B7A8E4}
+  .opt__way{font-size:15px;color:var(--ink-soft);line-height:1.45}
+  .opt__col{font-size:15px;font-weight:700;color:var(--ink);line-height:1.5;margin-top:2px}
+  .opt__col b{color:var(--brand)}
+  .opt__none{font-size:15px;font-weight:700;color:var(--warn)}
+  .amt-note{margin-top:11px;font-size:15px;color:var(--ink-soft);line-height:1.6}
+  .amt-note .li2{display:flex;gap:8px;margin-top:5px}
+  .amt-note .li2::before{content:'·';flex:0 0 auto;font-weight:800;color:var(--lilac)}
+  .amt-note .subli{display:flex;gap:6px;margin:5px 0 2px 18px;color:#9a8fc0;font-size:15px;line-height:1.5}
+  .amt-note .subli::before{content:'↳';flex:0 0 auto;color:var(--lilac);font-weight:700}
+  .ctbl{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:11px;max-width:300px}
+  .ctr{display:grid;grid-template-columns:1fr 1.3fr;font-size:15px}
+  .ctr + .ctr{border-top:1px solid var(--line)}
+  .ctd{padding:9px 12px}
+  .ctd:first-child{border-right:1px solid var(--line);font-weight:800;color:var(--brand-deep)}
+  .ctd:last-child{color:var(--ink);font-weight:600}
+  .flow{display:grid;gap:0;margin-top:4px}
+  .step{display:flex;align-items:center;gap:13px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:14px 15px;position:relative;z-index:1}
+  .step__tag{flex:0 0 auto;font-size:15px;font-weight:800;color:#fff;padding:5px 11px;border-radius:8px;min-width:54px;text-align:center}
+  .step--c .step__tag{background:var(--lilac)}.step--l .step__tag{background:var(--brand)}.step--r .step__tag{background:var(--safe)}
+  .step__big{font-size:17px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+  .step__big small{font-size:15px;font-weight:600;color:var(--ink-soft);margin-left:4px}
+  .step--r .step__big{color:var(--safe)}
+  .arrow{height:16px;display:grid;place-items:center;color:var(--lilac);font-size:15px}
+  .breakdown{margin-top:14px;background:var(--brand-soft);border-radius:14px;padding:14px}
+  .breakdown__cap{font-size:15px;font-weight:800;color:var(--brand-deep);margin-bottom:10px}
+  .chips{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px}
+  .chip{background:#fff;border-radius:10px;padding:10px 6px;text-align:center}
+  .chip b{display:block;font-size:16px;font-weight:800;color:var(--brand-deep);letter-spacing:-.02em}
+  .chip span{font-size:15px;color:var(--ink-soft);font-weight:600;margin-top:1px;display:block}
+  .inote{margin-top:12px;font-size:15px;color:var(--ink-soft);line-height:1.55;display:flex;gap:6px}
+  .inote::before{content:'ⓘ';color:var(--lilac);font-weight:800;flex:0 0 auto}
+  .approve{background:var(--safe-soft);border-radius:13px;padding:14px;display:flex;gap:10px;align-items:flex-start}
+  .approve__ic{flex:0 0 auto;font-size:19px}
+  .approve__t{font-size:15px;line-height:1.55;color:#1d5e4b}.approve__t b{font-weight:800;color:var(--safe)}
+  .reject{display:flex;gap:10px;background:var(--warn-soft);border-radius:12px;padding:13px;margin-top:9px}
+  .reject__ic{flex:0 0 auto;width:23px;height:23px;border-radius:7px;background:var(--warn);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800}
+  .reject__t{font-size:15px;line-height:1.5;color:#5a3a26}.reject__t b{color:var(--warn);font-weight:800}
+  .reject__t em{font-style:normal;color:#9c6b4d;font-size:15px;display:block;margin-top:3px}
+  .agree{margin:14px 0 2px}
+  .agree label{display:flex;gap:11px;align-items:center;cursor:pointer;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:14px;transition:all .15s}
+  .agree input{position:absolute;opacity:0;width:0;height:0}
+  .agree .bx{flex:0 0 auto;width:23px;height:23px;border-radius:7px;border:2px solid #c9bff0;display:grid;place-items:center;color:#fff;font-size:14px;font-weight:800;transition:all .15s}
+  .agree .tx{font-size:15px;font-weight:700;color:var(--ink)}
+  .agree input:checked + .bx{background:var(--safe);border-color:var(--safe)}
+  .agree input:checked ~ .tx{color:var(--brand-deep)}
+  .agree label:has(input:checked){border-color:var(--safe);background:var(--safe-soft)}
+  .agree input:focus-visible + .bx{outline:2px solid var(--brand);outline-offset:2px}
+  .pop-foot{flex:0 0 auto;padding:11px 16px 13px;background:#fff;border-top:1px solid var(--line)}
+  .foot-status{display:flex;align-items:center;gap:7px;font-size:15px;color:var(--ink-soft);font-weight:600;margin-bottom:10px;justify-content:center;text-align:center}
+  .foot-status .dot{flex:0 0 auto;width:6px;height:6px;border-radius:50%;background:#d9cdf3}
+  .foot-status.ready{color:var(--safe)}.foot-status.ready .dot{background:var(--safe)}
+  .cta{width:100%;border:0;border-radius:13px;cursor:not-allowed;padding:15px;font-size:16px;font-weight:800;font-family:inherit;background:#E6E0F2;color:#a99fce;transition:all .18s}
+  .cta.on{cursor:pointer;background:var(--brand);color:#fff;box-shadow:0 12px 22px -10px rgba(100,41,224,.7)}
+  .cta.on:hover{background:var(--brand-deep);transform:translateY(-1px)}
+  .cta.on:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body data-back="/index.html" data-breadcrumb="써주세요.가 뭔데?">
+
+<div class="wrap">
+
+  <!-- ═══ 로고 & 카피 ═══ -->
+  <div class="logo-section">
+    <img class="logo-img"
+         src="/imgs/home/logoPurpleSplash@2x.png"
+         alt="써주세요 로고" />
+    <div class="logo-copy">20~33세 청년 서민에게 친화적인 창의적 대안금융</div>
+  </div>
+
+  <!-- ═══ EXPLORE 1 ═══ -->
+  <div class="explore-banner explore-banner--purple">EXPLORE 1</div>
+
+  <!-- ═══ A. 히어로 ═══ -->
+  <div class="card-hero" style="background: #F3F0FF; box-shadow: 0 4px 16px rgba(56,0,151,0.1); border: 2px solid #DDD6FE;">
+    <div class="hero-line" style="color: #380097;">
+      신용이 낮아도<br>
+      (돈을) 빌릴 수 있으니까
+    </div>
+    <div class="hero-divider" style="background: #C4B5FD;"></div>
+    <div class="hero-brand" style="color: #380097;">써주세요.</div>
+  </div>
+
+  <!-- ═══ B. 평가 방식 ═══ -->
+  <div class="card card--accent">
+    <div class="card-body">
+      신용 점수 대신<br>
+      실제 상환 가능성을 읽는<br>
+      평가 방식을 적용해요!
+    </div>
+  </div>
+
+  <!-- ═══ C. 실적 통계 ═══ -->
+  <div class="card">
+    <div class="card-title">그래서 지금까지</div>
+    <div class="stat-group">
+      <div class="stat-capsule">
+        <span class="stat-dot"></span>
+        <span class="stat-label">누적 대출 승인자 수</span>
+        <span class="stat-value">수 만 명의 청년 서민이 빌려갔어요.</span>
+      </div>
+      <div class="stat-capsule">
+        <span class="stat-dot"></span>
+        <span class="stat-label">대출 승인 고객 신용등급</span>
+        <span class="stat-value">1등급부터 10등급까지</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ D. 나쁘지않은 조건 ═══ -->
+  <div class="card" style="background: linear-gradient(135deg, #F3F0FF 0%, #EDE9FE 100%); border: 2px solid #DDD6FE;">
+    <div class="card-body" style="font-weight:700; color:#380097; font-size:16px;">
+      나쁘지않은 조건일걸요?
+    </div>
+  </div>
+
+  <!-- ═══ EXPLORE 2 ═══ -->
+  <div class="explore-banner explore-banner--mint">EXPLORE 2</div>
+
+  <!-- ═══ E. 대출 방식 ═══ -->
+  <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #A6D6DE; box-shadow: 0 4px 16px rgba(166,214,222,0.2);">
+    <div style="padding: 24px 24px 10px;">
+      <div class="card-title" style="color: #1A7A7A;">지금껏 본 적 없는 대출 방식</div>
+      <div class="card-body">
+        신용뿐만 아니라<br>
+        다양한 미션을 통해<br>
+        돈을 빌릴 수 있어요!
+      </div>
+    </div>
+    <div style="padding: 0 20px 16px; display: flex; justify-content: center;">
+      <img src="/imgs/home/sjy_web_home_loan_method.png"
+           alt="무엇을 보고 빌려줄까요? — 앱 화면"
+           style="width: 75%; max-width: 210px; display: block;" />
+    </div>
+  </div>
+
+  <!-- ═══ F. AI ═══ -->
+  <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #A6D6DE; box-shadow: 0 4px 16px rgba(166,214,222,0.2);">
+    <div style="padding: 24px 24px 10px;">
+      <div class="card-title" style="color: #1A7A7A;">어떻게든 도와주는 AI</div>
+      <div class="card-body">
+        나의 실제 상환 능력과<br>
+        의지를 데이터로 분석해서 파악해요
+      </div>
+    </div>
+    <div style="padding: 0 20px 16px; display: flex; justify-content: center;">
+      <img src="/imgs/home/sjy_web_home_ai_chat.png"
+           alt="AI 심사 화면 — 앱 목업"
+           style="width: 75%; max-width: 210px; display: block;" />
+    </div>
+  </div>
+
+  <!-- ═══ G. 소액대출 ═══ -->
+  <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #A6D6DE; box-shadow: 0 4px 16px rgba(166,214,222,0.2);">
+    <div style="padding: 24px 24px 10px;">
+      <div class="card-title" style="color: #1A7A7A;">부담없는 소액대출</div>
+      <div class="card-body">
+        50만 원을 빌려도<br>
+        신용 정보에 기록하지 않아요.
+      </div>
+    </div>
+    <div style="padding: 0 20px 16px; display: flex; justify-content: center;">
+      <img src="/imgs/home/sjy_web_home_small_loan.png"
+           alt="소액대출 금액 선택 — 앱 목업"
+           style="width: 75%; max-width: 210px; display: block;" />
+    </div>
+  </div>
+
+  <!-- ═══ EXPLORE 3 ═══ -->
+  <div class="explore-banner explore-banner--orange">EXPLORE 3</div>
+
+  <!-- ═══ H. 현금이 아니어도 ═══ -->
+  <div class="card-hero2" style="background: #FFF5F0; box-shadow: 0 4px 16px rgba(255,84,0,0.1); border: 2px solid #FFCDB2;">
+    <div class="hero-line" style="color: #CC4300;">
+      현금이 아니어도<br>
+      (돈을) 갚을 수 있으니까
+    </div>
+    <div class="hero-divider" style="background: #FFAA80;"></div>
+    <div class="hero-brand" style="color: #CC4300;">또 써주세요.</div>
+    <div class="hero-sub" style="color: #99522B;">
+      적립한 포인트로 대출 원금과 이자를<br>
+      상환할 수 있는 국내 최초 금융앱
+    </div>
+  </div>
+
+  <!-- ═══ I. 꿀이에요 ═══ -->
+  <div class="card" style="border-left: 4px solid #FF5400; background: linear-gradient(90deg, #FFF5F0 0%, #FFFFFF 40%);">
+    <div class="card-body" style="font-weight:700; color:#111; font-size:16px;">
+      특히 이렇게 쓰면 꿀이에요.
+    </div>
+  </div>
+
+  <!-- ═══ J. 포인트 적립소 + 3가지 혜택 ═══ -->
+  <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #FF5400; box-shadow: 0 4px 16px rgba(255,84,0,0.15);">
+    <div style="padding: 24px 24px 10px;">
+      <div class="card-title" style="color: #CC4300;">어차피 물건을 구매한다면,<br>써주세요. 포인트 적립소에서 구매해요.</div>
+      <div class="benefit-item"><span class="benefit-check">✓</span>적립된 포인트로 빌린 돈을 갚을 수 있어요.</div>
+      <div class="benefit-item"><span class="benefit-check">✓</span>구매 이력으로 대출 승인될 확률이 높아요.</div>
+      <div class="benefit-item"><span class="benefit-check">✓</span>한도 상향의 기회가 생겨요.</div>
+    </div>
+    <div style="padding: 0 20px 16px; display: flex; justify-content: center;">
+      <img src="/imgs/home/sjy_web_home_point_store.png"
+           alt="포인트 적립소 — 앱 목업"
+           style="width: 75%; max-width: 210px; display: block;" />
+    </div>
+  </div>
+
+  <!-- ═══ ARRIVE ═══ -->
+  <div class="explore-banner explore-banner--purple">ARRIVE</div>
+
+  <!-- ═══ L. 클로징 ═══ -->
+  <div style="margin: 10px 16px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.12);">
+    <img src="/imgs/home/sjy_web_home_closing.jpg"
+         alt="당신의 모든 활동과 경험이 당신의 대출을 이룹니다"
+         style="width:100%; display:block;" />
+  </div>
+
+</div>
+<script src="/js/popup.js"></script>
+<script src="/js/menu.js"></script>
+<script src="/js/legal-shared.js"></script>
+</body>
+</html>

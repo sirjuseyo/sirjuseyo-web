@@ -1,0 +1,498 @@
+.
+./.DS_Store
+./.claude
+./.claude/launch.json
+./.claude/settings.local.json
+./.claude/worktrees
+./.claude/worktrees/great-driscoll-c92419
+./.claude/worktrees/great-driscoll-c92419/.claude
+./.claude/worktrees/great-driscoll-c92419/.claude/launch.json
+./.claude/worktrees/great-driscoll-c92419/.claude/settings.local.json
+./.claude/worktrees/great-driscoll-c92419/.git
+./.claude/worktrees/great-driscoll-c92419/CNAME
+./.claude/worktrees/great-driscoll-c92419/home
+./.claude/worktrees/great-driscoll-c92419/home/index.html
+./.claude/worktrees/great-driscoll-c92419/imgs
+./.claude/worktrees/great-driscoll-c92419/imgs/home
+./.claude/worktrees/great-driscoll-c92419/imgs/home/sjy_web_home (1).png
+./.claude/worktrees/great-driscoll-c92419/imgs/home/sjy_web_home (12).png
+./.claude/worktrees/great-driscoll-c92419/imgs/home/sjy_web_home (2) (1).png
+./.claude/worktrees/great-driscoll-c92419/imgs/home/sjy_web_home (2).png
+./.claude/worktrees/great-driscoll-c92419/imgs/home/sjy_web_home (3).png
+./.claude/worktrees/great-driscoll-c92419/imgs/home/sjy_web_home (4).png
+./.claude/worktrees/great-driscoll-c92419/imgs/home/sjy_web_home-003 (1).png
+./.claude/worktrees/great-driscoll-c92419/imgs/home/sjy_web_home-014.png
+./.claude/worktrees/great-driscoll-c92419/imgs/home/sjy_web_home.png
+./.claude/worktrees/great-driscoll-c92419/imgs/nanocredit
+./.claude/worktrees/great-driscoll-c92419/imgs/nanocredit/005.webp
+./.claude/worktrees/great-driscoll-c92419/imgs/nanocredit/2depth_landing-page_포인트를-적립하고-돈-빌리기 (1).png
+./.claude/worktrees/great-driscoll-c92419/imgs/nanocredit/2depth_landing-page_포인트를-적립하고-돈-빌리기-035.png
+./.claude/worktrees/great-driscoll-c92419/imgs/nanocredit/2depth_쇼핑 내역을 제출하고 돈 빌리기_랜딩페이지_세로버전-002.png
+./.claude/worktrees/great-driscoll-c92419/imgs/nanocredit/2depth_쇼핑-내역을-제출하고-돈-빌리기_랜딩페이지_세로버전-002.png
+./.claude/worktrees/great-driscoll-c92419/imgs/nanocredit/2depth_쇼핑-내역을-제출하고-돈-빌리기_랜딩페이지_세로버전-003.png
+./.claude/worktrees/great-driscoll-c92419/imgs/nanocredit/2depth_쇼핑-내역을-제출하고-돈-빌리기_랜딩페이지_세로버전-006.png
+./.claude/worktrees/great-driscoll-c92419/imgs/nanocredit/sjy_web_home (1).png
+./.claude/worktrees/great-driscoll-c92419/imgs/nanocredit/버튼링크_이달의대출신청하러가기.png
+./.claude/worktrees/great-driscoll-c92419/imgs/unsuspend
+./.claude/worktrees/great-driscoll-c92419/imgs/unsuspend/006.png
+./.claude/worktrees/great-driscoll-c92419/imgs/unsuspend/007.png
+./.claude/worktrees/great-driscoll-c92419/imgs/unsuspend/008.png
+./.claude/worktrees/great-driscoll-c92419/imgs/unsuspend/009.png
+./.claude/worktrees/great-driscoll-c92419/index.html
+./.claude/worktrees/great-driscoll-c92419/js
+./.claude/worktrees/great-driscoll-c92419/js/legal-shared.js
+./.claude/worktrees/great-driscoll-c92419/nanocredit
+./.claude/worktrees/great-driscoll-c92419/nanocredit/30
+./.claude/worktrees/great-driscoll-c92419/nanocredit/30/index.html
+./.claude/worktrees/great-driscoll-c92419/nanocredit/index.html
+./.claude/worktrees/great-driscoll-c92419/privacy
+./.claude/worktrees/great-driscoll-c92419/privacy.html
+./.claude/worktrees/great-driscoll-c92419/privacy/01_terms.html
+./.claude/worktrees/great-driscoll-c92419/privacy/02_collect-personal.html
+./.claude/worktrees/great-driscoll-c92419/privacy/03_collect-unique.html
+./.claude/worktrees/great-driscoll-c92419/privacy/04_inquiry-personal.html
+./.claude/worktrees/great-driscoll-c92419/privacy/05_inquiry-unique.html
+./.claude/worktrees/great-driscoll-c92419/privacy/06_provide-personal.html
+./.claude/worktrees/great-driscoll-c92419/privacy/07_provide-unique.html
+./.claude/worktrees/great-driscoll-c92419/privacy/08_standard-terms.html
+./.claude/worktrees/great-driscoll-c92419/privacy/index.html
+./.claude/worktrees/great-driscoll-c92419/privacy/index002.html
+./.claude/worktrees/great-driscoll-c92419/project-docs
+./.claude/worktrees/great-driscoll-c92419/project-docs/00_core_ops
+./.claude/worktrees/great-driscoll-c92419/project-docs/00_core_ops/WORK_THROUGH_ClaudeApp_Web_쮸티5호_20260517.md
+./.claude/worktrees/great-driscoll-c92419/unsuspend
+./.claude/worktrees/great-driscoll-c92419/unsuspend/index.html
+./.git
+./.gitignore
+./.nojekyll
+./.vscode
+./.vscode/settings.json
+./CLAUDE.md
+./CNAME
+./Mission_Point
+./Mission_Point/.DS_Store
+./challenge
+./challenge/index-dev.html
+./challenge/index.html
+./footer.js
+./imgs
+./imgs/.DS_Store
+./imgs/2depth_landing-page_pointeureul-jeogribhago-don-bilrigi-034.png
+./imgs/home
+./imgs/home/ChatGPT Image 2026년 6월 15일 오후 10_49_51.png
+./imgs/home/ChatGPT Image 2026년 6월 15일 오후 11_03_10.png
+./imgs/home/logoPurpleSplash@2x.png
+./imgs/home/sjy_web_home (1).png
+./imgs/home/sjy_web_home (12).png
+./imgs/home/sjy_web_home (2) (1).png
+./imgs/home/sjy_web_home (2).png
+./imgs/home/sjy_web_home (3).png
+./imgs/home/sjy_web_home (4).png
+./imgs/home/sjy_web_home-003 (1).png
+./imgs/home/sjy_web_home-014.png
+./imgs/home/sjy_web_home.png
+./imgs/home/sjy_web_home_ai_chat.png
+./imgs/home/sjy_web_home_closing.jpg
+./imgs/home/sjy_web_home_loan_method.png
+./imgs/home/sjy_web_home_point_store.png
+./imgs/home/sjy_web_home_small_loan.png
+./imgs/home/써주세요연계대부 대부업 등록증.pdf
+./imgs/home/써주세요연계대부 대부중개업 등록증.pdf
+./imgs/home/써주세요연계대부 사업자등록증.pdf
+./imgs/loan-match
+./imgs/loan-match/1번혜택_무이자대출_신용.png
+./imgs/loan-match/2번혜택_중복대출_신용.png
+./imgs/loan-match/KCB_850점이상_신용.png
+./imgs/loan-match/기여_기여한이력.png
+./imgs/loan-match/기여_기여활동대출가능.png
+./imgs/loan-match/기여_성장유명이용.png
+./imgs/loan-match/기여_아몰랑.png
+./imgs/loan-match/기여_예시리트스트_1일1방문챌린지_섬네일&페이지상단배너.webp
+./imgs/loan-match/기여_예시리트스트_1일1방문챌린지_앱리뷰를작성하기.webp
+./imgs/loan-match/기여_예시리트스트_기여제시하기_섬네일&페이지상단배너.webp
+./imgs/loan-match/기여_예시리트스트_밈퍼뜨리기_섬네일&페이지상단배너.webp
+./imgs/loan-match/기여_예시리트스트_밈퍼뜨리기_크라우드펀딩퍼뜨리기.webp
+./imgs/loan-match/기여_예시리트스트_블로그에이용후기를포스팅하기_섬네일&페이지상단배너.webp
+./imgs/loan-match/기여_예시리트스트_비대면지정계좌개설하기_섬네일&페이지상단배너.webp
+./imgs/loan-match/기여_예시리트스트_친구초대하고앱가입시키기_게이미피케이션(1).png
+./imgs/loan-match/기여_예시리트스트_친구초대하고앱가입시키기_게이미피케이션(2).png
+./imgs/loan-match/기여_예시리트스트_친구초대하고앱가입시키기_게이미피케이션(3).png
+./imgs/loan-match/기여_예시리트스트_친구초대하고앱가입시키기_섬네일&페이지상단배너.webp
+./imgs/loan-match/기여_지인_게이미피케이션.png
+./imgs/loan-match/기여_지인_대인관계.png
+./imgs/loan-match/기여_지인_인사력.png
+./imgs/loan-match/기여_출시예정.png
+./imgs/loan-match/기여_친구초대.webp
+./imgs/loan-match/내평판을검증받고돈빌리기.png
+./imgs/loan-match/쇼핑_네이버랑쿠팡에서.png
+./imgs/loan-match/쇼핑_새로운기회.png
+./imgs/loan-match/쇼핑_소비력과구매력.png
+./imgs/loan-match/쇼핑_쇼핑내역제출.png
+./imgs/loan-match/쇼핑_써주세요적사고.png
+./imgs/loan-match/쇼핑_이런생각.png
+./imgs/loan-match/쇼핑_출시예정.png
+./imgs/loan-match/쇼핑내역을제출하고돈빌리기.png
+./imgs/loan-match/신용관리잘햐셨군요_신용.png
+./imgs/loan-match/신용대출출시예정.png
+./imgs/loan-match/신용점수만민고돈빌리기.png
+./imgs/loan-match/앱성장을기여하고돈빌리기.png
+./imgs/loan-match/적절한 대출 방식.png
+./imgs/loan-match/짤-001.png
+./imgs/loan-match/평판_내평찬이곧신용.png
+./imgs/loan-match/평판_지인에게평판을인정받으면.png
+./imgs/loan-match/평판_지인추천서.png
+./imgs/loan-match/평판_추천서작성요청.png
+./imgs/loan-match/평판_출시예정.png
+./imgs/loan-match/한도상향_신용.png
+./imgs/loan-match/혜택2가지_신용.png
+./imgs/nanocredit
+./imgs/nanocredit/.DS_Store
+./imgs/nanocredit/2depth_landing-page_포인트를-적립하고-돈-빌리기 (1).png
+./imgs/nanocredit/2depth_landing-page_포인트를-적립하고-돈-빌리기-035.png
+./imgs/nanocredit/2depth_쇼핑 내역을 제출하고 돈 빌리기_랜딩페이지_세로버전-002.png
+./imgs/nanocredit/2depth_쇼핑-내역을-제출하고-돈-빌리기_랜딩페이지_세로버전-002.png
+./imgs/nanocredit/2depth_쇼핑-내역을-제출하고-돈-빌리기_랜딩페이지_세로버전-003.png
+./imgs/nanocredit/2depth_쇼핑-내역을-제출하고-돈-빌리기_랜딩페이지_세로버전-006.png
+./imgs/nanocredit/Submissions
+./imgs/nanocredit/Submissions/.DS_Store
+./imgs/nanocredit/Submissions/4depth_page_소통거리-제출-가이드라인-002.png
+./imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-005 (1).png
+./imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-006.webp
+./imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-007_(1).webp
+./imgs/nanocredit/Submissions/_노션_랜딩페이지_배너_모바일최적화-008.webp
+./imgs/nanocredit/Submissions/노션_랜딩페이지_이미지_모바일최적화-007 (1).png
+./imgs/nanocredit/Submissions/노션_랜딩페이지_이미지_모바일최적화-007 (2).png
+./imgs/nanocredit/Submissions/노션_커버_배너_모바일최적화-038.png
+./imgs/nanocredit/Submissions/알뜰폰_통신비화면내역.png
+./imgs/nanocredit/Submissions/약정폰_가입정보.png
+./imgs/nanocredit/Submissions/약정폰_노션_랜딩페이지_배너_모바일최적화-009 (1).png
+./imgs/nanocredit/Submissions/약정폰_노션_랜딩페이지_배너_모바일최적화-010 (1).png
+./imgs/nanocredit/Submissions/약정폰_노션_랜딩페이지_배너_모바일최적화-011 (1).png
+./imgs/nanocredit/Submissions/약정폰_노션_랜딩페이지_이미지_모바일최적화-007.png
+./imgs/nanocredit/Submissions/약정폰_요금제.png
+./imgs/nanocredit/nanocredit_10.webp
+./imgs/nanocredit/nanocredit_20.webp
+./imgs/nanocredit/nanocredit_30.webp
+./imgs/nanocredit/nanocredit_50.webp
+./imgs/nanocredit/nanocredit_communication.png
+./imgs/nanocredit/nanocredit_point.png
+./imgs/nanocredit/nanocredit_심사.png
+./imgs/nanocredit/nanocredit_심사진행.png
+./imgs/nanocredit/sjy_web_home (1).png
+./imgs/nanocredit/대출시작전반드시확인해요.png
+./imgs/nanocredit/진행_원형_하단방향화살.png
+./imgs/nanocredit/버튼링크_이달의대출신청하러가기.png
+./imgs/unsuspend
+./imgs/unsuspend/006.png
+./imgs/unsuspend/007.png
+./imgs/unsuspend/008.png
+./imgs/unsuspend/009.png
+./index-dev.html
+./index.html
+./js
+./js/legal-shared.js
+./js/menu-dev.js
+./js/menu.js
+./js/popup.js
+./loan-match
+./loan-match/browse.html
+./loan-match/credit.html
+./loan-match/index-dev.html
+./loan-match/index.html
+./loan-match/shopping.html
+./mockup-nanocredit-detail.html
+./monthly-loan
+./monthly-loan/2026-04
+./monthly-loan/2026-04/.DS_Store
+./monthly-loan/2026-04/assets
+./monthly-loan/2026-04/index.html
+./monthly-loan/2026-05
+./monthly-loan/2026-05/.DS_Store
+./monthly-loan/2026-05/assets
+./monthly-loan/2026-05/assets/.DS_Store
+./monthly-loan/2026-05/assets/Fanmily_May_001.png
+./monthly-loan/2026-05/assets/Fanmily_May_002.png
+./monthly-loan/2026-05/assets/Fanmily_May_003.png
+./monthly-loan/2026-05/assets/Gift-Box-Rose_May-Loan.png
+./monthly-loan/2026-05/assets/Lover_May.png
+./monthly-loan/2026-05/assets/banner_May-Loan.jpg
+./monthly-loan/2026-05/assets/fanmily-may-001.jpg
+./monthly-loan/2026-05/assets/fanmily-may-002.jpg
+./monthly-loan/2026-05/assets/fanmily-may-003.jpg
+./monthly-loan/2026-05/assets/fanmily-may.jpg
+./monthly-loan/2026-05/assets/lone-checker-may.jpg
+./monthly-loan/2026-05/assets/lover-may.jpg
+./monthly-loan/2026-05/index.html
+./monthly-loan/2026-06
+./monthly-loan/2026-06/.DS_Store
+./monthly-loan/2026-06/assets
+./monthly-loan/2026-06/assets/.DS_Store
+./monthly-loan/2026-06/assets/2026_worldcup_type101.png
+./monthly-loan/2026-06/assets/2026_worldcup_type102.jpg
+./monthly-loan/2026-06/assets/2026_worldcup_type102.png
+./monthly-loan/2026-06/assets/Battlefield-Cross_Jun-Loan.png
+./monthly-loan/2026-06/assets/banner_memorial-jun-001.jpg
+./monthly-loan/2026-06/assets/banner_memorial-jun-001.png
+./monthly-loan/2026-06/assets/banner_worldcup-jun-001.jpg
+./monthly-loan/2026-06/assets/banner_worldcup-jun-001.png
+./monthly-loan/2026-06/assets/memorial-jun-001.jpg
+./monthly-loan/2026-06/assets/memorial-jun-001.png
+./monthly-loan/2026-06/assets/worldcup-jun-001.jpg
+./monthly-loan/2026-06/assets/worldcup-jun-001.png
+./monthly-loan/2026-06/index-dev.html
+./monthly-loan/2026-06/index.html
+./monthly-loan/2026-06/worldcup-challenge
+./monthly-loan/2026-06/worldcup-challenge/.DS_Store
+./monthly-loan/2026-06/worldcup-challenge/apply
+./monthly-loan/2026-06/worldcup-challenge/apply/index-dev.html
+./monthly-loan/2026-06/worldcup-challenge/apply/index.html
+./monthly-loan/2026-06/worldcup-challenge/assets
+./monthly-loan/2026-06/worldcup-challenge/assets/.gitkeep
+./monthly-loan/2026-06/worldcup-challenge/assets/worldcup-challenge-jun-001.jpg
+./monthly-loan/2026-06/worldcup-challenge/assets/worldcup-challenge-jun-001.png
+./monthly-loan/2026-06/worldcup-challenge/index-dev.html
+./monthly-loan/2026-06/worldcup-challenge/index.html
+./monthly-loan/2026-07
+./monthly-loan/2026-07/.DS_Store
+./monthly-loan/2026-07/assets
+./monthly-loan/2026-07/assets/.DS_Store
+./monthly-loan/2026-07/assets/Palm-Surf_Jul-Loan.png
+./monthly-loan/2026-07/assets/Surfer-Sunset_Jul-Loan.jpg
+./monthly-loan/2026-07/assets/Surfer-Sunset_Jul-Loan.png
+./monthly-loan/2026-07/assets/banner_tropical-jul-001_gitlab.jpg
+./monthly-loan/2026-07/assets/banner_tropical-jul-001_gitlab.png
+./monthly-loan/2026-07/assets/waterbomb-jul-001.jpg
+./monthly-loan/2026-07/assets/waterbomb-jul-001.png
+./monthly-loan/2026-07/index-dev.html
+./monthly-loan/2026-07/index.html
+./monthly-loan/apply
+./monthly-loan/apply/apply-dev.html
+./monthly-loan/apply/apply-mockup.html
+./monthly-loan/apply/apply.html
+./nanocredit
+./nanocredit/.DS_Store
+./nanocredit/10
+./nanocredit/10/index-dev.html
+./nanocredit/10/index.html
+./nanocredit/20
+./nanocredit/20/index-dev.html
+./nanocredit/20/index.html
+./nanocredit/30
+./nanocredit/30/index-dev.html
+./nanocredit/30/index.html
+./nanocredit/50
+./nanocredit/50/index-dev.html
+./nanocredit/50/index.html
+./nanocredit/index-dev.html
+./nanocredit/index.html
+./nanocredit/pre-check
+./nanocredit/pre-check/index.html
+./nanocredit/submissions
+./nanocredit/submissions/index.html
+./nanocredit/submissions/job-income
+./nanocredit/submissions/job-income/4dae-insured.html
+./nanocredit/submissions/job-income/4dae-uninsured.html
+./nanocredit/submissions/job-income/business.html
+./nanocredit/submissions/job-income/college.html
+./nanocredit/submissions/job-income/daily-worker.html
+./nanocredit/submissions/job-income/delivery.html
+./nanocredit/submissions/job-income/etc.html
+./nanocredit/submissions/job-income/freelancer.html
+./nanocredit/submissions/job-income/job-seeker.html
+./nanocredit/submissions/job-income/military-pro.html
+./nanocredit/submissions/job-income/military.html
+./nanocredit/submissions/job-income/unemployed.html
+./nanocredit/submissions/phone-docs
+./nanocredit/submissions/phone-docs/alttul.html
+./nanocredit/submissions/phone-docs/sunbul.html
+./nanocredit/submissions/phone-docs/yakjeong.html
+./privacy
+./privacy.html
+./privacy/01_terms.html
+./privacy/02_collect-personal.html
+./privacy/03_collect-unique.html
+./privacy/04_inquiry-personal.html
+./privacy/05_inquiry-unique.html
+./privacy/06_provide-personal.html
+./privacy/07_provide-unique.html
+./privacy/08_standard-terms.html
+./privacy/index.html
+./privacy/index002.html
+./project-docs
+./project-docs/.DS_Store
+./project-docs/00_core_ops
+./project-docs/00_core_ops/TODO_BOARD_ClaudeApp_Web_쮸리1호_20260505.md
+./project-docs/00_core_ops/TODO_BOARD_ClaudeApp_Web_쮸티5호_20260517.md
+./project-docs/00_core_ops/TODO_BOARD_클로드앱코드_쮸리12호.md
+./project-docs/00_core_ops/TODO_BOARD_클로드앱코드_쮸리1호.md
+./project-docs/00_core_ops/TODO_BOARD_클로드코드_쮸티12-1호.md
+./project-docs/00_core_ops/WORK_INSTRUCTION(작업지침서)_Web_클로드코드앱_쮸리1호.md
+./project-docs/00_core_ops/WORK_INSTRUCTION(작업지침서)_ClaudeApp_Web_쮸리1호_20260505.md
+./project-docs/00_core_ops/WORK_THROUGH_ClaudeApp_Web_쮸리1호_20260505.md
+./project-docs/00_core_ops/WORK_THROUGH_ClaudeApp_Web_쮸티5호_20260517.md
+./project-docs/00_core_ops/WORK_THROUGH_클로드앱코드_쮸리12호.md
+./project-docs/00_core_ops/WORK_THROUGH_클로드앱코드_쮸리1호.md
+./project-docs/00_core_ops/WORK_THROUGH_클로드코드_쮸티12-1호.md
+./project-docs/120_plan
+./project-docs/120_plan/.DS_Store
+./project-docs/120_plan/COMPLETION_REPORT_감다살문어챌린지_클라서버연동_쮸티12호_20260602.md
+./project-docs/120_plan/DDL_challenge_worldcup_2026_application_20260602.sql
+./project-docs/120_plan/PLAN_2026-05_가정의달대출_기획서_v101.md
+./project-docs/120_plan/PLAN_2026-05_가정의달대출_기획서_v102.md
+./project-docs/120_plan/PLAN_2026-06_월드컵_감다살문어_이벤트_20260602.md
+./project-docs/120_plan/PLAN_2026-06_호국보훈의달대출_기획서.md
+./project-docs/120_plan/PLAN_2026-07_썸머베케이션대출_기획서.md
+./project-docs/120_plan/PLAN_2026-07_홈페이지_7월전환_기획서.md
+./project-docs/120_plan/PLAN_4차심사자료_내재화기획서.md
+./project-docs/120_plan/PLAN_loan-eligibility-checker_기획서.md
+./project-docs/120_plan/PLAN_sirjuseyo-web_사이트통합_기획서_쮸리_v1.3.md
+./project-docs/120_plan/PLAN_sirjuseyo-web_사이트통합_기획서.md
+./project-docs/120_plan/PROJECT_DEFINITION_4차심사자료폼_내재화_서버팀전달.md
+./project-docs/120_plan/PROJECT_DEFINITION_대출신청폼_내재화_서버팀전달.md
+./project-docs/120_plan/PROJECT_SUMMARY_월별대출_탈리내재화.md
+./project-docs/120_plan/TECHSPEC_2026-06_감다살문어챌린지내재화_v105_Claude_App_Code_20260602.md
+./project-docs/120_plan/WORKORDER_W-073_레포통합_쮸리.md
+./project-docs/120_plan/apply-감다살문어-worldcup_20260602.html
+./project-docs/120_plan/menu-diff-for-review.md
+./project-docs/120_plan/mockup-menu.html
+./project-docs/120_plan/wireframe-monthly-loan-home-jun-v2.html
+./project-docs/120_plan/wireframe-monthly-loan-home-jun_v1.html
+./project-docs/120_plan/wireframe-감다살문어-worldcup_20260602.html
+./project-docs/120_plan/기획안_loan-match_나에게맞는대출상품.md
+./project-docs/120_plan/기획안_종합_사이트통합_사이트맵_쮸티.md
+./project-docs/120_plan/목업_tip_index_20260722.html
+./project-docs/120_plan/기획안_home_랜딩페이지.md
+./project-docs/120_plan/기획안_home_위장용_실사대비.md
+./project-docs/120_plan/기획안_loan-match_기여_예시리스트.md
+./project-docs/120_plan/기획안_loan-match_기여대출.md
+./project-docs/120_plan/기획안_loan-match_쇼핑대출.md
+./project-docs/120_plan/기획안_loan-match_신용대출.md
+./project-docs/120_plan/기획안_loan-match_여유있게빌리기.md
+./project-docs/120_plan/기획안_loan-match_적절한대출방식찾기.md
+./project-docs/120_plan/기획안_loan-match_평판대출.md
+./project-docs/120_plan/기획안_nanocredit_랜딩페이지.md
+./project-docs/120_plan/기획안_nanocredit_소통거리제출_페이지.md
+./project-docs/120_plan/기획안_privacy_랜딩페이지.md
+./project-docs/120_plan/기획안_unsuspend_랜딩페이지.md
+./project-docs/120_plan/월별대출_자동화매뉴얼.docx
+./project-docs/120_plan/월별대출_자동화매뉴얼.md
+./project-docs/120_plan/팝업배너콘텐츠.md
+./project-docs/130_handover
+./project-docs/130_handover/HANDOVER_법적고지_앱반영요청_sirjuseyoWeb_Amdroid&iOS_20260622.md
+./project-docs/130_handover/HANDOVER_써주세요_웹팝업_v5_20260628.md
+./project-docs/130_handover/HANDOVER_써주세요_웹팝업_v6_20260628.md
+./project-docs/130_handover/sirjuseyo-web-popup-v5_20260628.html
+./project-docs/130_handover/sirjuseyo-web-popup-v6_20260628.html
+./project-docs/200_refers
+./project-docs/200_refers/.DS_Store
+./project-docs/200_refers/home
+./project-docs/200_refers/home/써주세요.홈.pdf
+./project-docs/200_refers/loan-match
+./project-docs/200_refers/loan-match/.DS_Store
+./project-docs/200_refers/loan-match/그렇다면 고객님에게 적절한 대출 방식을 찾아드릴게요.png
+./project-docs/200_refers/loan-match/그렇다면 고객님에게 적절한 대출 방식을 찾아드릴게요_tally.png
+./project-docs/200_refers/loan-match/기여.png
+./project-docs/200_refers/loan-match/기여_예시리트스트_1일1방문챌린지.png
+./project-docs/200_refers/loan-match/기여_예시리트스트_기여제시하기.png
+./project-docs/200_refers/loan-match/기여_예시리트스트_밈퍼뜨리기.png
+./project-docs/200_refers/loan-match/기여_예시리트스트_블로그에이용후기를포스팅하기.png
+./project-docs/200_refers/loan-match/기여_예시리트스트_비대면지정계좌개설하기.png
+./project-docs/200_refers/loan-match/기여_예시리트스트_앱리뷰를작성하기.png
+./project-docs/200_refers/loan-match/기여_예시리트스트_친구초대하고앱가입시키기.png
+./project-docs/200_refers/loan-match/기여_예시리트스트_크라우드펀딩퍼뜨리기.png
+./project-docs/200_refers/loan-match/기여_챌린지.png
+./project-docs/200_refers/loan-match/기여_초대.png
+./project-docs/200_refers/loan-match/쇼핑.png
+./project-docs/200_refers/loan-match/신용.png
+./project-docs/200_refers/loan-match/평판.png
+./project-docs/200_refers/loan-match/나에게맞는대출방법_어떻게 돈을 빌릴지부터 확인해요! .png
+./project-docs/200_refers/nanocredit
+./project-docs/200_refers/nanocredit/.DS_Store
+./project-docs/200_refers/nanocredit/Submissions
+./project-docs/200_refers/nanocredit/Submissions/4대보험 가입 O 직장인:알바.png
+./project-docs/200_refers/nanocredit/Submissions/4대보험 가입 X 직장인:알바.png
+./project-docs/200_refers/nanocredit/Submissions/군복무중_내용없음.png
+./project-docs/200_refers/nanocredit/Submissions/기타.png
+./project-docs/200_refers/nanocredit/Submissions/대학생.png
+./project-docs/200_refers/nanocredit/Submissions/무직.png
+./project-docs/200_refers/nanocredit/Submissions/배달직_내용없음.png
+./project-docs/200_refers/nanocredit/Submissions/사업자.png
+./project-docs/200_refers/nanocredit/Submissions/선불폰 - Notion - [www.notion.so].png
+./project-docs/200_refers/nanocredit/Submissions/스크린샷 2026-05-19 오전 1.31.50.png
+./project-docs/200_refers/nanocredit/Submissions/스크린샷 2026-05-19 오전 1.32.09.png
+./project-docs/200_refers/nanocredit/Submissions/스크린샷 2026-05-19 오전 1.32.28.png
+./project-docs/200_refers/nanocredit/Submissions/스크린샷 2026-05-19 오전 1.33.07.png
+./project-docs/200_refers/nanocredit/Submissions/스크린샷 2026-05-19 오전 1.33.25.png
+./project-docs/200_refers/nanocredit/Submissions/스크린샷 2026-05-19 오전 1.33.33.png
+./project-docs/200_refers/nanocredit/Submissions/스크린샷 2026-05-19 오전 1.33.57.png
+./project-docs/200_refers/nanocredit/Submissions/스크린샷 2026-05-19 오전 1.34.16.png
+./project-docs/200_refers/nanocredit/Submissions/알뜰폰 - Notion - [www.notion.so].png
+./project-docs/200_refers/nanocredit/Submissions/약정폰 - Notion - [www.notion.so].png
+./project-docs/200_refers/nanocredit/Submissions/일용직.png
+./project-docs/200_refers/nanocredit/Submissions/직업군인_내영없음.png
+./project-docs/200_refers/nanocredit/Submissions/취준생_내용없음.png
+./project-docs/200_refers/nanocredit/Submissions/프리랜서.png
+./project-docs/200_refers/nanocredit/nanocredit_신용은 중요하지 않아요, 포인트를 적립하면 AI가 돈을 빌려 드려요.pdf
+./project-docs/200_refers/nanocredit/대출 심사 시작 전, 반드시 확인해요[www.notion.so].png
+./project-docs/200_refers/nanocredit/소통거리는 이렇게 제출해 주세요. pdf.pdf
+./project-docs/200_refers/nanocredit/원리현 상품.png
+./project-docs/200_refers/nanocredit/이포 상품.png
+./project-docs/200_refers/nanocredit/포인트요약_[Live]소통프로세스_2.0_써주세요_20260516.xlsx
+./project-docs/200_refers/privacy-contents
+./project-docs/200_refers/privacy-contents/02_개인신용정보_수집이용_동의서.md
+./project-docs/200_refers/unsuspend
+./project-docs/200_refers/unsuspend/연체이력•원약불•이약불로 이용 정지된 고객님들 필독 _ Notion.pdf
+./project-docs/210_screenshot
+./project-docs/210_screenshot/스크린샷 2026-07-20 오전 9.13.18.png
+./project-docs/footer.js
+./sirjuseyo
+./sirjuseyo/index-dev.html
+./sirjuseyo/index-origin.html
+./sirjuseyo/index.html
+./structure.txt
+./tip
+./tip/.DS_Store
+./tip/apply-review
+./tip/apply-review/apply-review-dev.html
+./tip/apply-review/apply-review-mockup.html
+./tip/apply-review/apply-review.html
+./tip/index-dev.html
+./tip/index.html
+./tip/loan-checker
+./tip/loan-checker/.DS_Store
+./tip/loan-checker/2026-05
+./tip/loan-checker/2026-05/app.js
+./tip/loan-checker/2026-05/assets
+./tip/loan-checker/2026-05/assets/img
+./tip/loan-checker/2026-05/assets/img/cta-loan-abracadabra.jpg
+./tip/loan-checker/2026-05/assets/img/cta-newyear-lucky-loan-apply_typeB.jpg
+./tip/loan-checker/2026-05/assets/img/cta-newyear-lucky-loan-apply_typeC.jpg
+./tip/loan-checker/2026-05/assets/img/cta-newyear-lucky-loan-apply_typeC.png
+./tip/loan-checker/2026-05/assets/img/hero-loan-eligibility-checker_typeB.jpg
+./tip/loan-checker/2026-05/assets/img/loan-eligibility-checker-02.jpg
+./tip/loan-checker/2026-05/assets/img/loan-eligibility-checker-03.jpg
+./tip/loan-checker/2026-05/assets/img/loan-eligibility-checker-title.jpg
+./tip/loan-checker/2026-05/index.html
+./tip/loan-checker/2026-05/styles.css
+./tip/loan-checker/app.js
+./tip/loan-checker/assets
+./tip/loan-checker/assets/.DS_Store
+./tip/loan-checker/assets/img
+./tip/loan-checker/assets/img/cta-loan-abracadabra.jpg
+./tip/loan-checker/assets/img/cta-newyear-lucky-loan-apply_typeB.jpg
+./tip/loan-checker/assets/img/cta-newyear-lucky-loan-apply_typeC.jpg
+./tip/loan-checker/assets/img/cta-newyear-lucky-loan-apply_typeC.png
+./tip/loan-checker/assets/img/hero-loan-eligibility-checker_typeB.jpg
+./tip/loan-checker/assets/img/loan-checker-options-guide.png
+./tip/loan-checker/assets/img/loan-eligibility-checker-02.jpg
+./tip/loan-checker/assets/img/loan-eligibility-checker-03.jpg
+./tip/loan-checker/assets/img/loan-eligibility-checker-title.jpg
+./tip/loan-checker/assets/img/waterbomb-jul-002.png
+./tip/loan-checker/index-dev.html
+./tip/loan-checker/index.html
+./tip/loan-checker/month-config.js
+./tip/loan-checker/styles.css
+./tip/unsuspend
+./tip/unsuspend/.DS_Store
+./tip/unsuspend/index-dev.html
+./tip/unsuspend/index.html

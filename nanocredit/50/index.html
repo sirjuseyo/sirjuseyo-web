@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>50만 원 1개월 | 원리포 상품 | nanocredit</title>
+  <title>50만 원 1개월 | 원리포 상품 | 써주세요.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
@@ -18,28 +18,8 @@
       font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #fff;
       overflow-x: hidden;
-    }
-
-    /* ─── NAV ─── */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #E5E7EB;
-      padding: 0 24px; height: 60px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo {
-      font-size: 20px; font-weight: 800; color: var(--nc-purple);
-      text-decoration: none; letter-spacing: -0.5px;
-    }
-    .nav-hamburger {
-      background: none; border: none; cursor: pointer; padding: 4px;
-      display: flex; flex-direction: column; gap: 5px;
-    }
-    .nav-hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--nc-purple); border-radius: 2px;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
     /* ─── 공통 이미지 ─── */
@@ -381,15 +361,8 @@
     .footer-info { font-size: 12px; color: #888; line-height: 1.8; }
   </style>
 </head>
-<body>
+<body class="page" data-back="/nanocredit/" data-breadcrumb="인기 상품은 나노크레딧,/nanocredit/|원리포 50만">
 
-<!-- ─── NAV ─── -->
-<nav>
-  <a class="nav-logo" href="../">nanocredit</a>
-  <button class="nav-hamburger" aria-label="메뉴">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
 
 <!-- ─── 상품 배너 ─── -->
 <img class="sec-img"
@@ -411,16 +384,16 @@
   <div style="margin-bottom: 24px;">
 
     <div class="option-card">
-      <p class="option-card-title">⏳ 웨이팅 대출 → 포인트 적립이 힘들다면.</p>
+      <p class="option-card-title">⏳ 웨이팅 대출 → 포인트 적립이 힘들다면 선택!</p>
       <ul class="option-list">
-        <li><div class="option-li-body">매월 1일 ~ 25일 기간에 대출을 미리 신청하고, 다음 달 1일 ~ 5일에 대출 심사를 받아요.</div></li>
+        <li><div class="option-li-body">이번 달 1일 ~ 25일에 신청하고, 다음 달 1일 ~ 5일에 대출 심사를 받아요.</div></li>
         <li><div class="option-li-body">일찍 웨이팅 할수록 포인트 할인 및 인하 폭이 커져요.</div></li>
         <li><div class="option-li-body"><span class="option-red">Tip! 신청을 서두르면, 포인트 거의 적립 하지 않고 대출을 받을 수도 있어요!</span></div></li>
       </ul>
     </div>
 
     <div class="option-card">
-      <p class="option-card-title">🚴 롸잇나우 대출 → 한도상향이 필요하다면.</p>
+      <p class="option-card-title">🚴 롸잇나우 대출 → 한도상향이 필요하다면 선택!</p>
       <ul class="option-list">
         <li><div class="option-li-body">모든 대출 금액이 원리포 상품 입니다.</div></li>
         <li><div class="option-li-body">원리포 상품이란?
@@ -430,11 +403,12 @@
           </ul>
         </div></li>
         <li><div class="option-li-body"><span class="option-red">모든 미션 완료하면 바로 대출 심사 진행합니다.</span></div></li>
+        <li><div class="option-li-body">상환 후 블랙찬스 티켓 지급 받습니다.</div></li>
       </ul>
     </div>
 
     <div class="option-card">
-      <p class="option-card-title">👑 블랙찬스 티켓 → 대우받고 싶다면.</p>
+      <p class="option-card-title">👑 블랙찬스 티켓 → 재대출을 대우받고 싶다면 선택!</p>
       <ul class="option-list">
         <li><div class="option-li-body">블랙찬스 티켓 보유 고객님만 이용가능합니다.</div></li>
         <li><div class="option-li-body">모든 금액을 원리현, 이포, 원리포 상품으로 이용 가능합니다.
@@ -475,7 +449,6 @@
       <thead>
         <tr>
           <th>구분</th>
-          <th>좌석</th>
           <th>심사</th>
           <th>상품</th>
           <th>크레딧 미션</th>
@@ -487,43 +460,48 @@
       <tbody>
         <tr>
           <td class="td-left">웨이팅 대출</td>
-          <td class="td-left">🟧 Box Seat</td>
           <td>매월 1 ~ 5일</td>
           <td>원리포 상품</td>
-          <td>6,000포<span class="small-note">(최대 50% 할인)</span></td>
+          <td>2,250포<span class="small-note">(최대 50% 할인)</span></td>
           <td>5,000포<span class="small-note">(1%)</span></td>
           <td>5,000포<span class="small-note">(1%)</span></td>
-          <td class="total-cell">최소 16,000포</td>
+          <td class="total-cell">최소 12,250포</td>
         </tr>
         <tr>
           <td class="td-left">롸잇나우 대출</td>
-          <td class="td-left">🟥 Free Seat</td>
           <td>매일</td>
           <td>원리포 상품</td>
-          <td>12,000포<span class="small-note">(할인 없음)</span></td>
+          <td>4,500포<span class="small-note">(할인 없음)</span></td>
           <td>5,000포<span class="small-note">(1%)</span></td>
           <td>50,000포<span class="small-note">(10%)</span></td>
-          <td class="total-cell">67,000포</td>
+          <td class="total-cell">59,500포</td>
         </tr>
         <tr>
           <td class="td-left">블랙찬스 대출</td>
-          <td class="td-left">⬛ Thanks Seat</td>
-          <td>매일</td>
-          <td>이포 상품</td>
-          <td>12,000포<span class="small-note">(할인 없음)</span></td>
-          <td>5,000포<span class="small-note">(1%)</span></td>
-          <td>감면</td>
-          <td class="total-cell">17,000포</td>
+          <td>다음 달 1 ~ 5일</td>
+          <td>원리현 상품</td>
+          <td>4,500포<span class="small-note">(할인 없음)</span></td>
+          <td>없음</td>
+          <td>없음</td>
+          <td class="total-cell">4,500포</td>
         </tr>
         <tr>
-          <td class="td-left">이벤트 대출</td>
-          <td class="td-left">🟪 Special Seat</td>
+          <td class="td-left">블랙찬스 대출</td>
           <td>매일</td>
           <td>이포 상품</td>
-          <td>20,000포<span class="small-note">(할인 없음)</span></td>
+          <td>4,500포<span class="small-note">(할인 없음)</span></td>
           <td>5,000포<span class="small-note">(1%)</span></td>
-          <td>감면</td>
-          <td class="total-cell">25,000포</td>
+          <td>없음</td>
+          <td class="total-cell">9,500포</td>
+        </tr>
+        <tr>
+          <td class="td-left">블랙찬스 대출</td>
+          <td>매일</td>
+          <td>원리포 상품</td>
+          <td>4,500포<span class="small-note">(할인 없음)</span></td>
+          <td>5,000포<span class="small-note">(1%)</span></td>
+          <td>20,000포<span class="small-note">(4%)</span></td>
+          <td class="total-cell">29,500포</td>
         </tr>
       </tbody>
     </table>
@@ -545,7 +523,7 @@
 
     <p class="limit-up-title">1. 웨이팅 대출 50만 원 :</p>
     <ul class="limit-up-list">
-      <li>크레딧 미션 : 6,000포 → 신청 시기별 최대 50% <span class="limit-red">3,000포까지</span> 할인</li>
+      <li>크레딧 미션 : 4,500포 → 신청 시기별 최대 50% <span class="limit-red">2,250포까지</span> 할인</li>
       <li>이자 미션 : 1% 5,000포</li>
       <li>원금 미션 : 10% 50,000포 → 신청 시기별 최대 1% <span class="limit-red">5,000포까지</span> 인하</li>
       <li>블랙찬스 티켓 지급 : 다음 대출에 (1)원금 미션 인하된 원리포 상품 (2)이자 미션만 있는 이포 상품 (3)크레딧 미션만 있는 원리현 상품 중 하나 이용 가능</li>
@@ -554,7 +532,7 @@
 
     <p class="limit-up-title">2. 롸잇나우 대출 50만 원 :</p>
     <ul class="limit-up-list">
-      <li>크레딧 미션 12,000포 + 이자 미션 1% 5,000포 + 원금 미션 10% 50,000포</li>
+      <li>크레딧 미션 4,500포 + 이자 미션 1% 5,000포 + 원금 미션 10% 50,000포</li>
       <li>블랙찬스 티켓 지급 : 다음 대출에 (1)원금 미션 인하된 원리포 상품 (2)이자 미션만 있는 이포 상품 (3)크레딧 미션만 있는 원리현 상품 중 하나 이용 가능</li>
       <li class="limit-red limit-bold">바로 심사</li>
     </ul>
@@ -586,46 +564,46 @@
           <td class="td-left">Box Seat (귀빈석)</td>
           <td>1일 ~ 5일</td>
           <td>매월 1 ~ 5일</td>
-          <td>6,000포<span class="small-note">(50%▼)</span></td>
-          <td>9,000포<span class="small-note">(25%▼)</span></td>
-          <td>7,200포<span class="small-note">(40%▼)</span></td>
-          <td>9,600포<span class="small-note">(20%▼)</span></td>
+          <td>2,250포<span class="small-note">(50%▼)</span></td>
+          <td>3,375포<span class="small-note">(25%▼)</span></td>
+          <td>2,700포<span class="small-note">(40%▼)</span></td>
+          <td>3,600포<span class="small-note">(20%▼)</span></td>
         </tr>
         <tr>
           <td class="td-left">VIP Seat (1열)</td>
           <td>6일 ~ 10일</td>
           <td>매월 1 ~ 5일</td>
-          <td>6,600포<span class="small-note">(45%▼)</span></td>
-          <td>9,600포<span class="small-note">(20%▼)</span></td>
-          <td>7,800포<span class="small-note">(35%▼)</span></td>
-          <td>10,200포<span class="small-note">(15%▼)</span></td>
+          <td>2,475포<span class="small-note">(45%▼)</span></td>
+          <td>3,600포<span class="small-note">(20%▼)</span></td>
+          <td>2,925포<span class="small-note">(35%▼)</span></td>
+          <td>3,825포<span class="small-note">(15%▼)</span></td>
         </tr>
         <tr>
           <td class="td-left">Royal Seat (2열)</td>
           <td>11일 ~ 15일</td>
           <td>매월 1 ~ 5일</td>
-          <td>7,200포<span class="small-note">(40%▼)</span></td>
-          <td>10,200포<span class="small-note">(15%▼)</span></td>
-          <td>8,400포<span class="small-note">(30%▼)</span></td>
-          <td>10,800포<span class="small-note">(10%▼)</span></td>
+          <td>2,700포<span class="small-note">(40%▼)</span></td>
+          <td>3,825포<span class="small-note">(15%▼)</span></td>
+          <td>3,150포<span class="small-note">(30%▼)</span></td>
+          <td>4,050포<span class="small-note">(10%▼)</span></td>
         </tr>
         <tr>
           <td class="td-left">Standard Seat (3열)</td>
           <td>16일 ~ 20일</td>
           <td>매월 1 ~ 5일</td>
-          <td>7,800포<span class="small-note">(35%▼)</span></td>
-          <td>10,800포<span class="small-note">(10%▼)</span></td>
-          <td>9,000포<span class="small-note">(25%▼)</span></td>
-          <td>11,400포<span class="small-note">(5%▼)</span></td>
+          <td>2,925포<span class="small-note">(35%▼)</span></td>
+          <td>4,050포<span class="small-note">(10%▼)</span></td>
+          <td>3,375포<span class="small-note">(25%▼)</span></td>
+          <td>4,275포<span class="small-note">(5%▼)</span></td>
         </tr>
         <tr>
           <td class="td-left">Original Seat (입석)</td>
           <td>21일 ~ 25일</td>
           <td>매월 1 ~ 5일</td>
-          <td>8,400포<span class="small-note">(30%▼)</span></td>
-          <td>11,400포<span class="small-note">(5%▼)</span></td>
-          <td>9,600포<span class="small-note">(20%▼)</span></td>
-          <td>12,000포<span class="small-note">(0%▼)</span></td>
+          <td>3,150포<span class="small-note">(30%▼)</span></td>
+          <td>4,275포<span class="small-note">(5%▼)</span></td>
+          <td>3,600포<span class="small-note">(20%▼)</span></td>
+          <td>4,500포<span class="small-note">(0%▼)</span></td>
         </tr>
       </tbody>
     </table>
@@ -771,12 +749,12 @@
 <div class="cm-box">
   <p class="cm-title">✨ 크레딧 미션이란?</p>
   <ul class="cm-list">
-    <li>고객님의 신용 정보를 안전하게 조회하여 현재 연체 중인지 확인하는 과정입니다.</li>
-    <li>악성 연체자 여부를 확인합니다. (악성 연체자는 대출이 거절되지만, 미션이란 방법으로 서로간 신뢰를 쌓는다면 대출이 불가능한 것도 아니에요.)</li>
-    <li>연체 원인이 신용회복이나 개인회생 때문인지 구별합니다.</li>
-    <li>이를 통해 현재 상황에 맞는 적절한 대출 조건을 제공할 수 있어요!</li>
+    <li>대출 신청자의 신용 정보를 안전하게 조회하여 현재 연체 중인지 확인하는 과정입니다.</li>
+    <li>악성 연체 여부를 확인합니다.<br>&nbsp;→ 악성 연체 이력은 대출이 거절되지만, 미션이란 방법으로 서로간 신뢰를 쌓는다면 대출이 불가능한 것도 아니에요.</li>
+    <li>낮은 신용이 신용회복이나 개인회생 때문인지 구별합니다.<br>&nbsp;→ 이를 통해 현재 상황에 맞는 적절한 대출 조건을 제공할 수 있어요!</li>
+    <li>승인 전까지 마이 포인트에 그대로 보관됩니다.<br>&nbsp;승인 시 차감되고 한도가 발생하지 않으면(불승인) 전액 환전해 드립니다.<br>&nbsp;가져가는 포인트가 아니라 맡겨두는 예치 포인트입니다.</li>
   </ul>
-  <div class="cm-highlight">👍 신용정보조회 비용을 현금 부담 없이 포인트로 해결해요!</div>
+  <div class="cm-highlight">👍 신용조회비용을 현금 부담 없이 포인트로 해결해요!</div>
 </div>
 
 <!-- 포인트 적립 앱 화면 -->
@@ -788,7 +766,7 @@
 <div class="warning-block">
   <p class="warning-title">⚠️ 꼭! 확인해요.</p>
   <ul>
-    <li><span class="badge-red">48시간 내</span>에 앱에서, 크레딧 미션을 클릭하지 않으면 자동 거절됩니다.</li>
+    <li><span class="badge-red">48시간 내</span>에 앱에서, 모든 미션을 완료하지 않으면 자동 거절됩니다.</li>
   </ul>
 </div>
 
@@ -884,13 +862,17 @@
 
 <!-- ─── 하단 CTA ─── -->
 <div class="cta-section">
-  <a class="nanocreditButton" href="https://monthly-loan.sirjuseyo.com/apply/apply.html">
+  <a class="nanocreditButton" href="/monthly-loan/2026-07/">
     지금 신청하러 가기
+  </a>
+  <a style="display:flex;align-items:center;justify-content:center;width:100%;margin-top:12px;padding:14px;border:1.5px solid #D1D5DB;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;color:#4432A2;background:#fff;" href="/tip/submissions/">
+    📋 소통거리 제출 방법 안내
   </a>
 </div>
 
-<!-- ─── FOOTER (공용 footer.js) ─── -->
-<script src="/footer.js"></script>
+<script src="/js/popup.js"></script>
+<script src="/js/menu.js"></script>
+<script src="/js/legal-shared.js"></script>
 
 </body>
 </html>

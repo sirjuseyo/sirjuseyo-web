@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>꿀정보 · 써주세요.</title>
+<meta name="description" content="대출 전에 알아두면 돈이 되는 정보. 대출 가능성 검사기, 원리포 메리트, 한도 상향, 연체 이력 해제, Deep Dive 심사.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  /* ── 리셋 ── 클래스 선택자만 사용. ID 선택자로 * 리셋 금지(우선순위 충돌 원인) ── */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    background: #fff;
+    color: #1A1A2E;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── 페이지 래퍼 : menu.js 상단바(max-width:480px)와 폭 일치 ── */
+  .tip-page {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ── 히어로 ── */
+  .tip-hero {
+    background: #380097;
+    color: #fff;
+    padding: 34px 24px 30px;
+  }
+  .tip-hero-emoji {
+    font-size: 44px;
+    line-height: 1;
+  }
+  .tip-hero-title {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: -.8px;
+    margin-top: 10px;
+  }
+  .tip-hero-desc {
+    font-size: 13px;
+    font-weight: 400;
+    color: #C3B2F5;
+    line-height: 1.65;
+    margin-top: 10px;
+  }
+
+  /* ── 목록 ── 5개 항목 모두 동일. 상태 구분 없음 ── */
+  .tip-list {
+    display: block;
+    padding: 6px 24px 32px;
+  }
+
+  .tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 0;
+    border-bottom: 1px solid #F0EDF7;
+    text-decoration: none;
+    color: #1A1A2E;
+  }
+  .tip-item:last-child { border-bottom: none; }
+  .tip-item:active { background: #FBFAFF; }
+
+  .tip-num {
+    font-size: 13px;
+    font-weight: 900;
+    color: #C3B2F5;
+    letter-spacing: .5px;
+    line-height: 1.5;
+    flex-shrink: 0;
+  }
+
+  .tip-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .tip-name {
+    display: block;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: -.5px;
+    line-height: 1.35;
+  }
+  .tip-desc {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 400;
+    color: #9A9AA8;
+    line-height: 1.6;
+    margin-top: 5px;
+  }
+
+  .tip-icon {
+    font-size: 20px;
+    line-height: 1.3;
+    flex-shrink: 0;
+  }
+
+  /* ── 접근성 ── */
+  .tip-item:focus-visible {
+    outline: 2px solid #380097;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body data-back="/index.html" data-breadcrumb="꿀정보">
+
+<main class="tip-page page">
+
+  <header class="tip-hero">
+    <div class="tip-hero-emoji">🍯</div>
+    <h1 class="tip-hero-title">꿀정보</h1>
+    <p class="tip-hero-desc">대출 전에 알아두면 돈이 되는 6가지.</p>
+  </header>
+
+  <nav class="tip-list" aria-label="꿀정보 목록">
+
+    <a class="tip-item" href="/tip/loan-checker/">
+      <span class="tip-num">01</span>
+      <span class="tip-body">
+        <span class="tip-name">대출 가능성 검사기</span>
+        <span class="tip-desc">내가 받을 수 있는지 1분 만에 확인해봐.</span>
+      </span>
+      <span class="tip-icon" aria-hidden="true">🔍</span>
+    </a>
+
+    <a class="tip-item" href="/tip/wonripo/">
+      <span class="tip-num">02</span>
+      <span class="tip-body">
+        <span class="tip-name">원리포 상품의 메리트</span>
+        <span class="tip-desc">포인트로 갚으면 뭐가 좋을까?</span>
+      </span>
+      <span class="tip-icon" aria-hidden="true">💜</span>
+    </a>
+
+    <a class="tip-item" href="/tip/credit-limit/">
+      <span class="tip-num">03</span>
+      <span class="tip-body">
+        <span class="tip-name">한도 상향</span>
+        <span class="tip-desc">더 많이 빌리는 조건은 무엇일까?</span>
+      </span>
+      <span class="tip-icon" aria-hidden="true">📈</span>
+    </a>
+
+    <a class="tip-item" href="/tip/unsuspend/index.html">
+      <span class="tip-num">04</span>
+      <span class="tip-body">
+        <span class="tip-name">연체 이력 해제</span>
+        <span class="tip-desc">연체 기록, 되돌릴 수 있을까?</span>
+      </span>
+      <span class="tip-icon" aria-hidden="true">🔓</span>
+    </a>
+
+    <a class="tip-item" href="/tip/apply-review/apply-review.html">
+      <span class="tip-num">05</span>
+      <span class="tip-body">
+        <span class="tip-name">Deep Dive 심사</span>
+        <span class="tip-desc">4차 심사 · 한도 산정을 위한 마지막 관문.</span>
+      </span>
+      <span class="tip-icon" aria-hidden="true">🔬</span>
+    </a>
+
+    <a class="tip-item" href="/tip/submissions/">
+      <span class="tip-num">06</span>
+      <span class="tip-body">
+        <span class="tip-name">소통거리 제출 방법</span>
+        <span class="tip-desc">심사 자료, 이렇게 제출하면 통과율이 올라가요.</span>
+      </span>
+      <span class="tip-icon" aria-hidden="true">📋</span>
+    </a>
+
+  </nav>
+
+</main>
+
+<script src="/js/menu.js"></script>
+<script src="/js/popup.js"></script>
+<script src="/js/legal-shared.js"></script>
+</body>
+</html>
