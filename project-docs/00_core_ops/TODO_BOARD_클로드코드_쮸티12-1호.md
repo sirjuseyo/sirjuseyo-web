@@ -736,6 +736,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-133 | P1 | T-133 | **테스트 완료(DONE)** `2d93a00` | **[대출 검사기] 시계 박스 ↔ tone-note 박스 순서 교체** | `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html` | 현재 순서(이미지→시계→tone-note) → 변경(이미지→tone-note→시계) / 테스트 완료 | 2026-08-02 02:28 | 쮸티12-1호 |
 | W-134 | P1 | T-134 | **테스트 완료(DONE)** `ed8ec27` | **[팝업] 8월 대출 작업 동기화 2종** | `js/popup.js` | ①대표 거절 사유 4번 추가(최근 3개월 이상 무직 또는 과거 6개월 이상 무직 + em) ②30만 원 이벤트 대출 `활용 3.5%` → `대출 상품 없음` 변경 / 테스트 완료 | 2026-08-02 03:20 | 쮸티12-1호 |
 | W-135 | P0 | T-135 | 대기 | **[긴급/Android] 헤더 가로 오버플로우 + 드로어 노출 버그 수정** | `js/menu.js`, `js/menu-dev.js` | `#sjy-nav-bar` · `#sjy-drawer` width:100% → width:100vw 변경. Android Chrome에서 fixed+left:50%+width:100% 조합이 뷰포트 아닌 문서 너비 기준으로 계산되어 헤더 어긋남 + 드로어 일부 노출 발생 | 2026-08-02 03:20 | 쮸티12-1호 |
+| W-136 | P1 | T-136 | 대기 | **[신청 폼] 대출 가능성 검사기 안내 박스 추가** | `monthly-loan/apply/apply-dev.html`, `apply.html` | h1 아래 ~ landing-cta 위에 tone-note 스타일 박스 삽입 / 타이틀: [8월 대출]과[나노크레딧] 무작정 신청 금지 / 본문: 검사기 이용 안내 + 경로 안내 | 2026-08-02 03:20 | 쮸티12-1호 |
 
 
 
