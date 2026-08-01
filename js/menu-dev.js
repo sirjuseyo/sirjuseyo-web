@@ -20,7 +20,7 @@
     '#sjy-menu *{box-sizing:border-box;font-family:\'Apple SD Gothic Neo\',\'Noto Sans KR\',sans-serif}' +
 
     /* nav bar */
-    '#sjy-nav-bar{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;height:52px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:1000;border-bottom:1px solid #EBEBEB;box-shadow:0 1px 6px rgba(0,0,0,.07)}' +
+    '#sjy-nav-bar{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100vw;max-width:480px;height:52px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:1000;border-bottom:1px solid #EBEBEB;box-shadow:0 1px 6px rgba(0,0,0,.07)}' +
     '#sjy-nav-back{background:none;border:none;cursor:pointer;color:#380097;font-size:1.8rem;line-height:1;padding:8px 8px 8px 0;display:flex;align-items:center;flex-shrink:0}' +
     '#sjy-nav-back.sjy-hidden{display:none}' +
     '#sjy-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}' +
@@ -35,7 +35,7 @@
     '#sjy-menu-overlay.sjy-open{display:block;opacity:1}' +
 
     /* drawer — 화면 전체 덮기 */
-    '#sjy-drawer{position:fixed;top:0;bottom:0;left:50%;width:100%;max-width:480px;background:#F5F3FF;z-index:10002;transform:translateX(calc(50vw + 10px));transition:transform .3s ease;display:flex;flex-direction:column}' +
+    '#sjy-drawer{position:fixed;top:0;bottom:0;left:50%;width:100vw;max-width:480px;background:#F5F3FF;z-index:10002;transform:translateX(calc(50vw + 10px));transition:transform .3s ease;display:flex;flex-direction:column}' +
     '#sjy-drawer.sjy-open{transform:translateX(-50%)}' +
 
     /* drawer 헤더 — 보라 배경 */
