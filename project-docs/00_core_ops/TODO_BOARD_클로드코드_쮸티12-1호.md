@@ -499,6 +499,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | **T-128** | [8월 대출 페이지] 대표 거절 사유 4번 문구 수정 | ✅ `6f857fd` | ✅ PR#14 dev fc97aae | ✅ 테스트완료(DONE) | ✅ DEV선별 cb8a073 | ✅ Pages d864ebc | 쮸티12-1호 | 2026-08-01 | `1년 이내 3개월 이상 무직 또는 과거 6개월 이상 무직` → `최근 3개월 이상 무직 또는 과거 6개월 이상 무직` + em `노동 상태와 의지를 중요시 여깁니다.` / 사장님 VS Code Live Server 테스트 완료 |
 | **T-129** | [대출 검사기] 상단 안내 문구 워딩 수정 | ✅ `189ae41` | ✅ PR#14 dev fc97aae | ✅ 테스트완료(DONE) | ✅ DEV선별 cb8a073 | ✅ Pages d864ebc | 쮸티12-1호 | 2026-08-01 | `대출을 받을 수 있는 [써주세요. 앱…]은` → `[써주세요. 앱…]을` / `이 검사기는` → `대출 가능성 검사기는` / 사장님 VS Code Live Server 테스트 완료 |
 | **T-130** | [신청 폼] 7월→8월 워딩 변경 + 이벤트 대출 30만 경고 추가 + 경고 문구 수정 | ✅ `a9b2747` | ✅ PR#14 dev fc97aae | ✅ 테스트완료(DONE) | ✅ DEV선별 cb8a073 | ✅ Pages d864ebc | 쮸티12-1호 | 2026-08-01 | ①워딩 3곳 7→8월 ②selectMethodEvent 30만 경고 조건 추가 ③warn-method-amount `10,20,30만`→`10,20만` / 사장님 VS Code Live Server 테스트 완료 |
+| **T-131** | [대출 검사기] 상단 concept-image 이미지 교체 (징검다리 배낭 남성 — 8월) | ✅ `b7416d2` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 | `stepping-stones-aug-001.png` 신규 추가 / concept-image 텍스트→img 교체 / 사장님 VS Code Live Server 테스트 완료 |
 | W-042 | [7월 PRD] 홈 index.html + 2026-07/index.html 신규 생성 | ✅ `815964b` | ✅ PR#24 | - | ✅ 선별반영 `cf89006` | ✅ Pages run `28564430240` | 쮸티12-1호 | 2026-07-02 | PR#24 선별반영, `2026-07/index.html` 200 확인 |
 | W-043 | [T-039 자산] Palm-Surf_Jul-Loan.png 커밋 추가 | ✅ `84b62f4` | ✅ PR#24 | - | ✅ 선별반영 `cf89006` | ✅ Pages run `28564430240` | 쮸티12-1호 | 2026-07-02 | PR#24 선별반영, `2026-07/assets/Palm-Surf_Jul-Loan.png` 200 확인 |
 | **W-085** | WT-094 | W-085 | `d049be8` | **테스트 완료(DONE)** | **[챌린지 대표 페이지] challenge/index.html + index-dev.html 신규 생성** | 쮸티12-1호 | 2026-07-22 | 【파일】`challenge/index.html`(신규), `challenge/index-dev.html`(신규) / 소스: `2026-06/worldcup-challenge` / PRD: menu.js + `/apply/` 절대경로 / DEV: menu-dev.js + DEV배너(sticky) + `/apply/index-dev.html` 절대경로 / 이미지: `/2026-06/worldcup-challenge/assets/` |
@@ -586,6 +587,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | **T-128** | WT-139 | W-128 | `6f857fd` | **테스트 완료(DONE)** | **[8월 대출 페이지] 대표 거절 사유 4번 문구 수정** | 쮸티12-1호 | 2026-08-01 | 【파일】`monthly-loan/2026-08/index-dev.html` / `1년 이내`→`최근` 문구 수정 + em `노동 상태와 의지를 중요시 여깁니다.` 추가 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-129** | WT-140 | W-129 | `189ae41` | **테스트 완료(DONE)** | **[대출 검사기] 상단 안내 문구 워딩 수정** | 쮸티12-1호 | 2026-08-01 | 【파일】`tip/loan-checker/index-dev.html`, `index.html` / ①tone-note-title 문구 수정 ②`이 검사기는`→`대출 가능성 검사기는` / 사장님 VS Code Live Server 테스트 완료 |
 | **T-130** | WT-141 | W-130 | `a9b2747` | **테스트 완료(DONE)** | **[신청 폼] 7월→8월 워딩 변경 + 이벤트 대출 30만 경고 추가 + 경고 문구 수정** | 쮸티12-1호 | 2026-08-01 | 【파일】`monthly-loan/apply/apply-dev.html`, `apply.html` / ①h1·고객안내·API 7→8월 워딩 ②selectMethodEvent 30만 경고 조건 추가 ③warn-method-amount `10,20,30만`→`10,20만` / 사장님 VS Code Live Server 테스트 완료 |
+| **T-131** | - | W-131 | `b7416d2` | **테스트 완료(DONE)** | **[대출 검사기] 상단 concept-image 이미지 교체 (징검다리 배낭 남성 — 8월)** | 쮸티12-1호 | 2026-08-02 | 【파일】`tip/loan-checker/assets/img/stepping-stones-aug-001.png`(신규), `index-dev.html`, `index.html` / concept-image 텍스트→img 교체 / 사장님 VS Code Live Server 테스트 완료 |
 
 
 ---
@@ -723,6 +725,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-128 | P1 | T-128 | **테스트 완료(DONE)** `6f857fd` | **[8월 대출 페이지] 대표 거절 사유 4번 문구 수정** | `monthly-loan/2026-08/index-dev.html` | `1년 이내 3개월 이상 무직 또는 과거 6개월 이상 무직` → `최근 3개월 이상 무직 또는 과거 6개월 이상 무직` + em `노동 상태와 의지를 중요시 여깁니다.` / 테스트 완료 | 2026-08-01 | 쮸티12-1호 |
 | W-129 | P1 | T-129 | **테스트 완료(DONE)** `189ae41` | **[대출 검사기] 상단 안내 문구 워딩 수정** | `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html` | ①`대출을 받을 수 있는 [써주세요.…]은 무작정 신청하지 마세요.` → `[써주세요.…]을 무작정 신청하지 마세요.` ②`이 검사기는` → `대출 가능성 검사기는` / 테스트 완료 | 2026-08-01 | 쮸티12-1호 |
 | W-130 | P1 | T-130 | **테스트 완료(DONE)** `a9b2747` | **[신청 폼] 7월→8월 워딩 변경 + 이벤트 대출 30만 경고 추가 + 경고 문구 수정** | `monthly-loan/apply/apply-dev.html`, `apply.html` | ①h1·고객안내·API 7→8월 워딩 ②selectMethodEvent `50만` 조건에 `30만` 추가 ③warn-method-amount `10,20,30만`→`10,20만` / 테스트 완료 | 2026-08-01 | 쮸티12-1호 |
+| W-131 | P1 | T-131 | **테스트 완료(DONE)** `b7416d2` | **[대출 검사기] 상단 concept-image 이미지 교체 (징검다리 배낭 남성 — 8월)** | `tip/loan-checker/assets/img/stepping-stones-aug-001.png`(신규), `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html` | 현재 텍스트만 있는 concept-image 자리에 이미지 삽입 / DEV·PRD 동시 처리 / 테스트 완료 | 2026-08-02 | 쮸티12-1호 |
 
 
 
