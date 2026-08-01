@@ -9,7 +9,7 @@
 ## WT-141 · T-130 / W-130 [신청 폼] 7월→8월 워딩 변경 + 이벤트 대출 30만 경고 추가 + 경고 문구 수정
 
 ### 작업 요약
-- **상태:** 진행중 — 2026-08-01
+- **상태:** 테스트 완료(DONE) — 2026-08-01
 - **로컬 커밋:** `a9b2747` (코드 커밋)
 - **대상 파일:** `monthly-loan/apply/apply-dev.html`, `monthly-loan/apply/apply.html`
 
@@ -20,7 +20,7 @@
 3. `#warn-method-amount` 문구: `10, 20, 30만 원만` → `10, 20만 원만`
 
 ### 테스트
-- VS Code Live Server → `monthly-loan/apply/apply-dev.html` 테스트 대기
+- VS Code Live Server → `monthly-loan/apply/apply-dev.html` 테스트 완료
 
 ---
 
