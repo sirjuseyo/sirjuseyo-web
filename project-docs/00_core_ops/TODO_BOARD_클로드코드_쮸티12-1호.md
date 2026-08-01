@@ -501,6 +501,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | **T-130** | [신청 폼] 7월→8월 워딩 변경 + 이벤트 대출 30만 경고 추가 + 경고 문구 수정 | ✅ `a9b2747` | ✅ PR#14 dev fc97aae | ✅ 테스트완료(DONE) | ✅ DEV선별 cb8a073 | ✅ Pages d864ebc | 쮸티12-1호 | 2026-08-01 | ①워딩 3곳 7→8월 ②selectMethodEvent 30만 경고 조건 추가 ③warn-method-amount `10,20,30만`→`10,20만` / 사장님 VS Code Live Server 테스트 완료 |
 | **T-131** | [대출 검사기] 상단 concept-image 이미지 교체 (징검다리 배낭 남성 — 8월) | ✅ `b7416d2` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 | `stepping-stones-aug-001.png` 신규 추가 / concept-image 텍스트→img 교체 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-132** | [대출 검사기] tone-note 박스 스타일 3종 수정 | ✅ `a66b8c3` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 14:14 | ①border-right 4px 보라 추가(좌우 동일) ②배경 연보라 rgba(56,0,151,0.04) ③title 0.95→1.1rem ④body 0.95→1rem / 사장님 VS Code Live Server 테스트 완료 |
+| **T-133** | [대출 검사기] 시계 박스 ↔ tone-note 박스 순서 교체 | ✅ `2d93a00` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 02:28 | 이미지→시계→tone-note → 이미지→tone-note→시계 순서 변경 / index-dev.html, index.html 동시 적용 / 사장님 VS Code Live Server 테스트 완료 |
 | W-042 | [7월 PRD] 홈 index.html + 2026-07/index.html 신규 생성 | ✅ `815964b` | ✅ PR#24 | - | ✅ 선별반영 `cf89006` | ✅ Pages run `28564430240` | 쮸티12-1호 | 2026-07-02 | PR#24 선별반영, `2026-07/index.html` 200 확인 |
 | W-043 | [T-039 자산] Palm-Surf_Jul-Loan.png 커밋 추가 | ✅ `84b62f4` | ✅ PR#24 | - | ✅ 선별반영 `cf89006` | ✅ Pages run `28564430240` | 쮸티12-1호 | 2026-07-02 | PR#24 선별반영, `2026-07/assets/Palm-Surf_Jul-Loan.png` 200 확인 |
 | **W-085** | WT-094 | W-085 | `d049be8` | **테스트 완료(DONE)** | **[챌린지 대표 페이지] challenge/index.html + index-dev.html 신규 생성** | 쮸티12-1호 | 2026-07-22 | 【파일】`challenge/index.html`(신규), `challenge/index-dev.html`(신규) / 소스: `2026-06/worldcup-challenge` / PRD: menu.js + `/apply/` 절대경로 / DEV: menu-dev.js + DEV배너(sticky) + `/apply/index-dev.html` 절대경로 / 이미지: `/2026-06/worldcup-challenge/assets/` |
@@ -590,6 +591,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | **T-130** | WT-141 | W-130 | `a9b2747` | **테스트 완료(DONE)** | **[신청 폼] 7월→8월 워딩 변경 + 이벤트 대출 30만 경고 추가 + 경고 문구 수정** | 쮸티12-1호 | 2026-08-01 | 【파일】`monthly-loan/apply/apply-dev.html`, `apply.html` / ①h1·고객안내·API 7→8월 워딩 ②selectMethodEvent 30만 경고 조건 추가 ③warn-method-amount `10,20,30만`→`10,20만` / 사장님 VS Code Live Server 테스트 완료 |
 | **T-131** | - | W-131 | `b7416d2` | **테스트 완료(DONE)** | **[대출 검사기] 상단 concept-image 이미지 교체 (징검다리 배낭 남성 — 8월)** | 쮸티12-1호 | 2026-08-02 | 【파일】`tip/loan-checker/assets/img/stepping-stones-aug-001.png`(신규), `index-dev.html`, `index.html` / concept-image 텍스트→img 교체 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-132** | - | W-132 | `a66b8c3` | **테스트 완료(DONE)** | **[대출 검사기] tone-note 박스 스타일 3종 수정** | 쮸티12-1호 | 2026-08-02 14:14 | 【파일】`tip/loan-checker/styles.css` / ①border-right 4px 보라 추가 ②배경 연보라 ③title 1.1rem ④body 1rem / 사장님 VS Code Live Server 테스트 완료 |
+| **T-133** | - | W-133 | `2d93a00` | **테스트 완료(DONE)** | **[대출 검사기] 시계 박스 ↔ tone-note 박스 순서 교체** | 쮸티12-1호 | 2026-08-02 02:28 | 【파일】`tip/loan-checker/index-dev.html`, `index.html` / 이미지→시계→tone-note → 이미지→tone-note→시계 순서 변경 / 사장님 VS Code Live Server 테스트 완료 |
 
 
 ---
@@ -729,7 +731,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-130 | P1 | T-130 | **테스트 완료(DONE)** `a9b2747` | **[신청 폼] 7월→8월 워딩 변경 + 이벤트 대출 30만 경고 추가 + 경고 문구 수정** | `monthly-loan/apply/apply-dev.html`, `apply.html` | ①h1·고객안내·API 7→8월 워딩 ②selectMethodEvent `50만` 조건에 `30만` 추가 ③warn-method-amount `10,20,30만`→`10,20만` / 테스트 완료 | 2026-08-01 | 쮸티12-1호 |
 | W-131 | P1 | T-131 | **테스트 완료(DONE)** `b7416d2` | **[대출 검사기] 상단 concept-image 이미지 교체 (징검다리 배낭 남성 — 8월)** | `tip/loan-checker/assets/img/stepping-stones-aug-001.png`(신규), `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html` | 현재 텍스트만 있는 concept-image 자리에 이미지 삽입 / DEV·PRD 동시 처리 / 테스트 완료 | 2026-08-02 00:59 | 쮸티12-1호 |
 | W-132 | P1 | T-132 | **테스트 완료(DONE)** `a66b8c3` | **[대출 검사기] tone-note 박스 스타일 3종 수정** | `tip/loan-checker/styles.css` | ①border-right 4px 보라 추가(좌우 동일) ②배경 연보라 rgba(56,0,151,0.04) ③title 1.1rem ④body 1rem / 테스트 완료 | 2026-08-02 14:14 | 쮸티12-1호 |
-| W-133 | P1 | T-133 | 대기 | **[대출 검사기] 시계 박스 ↔ tone-note 박스 순서 교체** | `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html` | 현재 순서(이미지→시계→tone-note) → 변경(이미지→tone-note→시계) | 2026-08-02 14:14 | 쮸티12-1호 |
+| W-133 | P1 | T-133 | **테스트 완료(DONE)** `2d93a00` | **[대출 검사기] 시계 박스 ↔ tone-note 박스 순서 교체** | `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html` | 현재 순서(이미지→시계→tone-note) → 변경(이미지→tone-note→시계) / 테스트 완료 | 2026-08-02 02:28 | 쮸티12-1호 |
 
 
 
