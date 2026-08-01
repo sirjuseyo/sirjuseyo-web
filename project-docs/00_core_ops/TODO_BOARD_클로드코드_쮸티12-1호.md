@@ -732,6 +732,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-131 | P1 | T-131 | **테스트 완료(DONE)** `b7416d2` | **[대출 검사기] 상단 concept-image 이미지 교체 (징검다리 배낭 남성 — 8월)** | `tip/loan-checker/assets/img/stepping-stones-aug-001.png`(신규), `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html` | 현재 텍스트만 있는 concept-image 자리에 이미지 삽입 / DEV·PRD 동시 처리 / 테스트 완료 | 2026-08-02 00:59 | 쮸티12-1호 |
 | W-132 | P1 | T-132 | **테스트 완료(DONE)** `a66b8c3` | **[대출 검사기] tone-note 박스 스타일 3종 수정** | `tip/loan-checker/styles.css` | ①border-right 4px 보라 추가(좌우 동일) ②배경 연보라 rgba(56,0,151,0.04) ③title 1.1rem ④body 1rem / 테스트 완료 | 2026-08-02 14:14 | 쮸티12-1호 |
 | W-133 | P1 | T-133 | **테스트 완료(DONE)** `2d93a00` | **[대출 검사기] 시계 박스 ↔ tone-note 박스 순서 교체** | `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html` | 현재 순서(이미지→시계→tone-note) → 변경(이미지→tone-note→시계) / 테스트 완료 | 2026-08-02 02:28 | 쮸티12-1호 |
+| W-134 | P1 | T-134 | 대기 | **[팝업] 8월 대출 작업 동기화 2종** | `js/popup.js` | ①대표 거절 사유 4번 추가(최근 3개월 이상 무직 또는 과거 6개월 이상 무직 + em) ②30만 원 이벤트 대출 `활용 3.5%` → `대출 상품 없음` 변경 | 2026-08-02 02:28 | 쮸티12-1호 |
 
 
 
