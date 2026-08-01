@@ -531,10 +531,10 @@
       <div class="landing">
         <!-- 페이지 타이틀 + CTA 참여 유도 문구 -->
         <div class="landing-header">
-          <h1 class="landing-title">[7️⃣🈷️ 썸머 🏖️베케이션 대출 OPEN] 지금 신청하세요!</h1>
+          <h1 class="landing-title">[8️⃣🈷️ 썸머 🏝️베케이션 Ⅱ 대출 OPEN] 지금 신청하세요!</h1>
           <p class="landing-cta">
             📍현재 고객님은<br><br>
-            [7️⃣🈷️ 썸머 🏖️베케이션 대출]을 신청중입니다.<br>
+            [8️⃣🈷️ 썸머 🏝️베케이션 Ⅱ 대출]을 신청중입니다.<br>
             화면 하단의 <strong class="cta-highlight">[신청 준비되었나요?]</strong>를 클릭해 주세요.
           </p>
         </div>
@@ -630,7 +630,7 @@
               class="opt-key">C</span> 웨이팅 대출</div>
         </div>
         <div class="inline-warn" id="warn-method-amount">
-          ⚠️ 이벤트 대출은 10, 20, 30만 원만 신청 가능합니다.<br>
+          ⚠️ 이벤트 대출은 10, 20만 원만 신청 가능합니다.<br>
           뒤로 이동해서 금액을 변경해 주시기 바랍니다.
         </div>
       </div>
@@ -984,9 +984,8 @@
       document.querySelectorAll('#opts-method .opt').forEach(o => o.classList.remove('sel'));
       el.classList.add('sel');
       state.method = '이벤트 대출';
-      if (state.amount === '50만 원') {
+      if (state.amount === '50만 원' || state.amount === '30만 원') {
         document.getElementById('warn-method-amount').style.display = 'block';
-        // 50만 원 선택 시 다음 화면 차단
       } else {
         document.getElementById('warn-method-amount').style.display = 'none';
         setTimeout(() => goTo('s-q1'), 200);
@@ -1264,7 +1263,7 @@
         '1. 성함: <strong>' + state.q1_name + '</strong><br>' +
         '2. 생년월일 6자리: <strong>' + birth6 + '</strong><br>' +
         '3. 휴대폰 번호: <strong>' + state.q3_phone + '</strong><br>' +
-        '4. 대출 상품 : 7️⃣🈷️ 썸머 🏖️베케이션 대출<br>' +
+        '4. 대출 상품 : 8️⃣🈷️ 썸머 🏝️베케이션 Ⅱ 대출<br>' +
         '5. 대출 방법: <strong>' + state.method + '</strong><br>' +
         '6. 희망 금액: <strong>' + state.amount + '</strong>';
     }
