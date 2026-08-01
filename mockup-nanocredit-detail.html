@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[목업] 나노크레딧 상세 페이지 구조 개편</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; background: #f0f0f0; padding: 24px; }
+    h1 { font-size: 18px; color: #333; margin-bottom: 24px; text-align: center; }
+
+    .compare { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
+    .panel { flex: 1; min-width: 320px; }
+    .panel-title {
+      font-size: 13px; font-weight: 900; text-align: center;
+      padding: 8px 16px; border-radius: 8px 8px 0 0; letter-spacing: -0.3px;
+    }
+    .panel-title.before { background: #F87171; color: #fff; }
+    .panel-title.after  { background: #380097; color: #fff; }
+
+    /* ── BEFORE: 구 nanocredit 구조 ── */
+    .before-frame {
+      border: 2px solid #F87171; border-radius: 0 0 8px 8px;
+      background: #fff; overflow: hidden;
+    }
+    .old-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      border-bottom: 1px solid #E5E7EB;
+      padding: 0 24px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .old-nav-logo { font-size: 20px; font-weight: 800; color: #4432A2; text-decoration: none; }
+    .old-nav-hamburger {
+      background: none; border: none; cursor: pointer;
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .old-nav-hamburger span { display: block; width: 24px; height: 2px; background: #4432A2; border-radius: 2px; }
+
+    .before-body { padding: 24px; }
+    .before-label { font-size: 12px; color: #888; margin-bottom: 8px; }
+    .before-badge {
+      display: inline-block; font-size: 11px; padding: 3px 8px;
+      border-radius: 4px; background: #FEE2E2; color: #DC2626; font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .before-item { font-size: 13px; color: #444; line-height: 2; }
+
+    /* ── AFTER: 써주세요 통합 구조 ── */
+    .after-frame {
+      border: 2px solid #380097; border-radius: 0 0 8px 8px;
+      background: #fff; overflow: hidden;
+      max-width: 480px; margin: 0 auto;
+    }
+
+    /* 써주세요 메뉴바 시뮬레이션 */
+    .sjy-nav-sim {
+      position: sticky; top: 0; z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid #EBEBEB;
+      box-shadow: 0 1px 6px rgba(0,0,0,.07);
+      padding: 0 20px; height: 52px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .sjy-back { font-size: 1.8rem; color: #380097; line-height: 1; }
+    .sjy-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; position: absolute; left: 50%; transform: translateX(-50%); }
+    .sjy-logo img { width: 28px; height: 28px; border-radius: 50%; }
+    .sjy-logo span { font-size: .92rem; font-weight: 700; color: #380097; }
+    .sjy-hamburger { display: flex; flex-direction: column; gap: 6px; }
+    .sjy-hamburger span { display: block; width: 28px; height: 3px; background: #380097; border-radius: 2px; }
+
+    .after-body { padding: 24px; }
+    .after-badge {
+      display: inline-block; font-size: 11px; padding: 3px 8px;
+      border-radius: 4px; background: #EDE9FE; color: #380097; font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .after-item { font-size: 13px; color: #444; line-height: 2; }
+
+    /* 콘텐츠 미리보기 */
+    .content-preview {
+      background: #f8f7ff; border-radius: 8px; padding: 16px;
+      margin-top: 12px; border: 1px dashed #c4b5fd;
+    }
+    .content-preview p { font-size: 12px; color: #666; line-height: 1.8; }
+    .content-preview strong { color: #380097; font-size: 13px; }
+
+    /* 변경 정리 */
+    .diff-table { width: 100%; border-collapse: collapse; margin-top: 32px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+    .diff-table th { background: #380097; color: #fff; padding: 10px 14px; font-size: 13px; text-align: left; }
+    .diff-table td { padding: 10px 14px; font-size: 13px; border-bottom: 1px solid #eee; vertical-align: top; }
+    .diff-table tr:last-child td { border-bottom: none; }
+    .del { color: #DC2626; text-decoration: line-through; }
+    .add { color: #059669; }
+    .file-tag { font-size: 11px; background: #EDE9FE; color: #380097; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<h1>[목업] nanocredit 상세 페이지 구조 개편 — 10만원 기준 (20/30/50 동일)</h1>
+
+<div class="compare">
+
+  <!-- BEFORE -->
+  <div class="panel">
+    <div class="panel-title before">BEFORE — 현재 (구 nanocredit 구조)</div>
+    <div class="before-frame">
+      <!-- 구 nav 헤더 -->
+      <nav class="old-nav">
+        <a class="old-nav-logo" href="#">nanocredit</a>
+        <button class="old-nav-hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+      <div class="before-body">
+        <div class="before-label">문제점</div>
+        <div class="before-badge">❌ 구 나노크레딧 헤더</div><br>
+        <div class="before-badge">❌ menu.js 미포함</div><br>
+        <div class="before-badge">❌ PC 풀화면 (max-width 없음)</div><br>
+        <div class="before-badge">❌ data-back 없음</div>
+        <div class="content-preview" style="margin-top:12px;">
+          <strong>페이지 콘텐츠</strong>
+          <p>배너 이미지, 상품 정보, 비교 테이블,<br>옵션 카드, 심사 절차 이미지 등<br>→ 그대로 유지 (콘텐츠 변경 없음)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AFTER -->
+  <div class="panel">
+    <div class="panel-title after">AFTER — 수정 후 (써주세요 통합 구조)</div>
+    <div class="after-frame">
+      <!-- 써주세요 메뉴바 시뮬레이션 -->
+      <div class="sjy-nav-sim">
+        <span class="sjy-back">←</span>
+        <a class="sjy-logo" href="#">
+          <img src="https://www.sirjuseyo.com/imgs/home/logoPurpleSplash@2x.png" alt="써주세요.">
+          <span>써주세요.</span>
+        </a>
+        <div class="sjy-hamburger"><span></span><span></span><span></span></div>
+      </div>
+      <div class="after-body">
+        <div class="after-badge">✅ 써주세요 메뉴바 (menu.js)</div><br>
+        <div class="after-badge">✅ ← 뒤로가기 → /nanocredit/</div><br>
+        <div class="after-badge">✅ max-width 480px 중앙 정렬</div><br>
+        <div class="after-badge">✅ title "써주세요." 브랜딩</div>
+        <div class="content-preview">
+          <strong>페이지 콘텐츠</strong>
+          <p>배너 이미지, 상품 정보, 비교 테이블,<br>옵션 카드, 심사 절차 이미지 등<br>→ 그대로 유지 (콘텐츠 변경 없음)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 변경 항목 정리표 -->
+<table class="diff-table">
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>위치</th>
+      <th>BEFORE → AFTER</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td><span class="file-tag">&lt;head&gt;</span></td>
+      <td>
+        <span class="del">10만 원 … | nanocredit</span><br>
+        <span class="add">10만 원 … | 써주세요.</span>
+      </td>
+    </tr>
+    <tr>
+      <td>body CSS</td>
+      <td><span class="file-tag">&lt;style&gt;</span></td>
+      <td>
+        <span class="del">overflow-x: hidden (max-width 없음)</span><br>
+        <span class="add">+ max-width: 480px; margin: 0 auto;</span>
+      </td>
+    </tr>
+    <tr>
+      <td>nav CSS 제거</td>
+      <td><span class="file-tag">&lt;style&gt;</span></td>
+      <td>
+        <span class="del">nav / .nav-logo / .nav-hamburger 스타일 블록 삭제</span>
+      </td>
+    </tr>
+    <tr>
+      <td>&lt;body&gt; 태그</td>
+      <td><span class="file-tag">HTML</span></td>
+      <td>
+        <span class="del">&lt;body&gt;</span><br>
+        <span class="add">&lt;body data-back="/nanocredit/"&gt;</span>
+      </td>
+    </tr>
+    <tr>
+      <td>&lt;nav&gt; 블록 제거</td>
+      <td><span class="file-tag">HTML</span></td>
+      <td>
+        <span class="del">&lt;nav&gt; … &lt;/nav&gt; 전체 삭제</span>
+      </td>
+    </tr>
+    <tr>
+      <td>스크립트 교체</td>
+      <td><span class="file-tag">&lt;/body&gt; 직전</span></td>
+      <td>
+        <span class="del">&lt;script src="/footer.js"&gt;</span><br>
+        <span class="add">&lt;script src="/js/menu.js"&gt;</span>
+      </td>
+    </tr>
+    <tr>
+      <td>하단 CTA href</td>
+      <td><span class="file-tag">HTML</span></td>
+      <td>
+        <span style="color:#888;">현행 /monthly-loan/apply/apply.html 유지<br>(사장님 판단 대기)</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="margin-top:16px; font-size:12px; color:#888; text-align:center;">20만원 · 30만원 · 50만원 페이지도 동일한 구조 변경 적용 (금액·이미지 경로만 다름)</p>
+
+</body>
+</html>

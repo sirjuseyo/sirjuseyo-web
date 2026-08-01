@@ -1256,7 +1256,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 | 연관 T-ID | T-016 |
 | 커밋 해시 | `4244d00` |
 | 작업 이력 | 2차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **파일:** `nanocredit/submissions/job-income/college.html`
 
@@ -1276,7 +1276,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 | 연관 T-ID | T-016 |
 | 커밋 해시 | `61461f5` |
 | 작업 이력 | 3차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **수정 파일 (7개):**
 - `4dae-uninsured.html`: sub-list ✔ 3개 + 건강보험 ✔/→ 5개 제거 + SEC-03 번호 추가
@@ -1298,7 +1298,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 | 연관 T-ID | T-016 |
 | 커밋 해시 | `53b8e37` |
 | 작업 이력 | 4차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **수정 파일 (4개):** `business.html`, `daily-worker.html`, `unemployed.html`, `etc.html`
 
@@ -1318,7 +1318,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 | 연관 T-ID | T-016 |
 | 커밋 해시 | `28b3906` |
 | 작업 이력 | 5차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **수정 파일 (3개):** `daily-worker.html`, `unemployed.html`, `etc.html`
 
@@ -1335,7 +1335,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 | 연관 T-ID | T-016 |
 | 커밋 해시 | `7e764c8` |
 | 작업 이력 | 6차 수정 |
-| 상태 | 진행중(In-Progress) |
+| 상태 | 검증완료 |
 
 **수정 파일 (4개):**
 
@@ -1454,7 +1454,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 |------|------|
 | T-ID | T-017 |
 | WT-ID | WT-017 |
-| 상태 | **In-Progress** |
+| 상태 | **검증완료** |
 | 작업자 | 쮸티5호 |
 | 시작일 | 2026-05-30 |
 | 파일 | `loan-match/index.html` (신규) |
@@ -1494,7 +1494,7 @@ sirjuseyo-web T-010~T-013 반영 완료했습니다.
 |------|------|
 | T-ID | T-018 |
 | WT-ID | WT-018 |
-| 상태 | **In-Progress** |
+| 상태 | **검증완료** |
 | 작업자 | 쮸티5호 |
 | 시작일 | 2026-06-04 |
 | 파일 | `loan-match/browse.html` (신규), `loan-match/index.html` (수정) |
@@ -1547,7 +1547,7 @@ Tally 모달(w4Nxe5)을 HTML 페이지로 전환. 4개 설문 질문 + 4개 대�
 |------|------|
 | T-ID | T-019 |
 | WT-ID | WT-019 |
-| 상태 | **In-Progress** |
+| 상태 | **검증완료** |
 | 작업자 | 쮸티5호 |
 | 시작일 | 2026-06-05 |
 | 파일 | `loan-match/credit.html` (신규) |
@@ -1588,7 +1588,7 @@ Tally 모달(w4Nxe5)을 HTML 페이지로 전환. 4개 설문 질문 + 4개 대�
 |------|------|
 | T-ID | T-020 |
 | WT-ID | WT-020 |
-| 상태 | **In-Progress** |
+| 상태 | **검증완료** |
 | 작업자 | 쮸티5호 |
 | 시작일 | 2026-06-05 |
 | 파일 | `loan-match/credit.html` (수정) |
@@ -1612,7 +1612,7 @@ Tally 모달(w4Nxe5)을 HTML 페이지로 전환. 4개 설문 질문 + 4개 대�
 |------|------|
 | T-ID | T-021 |
 | WT-ID | WT-021 |
-| 상태 | **In-Progress** |
+| 상태 | **검증완료** |
 | 작업자 | 쮸티5호 |
 | 시작일 | 2026-06-06 |
 | 파일 | 전체 39개 HTML + `footer.js` (신규) |
@@ -1641,4 +1641,1137 @@ Tally 모달(w4Nxe5)을 HTML 페이지로 전환. 4개 설문 질문 + 4개 대�
 - **경고 문구**: 중개수수료 불법 / 과도한 빚 경고 / 대출기간·예시
 - **About us**: 주식회사 혁사호재(ALBIT Inc.) + 써주세요연계대부(ALBITF) 카드 2개
 - **저작권 박스**: 보라 테두리, 로고 + © 2026 ALBIT Inc. & ALBITF
+
+---
+
+### 깃 & 배포 관리자 작업 완료 보고서 (T-017~T-021)
+
+[Git DEV : 깃 & 배포 관리자 -> 웹 개발팀]
+
+`sirjuseyo-web` T-017~T-021 PR #9 dev 반영 완료했습니다.
+
+작업 내용:
+- PR #9 `feature/T-014-hero-slider-cleanup -> dev` 검토
+- PR 상태: `CLEAN`, reported checks 없음
+- dev merge 완료
+  - merge commit: `93e63566906ff1211f0af72e9033bcac39a6d3ec`
+  - mergedAt: `2026-06-05T15:40:17Z` / KST `2026-06-06 00:40`
+
+검증:
+- PR #9 `MERGED` 확인
+- 로컬 `sirjuseyo-web` dev 최신화 완료
+- local HEAD = origin/dev = `93e6356`
+
+주의:
+- 이 레포의 GitHub Pages source는 `main`이라 dev merge 후 별도 Pages 배포 run은 없습니다.
+- merge 후 `main...dev`는 `ahead 8 / behind 2` diverged 상태입니다.
+- PRD/main 반영 요청 시 전체 `dev -> main` 병합 금지, T-017~T-021 변경만 선별 검토 필요합니다.
+
+문서:
+- `T-038 / W-038 / WT-038` 기록 완료
+- project-docs commit: `00343b0`
+
+---
+
+### 깃 & 배포 관리자 작업 완료 보고서 (T-017~T-021 main 반영)
+
+[깃 & 배포 관리자 → 개발자]
+
+`sirjuseyo-web` T-017~T-021 main 반영 및 GitHub Pages 배포 완료했습니다.
+
+작업 내용:
+- `main...dev`, `main...feature/T-014-hero-slider-cleanup` 모두 `diverged` 상태 확인
+- 전체 `dev -> main` 병합은 하지 않음
+- 요청 범위 T-017~T-021 커밋 6개만 main 최신 기준으로 선별 반영
+- 문서 충돌은 기존 T-015/T-016 배포 완료 기록을 보존하면서 T-017~T-021 기록 추가로 해결
+
+main 반영:
+- final main commit: `44a16fb1236612fb61c5dca7cce5ec37132a2330`
+
+GitHub Pages 배포:
+- deploy run: `27104934516`
+- result: `success`
+
+검증:
+- `https://www.sirjuseyo.com/loan-match/` HTTP 200
+- `https://www.sirjuseyo.com/loan-match/browse.html` HTTP 200
+- `https://www.sirjuseyo.com/loan-match/credit.html` HTTP 200
+- `https://www.sirjuseyo.com/footer.js` HTTP 200
+- 로컬 `sirjuseyo-web` main도 원격 main 최신으로 정합 완료
+
+문서:
+- `TODO_BOARD_GitDeployOps` T-041 / W-041 / WT-041 반영 완료
+- `WORK_THROUGH_GitDeployOps` WT-041 완료보고서 작성 완료
+- project-docs 원격 반영 commit: `a4deec534653620f6888df16cab3c2e03ffa6261`
+
+한 줄:
+- `sirjuseyo-web` T-017~T-021 main 선별 반영 및 GitHub Pages 배포 완료, main commit `44a16fb`, Pages run `27104934516` success, 운영 URL 4건 HTTP 200 확인했습니다.
+
+---
+
+## WT-022 | T-022 신용 대출 페이지 누락 섹션 2개 추가
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-022 |
+| WT-ID | WT-022 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-08 |
+| 파일 | `loan-match/credit.html` (수정) |
+| 기획서 | `project-docs/10_plan/기획안_loan-match_신용대출.md` |
+| 로컬 커밋 | `f57ff4d`, `e49bfb9`, `78f72fc` |
+| 원격 푸시 | 완료 (`feature/T-014-hero-slider-cleanup`) |
+
+### 작업 내용
+
+원본 스크린샷 대비 SEC-07(KCB 850점)과 SEC-08(한도상향 로드맵) 사이에 텍스트 섹션 2개가 통째로 누락 → 기획서 + HTML 동시 추가
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | SEC-07-1, SEC-07-2 신규 추가 + 기획서 업데이트 | `f57ff4d` |
+| 2차 | SEC-07 KCB 이미지 위에 "📍 신청 조건은 딱 1가지 만 있으면 돼요." 타이틀 헤더 추가 (원본 대비 누락) | `e49bfb9` |
+| 3차 | 타이틀 레이아웃 수정: ① 중복대출 이미지와 간격 확보(40px) ② 타이틀 흰색 배경 분리 ③ 폰트 22→24px ④ 구분선 추가 ⑤ 850점 이미지 회색 배경 단독 | `78f72fc` |
+
+### 1차 상세
+
+**SEC-07-1 "⚠️ 꼭! 확인해요." (흰색 배경)**:
+- 타이틀: "⚠️ 꼭! 확인해요." (22px/700)
+- 불릿 리스트 2개:
+  - "대출 심사가 시작되면 신용평가가 진행돼요." + 서브: "시중 은행과 동일하게 소득, 직업 등 정량적인 자료로 신용을 평가하여 한도가 결정돼요."
+  - "만약 해당 상품에서 애석하게도 승인이 안 될 경우에는 **나머지 대출 방식을 통해** 대출을 받을 수 있어요." + 서브: "오히려 이 방법이 더 빠를 수도 있어요."
+- "나머지 대출 방식을 통해": 빨간(#D32F2F) 밑줄 링크 → browse.html
+- 텍스트 18px, 서브 텍스트 17px
+
+**SEC-07-2 "🔄 신용은 중요하지 않지만, 그러나 신용이 좋으면 받는 추가 혜택" (흰색 배경)**:
+- 타이틀: 22px/700
+- 안내 박스 (bg #F8F8F8, border 1px #E0E0E0, radius 12px):
+  - "[신용점수만 믿고 돈 빌리기] 방식으로 대출 승인이 된 후,"
+  - "**정상 상환 1번 할 때마다**" (빨간 #D32F2F, bold)
+  - "한도가 올라가요!"
+- 텍스트 18px
+
+**기획서 업데이트**:
+- 전체 구조에 SEC-07-1, SEC-07-2 추가
+- 섹션별 콘텐츠 명세에 상세 내용 추가
+
+---
+
+## WT-023 | T-023 신용 대출 페이지 출시 전환 — 웨이팅→신청 변경
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-023 |
+| WT-ID | WT-023 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-08 |
+| 파일 | `loan-match/credit.html` (수정) |
+| 로컬 커밋 | `e006136`, `5389279` |
+| 원격 푸시 | 완료 (`feature/T-014-hero-slider-cleanup`) |
+
+### 작업 내용
+
+신용 대출 상품이 이제 출시 단계로 전환됨에 따라, 기존 웨이팅 전용 페이지 → 신청 페이지로 변경.
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | ① SEC-09 출시예정+Coming Soon 이미지 삭제 ② CTA "웨이팅하러 가기 >" → "신용 점수만 믿고 돈 빌리기 >" ③ Tally 링크/data-tally-* 속성/embed.js 삭제 ④ href 임시 # 처리 | `e006136` |
+| 2차 | CTA 버튼 상단 간격 추가 — cta-section padding-top 0→40px (한도상향 이미지와 붙어있던 문제 수정) | `5389279` |
+
+### 1차 상세
+
+**삭제:**
+- `신용대출출시예정.png` 이미지 섹션 (SEC-09) 통째 제거
+- Tally `data-tally-open="mJD5ad"`, `data-tally-layout="modal"`, `data-tally-width`, `data-tally-hide-title`, `data-tally-emoji-text`, `data-tally-emoji-animation` 속성 전부 제거
+- `<script src="https://tally.so/widgets/embed.js"></script>` 제거
+
+**변경:**
+- 버튼 텍스트: `웨이팅하러 가기 >` → `신용 점수만 믿고 돈 빌리기 >`
+- href: `https://tally.so/r/mJD5ad` → `#` (임시, 신청 링크 추후 지정)
+
+---
+
+## WT-024 | T-024 loan-match 쇼핑 대출 페이지 신규 제작
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-024 |
+| WT-ID | WT-024 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-08 |
+| 파일 | `loan-match/shopping.html` (신규) |
+| 기획서 | `project-docs/10_plan/기획안_loan-match_쇼핑대출.md` (W-017-4) |
+| 로컬 커밋 | `a9639d0` |
+
+### 작업 내용
+
+"쇼핑 내역을 제출하고 돈 빌리기" Coming Soon 페이지 신규 생성. 이미지 7종 기반 구현.
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | 기획안 기반 `loan-match/shopping.html` 신규 생성 — SEC-01~11 + FOOTER 전체 구현 | `a9639d0` |
+| 2차 | 상단 톤앤매너 신용 페이지와 통일 — 다크 배경→흰색, BACK 라이트, 타이틀 #111 검정. credit.html `.page-title-section` 동일 구조 | `639418e` |
+| 3차 | 페이지 타이틀 텍스트 원본 복원 — "쇼핑 내역을 제출하고 돈 빌리기" → "신용은 중요하지 않아요, 쇼핑 내역을 제출하면 인간미 풀풀 풍기는 사람이 돈을 빌려 드려요." | `c0d6801` |
+
+---
+
+## WT-025 | T-025 loan-match 페이지 타이틀 font-weight 경량화 (900→700)
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-025 |
+| WT-ID | WT-025 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-08 |
+| 파일 | `loan-match/credit.html`, `loan-match/shopping.html` |
+| 로컬 커밋 | `8166daa` |
+
+### 작업 내용
+
+페이지 타이틀 `.page-title`의 font-weight를 900(Black)→700(Bold)로 경량화. 36px + 900 조합이 둔탁하고 답답해 보이는 문제 해결.
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | credit.html + shopping.html `.page-title` font-weight: 900→700 | `8166daa` |
+
+### 1차 상세
+
+| 파일 | 수정 위치 | 수정 전 | 수정 후 |
+|------|----------|---------|---------|
+| `credit.html` | `.page-title` | font-weight: 900 | font-weight: 700 |
+| `shopping.html` | `.page-title` | font-weight: 900 | font-weight: 700 |
+
+---
+
+## WT-026 | T-026 쇼핑 대출 페이지 누락 문구 추가
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-026 |
+| WT-ID | WT-026 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-08 |
+| 파일 | `loan-match/shopping.html` |
+| 로컬 커밋 | `821bcb9` |
+
+### 작업 내용
+
+원본 대비 SEC-02~04(WHY 이미지)와 SEC-05(이런생각 이미지) 사이에 텍스트 섹션 누락 → 추가
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | SEC-04-1 전환 문구 신규 추가: "🗣️ 매달 꾸준히 돈을 벌고 있고, 상환능력도 충분하다고 생각하는데 말이죠.." (22px/700, 흰색 배경, 중앙 정렬, padding 48px) | `821bcb9` |
+
+### 1차 상세
+
+- **SEC-01**: 상단 BACK 버튼 (다크 배경, → browse.html)
+- **페이지 타이틀**: "쇼핑 내역을 제출하고 돈 빌리기" (다크 배경, 36px/900, 흰색)
+- **SEC-02~04**: `쇼핑_네이버랑쿠팡에서.png` — 다크 배경, 쇼핑 아이콘 + 지불 능력 + 그라디언트 + WHY (이미지)
+- **SEC-05**: `쇼핑_이런생각.png` — 다크 전환, "다들 이런생각 해봤을 걸요?" (이미지)
+- **SEC-06**: `쇼핑_소비력과구매력.png` — 연회색 배경, "왜 나의 소비력과 구매력은..." (이미지)
+- **SEC-07**: `쇼핑_쇼핑내역제출.png` — 흰색 배경, 온라인 몰 로고 + 제출 안내 (이미지)
+- **SEC-08**: `쇼핑_써주세요적사고.png` — 다크 배경, 정의 카드 (이미지)
+- **SEC-09**: `쇼핑_새로운기회.png` — 연두 그라디언트, 누구에게나 열리는 새로운 기회 (이미지)
+- **SEC-10**: `쇼핑_출시예정.png` — 연회색, Coming Soon (이미지)
+- **SEC-11**: CTA "웨이팅하러 가기 >" 초록 버튼 (#5BCB50), 23px/bold, Tally 모달 `mRJEvK`
+- **FOOTER**: footer.js 공용 푸터
+- **Tally**: `embed.js` 스크립트 삽입
+- **웹폰트**: Noto Sans KR Google Fonts 로드
+
+### 폰트 사이즈 적용
+
+| 요소 | 사이즈 | 비고 |
+|------|--------|------|
+| 페이지 타이틀 (h1) | 36px / 900 | credit.html 동일 기준 |
+| CTA 버튼 | 23px / bold | 기획서 원본 그대로 |
+| BACK 버튼 (다크) | 13px / 600 | 공통 |
+| BACK 버튼 (라이트) | 13px / 600 | 공통 |
+
+---
+
+## WT-027 | T-027 쇼핑 대출 페이지 누락 콘텐츠 2개 섹션 추가
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-027 |
+| WT-ID | WT-027 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-09 |
+| 파일 | `loan-match/shopping.html` |
+| 로컬 커밋 | `39bacc0` |
+
+### 작업 내용
+
+원본 대비 SEC-06(소비력과구매력 이미지)와 SEC-07(쇼핑내역제출 이미지) 사이에 텍스트 콘텐츠 2개 섹션 누락 → 추가
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | SEC-06-1 "🔥 써주세요.에선 달라요." + SEC-06-2 "📍 신청 조건은 딱 1가지 만 있으면 돼요." 신규 추가 | `39bacc0` |
+| 2차 | 두 섹션 h2 타이틀 아래에 좌우 여백 있는 구분선(1px #E0E0E0, padding-bottom 18px) 추가 — 원본 일치 | `8d3d81c` |
+
+### 1차 상세
+
+**추가 위치:** SEC-06 `쇼핑_소비력과구매력.png` 이미지 아래 ↔ SEC-07 `쇼핑_쇼핑내역제출.png` 이미지 위
+
+**SEC-06-1: 🔥 써주세요.에선 달라요.**
+
+| 속성 | 값 |
+|------|-----|
+| 배경 | #fff (흰색) |
+| 패딩 | 48px 24px |
+| 타이틀 | 26px / 900 / #111 |
+| 불릿 리스트 | disc, 17px / 500 / #333 |
+| 하이라이트 배지 | `소비 패턴과 구매력을 분석` — #E8DEF8 배경, #4432A2 텍스트, 4px radius |
+
+텍스트 (원본 그대로):
+- AI가 고객님의 쇼핑 내역을 보고 `소비 패턴과 구매력을 분석` 해 상환 능력을 평가해요.
+- 신용점수가 낮아도, 소비력과 구매력이 있다면 충분히 대출을 이용할 수 있어요.
+
+**SEC-06-2: 📍 신청 조건은 딱 1가지 만 있으면 돼요.**
+
+| 속성 | 값 |
+|------|-----|
+| 배경 | #fff (흰색) |
+| 패딩 | 36px 24px 48px |
+| 타이틀 | 26px / 900 / #111 |
+| 하이라이트 배지 | `1가지` — #FFE0E0 배경, #D32F2F 텍스트, 4px radius |
+
+---
+
+## WT-028 | T-028 쇼핑 대출 페이지 누락 콘텐츠 "이 대출방식이 특별한 이유" 추가
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-028 |
+| WT-ID | WT-028 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-09 |
+| 파일 | `loan-match/shopping.html` |
+| 로컬 커밋 | `84e8dcd` |
+
+### 작업 내용
+
+원본 대비 SEC-07(쇼핑내역제출 이미지)과 SEC-08(써주세요적사고 이미지) 사이에 텍스트 섹션 누락 → 추가. SEC-06-1/06-2와 동일 패턴(같은 레벨·톤앤매너).
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | SEC-07-1 "✨ 이 대출방식이 특별한 이유" 신규 추가 (26px/900, 좌우 여백 구분선 1px #E0E0E0) | `84e8dcd` |
+
+### 1차 상세
+
+**추가 위치:** SEC-07 `쇼핑_쇼핑내역제출.png` 이미지 아래 ↔ SEC-08 `쇼핑_써주세요적사고.png` 이미지 위
+
+**SEC-07-1: ✨ 이 대출방식이 특별한 이유**
+
+| 속성 | 값 |
+|------|-----|
+| 배경 | #fff (흰색) |
+| 패딩 | 48px 24px |
+| 타이틀 | 26px / 900 / #111 |
+| 구분선 | border-bottom 1px solid #E0E0E0, padding-bottom 18px |
+| 패턴 | SEC-06-1/06-2와 동일 (`.sec-differ`, `.sec-condition`과 같은 레벨)
+
+---
+
+## WT-029 | T-029 쇼핑 대출 페이지 누락 콘텐츠 "꼭! 확인해요" 추가
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-029 |
+| WT-ID | WT-029 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-09 |
+| 파일 | `loan-match/shopping.html` |
+| 로컬 커밋 | `7ad5593` |
+
+### 작업 내용
+
+원본 대비 SEC-08(써주세요적사고 이미지)과 SEC-09(새로운기회 이미지) 사이에 텍스트 섹션 누락 → 추가. 동일 패턴(26px/900 타이틀 + 좌우 여백 구분선).
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | SEC-08-1 "⚠️ 꼭! 확인해요." 신규 추가 (불릿 5개 + 서브불릿 5개) | `7ad5593` |
+
+### 1차 상세
+
+**추가 위치:** SEC-08 `쇼핑_써주세요적사고.png` 이미지 아래 ↔ SEC-09 `쇼핑_새로운기회.png` 이미지 위
+
+**SEC-08-1: ⚠️ 꼭! 확인해요.**
+
+| 속성 | 값 |
+|------|-----|
+| 배경 | #fff (흰색) |
+| 패딩 | 48px 24px |
+| 타이틀 | 26px / 900 / #111, padding-bottom 18px, border-bottom 1px solid #E0E0E0 |
+| 메인 불릿 | disc, 17px / 700 / #222 |
+| 서브 불릿 | circle, 15px / 400 / #555 |
+| 링크 하이라이트 | "포인트를 적립하고 돈 빌리기" — #4432A2, underline, 700 |
+
+텍스트 (원본 그대로):
+1. 신용 점수가 높다면, 소비 데이터로 한도를 결정해요.
+   - AI는 제출된 소비 내역을 분석하여 한도를 책정해요. 신용 점수가 높다면 추가적인 대안신용평가는 필요하지 않아요.
+2. 신용 점수가 낮다면, 대안신용평가가 함께 진행돼요.
+   - 신용 점수가 낮더라도 걱정하지 마세요. 대안신용평가를 통해 추가적인 상환 능력을 분석하고, 적절한 한도를 결정해요.
+3. 신용정보는 열람해요.
+   - 악성 연체 가능성 등을 파악하기 위해 신용정보를 확인하고 있어요.
+4. 단순히 쇼핑 기록만 많다고 해서 한도가 부여되는 것은 아니에요.
+   - 쇼핑 내역이 일정하고 안정적인 소비 습관을 보여주면 신용도에 관계없이 적절한 한도를 받을 수 있어요.
+5. 만약 해당 상품에서 애석하게도 승인이 안 될 경우에는 `포인트를 적립하고 돈 빌리기` 방식을 통해 대출을 받을 수 있어요.
+   - 오히려 이 방법이 더 빠를 수도 있어요.
+
+---
+
+## WT-030 | T-030 쇼핑 대출 페이지 SEC-10 출시예정 이미지 섹션 삭제
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-030 |
+| WT-ID | WT-030 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-09 |
+| 파일 | `loan-match/shopping.html` |
+| 로컬 커밋 | `77d6d72` |
+
+### 작업 내용
+
+SEC-10 출시예정+Coming Soon 이미지 섹션 전체 삭제.
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | SEC-10 HTML 섹션 삭제 (`쇼핑_출시예정.png`) + CSS `.sec-light` 클래스 삭제 | `77d6d72` |
+
+### 1차 상세
+
+**삭제된 HTML:**
+```html
+<!-- SEC-10 출시 예정 + Coming Soon (이미지) -->
+<div class="sec-light">
+  <img class="sec-img" src="../imgs/loan-match/쇼핑_출시예정.png" ... />
+</div>
+```
+
+**삭제된 CSS:**
+```css
+.sec-light { background: #F5F5F5; }
+```
+
+---
+
+## WT-031 | T-031 쇼핑 대출 페이지 CTA 버튼 위치 변경 + 버튼명 변경
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-031 |
+| WT-ID | WT-031 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-09 |
+| 파일 | `loan-match/shopping.html` |
+| 로컬 커밋 | `2370d21` |
+
+### 작업 내용
+
+T-030에서 SEC-10 삭제 후, CTA 버튼이 SEC-09(새로운기회) 바로 아래에 자연 배치됨. 버튼명 변경.
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | 버튼명 "웨이팅하러 가기 >" → "쇼핑 내역 제출하고 돈 빌리기 >" 변경 | `2370d21` |
+
+### 1차 상세
+
+| 항목 | 변경 전 | 변경 후 |
+|------|---------|---------|
+| 버튼 텍스트 | 웨이팅하러 가기 > | 쇼핑 내역 제출하고 돈 빌리기 > |
+| 버튼 위치 | SEC-10 아래 | SEC-09(새로운기회 이미지) 바로 아래 |
+
+---
+
+## WT-032 | T-032 GitHub Pages `.nojekyll` 추가 — `_` 시작 이미지 404 수정
+
+| 항목 | 내용 |
+|------|------|
+| T-ID | T-032 |
+| WT-ID | WT-032 |
+| 상태 | **진행중(In-Progress)** |
+| 작업자 | 쮸티5호 |
+| 시작일 | 2026-06-10 |
+| 파일 | `.nojekyll` (레포 루트, 신규) |
+| 로컬 커밋 | `55bcf01` |
+
+### 작업 내용
+
+GitHub Pages는 기본적으로 Jekyll 빌드를 사용하며, Jekyll은 `_`(언더스코어)로 시작하는 파일/폴더를 무시한다. `imgs/nanocredit/Submissions/` 내 `_노션_*.webp`, `_노션_*.png` 5개 파일이 라이브에서 404 오류 발생. 레포 루트에 `.nojekyll` 빈 파일을 추가하여 Jekyll 처리를 비활성화.
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | 레포 루트에 `.nojekyll` 빈 파일 생성 (0 bytes) | `55bcf01` |
+
+### 분석 상세
+
+**404 발생 파일 (전부 `_`로 시작):**
+1. `_노션_랜딩페이지_배너_모바일최적화-005 (1).png`
+2. `_노션_랜딩페이지_배너_모바일최적화-006.webp`
+3. `_노션_랜딩페이지_배너_모바일최적화-007_(1).webp`
+4. `_노션_랜딩페이지_배너_모바일최적화-008.webp`
+5. `_노션_랜딩페이지_배너_모바일최적화-005 (1).png`
+
+**정상 서빙 파일 (일반 이름):**
+- `약정폰_요금제.png` → 200 OK
+- `nanocredit_10.webp` → 200 OK
+
+**영향 페이지:**
+- `nanocredit/submissions/index.html` — SEC-02, SEC-06, SEC-07 이미지
+- `nanocredit/submissions/phone-docs/yakjeong.html` — 배너
+- `nanocredit/submissions/phone-docs/alttul.html` — 배너
+- `nanocredit/submissions/phone-docs/sunbul.html` — 배너
+
+---
+
+### WT-033: 홈페이지 원본 백업 (index.html → index101.html)
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-15 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-033 |
+| 커밋 해시 | `34ad7bb` |
+| 작업 이력 | 1차 작업 |
+| 상태 | In-Progress |
+| 로컬 커밋 | `34ad7bb` |
+
+### 작업 내용
+
+지자체(서울시 강남구청 지역경제과) 실사 방문 대비, 현재 운영 중인 `index.html`을 `index101.html`로 복제하여 원본을 보존. W-034(위장용 전환) 작업 전 원본 백업 목적. 실사 종료 후 `index101.html` → `index.html`로 복원 예정.
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | `index.html` → `index101.html` 복제 (420줄, 수정 없이 원본 그대로) | `34ad7bb` |
+
+### 분석 상세
+
+**백업 파일:** `index101.html`
+- 원본 `index.html`과 `diff` 비교 결과 동일 확인 완료
+- 420줄, 이미지 기반 홈페이지 구조 그대로 보존
+- 실사 종료 후 복원용
+
+---
+
+### WT-034: 홈페이지 지자체 실사 대비 위장용 전환
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-15 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-034 |
+| 커밋 해시 | `bc31103` |
+| 작업 이력 | 1차 작업 |
+| 상태 | In-Progress |
+| 로컬 커밋 | `bc31103` |
+
+### 작업 내용
+
+서울시 강남구청 지역경제과 실사 방문 대비, `index.html`을 이미지 기반에서 텍스트 기반으로 전면 전환. 기획안(`기획안_home_위장용_실사대비.md`) 및 목업 v2 기반.
+
+### 수정 이력
+
+| 회차 | 내용 | 커밋 |
+|------|------|------|
+| 1차 | index.html 전면 전환 (420줄 → 511줄) | `bc31103` |
+| 2차 | 디자인 강화 + 등록번호 좌측정렬 + 로고 축소·가로배치 | `c6f91f7` |
+
+### 분석 상세
+
+**주요 변경사항:**
+1. **레이아웃**: max-width: 480px, 1열, 센터 정렬 (`.wrap`)
+2. **폰트**: Google Fonts Noto Sans KR 제거 → 시스템 폰트 (Apple SD Gothic Neo, Malgun Gothic)
+3. **폰트 위계**: 법적고지 20px Bold (최대) > 타이틀 16px Bold > 본문 14px > 부제 13px
+4. **하단 법률문구**: 전부 20px Normal (타이틀/본문 구분 없음, 볼드 없음)
+5. **이미지 → 텍스트**: SEC-01~08 전체 `<img>` 태그 → 텍스트 카드로 전환
+6. **상단 법적 고지**: "❗ 주의 사항" 라벨 제거, 등록번호만 직접 표시
+7. **footer.js 미사용**: Contact, About Us, 앱 다운로드, 저작권 전체 인라인
+8. **하단 순서 변경**: 법적고지 → Contact → About Us → 앱 다운로드 → 저작권
+9. **Contact 중복 제거**: 상단 Contact(사업문의/광고문의 포함) 삭제, footer.js 버전(대표전화/고객문의만) 사용
+10. **About Us 수정**: 써주세요연계대부 먼저 → 혁사호재 아래, "대안신용평가 & 포인트 이력 ・소비력 ・구매력 분석" 추가, 영문 주소 삭제
+11. **저작권 수정**: ALBITF 먼저 (영문/국문 모두)
+12. **디자인**: accent bar, 캡슐 통계, 넘버링 배지, 그라디언트 히어로, 다크 스토어 버튼
+
+**삭제된 요소:**
+- nav 바 (로고 + 햄버거 메뉴)
+- Google Fonts `<link>` 태그 3개
+- SEC-01~08 `<img>` 태그 8개
+- 기존 Contact 섹션 (사업문의/광고문의 포함 4행 버전)
+- `<script src="/footer.js"></script>`
+
+**유지된 요소:**
+- 앱 다운로드 카드 (Google Play / App Store SVG 로고 포함)
+- 서비스 약관 링크 3개 (서비스 이용약관, 개인정보 처리방침, 대부거래 표준약관)
+- 사업자등록증/대부업등록증 PDF 링크
+
+---
+
+### WT-035: 스토어 배지 복원 + 사이즈 균등화
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-035 |
+| 커밋 해시 | `cbca6c2` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 검증완료 |
+
+**변경:** `.store-badge` flex:1 복원 (width:200px 제거), `.store-platform` width:75px 추가로 Google Play / App Store 배지 사이즈 균등화
+
+---
+
+### WT-036: Legal-top 배지 포맷 + 등록번호 라인 분리
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-036 |
+| 커밋 해시 | `cbca6c2` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 검증완료 |
+
+**변경:** "써주세요연계대부" 보라 배지(#7C3AED) + 대부/대부중개 등록번호 각 줄 분리 + "등록시・도 명칭 : 서울시 강남구청(대부업 담당 : 02-123-4567)" 추가
+
+---
+
+### WT-037: Logo-copy 컬러 보라 변경
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-037 |
+| 커밋 해시 | `cbca6c2` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 검증완료 |
+
+**변경:** `.logo-copy` color: #555 → #7C3AED
+
+---
+
+### WT-038: Legal-bottom 22px + 글머리 기호 + 쌍따옴표
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-038 |
+| 커밋 해시 | `cbca6c2` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 검증완료 |
+
+**변경:** `.legal-group-title` 22px Bold, `.legal-group-body` 22px Normal, `p::before` 글머리 기호(•) 추가, 3번째 그룹 타이틀 쌍따옴표("") 3줄 분리
+
+---
+
+### WT-039: 써주세요연계대부 corp-box 스타일 수정
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-039 |
+| 커밋 해시 | `cbca6c2` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 검증완료 |
+
+**변경:** 1번째 corp-box(써주세요연계대부)만 inline style로 font-size:22px, color:#000, 대표전화 라인 추가. 2번째 corp-box(혁사호재)는 미변경
+
+---
+
+### WT-040: 통계 텍스트 변경
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-040 |
+| 커밋 해시 | `cbca6c2` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 검증완료 |
+
+**변경:** `.stat-value` 텍스트 "21만 명이 빌려갔어요." → "몇 만 명의 청년 서민이 빌려갔어요."
+
+---
+
+### WT-041: EXPLORE 1/2/3 그룹 배너 + 컬러 코딩
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-041 |
+| 커밋 해시 | `cbca6c2` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 검증완료 |
+
+**변경:**
+- `.explore-banner` CSS 신규 추가 (라운드 배너 스타일)
+- EXPLORE 1 (보라 #380097): 히어로~나쁘지않은조건
+- EXPLORE 2 (민트 #A6D6DE): 대출방식~소액대출 — 카드 border/title 민트 계열 변경
+- EXPLORE 3 (오렌지 #FF5400): 현금이아니어도~포인트적립소 — 카드 border/title/hero 오렌지 계열 변경
+- CIBI 브랜드 컬러 기반: Main #380097 / Sub1 #A6D6DE / Sub2 #FF5400
+
+---
+
+### WT-042: 히어로 박스 연한 배경 전환
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-042 |
+| 커밋 해시 | `cbca6c2` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 검증완료 |
+
+**변경:** EXPLORE 배너와 히어로 박스 색상 충돌 해소. 그룹1 히어로: 진보라 그라데이션 → 연보라 #F3F0FF + 진보라 텍스트. 그룹3 히어로: 진오렌지 그라데이션 → 연오렌지 #FFF5F0 + 진오렌지 텍스트
+
+---
+
+### WT-043: ARRIVE 클로징 배너 추가
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-043 |
+| 커밋 해시 | `cbca6c2` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 검증완료 |
+
+**변경:** 클로징 이미지 상단에 보라 배너 "ARRIVE" 추가. EXPLORE 1→2→3→ARRIVE 여정 흐름 완성. 보라색(출발점과 동일)으로 종착역 표현
+
+---
+
+### WT-044: AI 카드 타이틀 변경 + 인용문 삭제
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-044 |
+| 커밋 해시 | `cbca6c2` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 검증완료 |
+
+**변경:** card-title "어떻게 도와주는 AI" → "어떻게든 도와주는 AI". card-quote ("AI가 소통거리를 검토한 후, 현재 심사 중입니다.") 삭제 — 핸드폰 목업 이미지 내 동일 텍스트와 중복
+
+---
+
+### WT-046: 홈 이미지 5개 누락 추가 (T-045 반려 대응)
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 연관 T-ID | T-046 (T-045 반려 대응) |
+| 커밋 해시 | `20126dd` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 검증완료 |
+
+**반려 사유:** GitDeployOps T-045에서 `index.html`이 참조하는 홈 이미지 5개가 main/feature 양쪽에 git 미추적 상태로 확인. 배포 시 404 위험.
+
+**변경:** 로컬 디스크에 존재하나 git에 커밋되지 않았던 이미지 5개를 git add + commit:
+- `imgs/home/sjy_web_home_loan_method.png`
+- `imgs/home/sjy_web_home_ai_chat.png`
+- `imgs/home/sjy_web_home_small_loan.png`
+- `imgs/home/sjy_web_home_point_store.png`
+- `imgs/home/sjy_web_home_closing.jpg`
+
+**완료 보고서 (GitDeployOps → 개발자, 2026-06-16):**
+
+> `sirjuseyo-web` T-046 반려 대응분 확인 후, T-035~T-044 홈페이지 4차 수정 main 선별 반영 및 GitHub Pages 배포 완료.
+>
+> - 원격 반영:
+>   - 전체 `dev -> main` 병합 안 함 / 전체 `feature -> main` 병합 안 함
+>   - 사유: PR #10은 여전히 `DIRTY`, feature는 main 대비 누적 diverged 상태
+>   - 선별 반영 커밋: `cbca6c2` (홈페이지 4차 수정 코드) + `20126dd` (홈 이미지 5개 누락 추가)
+>   - 문서 커밋 `6f92b39`는 운영 반영 제외
+>   - 최종 main commit: `6f18a9a`
+> - 배포: GitHub Pages `pages build and deployment` 성공, run `27581621405`
+> - 확인: `git diff --check` 통과, 운영 홈 `https://www.sirjuseyo.com/` HTTP/2 200, 홈 이미지 5개 모두 HTTP/2 200
+> - 로컬 `sirjuseyo-web/main` 최신화 완료: `HEAD = origin/main = 6f18a9a`
+> - GitDeployOps `W-046/T-046/WT-046` 기록 완료, project-docs 원격 업데이트: `a7026d7`
+
+---
+
+### WT-047: 서비스 이용약관 페이지 법적고지 UI 모바일 전환
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `privacy/01_terms.html` |
+| 연관 W-ID | W-047 |
+| 연관 T-ID | T-047 |
+| 커밋 해시 | - (PR 대기) |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**1차 변경:**
+- CSS: `.page` max-width 800px → 480px, `--bg: #EEEEF2`, white background + box-shadow
+- `.page-inner` 래퍼 추가 (padding: 32px 24px)
+- 상단: legal-top 블록 추가 (써주세요연계대부 보라 배지 + 등록번호 + 등록시도명칭)
+- 하단: footer.js 제거 → 인라인 legal-bottom (3그룹) + Contact (3카드) + About Us (2 corp-box) + Copyright 추가
+- 홈페이지와 동일한 480px 모바일 앱형 UI 통일
+
+**2차 변경 (legal-shared.js v3 전환):**
+- 인라인 법적고지 HTML/CSS 전체 삭제 → `<script src="/js/legal-shared.js"></script>` 참조로 전환
+- `js/legal-shared.js` v3 완전 재작성: 홈페이지(`index.html`) 최신 CSS/HTML을 100% 동일하게 동적 주입
+- 주입 대상: legal-top(상단) + legal-bottom(하단 3그룹) + Contact(3카드) + About Us(2 corp-box, 써주세요연계대부 ALBITF 선두) + 앱 다운로드(Google Play/App Store) + Copyright(이미지 로고 + ALBITF & ALBIT Inc.)
+- 등록번호 PDF 링크, corp-box 22px 인라인 스타일, 대표전화 등 홈페이지 세부사항 완벽 일치 확인
+- 로컬 검증 완료 (port 5501 + port 8080)
+
+---
+
+### WT-048: 개인정보 처리방침 페이지 법적고지 UI 모바일 전환
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `privacy/index002.html` |
+| 연관 W-ID | W-048 |
+| 연관 T-ID | T-048 |
+| 커밋 해시 | - (PR 대기) |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**1차 변경:**
+- CSS: `.page` max-width 800px → 480px, `--bg: #EEEEF2`, white background + box-shadow
+- `.page-inner` 래퍼 추가 (padding: 32px 24px)
+- 상단: legal-top 블록 추가 (써주세요연계대부 보라 배지 + 등록번호 + 등록시도명칭)
+- 하단: 기존 인라인 Contact 섹션(2카드, 카카오 링크) + footer.js 제거 → 홈페이지 동일 인라인 legal-bottom + Contact (3카드) + About Us (2 corp-box) + Copyright 교체
+- 기존 헤더(Privacy 정책 아이콘+타이틀), warn-section, 7개 링크 목록 보존
+
+**2차 변경 (legal-shared.js v3 전환):**
+- 인라인 법적고지 HTML/CSS 전체 삭제 → `<script src="/js/legal-shared.js"></script>` 참조로 전환
+- `js/legal-shared.js` v3 공유: WT-047과 동일한 JS 파일 참조
+- 로컬 검증 완료 (port 5501 + port 8080)
+
+---
+
+### WT-049: 대부거래 표준약관 페이지 법적고지 UI 모바일 전환
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `privacy/08_standard-terms.html` |
+| 연관 W-ID | W-049 |
+| 연관 T-ID | T-049 |
+| 커밋 해시 | - (PR 대기) |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**1차 변경:**
+- CSS: `.page` max-width 800px → 480px, `--bg: #EEEEF2`, white background + box-shadow
+- `.page-inner` 래퍼 추가 (padding: 32px 24px)
+- 상단: legal-top 블록 추가 (써주세요연계대부 보라 배지 + 등록번호 + 등록시도명칭)
+- 하단: footer.js 제거 → 인라인 legal-bottom (3그룹) + Contact (3카드) + About Us (2 corp-box) + Copyright 추가
+- 기존 chapter 스타일(h2.chapter border-bottom: 2px solid var(--brand)) 보존
+
+**2차 변경 (legal-shared.js v3 전환):**
+- 인라인 법적고지 HTML/CSS 전체 삭제 → `<script src="/js/legal-shared.js"></script>` 참조로 전환
+- `js/legal-shared.js` v3 공유: WT-047과 동일한 JS 파일 참조
+- 로컬 검증 완료 (port 5501 + port 8080)
+
+---
+
+### WT-050: 홈페이지 상단/하단 법적고지 `legal-shared.js` 참조 리팩터링
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `index.html`, `js/legal-shared.js` |
+| 연관 W-ID | W-050 |
+| 연관 T-ID | T-050 |
+| 커밋 해시 | `5a18bd3` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**변경:**
+- `index.html`에서 법적고지 관련 인라인 CSS 전체 제거: `.legal-top`, `.legal-bottom`, `.legal-group`, `.bottom-section`, `.bottom-title`, `.contact-card`, `.contact-row`, `.contact-link`, `.service-links`, `.corp-box`, `.corp-desc`, `.corp-link`, `.store-card`, `.store-badge`, `.store-platform`, `.copyright-box`, `.copyright-logo`, `.copyright-text`, `.copyright-brand`
+- `index.html`에서 법적고지 관련 인라인 HTML 전체 제거: 상단 legal-top (보라 배지 + 등록번호) + 하단 6개 섹션 (법적고지하단 3그룹 + Contact 3카드 + About Us 2 corp-box + 앱 다운로드 2 store-card + 저작권 copyright-box)
+- `index.html`에 `<script src="/js/legal-shared.js"></script>` 추가 (`</body>` 직전)
+- `legal-shared.js`는 `.page` 또는 `.wrap` 컨테이너를 자동 감지하여 동작 (홈: `.wrap`, privacy: `.page`)
+- 결과: `legal-shared.js` 1곳 수정으로 홈페이지 + privacy 3개 페이지 법적고지 일괄 반영 가능
+- 프리뷰 서버(port 8080) 검증 완료: 상단/하단 모든 섹션 정상 렌더링 확인
+
+---
+
+### WT-051: 법적고지 폰트 24px 확대 + 전화번호/문구 수정 (전체 페이지 일괄)
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `js/legal-shared.js` |
+| 연관 W-ID | W-051 |
+| 연관 T-ID | T-051 |
+| 커밋 해시 | `85764a2` |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**변경 (7건):**
+- ① 상단 법적고지(`.legal-top`) 폰트 22px → 24px
+- ② 하단 법적고지(`.legal-group-title`, `.legal-group-body`) 폰트 22px → 24px
+- ③ 상단 대부업 담당 전화번호 02-123-4567 → 02-3423-5524
+- ④ 상단·하단 써 로고(`.copyright-logo`) 44px → 16px (24px의 1/3 작게)
+- ⑤ 고객센터 대표전화 인라인 style로 24px 적용
+- ⑥ 상환방법 문구에 "이자전부 포인트상환, 이자전부와 원금일부 포인트상환" 추가
+- ⑦ 부대비용 그룹에 "신용조회비용은 포인트로 결제" 항목 추가
+- `legal-shared.js` 1곳 수정으로 홈+privacy 4페이지 일괄 반영
+- 프리뷰 서버(port 8080) 검증 완료
+
+---
+
+**2차 변경 (3건) — 2026-06-16, 쮸티5호**
+
+| 항목 | 내용 |
+|------|------|
+| 작업 이력 | 2차 작업 |
+| 커밋 해시 | 미커밋 (커밋 대기) |
+| 상태 | 로컬검증완료 |
+
+- ⑧ 상단 써 로고(`.logo-img` in `index.html`) 44px → 25px (육안 비교 후 확정: 16px 너무 작음 → 24px → 30px → 25px)
+- ⑨ 하단 써 로고(`.copyright-logo` in `legal-shared.js`) 16px → 25px (상단과 동일 사이즈로 통일)
+- ⑩ 써주세요연계대부 주소 변경: `서울특별시 강남구 도곡로 112, 2층 C2-7호(도곡동, 서한빌딩)` → `서울특별시 강남구 논현로72길 16, 4층 424호 (역삼동, 초원빌딩)`
+- ⑪ 홈페이지 텍스트 변경: `몇 만 명의 청년 서민이 빌려갔어요.` → `수 만 명의 청년 서민이 빌려갔어요.` (`index.html` line 346)
+- 수정 파일: `index.html` (상단 로고 + 텍스트), `js/legal-shared.js` (하단 로고 + 주소)
+- 프리뷰 서버(port 8080) 검증 완료
+
+---
+
+**깃 & 배포 관리자 완료 보고서 (GitHub Pages PRD)**
+
+[GitHub Pages PRD : 깃 & 배포 관리자 -> 개발자]
+
+`sirjuseyo-web` T-051 홈 로고/주소/문구 수정 main 선별 반영 및 GitHub Pages 배포 완료했습니다.
+
+- 원격 반영:
+  - PR #11은 `OPEN / DIRTY`
+  - 전체 `dev -> main` 병합 안 함
+  - PR #11 전체 merge 안 함
+  - 사유: PR diff에 `js/legal-shared.js`, `privacy/*`, 개발자 문서 등 누적 변경 포함
+  - 운영 반영은 현재 `main/index.html` 기준 요청 4개 항목만 최소 선별 반영
+  - 최종 main commit: `47a07c0`
+
+- 반영 내용:
+  - 상단 `.logo-img` `25px`
+  - 하단 `.copyright-logo` `25px`
+  - 써주세요연계대부 주소 `논현로72길 16, 4층 424호 (역삼동, 초원빌딩)` 반영
+  - `수 만 명의 청년 서민이 빌려갔어요.` 반영
+
+- 배포:
+  - GitHub Pages `pages build and deployment` 성공
+  - run: `27596429413`
+
+- 확인:
+  - 운영 홈 `https://www.sirjuseyo.com/` `HTTP/2 200`
+  - 운영 HTML에서 `.logo-img`, `.copyright-logo`, `수 만 명`, 새 주소 확인
+  - 로컬 `sirjuseyo-web/main` 최신화 완료: `HEAD = origin/main = 47a07c0`
+
+- 문서:
+  - GitDeployOps `W-047/T-047/WT-047` 기록 완료
+  - project-docs 원격 업데이트 완료: `1b480e5`
+
+한 줄 버전:
+- `sirjuseyo-web` T-051 요청 4개 항목만 main 선별 반영 완료, GitHub Pages 배포 성공 및 운영 홈 200/문구/주소 확인했습니다.
+
+---
+
+**깃 & 배포 관리자 완료 보고서 (T-052 — GitHub Pages PRD)**
+
+[GitHub Pages PRD : 깃 & 배포 관리자 -> 개발자]
+
+`sirjuseyo-web` T-052 법적고지 공통화/Privacy 3페이지 main 선별 반영 및 GitHub Pages 배포 완료했습니다.
+
+- 원격 반영:
+  - PR #11은 `OPEN / DIRTY`
+  - 전체 `feature -> main` 병합 안 함
+  - 전체 `dev -> main` 병합 안 함
+  - 사유: PR #11에는 개발자 문서와 누적 변경이 포함되어 있어 전체 병합 위험
+  - 운영 반영 파일 5개만 선별 반영:
+    - `index.html`
+    - `js/legal-shared.js`
+    - `privacy/01_terms.html`
+    - `privacy/index002.html`
+    - `privacy/08_standard-terms.html`
+  - 최종 main commit: `5bab8db`
+
+- 배포:
+  - GitHub Pages `pages build and deployment` 성공
+  - run: `27597570883`
+
+- 확인:
+  - 운영 홈 `https://www.sirjuseyo.com/`에서 `/js/legal-shared.js` 참조 및 `수 만 명` 문구 확인
+  - `https://www.sirjuseyo.com/js/legal-shared.js`에서 24px/전화번호/주소/상환방법/신용조회비용 확인
+  - privacy 3페이지 모두 `HTTP/2 200` 및 `/js/legal-shared.js` 참조 확인
+  - 로컬 `sirjuseyo-web/main` 최신화 완료: `HEAD = origin/main = 5bab8db`
+
+- 문서:
+  - GitDeployOps TODO/WORK_THROUGH 업데이트 완료
+  - `W-048 / T-048 / WT-048` 기록 완료
+  - 원격 project-docs 반영 완료:
+    - TODO_BOARD commit `4079a1e`
+    - WORK_THROUGH commit `0787dd1`
+
+한 줄 버전:
+- `sirjuseyo-web` T-052 요청 운영 파일 5개만 main 선별 반영 완료, GitHub Pages 배포 성공 및 홈/공통 JS/privacy 3페이지 운영 확인했습니다.
+
+---
+
+### WT-053: Privacy 6페이지 `legal-shared.js` 상단·하단 법적고지 연결
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 파일 | `privacy/02~07_*.html` (6개) |
+| 연관 W-ID | W-053 |
+| 연관 T-ID | T-053 |
+| 커밋 해시 | 커밋 대기 |
+| 작업 이력 | 1차 작업 |
+| 상태 | 로컬검증완료 |
+
+**변경 (3건):**
+- ① 6개 파일에 `<script src="/js/legal-shared.js"></script>` 추가 → 상단·하단 법적고지 자동 주입
+  - `privacy/02_collect-personal.html` (개인(신용)정보 수집·이용 동의서)
+  - `privacy/03_collect-unique.html` (고유식별정보 수집·이용 동의서)
+  - `privacy/04_inquiry-personal.html` (개인(신용)정보 조회 동의서)
+  - `privacy/05_inquiry-unique.html` (고유식별정보 조회 동의서)
+  - `privacy/06_provide-personal.html` (개인(신용)정보 제공 동의서)
+  - `privacy/07_provide-unique.html` (고유식별정보 제공 동의서)
+- ② 6개 파일에서 기존 `footer.js` 참조 제거 (하단 중복 방지)
+  - `<script src="/footer.js"></script>` 및 관련 주석 삭제
+- ③ 6개 파일 `.back-link`에 `margin-top: 20px` 추가 (상단 법적고지와 BACK 버튼 간격 확보)
+- 프리뷰 서버(port 8080) 검증 완료: 상단·하단 1세트만 표시, 중복 없음
+
+---
+
+**깃 & 배포 관리자 완료 보고서 (T-053 — GitHub Pages PRD)**
+
+[GitHub Pages PRD : 깃 & 배포 관리자 -> 개발자]
+
+`sirjuseyo-web` T-053 Privacy 6개 동의서 `legal-shared.js` 연결 main 선별 반영 및 GitHub Pages 배포 완료했습니다.
+
+- 원격 반영:
+  - PR #11은 `OPEN / DIRTY`
+  - 전체 `feature -> main` 병합 안 함
+  - 전체 `dev -> main` 병합 안 함
+  - 운영 반영 파일 6개만 선별 반영:
+    - `privacy/02_collect-personal.html`
+    - `privacy/03_collect-unique.html`
+    - `privacy/04_inquiry-personal.html`
+    - `privacy/05_inquiry-unique.html`
+    - `privacy/06_provide-personal.html`
+    - `privacy/07_provide-unique.html`
+  - 최종 main commit: `7f6bc0a`
+
+- 배포:
+  - GitHub Pages `pages build and deployment` 성공
+  - run: `27601005241`
+
+- 확인:
+  - 6개 운영 페이지 모두 `/js/legal-shared.js` 참조 확인
+  - 6개 운영 페이지 모두 `.back-link margin-top: 20px` 확인
+  - 6개 운영 페이지 모두 `footer.js` 미검출
+  - `sirjuseyo-web` 로컬 main 최신화 완료: `HEAD = origin/main = 7f6bc0a`
+
+- GitHub 연결 장애:
+  - 원인: `/etc/hosts`에 죽은 IP `140.82.112.3 github.com` 고정
+  - 조치: `140.82.112.4 github.com`으로 변경 후 DNS cache flush
+  - 검증: `curl https://github.com`, `git ls-remote`, `git fetch origin main` 정상
+  - T-053 로컬 ref 정합도 최종 완료
+
+- 문서:
+  - GitDeployOps TODO/WORK_THROUGH 업데이트 완료
+  - `W-049 / T-049 / WT-049` 기록 완료
+
+한 줄 버전:
+- `sirjuseyo-web` T-053 요청 privacy 동의서 6개 HTML만 main 선별 반영 완료, GitHub Pages 배포 성공, GitHub HTTPS 장애 복구 및 로컬 main 최신화까지 완료했습니다.
+
+---
+
+### WT-054: monthly-loan 홈페이지 1열 전환 + `legal-shared.js` 연결
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 레포 | `monthly-loan-repo` |
+| 대상 파일 | `index.html`, `index-dev.html`, `js/legal-shared.js` (신규) |
+| 연관 W-ID | W-054 |
+| 연관 T-ID | T-054 |
+| 커밋 해시 | 커밋 후 기입 |
+| 작업 이력 | 1차 작업 |
+| 상태 | 완료 |
+
+**변경 (3건):**
+- ① `.wrap`에 `max-width:480px; margin:0 auto;` 추가 → PC에서도 1열 고정 (sirjuseyoWeb 홈과 동일)
+- ② 데스크탑 2열 미디어쿼리 전체 제거 (`@media(min-width:768px)`, `@media(min-width:1280px)`)
+- ③ `footer.js` 참조 → `js/legal-shared.js` 참조로 교체 (상단·하단 법적고지 자동 주입)
+- `js/legal-shared.js` 파일은 sirjuseyoWeb에서 복사 (동일 원본)
+- `index.html`, `index-dev.html` 2개 파일 동일 수정 적용
+
+---
+
+### WT-055: 상단 법적고지 볼드 제거 + monthly-loan 폰트 통일
+
+| 항목 | 내용 |
+|------|------|
+| 작업일 | 2026-06-16 |
+| 작업자 | 쮸티5호 |
+| 대상 레포 | `sirjuseyoWeb` + `monthly-loan-repo` (2개 레포 동시) |
+| 대상 파일 | `sirjuseyoWeb/js/legal-shared.js`, `monthly-loan-repo/js/legal-shared.js`, `monthly-loan-repo/index.html`, `monthly-loan-repo/index-dev.html` |
+| 연관 W-ID | W-055 |
+| 연관 T-ID | T-055 |
+| 커밋 해시 | 커밋 후 기입 |
+| 작업 이력 | 1차 작업 |
+| 상태 | 완료 |
+
+**변경 (2건):**
+- ① `.legal-top` CSS `font-weight:700` → `font-weight:400` (상단 법적고지 볼드 제거) — 양쪽 `legal-shared.js` 동시 수정
+- ② `monthly-loan-repo` `font-family` 통일: `'Noto Sans KR',sans-serif` → `'Apple SD Gothic Neo','Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif` — `index.html`, `index-dev.html` 동시 수정
+- 원인: monthly-loan-repo는 `Noto Sans KR`만 1순위여서 Apple 기기에서도 Noto Sans KR로 렌더링 → sirjuseyoWeb과 폰트 굵기 체감 차이 발생
 
