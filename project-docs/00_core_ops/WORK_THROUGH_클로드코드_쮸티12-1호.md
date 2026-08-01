@@ -211,6 +211,38 @@ sirjuseyoWeb T-005~T-130 웹 통합 DEV 반영 완료했습니다.
   `fc97aae`로 `dev` 반영 완료했습니다. PRD/main 배포는 별도 요청 필요합니다.
 ```
 
+### 완료 보고서 (Ser7-1호 → 개발자) — 2026-08-01 DEV preview 배포
+
+```
+완료했습니다.
+
+DEV 테스트용 라이브 주소:
+`https://www.sirjuseyo.com/index-dev.html`
+
+처리 내용:
+- `sirjuseyo-web` `dev`에 반영된 8월 DEV 화면을 GitHub Pages에서 테스트할 수 있도록
+  `main`에 DEV 테스트용 파일만 선별 배포했습니다.
+- 운영 루트 `https://www.sirjuseyo.com/index.html`은 건드리지 않았습니다.
+- main 배포 커밋: `cb8a073`
+- GitHub Pages run: `30690959203` success
+- 확인 완료:
+  - `/index-dev.html` 200 + 8월 DEV 문구 확인
+  - `/monthly-loan/2026-08/index-dev.html` 200 확인
+  - `/monthly-loan/apply/apply-dev.html` 200 확인
+
+문서도 반영했습니다:
+- `TODO_BOARD_GitDeployOps_Ser7-1호_2026071.md`
+- `WORK_THROUGH_GitDeployOps_Ser7-1호_2026071.md`
+
+로컬 `sirjuseyo-web`도 원격 최신 기준으로 맞췄습니다:
+- `origin/main`: `cb8a073`
+- `origin/dev`: `fc97aae`
+- 작업트리 clean
+
+제가 이전에 `dev` 반영만 하고 라이브 테스트 URL까지 열리게 하지 않은 판단이 문제였습니다.
+이제 DEV 테스트는 위 URL에서 하시면 됩니다.
+```
+
 ---
 
 ## WT-140 · T-129 / W-129 [대출 검사기] 상단 안내 문구 워딩 수정
