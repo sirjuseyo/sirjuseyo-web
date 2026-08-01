@@ -6,10 +6,23 @@
 
 ---
 
+## WT-139 · T-128 / W-128 [8월 대출 페이지] 대표 거절 사유 4번 문구 수정
+
+### 작업 요약
+- **상태:** 대기(Pending) — 2026-08-01
+- **대상 파일:** `monthly-loan/2026-08/index-dev.html`, `monthly-loan/2026-08/index.html`
+
+### 변경 내용 (예정)
+- 4번 항목 문구: `1년 이내 3개월 이상 무직 또는 과거 6개월 이상 무직` → `최근 3개월 이상 무직 또는 과거 6개월 이상 무직`
+- em 추가: `노동 상태와 의지를 중요시 여깁니다.`
+- 참조: 대출 가능성 검사기(T-127) 동일 문구로 통일
+
+---
+
 ## WT-138 · T-127 / W-127 [대출 검사기] 대표 거절 사유 4번 추가
 
 ### 작업 요약
-- **상태:** 진행중 — 2026-08-01
+- **상태:** 테스트 완료(DONE) — 2026-08-01
 - **로컬 커밋:** `ded299d` (코드 커밋)
 - **대상 파일:** `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html`
 
@@ -20,7 +33,7 @@
    - em: `노동 상태와 의지를 중요시 여깁니다.`
 
 ### 테스트
-- VS Code Live Server → `tip/loan-checker/index-dev.html` 테스트 대기
+- VS Code Live Server → `tip/loan-checker/index-dev.html` 테스트 완료
 
 ---
 
