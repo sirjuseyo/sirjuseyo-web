@@ -168,6 +168,7 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 - **코드 커밋 4회:** `a2feaf9` fix(loan-checker): .app-main 좌우 padding 제거 — 법적고지·콘텐츠 기준점 통일 (T-142)
 - **코드 커밋 5회:** `cf8df51` [T-142] app-main 클래스 제거로 콘텐츠 우측 overflow 근본 해결 (5회차)
 - **코드 커밋 6회:** `41a8b6c` [T-142] main.page에 max-width 직접 적용 — DEV 배너·콘텐츠 너비 기준 통일 (6회차)
+- **코드 커밋 7회:** `2adf454` [T-142] grid-template-columns: minmax(0,1fr)로 변경 — 이미지 min-content가 grid 트랙 초과하던 근본 원인 해결 (7회차)
 
 ### 배경
 - `tip/loan-checker/index-dev.html`에서 콘텐츠 전체가 오른쪽으로 약간 offset되는 증상 보고.
