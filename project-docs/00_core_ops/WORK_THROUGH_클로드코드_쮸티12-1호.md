@@ -161,7 +161,7 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
 - **작업일시:** 2026-08-02
-- **상태: ⏳ 진행중(In-Progress)** — 사장님 VS Code Live Server 테스트 대기
+- **상태: ✅ 테스트 완료(DONE)** — 2026-08-02
 
 ### 배경
 - `loan-match/shopping-dev.html` 하단 CTA 버튼이 Tally 폼(`data-tally-open="mRJEvK"`)에 연결되어 있었음.
@@ -181,7 +181,7 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
 - **작업일시:** 2026-08-02
-- **상태: ⏳ 진행중(In-Progress)** — 사장님 VS Code Live Server 테스트 대기
+- **상태: ✅ 테스트 완료(DONE)** — 2026-08-02
 
 ### 배경
 - `loan-match/credit-dev.html` 하단 CTA 버튼이 `href="#"`으로 아무 동작도 없었음.
