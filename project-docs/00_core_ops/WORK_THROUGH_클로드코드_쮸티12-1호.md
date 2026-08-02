@@ -157,6 +157,123 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 
 ---
 
+## WT-149 · T-137 / W-137 [loan-match] DEV 환경 미적용 페이지 수정
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `1aee714` (코드 커밋) / `b0fe605` (문서 커밋)
+- **대상 파일:** `loan-match/index-dev.html`, `loan-match/browse-dev.html`(신규)
+
+### 변경 내용
+1. `index-dev.html`: 즉시빌리기 href PRD→DEV (`nanocredit/index-dev.html`)
+2. `index-dev.html`: 여유있게빌리기 href `browse.html`→`browse-dev.html`
+3. `browse-dev.html` 신규 생성 — 앱사이즈·DEV배너·메뉴바·상하단고지 / 회차수정: body class="page" 누락·상단BACK버튼 중복 수정
+
+### 테스트
+- VS Code Live Server → `loan-match/index-dev.html` 테스트 완료
+
+---
+
+## WT-148 · T-136 / W-136 [신청 폼] 대출 가능성 검사기 안내 박스 추가
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `f78b872` (코드 커밋)
+- **대상 파일:** `monthly-loan/apply/apply-dev.html`, `monthly-loan/apply/apply.html`
+
+### 변경 내용
+1. h1 아래 `.apply-note` 박스 삽입 — 8월 대출·나노크레딧 신청 전 검사기 이용 안내 + 경로 (`홈 > 꿀정보 > 대출 가능성 검사기`)
+2. apply-dev.html·apply.html 동시 적용
+
+### 테스트
+- VS Code Live Server → `monthly-loan/apply/apply-dev.html` 테스트 완료
+
+---
+
+## WT-147 · T-135 / W-135 [긴급/Android] 헤더 가로 오버플로우 + 드로어 노출 버그 수정
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `ba78afb` (코드 커밋)
+- **대상 파일:** `js/menu.js`, `js/menu-dev.js`
+
+### 변경 내용
+1. `#sjy-nav-bar`: `width:100%` → `width:100vw` (menu.js 라인 23, menu-dev.js 라인 23)
+2. `#sjy-drawer`: `width:100%` → `width:100vw` (menu.js 라인 38, menu-dev.js 라인 38)
+- 원인: `position:fixed` + `left:50%` 조합에서 Android Chrome이 `width:100%`를 문서 너비 기준으로 계산 → `100vw`(뷰포트 기준)로 해결
+
+### 테스트
+- VS Code Live Server 테스트 완료 / Android 실기기 테스트는 운영 배포 후 예정
+
+---
+
+## WT-146 · T-134 / W-134 [팝업] 8월 대출 작업 동기화 2종
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `ed8ec27` (코드 커밋)
+- **대상 파일:** `js/popup.js`
+
+### 변경 내용
+1. 거절 사유 4번 추가: `최근 3개월 이상 무직 또는 과거 6개월 이상 무직` + em `노동 상태와 의지를 중요시 여깁니다.`
+2. 30만 원 이벤트 대출: `활용 3.5% = 크레딧 1.5% + 이자 1% + 원금 1%` → `대출 상품 없음`
+
+### 테스트
+- VS Code Live Server 팝업 동작 확인 완료
+
+---
+
+## WT-145 · T-133 / W-133 [대출 검사기] 시계 박스 ↔ tone-note 박스 순서 교체
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `2d93a00` (코드 커밋)
+- **대상 파일:** `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html`
+
+### 변경 내용
+1. 순서 변경: 이미지→시계박스→tone-note → 이미지→tone-note→시계박스
+2. index-dev.html·index.html 동시 적용
+
+### 테스트
+- VS Code Live Server → `tip/loan-checker/index-dev.html` 테스트 완료
+
+---
+
+## WT-144 · T-132 / W-132 [대출 검사기] tone-note 박스 스타일 3종 수정
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `a66b8c3` (코드 커밋)
+- **대상 파일:** `tip/loan-checker/styles.css`
+
+### 변경 내용
+1. `border-right: 4px solid var(--accent)` 추가 (좌우 동일)
+2. `background`: `#fff` → `rgba(56,0,151,0.04)` (연보라)
+3. `.tone-note-title` font-size: `0.95rem` → `1.1rem`
+4. `.tone-note-body` font-size: `0.95rem` → `1rem`
+
+### 테스트
+- VS Code Live Server → `tip/loan-checker/index-dev.html` 테스트 완료
+
+---
+
+## WT-143 · T-131 / W-131 [대출 검사기] 상단 concept-image 이미지 교체
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `b7416d2` (코드 커밋)
+- **대상 파일:** `tip/loan-checker/assets/img/stepping-stones-aug-001.png`(신규), `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html`
+
+### 변경 내용
+1. `stepping-stones-aug-001.png` 신규 추가 (징검다리 배낭 남성 이미지, 2.0MB)
+2. concept-image 영역: 텍스트 → `<img>` 태그로 교체
+3. index-dev.html·index.html 동시 적용
+
+### 테스트
+- VS Code Live Server → `tip/loan-checker/index-dev.html` 테스트 완료
+
+---
+
 ## WT-142 · T-138 / W-138 [loan-match] 결과 카드 4개 페이지 DEV 버전 생성
 
 ### 작업 요약
