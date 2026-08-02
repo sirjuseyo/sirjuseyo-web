@@ -21,6 +21,7 @@ body {
   background: #FFFFFF;   /* 상단1: 배너 여백 — 화이트 */
   color: var(--text);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* 배너 이미지 사이 여백도 화이트 */
@@ -538,7 +539,7 @@ textarea:focus {
 }
 
 .script-cta-button img {
-  max-width: min(520px, 100%);
+  max-width: 100%;
   height: auto;
   display: block;
   border-radius: 16px;
@@ -548,7 +549,7 @@ textarea:focus {
 .script-cta-button-text {
   display: block;
   width: 100%;
-  max-width: 520px;
+  max-width: 100%;
   text-align: center;
   background: #FF5400;
   color: #fff;

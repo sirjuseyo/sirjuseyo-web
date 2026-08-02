@@ -7,9 +7,10 @@
   <title>대출가능성검사기</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .app-main { max-width: 480px !important; margin: 0 auto !important; }
+    body { max-width: 480px; overflow-x: hidden; margin: 0 auto; }
+    main.page { max-width: 480px; margin: 0 auto; }
     .legal-top { margin-bottom: 20px; }
-    .form-grid { grid-template-columns: 1fr !important; }
+    .form-grid { grid-template-columns: minmax(0, 1fr) !important; }
     .result-panel h2 { font-size: 18px !important; }
     .action-area { margin-top: 24px; padding-top: 24px; border-top: 2px solid #E5E0F0; }
     /* ⚠️ 대표 거절 사유 — 번호 박스 */
@@ -28,7 +29,7 @@
     🚧 DEV 테스트 환경 — 실사용자 접근 금지
   </div>
 
-  <main class="app-main page">
+  <main class="page">
     <form id="calculatorForm" class="form-grid">
       <div class="title-bar">
         <p class="title-bar-text">대출 가능성 검사기</p>
