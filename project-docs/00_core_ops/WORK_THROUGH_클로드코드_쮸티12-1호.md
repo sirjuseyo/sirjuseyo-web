@@ -389,6 +389,48 @@ Ser7-1호가 PRD 배포 중 발견하고 긴급 보정하여 main `d864ebc`에 �
 - reputation-dev.html, contribution-dev.html: 준비 중 콘텐츠 + 공통 요소 확인
 - browse-dev.html 하단 BACK 버튼 삭제 회차 수정 테스트 완료
 
+### 📥 깃 & 배포 관리자 작업 완료 보고서 원문 — T-131~T-141 (보관, 마지막 WT-ID 밑)
+
+```
+[DEV : 깃 & 배포 관리자 → 개발자]
+
+sirjuseyoWeb T-131~T-141 DEV 반영 및 DEV preview 배포 완료했습니다.
+
+작업 내용:
+- PR #15 `feature/T-028-popup-html-content-update -> dev` 검토 후 merge 완료했습니다.
+- DEV preview는 운영 PRD 루트/PRD HTML을 바꾸지 않고, 테스트용 DEV 파일과 필요한 공통 JS/CSS/이미지만 `main`에 선별 반영했습니다.
+
+반영 커밋:
+- DEV merge commit: `fb221c7`
+- DEV preview main commit: `2841322`
+
+배포:
+- GitHub Pages run `30737589543` success
+
+검증:
+- `https://www.sirjuseyo.com/index-dev.html?v=2841322` HTTP 200
+- `https://www.sirjuseyo.com/tip/loan-checker/index-dev.html?v=2841322` DEV 문구, 신규 이미지, tone-note 확인
+- `https://www.sirjuseyo.com/monthly-loan/apply/apply-dev.html?v=2841322` 대출 가능성 검사기 안내 박스 확인
+- `https://www.sirjuseyo.com/loan-match/browse-dev.html?v=2841322` DEV 결과 카드 링크 확인
+- `stepping-stones-aug-001.png` HTTP 200
+
+로컬 최신화:
+- `sirjuseyo-web` 로컬 `dev` → `origin/dev fb221c7` 최신화 완료
+- `sirjuseyo-web` 로컬 `main` → `origin/main 2841322` 최신화 완료
+
+4축:
+- ECR: 대상 없음
+- ArgoCD: 대상 없음
+- DevOps/GitOps: GitHub Pages main 배포 성공
+- Kubernetes: 대상 없음
+
+문서:
+- GitDeployOps `W-042 / T-042 / WT-042` 기록 완료
+
+한 줄 버전:
+- sirjuseyoWeb T-131~T-141 DEV 반영 완료, PR #15 merge commit `fb221c7`, DEV preview commit `2841322`, GitHub Pages run `30737589543` success 확인했습니다.
+```
+
 ---
 
 ## WT-141 · T-130 / W-130 [신청 폼] 7월→8월 워딩 변경 + 이벤트 대출 30만 경고 추가 + 경고 문구 수정
