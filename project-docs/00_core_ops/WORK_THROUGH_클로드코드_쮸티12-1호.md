@@ -165,6 +165,7 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 - **코드 커밋 1회:** `06f77e9` fix(styles): styles.css 콘텐츠 폭 overflow 수정 (T-142)
 - **코드 커밋 2회:** `078b207` fix(loan-checker): index-dev.html body 480px 제한으로 콘텐츠 오른쪽 offset 수정 (T-142)
 - **코드 커밋 3회:** `cb339fb` fix(loan-checker): body margin:0 auto 추가 — nav-bar·콘텐츠 중앙 정렬 통일 (T-142)
+- **코드 커밋 4회:** `a2feaf9` fix(loan-checker): .app-main 좌우 padding 제거 — 법적고지·콘텐츠 기준점 통일 (T-142)
 
 ### 배경
 - `tip/loan-checker/index-dev.html`에서 콘텐츠 전체가 오른쪽으로 약간 offset되는 증상 보고.
