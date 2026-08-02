@@ -157,6 +157,29 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 
 ---
 
+## WT-142 · T-138 / W-138 [loan-match] 결과 카드 4개 페이지 DEV 버전 생성
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `7ec6e35` (코드 커밋 — 4개 신규 파일 + browse-dev.html 카드링크 DEV화) / `dbf0f1f` (회차 수정 — browse-dev.html 하단 BACK 버튼 삭제)
+- **대상 파일:** `loan-match/credit-dev.html`(신규), `loan-match/shopping-dev.html`(신규), `loan-match/reputation-dev.html`(신규·PRD없음), `loan-match/contribution-dev.html`(신규·PRD없음), `loan-match/browse-dev.html`(수정)
+
+### 변경 내용
+1. `credit-dev.html` 신규 생성 — credit.html 기반 DEV화 (앱사이즈 480px, DEV배너, menu-dev.js, legal-shared.js, breadcrumb 3단계, BACK버튼 제거, h1 margin-top 제거)
+2. `shopping-dev.html` 신규 생성 — shopping.html 기반 DEV화 (동일 적용)
+3. `reputation-dev.html` 신규 생성 — PRD파일 없음, 준비 중 콘텐츠 + DEV환경 전체 적용
+4. `contribution-dev.html` 신규 생성 — PRD파일 없음, 준비 중 콘텐츠 + DEV환경 전체 적용
+5. `browse-dev.html` 수정 — 카드 링크 4개 DEV 버전(`*-dev.html`)으로 변경
+6. 회차 수정: `browse-dev.html` 하단 `← BACK` 버튼 삭제 (`dbf0f1f`)
+
+### 테스트
+- VS Code Live Server → browse-dev.html 설문 → 결과 카드 → 각 DEV 페이지 이동 테스트 완료
+- credit-dev.html, shopping-dev.html: 메뉴바·DEV배너·법적고지·브레드크럼 3단계 확인
+- reputation-dev.html, contribution-dev.html: 준비 중 콘텐츠 + 공통 요소 확인
+- browse-dev.html 하단 BACK 버튼 삭제 회차 수정 테스트 완료
+
+---
+
 ## WT-141 · T-130 / W-130 [신청 폼] 7월→8월 워딩 변경 + 이벤트 대출 30만 경고 추가 + 경고 문구 수정
 
 ### 작업 요약
