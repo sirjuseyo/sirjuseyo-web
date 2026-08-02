@@ -157,6 +157,46 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 
 ---
 
+## WT-152 · T-141 / W-140 [shopping-dev.html] CTA 버튼 준비 중 팝업 (Tally 교체)
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-08-02
+- **상태: ⏳ 진행중(In-Progress)** — 사장님 VS Code Live Server 테스트 대기
+
+### 배경
+- `loan-match/shopping-dev.html` 하단 CTA 버튼이 Tally 폼(`data-tally-open="mRJEvK"`)에 연결되어 있었음.
+- [쇼핑 내역 제출하고 돈 빌리기] 방식은 현재 준비 중이므로, Tally 폼 대신 준비 중 팝업으로 교체.
+
+### 변경 내용
+1. CTA 버튼: Tally 링크·속성 전부 제거 → `href="#" onclick="openReadyPopup();return false;"`
+2. `<script src="https://tally.so/widgets/embed.js"></script>` 제거
+3. `</body>` 직전에 인라인 준비 중 모달(`#ready-popup`) + JS 추가
+
+### 수정 파일
+- `loan-match/shopping-dev.html`
+
+---
+
+## WT-151 · T-140 / W-139 [credit-dev.html] CTA 버튼 준비 중 팝업
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-08-02
+- **상태: ⏳ 진행중(In-Progress)** — 사장님 VS Code Live Server 테스트 대기
+
+### 배경
+- `loan-match/credit-dev.html` 하단 CTA 버튼이 `href="#"`으로 아무 동작도 없었음.
+- [신용점수만 믿고 돈 빌리기] 방식은 현재 준비 중이므로, 클릭 시 준비 중 안내 모달 팝업 표시.
+
+### 변경 내용
+1. CTA 버튼: `href="#"` → `onclick="openReadyPopup();return false;"` 추가
+2. `</body>` 직전에 인라인 준비 중 모달(`#ready-popup`) + JS 추가
+   - 배경 overlay 클릭 시 닫기 / [닫기] 버튼 클릭 시 닫기
+
+### 수정 파일
+- `loan-match/credit-dev.html`
+
+---
+
 ## WT-150 · T-139 [8월 대출] monthly-loan/2026-08/index.html PRD 신규 생성 (Ser7-1호 보정 동기화)
 
 ### 작업 요약

@@ -603,6 +603,8 @@ git checkout -b feature/T-001-jun-loan-landing
 | **T-137** | WT-149 | W-137 | `1aee714` | **테스트 완료(DONE)** | **[loan-match] DEV 환경 미적용 페이지 수정** | 쮸티12-1호 | 2026-08-02 | 【파일】`loan-match/index-dev.html`, `loan-match/browse-dev.html`(신규) / ①즉시빌리기 PRD→DEV ②여유있게빌리기 browse-dev.html 연결 ③browse-dev.html 신규(앱사이즈+DEV배너+메뉴바+상·하단고지) / body class누락·BACK버튼 중복 수정 포함 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-138** | WT-142 | W-138 | `7ec6e35` / `dbf0f1f` | **테스트 완료(DONE)** | **[loan-match] 결과 카드 4개 페이지 DEV 버전 생성** | 쮸티12-1호 | 2026-08-02 | 【파일】`loan-match/credit-dev.html`(신규), `shopping-dev.html`(신규), `reputation-dev.html`(신규·PRD없음), `contribution-dev.html`(신규·PRD없음), `browse-dev.html`(수정) / 공통: 앱사이즈+DEV배너+메뉴바+법적고지+breadcrumb3단계+BACK제거 / 회차수정: browse-dev.html 하단BACK버튼 삭제 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-139** | WT-150 | - | - | **진행중(In-Progress)** | **[8월 대출] monthly-loan/2026-08/index.html PRD 신규 생성 (Ser7-1호 보정 동기화)** | 쮸티12-1호 | 2026-08-02 | 【파일】`monthly-loan/2026-08/index.html`(신규) / index-dev.html 기반 PRD 변환: DEV 배너 제거, data-back /index.html, apply-dev.html→apply.html, menu-dev.js→menu.js / Ser7-1호 긴급 보정(main d864ebc) 로컬 동기화 |
+| **T-140** | WT-151 | W-139 | - | **진행중(In-Progress)** | **[credit-dev.html] CTA 버튼 클릭 시 준비 중 팝업 표시** | 쮸티12-1호 | 2026-08-02 | 【파일】`loan-match/credit-dev.html` / CTA `href="#"` onclick="openReadyPopup();return false;" 추가 + 인라인 준비 중 모달(#ready-popup) + JS 추가 |
+| **T-141** | WT-152 | W-140 | - | **진행중(In-Progress)** | **[shopping-dev.html] CTA 버튼 클릭 시 준비 중 팝업 표시 (Tally 교체)** | 쮸티12-1호 | 2026-08-02 | 【파일】`loan-match/shopping-dev.html` / Tally 링크·속성·스크립트 제거 + CTA onclick="openReadyPopup();return false;" + 인라인 준비 중 모달(#ready-popup) + JS 추가 |
 
 
 ---
@@ -748,8 +750,8 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-136 | P1 | T-136 | **테스트 완료(DONE)** `f78b872` | **[신청 폼] 대출 가능성 검사기 안내 박스 추가** | `monthly-loan/apply/apply-dev.html`, `apply.html` | h1 아래 .apply-note 박스 삽입 / 검사기 이용 안내 + 경로 / 테스트 완료 | 2026-08-02 04:06 | 쮸티12-1호 |
 | W-137 | P1 | T-137 | **테스트 완료(DONE)** `1aee714` | **[loan-match] DEV 환경 미적용 페이지 수정 (즉시빌리기 PRD링크 + 여유있게빌리기 DEV화)** | `loan-match/index-dev.html`, `loan-match/browse-dev.html`(신규) | ①즉시빌리기 PRD→DEV ②여유있게빌리기 browse-dev.html 연결 ③browse-dev.html 신규(앱사이즈+DEV배너+메뉴바+상·하단고지) / 테스트 완료 | 2026-08-02 | 쮸티12-1호 |
 | W-138 | P1 | T-138 | **테스트 완료(DONE)** `dbf0f1f` | **[loan-match] 결과 카드 4개 페이지 DEV 버전 생성** | `loan-match/credit-dev.html`(신규), `loan-match/shopping-dev.html`(신규), `loan-match/reputation-dev.html`(신규·PRD없음), `loan-match/contribution-dev.html`(신규·PRD없음), `loan-match/browse-dev.html`(수정) | 공통: 앱사이즈+DEV배너+메뉴바+법적고지+breadcrumb(3단계)+BACK버튼제거 / browse-dev.html 카드링크 DEV 버전으로 변경 + 하단BACK버튼 삭제 / 테스트 완료 | 2026-08-02 | 쮸티12-1호 |
-| W-139 | P1 | - | `대기` | **[credit-dev.html] CTA 버튼 클릭 시 준비 중 팝업 표시** | `loan-match/credit-dev.html` | 하단 "신용 점수만 믿고 돈 빌리기 >" 버튼 클릭 → 모달 팝업 (reputation/contribution과 동일한 준비 중 안내 내용) | 2026-08-02 | 쮸티12-1호 |
-| W-140 | P1 | - | `대기` | **[shopping-dev.html] CTA 버튼 클릭 시 준비 중 팝업 표시** | `loan-match/shopping-dev.html` | 하단 "쇼핑 내역 제출하고 돈 빌리기 >" 버튼 클릭 → 모달 팝업 (credit-dev.html과 동일 방식) | 2026-08-02 | 쮸티12-1호 |
+| W-139 | P1 | T-140 | **진행중(In-Progress)** | **[credit-dev.html] CTA 버튼 클릭 시 준비 중 팝업 표시** | `loan-match/credit-dev.html` | CTA onclick="openReadyPopup();return false;" + 인라인 준비 중 모달 + JS 추가 | 2026-08-02 | 쮸티12-1호 |
+| W-140 | P1 | T-141 | **진행중(In-Progress)** | **[shopping-dev.html] CTA 버튼 클릭 시 준비 중 팝업 표시 (Tally 교체)** | `loan-match/shopping-dev.html` | Tally 링크·속성·스크립트 제거 + CTA onclick="openReadyPopup();return false;" + 인라인 준비 중 모달 + JS 추가 | 2026-08-02 | 쮸티12-1호 |
 
 
 
