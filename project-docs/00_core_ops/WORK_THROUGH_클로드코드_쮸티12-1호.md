@@ -219,6 +219,45 @@ sirjuseyoWeb T-142 DEV 반영 및 DEV preview 배포 요청드립니다.
 - `tip/loan-checker/styles.css`
 - `tip/loan-checker/index-dev.html`
 
+### 📥 깃 & 배포 관리자 작업 완료 보고서 원문 — T-142 (보관, 마지막 WT-ID 밑)
+
+```
+[DEV : 깃 & 배포 관리자 → 개발자]
+
+sirjuseyoWeb T-142 DEV 반영 및 DEV preview 배포 완료했습니다.
+
+작업 내용:
+- PR #16 `feature/T-028-popup-html-content-update -> dev` 검토 후 merge 완료했습니다.
+- DEV preview는 운영 PRD HTML `tip/loan-checker/index.html`은 바꾸지 않고, 테스트에 필요한 `index-dev.html`과 공통 CSS만 `main`에 선별 반영했습니다.
+
+반영 커밋:
+- DEV merge commit: `726981a4`
+- DEV preview main commit: `b7d05f4`
+
+배포:
+- GitHub Pages run `30749455354` success
+
+검증:
+- `https://www.sirjuseyo.com/tip/loan-checker/index-dev.html?v=b7d05f4` HTTP 200
+- `index-dev.html` 내 `.form-grid { grid-template-columns: minmax(0, 1fr) !important; }` 확인
+- `main.page { max-width: 480px; margin: 0 auto; }` 확인
+- `styles.css` 내 `overflow-x: hidden`, `max-width: 100%` 반영 확인
+
+로컬 최신화:
+- `sirjuseyo-web` 로컬 `dev` → `origin/dev 726981a4` 최신화 완료
+- `sirjuseyo-web` 로컬 `main` → `origin/main b7d05f4` 최신화 완료
+
+문서:
+- GitDeployOps `W-045 / T-045 / WT-045` 기록 완료
+
+주의:
+- 이번 보고서는 DEV 반영 및 DEV preview 배포 완료 보고서입니다.
+- PRD 운영 HTML 반영은 별도 PRD 요청서 기준으로 처리하면 됩니다.
+
+한 줄 버전:
+- sirjuseyoWeb T-142 DEV 반영 완료, PR #16 merge commit `726981a4`, DEV preview commit `b7d05f4`, GitHub Pages run `30749455354` success 확인했습니다. DEV 테스트 URL은 `https://www.sirjuseyo.com/tip/loan-checker/index-dev.html?v=b7d05f4`입니다.
+```
+
 ---
 
 ## WT-152 · T-141 / W-140 [shopping-dev.html] CTA 버튼 준비 중 팝업 (Tally 교체)
