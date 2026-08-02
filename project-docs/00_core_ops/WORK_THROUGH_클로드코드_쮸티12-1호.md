@@ -170,6 +170,37 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 - **코드 커밋 7회:** `2adf454` [T-142] index-dev.html grid-template-columns: minmax(0,1fr)로 변경 — DEV 이미지 min-content 트랙 초과 근본 원인 해결 (7회차)
 - **코드 커밋 8회:** `693966b` [T-142] index.html PRD grid-template-columns: minmax(0,1fr)로 변경 — DEV와 동일하게 PRD 적용 (8회차)
 - **상태: ✅ 테스트 완료(DONE)**
+- **원격 푸시:** `df5489b` (feature/T-028-popup-html-content-update)
+- **PR:** #16 (feature → dev)
+
+### 📤 깃 & 배포 관리자 작업 요청서 (양식 6-⑥)
+
+```
+[개발자 -> 깃 관리자 전달]
+
+sirjuseyoWeb T-142 DEV 반영 및 DEV preview 배포 요청드립니다.
+`feature/T-028-popup-html-content-update` 원격 푸시 완료했고 PR은 `#16`입니다.
+
+작업 내용:
+- tip/loan-checker/index-dev.html — form-grid grid-template-columns: 1fr → minmax(0, 1fr) (DEV)
+- tip/loan-checker/index.html — 동일 수정 (PRD)
+- 근본 원인: CSS Grid에서 이미지의 min-content(498px)가 grid 트랙(480px)을 초과하던 문제 해결
+
+검증:
+- 사장님 VS Code Live Server (5501) 테스트 완료
+- 브라우저 DOM 측정: conceptImage.width 498px → 480px 확인
+
+커밋:
+- `2adf454` DEV index-dev.html grid-template-columns 수정
+- `693966b` PRD index.html 동일 수정
+
+문서:
+- TODO_BOARD T-142 테스트완료(DONE), 커밋 해시 `693966b` 기록 완료
+- WORK_THROUGH WT-153 기록 완료
+
+한 줄 버전:
+- sirjuseyoWeb T-142 DEV+PRD 수정 완료, PR #16, 최종 커밋 `693966b`, 사장님 테스트 완료 확인했습니다.
+```
 
 ### 배경
 - `tip/loan-checker/index-dev.html`에서 콘텐츠 전체가 오른쪽으로 약간 offset되는 증상 보고.
