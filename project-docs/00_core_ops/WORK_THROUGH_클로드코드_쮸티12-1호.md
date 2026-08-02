@@ -157,6 +157,48 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 
 ---
 
+## WT-154 · T-131~T-142 (T-139 제외) PRD 머지 & 배포 통합 작업 요청서
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-08-02
+- **상태: ⏳ 진행중(In-Progress) — Ser7-1호 전달 완료, 완료 보고서 대기**
+
+### 📤 깃 & 배포 관리자 작업 요청서 (양식 6-⑥)
+
+```
+[개발자 -> 깃 관리자 전달]
+
+sirjuseyoWeb T-131~T-142 PRD 머지 & 배포 요청드립니다.
+PR #15, #16 (`feature/T-028-popup-html-content-update`) 기준입니다.
+T-139는 Ser7-1호 긴급 보정으로 이미 main 반영 완료(`d864ebc`)되어 제외합니다.
+
+작업 내용:
+- T-131 `b7416d2` tip/loan-checker/index.html, assets/img/stepping-stones-aug-001.png (8월 이미지 교체)
+- T-132 `a66b8c3` tip/loan-checker/styles.css (tone-note 스타일 3종 수정)
+- T-133 `2d93a00` tip/loan-checker/index.html (시계↔tone-note 순서 교체)
+- T-134 `ed8ec27` js/popup.js (8월 동기화 2종)
+- T-135 `ba78afb` js/menu.js (Android 헤더 오버플로우·드로어 버그 수정)
+- T-136 `f78b872` monthly-loan/apply/apply.html (대출 가능성 검사기 안내 박스 추가)
+- T-137 `1aee714` loan-match/index-dev.html, loan-match/browse-dev.html (DEV 환경 미적용 수정)
+- T-138 `7ec6e35` `dbf0f1f` loan-match/credit-dev.html, shopping-dev.html, reputation-dev.html, contribution-dev.html, browse-dev.html (결과 카드 4개 DEV 버전 신규)
+- T-140 `9f35b6f` loan-match/credit-dev.html (CTA 준비 중 팝업)
+- T-141 `9f35b6f` loan-match/shopping-dev.html (Tally 교체 + CTA 준비 중 팝업)
+- T-142 `2adf454` `693966b` tip/loan-checker/index-dev.html, index.html (grid-template-columns 1fr→minmax(0,1fr))
+
+검증:
+- 사장님 VS Code Live Server 테스트 전 항목 완료
+- DEV preview (main `b7d05f4`) 배포 확인 완료
+
+문서:
+- TODO_BOARD T-131~T-142 테스트완료(DONE) 기록 완료
+- WORK_THROUGH WT-143~WT-153 기록 완료
+
+한 줄 버전:
+- sirjuseyoWeb T-131~T-142 PRD 머지 & 배포 요청, PR #15 #16, 최종 커밋 `693966b`, T-139 제외(기반영 d864ebc)
+```
+
+---
+
 ## WT-153 · T-142 / W-141 [대출 검사기] 콘텐츠 오른쪽 offset + overflow 수정
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
