@@ -161,14 +161,15 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
 - **작업일시:** 2026-08-02
-- **상태: ⏳ 진행중(In-Progress)**
 - **코드 커밋 1회:** `06f77e9` fix(styles): styles.css 콘텐츠 폭 overflow 수정 (T-142)
 - **코드 커밋 2회:** `078b207` fix(loan-checker): index-dev.html body 480px 제한으로 콘텐츠 오른쪽 offset 수정 (T-142)
 - **코드 커밋 3회:** `cb339fb` fix(loan-checker): body margin:0 auto 추가 — nav-bar·콘텐츠 중앙 정렬 통일 (T-142)
 - **코드 커밋 4회:** `a2feaf9` fix(loan-checker): .app-main 좌우 padding 제거 — 법적고지·콘텐츠 기준점 통일 (T-142)
 - **코드 커밋 5회:** `cf8df51` [T-142] app-main 클래스 제거로 콘텐츠 우측 overflow 근본 해결 (5회차)
 - **코드 커밋 6회:** `41a8b6c` [T-142] main.page에 max-width 직접 적용 — DEV 배너·콘텐츠 너비 기준 통일 (6회차)
-- **코드 커밋 7회:** `2adf454` [T-142] grid-template-columns: minmax(0,1fr)로 변경 — 이미지 min-content가 grid 트랙 초과하던 근본 원인 해결 (7회차)
+- **코드 커밋 7회:** `2adf454` [T-142] index-dev.html grid-template-columns: minmax(0,1fr)로 변경 — DEV 이미지 min-content 트랙 초과 근본 원인 해결 (7회차)
+- **코드 커밋 8회:** `693966b` [T-142] index.html PRD grid-template-columns: minmax(0,1fr)로 변경 — DEV와 동일하게 PRD 적용 (8회차)
+- **상태: ✅ 테스트 완료(DONE)**
 
 ### 배경
 - `tip/loan-checker/index-dev.html`에서 콘텐츠 전체가 오른쪽으로 약간 offset되는 증상 보고.
