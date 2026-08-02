@@ -197,6 +197,51 @@ T-139는 Ser7-1호 긴급 보정으로 이미 main 반영 완료(`d864ebc`)되�
 - sirjuseyoWeb T-131~T-142 PRD 머지 & 배포 요청, PR #15 #16, 최종 커밋 `693966b`, T-139 제외(기반영 d864ebc)
 ```
 
+### 📥 깃 & 배포 관리자 작업 완료 보고서 원문 — T-131~T-142 PRD (보관, WT-154 밑)
+
+```
+[GitHub Pages PRD : 깃 & 배포 관리자 → 개발자]
+
+sirjuseyoWeb T-131~T-142 PRD main 선별 반영 및 GitHub Pages 운영 배포 완료했습니다.
+
+작업 내용:
+- PR #15, #16 기준 요청 범위를 PRD `main`에 선별 반영했습니다.
+- `main...dev`가 `diverged`, `ahead 334 / behind 39` 상태라 전체 `dev -> main` 병합은 하지 않았습니다.
+- T-139는 요청대로 `d864ebc` 기반영 항목으로 제외했습니다.
+
+반영 커밋:
+- PR #15 DEV merge commit: `fb221c7`
+- PR #16 DEV merge commit: `726981a`
+- PRD main commit: `ff12642`
+
+실제 신규 반영 파일:
+- `monthly-loan/apply/apply.html`
+- `tip/loan-checker/index.html`
+
+비고:
+- 요청서에 포함된 나머지 파일들은 기존 `main` 또는 DEV preview 단계에서 이미 동일 상태로 반영되어 있어 추가 diff가 없었습니다.
+
+배포:
+- GitHub Pages run `30749867048` success
+
+검증:
+- `https://www.sirjuseyo.com/tip/loan-checker/index.html?v=ff12642` HTTP 200
+- 대출 검사기 PRD에서 `grid-template-columns: minmax(0, 1fr)` 확인
+- `stepping-stones-aug-001.png` 이미지 HTTP 200
+- tone-note 문구와 시계 섹션 순서 확인
+- `https://www.sirjuseyo.com/monthly-loan/apply/apply.html?v=ff12642`에서 대출 가능성 검사기 안내 박스 확인
+
+로컬 최신화:
+- `sirjuseyo-web` 로컬 `main` → `origin/main ff12642` 최신화 완료
+- `sirjuseyo-web` 로컬 `dev` → `origin/dev 726981a` 최신화 완료
+
+문서:
+- GitDeployOps `W-046 / T-046 / WT-046` 기록 완료
+
+한 줄 버전:
+- sirjuseyoWeb T-131~T-142 PRD 운영 배포 완료, 전체 dev→main 병합 없이 요청 범위만 선별 반영했고 PRD main commit `ff12642`, GitHub Pages run `30749867048` success 확인했습니다.
+```
+
 ---
 
 ## WT-153 · T-142 / W-141 [대출 검사기] 콘텐츠 오른쪽 offset + overflow 수정
