@@ -157,6 +157,207 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 
 ---
 
+## WT-152 · T-141 / W-140 [shopping-dev.html] CTA 버튼 준비 중 팝업 (Tally 교체)
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-08-02
+- **상태: ✅ 테스트 완료(DONE)** — 2026-08-02
+
+### 배경
+- `loan-match/shopping-dev.html` 하단 CTA 버튼이 Tally 폼(`data-tally-open="mRJEvK"`)에 연결되어 있었음.
+- [쇼핑 내역 제출하고 돈 빌리기] 방식은 현재 준비 중이므로, Tally 폼 대신 준비 중 팝업으로 교체.
+
+### 변경 내용
+1. CTA 버튼: Tally 링크·속성 전부 제거 → `href="#" onclick="openReadyPopup();return false;"`
+2. `<script src="https://tally.so/widgets/embed.js"></script>` 제거
+3. `</body>` 직전에 인라인 준비 중 모달(`#ready-popup`) + JS 추가
+
+### 수정 파일
+- `loan-match/shopping-dev.html`
+
+---
+
+## WT-151 · T-140 / W-139 [credit-dev.html] CTA 버튼 준비 중 팝업
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-08-02
+- **상태: ✅ 테스트 완료(DONE)** — 2026-08-02
+
+### 배경
+- `loan-match/credit-dev.html` 하단 CTA 버튼이 `href="#"`으로 아무 동작도 없었음.
+- [신용점수만 믿고 돈 빌리기] 방식은 현재 준비 중이므로, 클릭 시 준비 중 안내 모달 팝업 표시.
+
+### 변경 내용
+1. CTA 버튼: `href="#"` → `onclick="openReadyPopup();return false;"` 추가
+2. `</body>` 직전에 인라인 준비 중 모달(`#ready-popup`) + JS 추가
+   - 배경 overlay 클릭 시 닫기 / [닫기] 버튼 클릭 시 닫기
+
+### 수정 파일
+- `loan-match/credit-dev.html`
+
+---
+
+## WT-150 · T-139 [8월 대출] monthly-loan/2026-08/index.html PRD 신규 생성 (Ser7-1호 보정 동기화)
+
+### 작업 요약
+- **상태:** 진행중(In-Progress) — 사장님 VS Code Live Server 테스트 대기
+- **로컬 커밋:** `41913a1` (코드 커밋)
+- **대상 파일:** `monthly-loan/2026-08/index.html`(신규)
+
+### 배경
+T-123에서 `2026-08/index-dev.html`만 생성하고 PRD 파일 `index.html`을 누락했음.
+Ser7-1호가 PRD 배포 중 발견하고 긴급 보정하여 main `d864ebc`에 반영함.
+로컬 워크스페이스에도 동일 파일을 생성하여 동기화함.
+
+### 변환 내용
+- `index-dev.html` 기반 복사 후 4곳 변환
+  1. DEV 배너 `div` 전체 제거
+  2. `data-back="/index-dev.html"` → `data-back="/index.html"`
+  3. `../apply/apply-dev.html` → `../apply/apply.html`
+  4. `/js/menu-dev.js` → `/js/menu.js`
+
+---
+
+## WT-149 · T-137 / W-137 [loan-match] DEV 환경 미적용 페이지 수정
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `1aee714` (코드 커밋) / `b0fe605` (문서 커밋)
+- **대상 파일:** `loan-match/index-dev.html`, `loan-match/browse-dev.html`(신규)
+
+### 변경 내용
+1. `index-dev.html`: 즉시빌리기 href PRD→DEV (`nanocredit/index-dev.html`)
+2. `index-dev.html`: 여유있게빌리기 href `browse.html`→`browse-dev.html`
+3. `browse-dev.html` 신규 생성 — 앱사이즈·DEV배너·메뉴바·상하단고지 / 회차수정: body class="page" 누락·상단BACK버튼 중복 수정
+
+### 테스트
+- VS Code Live Server → `loan-match/index-dev.html` 테스트 완료
+
+---
+
+## WT-148 · T-136 / W-136 [신청 폼] 대출 가능성 검사기 안내 박스 추가
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `f78b872` (코드 커밋)
+- **대상 파일:** `monthly-loan/apply/apply-dev.html`, `monthly-loan/apply/apply.html`
+
+### 변경 내용
+1. h1 아래 `.apply-note` 박스 삽입 — 8월 대출·나노크레딧 신청 전 검사기 이용 안내 + 경로 (`홈 > 꿀정보 > 대출 가능성 검사기`)
+2. apply-dev.html·apply.html 동시 적용
+
+### 테스트
+- VS Code Live Server → `monthly-loan/apply/apply-dev.html` 테스트 완료
+
+---
+
+## WT-147 · T-135 / W-135 [긴급/Android] 헤더 가로 오버플로우 + 드로어 노출 버그 수정
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `ba78afb` (코드 커밋)
+- **대상 파일:** `js/menu.js`, `js/menu-dev.js`
+
+### 변경 내용
+1. `#sjy-nav-bar`: `width:100%` → `width:100vw` (menu.js 라인 23, menu-dev.js 라인 23)
+2. `#sjy-drawer`: `width:100%` → `width:100vw` (menu.js 라인 38, menu-dev.js 라인 38)
+- 원인: `position:fixed` + `left:50%` 조합에서 Android Chrome이 `width:100%`를 문서 너비 기준으로 계산 → `100vw`(뷰포트 기준)로 해결
+
+### 테스트
+- VS Code Live Server 테스트 완료 / Android 실기기 테스트는 운영 배포 후 예정
+
+---
+
+## WT-146 · T-134 / W-134 [팝업] 8월 대출 작업 동기화 2종
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `ed8ec27` (코드 커밋)
+- **대상 파일:** `js/popup.js`
+
+### 변경 내용
+1. 거절 사유 4번 추가: `최근 3개월 이상 무직 또는 과거 6개월 이상 무직` + em `노동 상태와 의지를 중요시 여깁니다.`
+2. 30만 원 이벤트 대출: `활용 3.5% = 크레딧 1.5% + 이자 1% + 원금 1%` → `대출 상품 없음`
+
+### 테스트
+- VS Code Live Server 팝업 동작 확인 완료
+
+---
+
+## WT-145 · T-133 / W-133 [대출 검사기] 시계 박스 ↔ tone-note 박스 순서 교체
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `2d93a00` (코드 커밋)
+- **대상 파일:** `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html`
+
+### 변경 내용
+1. 순서 변경: 이미지→시계박스→tone-note → 이미지→tone-note→시계박스
+2. index-dev.html·index.html 동시 적용
+
+### 테스트
+- VS Code Live Server → `tip/loan-checker/index-dev.html` 테스트 완료
+
+---
+
+## WT-144 · T-132 / W-132 [대출 검사기] tone-note 박스 스타일 3종 수정
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `a66b8c3` (코드 커밋)
+- **대상 파일:** `tip/loan-checker/styles.css`
+
+### 변경 내용
+1. `border-right: 4px solid var(--accent)` 추가 (좌우 동일)
+2. `background`: `#fff` → `rgba(56,0,151,0.04)` (연보라)
+3. `.tone-note-title` font-size: `0.95rem` → `1.1rem`
+4. `.tone-note-body` font-size: `0.95rem` → `1rem`
+
+### 테스트
+- VS Code Live Server → `tip/loan-checker/index-dev.html` 테스트 완료
+
+---
+
+## WT-143 · T-131 / W-131 [대출 검사기] 상단 concept-image 이미지 교체
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `b7416d2` (코드 커밋)
+- **대상 파일:** `tip/loan-checker/assets/img/stepping-stones-aug-001.png`(신규), `tip/loan-checker/index-dev.html`, `tip/loan-checker/index.html`
+
+### 변경 내용
+1. `stepping-stones-aug-001.png` 신규 추가 (징검다리 배낭 남성 이미지, 2.0MB)
+2. concept-image 영역: 텍스트 → `<img>` 태그로 교체
+3. index-dev.html·index.html 동시 적용
+
+### 테스트
+- VS Code Live Server → `tip/loan-checker/index-dev.html` 테스트 완료
+
+---
+
+## WT-142 · T-138 / W-138 [loan-match] 결과 카드 4개 페이지 DEV 버전 생성
+
+### 작업 요약
+- **상태:** 테스트 완료(DONE) — 2026-08-02
+- **로컬 커밋:** `7ec6e35` (코드 커밋 — 4개 신규 파일 + browse-dev.html 카드링크 DEV화) / `dbf0f1f` (회차 수정 — browse-dev.html 하단 BACK 버튼 삭제)
+- **대상 파일:** `loan-match/credit-dev.html`(신규), `loan-match/shopping-dev.html`(신규), `loan-match/reputation-dev.html`(신규·PRD없음), `loan-match/contribution-dev.html`(신규·PRD없음), `loan-match/browse-dev.html`(수정)
+
+### 변경 내용
+1. `credit-dev.html` 신규 생성 — credit.html 기반 DEV화 (앱사이즈 480px, DEV배너, menu-dev.js, legal-shared.js, breadcrumb 3단계, BACK버튼 제거, h1 margin-top 제거)
+2. `shopping-dev.html` 신규 생성 — shopping.html 기반 DEV화 (동일 적용)
+3. `reputation-dev.html` 신규 생성 — PRD파일 없음, 준비 중 콘텐츠 + DEV환경 전체 적용
+4. `contribution-dev.html` 신규 생성 — PRD파일 없음, 준비 중 콘텐츠 + DEV환경 전체 적용
+5. `browse-dev.html` 수정 — 카드 링크 4개 DEV 버전(`*-dev.html`)으로 변경
+6. 회차 수정: `browse-dev.html` 하단 `← BACK` 버튼 삭제 (`dbf0f1f`)
+
+### 테스트
+- VS Code Live Server → browse-dev.html 설문 → 결과 카드 → 각 DEV 페이지 이동 테스트 완료
+- credit-dev.html, shopping-dev.html: 메뉴바·DEV배너·법적고지·브레드크럼 3단계 확인
+- reputation-dev.html, contribution-dev.html: 준비 중 콘텐츠 + 공통 요소 확인
+- browse-dev.html 하단 BACK 버튼 삭제 회차 수정 테스트 완료
+
+---
+
 ## WT-141 · T-130 / W-130 [신청 폼] 7월→8월 워딩 변경 + 이벤트 대출 30만 경고 추가 + 경고 문구 수정
 
 ### 작업 요약
@@ -172,6 +373,122 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 
 ### 테스트
 - VS Code Live Server → `monthly-loan/apply/apply-dev.html` 테스트 완료
+
+### 완료 보고서 (Ser7-1호 → 개발자) — 2026-08-01
+
+```
+[DEV : 깃 & 배포 관리자 → 개발자]
+
+sirjuseyoWeb T-005~T-130 웹 통합 DEV 반영 완료했습니다.
+
+작업 내용:
+- `PR #14` `feature/T-028-popup-html-content-update` → `dev` 확인
+- PR이 `DIRTY/CONFLICTING` 상태라 GitHub 일반 머지는 불가했습니다.
+- 로컬 `origin/dev` 기준으로 병합 재현 후 충돌 파일 2개를 수동 해결했습니다.
+  - `index.html`
+  - `index-dev.html`
+- 요청 범위가 웹 통합 전체였으므로 두 파일 모두 feature 최종 통합본을 채택했습니다.
+- merge commit `fc97aae` 생성 후 `origin/dev`에 push 완료했습니다.
+
+검증:
+- `git diff --check` 통과
+- 실제 Git conflict marker 없음 확인
+- `origin/dev` HEAD = `fc97aae`
+- GitHub `PR #14` = `MERGED`
+- 로컬 `sirjuseyo-web` 워크스페이스도 `dev / fc97aae`로 최신화 완료, working tree clean
+
+문서:
+- GitDeployOps TODO_BOARD: `W-038 / T-038` 기록 완료
+- GitDeployOps WORK_THROUGH: `WT-038` 완료 보고서 보관 완료
+
+배포/운영 범위:
+- 이번 요청은 feature → dev 코드 반영까지 처리했습니다.
+- PRD/main/GitHub Pages 운영 배포는 별도 요청이 필요합니다.
+- ECR/ArgoCD/DevOps/Kubernetes 4축은 정적 웹 dev 브랜치 반영 작업이라 대상 없습니다.
+
+한 줄 버전:
+- sirjuseyoWeb T-005~T-130 웹 통합 PR #14는 충돌로 GitHub 일반 머지가 불가하여
+  `index.html`/`index-dev.html`을 feature 최종본으로 수동 해결했고, merge commit
+  `fc97aae`로 `dev` 반영 완료했습니다. PRD/main 배포는 별도 요청 필요합니다.
+```
+
+### 완료 보고서 (Ser7-1호 → 개발자) — 2026-08-01 DEV preview 배포
+
+```
+완료했습니다.
+
+DEV 테스트용 라이브 주소:
+`https://www.sirjuseyo.com/index-dev.html`
+
+처리 내용:
+- `sirjuseyo-web` `dev`에 반영된 8월 DEV 화면을 GitHub Pages에서 테스트할 수 있도록
+  `main`에 DEV 테스트용 파일만 선별 배포했습니다.
+- 운영 루트 `https://www.sirjuseyo.com/index.html`은 건드리지 않았습니다.
+- main 배포 커밋: `cb8a073`
+- GitHub Pages run: `30690959203` success
+- 확인 완료:
+  - `/index-dev.html` 200 + 8월 DEV 문구 확인
+  - `/monthly-loan/2026-08/index-dev.html` 200 확인
+  - `/monthly-loan/apply/apply-dev.html` 200 확인
+
+문서도 반영했습니다:
+- `TODO_BOARD_GitDeployOps_Ser7-1호_2026071.md`
+- `WORK_THROUGH_GitDeployOps_Ser7-1호_2026071.md`
+
+로컬 `sirjuseyo-web`도 원격 최신 기준으로 맞췄습니다:
+- `origin/main`: `cb8a073`
+- `origin/dev`: `fc97aae`
+- 작업트리 clean
+
+제가 이전에 `dev` 반영만 하고 라이브 테스트 URL까지 열리게 하지 않은 판단이 문제였습니다.
+이제 DEV 테스트는 위 URL에서 하시면 됩니다.
+```
+
+### 완료 보고서 (Ser7-1호 → 개발자) — 2026-08-02 PRD 운영 배포
+
+```
+[PRD : 깃 & 배포 관리자 → 개발자]
+
+sirjuseyoWeb T-072~T-130 웹 통합 PRD 코드배포 및 GitHub Pages 운영 배포 완료했습니다.
+
+작업 내용:
+- `main...dev` 확인 결과 `diverged` 상태라 전체 `dev -> main` 단순 병합은 하지 않았습니다.
+- `origin/dev fc97aae` 기준 웹 코드/정적 자산만 `main`에 선별 반영했습니다.
+- `project-docs`, `.DS_Store`, `.claude`, `CLAUDE.md`, `.vscode`, `.gitignore` 등
+  운영 불필요 파일은 제외했습니다.
+- 배포 전 `monthly-loan/2026-08/index.html` 누락을 발견해 PRD용 파일을 생성했습니다.
+  - DEV 배너 제거
+  - `apply-dev.html` → `apply.html`
+  - `menu-dev.js` → `menu.js`
+
+커밋:
+- `d864ebc` `deploy(web): publish August summer vacation II pages [T-072~T-130]`
+
+배포:
+- GitHub Pages run `30691343721` success
+
+검증:
+- `https://www.sirjuseyo.com/` 8월 PRD 문구 확인
+- `https://www.sirjuseyo.com/index.html` 8월 PRD 문구 확인
+- `https://www.sirjuseyo.com/monthly-loan/2026-08/` 8월 상세 PRD 문구 확인
+- `https://www.sirjuseyo.com/monthly-loan/apply/apply.html` 8월 신청 PRD 문구 확인
+- `https://www.sirjuseyo.com/tip/loan-checker/index.html` HTTP 200
+- 8월 핵심 이미지 2개 HTTP 200
+
+4축:
+- ECR: 대상 없음
+- ArgoCD: 대상 없음
+- DevOps/GitOps: GitHub Pages main 배포 성공
+- Kubernetes: 대상 없음
+
+문서:
+- GitDeployOps TODO/WORK_THROUGH에 `W-040 / T-040 / WT-040` 기록 완료
+- 로컬 `sirjuseyo-web` 최신화 완료: `origin/main d864ebc`, `origin/dev fc97aae`
+
+한 줄 버전:
+sirjuseyoWeb T-072~T-130 PRD 운영 배포 완료, main commit `d864ebc`,
+GitHub Pages run `30691343721` success, 운영 주요 URL 200 및 8월 문구 확인했습니다.
+```
 
 ---
 
