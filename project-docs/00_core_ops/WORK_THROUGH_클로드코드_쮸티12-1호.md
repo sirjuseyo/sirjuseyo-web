@@ -157,6 +157,27 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 
 ---
 
+## WT-153 · T-142 / W-141 [대출 검사기] styles.css 콘텐츠 폭 overflow 수정
+
+- **브랜치:** `feature/T-028-popup-html-content-update`
+- **작업일시:** 2026-08-02
+- **상태: ⏳ 진행중(In-Progress)**
+- **코드 커밋:** `06f77e9` fix(styles): styles.css 콘텐츠 폭 overflow 수정 (T-142)
+
+### 배경
+- `tip/loan-checker/index-dev.html`에서 앱 화면 기준으로 확인 시 콘텐츠 우측이 상단 메뉴바보다 더 넓게 표시되는 overflow 증상 보고.
+- `.app-main { max-width: 480px; }` 제한이 있지만, `styles.css` 내 `.script-cta-button-text { max-width: 520px; }` 및 `.script-cta-button img { max-width: min(520px, 100%); }`가 480px를 초과하여 overflow 발생.
+
+### 변경 내용
+1. `.script-cta-button img { max-width: min(520px, 100%); }` → `max-width: 100%;`
+2. `.script-cta-button-text { max-width: 520px; }` → `max-width: 100%;`
+3. `body { ... }` 블록에 `overflow-x: hidden;` 추가
+
+### 수정 파일
+- `tip/loan-checker/styles.css`
+
+---
+
 ## WT-152 · T-141 / W-140 [shopping-dev.html] CTA 버튼 준비 중 팝업 (Tally 교체)
 
 - **브랜치:** `feature/T-028-popup-html-content-update`
