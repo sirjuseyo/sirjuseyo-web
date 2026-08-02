@@ -157,6 +157,27 @@ sirjuseyoWeb T-005~T-130 웹 통합 — 8월 썸머 베케이션 Ⅱ 대출 전�
 
 ---
 
+## WT-150 · T-139 [8월 대출] monthly-loan/2026-08/index.html PRD 신규 생성 (Ser7-1호 보정 동기화)
+
+### 작업 요약
+- **상태:** 진행중(In-Progress) — 사장님 VS Code Live Server 테스트 대기
+- **로컬 커밋:** `41913a1` (코드 커밋)
+- **대상 파일:** `monthly-loan/2026-08/index.html`(신규)
+
+### 배경
+T-123에서 `2026-08/index-dev.html`만 생성하고 PRD 파일 `index.html`을 누락했음.
+Ser7-1호가 PRD 배포 중 발견하고 긴급 보정하여 main `d864ebc`에 반영함.
+로컬 워크스페이스에도 동일 파일을 생성하여 동기화함.
+
+### 변환 내용
+- `index-dev.html` 기반 복사 후 4곳 변환
+  1. DEV 배너 `div` 전체 제거
+  2. `data-back="/index-dev.html"` → `data-back="/index.html"`
+  3. `../apply/apply-dev.html` → `../apply/apply.html`
+  4. `/js/menu-dev.js` → `/js/menu.js`
+
+---
+
 ## WT-149 · T-137 / W-137 [loan-match] DEV 환경 미적용 페이지 수정
 
 ### 작업 요약

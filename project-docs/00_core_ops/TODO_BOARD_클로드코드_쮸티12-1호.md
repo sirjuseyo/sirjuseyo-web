@@ -602,6 +602,7 @@ git checkout -b feature/T-001-jun-loan-landing
 | **T-136** | WT-148 | W-136 | `f78b872` | **테스트 완료(DONE)** | **[신청 폼] 대출 가능성 검사기 안내 박스 추가** | 쮸티12-1호 | 2026-08-02 04:06 | 【파일】`monthly-loan/apply/apply-dev.html`, `apply.html` / h1 아래 .apply-note 박스 삽입 / 8월 대출·나노크레딧 신청 전 검사기 이용 안내 + 경로 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-137** | WT-149 | W-137 | `1aee714` | **테스트 완료(DONE)** | **[loan-match] DEV 환경 미적용 페이지 수정** | 쮸티12-1호 | 2026-08-02 | 【파일】`loan-match/index-dev.html`, `loan-match/browse-dev.html`(신규) / ①즉시빌리기 PRD→DEV ②여유있게빌리기 browse-dev.html 연결 ③browse-dev.html 신규(앱사이즈+DEV배너+메뉴바+상·하단고지) / body class누락·BACK버튼 중복 수정 포함 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-138** | WT-142 | W-138 | `7ec6e35` / `dbf0f1f` | **테스트 완료(DONE)** | **[loan-match] 결과 카드 4개 페이지 DEV 버전 생성** | 쮸티12-1호 | 2026-08-02 | 【파일】`loan-match/credit-dev.html`(신규), `shopping-dev.html`(신규), `reputation-dev.html`(신규·PRD없음), `contribution-dev.html`(신규·PRD없음), `browse-dev.html`(수정) / 공통: 앱사이즈+DEV배너+메뉴바+법적고지+breadcrumb3단계+BACK제거 / 회차수정: browse-dev.html 하단BACK버튼 삭제 / 사장님 VS Code Live Server 테스트 완료 |
+| **T-139** | WT-150 | - | - | **진행중(In-Progress)** | **[8월 대출] monthly-loan/2026-08/index.html PRD 신규 생성 (Ser7-1호 보정 동기화)** | 쮸티12-1호 | 2026-08-02 | 【파일】`monthly-loan/2026-08/index.html`(신규) / index-dev.html 기반 PRD 변환: DEV 배너 제거, data-back /index.html, apply-dev.html→apply.html, menu-dev.js→menu.js / Ser7-1호 긴급 보정(main d864ebc) 로컬 동기화 |
 
 
 ---
