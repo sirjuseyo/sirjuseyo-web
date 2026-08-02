@@ -341,12 +341,30 @@
 
 <!-- ─── SEC-10 CTA 버튼 ─── -->
 <div class="cta-section">
-  <a class="btn-credit" href="#">신용 점수만 믿고 돈 빌리기 ></a>
+  <a class="btn-credit" href="#" onclick="openReadyPopup();return false;">신용 점수만 믿고 돈 빌리기 ></a>
 </div>
 
 <script src="/js/popup.js"></script>
 <script src="/js/menu-dev.js"></script>
 <script src="/js/legal-shared.js"></script>
+
+<!-- 준비 중 모달 -->
+<div id="ready-popup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:19999;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#fff;border-radius:16px;padding:32px 24px;max-width:360px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);">
+    <div style="font-size:52px;margin-bottom:16px;">🔧</div>
+    <h2 style="font-size:20px;font-weight:900;color:#111;margin-bottom:12px;">준비 중입니다</h2>
+    <p style="font-size:15px;color:#555;line-height:1.7;margin-bottom:24px;">[신용점수만 믿고 돈 빌리기] 방식은<br>현재 준비 중입니다.<br>조금만 기다려 주세요! 😊</p>
+    <button onclick="document.getElementById('ready-popup').style.display='none'" style="width:100%;height:48px;border:none;border-radius:10px;background:#380097;color:#fff;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">닫기</button>
+  </div>
+</div>
+<script>
+function openReadyPopup() {
+  document.getElementById('ready-popup').style.display = 'flex';
+}
+document.getElementById('ready-popup').addEventListener('click', function(e) {
+  if (e.target === this) this.style.display = 'none';
+});
+</script>
 
 </body>
 </html>

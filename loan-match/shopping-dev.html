@@ -311,20 +311,30 @@
 
 <!-- SEC-11 CTA 버튼 -->
 <div class="cta-section">
-  <a class="btn-shopping"
-     href="https://tally.so/r/mRJEvK"
-     data-tally-open="mRJEvK"
-     data-tally-layout="modal"
-     data-tally-width="800"
-     data-tally-hide-title="1"
-     data-tally-emoji-text="&#x1F64B;&#x1F3FB;"
-     data-tally-emoji-animation="bounce">쇼핑 내역 제출하고 돈 빌리기 &gt;</a>
+  <a class="btn-shopping" href="#" onclick="openReadyPopup();return false;">쇼핑 내역 제출하고 돈 빌리기 &gt;</a>
 </div>
 
 <script src="/js/popup.js"></script>
 <script src="/js/menu-dev.js"></script>
 <script src="/js/legal-shared.js"></script>
-<script src="https://tally.so/widgets/embed.js"></script>
+
+<!-- 준비 중 모달 -->
+<div id="ready-popup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:19999;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#fff;border-radius:16px;padding:32px 24px;max-width:360px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);">
+    <div style="font-size:52px;margin-bottom:16px;">🔧</div>
+    <h2 style="font-size:20px;font-weight:900;color:#111;margin-bottom:12px;">준비 중입니다</h2>
+    <p style="font-size:15px;color:#555;line-height:1.7;margin-bottom:24px;">[쇼핑 내역 제출하고 돈 빌리기] 방식은<br>현재 준비 중입니다.<br>조금만 기다려 주세요! 😊</p>
+    <button onclick="document.getElementById('ready-popup').style.display='none'" style="width:100%;height:48px;border:none;border-radius:10px;background:#380097;color:#fff;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">닫기</button>
+  </div>
+</div>
+<script>
+function openReadyPopup() {
+  document.getElementById('ready-popup').style.display = 'flex';
+}
+document.getElementById('ready-popup').addEventListener('click', function(e) {
+  if (e.target === this) this.style.display = 'none';
+});
+</script>
 
 </body>
 </html>
