@@ -744,6 +744,9 @@ git checkout -b feature/T-001-jun-loan-landing
 | W-135 | P0 | T-135 | **테스트 완료(DONE)** `ba78afb` | **[긴급/Android] 헤더 가로 오버플로우 + 드로어 노출 버그 수정** | `js/menu.js`, `js/menu-dev.js` | `#sjy-nav-bar`·`#sjy-drawer` width:100%→100vw / 테스트 완료 | 2026-08-02 03:20 | 쮸티12-1호 |
 | W-136 | P1 | T-136 | **테스트 완료(DONE)** `f78b872` | **[신청 폼] 대출 가능성 검사기 안내 박스 추가** | `monthly-loan/apply/apply-dev.html`, `apply.html` | h1 아래 .apply-note 박스 삽입 / 검사기 이용 안내 + 경로 / 테스트 완료 | 2026-08-02 04:06 | 쮸티12-1호 |
 | W-137 | P1 | T-137 | **테스트 완료(DONE)** `1aee714` | **[loan-match] DEV 환경 미적용 페이지 수정 (즉시빌리기 PRD링크 + 여유있게빌리기 DEV화)** | `loan-match/index-dev.html`, `loan-match/browse-dev.html`(신규) | ①즉시빌리기 PRD→DEV ②여유있게빌리기 browse-dev.html 연결 ③browse-dev.html 신규(앱사이즈+DEV배너+메뉴바+상·하단고지) / 테스트 완료 | 2026-08-02 | 쮸티12-1호 |
+| W-138 | P1 | T-138 | **테스트 완료(DONE)** `dbf0f1f` | **[loan-match] 결과 카드 4개 페이지 DEV 버전 생성** | `loan-match/credit-dev.html`(신규), `loan-match/shopping-dev.html`(신규), `loan-match/reputation-dev.html`(신규·PRD없음), `loan-match/contribution-dev.html`(신규·PRD없음), `loan-match/browse-dev.html`(수정) | 공통: 앱사이즈+DEV배너+메뉴바+법적고지+breadcrumb(3단계)+BACK버튼제거 / browse-dev.html 카드링크 DEV 버전으로 변경 + 하단BACK버튼 삭제 / 테스트 완료 | 2026-08-02 | 쮸티12-1호 |
+| W-139 | P1 | - | `대기` | **[credit-dev.html] CTA 버튼 클릭 시 준비 중 팝업 표시** | `loan-match/credit-dev.html` | 하단 "신용 점수만 믿고 돈 빌리기 >" 버튼 클릭 → 모달 팝업 (reputation/contribution과 동일한 준비 중 안내 내용) | 2026-08-02 | 쮸티12-1호 |
+| W-140 | P1 | - | `대기` | **[shopping-dev.html] CTA 버튼 클릭 시 준비 중 팝업 표시** | `loan-match/shopping-dev.html` | 하단 "쇼핑 내역 제출하고 돈 빌리기 >" 버튼 클릭 → 모달 팝업 (credit-dev.html과 동일 방식) | 2026-08-02 | 쮸티12-1호 |
 
 
 
