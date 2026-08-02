@@ -341,9 +341,6 @@ git checkout -b feature/T-001-jun-loan-landing
 
 | T-ID | 작업 타이틀 | 로컬커밋 | 원격푸시 | DEV | PRD 코드배포 | PRD 운영배포 | 작업자 | 작업일시(연월일 시분) | 비고 |
 |---|---|---|---|---|---|---|---|---|---|
-| T-141 | [shopping-dev.html] CTA 버튼 준비 중 팝업 (Tally 교체) | ✅ `9f35b6f` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 | `loan-match/shopping-dev.html` / Tally 링크·속성·스크립트 제거 + 준비 중 인라인 모달 + JS / 사장님 VS Code Live Server 테스트 완료 |
-| T-140 | [credit-dev.html] CTA 버튼 준비 중 팝업 | ✅ `9f35b6f` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 | `loan-match/credit-dev.html` / CTA onclick openReadyPopup() + 준비 중 인라인 모달 + JS / 사장님 VS Code Live Server 테스트 완료 |
-| T-139 | [8월 대출] monthly-loan/2026-08/index.html PRD 신규 생성 (Ser7-1호 보정 동기화) | ✅ `41913a1` | - | ⏳ 진행중 | - | - | 쮸티12-1호 | 2026-08-02 | `monthly-loan/2026-08/index.html` 신규 / Ser7-1호 긴급 보정(main `d864ebc`) 로컬 동기화 |
 | T-001 | legal-shared.js 연결 | ✅ `165a165` | ✅ | 검증완료 | ✅ 선별반영 `8af7421` | ✅ Pages 배포 | 쮸티12-1호 | 2026-06-18 23:00 | PR #16 선별반영, HTTP/2 200 확인 |
 | T-002 | PC 480px 레이아웃 고정 | ✅ `6fa6dbb` | ✅ | 검증완료 | ✅ 선별반영 `8af7421` | ✅ Pages 배포 | 쮸티12-1호 | 2026-06-18 23:30 | PR #16 선별반영 |
 | T-003 | 상단 법적고지 여백 20px | ✅ `632e98c` | ✅ | 검증완료 | ✅ 선별반영 `8af7421` | ✅ Pages 배포 | 쮸티12-1호 | 2026-06-18 23:50 | PR #16 선별반영 |
@@ -510,6 +507,9 @@ git checkout -b feature/T-001-jun-loan-landing
 | **T-136** | [신청 폼] 대출 가능성 검사기 안내 박스 추가 | ✅ `f78b872` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 04:06 | h1 아래 .apply-note 박스 삽입 / 8월 대출·나노크레딧 신청 전 검사기 이용 안내 + 경로 / apply-dev.html·apply.html 동시 적용 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-137** | [loan-match] DEV 환경 미적용 페이지 수정 (즉시빌리기 PRD링크 + 여유있게빌리기 DEV화) | ✅ `1aee714` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 | ①index-dev.html 즉시빌리기 href PRD→DEV(nanocredit/index-dev.html) ②index-dev.html 여유있게빌리기 browse.html→browse-dev.html ③browse-dev.html 신규 생성(앱사이즈+DEV배너+메뉴바+상·하단고지) / body class="page" 누락·상단BACK버튼 중복 수정 포함 / 사장님 VS Code Live Server 테스트 완료 |
 | **T-138** | [loan-match] 결과 카드 4개 페이지 DEV 버전 생성 | ✅ `7ec6e35` / `dbf0f1f` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 | ①credit-dev.html 신규(credit.html 기반 DEV화) ②shopping-dev.html 신규(shopping.html 기반 DEV화) ③reputation-dev.html 신규(PRD없음, 준비중) ④contribution-dev.html 신규(PRD없음, 준비중) ⑤browse-dev.html 카드링크 DEV화 / 회차수정: browse-dev.html 하단BACK버튼 삭제(`dbf0f1f`) / 사장님 VS Code Live Server 테스트 완료 |
+| T-139 | [8월 대출] monthly-loan/2026-08/index.html PRD 신규 생성 (Ser7-1호 보정 동기화) | ✅ `41913a1` | - | ⏳ 진행중 | - | - | 쮸티12-1호 | 2026-08-02 | `monthly-loan/2026-08/index.html` 신규 / Ser7-1호 긴급 보정(main `d864ebc`) 로컬 동기화 |
+| T-140 | [credit-dev.html] CTA 버튼 준비 중 팝업 | ✅ `9f35b6f` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 | `loan-match/credit-dev.html` / CTA onclick openReadyPopup() + 준비 중 인라인 모달 + JS / 사장님 VS Code Live Server 테스트 완료 |
+| T-141 | [shopping-dev.html] CTA 버튼 준비 중 팝업 (Tally 교체) | ✅ `9f35b6f` | - | ✅ 테스트완료(DONE) | - | - | 쮸티12-1호 | 2026-08-02 | `loan-match/shopping-dev.html` / Tally 링크·속성·스크립트 제거 + 준비 중 인라인 모달 + JS / 사장님 VS Code Live Server 테스트 완료 |
 | W-042 | [7월 PRD] 홈 index.html + 2026-07/index.html 신규 생성 | ✅ `815964b` | ✅ PR#24 | - | ✅ 선별반영 `cf89006` | ✅ Pages run `28564430240` | 쮸티12-1호 | 2026-07-02 | PR#24 선별반영, `2026-07/index.html` 200 확인 |
 | W-043 | [T-039 자산] Palm-Surf_Jul-Loan.png 커밋 추가 | ✅ `84b62f4` | ✅ PR#24 | - | ✅ 선별반영 `cf89006` | ✅ Pages run `28564430240` | 쮸티12-1호 | 2026-07-02 | PR#24 선별반영, `2026-07/assets/Palm-Surf_Jul-Loan.png` 200 확인 |
 | **W-085** | WT-094 | W-085 | `d049be8` | **테스트 완료(DONE)** | **[챌린지 대표 페이지] challenge/index.html + index-dev.html 신규 생성** | 쮸티12-1호 | 2026-07-22 | 【파일】`challenge/index.html`(신규), `challenge/index-dev.html`(신규) / 소스: `2026-06/worldcup-challenge` / PRD: menu.js + `/apply/` 절대경로 / DEV: menu-dev.js + DEV배너(sticky) + `/apply/index-dev.html` 절대경로 / 이미지: `/2026-06/worldcup-challenge/assets/` |
