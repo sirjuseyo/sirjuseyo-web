@@ -7,7 +7,7 @@
   <title>대출가능성검사기</title>
   <link rel="stylesheet" href="styles.css" />
   <style>.app-main { max-width: 480px !important; margin: 0 auto !important; }
-  .form-grid { grid-template-columns: 1fr !important; }</style>
+  .form-grid { grid-template-columns: minmax(0, 1fr) !important; }</style>
 </head>
 
 <body data-back="/index.html" data-breadcrumb="꿀정보,/tip/|대출 가능성 검사기">
@@ -17,14 +17,8 @@
         <p class="title-bar-text">대출 가능성 검사기</p>
       </div>
       <div class="concept-image">
-        <p class="concept-image-text">🏖️ 7월 썸머 베케이션 대출<br>이미지 준비 중</p>
+        <img src="assets/img/stepping-stones-aug-001.png" alt="8월 썸머 베케이션 Ⅱ 대출" style="width:100%;display:block;border-radius:12px;" />
       </div>
-      <section class="page-intro">
-        <p class="clock-sentence">대출을 희망하는 지금 시간은</p>
-        <p class="clock-sentence"><span id="liveClock" aria-live="polite">--:--:--</span> 입니다.</p>
-        <p class="clock-label">웨이팅 대출 옵션은 신청 시기에 따라 조건이 달라집니다.</p>
-      </section>
-
       <section class="tone-note" aria-live="polite">
         <p class="tone-note-title">[써주세요. 앱 &gt; 인기상품은 나노크레딧]을 무작정 신청하지 마세요.</p>
         <p class="tone-note-body">
@@ -32,6 +26,12 @@
           금액, 대출 옵션을 바꿔 가며 충분히 검사해 보시고,<br>
           본인에게 맞는 조건을 찾은 뒤 신청하시기 바랍니다.
         </p>
+      </section>
+
+      <section class="page-intro">
+        <p class="clock-sentence">대출을 희망하는 지금 시간은</p>
+        <p class="clock-sentence"><span id="liveClock" aria-live="polite">--:--:--</span> 입니다.</p>
+        <p class="clock-label">웨이팅 대출 옵션은 신청 시기에 따라 조건이 달라집니다.</p>
       </section>
 
       <hr class="section-divider">
