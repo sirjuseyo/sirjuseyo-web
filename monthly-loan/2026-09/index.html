@@ -19,7 +19,7 @@
         h1 { font-size: 18px !important; } /* T-004: 1.2rem(19.2px)/sm:3xl(30px) → 18px */
 
         :root {
-            --primary-color: #E65100;
+            --primary-color: #B8860B;
             --secondary-color: #FFB300;
             --accent-color: #6D4C41;
             --highlight-color: #FFF3E0;
@@ -54,19 +54,45 @@
         /* Tailwind CSS를 적극 활용하여 중복 스타일 제거 및 최적화 */
         /* .title-box 스타일은 Tailwind 클래스로 대체 */
 
-        h1.bg-\[#E65100\] {
-            background-color: #E65100 !important;
+        /* T-157 WT-157 2차: 보름달 나이트 글로우 h1 (mockup-T157-fullmoon-header.html 안3 확정) */
+        h1.moon-header {
+            background: #1B1F3B;
             color: #ffffff !important;
-            border: 2px solid #BF360C;
-            box-shadow: 0 10px 25px rgba(191, 54, 12, 0.22);
+            border: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
         }
+        h1.moon-header::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 220px; height: 220px;
+            background: radial-gradient(circle, rgba(255,224,150,0.7) 0%, rgba(255,224,150,0.25) 40%, rgba(255,224,150,0) 68%);
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        h1.moon-header .h1-txt { position: relative; z-index: 1; }
+        h1.moon-header .star {
+            position: absolute;
+            font-size: 14px;
+            z-index: 0;
+            filter: drop-shadow(0 0 3px rgba(255,255,255,0.8));
+            pointer-events: none;
+        }
+        h1.moon-header .s1 { top: 8px; left: 14%; }
+        h1.moon-header .s2 { top: 14px; right: 12%; font-size: 10px; }
+        h1.moon-header .s3 { bottom: 10px; left: 8%; font-size: 10px; }
+        h1.moon-header .s4 { bottom: 12px; right: 20%; }
+        h1.moon-header .s5 { top: 42%; left: 4%; font-size: 8px; }
 
         h2.section-title {
             font-family: 'Nanum Square Neo', sans-serif;
             font-size: 18px;
             /* T-004: 1.4em(22.4px) → 18px (법적고지 24px 규정 준수) */
             font-weight: 800;
-            color: #E65100;
+            color: #B8860B;
             margin-top: 40px;
             margin-bottom: 20px;
             border-bottom: 3px solid #6D4C4122;
@@ -79,7 +105,7 @@
             font-family: 'Nanum Square Neo', sans-serif;
             font-size: 18px; /* T-004: 1.5em(24px) → 18px */
             font-weight: 700;
-            color: #E65100;
+            color: #B8860B;
             margin-top: 30px;
             margin-bottom: 10px;
             border-bottom: 2px solid #6D4C4122;
@@ -142,7 +168,7 @@
 
         th {
             background-color: #FFCC80;
-            color: #BF360C;
+            color: #8B6508;
             font-weight: 700;
             text-transform: uppercase;
         }
@@ -164,7 +190,7 @@
             margin-bottom: 5px;
             /* Corrected from 'px' to '5px' */
             text-align: left;
-            color: #E65100;
+            color: #B8860B;
             display: inline-block;
             /* 텍스트가 줄바꿈 없이 한 줄에 표시되도록 설정 */
             white-space: nowrap;
@@ -184,7 +210,7 @@
             /* 축소: 1.6em → 1.1em (h2 1.4em보다 작게) */
             font-weight: 700;
             margin-top: 0;
-            color: #E65100;
+            color: #B8860B;
         }
 
         .loan-type-box ul {
@@ -241,7 +267,7 @@
         }
 
         .waiting-loan-title {
-            color: #E65100;
+            color: #B8860B;
             font-weight: bold;
         }
 
@@ -376,7 +402,7 @@
 
         .tip-label {
             font-weight: 900;
-            color: #E65100;
+            color: #B8860B;
             letter-spacing: 0.03em;
         }
 
@@ -566,7 +592,7 @@
             font-weight: 800;
             font-size: 18px; /* T-005: 1.5rem(24px) → 18px */
             line-height: 1.5;
-            color: #E65100;
+            color: #B8860B;
         }
 
         .tag {
@@ -579,8 +605,8 @@
         }
 
         .benefit-tag {
-            background-color: rgba(230, 81, 0, 0.15);
-            color: #E65100;
+            background-color: rgba(184, 134, 11, 0.15);
+            color: #B8860B;
         }
 
         /* Card 1: Yellowish Background */
@@ -608,7 +634,7 @@
             border: 1px solid #6D4C41;
             border-radius: 14px;
             padding: 24px;
-            box-shadow: 0 8px 20px rgba(230, 81, 0, 0.12);
+            box-shadow: 0 8px 20px rgba(184, 134, 11, 0.12);
             margin-top: 20px;
         }
 
@@ -620,7 +646,7 @@
             margin: 0;
             font-size: 1.8rem;
             font-weight: 800;
-            color: #E65100;
+            color: #B8860B;
         }
 
         .specialty-benefits {
@@ -663,7 +689,7 @@
 
         .highlight-point {
             font-weight: 700;
-            color: #E65100;
+            color: #B8860B;
         }
 
         .amount-stack {
@@ -716,15 +742,15 @@
             text-align: center;
             text-decoration: none;
             color: #FFF;
-            background-color: #E65100;
+            background-color: #B8860B;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(191, 54, 12, 0.22);
+            box-shadow: 0 10px 25px rgba(139, 101, 8, 0.22);
         }
 
         .SpringMarch-waiting-button:hover {
             background-color: #6D4C41;
             transform: translateY(-2px);
-            box-shadow: 0 14px 28px rgba(191, 54, 12, 0.25);
+            box-shadow: 0 14px 28px rgba(139, 101, 8, 0.25);
         }
 
         /* Responsive design for smaller screens */
@@ -940,7 +966,7 @@
             margin-bottom: 16px;
             font-size: 1.6rem;
             font-weight: 800;
-            color: #E65100;
+            color: #B8860B;
             border-bottom: 3px solid #6D4C4122;
             padding-bottom: 6px;
         }
@@ -954,7 +980,7 @@
             border-radius: 12px;
             font-size: 18px; /* T-004: 1.75rem(28px) → 18px */
             font-weight: 800;
-            color: #E65100;
+            color: #B8860B;
             text-align: center;
             position: relative;
             left: 50%;
@@ -1035,10 +1061,11 @@
 <body data-back="/index.html" data-breadcrumb="월별 대출 신청하기">
 
     <main class="wrap max-w-4xl mx-auto mt-0 mb-5 px-8 pb-10 bg-white rounded-xl shadow-lg w-full box-border">
-        <h1 class="font-nanum text-[1.2rem] sm:text-3xl font-bold text-white bg-[#E65100] py-4 px-3 sm:px-6 rounded-lg mb-10 shadow-md w-full text-center"
+        <h1 class="moon-header font-nanum text-[1.2rem] sm:text-3xl font-bold text-white py-4 px-3 sm:px-6 rounded-lg mb-10 shadow-md w-full text-center"
             style="word-break: keep-all; line-height: 1.4;">
-            [신청중] 9️⃣🈷️ 풍성한 🍂한가위 대출
-            <span style="font-size: 0.85em; letter-spacing: 1px;">🅞🅟🅔🅝</span>
+            <span class="star s1">✨</span><span class="star s2">⭐</span><span class="star s3">✨</span><span class="star s4">⭐</span><span class="star s5">✨</span>
+            <span class="h1-txt">[신청중] 9️⃣🈷️ 풍성한 🍂한가위 대출
+            <span style="font-size: 0.85em; letter-spacing: 1px;">🅞🅟🅔🅝</span></span>
         </h1>
         <div style="width:100%; margin:16px 0 20px; border-radius:14px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,.15);">
             <!-- T-157: 9월 히어로 이미지 영역(비워둠) — 세리나 제작본 수령 후 src 채워 주석 해제 (기획서 §6-1 #1, 1686×933 16:9)
