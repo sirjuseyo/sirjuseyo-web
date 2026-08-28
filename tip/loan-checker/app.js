@@ -1384,7 +1384,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (step1) {
       const done = santaApply.value.includes("신청했습니다");
       step1.textContent = formatChecklistLine(
-        "⓵ 7️⃣🈷️ 썸머 🏖️베케이션 대출 신청",
+        "⓵ 9️⃣🈷️ 풍성한 🍂한가위 대출 신청",
         "완료",
         "완료하세요.",
         done
