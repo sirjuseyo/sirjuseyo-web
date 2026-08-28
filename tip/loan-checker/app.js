@@ -719,7 +719,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ? isSelectValid(item.el)
           : isInputValid(item.el);
       if (!valid) {
-        showFieldError(field, "🤪 선택(또는 입력) 안 하면 뚝딱! 안 눌려져.");
+        showFieldError(field, "선택(또는 입력) 안 하면 '대출 가능성 검사하기' 버튼이 눌리지 않습니다.");
         field?.scrollIntoView({ behavior: "smooth", block: "center" });
         return false;
       }
