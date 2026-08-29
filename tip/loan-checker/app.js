@@ -719,7 +719,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ? isSelectValid(item.el)
           : isInputValid(item.el);
       if (!valid) {
-        showFieldError(field, "🤪 선택(또는 입력) 안 하면 뚝딱! 안 눌려져.");
+        showFieldError(field, "선택(또는 입력) 안 하면 '대출 가능성 검사하기' 버튼이 눌리지 않습니다.");
         field?.scrollIntoView({ behavior: "smooth", block: "center" });
         return false;
       }
@@ -1384,7 +1384,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (step1) {
       const done = santaApply.value.includes("신청했습니다");
       step1.textContent = formatChecklistLine(
-        "⓵ 7️⃣🈷️ 썸머 🏖️베케이션 대출 신청",
+        "⓵ 9️⃣🈷️ 풍성한 🍂한가위 대출 신청",
         "완료",
         "완료하세요.",
         done
