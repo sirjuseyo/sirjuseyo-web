@@ -41,7 +41,7 @@
     }
 
     .wrap {
-      max-width: 520px;
+      max-width: 480px;
       margin: 0 auto;
       background: #fff;
       min-height: 100vh;
@@ -553,16 +553,39 @@
       font-weight: 700;
     }
     .bc-day.empty { cursor: default; }
+
+    /* ── legal-shared.js 주입 요소 480px 제한 ── */
+    .legal-top, .legal-bottom, .bottom-section {
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
   </style>
 </head>
-<body data-breadcrumb="꿀정보,/tip/|4차 심사 자료 입력">
+<body class="page" data-breadcrumb="꿀정보,/tip/|4차 심사 자료 입력">
+
+<!-- 보안코드 overlay -->
+<div id="sjy-security-overlay" style="position:fixed;inset:0;background:rgba(56,0,151,0.96);z-index:99999;display:none;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#fff;border-radius:20px;padding:36px 28px;max-width:360px;width:100%;text-align:center;">
+    <div style="font-size:40px;margin-bottom:16px;">🔒</div>
+    <p style="font-size:20px;font-weight:900;color:#380097;margin-bottom:10px;">Deep Dive 심층 분석</p>
+    <p style="font-size:14px;color:#555;line-height:1.7;margin-bottom:24px;">소통거리 검토 중인 고객님만<br>입장할 수 있습니다.<br><br>카카오 톡에서 안내받은<br>보안코드를 입력해 주세요.</p>
+    <input id="sjy-security-input" type="password" inputmode="numeric" placeholder="보안코드 입력"
+      style="width:100%;padding:14px 16px;border:2px solid #e5e7eb;border-radius:12px;font-size:18px;text-align:center;letter-spacing:4px;outline:none;font-family:inherit;margin-bottom:12px;"
+      onkeydown="if(event.key==='Enter')sjyCheckCode()">
+    <p id="sjy-security-err" style="display:none;color:#ef4444;font-size:13px;margin-bottom:12px;font-weight:700;">보안코드가 올바르지 않습니다.</p>
+    <button onclick="sjyCheckCode()"
+      style="width:100%;padding:15px;background:#380097;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;">확인</button>
+  </div>
+</div>
+<script>document.getElementById('sjy-security-overlay').style.display='flex';</script>
 <div class="wrap">
 
   <!-- ═══════════════════════════════ -->
   <!--  S1 : 랜딩 (Page 1)            -->
   <!-- ═══════════════════════════════ -->
   <div class="scr on" id="s1">
-    <div class="top-bar"><div class="logo">써.</div></div>
 
     <div class="lnd-body">
       <div class="lnd-title">[NEW] 정보 입력만으로,<br>더 나은 조건 OPEN</div>
@@ -573,7 +596,7 @@
       </div>
 
       <div class="banner">
-        <img src="../imgs/2depth_landing-page_pointeureul-jeogribhago-don-bilrigi-034.png" alt="포인트를 적립하고 돈 빌리기">
+        <img src="../../imgs/2depth_landing-page_pointeureul-jeogribhago-don-bilrigi-034.png" alt="포인트를 적립하고 돈 빌리기">
       </div>
     </div>
 
@@ -618,7 +641,6 @@
   <!--  S2 : 기본정보 + 소득과 지출 (Page 2)       -->
   <!-- ═══════════════════════════════════════════ -->
   <div class="scr" id="s2">
-    <div class="top-bar"><div class="logo">써.</div></div>
     <div class="prog-bar"><div class="prog-fill" id="pf2" style="width:25%"></div></div>
     <div class="prog-label">2 / 5</div>
     <button class="back-btn" onclick="go(1)">‹ 뒤로</button>
@@ -812,7 +834,6 @@
   <!--  S3 : 금융이력 (Page 3)         -->
   <!-- ═══════════════════════════════ -->
   <div class="scr" id="s3">
-    <div class="top-bar"><div class="logo">써.</div></div>
     <div class="prog-bar"><div class="prog-fill" style="width:50%"></div></div>
     <div class="prog-label">3 / 5</div>
     <button class="back-btn" onclick="go(2)">‹ 뒤로</button>
@@ -904,7 +925,6 @@
   <!--  S4 : 증빙서류 (Page 4)         -->
   <!-- ═══════════════════════════════ -->
   <div class="scr" id="s4">
-    <div class="top-bar"><div class="logo">써.</div></div>
     <div class="prog-bar"><div class="prog-fill" style="width:75%"></div></div>
     <div class="prog-label">4 / 5</div>
     <button class="back-btn" onclick="go(3)">‹ 뒤로</button>
@@ -984,7 +1004,6 @@
   <!--  S5 : 완료 (Page 5)             -->
   <!-- ═══════════════════════════════ -->
   <div class="scr" id="s5">
-    <div class="top-bar"><div class="logo">써.</div></div>
     <div class="done-wrap">
       <div class="done-ico">📧</div>
       <div class="done-title">제출 완료되었습니다.<br>톡에 <span style="color:var(--purple)">[제출 완료]</span>를 남기면</div>
@@ -1518,6 +1537,26 @@ async function submitForm() {
   document.getElementById('tc-toss').classList.add('on');
 })();
 </script>
+
+<script>
+/* ── 보안코드 overlay ── */
+(function() {
+  var CODE = '20543003';
+  window.sjyCheckCode = function() {
+    var val = document.getElementById('sjy-security-input').value.trim();
+    if (val === CODE) {
+      document.getElementById('sjy-security-overlay').style.display = 'none';
+    } else {
+      document.getElementById('sjy-security-err').style.display = 'block';
+      document.getElementById('sjy-security-input').value = '';
+      document.getElementById('sjy-security-input').focus();
+    }
+  };
+})();
+</script>
+
+<script src="/js/menu.js"></script>
+<script src="/js/legal-shared.js"></script>
 
 </body>
 </html>
