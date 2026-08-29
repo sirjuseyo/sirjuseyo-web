@@ -556,6 +556,22 @@
   </style>
 </head>
 <body data-breadcrumb="꿀정보,/tip/|4차 심사 자료 입력">
+
+<!-- 보안코드 overlay -->
+<div id="sjy-security-overlay" style="position:fixed;inset:0;background:rgba(56,0,151,0.96);z-index:99999;display:none;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#fff;border-radius:20px;padding:36px 28px;max-width:360px;width:100%;text-align:center;">
+    <div style="font-size:40px;margin-bottom:16px;">🔒</div>
+    <p style="font-size:20px;font-weight:900;color:#380097;margin-bottom:10px;">Deep Dive 심층 분석</p>
+    <p style="font-size:14px;color:#555;line-height:1.7;margin-bottom:24px;">소통거리 검토 중인 고객님만<br>입장할 수 있습니다.<br><br>카카오 톡에서 안내받은<br>보안코드를 입력해 주세요.</p>
+    <input id="sjy-security-input" type="password" inputmode="numeric" placeholder="보안코드 입력"
+      style="width:100%;padding:14px 16px;border:2px solid #e5e7eb;border-radius:12px;font-size:18px;text-align:center;letter-spacing:4px;outline:none;font-family:inherit;margin-bottom:12px;"
+      onkeydown="if(event.key==='Enter')sjyCheckCode()">
+    <p id="sjy-security-err" style="display:none;color:#ef4444;font-size:13px;margin-bottom:12px;font-weight:700;">보안코드가 올바르지 않습니다.</p>
+    <button onclick="sjyCheckCode()"
+      style="width:100%;padding:15px;background:#380097;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;">확인</button>
+  </div>
+</div>
+<script>document.getElementById('sjy-security-overlay').style.display='flex';</script>
 <div class="wrap">
 
   <!-- ═══════════════════════════════ -->
@@ -1516,6 +1532,23 @@ async function submitForm() {
   makeSlots('debt-slots', 3);
   // 토스 탭 기본 표시
   document.getElementById('tc-toss').classList.add('on');
+})();
+</script>
+
+<script>
+/* ── 보안코드 overlay ── */
+(function() {
+  var CODE = '20543003';
+  window.sjyCheckCode = function() {
+    var val = document.getElementById('sjy-security-input').value.trim();
+    if (val === CODE) {
+      document.getElementById('sjy-security-overlay').style.display = 'none';
+    } else {
+      document.getElementById('sjy-security-err').style.display = 'block';
+      document.getElementById('sjy-security-input').value = '';
+      document.getElementById('sjy-security-input').focus();
+    }
+  };
 })();
 </script>
 
