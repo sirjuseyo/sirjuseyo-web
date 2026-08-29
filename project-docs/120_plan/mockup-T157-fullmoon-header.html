@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>T-157 보름달 타이틀 바 목업 (3안)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Square+Neo:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Nanum Square Neo', sans-serif;
+    background: #EDEDED;
+    padding: 40px 16px;
+    margin: 0;
+  }
+  .frame {
+    max-width: 480px;
+    margin: 0 auto 56px;
+  }
+  .label {
+    font-weight: 800;
+    font-size: 15px;
+    color: #222;
+    margin-bottom: 10px;
+  }
+  .desc {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  h1.demo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 20px 12px;
+    border-radius: 8px;
+    margin: 0;
+    text-align: center;
+    word-break: keep-all;
+    line-height: 1.4;
+    position: relative;
+    overflow: hidden;
+  }
+  h1.demo span.txt { position: relative; z-index: 2; }
+  .open-tag { font-size: 0.85em; letter-spacing: 1px; opacity: 0.9; }
+
+  /* ── 안 1: 심플 나이트 글로우 — 무지 남색 + 큰 달빛 번짐 하나 ── */
+  .v1 {
+    background: #1B1F3B;
+  }
+  .v1::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(255,224,150,0.85) 0%, rgba(255,224,150,0.35) 35%, rgba(255,224,150,0) 68%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* ── 안 2: 오로라 보라 그라데이션 + 굵은 골드 보더 (글로우 없음) ── */
+  .v2 {
+    background: linear-gradient(135deg, #2D1B4E 0%, #4A2E7A 50%, #2D1B4E 100%);
+    border: 3px solid #FFD782;
+    box-shadow: 0 0 18px 2px rgba(255, 215, 130, 0.55);
+  }
+
+  /* ── 안 3: 나이트 글로우 + 뚜렷한 별빛 (추천) ── */
+  .v3 {
+    background: #1B1F3B;
+  }
+  .v3::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, rgba(255,224,150,0.7) 0%, rgba(255,224,150,0.25) 40%, rgba(255,224,150,0) 68%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .star {
+    position: absolute;
+    font-size: 14px;
+    z-index: 1;
+    filter: drop-shadow(0 0 3px rgba(255,255,255,0.8));
+  }
+  .s1 { top: 8px; left: 14%; }
+  .s2 { top: 14px; right: 12%; font-size: 10px; }
+  .s3 { bottom: 10px; left: 8%; font-size: 10px; }
+  .s4 { bottom: 12px; right: 20%; }
+  .s5 { top: 42%; left: 4%; font-size: 8px; }
+
+  .body-preview {
+    margin-top: 14px;
+    background: #FFFBF0;
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .accent-note {
+    border-left: 6px solid #6D4C41;
+    background:#FFF8E1;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    color:#3B2B22;
+  }
+  .gold-text {
+    color: #B8860B;
+    font-weight: 800;
+    font-size: 14px;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="frame">
+    <div class="label">안 1 — 심플 나이트 글로우</div>
+    <div class="desc">무지 남색(#1B1F3B) 바탕 + 중앙에 큰 달빛 번짐 하나. 테두리·별빛 없음. 가장 절제된 버전.</div>
+    <h1 class="demo v1">
+      <span class="txt">[신청중] 9️⃣🈷️ 풍성한 🍂한가위 대출<br><span class="open-tag">🅞🅟🅔🅝</span></span>
+    </h1>
+  </div>
+
+  <div class="frame">
+    <div class="label">안 2 — 오로라 보라 그라데이션 + 굵은 골드 보더</div>
+    <div class="desc">남색이 아니라 보랏빛 그라데이션 바탕 + 뚜렷하게 보이는 금색 테두리(3px)와 은은한 외곽 발광. 달빛 번짐은 없음.</div>
+    <h1 class="demo v2">
+      <span class="txt">[신청중] 9️⃣🈷️ 풍성한 🍂한가위 대출<br><span class="open-tag">🅞🅟🅔🅝</span></span>
+    </h1>
+  </div>
+
+  <div class="frame">
+    <div class="label">안 3 — 나이트 글로우 + 뚜렷한 별빛 (추천 ⭐)</div>
+    <div class="desc">안 1과 같은 남색 바탕 + 달빛 번짐에, 눈에 보이는 반짝임(✨⭐) 5개를 모서리에 배치. 스크린샷 레퍼런스의 "밤하늘+달빛+반짝임" 무드를 가장 그대로 재현.</div>
+    <h1 class="demo v3">
+      <span class="star s1">✨</span>
+      <span class="star s2">⭐</span>
+      <span class="star s3">✨</span>
+      <span class="star s4">⭐</span>
+      <span class="star s5">✨</span>
+      <span class="txt">[신청중] 9️⃣🈷️ 풍성한 🍂한가위 대출<br><span class="open-tag">🅞🅟🅔🅝</span></span>
+    </h1>
+
+    <div class="body-preview">
+      <div class="accent-note">"명절은 풍성하게, 주머니는 든든하게" — 본문 영역은 그대로 브라운·크림 톤 유지</div>
+      <div class="gold-text">20만 원 — 다크골든로드(#B8860B)는 이렇게 텍스트·소제목 포인트로만 절제해서 사용</div>
+    </div>
+  </div>
+
+</body>
+</html>
