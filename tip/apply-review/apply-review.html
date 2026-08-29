@@ -41,7 +41,7 @@
     }
 
     .wrap {
-      max-width: 520px;
+      max-width: 480px;
       margin: 0 auto;
       background: #fff;
       min-height: 100vh;
@@ -553,6 +553,14 @@
       font-weight: 700;
     }
     .bc-day.empty { cursor: default; }
+
+    /* ── legal-shared.js 주입 요소 480px 제한 ── */
+    .legal-top, .legal-bottom, .bottom-section {
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body data-breadcrumb="꿀정보,/tip/|4차 심사 자료 입력">
@@ -578,7 +586,6 @@
   <!--  S1 : 랜딩 (Page 1)            -->
   <!-- ═══════════════════════════════ -->
   <div class="scr on" id="s1">
-    <div class="top-bar"><div class="logo">써.</div></div>
 
     <div class="lnd-body">
       <div class="lnd-title">[NEW] 정보 입력만으로,<br>더 나은 조건 OPEN</div>
@@ -634,7 +641,6 @@
   <!--  S2 : 기본정보 + 소득과 지출 (Page 2)       -->
   <!-- ═══════════════════════════════════════════ -->
   <div class="scr" id="s2">
-    <div class="top-bar"><div class="logo">써.</div></div>
     <div class="prog-bar"><div class="prog-fill" id="pf2" style="width:25%"></div></div>
     <div class="prog-label">2 / 5</div>
     <button class="back-btn" onclick="go(1)">‹ 뒤로</button>
@@ -828,7 +834,6 @@
   <!--  S3 : 금융이력 (Page 3)         -->
   <!-- ═══════════════════════════════ -->
   <div class="scr" id="s3">
-    <div class="top-bar"><div class="logo">써.</div></div>
     <div class="prog-bar"><div class="prog-fill" style="width:50%"></div></div>
     <div class="prog-label">3 / 5</div>
     <button class="back-btn" onclick="go(2)">‹ 뒤로</button>
@@ -920,7 +925,6 @@
   <!--  S4 : 증빙서류 (Page 4)         -->
   <!-- ═══════════════════════════════ -->
   <div class="scr" id="s4">
-    <div class="top-bar"><div class="logo">써.</div></div>
     <div class="prog-bar"><div class="prog-fill" style="width:75%"></div></div>
     <div class="prog-label">4 / 5</div>
     <button class="back-btn" onclick="go(3)">‹ 뒤로</button>
@@ -1000,7 +1004,6 @@
   <!--  S5 : 완료 (Page 5)             -->
   <!-- ═══════════════════════════════ -->
   <div class="scr" id="s5">
-    <div class="top-bar"><div class="logo">써.</div></div>
     <div class="done-wrap">
       <div class="done-ico">📧</div>
       <div class="done-title">제출 완료되었습니다.<br>톡에 <span style="color:var(--purple)">[제출 완료]</span>를 남기면</div>
