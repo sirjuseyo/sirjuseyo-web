@@ -180,7 +180,40 @@ const MONTH_CONFIGS = {
     defaultWaitingPeriod: '2026년 9월 11일 ~ 15일',
     step4ReviewDisplay: '2026년 10월 1일 ~ 5일',
   },
-  // ← 10월 이후 여기에 추가 (activePeriod.start = 9월 26일, end = 10월 25일)
+  // T-171 WT-171: 10월 낭만가득 가을 대출 (기획서 PLAN_2026-10 §4 확정값)
+  // 정책: 과거 월 워딩이 현재 월에 노출되면 안 되므로 하드코딩 대신 이 config를 참조한다(T-174 참조 전환 완료)
+  '2026-10': {
+    activePeriod: {
+      start: '2026-09-26',  // 9월 26일
+      end:   '2026-10-25',  // 10월 25일
+    },
+    loan: {
+      name: '🔟🈷️ 낭만가득 🍂가을 대출',
+      emoji: '🍂',
+      concept: '낭만가득 가을',
+    },
+    event: {
+      period: '10월 한정 스페셜티',
+      name: '단풍놀이🍁대출',
+    },
+    applyPeriod: {
+      start: '2026-10-01',
+      end: '2026-10-25',
+    },
+    reviewPeriod: {
+      start: '2026-11-01',
+      end: '2026-11-05',
+      display: '2026년 11월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 11월 25일',
+    subscribeStart: '2026.09.26',
+    detailUrl: '/monthly-loan/2026-10/',
+    ctaText: '🔟🈷️ 낭만가득 🍂가을 대출 신청하기 →',
+    defaultWaitingDate: '2026년 10월 11일',
+    defaultWaitingPeriod: '2026년 10월 11일 ~ 15일',
+    step4ReviewDisplay: '2026년 11월 1일 ~ 5일',
+  },
+  // ← 11월 이후 여기에 추가 (activePeriod.start = 10월 26일, end = 11월 25일)
 };
 
 // ✅ 자동 감지: 오늘이 activePeriod(전월 26일 ~ 당월 25일) 안에 있는 config 선택
