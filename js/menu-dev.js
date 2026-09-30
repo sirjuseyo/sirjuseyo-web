@@ -2,7 +2,7 @@
   if (document.getElementById('sjy-menu')) return;
 
   // ── 매월 이 한 줄만 수정 ──────────────────────────────────────────
-  var CURRENT_MONTH = '2026-09';
+  var CURRENT_MONTH = '2026-10';
   // ─────────────────────────────────────────────────────────────────
 
   var ITEMS = [
