@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메뉴 디자인 목업 비교</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:#f0ece8;padding:40px 20px;}
+  h1{text-align:center;font-size:1.1rem;font-weight:700;color:#380097;margin-bottom:8px;letter-spacing:-.3px;}
+  .sub{text-align:center;font-size:.8rem;color:#888;margin-bottom:40px;}
+  .grid{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;}
+  .col{display:flex;flex-direction:column;align-items:center;gap:12px;}
+  .label{font-size:.75rem;font-weight:700;color:#380097;letter-spacing:.5px;text-transform:uppercase;background:#fff;border-radius:20px;padding:4px 14px;}
+  .drawer{width:280px;min-height:520px;border-radius:20px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.18);display:flex;flex-direction:column;}
+
+  /* 공통 헤더 */
+  .dhead{background:#380097;padding:20px 20px 18px;display:flex;align-items:center;justify-content:space-between;}
+  .dhead-txt{color:#fff;font-size:1rem;font-weight:700;letter-spacing:-.3px;}
+  .dhead-close{background:rgba(255,255,255,.18);border:none;color:#fff;font-size:1rem;cursor:pointer;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;}
+
+  /* ──────────────────────────────
+     A안: 빅 타이포 (Big Type)
+     글자 크고 여백 넉넉, 구분선 없음
+  ────────────────────────────── */
+  .a-body{background:#fff;flex:1;padding:8px 0;}
+  .a-item{display:flex;align-items:center;gap:14px;padding:16px 24px;text-decoration:none;color:#1A1A2E;}
+  .a-item:hover{background:#F3F0FF;}
+  .a-emoji{font-size:1.5rem;line-height:1;width:36px;text-align:center;flex-shrink:0;}
+  .a-text{font-size:1.05rem;font-weight:700;letter-spacing:-.4px;}
+
+  /* ──────────────────────────────
+     B안: 카드 아이템 (Card Tiles)
+     각 항목이 둥근 카드, 아이폰 설정 느낌
+  ────────────────────────────── */
+  .b-body{background:#F5F3FF;flex:1;padding:12px;}
+  .b-item{display:flex;align-items:center;gap:12px;padding:13px 14px;text-decoration:none;color:#1A1A2E;background:#fff;border-radius:14px;margin-bottom:6px;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+  .b-item:last-child{margin-bottom:0;}
+  .b-emoji-wrap{width:40px;height:40px;background:#F3F0FF;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+  .b-text{font-size:.95rem;font-weight:700;letter-spacing:-.3px;}
+  .b-arrow{margin-left:auto;color:#380097;font-size:1.3rem;font-weight:300;}
+
+  /* ──────────────────────────────
+     C안: 아이콘 + 설명 (Description)
+     서비스 앱 내비게이션 느낌
+  ────────────────────────────── */
+  .c-body{background:#fff;flex:1;padding:0;}
+  .c-item{display:flex;align-items:center;gap:14px;padding:14px 20px;text-decoration:none;color:#1A1A2E;border-bottom:1px solid #F5F5F5;}
+  .c-item:last-child{border-bottom:none;}
+  .c-emoji-wrap{width:44px;height:44px;background:linear-gradient(135deg,#7B43F0,#380097);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+  .c-info{display:flex;flex-direction:column;gap:2px;}
+  .c-text{font-size:.95rem;font-weight:700;letter-spacing:-.3px;color:#1A1A2E;}
+  .c-desc{font-size:.72rem;font-weight:400;color:#aaa;}
+  .c-arrow{margin-left:auto;color:#ddd;font-size:.85rem;}
+
+  /* ──────────────────────────────
+     D안: 풀 블리드 (Full Bleed)
+     배경 크림, 텍스트 크고 화살표
+  ────────────────────────────── */
+  .d-body{background:#FAF7F2;flex:1;padding:6px 0;}
+  .d-item{display:flex;align-items:center;gap:16px;padding:18px 22px;text-decoration:none;color:#1A1A2E;position:relative;}
+  .d-item:not(:last-child)::after{content:'';position:absolute;bottom:0;left:22px;right:22px;height:1px;background:#EDE8E1;}
+  .d-emoji{font-size:1.6rem;line-height:1;flex-shrink:0;}
+  .d-text{font-size:1.1rem;font-weight:900;letter-spacing:-.5px;flex:1;}
+  .d-arrow{color:#380097;font-size:1.1rem;font-weight:300;}
+</style>
+</head>
+<body>
+<h1>🎨 메뉴 드로어 디자인 목업 비교</h1>
+<p class="sub">공통: 보라 헤더 + "메뉴를 선택하세요." + 이모지 아이콘</p>
+
+<div class="grid">
+
+  <!-- A안 -->
+  <div class="col">
+    <span class="label">A안 — 빅 타이포</span>
+    <div class="drawer">
+      <div class="dhead">
+        <span class="dhead-txt">메뉴를 선택하세요.</span>
+        <button class="dhead-close">✕</button>
+      </div>
+      <div class="a-body">
+        <a class="a-item" href="#"><span class="a-emoji">🏢</span><span class="a-text">써주세요. 소개</span></a>
+        <a class="a-item" href="#"><span class="a-emoji">⚡</span><span class="a-text">인기 상품은 나노크레딧</span></a>
+        <a class="a-item" href="#"><span class="a-emoji">🔍</span><span class="a-text">나에게 맞는 대출 방식</span></a>
+        <a class="a-item" href="#"><span class="a-emoji">📋</span><span class="a-text">월별 대출 신청하기</span></a>
+        <a class="a-item" href="#"><span class="a-emoji">🏆</span><span class="a-text">챌린지</span></a>
+        <a class="a-item" href="#"><span class="a-emoji">🍯</span><span class="a-text">꿀정보</span></a>
+        <a class="a-item" href="#"><span class="a-emoji">📢</span><span class="a-text">공지사항</span></a>
+      </div>
+    </div>
+    <p style="font-size:.72rem;color:#666;text-align:center;max-width:280px;">글자 크고, 여백 넉넉<br>구분선 없음 — 심플·모던</p>
+  </div>
+
+  <!-- B안 -->
+  <div class="col">
+    <span class="label">B안 — 카드 타일</span>
+    <div class="drawer">
+      <div class="dhead">
+        <span class="dhead-txt">메뉴를 선택하세요.</span>
+        <button class="dhead-close">✕</button>
+      </div>
+      <div class="b-body">
+        <a class="b-item" href="#"><div class="b-emoji-wrap">🏢</div><span class="b-text">써주세요. 소개</span><span class="b-arrow">›</span></a>
+        <a class="b-item" href="#"><div class="b-emoji-wrap">⚡</div><span class="b-text">인기 상품은 나노크레딧</span><span class="b-arrow">›</span></a>
+        <a class="b-item" href="#"><div class="b-emoji-wrap">🔍</div><span class="b-text">나에게 맞는 대출 방식</span><span class="b-arrow">›</span></a>
+        <a class="b-item" href="#"><div class="b-emoji-wrap">📋</div><span class="b-text">월별 대출 신청하기</span><span class="b-arrow">›</span></a>
+        <a class="b-item" href="#"><div class="b-emoji-wrap">🏆</div><span class="b-text">챌린지</span><span class="b-arrow">›</span></a>
+        <a class="b-item" href="#"><div class="b-emoji-wrap">🍯</div><span class="b-text">꿀정보</span><span class="b-arrow">›</span></a>
+        <a class="b-item" href="#"><div class="b-emoji-wrap">📢</div><span class="b-text">공지사항</span><span class="b-arrow">›</span></a>
+      </div>
+    </div>
+    <p style="font-size:.72rem;color:#666;text-align:center;max-width:280px;">각 항목이 카드<br>아이폰 설정 앱 느낌 — 깔끔·정돈</p>
+  </div>
+
+  <!-- C안 -->
+  <div class="col">
+    <span class="label">C안 — 아이콘+설명</span>
+    <div class="drawer">
+      <div class="dhead">
+        <span class="dhead-txt">메뉴를 선택하세요.</span>
+        <button class="dhead-close">✕</button>
+      </div>
+      <div class="c-body">
+        <a class="c-item" href="#"><div class="c-emoji-wrap">🏢</div><div class="c-info"><span class="c-text">써주세요. 소개</span><span class="c-desc">써주세요.가 뭔가요?</span></div><span class="c-arrow">›</span></a>
+        <a class="c-item" href="#"><div class="c-emoji-wrap">⚡</div><div class="c-info"><span class="c-text">인기 상품은 나노크레딧</span><span class="c-desc">빠르고 간편한 소액 대출</span></div><span class="c-arrow">›</span></a>
+        <a class="c-item" href="#"><div class="c-emoji-wrap">🔍</div><div class="c-info"><span class="c-text">나에게 맞는 대출 방식</span><span class="c-desc">내 상황에 맞는 상품 찾기</span></div><span class="c-arrow">›</span></a>
+        <a class="c-item" href="#"><div class="c-emoji-wrap">📋</div><div class="c-info"><span class="c-text">월별 대출 신청하기</span><span class="c-desc">이번 달 대출 신청</span></div><span class="c-arrow">›</span></a>
+        <a class="c-item" href="#"><div class="c-emoji-wrap">🏆</div><div class="c-info"><span class="c-text">챌린지</span><span class="c-desc">참여하고 혜택 받기</span></div><span class="c-arrow">›</span></a>
+        <a class="c-item" href="#"><div class="c-emoji-wrap">🍯</div><div class="c-info"><span class="c-text">꿀정보</span><span class="c-desc">대출 전 꼭 알아야 할 것</span></div><span class="c-arrow">›</span></a>
+        <a class="c-item" href="#"><div class="c-emoji-wrap">📢</div><div class="c-info"><span class="c-text">공지사항</span><span class="c-desc">써주세요. 새 소식</span></div><span class="c-arrow">›</span></a>
+      </div>
+    </div>
+    <p style="font-size:.72rem;color:#666;text-align:center;max-width:280px;">보라 그라데이션 아이콘 + 설명 한 줄<br>서비스 앱 내비 느낌 — 고급·친절</p>
+  </div>
+
+  <!-- D안 -->
+  <div class="col">
+    <span class="label">D안 — 풀 블리드</span>
+    <div class="drawer">
+      <div class="dhead">
+        <span class="dhead-txt">메뉴를 선택하세요.</span>
+        <button class="dhead-close">✕</button>
+      </div>
+      <div class="d-body">
+        <a class="d-item" href="#"><span class="d-emoji">🏢</span><span class="d-text">써주세요. 소개</span><span class="d-arrow">›</span></a>
+        <a class="d-item" href="#"><span class="d-emoji">⚡</span><span class="d-text">인기 상품은 나노크레딧</span><span class="d-arrow">›</span></a>
+        <a class="d-item" href="#"><span class="d-emoji">🔍</span><span class="d-text">나에게 맞는 대출 방식</span><span class="d-arrow">›</span></a>
+        <a class="d-item" href="#"><span class="d-emoji">📋</span><span class="d-text">월별 대출 신청하기</span><span class="d-arrow">›</span></a>
+        <a class="d-item" href="#"><span class="d-emoji">🏆</span><span class="d-text">챌린지</span><span class="d-arrow">›</span></a>
+        <a class="d-item" href="#"><span class="d-emoji">🍯</span><span class="d-text">꿀정보</span><span class="d-arrow">›</span></a>
+        <a class="d-item" href="#"><span class="d-emoji">📢</span><span class="d-text">공지사항</span><span class="d-arrow">›</span></a>
+      </div>
+    </div>
+    <p style="font-size:.72rem;color:#666;text-align:center;max-width:280px;">배경 크림색, 이모지 크게, 글자 굵게<br>네이버·카카오 스타일 — 시원·강렬</p>
+  </div>
+
+</div>
+</body>
+</html>

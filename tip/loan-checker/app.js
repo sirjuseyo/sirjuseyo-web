@@ -1188,11 +1188,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return [
       `안녕하세요 ${displayName} 😊`,
-      `설날 대출 ${state.loanOption} 조건으로 ${state.requestAmount}만원 (${periodText}) 접수 상태를 안내드립니다.`,
+      // T-174 WT-174: '설날 대출' 하드코딩 → MONTH_CONFIG 참조 전환
+      // 정책: 과거 월/절기 워딩이 현재 월 페이지에 노출되면 안 됨 (사장님 지시 2026-09-29)
+      // 근거: MONTH_CONFIG는 month-config.js가 app.js보다 먼저 로드되고 폴백이 보장되어 항상 non-null
+      // 효과: 다음 달 전환 시 month-config.js 한 곳만 고치면 되어 이월 결함 재발 차단
+      `${MONTH_CONFIG.loan.name} ${state.loanOption} 조건으로 ${state.requestAmount}만원 (${periodText}) 접수 상태를 안내드립니다.`,
       `현재 미션 포인트는 총 ${result.total}점이며, 추가 적립 필요 포인트는 ${result.additional}점입니다.`,
-      state.rudolphSpecial
-        ? "루돌프 스페셜티가 적용되어 일부 미션이 선반영되었습니다."
-        : "루돌프 스페셜티는 아직 미참여 상태예요.",
+      // T-174 WT-174: '루돌프 스페셜티' 분기 삭제
+      // 근거: 참조 대상 #rudolphSpecial 요소가 index.html/index-dev.html에 존재하지 않아
+      //       state.rudolphSpecial이 항상 false → "루돌프 스페셜티는 아직 미참여 상태예요."가
+      //       상시 노출되던 크리스마스 시즌 잔존 문구였음.
+      // 제약: 대체 문구를 새로 만들면 존재하지 않는 정책을 지어내는 것이므로 문구 자체를 제거한다.
       `카카오 상담톡에서 확인 후 ${state.loanStatus} 단계 진행 부탁드립니다.`,
     ].join("\n");
   }
@@ -1384,7 +1390,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (step1) {
       const done = santaApply.value.includes("신청했습니다");
       step1.textContent = formatChecklistLine(
-        "⓵ 9️⃣🈷️ 풍성한 🍂한가위 대출 신청",
+        // T-174 WT-174: 월 상품명 하드코딩 → MONTH_CONFIG 참조 (과거 월 워딩 노출 방지)
+        // 주의: 이 대입이 index.html 인라인 스크립트(step1 초기 대입)보다 나중에 실행되어
+        //       최종 화면 표시값이 되므로, 여기를 고치지 않으면 HTML만 고쳐도 소용없음
+        `⓵ ${MONTH_CONFIG.loan.name} 신청`,
         "완료",
         "완료하세요.",
         done
