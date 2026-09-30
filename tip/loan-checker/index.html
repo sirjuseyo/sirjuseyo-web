@@ -43,7 +43,9 @@
         <h2>① 월별 대출</h2>
         <div class="field">
           <label>대출 상품명</label>
-          <p class="static-value" id="loanProductName">9️⃣🈷️ 풍성한 🍂한가위 대출</p>
+          <!-- T-178 WT-178: 월 중립 초기값. 실행 시 index.html 인라인 스크립트가 cfg.loan.name으로 교체.
+               정책: 과거 월 워딩이 fallback으로도 노출되면 안 됨(사장님 지시 2026-09-29) -->
+          <p class="static-value" id="loanProductName">이달의 대출</p>
         </div>
       </section>
 
@@ -242,7 +244,8 @@
             <li>
               <strong id="eventGuideLabel">이벤트 대출 &gt; 7월 한정 스페셜티(이력)</strong> : 누구나 이용 가능
               <ul>
-                <li id="eventGuideName">워터밤💦대출(상태) : 변형된 이포 상품으로 이용</li>
+                <!-- T-178 WT-178: 7월 이벤트명이 3개월 이월돼 있던 자리 → 월 중립값으로 교체. 실행 시 cfg.event.name으로 대체됨 -->
+                <li id="eventGuideName">이달의 이벤트 대출(상태) : 변형된 이포 상품으로 이용</li>
               </ul>
             </li>
           </ul>
@@ -393,7 +396,8 @@
         <p id="benefitLine4">빠른 대출과 원금 미션 감면!</p>
       </div>
       <div class="result-field">
-        <span id="resultInfoHeader">9️⃣🈷️ 풍성한 🍂한가위 대출 신청 정보</span>
+        <!-- T-178 WT-178: 월 중립 초기값. 실행 시 cfg.loan.name + ' 신청 정보'로 교체 -->
+        <span id="resultInfoHeader">이달의 대출 신청 정보</span>
         <p id="resultAmount">금액 : 30만 원</p>
         <p id="resultPeriod">기간 : 1개월 (30일)</p>
         <p id="resultOption">대출 옵션 : 웨이팅 대출</p>
@@ -447,7 +451,8 @@
       </label>
       <div class="result-field script-box">
         <div class="script-section">
-          <p class="script-step" id="step1">✅ ⓵ 9️⃣🈷️ 풍성한 🍂한가위 대출 신청 완료 / 완료하세요.</p>
+          <!-- T-178 WT-178: 월 중립 초기값. 실행 시 app.js updateResults()가 MONTH_CONFIG.loan.name으로 교체 -->
+          <p class="script-step" id="step1">✅ ⓵ 이달의 대출 신청 완료 / 완료하세요.</p>
           <p class="script-step" id="step2">☑️ ⓶ 써주세요. 앱에서 30만 원과 1개월(30일) 신청 완료 / 완료하세요.</p>
           <div class="script-step-group">
             <p class="script-step" id="step3">✅ ⓷ 앱에서 크미 (3,300🅿) 완료 / 완료하세요</p>
@@ -551,9 +556,10 @@
 
         <div class="script-cta">
           <a class="script-cta-button-text" id="ctaButton"
-            href="/monthly-loan/2026-07/"
+            <!-- T-178 WT-178: 7월 경로 하드코딩 → 중립값. 실행 시 cta.href = cfg.detailUrl로 교체 -->
+            href="#"
             target="_blank" rel="noopener noreferrer">
-            9️⃣🈷️ 풍성한 🍂한가위 대출 신청하기 →
+            이달의 대출 신청하기 →
           </a>
         </div>
       </div>
