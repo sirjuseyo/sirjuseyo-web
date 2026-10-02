@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>써주세요. · Monthly Loan</title>
+<meta name="description" content="20~33세 청년 서민을 위한 나노크레딧. 급할 때 빌려쓰는 써주세요.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --purple:#380097;
+  --orange:#FF5400;
+  --mint:#A6D6DE;
+  --cream:#FAF7F2;
+  --text:#1A1A2E;
+  --gray:#888;
+}
+html,body{background:var(--cream);min-height:100vh;font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;}
+
+/* wrap = 전체 페이지 컨테이너 */
+.wrap{
+  position:relative;
+  overflow:hidden;
+  min-height:100vh;
+  max-width:480px;
+  margin:0 auto;
+}
+
+/* 배경 orb */
+.orb-big{position:fixed;top:-70px;right:-70px;width:220px;height:220px;background:var(--orange);border-radius:50%;opacity:.08;pointer-events:none;z-index:0;}
+.orb-sm{position:fixed;top:200px;left:-30px;width:80px;height:80px;background:var(--mint);border-radius:50%;opacity:.18;pointer-events:none;z-index:0;}
+
+
+/* content 영역: 모바일은 세로 스택, 데스크탑은 좌우 분할 */
+.content{
+  position:relative;z-index:2;
+  display:flex;
+  flex-direction:column;
+  padding:0;
+}
+
+/* hero */
+.hero{padding:16px 24px 80px;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;gap:0 12px;align-items:start;}
+h1{grid-column:1;grid-row:1;font-size:18px;font-weight:900;color:var(--text);line-height:1.8;padding-top:0;margin-bottom:10px;letter-spacing:-1px;}
+h1 em{font-style:normal;color:var(--purple);}
+.sub{grid-column:1 / -1;grid-row:2;font-size:.85rem;font-weight:300;color:var(--gray);line-height:1.8;margin-bottom:28px;}
+/* live badge */
+.badge-wrap{grid-column:2;grid-row:1;display:flex;align-items:flex-start;padding-top:4px;}
+.live-badge{display:flex;flex-direction:column;align-items:center;gap:6px;border:2px solid var(--orange);border-radius:16px;padding:10px 12px;background:rgba(255,84,0,.05);min-width:68px;animation:badge-breathe 3s ease-in-out infinite;}
+@keyframes badge-breathe{0%,100%{box-shadow:0 0 0 0 rgba(255,84,0,0);}50%{box-shadow:0 0 0 6px rgba(255,84,0,.12);}}
+.live-badge-top{display:flex;align-items:center;gap:5px;}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--orange);animation:dot-pulse 1.4s ease-in-out infinite;flex-shrink:0;}
+@keyframes dot-pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.7);}}
+.live-text-main{font-size:.72rem;font-weight:700;color:var(--orange);white-space:nowrap;}
+.live-divider{width:100%;height:1px;background:rgba(255,84,0,.2);}
+.live-text-sub{font-size:.68rem;font-weight:500;color:var(--orange);opacity:.75;white-space:nowrap;}
+
+/* cards */
+.cards{padding:0 24px;display:flex;flex-direction:column;gap:14px;position:relative;}
+.gift-box{position:absolute;top:-110px;right:-55px;width:min(341px,90vw);pointer-events:none;z-index:5;}
+.cards-header{display:flex;justify-content:flex-end;margin-bottom:8px;}
+.main-card{
+  background:#fff;border:2px solid var(--purple);border-radius:22px;padding:30px;
+  position:relative;overflow:hidden;
+}
+.main-card::before{content:'';position:absolute;top:-22px;right:-22px;width:88px;height:88px;background:var(--purple);border-radius:50%;opacity:.06;}
+.main-card::after{content:'';position:absolute;bottom:-10px;left:28px;width:52px;height:52px;background:var(--purple);border-radius:50%;opacity:.04;}
+.main-tag{font-size:.85rem;font-weight:700;color:var(--purple);letter-spacing:.3px;margin-bottom:10px;position:relative;z-index:1;}
+.main-title{font-size:1.4rem;font-weight:900;color:var(--text);margin-bottom:6px;position:relative;z-index:1;letter-spacing:-.5px;}
+.main-sub{font-size:.85rem;font-weight:300;color:var(--gray);margin-bottom:20px;position:relative;z-index:1;}
+.main-btn{display:block;text-align:center;background:var(--orange);color:#fff;font-size:1.1rem;font-weight:700;border-radius:14px;padding:15px 20px;text-decoration:none;position:relative;z-index:1;letter-spacing:-.2px;}
+.checker-card{background:#fff;border:2px solid var(--mint);border-radius:22px;padding:30px;}
+.checker-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.checker-icon{width:46px;height:46px;background:rgba(166,214,222,.15);border:1.5px solid var(--mint);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.checker-name{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:4px;letter-spacing:-.3px;}
+.checker-desc{font-size:.85rem;font-weight:300;color:var(--gray);}
+.checker-btn{display:block;width:100%;text-align:center;font-size:1.1rem;font-weight:700;border-radius:14px;padding:15px;text-decoration:none;color:#3a9aaa;background:transparent;border:2px solid var(--mint);letter-spacing:-.2px;}
+
+
+/* footer */
+.footer{padding:24px 24px 32px;display:flex;justify-content:center;position:relative;z-index:2;}
+.grad-bar{width:48%;height:3px;border-radius:10px;background:linear-gradient(90deg,var(--purple),var(--mint),var(--orange));}
+
+/* gift-box 모바일 보정 */
+.gift-box{width:min(250px,68vw);top:-125px;right:-25px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="orb-big"></div>
+  <div class="orb-sm"></div>
+
+  <div class="content">
+    <section class="hero">
+      <h1>신용 점수가 아니라,<br><em>미션과 대안신용으로 봐요.</em></h1>
+      <div class="badge-wrap">
+        <div class="live-badge">
+          <div class="live-badge-top">
+            <div class="live-dot"></div>
+            <span class="live-text-main">10월 대출</span>
+          </div>
+          <div class="live-divider"></div>
+          <span class="live-text-sub">신청중</span>
+        </div>
+      </div>
+      <p class="sub">미션 수행이 대출 승인을 보장하지 않으며,<br>심사 결과에 따라 제한될 수 있습니다.</p>
+    </section>
+
+    <div class="cards">
+      <img class="gift-box" src="https://www.sirjuseyo.com/monthly-loan/2026-10/assets/Basket-Maple_Oct-Loan.png" alt="">
+      <div class="main-card">
+        <div class="main-tag">☀️ 이달의 대출</div>
+        <div class="main-title">🔟🈷️ 낭만가득 🍂가을</div>
+        <div class="main-sub">이벤트 · 웨이팅 · 롸잇나우</div>
+        <a class="main-btn" href="https://www.sirjuseyo.com/monthly-loan/2026-10/">신청하기 →</a>
+      </div>
+      <div class="checker-card">
+        <div class="checker-header">
+          <div class="checker-icon">🔍</div>
+          <div>
+            <div class="checker-name">대출 가능성 검사기</div>
+            <div class="checker-desc">내가 받을 수 있는지 확인해봐.</div>
+          </div>
+        </div>
+        <a class="checker-btn" href="https://www.sirjuseyo.com/tip/loan-checker/">검사 시작하기 →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="grad-bar"></div>
+  </div>
+</div>
+</body>
+</html>
