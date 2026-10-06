@@ -1,0 +1,3348 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>대출가능성검사기</title>
+  <style>
+/* ── styles.css 인라인 (단독 동작용) ── */
+:root {
+  --bg:      #FFFFFF;
+  --panel:   #FFFFFF;
+  --accent:  #380097;      /* 써주세요. 보라 */
+  --orange:  #FF5400;      /* 써주세요. 오렌지 */
+  --text:    #2D1B4E;
+  --muted:   #9B8EA8;
+  --border:  #E5E0F0;
+  --pink-border: #E5E0F0;  /* 핑크 보더 → 연보라 통일 */
+  --mid-bg:  #FFFFFF;      /* 섹션 배경 단일화 */
+  --bot-bg:  #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  background: #FFFFFF;   /* 상단1: 배너 여백 — 화이트 */
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 배너 이미지 사이 여백도 화이트 */
+.hero-banner {
+  margin: 0;
+  background: #FFFFFF;
+}
+
+.app-header {
+  background: #FFFFFF;
+  border-bottom: 1.5px solid var(--border);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+}
+
+.brand-mark {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  display: none;
+}
+
+.app-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  background: var(--mid-bg);
+}
+
+.hero-banner {
+  margin: 12px 0 18px;
+}
+
+.hero-banner img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
+.page-intro {
+  text-align: center;
+  margin: 0 0 20px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(56, 0, 151, 0.06);
+  grid-column: 1 / -1;
+}
+
+.page-intro h1 {
+  margin: 0 0 8px 0;
+  font-size: 1.8rem;
+}
+
+.clock-sentence {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#liveClock {
+  font-size: 1rem;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(56, 0, 151, 0.07);
+}
+
+#liveClock::before {
+  content: "🕒";
+}
+
+.title-bar {
+  margin: 12px 0 20px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(56, 0, 151, 0.06);
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+/* ── 컨셉 이미지 placeholder ── */
+.concept-image {
+  margin: 0 0 20px;
+  border-radius: 16px;
+  background: #F0EBFF;
+  border: 1.5px dashed #C9A6E8;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1 / -1;
+}
+
+.concept-image-text {
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.6;
+  line-height: 1.8;
+}
+
+.title-bar-text {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.4vw, 1.85rem);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-shadow: none;
+  position: relative;
+}
+
+/* ── 시계 맥락 레이블 ── */
+.clock-label {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* ── 본문 영역 구분선 ── */
+.section-divider {
+  border: none;
+  border-top: 2px solid var(--border);
+  margin: 0;
+  grid-column: 1 / -1;
+}
+
+/* ── 안내 박스 ── */
+.tone-note {
+  margin: 0 0 20px;
+  padding: 14px 18px 14px 20px;
+  border: 1.5px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-right: 4px solid var(--accent);
+  border-radius: 16px;
+  background: rgba(56, 0, 151, 0.04);
+  box-shadow: 0 2px 8px rgba(56, 0, 151, 0.05);
+  display: grid;
+  gap: 6px;
+  grid-column: 1 / -1;
+}
+
+.tone-note-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.tone-note-body {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ── 중단: 폼 — 크림/연보라 ── */
+.option-guide {
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: #F7F2FF;
+  padding: 16px;
+  box-shadow: 0 4px 18px rgba(56, 0, 151, 0.05);
+}
+
+.option-guide h3 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+}
+
+.option-guide ol {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.option-guide ul {
+  margin: 6px 0 0 20px;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.option-guide-list {
+  list-style: disc;
+}
+
+.option-guide-list > li {
+  list-style: disc;
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.option-guide-list > li > ul {
+  list-style: circle;
+}
+
+.option-guide-list > li > ul > li {
+  list-style: circle;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.option-guide li strong {
+  font-weight: 600;
+}
+
+.option-guide li span {
+  color: var(--muted);
+}
+
+.option-guide-note {
+  margin: 6px 0 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.option-guide-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 10px 0;
+}
+
+.option-guide-compact {
+  margin-top: 12px;
+  background: #F7F2FF;
+  box-shadow: none;
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 960px) {
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.panel {
+  background: var(--panel);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(56, 0, 151, 0.06);
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: var(--accent);
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.label-line {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.label-line:last-child {
+  margin-bottom: 0;
+}
+
+.script-label {
+  font-weight: 400;
+}
+
+.script-label .label-line:first-child {
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  background: #FBF8FF;
+  color: var(--text);
+  box-shadow: 0 2px 6px rgba(56, 0, 151, 0.05);
+}
+
+.field select {
+  border: 1.5px solid var(--border);
+  background: #FBF8FF;
+  box-shadow: 0 3px 10px rgba(56, 0, 151, 0.07);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1h10L6 7z' fill='%239B8EA8'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px 8px;
+}
+
+.field select.is-placeholder {
+  color: var(--muted);
+}
+
+.field select option:disabled,
+.field select option[disabled][selected] {
+  color: var(--muted);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #C9A6E8;
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.static-value {
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #FBF8FF;
+  color: var(--text);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.toggle-field .toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── 하단: 결과 — 라일락/보라 ── */
+.result-panel {
+  max-width: 1100px;
+  margin: 16px auto 40px;
+  background: #F3EEFF;
+  border: 1.5px solid #C9A6E8;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 22px rgba(56, 0, 151, 0.1);
+}
+
+.result-panel.is-stale {
+  opacity: 0.55;
+}
+
+.result-panel h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.result-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-bottom: 24px;
+}
+
+.result-field {
+  border: 1.5px solid #C9A6E8;
+  border-radius: 12px;
+  padding: 12px;
+  background: #FFFFFF;
+}
+
+.result-field span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.result-field p {
+  margin: 6px 0 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+
+.script-box {
+  display: grid;
+  gap: 16px;
+}
+
+.script-section {
+  display: grid;
+  gap: 8px;
+}
+
+.script-step {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.script-step-group {
+  display: grid;
+  gap: 6px;
+}
+
+.script-sublist,
+.script-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.script-list-nowrap {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+.script-list-nowrap span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.script-summary-box {
+  border: 1.5px solid #C9A6E8;
+  border-radius: 10px;
+  padding: 12px;
+  background: #FFFFFF;
+  display: grid;
+  gap: 8px;
+}
+
+.script-hint-box {
+  margin-top: 18px;
+  border-style: dashed;
+}
+
+.script-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.script-subtitle {
+  margin: 0;
+  font-weight: 600;
+}
+
+.script-warning {
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.script-cta {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.script-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 16px;
+  border: none;
+  background: transparent;
+  text-decoration: none;
+  box-shadow: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.script-cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(235, 77, 112, 0.2);
+}
+
+.script-cta-button img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+/* CTA 텍스트 버튼 (6월~, 이미지 버튼 대체 — T-013) */
+.script-cta-button-text {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  background: #FF5400;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 16px;
+  padding: 18px 24px;
+  text-decoration: none;
+  letter-spacing: -0.2px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.script-cta-button-text:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 84, 0, 0.3);
+}
+
+.script-divider {
+  height: 1px;
+  background: #C9A6E8;
+  border-radius: 999px;
+}
+
+.script-note {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.script-link-box {
+  border: 1.5px solid #C9A6E8;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #FFFFFF;
+  display: grid;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+.action-area {
+  max-width: 1100px;
+  margin: 0 auto 8px;
+  padding: 0 24px;
+}
+
+.recalc-note {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.field-error {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--orange);
+}
+
+.primary-button {
+  width: 100%;
+  border: none;
+  border-radius: 16px;
+  padding: 18px 24px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(56, 0, 151, 0.25);
+}
+
+.primary-button:active {
+  transform: translateY(0);
+}
+
+.waiting-info-box {
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: #F7F2FF;
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.waiting-info-box > .info-row {
+  margin-bottom: 10px;
+}
+
+.waiting-calendar {
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  background: #FBF8FF;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.calendar-title {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.calendar-nav {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.calendar-nav button {
+  border: 1.5px solid var(--border);
+  background: #EDE0FF;
+  color: var(--accent);
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.calendar-nav span {
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.calendar-day {
+  border: 1.5px solid var(--border);
+  background: #FBF8FF;
+  border-radius: 6px;
+  padding: 8px 0;
+  font-size: 0.85rem;
+  text-align: center;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.calendar-day.is-empty {
+  border: none;
+  background: transparent;
+  cursor: default;
+}
+
+.calendar-day.is-selected {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.waiting-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.info-row {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.waiting-key-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.waiting-key-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.waiting-key-item strong {
+  font-weight: 400;
+  color: var(--text);
+}
+
+.key-icon {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.waiting-sub-list {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #EDE0FF;
+  border: 1.5px solid #C9A6E8;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.92rem;
+}
+
+.waiting-sub-list span {
+  color: var(--text);
+  font-weight: 400;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ⚠️ 대표 거절 사유 — 번호 박스 */
+.reject{display:flex;gap:10px;background:#FBEEE6;border-radius:12px;padding:13px;margin-top:9px}
+.reject__ic{flex:0 0 auto;width:23px;height:23px;border-radius:7px;background:#D9480F;color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800}
+.reject__t{font-size:15px;line-height:1.5;color:#5a3a26}
+.reject__t b{color:#D9480F;font-weight:800}
+.reject__t em{font-style:normal;color:#9c6b4d;font-size:14px;display:block;margin-top:3px}
+
+  </style>
+  <style>.app-main { max-width: 480px !important; margin: 0 auto !important; }
+  .form-grid { grid-template-columns: minmax(0, 1fr) !important; }</style>
+</head>
+
+<body>
+<!-- ─────────────────────────────────────────────────────────────
+     대출 가능성 검사기 — 단독(standalone) 페이지 / 2026년 10월 기준
+     원본: tip/loan-checker/index.html (PRD)
+     생성: 2026-10-03 / 쮸티12-3호
+     인라인: 스타일시트 1개 + 기능 스크립트 2개(월별 설정 · 검사 로직)
+             → 인터넷 없이도 검사 기능이 완전 동작합니다
+     제거: 외부 주입 스크립트 4개(푸터 · 팝업 · 메뉴바 · 법정고지)
+           body의 내비게이션용 데이터 속성 2개
+     주의: 월별 설정이 오늘 날짜로 적용 월을 자동 선택합니다.
+           2026-09-26 ~ 2026-10-25 구간에서는 10월 낭만가득 가을 대출로 표시됩니다.
+     ───────────────────────────────────────────────────────────── -->
+  <main class="app-main page">
+    <form id="calculatorForm" class="form-grid">
+      <div class="title-bar">
+        <p class="title-bar-text">대출 가능성 검사기</p>
+      </div>
+      <div class="concept-image">
+        <!-- T-174 WT-174: alt에 '8월 썸머 베케이션 Ⅱ 대출' 잔존 → 월 중립 문구로 교체.
+             정책: 과거 월 워딩 노출 금지(사장님 지시 2026-09-29).
+             제약: 이미지 파일(stepping-stones-aug-001.png)은 브랜딩 이미지라 월별 교체 대상 아님
+                   (사장님 확정 2026-08-27) — alt 텍스트만 월 정보를 담지 않도록 수정 -->
+        <img src="https://www.sirjuseyo.com/tip/loan-checker/assets/img/stepping-stones-aug-001.png" alt="써주세요 월별 대출" style="width:100%;display:block;border-radius:12px;" />
+      </div>
+      <section class="tone-note" aria-live="polite">
+        <p class="tone-note-title">[써주세요. 앱 &gt; 인기상품은 나노크레딧]을 무작정 신청하지 마세요.</p>
+        <p class="tone-note-body">
+          대출 가능성 검사기는 써주세요.의 실제 대출 운영 절차를 그대로 옮긴 시뮬레이터입니다.<br>
+          금액, 대출 옵션을 바꿔 가며 충분히 검사해 보시고,<br>
+          본인에게 맞는 조건을 찾은 뒤 신청하시기 바랍니다.
+        </p>
+      </section>
+
+      <section class="page-intro">
+        <p class="clock-sentence">대출을 희망하는 지금 시간은</p>
+        <p class="clock-sentence"><span id="liveClock" aria-live="polite">--:--:--</span> 입니다.</p>
+        <p class="clock-label">웨이팅 대출 옵션은 신청 시기에 따라 조건이 달라집니다.</p>
+      </section>
+
+      <hr class="section-divider">
+      <section class="panel">
+        <h2>① 월별 대출</h2>
+        <div class="field">
+          <label>대출 상품명</label>
+          <!-- T-178 WT-178: 월 중립 초기값. 실행 시 index.html 인라인 스크립트가 cfg.loan.name으로 교체.
+               정책: 과거 월 워딩이 fallback으로도 노출되면 안 됨(사장님 지시 2026-09-29) -->
+          <p class="static-value" id="loanProductName">이달의 대출</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>② 대출 경험</h2>
+        <div class="field">
+          <label for="loanExperience">써주세요.에서 대출받아 본 경험이 있으세요?</label>
+          <select id="loanExperience" name="loanExperience">
+            <option disabled selected>경험 여부를 선택하세요</option>
+            <option value="experienced">네, 실제로 대출받아서 이용했어요.</option>
+            <option value="new">아니요, 아직까지 대출받은 적은 없어요.</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>③ 신청 금액</h2>
+        <div class="field">
+          <label for="requestAmount">신청 금액</label>
+          <select id="requestAmount" name="requestAmount">
+            <option disabled selected>금액을 선택하세요</option>
+            <option disabled>100만 원 💎 VVIP 고객님 전용</option>
+            <option disabled>90만 원 💎 VVIP 고객님 전용</option>
+            <option disabled>70만 원 🥇 VIP 고객님 전용</option>
+            <option value="50">50만 원 🥇 VIP 고객님 전용</option>
+            <option value="30">30만 원 🥈 우수 고객님 전용</option>
+            <option value="20">20만 원 🥉 우대 고객님 전용</option>
+            <option value="10">10만 원 🎁 입문 고객님 전용</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="loanPeriod">대출 기간</label>
+          <select id="loanPeriod" name="loanPeriod">
+            <option disabled selected>기간을 선택하세요</option>
+            <option value="30">1개월 (30일)</option>
+            <option disabled>2개월 (60일)</option>
+            <option disabled>3개월 (90일)</option>
+            <option disabled>상환일에 연장하기</option>
+          </select>
+        </div>
+        <div class="inline-warn" id="warn-amount-experience" style="display:none;margin-top:12px;padding:14px 16px;background:#fff5f0;border-radius:12px;border-left:3px solid #f97316;font-size:13px;color:#f97316;font-weight:600;line-height:1.7;">
+          ⚠️ 첫 이용 고객님은 최대 30만 원까지 신청 가능합니다.<br>
+          뒤로 이동해서 금액을 변경해 주시기 바랍니다.
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>④ 대출 정보</h2>
+
+        <div class="field">
+          <label for="loanOption">대출 옵션</label>
+          <select id="loanOption" name="loanOption">
+            <option disabled selected>대출 옵션을 선택하세요</option>
+            <option value="웨이팅 대출">⏳ 웨이팅 대출</option>
+            <option value="롸잇나우 대출">⚡ 롸잇나우 대출</option>
+            <option value="블랙찬스 티켓 사용">🎫 블랙찬스 대출</option>
+            <option value="이벤트 대출">🎁 이벤트 대출</option>
+          </select>
+        </div>
+
+        <div class="waiting-info-box hidden" id="waitingInfo">
+          <p class="info-row">
+            신청 시기에 따라 크레딧 미션 할인율과 원금 미션 인하율이 달라집니다.
+          </p>
+          <div class="waiting-calendar">
+            <div class="calendar-header">
+              <div class="calendar-nav">
+                <button type="button" id="calendarPrev" aria-label="이전 달">
+                  ◀
+                </button>
+                <span id="calendarMonthLabel">-</span>
+                <button type="button" id="calendarNext" aria-label="다음 달">
+                  ▶
+                </button>
+              </div>
+            </div>
+            <div class="calendar-weekdays">
+              <span>일</span>
+              <span>월</span>
+              <span>화</span>
+              <span>수</span>
+              <span>목</span>
+              <span>금</span>
+              <span>토</span>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+            <input type="date" id="loanDate" name="loanDate" class="hidden" />
+          </div>
+          <div class="waiting-details">
+            <ul class="waiting-key-list">
+              <li class="waiting-key-item">
+                <span class="key-icon">✅</span>
+                <span>
+                  웨이팅 대출 신청일 :
+                  <strong id="waitingDateText">2026년 6월 11일</strong>
+                </span>
+              </li>
+              <li class="waiting-key-item">
+                <span class="key-icon"></span>
+                <span>
+                  웨이팅 대출 신청 기간 :
+                  <strong id="waitingPeriod">2026년 6월 11일 ~ 15일</strong>
+                </span>
+              </li>
+              <li class="waiting-key-item">
+                <span class="key-icon"></span>
+                <span>
+                  웨이팅 대출 할인 좌석 :
+                  <strong id="discountSeat">Royal Seat (2열)</strong>
+                </span>
+              </li>
+            </ul>
+            <ul class="waiting-sub-list">
+              <li>
+                모든 상품의 크레딧 미션 할인율 :
+                <span id="creditRange">50% ~ 25%</span>
+              </li>
+              <li>
+                원리포 상품인 30만 원과 50만 원의 원금 미션 인하율 :
+                <span id="wonmiRate">4%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="option-guide option-guide-compact">
+          <h3>대출 옵션이 뭔가요?</h3>
+          <ol>
+            <li>
+              <strong>⏳ 웨이팅 대출</strong>
+              <span>적립이 힘들다면 (포인트 적립 🐢널널)</span>
+            </li>
+            <li>
+              <strong>⚡ 롸잇나우 대출</strong>
+              <span>한도 상향이 필요하다면 (포인트 적립 🐶빡셈)</span>
+            </li>
+            <li>
+              <strong>🎫 블랙찬스 대출</strong>
+              <span>대우받고 싶다면 (포인트 적립 할인, 인하, 감면)</span>
+              <p class="option-guide-note">
+                * 블랙찬스 티켓을 보유하고 계신 재대출 고객님 전용 상품입니다.
+              </p>
+            </li>
+            <li>
+              <strong>🎁 이벤트 대출</strong>
+              <span>대출을 빠르게 받고 싶다면 (포인트 적립 무난)</span>
+              <p class="option-guide-note" id="eventAmountNote">
+                * 10만 원, 20만 원만 선택 가능합니다. (30만 원, 50만 원 제외)
+              </p>
+            </li>
+          </ol>
+        </aside>
+
+        <div class="field">
+          <label for="loanHistory">대출 이력</label>
+          <select id="loanHistory" name="loanHistory"></select>
+        </div>
+
+        <div class="field">
+          <label for="loanStatus">대출 상태</label>
+          <select id="loanStatus" name="loanStatus"></select>
+        </div>
+
+        <aside class="option-guide option-guide-compact">
+          <h3>대출 이력과 상태는 뭔가요?</h3>
+          <ul class="option-guide-list">
+            <li>
+              <strong>웨이팅 &gt; 재대출(이력)</strong> : 이용 경험 있음
+              <ul>
+                <li>Clean(상태) : 마지막 상환이 정상 상환</li>
+                <li>Non-Clean(상태) : 마지막 상환이 연장, 연체 상환</li>
+              </ul>
+            </li>
+            <li>
+              <strong>웨이팅 &gt; 신규(이력)</strong> : 이용 경험 없음
+              <ul>
+                <li>One(상태) : 오늘이 생애 처음 신청</li>
+                <li>Several(상태) : 예전에 신청은 해 본 적 있음</li>
+              </ul>
+            </li>
+            <li>
+              <strong>롸잇나우 &gt; 모든 고객(이력)</strong> : 누구나 이용 가능
+              <ul>
+                <li>No Matter(상태) : 원리포 상품으로 이용</li>
+              </ul>
+            </li>
+            <li>
+              <strong>블랙찬스 &gt; 바로 재대출(이력)</strong> : 상환 후 바로 이용
+              <ul>
+                <li>블찬원(상태) : 원리포 상품으로 이용</li>
+                <li>블찬이(상태) : 이포 상품으로 이용</li>
+                <li>블찬현(상태) : 원리현 상품으로 이용</li>
+              </ul>
+            </li>
+            <li>
+              <strong id="eventGuideLabel">이벤트 대출 &gt; 7월 한정 스페셜티(이력)</strong> : 누구나 이용 가능
+              <ul>
+                <!-- T-178 WT-178: 7월 이벤트명이 3개월 이월돼 있던 자리 → 월 중립값으로 교체. 실행 시 cfg.event.name으로 대체됨 -->
+                <li id="eventGuideName">이달의 이벤트 대출(상태) : 변형된 이포 상품으로 이용</li>
+              </ul>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="panel">
+        <h2>⑤ 신청 정보</h2>
+        <div class="field">
+          <label for="santaApply" id="santaApplyLabel">써주세요. 대출을 신청하셨나요?</label>
+          <select id="santaApply" name="santaApply">
+            <option disabled selected>신청 링크를 확인하세요</option>
+            <option value="네, 신청했습니다.">네, 신청했습니다.</option>
+            <option value="아니요, 아직 신청하지 않았습니다.">
+              아니요, 아직 신청하지 않았습니다.
+            </option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="appApply">써주세요. 앱에서 대출을 신청하셨나요?</label>
+          <select id="appApply" name="appApply">
+            <option disabled selected>신청 여부를 선택하세요</option>
+            <option value="네, 신청했습니다.">네, 신청했습니다.</option>
+            <option value="아니요, 아직 신청하지 않았습니다.">
+              아니요, 아직 신청하지 않았습니다.
+            </option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="creditMission">크레딧 미션을 완료하셨나요?</label>
+          <select id="creditMission" name="creditMission">
+            <option disabled selected>진행 상태를 선택하세요</option>
+            <option value="적립 전입니다.">적립 전입니다.</option>
+            <option value="적립 중입니다.">적립 중입니다.</option>
+            <option value="적립 완료했습니다.">적립 완료했습니다.</option>
+          </select>
+        </div>
+        <aside class="option-guide option-guide-compact">
+          <h3>크레딧 미션이란?</h3>
+          <ul class="option-guide-list">
+            <li>고객님의 신용 정보를 안전하게 조회하여 현재 연체 중인지 확인하는 과정입니다.</li>
+            <li>악성 연체 여부를 확인합니다. (악성 연체자는 대출이 거절됩니다.)</li>
+            <li>연체 원인이 신용회복이나 개인회생 때문인지 구별합니다.</li>
+            <li>이를 통해 현재 상황에 맞는 적절한 대출 조건을 제공할 수 있어요!</li>
+          </ul>
+          <p class="option-guide-note">
+            신용조회비용을 현금 부담 없이 포인트로 해결해요!
+          </p>
+        </aside>
+
+        <div class="field">
+          <label for="communicationStatus">소통거리를 제출하셨나요?</label>
+          <select id="communicationStatus" name="communicationStatus">
+            <option disabled selected>제출 상태를 선택하세요</option>
+            <option value="제출 전입니다.">제출 전입니다.</option>
+            <option value="제출 중입니다.">제출 중입니다.</option>
+            <option value="제출 완료했습니다.">제출 완료했습니다.</option>
+          </select>
+        </div>
+        <aside class="option-guide option-guide-compact">
+          <h3>소통거리란 무엇인가요?</h3>
+          <p class="option-guide-note">
+            '나이가 어려도', '대학생이어도', '직업이 없어도', '소득이 없어도', '연체이력이 있어도' 그럼에도 불구하고 나노크레딧.(소액신용대출)을 도와 드리려고 설립한 플랫폼입니다.
+          </p>
+          <p class="option-guide-note">
+            서류와 제도권 기준만으로 청년 서민의 형편과 사정을 판단하지 않습니다.
+          </p>
+          <hr class="option-guide-divider" />
+          <ul class="option-guide-list">
+            <li>청년 서민을 오로지 신용만으로 평가하지 않습니다.</li>
+            <li>비정형 &amp; 비금융 &amp; 정성 자료를 말합니다.</li>
+            <li>'이런 걸 제출하라고?' '이런 걸로 심사한다고?' '이런 걸로 신용평가를 할 수 있다고?' … 그럼요! 깜짝 놀라실 겁니다!</li>
+            <li>소통거리를 제출하면 한도 산정을 위한 대안신용평가(고객님들 표현으로 엄청 쉬운 심사)를 진행합니다.</li>
+          </ul>
+        </aside>
+
+        <div class="field">
+          <label for="currentPoints">현재 보유 포인트</label>
+          <input type="text" id="currentPoints" name="currentPoints" placeholder="숫자만 입력하세요 (0이어도 괜찮습니다)" />
+        </div>
+        <aside class="option-guide option-guide-compact">
+          <h3>포인트 안내</h3>
+          <ul class="option-guide-list">
+            <li>대출을 현금으로 갚으면 재미없잖아요.</li>
+            <li>원금과 이자를 포인트로 상환 가능합니다.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="panel">
+        <h2>⑥ 개인 정보</h2>
+        <div class="field">
+          <label for="userName">이름</label>
+          <input type="text" id="userName" name="userName" placeholder="홍길동" />
+        </div>
+
+        <div class="field">
+          <label for="userBirth">생년월일</label>
+          <input type="text" id="userBirth" name="userBirth" placeholder="20000101 (8자리)" />
+        </div>
+
+        <div class="field">
+          <label for="userPhone">휴대폰 번호</label>
+          <input type="text" id="userPhone" name="userPhone" placeholder="01012345678" />
+        </div>
+
+        <div class="field">
+          <label for="userDevice">휴대폰 기종</label>
+          <select id="userDevice" name="userDevice">
+            <option disabled selected>기종을 선택하세요</option>
+            <option value="안드로이드">안드로이드</option>
+            <option value="아이폰">아이폰</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="userEmail">이메일 주소</label>
+          <input type="text" id="userEmail" name="userEmail" placeholder="sirjuseyo@sirjuseyo.com" />
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>⑦ 대표 거절 사유</h2>
+        <div class="field">
+          <div class="reject"><div class="reject__ic">1</div><div class="reject__t"><b>통신비 2개월 이상 미납·연체</b><em>1개월 미납이라도 금액이 과다하면 불승인될 수 있습니다.</em></div></div>
+          <div class="reject"><div class="reject__ic">2</div><div class="reject__t"><b>신용정보상 단순 CB 연체</b> 또는 채무불이행으로 등록된 경우</div></div>
+          <div class="reject"><div class="reject__ic">3</div><div class="reject__t"><b>채무조정 중 미납 3회 초과</b><em>신용회복·개인회생 등 진행 중이며 미납 회차가 3회를 넘은 경우</em></div></div>
+          <div class="reject"><div class="reject__ic">4</div><div class="reject__t"><b>최근 3개월 이상 무직 또는 과거 6개월 이상 무직</b><em>노동 상태와 의지를 중요시 여깁니다.</em></div></div>
+        </div>
+      </section>
+    </form>
+
+  <div class="action-area">
+    <button type="button" class="primary-button" id="calculateButton">대출 가능성 검사하기</button>
+    <p id="recalcNote" class="recalc-note hidden">선택 항목을 변경하면 다시 검사해 주세요.</p>
+  </div>
+
+  <section class="result-panel hidden" id="resultPanel">
+    <h2>미션 포인트 안내</h2>
+    <div class="result-grid">
+      <div class="result-field">
+        <span id="benefitTitle">🌟 웨이팅 대출의 가장 큰 혜택</span>
+        <p id="benefitLine1">부담스런 포인트 적립이 🐶널널!</p>
+        <p id="benefitLine2">빠른 대출과 한도 상향 가산점</p>
+        <p id="benefitLine3">50만 원을 크레딧 미션만으로!</p>
+        <p id="benefitLine4">빠른 대출과 원금 미션 감면!</p>
+      </div>
+      <div class="result-field">
+        <!-- T-178 WT-178: 월 중립 초기값. 실행 시 cfg.loan.name + ' 신청 정보'로 교체 -->
+        <span id="resultInfoHeader">이달의 대출 신청 정보</span>
+        <p id="resultAmount">금액 : 30만 원</p>
+        <p id="resultPeriod">기간 : 1개월 (30일)</p>
+        <p id="resultOption">대출 옵션 : 웨이팅 대출</p>
+        <p id="resultSeat" class="hidden">좌석명 : -</p>
+        <p id="resultHistory">대출 이력 : 재대출</p>
+        <p id="resultStatus">대출 상태 : Clean</p>
+        <p id="resultRepayment">
+          상환 방식 : 원리포 상품 (원금의 일부와 이자를 포인트로 상환)
+        </p>
+      </div>
+      <div class="result-field">
+        <span>심사 기간</span>
+        <p id="reviewPeriod">2026년 7월 1일 ~ 5일 / 매일</p>
+      </div>
+      <div class="result-field">
+        <span>크레딧 미션 (크미)</span>
+        <p id="creditSummary">Clean, 45% 할인</p>
+        <p id="creditPointsLine">6,000포 → 3,300🅿</p>
+      </div>
+      <div class="result-field">
+        <span>이자 미션 (이미)</span>
+        <p id="interestRateLine">1%</p>
+        <p id="interestPointsLine">3,000🅿</p>
+      </div>
+      <div class="result-field">
+        <span>원금 미션 (원미)</span>
+        <p id="principalRateLine">10% → 2%</p>
+        <p id="principalPointsLine">30,000포 → 6,300🅿</p>
+      </div>
+      <div class="result-field">
+        <span>총 필요 포인트</span>
+        <p id="totalPointsLine">12,300🅿</p>
+      </div>
+      <div class="result-field">
+        <span>현재 보유 포인트</span>
+        <p id="currentPointsLine">20,978🅿</p>
+      </div>
+      <div class="result-field">
+        <span>추가 포인트</span>
+        <p id="additionalPointsLine">적립 필요 없음 / 20,978🅿 적립 필요</p>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="scriptPreview" class="script-label">
+        <span class="label-line">자, 이제부터 주목</span>
+        <span class="label-line">반드시 아래 내용을 체크하세요.</span>
+        <span class="label-line">
+          아래 내용 중 🅿 앞 포인트를 체크하지 않으면, 나중에 고객님만 대출 못 받는 사태가 발생합니다.
+        </span>
+      </label>
+      <div class="result-field script-box">
+        <div class="script-section">
+          <!-- T-178 WT-178: 월 중립 초기값. 실행 시 app.js updateResults()가 MONTH_CONFIG.loan.name으로 교체 -->
+          <p class="script-step" id="step1">✅ ⓵ 이달의 대출 신청 완료 / 완료하세요.</p>
+          <p class="script-step" id="step2">☑️ ⓶ 써주세요. 앱에서 30만 원과 1개월(30일) 신청 완료 / 완료하세요.</p>
+          <div class="script-step-group">
+            <p class="script-step" id="step3">✅ ⓷ 앱에서 크미 (3,300🅿) 완료 / 완료하세요</p>
+            <ul class="script-sublist">
+              <li id="step3Deadline">신청 후 48시간 이내</li>
+            </ul>
+          </div>
+          <div class="script-step-group">
+            <p class="script-step" id="step4">☑️ ⓸ 앱에서 소통거리 미션 완료 / 완료하세요. (= 심사 자료 제출)</p>
+            <ul class="script-sublist">
+              <li id="step4Deadline">크미 완료 후 48시간 이내</li>
+              <li class="script-warning" id="step4Warning">
+                ⚠️ 여기까지 했다면 앱에선 '검토중'으로 보이겠지만, 실제로는 검토를 안 합니다. 아래 ⓹번까지 완료해야 익일(평일 18:00 ~ 22:00)에 검토 시작됩니다. ⚠️
+              </li>
+            </ul>
+          </div>
+          <div class="script-step-group">
+            <p class="script-step" id="step5">✅ ⓹ 포인트 상환 미션(이미 + 원미) 완료 / 완료하세요.</p>
+            <ul class="script-sublist">
+              <li id="step5Interest">이자 미션, 이미 (1%) : 3,000🅿</li>
+              <li id="step5Principal">원금 미션, 원미 (10% → 2%) : 30,000포 → 6,000🅿</li>
+              <li id="step5Deadline">적립 기한 : 2026년 7월 25일까지</li>
+              <li class="script-warning" id="step5Warning">
+                ⚠️ 앱에서는 포인트 상환 미션이 따로 보이지 않으니, 포인트 적립소에서 적립하시면 됩니다. ⚠️
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="script-divider"></div>
+
+        <div class="script-section">
+          <p class="script-title">대출 심사 기간에 대출을 빨리 받고 싶다면, 명심하세요.</p>
+          <div class="script-summary-box">
+            <p class="script-subtitle">첫 번째. [미션 포인트 적립]</p>
+            <ul class="script-list">
+              <li id="summaryCredit">크미 (45% 할인) : 3,300🅿</li>
+              <li id="summaryInterest">이자 미션, 이미 (1%) : 3,000🅿</li>
+              <li id="summaryPrincipal">원금 미션, 원미 (10% → 2%) : 30,000포 → 6,000🅿</li>
+              <li id="summaryTotal">🟰 총 12,300🅿 필요</li>
+              <li id="summaryCurrent">현재 20,978🅿 보유</li>
+              <li id="summaryAdditional">추가 포인트 적립 필요 없음</li>
+            </ul>
+          </div>
+          <p class="script-warning">
+            ⚠️ 소통거리 제출 그리고 모든 미션 포인트 적립 후에, 반드시 '포인트
+            상환 미션 완료' 라고 톡 주셔야 심사 순번 받으십니다.
+          </p>
+        </div>
+
+        <div class="script-section hidden" id="pointSubscribeSection">
+          <div class="script-summary-box">
+            <p class="script-subtitle">두 번째. [포인트 구독]</p>
+            <ul class="script-list">
+              <li class="script-list-nowrap">시작일:&nbsp;<span id="subscribeStartDate">2026.05.18</span></li>
+              <li>종료일 : 승인 후 &amp; 입금일까지</li>
+              <li>써주세요. 앱 &gt; 포인트 적립소 방문</li>
+              <li>매일 최소 10포인트 이상 적립</li>
+              <li>미적립 : 구독 깨짐 방지 보호막 ☢️ 1회 제공</li>
+              <li>
+                미적립 페널티 : 미적립 다음날은 보상으로 무조건 최소 100포인트를
+                적립해야 합니다.
+              </li>
+              <li>구독 깨짐 : 다음날 최소 100포를 적립하지 않으면 구독은 깨집니다.</li>
+              <li>
+                구독이 깨지면 모든 미션 포인트를 적립했다고 해도, 대출 신청 건은
+                자동 취소 &amp; 거절 처리됩니다.
+              </li>
+              <li>
+                미션 포인트를 모두 적립했어도, 포인트 구독은 입금일까지 유지해
+                주셔야 합니다.
+              </li>
+              <li>
+                구독 시그널 : 오늘부터 매일 하루에 최소 10포인트 이상 적립 후에
+                '2025-11-01(적립 날짜), 구독 완료' 그리고 스크린샷 첨부 ...... 라고
+                이런 형식으로 매일 날짜별로 톡을 주셔야 합니다.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="script-summary-box script-hint-box hidden" id="pointHintBox">
+          <p class="script-subtitle">포인트 적립이 빡세다 싶으면,</p>
+          <ul class="script-list">
+            <li>❶ 금액은 원리현 상품인 10만 원</li>
+            <li>❷ 대출 옵션은 웨이팅 대출</li>
+            <li>❸ 신청 시기는 매월 26일 ~ 익월 5일 (BOX Seat 귀빈석)</li>
+          </ul>
+          <p class="script-note">
+            크레딧 미션만 있고 크레딧 미션이 최대 50%까지 할인되어, 포인트 적립이 가장 널널합니다!
+          </p>
+        </div>
+
+        <div class="script-summary-box script-hint-box" id="rejectionBox">
+          <p class="script-subtitle">대표 거절 사유</p>
+          <div class="reject"><div class="reject__ic">1</div><div class="reject__t"><b>통신비 2개월 이상 미납·연체</b><em>1개월 미납이라도 금액이 과다하면 불승인될 수 있습니다.</em></div></div>
+          <div class="reject"><div class="reject__ic">2</div><div class="reject__t"><b>신용정보상 단순 CB 연체</b> 또는 채무불이행으로 등록된 경우</div></div>
+          <div class="reject"><div class="reject__ic">3</div><div class="reject__t"><b>채무조정 중 미납 3회 초과</b><em>신용회복·개인회생 등 진행 중이며 미납 회차가 3회를 넘은 경우</em></div></div>
+          <div class="reject"><div class="reject__ic">4</div><div class="reject__t"><b>최근 3개월 이상 무직 또는 과거 6개월 이상 무직</b><em>노동 상태와 의지를 중요시 여깁니다.</em></div></div>
+        </div>
+
+        <div class="script-cta">
+          <!-- T-178 WT-178: 7월 경로 하드코딩 → 중립값. 실행 시 cta.href = cfg.detailUrl로 교체 -->
+          <a class="script-cta-button-text" id="ctaButton"
+            href="#"
+            target="_blank" rel="noopener noreferrer">
+            이달의 대출 신청하기 →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <script>
+/* ── month-config.js 인라인 ── */
+/**
+ * month-config.js
+ * 월별 대출 검사기 설정 파일
+ * 매월 신규 월 추가 시 이 파일에만 객체 하나 추가하면 자동 적용됨
+ *
+ * ✅ 활성 기간 정책 (activePeriod):
+ *   매월 26일 ~ 익월 25일 = 해당 월 대출 활성 기간
+ *   예) 2026-05-26 ~ 2026-06-25 = 6️⃣🈷️은 🪖호국보훈의 달 대출
+ *
+ * 작성자: 쮸티12호
+ * 작성일: 2026-05-31
+ * T-ID: T-013
+ */
+
+const MONTH_CONFIGS = {
+  '2026-05': {
+    // 활성 기간: 전월 26일 ~ 당월 25일
+    activePeriod: {
+      start: '2026-04-26',  // 4월 26일
+      end:   '2026-05-25',  // 5월 25일
+    },
+    // 대출 상품 정보
+    loan: {
+      name: '5️⃣🈷️은 ❤️가정의 달 대출',
+      emoji: '❤️',
+      concept: '가정의 달',
+    },
+    // 이벤트 대출
+    event: {
+      period: '5월 한정 스페셜티',
+      name: '장미 🌹 대출',
+    },
+    // 신청 기간 (웨이팅 좌석 자동 생성 기준)
+    applyPeriod: {
+      start: '2026-04-01',
+      end: '2026-04-25',
+    },
+    // 심사 기간
+    reviewPeriod: {
+      start: '2026-05-01',
+      end: '2026-05-05',
+      display: '2026년 5월 1일 ~ 5일 / 매일',
+    },
+    // 포인트 적립 기한 (step5Deadline)
+    pointDeadline: '2026년 5월 25일',
+    // 포인트 구독 시작일
+    subscribeStart: '2026.03.18',
+    // 랜딩 페이지 URL
+    detailUrl: '/monthly-loan/2026-05/',
+    // CTA 버튼 텍스트
+    ctaText: '❤️ 가정의 달 대출 신청하기 →',
+    // 웨이팅 캘린더 기본 노출값 (Royal Seat 기준)
+    defaultWaitingDate: '2026년 4월 11일',
+    defaultWaitingPeriod: '2026년 4월 11일 ~ 15일',
+    // step4Warning 심사 기간
+    step4ReviewDisplay: '2026년 5월 1일 ~ 5일',
+  },
+  '2026-06': {
+    // 활성 기간: 전월 26일 ~ 당월 25일
+    activePeriod: {
+      start: '2026-05-26',  // 5월 26일
+      end:   '2026-06-25',  // 6월 25일
+    },
+    loan: {
+      name: '6️⃣🈷️은 🪖호국보훈의 달 대출',
+      emoji: '🪖',
+      concept: '호국보훈의 달',
+    },
+    event: {
+      period: '6월 한정 스페셜티',
+      name: '월드컵 ⚽ 대출',
+    },
+    applyPeriod: {
+      start: '2026-06-01',
+      end: '2026-06-25',
+    },
+    reviewPeriod: {
+      start: '2026-07-01',
+      end: '2026-07-05',
+      display: '2026년 7월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 7월 25일',
+    subscribeStart: '2026.05.18',
+    detailUrl: '/monthly-loan/2026-06/',
+    ctaText: '🪖 호국보훈의 달 대출 신청하기 →',
+    defaultWaitingDate: '2026년 6월 11일',
+    defaultWaitingPeriod: '2026년 6월 11일 ~ 15일',
+    step4ReviewDisplay: '2026년 7월 1일 ~ 5일',
+  },
+  '2026-07': {
+    activePeriod: {
+      start: '2026-06-26',
+      end:   '2026-07-25',
+    },
+    loan: {
+      name: '7️⃣🈷️ 썸머 🏖️베케이션 대출',
+      emoji: '🏖️',
+      concept: '썸머 베케이션',
+    },
+    event: {
+      period: '7월 한정 스페셜티',
+      name: '워터밤💦대출',
+    },
+    applyPeriod: {
+      start: '2026-07-01',
+      end: '2026-07-25',
+    },
+    reviewPeriod: {
+      start: '2026-08-01',
+      end: '2026-08-05',
+      display: '2026년 8월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 8월 25일',
+    subscribeStart: '2026.06.18',
+    detailUrl: '/monthly-loan/2026-07/',
+    ctaText: '7️⃣🈷️ 썸머🏖️ 베케이션 대출 신청하기 →',
+    defaultWaitingDate: '2026년 7월 11일',
+    defaultWaitingPeriod: '2026년 7월 11일 ~ 15일',
+    step4ReviewDisplay: '2026년 8월 1일 ~ 5일',
+  },
+  '2026-08': {
+    activePeriod: {
+      start: '2026-07-26',
+      end:   '2026-08-25',
+    },
+    loan: {
+      name: '8️⃣🈷️ 썸머 🏝️베케이션 Ⅱ 대출',
+      emoji: '🏝️',
+      concept: '썸머 베케이션 Ⅱ',
+    },
+    event: {
+      period: '8월 한정 스페셜티',
+      name: '호캉스🏨✈️대출',
+    },
+    applyPeriod: {
+      start: '2026-08-01',
+      end: '2026-08-25',
+    },
+    reviewPeriod: {
+      start: '2026-09-01',
+      end: '2026-09-05',
+      display: '2026년 9월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 9월 25일',
+    subscribeStart: '2026.07.26',
+    detailUrl: '/monthly-loan/2026-08/',
+    ctaText: '8️⃣🈷️ 썸머🏝️ 베케이션 Ⅱ 대출 신청하기 →',
+    defaultWaitingDate: '2026년 8월 11일',
+    defaultWaitingPeriod: '2026년 8월 11일 ~ 15일',
+    step4ReviewDisplay: '2026년 9월 1일 ~ 5일',
+  },
+  '2026-09': {
+    activePeriod: {
+      start: '2026-08-26',
+      end:   '2026-09-25',
+    },
+    loan: {
+      name: '9️⃣🈷️ 풍성한 🍂한가위 대출',
+      emoji: '🍂',
+      concept: '풍성한 한가위',
+    },
+    event: {
+      period: '9월 한정 스페셜티',
+      name: '보름달🌕✨대출',
+    },
+    applyPeriod: {
+      start: '2026-09-01',
+      end: '2026-09-25',
+    },
+    reviewPeriod: {
+      start: '2026-10-01',
+      end: '2026-10-05',
+      display: '2026년 10월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 10월 25일',
+    subscribeStart: '2026.08.26',
+    detailUrl: '/monthly-loan/2026-09/',
+    ctaText: '9️⃣🈷️ 풍성한 🍂한가위 대출 신청하기 →',
+    defaultWaitingDate: '2026년 9월 11일',
+    defaultWaitingPeriod: '2026년 9월 11일 ~ 15일',
+    step4ReviewDisplay: '2026년 10월 1일 ~ 5일',
+  },
+  // T-171 WT-171: 10월 낭만가득 가을 대출 (기획서 PLAN_2026-10 §4 확정값)
+  // 정책: 과거 월 워딩이 현재 월에 노출되면 안 되므로 하드코딩 대신 이 config를 참조한다(T-174 참조 전환 완료)
+  '2026-10': {
+    activePeriod: {
+      start: '2026-09-26',  // 9월 26일
+      end:   '2026-10-25',  // 10월 25일
+    },
+    loan: {
+      name: '🔟🈷️ 낭만가득 🍂가을 대출',
+      emoji: '🍂',
+      concept: '낭만가득 가을',
+    },
+    event: {
+      period: '10월 한정 스페셜티',
+      name: '단풍놀이🍁대출',
+    },
+    applyPeriod: {
+      start: '2026-10-01',
+      end: '2026-10-25',
+    },
+    reviewPeriod: {
+      start: '2026-11-01',
+      end: '2026-11-05',
+      display: '2026년 11월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 11월 25일',
+    subscribeStart: '2026.09.26',
+    detailUrl: '/monthly-loan/2026-10/',
+    ctaText: '🔟🈷️ 낭만가득 🍂가을 대출 신청하기 →',
+    defaultWaitingDate: '2026년 10월 11일',
+    defaultWaitingPeriod: '2026년 10월 11일 ~ 15일',
+    step4ReviewDisplay: '2026년 11월 1일 ~ 5일',
+  },
+  // ← 11월 이후 여기에 추가 (activePeriod.start = 10월 26일, end = 11월 25일)
+};
+
+// ✅ 자동 감지: 오늘이 activePeriod(전월 26일 ~ 당월 25일) 안에 있는 config 선택
+// 예) 오늘=2026-05-31
+//     5월 activePeriod: 04-26 ~ 05-25 → 05-31 > 05-25 → skip
+//     6월 activePeriod: 05-26 ~ 06-25 → 05-26 ≤ 05-31 ≤ 06-25 → ✅ 6월 선택
+const _now = new Date();
+const _todayStr = `${_now.getFullYear()}-${String(_now.getMonth() + 1).padStart(2, '0')}-${String(_now.getDate()).padStart(2, '0')}`;
+const _sortedKeys = Object.keys(MONTH_CONFIGS).sort();
+
+var MONTH_CONFIG = null;
+for (const _key of _sortedKeys) {
+  const _ap = MONTH_CONFIGS[_key].activePeriod;
+  if (_todayStr >= _ap.start && _todayStr <= _ap.end) {
+    MONTH_CONFIG = MONTH_CONFIGS[_key];
+    break;
+  }
+}
+// 폴백: activePeriod에 해당하는 config가 없으면 가장 마지막 config 사용
+if (!MONTH_CONFIG) {
+  MONTH_CONFIG = MONTH_CONFIGS[_sortedKeys[_sortedKeys.length - 1]];
+}
+
+  </script>
+  <script>
+/* ── app.js 인라인 ── */
+// 미션 포인트 계산에 필요한 MOCK 데이터 묶음
+const LOAN_CONFIG = {
+  "웨이팅 대출": {
+    basePoints: { credit: 40, interest: 30, principal: 35 },
+    histories: {
+      "난 재대출": {
+        interestBonus: 5,
+        principalBonus: 4,
+        statuses: {
+          "Clean": 6,
+          "Non-Clean": 2,
+        },
+      },
+      "난 처음": {
+        interestBonus: 3,
+        principalBonus: 5,
+        statuses: {
+          "지금 처음 (One)": 4,
+          "몇 번 (Several)": 6,
+        },
+      },
+    },
+  },
+  "롸잇나우 대출": {
+    basePoints: { credit: 32, interest: 28, principal: 30 },
+    histories: {
+      "모든 고객": {
+        interestBonus: 6,
+        principalBonus: 4,
+        statuses: {
+          "No Matter": 5,
+        },
+      },
+    },
+  },
+  "블랙찬스 티켓 사용": {
+    basePoints: { credit: 38, interest: 32, principal: 33 },
+    histories: {
+      "바로 재대출": {
+        interestBonus: 7,
+        principalBonus: 6,
+        statuses: {
+          블찬원: 4,
+          블찬이: 5,
+          블찬현: 7,
+        },
+      },
+    },
+  },
+  "이벤트 대출": {
+    basePoints: { credit: 35, interest: 27, principal: 28 },
+    histories: {
+      [MONTH_CONFIG.event.period]: {
+        interestBonus: 5,
+        principalBonus: 4,
+        statuses: {
+          [MONTH_CONFIG.event.name]: 8,
+        },
+      },
+    },
+  },
+};
+
+// 좌석 날짜 자동 생성 (MONTH_CONFIG.applyPeriod.start 기준)
+function _addDays(dateStr, days) {
+  const d = new Date(dateStr + 'T00:00:00');
+  d.setDate(d.getDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+function _generateSeatRanges(applyStart) {
+  const seats = [
+    { seat: 'Box Seat (귀빈석)',   principalRate: '1%' },
+    { seat: 'VIP Seat (1열)',      principalRate: '2%' },
+    { seat: 'Royal Seat (2열)',    principalRate: '4%' },
+    { seat: 'Standard Seat (3열)', principalRate: '6%' },
+    { seat: 'Original Seat (입석)', principalRate: '8%' },
+  ];
+  return seats.map((s, i) => ({
+    seat: s.seat,
+    startDate: _addDays(applyStart, i * 5),
+    endDate:   _addDays(applyStart, i * 5 + 4),
+    creditDeadline: '앱에서 신청한 날로부터 48시간 내',
+    interestRate: '1%',
+    interestDeadline: _addDays(applyStart, i * 5 + 14),
+    principalRate: s.principalRate,
+    principalDeadline: _addDays(applyStart, i * 5 + 14),
+  }));
+}
+const WAITING_SEAT_RANGES = _generateSeatRanges(MONTH_CONFIG.applyPeriod.start);
+
+const LOAN_PRODUCT_TABLE = [
+  {
+    amountText: "10만 원",
+    amount: 100000,
+    baseRepayment: "원리현 상품",
+    description: "원금과 이자 모두를 현금으로 상환",
+    baseCredit: 4000,
+    baseInterestRate: "없음",
+    baseInterestPoints: 0,
+    basePrincipalRate: "없음",
+    basePrincipalPoints: 0,
+    totalPoints: 4000,
+  },
+  {
+    amountText: "20만 원",
+    amount: 200000,
+    baseRepayment: "이포 상품",
+    description: "원금은 현금으로 이자는 포인트로 상환",
+    baseCredit: 5000,
+    baseInterestRate: "1%",
+    baseInterestPoints: 2000,
+    basePrincipalRate: "없음",
+    basePrincipalPoints: 0,
+    totalPoints: 7000,
+  },
+  {
+    amountText: "30만 원",
+    amount: 300000,
+    baseRepayment: "원리포 상품",
+    description: "원금의 일부와 이자 전부를 포인트로 상환",
+    baseCredit: 6000,
+    baseInterestRate: "1%",
+    baseInterestPoints: 3000,
+    basePrincipalRate: "10%",
+    basePrincipalPoints: 30000,
+    totalPoints: 39000,
+  },
+  {
+    amountText: "50만 원",
+    amount: 500000,
+    baseRepayment: "원리포 상품",
+    description: "원금의 일부와 이자 전부를 포인트로 상환",
+    baseCredit: 12000,
+    baseInterestRate: "1%",
+    baseInterestPoints: 5000,
+    basePrincipalRate: "10%",
+    basePrincipalPoints: 50000,
+    totalPoints: 67000,
+  },
+];
+
+const LOAN_OPTION_STATUS_TABLE = {
+  "웨이팅 대출": {
+    재대출: ["Clean", "Non-Clean"],
+    신규: ["One", "Several"],
+  },
+  "롸잇나우 대출": {
+    "모든 고객": ["No Matter"],
+  },
+  "블랙찬스 티켓 사용": {
+    "바로 재대출": ["블찬원", "블찬이", "블찬현"],
+  },
+  "이벤트 대출": {
+    [MONTH_CONFIG.event.period]: [MONTH_CONFIG.event.name],
+  },
+};
+
+const LOAN_REVIEW_SCHEDULE = [
+  {
+    option: "웨이팅 대출",
+    history: "재대출",
+    status: "Clean",
+    startDate: MONTH_CONFIG.reviewPeriod.start,
+    endDate: MONTH_CONFIG.reviewPeriod.end,
+  },
+  {
+    option: "웨이팅 대출",
+    history: "재대출",
+    status: "Non-Clean",
+    startDate: MONTH_CONFIG.reviewPeriod.start,
+    endDate: MONTH_CONFIG.reviewPeriod.end,
+  },
+  {
+    option: "웨이팅 대출",
+    history: "신규",
+    status: "One",
+    startDate: MONTH_CONFIG.reviewPeriod.start,
+    endDate: MONTH_CONFIG.reviewPeriod.end,
+  },
+  {
+    option: "웨이팅 대출",
+    history: "신규",
+    status: "Several",
+    startDate: MONTH_CONFIG.reviewPeriod.start,
+    endDate: MONTH_CONFIG.reviewPeriod.end,
+  },
+  {
+    option: "롸잇나우 대출",
+    history: "모든 고객",
+    status: "No Matter",
+    startDate: "매일",
+    endDate: "",
+  },
+  {
+    option: "블랙찬스 티켓",
+    history: "바로 재대출",
+    status: "블찬원",
+    startDate: "매일",
+    endDate: "",
+  },
+  {
+    option: "블랙찬스 티켓",
+    history: "바로 재대출",
+    status: "블찬이",
+    startDate: "매일",
+    endDate: "",
+  },
+  {
+    option: "블랙찬스 티켓",
+    history: "바로 재대출",
+    status: "블찬현",
+    startDate: MONTH_CONFIG.reviewPeriod.start,
+    endDate: MONTH_CONFIG.reviewPeriod.end,
+  },
+  {
+    option: "이벤트 대출",
+    history: MONTH_CONFIG.event.period,
+    status: MONTH_CONFIG.event.name,
+    startDate: "매일",
+    endDate: "",
+  },
+];
+
+const LOAN_BENEFITS = {
+  "웨이팅 대출": "부담스런 포인트 적립이 🐶널널!",
+  "롸잇나우 대출": "빠른 대출과 한도 상향 가산점",
+  "블랙찬스 티켓": "50만 원, 30만 원을 크레딧 미션만으로!",
+  "이벤트 대출": "빠른 대출과 크레딧 미션 할인 & 원금 미션 파격 인하(1%)!",
+};
+
+const POINT_SUMMARY_RAW = `
+금액	금액	기본 상환 방식	대출 옵션	좌석명	대출 이력	대출 상태	변경 상환 방식	기본 크레딧 미션	크레딧 미션 할인		기본 이자 미션		변경 이자 미션		기본 원금 미션		변경 원금 미션		총 포인트
+텍스트	숫자	기본 상환 방식	대출 옵션	좌석명	대출 이력	대출 상태	변경 상환 방식	기본 포인트	할인율	할인된 포인트	기본 %	기본 포인트	변경 %	변경 포인트	기본 %	기본 포인트	변경 %	변경 포인트	총 포인트
+10만 원	100,000	원리현 상품	웨이팅 대출	Box Seat (귀빈석)	재대출	Clean	원리현 상품	4,000	50%	2,000	0%	0	0%	0	0%	0	0%	0	2,000
+10만 원	100,000	원리현 상품	웨이팅 대출	Box Seat (귀빈석)	재대출	Non-Clean	원리현 상품	4,000	25%	3,000	0%	0	0%	0	0%	0	0%	0	3,000
+10만 원	100,000	원리현 상품	웨이팅 대출	Box Seat (귀빈석)	신규	One	원리현 상품	4,000	40%	2,400	0%	0	0%	0	0%	0	0%	0	2,400
+10만 원	100,000	원리현 상품	웨이팅 대출	Box Seat (귀빈석)	신규	Several	원리현 상품	4,000	20%	3,200	0%	0	0%	0	0%	0	0%	0	3,200
+10만 원	100,000	원리현 상품	웨이팅 대출	VIP Seat (1열)	재대출	Clean	원리현 상품	4,000	45%	2,200	0%	0	0%	0	0%	0	0%	0	2,200
+10만 원	100,000	원리현 상품	웨이팅 대출	VIP Seat (1열)	재대출	Non-Clean	원리현 상품	4,000	20%	3,200	0%	0	0%	0	0%	0	0%	0	3,200
+10만 원	100,000	원리현 상품	웨이팅 대출	VIP Seat (1열)	신규	One	원리현 상품	4,000	35%	2,600	0%	0	0%	0	0%	0	0%	0	2,600
+10만 원	100,000	원리현 상품	웨이팅 대출	VIP Seat (1열)	신규	Several	원리현 상품	4,000	15%	3,400	0%	0	0%	0	0%	0	0%	0	3,400
+10만 원	100,000	원리현 상품	웨이팅 대출	Royal Seat (2열)	재대출	Clean	원리현 상품	4,000	40%	2,400	0%	0	0%	0	0%	0	0%	0	2,400
+10만 원	100,000	원리현 상품	웨이팅 대출	Royal Seat (2열)	재대출	Non-Clean	원리현 상품	4,000	15%	3,400	0%	0	0%	0	0%	0	0%	0	3,400
+10만 원	100,000	원리현 상품	웨이팅 대출	Royal Seat (2열)	신규	One	원리현 상품	4,000	30%	2,800	0%	0	0%	0	0%	0	0%	0	2,800
+10만 원	100,000	원리현 상품	웨이팅 대출	Royal Seat (2열)	신규	Several	원리현 상품	4,000	10%	3,600	0%	0	0%	0	0%	0	0%	0	3,600
+10만 원	100,000	원리현 상품	웨이팅 대출	Standard Seat (3열)	재대출	Clean	원리현 상품	4,000	35%	2,600	0%	0	0%	0	0%	0	0%	0	2,600
+10만 원	100,000	원리현 상품	웨이팅 대출	Standard Seat (3열)	재대출	Non-Clean	원리현 상품	4,000	10%	3,600	0%	0	0%	0	0%	0	0%	0	3,600
+10만 원	100,000	원리현 상품	웨이팅 대출	Standard Seat (3열)	신규	One	원리현 상품	4,000	25%	3,000	0%	0	0%	0	0%	0	0%	0	3,000
+10만 원	100,000	원리현 상품	웨이팅 대출	Standard Seat (3열)	신규	Several	원리현 상품	4,000	5%	3,800	0%	0	0%	0	0%	0	0%	0	3,800
+10만 원	100,000	원리현 상품	웨이팅 대출	Original Seat (입석)	재대출	Clean	원리현 상품	4,000	30%	2,800	0%	0	0%	0	0%	0	0%	0	2,800
+10만 원	100,000	원리현 상품	웨이팅 대출	Original Seat (입석)	재대출	Non-Clean	원리현 상품	4,000	5%	3,800	0%	0	0%	0	0%	0	0%	0	3,800
+10만 원	100,000	원리현 상품	웨이팅 대출	Original Seat (입석)	신규	One	원리현 상품	4,000	20%	3,200	0%	0	0%	0	0%	0	0%	0	3,200
+10만 원	100,000	원리현 상품	웨이팅 대출	Original Seat (입석)	신규	Several	원리현 상품	4,000	0%	4,000	0%	0	0%	0	0%	0	0%	0	4,000
+10만 원	100,000	원리현 상품	롸잇나우 대출	Free Seat (자유석)	모든 고객	No Matter	원리포 상품	4,000	0%	4,000	1%	1,000	1%	1,000	10%	10,000	10%	10,000	15,000
+10만 원	100,000	원리현 상품	블랙찬스 티켓	Thanks Seat (감사석)	바로 재대출	블찬원	원리포 상품	4,000	0%	4,000	1%	1,000	1%	1,000	10%	10,000	4%	4,000	9,000
+10만 원	100,000	원리현 상품	블랙찬스 티켓	Thanks Seat (감사석)	바로 재대출	블찬이	이포 상품	4,000	0%	4,000	1%	1,000	1%	1,000	0%	0	0%	0	5,000
+10만 원	100,000	원리현 상품	블랙찬스 티켓	Thanks Seat (감사석)	바로 재대출	블찬현	원리현 상품	4,000	0%	4,000	0%	0	0%	0	0%	0	0%	0	4,000
+20만 원	200,000	이포 상품	웨이팅 대출	Box Seat (귀빈석)	재대출	Clean	이포 상품	5,000	50%	2,500	1%	2,000	1%	2,000	0%	0	0%	0	4,500
+20만 원	200,000	이포 상품	웨이팅 대출	Box Seat (귀빈석)	재대출	Non-Clean	이포 상품	5,000	25%	3,750	1%	2,000	1%	2,000	0%	0	0%	0	5,750
+20만 원	200,000	이포 상품	웨이팅 대출	Box Seat (귀빈석)	신규	One	이포 상품	5,000	40%	3,000	1%	2,000	1%	2,000	0%	0	0%	0	5,000
+20만 원	200,000	이포 상품	웨이팅 대출	Box Seat (귀빈석)	신규	Several	이포 상품	5,000	20%	4,000	1%	2,000	1%	2,000	0%	0	0%	0	6,000
+20만 원	200,000	이포 상품	웨이팅 대출	VIP Seat (1열)	재대출	Clean	이포 상품	5,000	45%	2,750	1%	2,000	1%	2,000	0%	0	0%	0	4,750
+20만 원	200,000	이포 상품	웨이팅 대출	VIP Seat (1열)	재대출	Non-Clean	이포 상품	5,000	20%	4,000	1%	2,000	1%	2,000	0%	0	0%	0	6,000
+20만 원	200,000	이포 상품	웨이팅 대출	VIP Seat (1열)	신규	One	이포 상품	5,000	35%	3,250	1%	2,000	1%	2,000	0%	0	0%	0	5,250
+20만 원	200,000	이포 상품	웨이팅 대출	VIP Seat (1열)	신규	Several	이포 상품	5,000	15%	4,250	1%	2,000	1%	2,000	0%	0	0%	0	6,250
+20만 원	200,000	이포 상품	웨이팅 대출	Royal Seat (2열)	재대출	Clean	이포 상품	5,000	40%	3,000	1%	2,000	1%	2,000	0%	0	0%	0	5,000
+20만 원	200,000	이포 상품	웨이팅 대출	Royal Seat (2열)	재대출	Non-Clean	이포 상품	5,000	15%	4,250	1%	2,000	1%	2,000	0%	0	0%	0	6,250
+20만 원	200,000	이포 상품	웨이팅 대출	Royal Seat (2열)	신규	One	이포 상품	5,000	30%	3,500	1%	2,000	1%	2,000	0%	0	0%	0	5,500
+20만 원	200,000	이포 상품	웨이팅 대출	Royal Seat (2열)	신규	Several	이포 상품	5,000	10%	4,500	1%	2,000	1%	2,000	0%	0	0%	0	6,500
+20만 원	200,000	이포 상품	웨이팅 대출	Standard Seat (3열)	재대출	Clean	이포 상품	5,000	35%	3,250	1%	2,000	1%	2,000	0%	0	0%	0	5,250
+20만 원	200,000	이포 상품	웨이팅 대출	Standard Seat (3열)	재대출	Non-Clean	이포 상품	5,000	10%	4,500	1%	2,000	1%	2,000	0%	0	0%	0	6,500
+20만 원	200,000	이포 상품	웨이팅 대출	Standard Seat (3열)	신규	One	이포 상품	5,000	25%	3,750	1%	2,000	1%	2,000	0%	0	0%	0	5,750
+20만 원	200,000	이포 상품	웨이팅 대출	Standard Seat (3열)	신규	Several	이포 상품	5,000	5%	4,750	1%	2,000	1%	2,000	0%	0	0%	0	6,750
+20만 원	200,000	이포 상품	웨이팅 대출	Original Seat (입석)	재대출	Clean	이포 상품	5,000	30%	3,500	1%	2,000	1%	2,000	0%	0	0%	0	5,500
+20만 원	200,000	이포 상품	웨이팅 대출	Original Seat (입석)	재대출	Non-Clean	이포 상품	5,000	5%	4,750	1%	2,000	1%	2,000	0%	0	0%	0	6,750
+20만 원	200,000	이포 상품	웨이팅 대출	Original Seat (입석)	신규	One	이포 상품	5,000	20%	4,000	1%	2,000	1%	2,000	0%	0	0%	0	6,000
+20만 원	200,000	이포 상품	웨이팅 대출	Original Seat (입석)	신규	Several	이포 상품	5,000	0%	5,000	1%	2,000	1%	2,000	0%	0	0%	0	7,000
+20만 원	200,000	이포 상품	롸잇나우 대출	Free Seat (자유석)	모든 고객	No Matter	원리포 상품	5,000	0%	5,000	1%	2,000	1%	2,000	10%	20,000	10%	20,000	27,000
+20만 원	200,000	이포 상품	블랙찬스 티켓	Thanks Seat (감사석)	바로 재대출	블찬원	원리포 상품	5,000	0%	5000	1%	2,000	1%	2,000	10%	20,000	4%	8,000	15,000
+20만 원	200,000	이포 상품	블랙찬스 티켓	Thanks Seat (감사석)	바로 재대출	블찬이	이포 상품	5,000	0%	5000	1%	2,000	1%	2,000	0%	0	0%	0	7,000
+20만 원	200,000	이포 상품	블랙찬스 티켓	Thanks Seat (감사석)	바로 재대출	블찬현	원리현 상품	5,000	0%	5000	0%	0	0%	0	0%	0	0%	0	5,000
+10만 원	100,000	원리현 상품	이벤트 대출	Special Seat (특별석)	${MONTH_CONFIG.event.period}	${MONTH_CONFIG.event.name}	원리포 상품	4,500	0%	4,500	1%	1,000	1%	1,000	1%	1,000	1%	1,000	6,500
+20만 원	200,000	이포 상품	이벤트 대출	Special Seat (특별석)	${MONTH_CONFIG.event.period}	${MONTH_CONFIG.event.name}	원리포 상품	4,500	0%	4,500	1%	2,000	1%	2,000	1%	2,000	1%	2,000	8,500
+30만 원	300,000	원리포 상품	웨이팅 대출	Box Seat (귀빈석)	재대출	Clean	원리포 상품	6,000	50%	3,000	1%	3,000	1%	3,000	10%	30,000	1%	3,000	9,000
+30만 원	300,000	원리포 상품	웨이팅 대출	Box Seat (귀빈석)	재대출	Non-Clean	원리포 상품	6,000	25%	4,500	1%	3,000	1%	3,000	10%	30,000	1%	3,000	10,500
+30만 원	300,000	원리포 상품	웨이팅 대출	Box Seat (귀빈석)	신규	One	원리포 상품	6,000	40%	3,600	1%	3,000	1%	3,000	10%	30,000	1%	3,000	9,600
+30만 원	300,000	원리포 상품	웨이팅 대출	Box Seat (귀빈석)	신규	Several	원리포 상품	6,000	20%	4,800	1%	3,000	1%	3,000	10%	30,000	1%	3,000	10,800
+30만 원	300,000	원리포 상품	웨이팅 대출	VIP Seat (1열)	재대출	Clean	원리포 상품	6,000	45%	3,300	1%	3,000	1%	3,000	10%	30,000	2%	6,000	12,300
+30만 원	300,000	원리포 상품	웨이팅 대출 대출	VIP Seat (1열)	재대출	Non-Clean	원리포 상품	6,000	20%	4,800	1%	3,000	1%	3,000	10%	30,000	2%	6,000	13,800
+30만 원	300,000	원리포 상품	웨이팅 대출	VIP Seat (1열)	신규	One	원리포 상품	6,000	35%	3,900	1%	3,000	1%	3,000	10%	30,000	2%	6,000	12,900
+30만 원	300,000	원리포 상품	웨이팅 대출	VIP Seat (1열)	신규	Several	원리포 상품	6,000	15%	5,100	1%	3,000	1%	3,000	10%	30,000	2%	6,000	14,100
+30만 원	300,000	원리포 상품	웨이팅 대출	Royal Seat (2열)	재대출	Clean	원리포 상품	6,000	40%	3,600	1%	3,000	1%	3,000	10%	30,000	4%	12,000	18,600
+30만 원	300,000	원리포 상품	웨이팅 대출	Royal Seat (2열)	재대출	Non-Clean	원리포 상품	6,000	15%	5,100	1%	3,000	1%	3,000	10%	30,000	4%	12,000	20,100
+30만 원	300,000	원리포 상품	웨이팅 대출	Royal Seat (2열)	신규	One	원리포 상품	6,000	30%	4,200	1%	3,000	1%	3,000	10%	30,000	4%	12,000	19,200
+30만 원	300,000	원리포 상품	웨이팅 대출	Royal Seat (2열)	신규	Several	원리포 상품	6,000	10%	5,400	1%	3,000	1%	3,000	10%	30,000	4%	12,000	20,400
+30만 원	300,000	원리포 상품	웨이팅 대출	Standard Seat (3열)	재대출	Clean	원리포 상품	6,000	35%	3,900	1%	3,000	1%	3,000	10%	30,000	6%	18,000	24,900
+30만 원	300,000	원리포 상품	웨이팅 대출	Standard Seat (3열)	재대출	Non-Clean	원리포 상품	6,000	10%	5,400	1%	3,000	1%	3,000	10%	30,000	6%	18,000	26,400
+30만 원	300,000	원리포 상품	웨이팅 대출	Standard Seat (3열)	신규	One	원리포 상품	6,000	25%	4,500	1%	3,000	1%	3,000	10%	30,000	6%	18,000	25,500
+30만 원	300,000	원리포 상품	웨이팅 대출	Standard Seat (3열)	신규	Several	원리포 상품	6,000	5%	5,700	1%	3,000	1%	3,000	10%	30,000	6%	18,000	26,700
+30만 원	300,000	원리포 상품	웨이팅 대출	Original Seat (입석)	재대출	Clean	원리포 상품	6,000	30%	4,200	1%	3,000	1%	3,000	10%	30,000	8%	24,000	31,200
+30만 원	300,000	원리포 상품	웨이팅 대출	Original Seat (입석)	재대출	Non-Clean	원리포 상품	6,000	5%	5,700	1%	3,000	1%	3,000	10%	30,000	8%	24,000	32,700
+30만 원	300,000	원리포 상품	웨이팅 대출	Original Seat (입석)	신규	One	원리포 상품	6,000	20%	4,800	1%	3,000	1%	3,000	10%	30,000	8%	24,000	31,800
+30만 원	300,000	원리포 상품	웨이팅 대출	Original Seat (입석)	신규	Several	원리포 상품	6,000	0%	6,000	1%	3,000	1%	3,000	10%	30,000	8%	24,000	33,000
+30만 원	300,000	원리포 상품	롸잇나우 대출	Free Seat (자유석)	모든 고객	No Matter	원리포 상품	6,000	0%	6,000	1%	3,000	1%	3,000	10%	30,000	10%	30,000	39,000
+30만 원	300,000	원리포 상품	블랙찬스 티켓	Thanks Seat (감사석)	바로 재대출	블찬원	원리포 상품	6,000	0%	6000	1%	3,000	1%	3,000	10%	30,000	4%	12,000	21,000
+30만 원	300,000	원리포 상품	블랙찬스 티켓	Thanks Seat (감사석)	바로 재대출	블찬이	이포 상품	6,000	0%	6000	1%	3,000	1%	3,000	0%	0	0%	0	9,000
+30만 원	300,000	원리포 상품	블랙찬스 티켓	Thanks Seat (감사석)	바로 재대출	블찬현	원리현 상품	6,000	0%	6000	0%	0	0%	0	0%	0	0%	0	6,000
+30만 원	300,000	원리포 상품	이벤트 대출	Special Seat (특별석)	${MONTH_CONFIG.event.period}	${MONTH_CONFIG.event.name}	원리포 상품	4,500	0%	4,500	1%	3,000	1%	3,000	1%	3,000	1%	3,000	10,500
+50만 원	500,000	원리포 상품	웨이팅 대출	Box Seat (귀빈석)	재대출	Clean	원리포 상품	12,000	50%	6,000	1%	5,000	1%	5,000	10%	50,000	1%	5,000	16,000
+50만 원	500,000	원리포 상품	웨이팅 대출	Box Seat (귀빈석)	재대출	Non-Clean	원리포 상품	12,000	25%	9,000	1%	5,000	1%	5,000	10%	50,000	1%	5,000	19,000
+50만 원	500,000	원리포 상품	웨이팅 대출	Box Seat (귀빈석)	신규	One	원리포 상품	12,000	40%	7,200	1%	5,000	1%	5,000	10%	50,000	1%	5,000	17,200
+50만 원	500,000	원리포 상품	웨이팅 대출	Box Seat (귀빈석)	신규	Several	원리포 상품	12,000	20%	9,600	1%	5,000	1%	5,000	10%	50,000	1%	5,000	19,600
+50만 원	500,000	원리포 상품	웨이팅 대출	VIP Seat (1열)	재대출	Clean	원리포 상품	12,000	45%	6,600	1%	5,000	1%	5,000	10%	50,000	2%	10,000	21,600
+50만 원	500,000	원리포 상품	웨이팅 대출	VIP Seat (1열)	재대출	Non-Clean	원리포 상품	12,000	20%	9,600	1%	5,000	1%	5,000	10%	50,000	2%	10,000	24,600
+50만 원	500,000	원리포 상품	웨이팅 대출	VIP Seat (1열)	신규	One	원리포 상품	12,000	35%	7,800	1%	5,000	1%	5,000	10%	50,000	2%	10,000	22,800
+50만 원	500,000	원리포 상품	웨이팅 대출	VIP Seat (1열)	신규	Several	원리포 상품	12,000	15%	10,200	1%	5,000	1%	5,000	10%	50,000	2%	10,000	25,200
+50만 원	500,000	원리포 상품	웨이팅 대출	Royal Seat (2열)	재대출	Clean	원리포 상품	12,000	40%	7,200	1%	5,000	1%	5,000	10%	50,000	4%	20,000	32,200
+50만 원	500,000	원리포 상품	웨이팅 대출	Royal Seat (2열)	재대출	Non-Clean	원리포 상품	12,000	15%	10,200	1%	5,000	1%	5,000	10%	50,000	4%	20,000	35,200
+50만 원	500,000	원리포 상품	웨이팅 대출	Royal Seat (2열)	신규	One	원리포 상품	12,000	30%	8,400	1%	5,000	1%	5,000	10%	50,000	4%	20,000	33,400
+50만 원	500,000	원리포 상품	웨이팅 대출	Royal Seat (2열)	신규	Several	원리포 상품	12,000	10%	10,800	1%	5,000	1%	5,000	10%	50,000	4%	20,000	35,800
+50만 원	500,000	원리포 상품	웨이팅 대출	Standard Seat (3열)	재대출	Clean	원리포 상품	12,000	35%	7,800	1%	5,000	1%	5,000	10%	50,000	6%	30,000	42,800
+50만 원	500,000	원리포 상품	웨이팅 대출	Standard Seat (3열)	재대출	Non-Clean	원리포 상품	12,000	10%	10,800	1%	5,000	1%	5,000	10%	50,000	6%	30,000	45,800
+50만 원	500,000	원리포 상품	웨이팅 대출	Standard Seat (3열)	신규	One	원리포 상품	12,000	25%	9,000	1%	5,000	1%	5,000	10%	50,000	6%	30,000	44,000
+50만 원	500,000	원리포 상품	웨이팅 대출	Standard Seat (3열)	신규	Several	원리포 상품	12,000	5%	11,400	1%	5,000	1%	5,000	10%	50,000	6%	30,000	46,400
+50만 원	500,000	원리포 상품	웨이팅 대출	Original Seat (입석)	재대출	Clean	원리포 상품	12,000	30%	8,400	1%	5,000	1%	5,000	10%	50,000	8%	40,000	53,400
+50만 원	500,000	원리포 상품	웨이팅 대출	Original Seat (입석)	재대출	Non-Clean	원리포 상품	12,000	5%	11,400	1%	5,000	1%	5,000	10%	50,000	8%	40,000	56,400
+50만 원	500,000	원리포 상품	웨이팅 대출	Original Seat (입석)	신규	One	원리포 상품	12,000	20%	9,600	1%	5,000	1%	5,000	10%	50,000	8%	40,000	54,600
+50만 원	500,000	원리포 상품	웨이팅 대출	Original Seat (입석)	신규	Several	원리포 상품	12,000	0%	12,000	1%	5,000	1%	5,000	10%	50,000	8%	40,000	57,000
+50만 원	500,000	원리포 상품	롸잇나우 대출	Free Seat (자유석)	모든 고객	No Matter	원리포 상품	12,000	0%	12,000	1%	5,000	1%	5,000	10%	50,000	10%	50,000	67,000
+50만 원	500,000	원리포 상품	블랙찬스 티켓	Thanks Seat (감사석)	바로 재대출	블찬원	원리포 상품	12,000	0%	12,000	1%	5,000	1%	5,000	10%	50,000	4%	20,000	37,000
+50만 원	500,000	원리포 상품	블랙찬스 티켓	Thanks Seat (감사석)	바로 재대출	블찬이	이포 상품	12,000	0%	12,000	1%	5,000	1%	5,000	0%	0	0%	0	17,000
+50만 원	500,000	원리포 상품	블랙찬스 티켓	Thanks Seat (감사석)	바로 재대출	블찬현	원리현 상품	12,000	0%	12,000	0%	0	0%	0	0%	0	0%	0	12,000
+`
+  ;
+
+
+const POINT_SUMMARY_TABLE = parsePointSummaryTable(POINT_SUMMARY_RAW);
+const SEAT_CREDIT_RANGE = buildSeatCreditRanges(POINT_SUMMARY_TABLE);
+
+function parsePointSummaryTable(raw) {
+  const lines = raw.trim().split("\n").filter((line) => line.trim());
+  const dataLines = lines.slice(2);
+  return dataLines.map((line) => {
+    const columns = line.split("\t");
+    while (columns.length < 20) {
+      columns.push("");
+    }
+
+    const [
+      amountText,
+      amountValue,
+      baseRepayment,
+      loanOption,
+      seat,
+      loanHistory,
+      loanStatus,
+      changedRepayment,
+      baseCreditPoints,
+      creditDiscountRate,
+      creditDiscountPoints,
+      baseInterestRate,
+      baseInterestPoints,
+      changedInterestRate,
+      changedInterestPoints,
+      basePrincipalRate,
+      basePrincipalPoints,
+      changedPrincipalRate,
+      changedPrincipalPoints,
+      totalPoints,
+    ] = columns.map((item) => item.trim());
+
+    const normalizedOption = normalizeTableOption(loanOption);
+    const FLAT_CREDIT_OPTIONS = ['웨이팅 대출', '롸잇나우 대출', '블랙찬스 티켓'];
+    const isFlat = FLAT_CREDIT_OPTIONS.includes(normalizedOption);
+    const flatBase = isFlat ? 4500 : toNumber(baseCreditPoints);
+    const discountPct = toNumber(creditDiscountRate);
+    const flatCreditDiscount = isFlat
+      ? Math.round(flatBase * (1 - discountPct / 100))
+      : toNumber(creditDiscountPoints);
+
+    return {
+      amountText,
+      amountValue: toNumber(amountValue),
+      baseRepayment,
+      loanOption: normalizedOption,
+      seat,
+      loanHistory,
+      loanStatus,
+      changedRepayment,
+      baseCreditPoints: flatBase,
+      creditDiscountRate,
+      creditDiscountPoints: flatCreditDiscount,
+      baseInterestRate,
+      baseInterestPoints: toNumber(baseInterestPoints),
+      interestDiscountRate: changedInterestRate,
+      interestDiscountPoints: toNumber(changedInterestPoints),
+      basePrincipalRate,
+      basePrincipalPoints: toNumber(basePrincipalPoints),
+      principalDiscountRate: changedPrincipalRate,
+      principalDiscountPoints: toNumber(changedPrincipalPoints),
+      totalPoints: isFlat ? 0 : toNumber(totalPoints),
+    };
+  });
+}
+
+function normalizeTableOption(option) {
+  if (!option) return "";
+  if (option.includes("웨이팅 대출")) return "웨이팅 대출";
+  if (option.includes("롸잇나우")) return "롸잇나우 대출";
+  if (option.includes("블랙찬스")) return "블랙찬스 티켓";
+  if (option.includes("이벤트")) return "이벤트 대출";
+  return option;
+}
+
+function toNumber(value) {
+  if (!value || value === "없음") return 0;
+  const cleaned = String(value).replace(/[^\d.-]/g, "");
+  const parsed = Number(cleaned);
+  return Number.isNaN(parsed) ? 0 : parsed;
+}
+
+function buildSeatCreditRanges(table) {
+  const seatRates = {};
+
+  table.forEach((row) => {
+    if (row.loanOption !== "웨이팅 대출" || !row.seat) return;
+    const rateValue = toNumber(row.creditDiscountRate);
+    if (!seatRates[row.seat]) {
+      seatRates[row.seat] = { max: rateValue, min: rateValue };
+      return;
+    }
+    seatRates[row.seat].max = Math.max(seatRates[row.seat].max, rateValue);
+    seatRates[row.seat].min = Math.min(seatRates[row.seat].min, rateValue);
+  });
+
+  return Object.keys(seatRates).reduce((acc, seat) => {
+    acc[seat] = `${seatRates[seat].max}% ~ ${seatRates[seat].min}%`;
+    return acc;
+  }, {});
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("calculatorForm");
+  const loanOption = document.getElementById("loanOption");
+  const loanHistory = document.getElementById("loanHistory");
+  const loanStatus = document.getElementById("loanStatus");
+  const waitingInfo = document.getElementById("waitingInfo");
+  const loanDateInput = document.getElementById("loanDate");
+  const calendarGrid = document.getElementById("calendarGrid");
+  const calendarMonthLabel = document.getElementById("calendarMonthLabel");
+  const calendarPrev = document.getElementById("calendarPrev");
+  const calendarNext = document.getElementById("calendarNext");
+  const discountSeat = document.getElementById("discountSeat");
+  const creditRange = document.getElementById("creditRange");
+  const wonmiRate = document.getElementById("wonmiRate");
+  const waitingPeriod = document.getElementById("waitingPeriod");
+  const waitingDateText = document.getElementById("waitingDateText");
+  let calendarViewDate = new Date();
+
+  const requestAmount = document.getElementById("requestAmount");
+  const loanPeriod = document.getElementById("loanPeriod");
+  const rudolphSpecial = document.getElementById("rudolphSpecial");
+  const eventOption = loanOption.querySelector('option[value="이벤트 대출"]');
+  const eventAmountNote = document.getElementById("eventAmountNote");
+  const calculateButton = document.getElementById("calculateButton");
+  const resultPanel = document.getElementById("resultPanel");
+  const recalcNote = document.getElementById("recalcNote");
+
+  const benefitTitle = document.getElementById("benefitTitle");
+  const benefitLines = [
+    document.getElementById("benefitLine1"),
+    document.getElementById("benefitLine2"),
+    document.getElementById("benefitLine3"),
+    document.getElementById("benefitLine4"),
+  ];
+  const resultAmount = document.getElementById("resultAmount");
+  const resultPeriod = document.getElementById("resultPeriod");
+  const resultOption = document.getElementById("resultOption");
+  const resultSeat = document.getElementById("resultSeat");
+  const resultHistory = document.getElementById("resultHistory");
+  const resultStatus = document.getElementById("resultStatus");
+  const resultRepayment = document.getElementById("resultRepayment");
+  const reviewPeriod = document.getElementById("reviewPeriod");
+  const creditSummary = document.getElementById("creditSummary");
+  const creditPointsLine = document.getElementById("creditPointsLine");
+  const interestRateLine = document.getElementById("interestRateLine");
+  const interestPointsLine = document.getElementById("interestPointsLine");
+  const principalRateLine = document.getElementById("principalRateLine");
+  const principalPointsLine = document.getElementById("principalPointsLine");
+  const totalPointsLine = document.getElementById("totalPointsLine");
+  const currentPointsLine = document.getElementById("currentPointsLine");
+  const additionalPointsLine = document.getElementById("additionalPointsLine");
+  const step1 = document.getElementById("step1");
+  const step2 = document.getElementById("step2");
+  const step3 = document.getElementById("step3");
+  const step4 = document.getElementById("step4");
+  const step5 = document.getElementById("step5");
+  const step3Deadline = document.getElementById("step3Deadline");
+  const step4Deadline = document.getElementById("step4Deadline");
+  const step4Warning = document.getElementById("step4Warning");
+  const step5Interest = document.getElementById("step5Interest");
+  const step5Principal = document.getElementById("step5Principal");
+  const step5Deadline = document.getElementById("step5Deadline");
+  const step5Warning = document.getElementById("step5Warning");
+  const summaryCredit = document.getElementById("summaryCredit");
+  const summaryInterest = document.getElementById("summaryInterest");
+  const summaryPrincipal = document.getElementById("summaryPrincipal");
+  const summaryTotal = document.getElementById("summaryTotal");
+  const summaryCurrent = document.getElementById("summaryCurrent");
+  const summaryAdditional = document.getElementById("summaryAdditional");
+  const pointHintBox = document.getElementById("pointHintBox");
+  const pointSubscribeSection = document.getElementById("pointSubscribeSection");
+  const subscribeStartDate = document.getElementById("subscribeStartDate");
+
+  const santaApply = document.getElementById("santaApply");
+  const appApply = document.getElementById("appApply");
+  const creditMission = document.getElementById("creditMission");
+  const communicationStatus = document.getElementById("communicationStatus");
+  const currentPoints = document.getElementById("currentPoints");
+
+  const userName = document.getElementById("userName");
+  const userBirth = document.getElementById("userBirth");
+  const userPhone = document.getElementById("userPhone");
+
+  const selectionSummary = document.getElementById("selectionSummary");
+  const creditPoints = document.getElementById("creditPoints");
+  const interestPoints = document.getElementById("interestPoints");
+  const principalPoints = document.getElementById("principalPoints");
+  const totalPoints = document.getElementById("totalPoints");
+  const additionalPoints = document.getElementById("additionalPoints");
+  const scriptPreview = document.getElementById("scriptPreview");
+
+  populateLoanHistories(loanOption.value);
+  toggleWaitingFields(loanOption.value);
+  updateEventOptionAvailability();
+  document.querySelectorAll("select").forEach(updatePlaceholderStyle);
+  startClock();
+
+  const handleLoanOptionChange = () => {
+    populateLoanHistories(loanOption.value);
+    toggleWaitingFields(loanOption.value);
+    markResultsStale();
+    updatePlaceholderStyle(loanOption);
+  };
+
+  loanOption.addEventListener("change", handleLoanOptionChange);
+  loanOption.addEventListener("input", handleLoanOptionChange);
+
+  if (calculateButton) {
+    calculateButton.addEventListener("click", () => {
+      clearFieldErrors();
+      if (!validateForm()) {
+        return;
+      }
+
+      updateResults();
+      if (resultPanel) {
+        resultPanel.classList.remove("hidden");
+        resultPanel.classList.remove("is-stale");
+        resultPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      if (recalcNote) {
+        recalcNote.classList.add("hidden");
+      }
+    });
+  }
+
+  if (calendarPrev && calendarNext) {
+    calendarPrev.addEventListener("click", () => {
+      calendarViewDate = new Date(
+        calendarViewDate.getFullYear(),
+        calendarViewDate.getMonth() - 1,
+        1
+      );
+      renderCalendar(calendarViewDate);
+    });
+
+    calendarNext.addEventListener("click", () => {
+      calendarViewDate = new Date(
+        calendarViewDate.getFullYear(),
+        calendarViewDate.getMonth() + 1,
+        1
+      );
+      renderCalendar(calendarViewDate);
+    });
+  }
+
+  form.querySelectorAll("input, select").forEach((element) => {
+    if (element === loanOption) {
+      return;
+    }
+
+    element.addEventListener("change", () => {
+      if (element.tagName === "SELECT") {
+        updatePlaceholderStyle(element);
+      }
+      if (element === requestAmount) {
+        updateEventOptionAvailability();
+      }
+
+      if (element === loanHistory) {
+        populateLoanStatuses(loanOption.value, loanHistory.value);
+      }
+
+      if (element === loanDateInput) {
+        updateDiscountBox(loanDateInput.value);
+      }
+
+      markResultsStale();
+    });
+
+    if (element.tagName === "INPUT" && element.type === "number") {
+      element.addEventListener("input", markResultsStale);
+    } else if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+      element.addEventListener("input", markResultsStale);
+    }
+  });
+
+  function populateLoanHistories(option) {
+    const config = LOAN_CONFIG[option];
+
+    loanHistory.innerHTML = "";
+    if (!config) {
+      setSelectPlaceholder(loanHistory, "대출 옵션을 선택하고 오세요.");
+      setSelectPlaceholder(loanStatus, "대출 옵션과 이력 두 가지를 선택하고 오세요.");
+      return;
+    }
+
+    if (option === "웨이팅 대출") {
+      setSelectPlaceholder(loanHistory, "이력을 선택하세요.");
+      addSelectOption(loanHistory, "난 재대출", "난 재대출");
+      addSelectOption(loanHistory, "난 처음", "난 처음");
+    } else {
+      Object.keys(config.histories).forEach((history, index) => {
+        const optionEl = document.createElement("option");
+        optionEl.value = history;
+        optionEl.textContent = history;
+        if (index === 0) {
+          optionEl.selected = true;
+        }
+        loanHistory.appendChild(optionEl);
+      });
+    }
+
+    populateLoanStatuses(option, loanHistory.value);
+  }
+
+  function updateEventOptionAvailability() {
+    if (!eventOption) return;
+
+    eventOption.disabled = false;
+    if (eventAmountNote) {
+      eventAmountNote.style.display = "block";
+    }
+  }
+
+  function markResultsStale() {
+    if (!resultPanel || resultPanel.classList.contains("hidden")) {
+      return;
+    }
+    resultPanel.classList.add("is-stale");
+    if (recalcNote) {
+      recalcNote.classList.remove("hidden");
+    }
+  }
+
+  function clearFieldErrors() {
+    document.querySelectorAll(".field-error").forEach((el) => el.remove());
+  }
+
+  function showFieldError(fieldEl, message) {
+    if (!fieldEl) return;
+    const error = document.createElement("p");
+    error.className = "field-error";
+    const labelText = fieldEl.querySelector("label")?.textContent?.trim();
+    error.textContent = labelText
+      ? `⚠️ ${message} (${labelText})`
+      : `⚠️ ${message}`;
+    fieldEl.appendChild(error);
+  }
+
+  function isSelectValid(selectEl) {
+    if (!selectEl || !selectEl.options.length) return false;
+    const option = selectEl.options[selectEl.selectedIndex];
+    return option && !option.disabled && Boolean(selectEl.value);
+  }
+
+  function isInputValid(inputEl) {
+    if (!inputEl) return false;
+    const value = inputEl.value.trim();
+    if (!value) return false;
+    if (inputEl === currentPoints) {
+      return !Number.isNaN(toNumber(value));
+    }
+    return true;
+  }
+
+  function validateForm() {
+    const validations = [
+      { el: requestAmount, type: "select" },
+      { el: loanPeriod, type: "select" },
+      { el: loanOption, type: "select" },
+      { el: loanHistory, type: "select" },
+      { el: loanStatus, type: "select" },
+      { el: santaApply, type: "select" },
+      { el: appApply, type: "select" },
+      { el: creditMission, type: "select" },
+      { el: communicationStatus, type: "select" },
+      { el: currentPoints, type: "input" },
+      { el: userName, type: "input" },
+      { el: userBirth, type: "input" },
+      { el: userPhone, type: "input" },
+    ];
+
+    for (const item of validations) {
+      const field = item.el?.closest(".field");
+      const valid =
+        item.type === "select"
+          ? isSelectValid(item.el)
+          : isInputValid(item.el);
+      if (!valid) {
+        showFieldError(field, "선택(또는 입력) 안 하면 '대출 가능성 검사하기' 버튼이 눌리지 않습니다.");
+        field?.scrollIntoView({ behavior: "smooth", block: "center" });
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  function formatPoints(value, suffix) {
+    if (value === null || value === undefined || Number.isNaN(value)) {
+      return "없음";
+    }
+    const formatted = Number(value).toLocaleString("ko-KR");
+    return suffix ? `${formatted}${suffix}` : formatted;
+  }
+
+  function formatRateLine(baseRate, discountRate) {
+    const base = baseRate && baseRate !== "0%" ? baseRate : "";
+    const discount = discountRate && discountRate !== "0%" ? discountRate : "";
+
+    if (base && discount && base !== discount) {
+      return `${base} → ${discount}`;
+    }
+    if (base) return base;
+    if (discount) return discount;
+    return "없음";
+  }
+
+  function formatPointsLine(basePoints, discountPoints) {
+    if (!basePoints && !discountPoints) return "없음";
+    if (basePoints && discountPoints && basePoints !== discountPoints) {
+      return `${formatPoints(basePoints, "포")} → ${formatPoints(
+        discountPoints,
+        "🅿"
+      )}`;
+    }
+    return formatPoints(discountPoints || basePoints, "🅿");
+  }
+
+  function formatChangedRate(rateValue, pointsValue) {
+    const rate = toNumber(rateValue);
+    const points = toNumber(pointsValue);
+    if (!rate && !points) return "없음";
+    return rateValue && rateValue !== "0%" ? rateValue : "0%";
+  }
+
+  function formatChangedPoints(pointsValue, rateValue) {
+    const rate = toNumber(rateValue);
+    const points = toNumber(pointsValue);
+    if (!rate && !points) return "없음";
+    return formatPoints(points, "🅿");
+  }
+
+  function setBenefitLines(lines) {
+    benefitLines.forEach((line, index) => {
+      if (!line) return;
+      const text = lines[index] || "";
+      line.textContent = text;
+      line.classList.toggle("hidden", !text);
+    });
+  }
+
+  function formatChecklistLine(prefix, doneText, pendingText, isDone) {
+    const badge = isDone ? "✅" : "☑️";
+    return `${badge} ${prefix} ${isDone ? doneText : pendingText}`;
+  }
+
+  function formatSummaryItem(label, valueText) {
+    return `${label} ${valueText}`;
+  }
+
+  function formatKoreanDate(dateString) {
+    if (!dateString) return "";
+    const parts = dateString.split("-");
+    if (parts.length !== 3) return dateString;
+    const [year, month, day] = parts;
+    return `${Number(year)}년 ${Number(month)}월 ${Number(day)}일`;
+  }
+
+  function formatShortDate(dateString) {
+    if (!dateString) return "-";
+    const parts = dateString.split("-");
+    if (parts.length !== 3) return dateString;
+    const [year, month, day] = parts;
+    return `${year}.${month}.${day}`;
+  }
+
+  function getReviewPeriodText(state) {
+    const option = normalizeOption(state.loanOption);
+    const history = normalizeHistory(state.loanHistory);
+    const status = normalizeStatus(state.loanStatus);
+    const schedule = LOAN_REVIEW_SCHEDULE.find(
+      (item) =>
+        item.option === option &&
+        item.history === history &&
+        item.status === status
+    );
+
+    if (!schedule) return "-";
+    if (schedule.startDate === "매일") return "매일";
+    if (schedule.startDate && schedule.endDate) {
+      return `${formatKoreanDate(schedule.startDate)} ~ ${formatKoreanDate(
+        schedule.endDate
+      )}`;
+    }
+    return schedule.startDate || "-";
+  }
+
+  function populateLoanStatuses(option, history) {
+    if (!LOAN_CONFIG[option]) {
+      setSelectPlaceholder(loanStatus, "대출 옵션과 이력 두 가지를 선택하고 오세요.");
+      return;
+    }
+
+    const statusConfig =
+      LOAN_CONFIG[option].histories[history]?.statuses || {};
+    const statusValues = Object.keys(statusConfig);
+
+    loanStatus.innerHTML = "";
+    if (option === "웨이팅 대출") {
+      if (history === "난 재대출") {
+        setSelectPlaceholder(loanStatus, "상환 상태를 선택하세요.");
+        addSelectOption(loanStatus, "Clean", "Clean");
+        addSelectOption(loanStatus, "Non-Clean", "Non-Clean");
+      } else if (history === "난 처음") {
+        setSelectPlaceholder(loanStatus, "신청 횟수를 선택하세요.");
+        addSelectOption(loanStatus, "지금 처음 (One)", "지금 처음 (One)");
+        addSelectOption(loanStatus, "몇 번 (Several)", "몇 번 (Several)");
+      } else {
+        setSelectPlaceholder(loanStatus, "대출 옵션과 이력 두 가지를 선택하고 오세요.");
+      }
+    } else {
+      statusValues.forEach((label, index) => {
+        const statusEl = document.createElement("option");
+        statusEl.value = label;
+        statusEl.textContent = label;
+        if (index === 0) statusEl.selected = true;
+        loanStatus.appendChild(statusEl);
+      });
+    }
+
+    if (!statusValues.length) {
+      const emptyOption = document.createElement("option");
+      emptyOption.value = "";
+      emptyOption.textContent = "대출 옵션과 이력 두 가지를 선택하고 오세요.";
+      loanStatus.appendChild(emptyOption);
+    }
+  }
+
+  function toggleWaitingFields(option) {
+    const isWaiting = option === "웨이팅 대출";
+    waitingInfo.classList.toggle("hidden", !isWaiting);
+
+    if (!isWaiting) {
+      loanDateInput.value = "";
+      resetDiscountBox();
+      return;
+    }
+
+    if (!loanDateInput.value) {
+      loanDateInput.value = getTodayDateString();
+    }
+
+    calendarViewDate = new Date(loanDateInput.value);
+    renderCalendar(calendarViewDate);
+    updateDiscountBox(loanDateInput.value);
+  }
+
+  function updateDiscountBox(dateValue) {
+    if (!dateValue) {
+      resetDiscountBox();
+      return;
+    }
+
+    const found = findWaitingSeat(dateValue);
+
+    if (!found) {
+      waitingPeriod.textContent = "기간 정보 없음";
+      discountSeat.textContent = "좌석 정보 없음";
+      creditRange.textContent = "-";
+      wonmiRate.textContent = "-";
+      waitingDateText.textContent = "-";
+      return;
+    }
+
+    waitingPeriod.textContent = formatRangePeriod(
+      found.startDate,
+      found.endDate
+    );
+    discountSeat.textContent = found.seat;
+    creditRange.textContent = SEAT_CREDIT_RANGE[found.seat] || "-";
+    wonmiRate.textContent = found.principalRate || "-";
+    waitingDateText.textContent = formatKoreanDate(dateValue);
+  }
+
+  function resetDiscountBox() {
+    waitingPeriod.textContent = "-";
+    discountSeat.textContent = "-";
+    creditRange.textContent = "-";
+    wonmiRate.textContent = "-";
+    waitingDateText.textContent = "-";
+  }
+
+  function getTodayDateString() {
+    const now = new Date();
+    const formatter = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Seoul",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+    return formatter.format(now);
+  }
+
+  function renderCalendar(viewDate) {
+    if (!calendarGrid || !calendarMonthLabel) return;
+
+    const year = viewDate.getFullYear();
+    const monthIndex = viewDate.getMonth();
+    const firstDay = new Date(year, monthIndex, 1).getDay();
+    const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+    const selectedDate = loanDateInput.value
+      ? new Date(loanDateInput.value)
+      : null;
+
+    calendarMonthLabel.textContent = `${year}년 ${monthIndex + 1}월`;
+    calendarGrid.innerHTML = "";
+
+    for (let i = 0; i < firstDay; i += 1) {
+      const spacer = document.createElement("div");
+      spacer.className = "calendar-day is-empty";
+      calendarGrid.appendChild(spacer);
+    }
+
+    for (let day = 1; day <= daysInMonth; day += 1) {
+      const cellDate = new Date(year, monthIndex, day);
+      const cell = document.createElement("button");
+      cell.type = "button";
+      cell.className = "calendar-day";
+      cell.textContent = day;
+
+      const dateValue = toDateValue(cellDate);
+      if (selectedDate && isSameDate(cellDate, selectedDate)) {
+        cell.classList.add("is-selected");
+      }
+
+      cell.addEventListener("click", () => {
+        loanDateInput.value = dateValue;
+        updateDiscountBox(dateValue);
+        renderCalendar(cellDate);
+        updateResults();
+      });
+
+      calendarGrid.appendChild(cell);
+    }
+  }
+
+  function toDateValue(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
+
+  function isSameDate(a, b) {
+    return (
+      a.getFullYear() === b.getFullYear() &&
+      a.getMonth() === b.getMonth() &&
+      a.getDate() === b.getDate()
+    );
+  }
+
+  function formatKoreanDate(dateValue) {
+    const [year, month, day] = dateValue.split("-");
+    return `${year}년 ${Number(month)}월 ${Number(day)}일`;
+  }
+
+  function formatRangePeriod(startDate, endDate) {
+    if (!startDate || !endDate) return "-";
+    const [startYear, startMonth, startDay] = startDate.split("-");
+    const [endYear, endMonth, endDay] = endDate.split("-");
+
+    if (startYear === endYear && startMonth === endMonth) {
+      return `${startYear}년 ${Number(startMonth)}월 ${Number(
+        startDay
+      )}일 ~ ${Number(endDay)}일`;
+    }
+
+    return `${startYear}년 ${Number(startMonth)}월 ${Number(
+      startDay
+    )}일 ~ ${endYear}년 ${Number(endMonth)}월 ${Number(endDay)}일`;
+  }
+
+  function findWaitingSeat(dateValue) {
+    const target = new Date(dateValue);
+    return WAITING_SEAT_RANGES.find((seat) => {
+      const start = new Date(seat.startDate);
+      const end = new Date(seat.endDate);
+      return target >= start && target <= end;
+    });
+  }
+
+  function setSelectPlaceholder(selectEl, message) {
+    selectEl.innerHTML = "";
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = message;
+    placeholder.selected = true;
+    placeholder.disabled = true;
+    selectEl.appendChild(placeholder);
+    updatePlaceholderStyle(selectEl);
+  }
+
+  function addSelectOption(selectEl, value, label, isDisabled = false) {
+    const optionEl = document.createElement("option");
+    optionEl.value = value;
+    optionEl.textContent = label;
+    if (isDisabled) {
+      optionEl.disabled = true;
+    }
+    selectEl.appendChild(optionEl);
+    updatePlaceholderStyle(selectEl);
+  }
+
+  function updatePlaceholderStyle(selectEl) {
+    if (!selectEl || !selectEl.options.length) return;
+    const isPlaceholder =
+      selectEl.selectedIndex === 0 && selectEl.options[0].disabled;
+    selectEl.classList.toggle("is-placeholder", isPlaceholder);
+  }
+
+  function getFormState() {
+    return {
+      loanOption: loanOption.value,
+      loanHistory: loanHistory.value,
+      loanStatus: loanStatus.value,
+      loanDate: loanDateInput.value,
+      requestAmount: toNumber(requestAmount.value),
+      loanPeriod: loanPeriod.value,
+      rudolphSpecial: rudolphSpecial ? rudolphSpecial.checked : false,
+      santaApply: santaApply.value,
+      appApply: appApply.value,
+      creditMission: creditMission.value,
+      communicationStatus: communicationStatus.value,
+      currentPoints: toNumber(currentPoints.value) || 0,
+      userName: userName.value.trim(),
+      userBirth: userBirth.value,
+      userPhone: userPhone.value.trim(),
+    };
+  }
+
+  function normalizeOption(option) {
+    if (!option) return "";
+    if (option.includes("웨이팅")) return "웨이팅 대출";
+    if (option.includes("롸잇나우")) return "롸잇나우 대출";
+    if (option.includes("블랙찬스")) return "블랙찬스 티켓";
+    if (option.includes("이벤트")) return "이벤트 대출";
+    return option;
+  }
+
+  function normalizeHistory(history) {
+    if (!history) return "";
+    if (history.includes("난 재대출")) return "재대출";
+    if (history.includes("난 처음")) return "신규";
+    return history;
+  }
+
+  function normalizeStatus(status) {
+    if (!status) return "";
+    if (status.includes("Clean")) return "Clean";
+    if (status.includes("Non-Clean")) return "Non-Clean";
+    if (status.includes("One")) return "One";
+    if (status.includes("Several")) return "Several";
+    if (status.includes("No Matter") || status.includes("All")) return "No Matter";
+    if (status.includes("블찬원") || status.includes("4%원")) return "블찬원";
+    if (status.includes("블찬이") || status.includes("블변이")) return "블찬이";
+    if (status.includes("블찬현") || status.includes("블현")) return "블찬현";
+    if (status.includes("세뱃돈")) return "벚꽃 🌸 대출";
+    return status;
+  }
+
+  function getSeatForState(state) {
+    if (normalizeOption(state.loanOption) === "웨이팅 대출" && state.loanDate) {
+      return findWaitingSeat(state.loanDate)?.seat || "";
+    }
+    if (normalizeOption(state.loanOption) === "롸잇나우 대출") {
+      return "Free Seat (자유석)";
+    }
+    if (normalizeOption(state.loanOption) === "블랙찬스 티켓") {
+      return "Thanks Seat (감사석)";
+    }
+    if (normalizeOption(state.loanOption) === "이벤트 대출") {
+      return "Special Seat (특별석)";
+    }
+    return "";
+  }
+
+  function findPointSummaryRow(state) {
+    const amountText = `${state.requestAmount}만 원`;
+    const option = normalizeOption(state.loanOption);
+    const history = normalizeHistory(state.loanHistory);
+    const status = normalizeStatus(state.loanStatus);
+    const seat = getSeatForState(state);
+
+    let rows = POINT_SUMMARY_TABLE.filter(
+      (row) => row.amountText === amountText && row.loanOption === option
+    );
+
+    if (history) {
+      rows = rows.filter((row) => row.loanHistory === history);
+    }
+
+    if (status) {
+      rows = rows.filter((row) => row.loanStatus === status);
+    }
+
+    if (seat) {
+      const seatMatch = rows.find((row) => row.seat === seat);
+      if (seatMatch) return seatMatch;
+    }
+
+    return rows[0] || null;
+  }
+
+  function calculatePoints(state) {
+    const summaryRow = findPointSummaryRow(state);
+
+    if (summaryRow) {
+      const credit = summaryRow.creditDiscountPoints;
+      const interest = summaryRow.interestDiscountPoints;
+      const principal = summaryRow.principalDiscountPoints;
+      const total = summaryRow.totalPoints || credit + interest + principal;
+      const additional = Math.max(total - state.currentPoints, 0);
+
+      return {
+        credit,
+        interest,
+        principal,
+        total,
+        additional,
+      };
+    }
+
+    return {
+      credit: 0,
+      interest: 0,
+      principal: 0,
+      total: 0,
+      additional: Math.max(0 - state.currentPoints, 0),
+    };
+  }
+
+  function buildSummary(state) {
+    if (!LOAN_CONFIG[state.loanOption]) {
+      return "-";
+    }
+    return `${state.loanOption} · ${state.loanHistory || "-"} (${state.loanStatus || "상태 선택"}) · ${state.requestAmount}만원 / ${state.loanPeriod}일`;
+  }
+
+  function buildScript(state, result) {
+    if (!LOAN_CONFIG[state.loanOption]) {
+      return "대출 옵션을 선택해 주세요.";
+    }
+    const displayName = state.userName || "고객님";
+    const periodText = state.loanPeriod === "30" ? "1개월" : `${state.loanPeriod}일`;
+
+    return [
+      `안녕하세요 ${displayName} 😊`,
+      // T-174 WT-174: '설날 대출' 하드코딩 → MONTH_CONFIG 참조 전환
+      // 정책: 과거 월/절기 워딩이 현재 월 페이지에 노출되면 안 됨 (사장님 지시 2026-09-29)
+      // 근거: MONTH_CONFIG는 month-config.js가 app.js보다 먼저 로드되고 폴백이 보장되어 항상 non-null
+      // 효과: 다음 달 전환 시 month-config.js 한 곳만 고치면 되어 이월 결함 재발 차단
+      `${MONTH_CONFIG.loan.name} ${state.loanOption} 조건으로 ${state.requestAmount}만원 (${periodText}) 접수 상태를 안내드립니다.`,
+      `현재 미션 포인트는 총 ${result.total}점이며, 추가 적립 필요 포인트는 ${result.additional}점입니다.`,
+      // T-174 WT-174: '루돌프 스페셜티' 분기 삭제
+      // 근거: 참조 대상 #rudolphSpecial 요소가 index.html/index-dev.html에 존재하지 않아
+      //       state.rudolphSpecial이 항상 false → "루돌프 스페셜티는 아직 미참여 상태예요."가
+      //       상시 노출되던 크리스마스 시즌 잔존 문구였음.
+      // 제약: 대체 문구를 새로 만들면 존재하지 않는 정책을 지어내는 것이므로 문구 자체를 제거한다.
+      `카카오 상담톡에서 확인 후 ${state.loanStatus} 단계 진행 부탁드립니다.`,
+    ].join("\n");
+  }
+
+  function updateResults() {
+    const state = getFormState();
+    const result = calculatePoints(state);
+    const summaryRow = findPointSummaryRow(state);
+    const hasSummary = Boolean(summaryRow);
+    const optionLabel = normalizeOption(state.loanOption);
+    const historyLabel = state.loanHistory || "";
+    const statusLabel = state.loanStatus || "";
+    const normalizedHistory = normalizeHistory(state.loanHistory);
+    const normalizedStatus = normalizeStatus(state.loanStatus);
+    const amountText = state.requestAmount
+      ? `${state.requestAmount}만 원`
+      : "-";
+    const periodText =
+      state.loanPeriod === "30"
+        ? "1개월 (30일)"
+        : state.loanPeriod
+          ? `${state.loanPeriod}일`
+          : "-";
+    const productInfo = LOAN_PRODUCT_TABLE.find(
+      (product) => product.amountText === amountText
+    );
+    const repaymentType =
+      summaryRow?.changedRepayment ||
+      summaryRow?.baseRepayment ||
+      productInfo?.baseRepayment ||
+      "-";
+    const repaymentDescription =
+      productInfo?.description ? ` (${productInfo.description})` : "";
+    const seatName = getSeatForState(state);
+
+    if (selectionSummary) {
+      selectionSummary.textContent = buildSummary(state);
+    }
+    if (creditPoints) {
+      creditPoints.textContent = `${result.credit} pt`;
+    }
+    if (interestPoints) {
+      interestPoints.textContent = `${result.interest} pt`;
+    }
+    if (principalPoints) {
+      principalPoints.textContent = `${result.principal} pt`;
+    }
+    if (totalPoints) {
+      totalPoints.textContent = `${result.total} pt`;
+    }
+    if (additionalPoints) {
+      additionalPoints.textContent = `${result.additional} pt`;
+    }
+    if (scriptPreview) {
+      scriptPreview.value = buildScript(state, result);
+    }
+
+    if (benefitTitle) {
+      benefitTitle.textContent = optionLabel
+        ? `🌟 ${optionLabel}의 가장 큰 혜택`
+        : "🌟 대출의 가장 큰 혜택";
+      const benefit = LOAN_BENEFITS[optionLabel] || "";
+      setBenefitLines([benefit, "", "", ""]);
+    }
+
+    if (resultAmount) {
+      resultAmount.textContent = `금액 : ${amountText}`;
+    }
+    if (resultPeriod) {
+      resultPeriod.textContent = `기간 : ${periodText}`;
+    }
+    if (resultOption) {
+      resultOption.textContent = `대출 옵션 : ${optionLabel || "-"}`;
+    }
+    if (resultHistory) {
+      resultHistory.textContent = `대출 이력 : ${historyLabel || "-"}`;
+    }
+    if (resultStatus) {
+      resultStatus.textContent = `대출 상태 : ${statusLabel || "-"}`;
+    }
+    if (resultSeat) {
+      const showSeat =
+        optionLabel === "웨이팅 대출" && seatName;
+      resultSeat.classList.toggle("hidden", !showSeat);
+      if (showSeat) {
+        resultSeat.textContent = `좌석명 : ${seatName}`;
+      }
+    }
+    if (resultRepayment) {
+      resultRepayment.textContent = `상환 방식 : ${repaymentType}${repaymentDescription}`;
+    }
+
+    if (reviewPeriod) {
+      reviewPeriod.textContent = getReviewPeriodText(state);
+    }
+
+    if (creditSummary) {
+      if (!summaryRow) {
+        creditSummary.textContent = "-";
+      } else {
+        const creditRate = summaryRow.creditDiscountRate || "0%";
+        const creditRateValue = toNumber(creditRate);
+        const rateText =
+          creditRateValue > 0 ? `${creditRate} 할인` : "인하";
+        const statusText = normalizedStatus || "상태";
+        creditSummary.textContent = `${statusText}, ${rateText}`;
+      }
+    }
+    if (creditPointsLine) {
+      creditPointsLine.textContent = summaryRow
+        ? formatPointsLine(
+          summaryRow.baseCreditPoints,
+          summaryRow.creditDiscountPoints
+        )
+        : "-";
+    }
+
+    if (interestRateLine) {
+      interestRateLine.textContent = summaryRow
+        ? formatChangedRate(
+          summaryRow.interestDiscountRate,
+          summaryRow.interestDiscountPoints
+        )
+        : "-";
+    }
+    if (interestPointsLine) {
+      interestPointsLine.textContent = summaryRow
+        ? formatChangedPoints(
+          summaryRow.interestDiscountPoints,
+          summaryRow.interestDiscountRate
+        )
+        : "-";
+    }
+
+    if (principalRateLine) {
+      if (summaryRow) {
+        const isEventLoan = summaryRow.loanOption === "이벤트 대출";
+        principalRateLine.textContent = isEventLoan
+          ? `파격 인하, ${summaryRow.principalDiscountRate}`
+          : formatChangedRate(summaryRow.principalDiscountRate, summaryRow.principalDiscountPoints);
+      } else {
+        principalRateLine.textContent = "-";
+      }
+    }
+    if (principalPointsLine) {
+      principalPointsLine.textContent = summaryRow
+        ? formatChangedPoints(
+          summaryRow.principalDiscountPoints,
+          summaryRow.principalDiscountRate
+        )
+        : "-";
+    }
+
+    if (totalPointsLine) {
+      totalPointsLine.textContent = hasSummary
+        ? `${formatPoints(result.total, "🅿")}`
+        : "-";
+    }
+    if (currentPointsLine) {
+      currentPointsLine.textContent = `${formatPoints(
+        state.currentPoints,
+        "🅿"
+      )}`;
+    }
+    if (additionalPointsLine) {
+      if (!hasSummary) {
+        additionalPointsLine.textContent = "조건 없음";
+      } else {
+        additionalPointsLine.textContent =
+          result.additional > 0
+            ? `${formatPoints(result.additional, "🅿")} 적립 필요`
+            : "적립 필요 없음";
+      }
+    }
+
+    const seatInfo = getSeatForState(state);
+    let waitingSeat = seatInfo ? findWaitingSeat(state.loanDate) : null;
+    if (!waitingSeat && seatInfo) {
+      waitingSeat = WAITING_SEAT_RANGES.find(
+        (seat) => seat.name === seatInfo
+      );
+    }
+    const reviewText = getReviewPeriodText(state);
+    const creditValue = summaryRow?.creditDiscountPoints || 0;
+    const interestValue = summaryRow?.interestDiscountPoints || 0;
+    const principalValue = summaryRow?.principalDiscountPoints || 0;
+    const repaymentTotal = interestValue + principalValue;
+
+    if (step1) {
+      const done = santaApply.value.includes("신청했습니다");
+      step1.textContent = formatChecklistLine(
+        // T-174 WT-174: 월 상품명 하드코딩 → MONTH_CONFIG 참조 (과거 월 워딩 노출 방지)
+        // 주의: 이 대입이 index.html 인라인 스크립트(step1 초기 대입)보다 나중에 실행되어
+        //       최종 화면 표시값이 되므로, 여기를 고치지 않으면 HTML만 고쳐도 소용없음
+        `⓵ ${MONTH_CONFIG.loan.name} 신청`,
+        "완료",
+        "완료하세요.",
+        done
+      );
+    }
+    if (step2) {
+      const done = appApply.value.includes("신청했습니다");
+      const amountText = state.requestAmount
+        ? `${state.requestAmount}만 원`
+        : "-";
+      const periodText =
+        state.loanPeriod === "30"
+          ? "1개월(30일)"
+          : state.loanPeriod
+            ? `${state.loanPeriod}일`
+            : "-";
+      step2.textContent = formatChecklistLine(
+        `⓶ 써주세요. 앱에서 ${amountText}과 ${periodText} 신청`,
+        "완료",
+        "완료하세요.",
+        done
+      );
+    }
+    if (step3) {
+      const creditText = formatPoints(creditValue, "🅿");
+      const done = creditValue > 0 && state.currentPoints >= creditValue;
+      step3.textContent = formatChecklistLine(
+        `⓷ 앱에서 크미 (${creditText})`,
+        "완료",
+        "완료하세요.",
+        done
+      );
+    }
+    if (step3Deadline) {
+      step3Deadline.textContent =
+        waitingSeat?.creditDeadline || "신청 후 48시간 이내";
+    }
+    if (step4) {
+      const done = communicationStatus.value.includes("제출 완료");
+      step4.textContent = formatChecklistLine(
+        "⓸ 앱에서 소통거리 미션",
+        "완료",
+        "완료하세요.",
+        done
+      );
+    }
+    if (step4Deadline) {
+      step4Deadline.textContent = "크미 완료 후 48시간 이내";
+    }
+    if (step4Warning) {
+      const periodText = reviewText !== "-" ? reviewText : "심사 기간";
+      step4Warning.textContent = `⚠️ 여기까지 했다면 앱에선 '검토중'으로 보이겠지만, 실제로는 검토를 안 합니다. 아래 ⓹번까지 완료해야 익일(평일 18:00 ~ 22:00)에 검토 시작됩니다. ⚠️`;
+    }
+    if (step5) {
+      const done = repaymentTotal > 0 && state.currentPoints >= repaymentTotal;
+      step5.textContent = formatChecklistLine(
+        "⓹ 포인트 상환 미션(이미 + 원미)",
+        "완료",
+        "완료하세요.",
+        done
+      );
+    }
+    if (step5Interest) {
+      if (summaryRow) {
+        const rateText = formatChangedRate(
+          summaryRow.interestDiscountRate,
+          summaryRow.interestDiscountPoints
+        );
+        const pointsText = formatChangedPoints(
+          summaryRow.interestDiscountPoints,
+          summaryRow.interestDiscountRate
+        );
+        step5Interest.textContent = `이자 미션, 이미 (${rateText}) : ${pointsText}`;
+      } else {
+        step5Interest.textContent = "-";
+      }
+    }
+    if (step5Principal) {
+      if (summaryRow) {
+        const isEventLoan = summaryRow.loanOption === "이벤트 대출";
+        const rateText = isEventLoan
+          ? `파격 인하, ${summaryRow.principalDiscountRate}`
+          : formatChangedRate(summaryRow.principalDiscountRate, summaryRow.principalDiscountPoints);
+        const pointsText = formatChangedPoints(
+          summaryRow.principalDiscountPoints,
+          summaryRow.principalDiscountRate
+        );
+        step5Principal.textContent = `원금 미션, 원미 (${rateText}) : ${pointsText}`;
+      } else {
+        step5Principal.textContent = "-";
+      }
+    }
+    if (step5Deadline) {
+      const showDeadline =
+        optionLabel === "웨이팅 대출" && waitingSeat?.principalDeadline;
+      step5Deadline.classList.toggle("hidden", !showDeadline);
+      if (showDeadline) {
+        step5Deadline.textContent = `적립 기한 : ${formatKoreanDate(
+          waitingSeat.principalDeadline
+        )}까지`;
+      } else {
+        step5Deadline.textContent = "";
+      }
+    }
+    if (step5Warning) {
+      step5Warning.textContent =
+        "⚠️ 앱에서는 포인트 상환 미션이 따로 보이지 않으니, 포인트 적립소에서 적립하시면 됩니다. ⚠️";
+    }
+
+    if (summaryCredit) {
+      if (summaryRow) {
+        const isEventLoan = summaryRow.loanOption === "이벤트 대출";
+        if (isEventLoan) {
+          const pct = Math.round(summaryRow.creditDiscountPoints / summaryRow.amountValue * 1000) / 10;
+          summaryCredit.textContent = formatSummaryItem(
+            `크미 인하 (${pct}%) :`,
+            formatPoints(creditValue, "🅿")
+          );
+        } else {
+          const creditRate = summaryRow.creditDiscountRate || "0%";
+          const creditRateValue = toNumber(creditRate);
+          const rateText =
+            creditRateValue > 0 ? `${creditRate} 할인` : "인하";
+          summaryCredit.textContent = formatSummaryItem(
+            `크미 (${rateText}) :`,
+            formatPoints(creditValue, "🅿")
+          );
+        }
+      } else {
+        summaryCredit.textContent = "-";
+      }
+    }
+    if (summaryInterest) {
+      if (summaryRow) {
+        const rateText = formatChangedRate(
+          summaryRow.interestDiscountRate,
+          summaryRow.interestDiscountPoints
+        );
+        summaryInterest.textContent = formatSummaryItem(
+          `이자 미션, 이미 (${rateText}) :`,
+          formatChangedPoints(
+            summaryRow.interestDiscountPoints,
+            summaryRow.interestDiscountRate
+          )
+        );
+      } else {
+        summaryInterest.textContent = "-";
+      }
+    }
+    if (summaryPrincipal) {
+      if (summaryRow) {
+        const isEventLoan = summaryRow.loanOption === "이벤트 대출";
+        const rateText = isEventLoan
+          ? `파격 인하, ${summaryRow.principalDiscountRate}`
+          : formatChangedRate(summaryRow.principalDiscountRate, summaryRow.principalDiscountPoints);
+        summaryPrincipal.textContent = formatSummaryItem(
+          `원금 미션, 원미 (${rateText}) :`,
+          formatChangedPoints(
+            summaryRow.principalDiscountPoints,
+            summaryRow.principalDiscountRate
+          )
+        );
+      } else {
+        summaryPrincipal.textContent = "-";
+      }
+    }
+    if (summaryTotal) {
+      summaryTotal.textContent = `총 ${formatPoints(result.total, "🅿")} 필요`;
+    }
+    if (summaryCurrent) {
+      summaryCurrent.textContent = `현재 ${formatPoints(
+        state.currentPoints,
+        "🅿"
+      )} 보유`;
+    }
+    if (summaryAdditional) {
+      summaryAdditional.textContent =
+        result.additional > 0
+          ? `추가 포인트 ${formatPoints(result.additional, "🅿")} 적립 필요`
+          : "추가 포인트 적립 필요 없음";
+    }
+
+    if (pointHintBox) {
+      const showHint =
+        optionLabel === "웨이팅 대출" ||
+        optionLabel === "롸잇나우 대출" ||
+        optionLabel === "이벤트 대출";
+      pointHintBox.classList.toggle("hidden", !showHint);
+    }
+
+    if (pointSubscribeSection) {
+      const showSubscribe = optionLabel === "웨이팅 대출";
+      pointSubscribeSection.classList.toggle("hidden", !showSubscribe);
+      if (showSubscribe && subscribeStartDate) {
+        subscribeStartDate.textContent = formatShortDate(state.loanDate);
+      }
+    }
+  }
+});
+
+function startClock() {
+  const clockEl = document.getElementById("liveClock");
+  if (!clockEl) return;
+
+  const days = ["일", "월", "화", "수", "목", "금", "토"];
+  const timeFormatter = new Intl.DateTimeFormat("ko-KR", {
+    timeZone: "Asia/Seoul",
+    hour12: false,
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  const dateFormatter = new Intl.DateTimeFormat("ko-KR", {
+    timeZone: "Asia/Seoul",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  const tick = () => {
+    const now = new Date();
+    const dateText = dateFormatter.format(now);
+    const timeText = timeFormatter.format(now);
+    const weekdayName = days[getKoreaWeekdayIndex(now)];
+    clockEl.textContent = `${dateText} ${weekdayName}요일 ${timeText}`;
+  };
+
+  tick();
+  setInterval(tick, 1000);
+}
+
+function getKoreaWeekdayIndex(date) {
+  const utc = date.getTime();
+  const kst = new Date(utc + 9 * 60 * 60 * 1000);
+  return kst.getUTCDay();
+}
+
+  </script>
+  <script>
+    /* month-config.js 기반 동적 텍스트 주입 (T-013) */
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof MONTH_CONFIG === 'undefined') return;
+      var cfg = MONTH_CONFIG;
+
+      // 금액 · 경험 연동 로직
+      function updateAmountWarnings() {
+        var amountSel = document.getElementById('requestAmount');
+        var expSel    = document.getElementById('loanExperience');
+        var optionSel = document.getElementById('loanOption');
+        var warnEl    = document.getElementById('warn-amount-experience');
+        var isNew = expSel && expSel.value === 'new';
+        // 첫 이용(경험 없음) → 50만 원 옵션 비활성(회색) + 선택 리셋
+        if (amountSel) {
+          var opt50 = amountSel.querySelector('option[value="50"]');
+          if (opt50) {
+            opt50.disabled = isNew;
+            if (isNew && amountSel.value === '50') { amountSel.value = ''; }
+          }
+        }
+        // 첫 이용(경험 없음) → 블랙찬스 티켓 사용 옵션 비활성(회색) + 선택 리셋
+        if (optionSel) {
+          var blackOpt = optionSel.querySelector('option[value="블랙찬스 티켓 사용"]');
+          if (blackOpt) {
+            blackOpt.disabled = isNew;
+            if (isNew && optionSel.value === '블랙찬스 티켓 사용') { optionSel.value = ''; }
+          }
+        }
+        // 30만·50만 원 선택 시 이벤트 대출 옵션 비활성(회색)
+        var is50 = amountSel && amountSel.value === '50';
+        var is30 = amountSel && amountSel.value === '30';
+        if (optionSel) {
+          var eventOpt = optionSel.querySelector('option[value="이벤트 대출"]');
+          if (eventOpt) {
+            eventOpt.disabled = is50 || is30;
+            if ((is50 || is30) && optionSel.value === '이벤트 대출') { optionSel.value = ''; }
+          }
+        }
+        // 경험없음 + 50만 원 → 경고 (방어용)
+        if (warnEl) { warnEl.style.display = (is50 && isNew) ? 'block' : 'none'; }
+      }
+      var amtEl = document.getElementById('requestAmount');
+      var expEl = document.getElementById('loanExperience');
+      if (amtEl) amtEl.addEventListener('change', updateAmountWarnings);
+      if (expEl) expEl.addEventListener('change', updateAmountWarnings);
+
+      // 대출 상품명
+      var el = document.getElementById('loanProductName');
+      if (el) el.textContent = cfg.loan.name;
+      // santaApply placeholder URL
+      var sa = document.getElementById('santaApply');
+      if (sa) sa.options[0].text = 'https://www.sirjuseyo.com' + cfg.detailUrl + 'index.html';
+      // santaApply 라벨
+      var lbl = document.getElementById('santaApplyLabel');
+      if (lbl) lbl.textContent = cfg.loan.name + '을 신청하셨나요?';
+      // 결과 패널 신청정보 헤더
+      var hdr = document.getElementById('resultInfoHeader');
+      if (hdr) hdr.textContent = cfg.loan.name + ' 신청 정보';
+      // step1
+      var s1 = document.getElementById('step1');
+      if (s1) s1.textContent = '✅ ⓵ ' + cfg.loan.name + ' 신청 완료 / 완료하세요.';
+      // step5Deadline
+      var s5 = document.getElementById('step5Deadline');
+      if (s5) s5.textContent = '적립 기한 : ' + cfg.pointDeadline + '까지';
+      // subscribeStartDate
+      var sd = document.getElementById('subscribeStartDate');
+      if (sd) sd.textContent = cfg.subscribeStart;
+      // reviewPeriod default
+      var rp = document.getElementById('reviewPeriod');
+      if (rp) rp.textContent = cfg.reviewPeriod.display;
+      // waitingDateText / waitingPeriod
+      var wdt = document.getElementById('waitingDateText');
+      if (wdt) wdt.textContent = cfg.defaultWaitingDate;
+      var wp = document.getElementById('waitingPeriod');
+      if (wp) wp.textContent = cfg.defaultWaitingPeriod;
+      // 이벤트 가이드
+      var egl = document.getElementById('eventGuideLabel');
+      if (egl) egl.innerHTML = '이벤트 대출 &gt; ' + cfg.event.period;
+      var egn = document.getElementById('eventGuideName');
+      if (egn) egn.textContent = cfg.event.name + '(상태) : 변형된 이포 상품으로 이용';
+      // CTA 버튼
+      var cta = document.getElementById('ctaButton');
+      if (cta) {
+        cta.href = cfg.detailUrl;
+        cta.textContent = cfg.ctaText;
+      }
+    });
+  </script>
+</body>
+
+</html>

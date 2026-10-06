@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>써주세요. 앱으로 이동 중…</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--purple:#380097;--orange:#FF5400;--cream:#FAF7F2;--text:#1A1A2E;--gray:#888;}
+html,body{height:100%;background:var(--cream);font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--text);}
+.wrap{min-height:100%;max-width:480px;margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;text-align:center;}
+.logo{font-size:1.15rem;font-weight:900;letter-spacing:-.5px;margin-bottom:28px;}
+.logo em{font-style:normal;color:var(--purple);}
+.spinner{width:38px;height:38px;border:3px solid rgba(56,0,151,.15);border-top-color:var(--purple);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:22px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.msg{font-size:1rem;font-weight:700;line-height:1.7;margin-bottom:8px;}
+.sub{font-size:.85rem;font-weight:300;color:var(--gray);line-height:1.7;margin-bottom:28px;}
+.btn{display:block;width:100%;max-width:320px;text-align:center;background:var(--orange);color:#fff;font-size:1.05rem;font-weight:700;border-radius:14px;padding:15px 20px;text-decoration:none;letter-spacing:-.2px;margin-bottom:10px;border:none;cursor:pointer;font-family:inherit;}
+.btn-ghost{display:block;width:100%;max-width:320px;text-align:center;background:transparent;color:var(--purple);font-size:.95rem;font-weight:700;border:2px solid var(--purple);border-radius:14px;padding:13px 20px;text-decoration:none;letter-spacing:-.2px;}
+.hide{display:none !important;}
+.grad-bar{width:48%;max-width:220px;height:3px;border-radius:10px;background:linear-gradient(90deg,var(--purple),#A6D6DE,var(--orange));margin-top:36px;}
+</style>
+</head>
+<body>
+<!-- ─────────────────────────────────────────────────────────────
+     앱링크 중계 페이지 (W-180 / T-180)
+     카카오톡은 커스텀 스킴을 메시지로 전송할 수 없어 https 중계가 필요함.
+     사용자에게 콘텐츠를 보여주는 페이지가 아니라 0.1초 통과 지점이다.
+
+     URL   : /app/go?screen=monthly_loan | loan_checker
+     동작   : 스킴 실행 → 앱 있으면 열림 / 없으면 타이머 만료 후 스토어
+     iOS   : Universal Link가 먼저 앱을 잡으면 이 페이지에 도달하지 않음.
+             도달했다 = 미설치 또는 UL 실패 → 스킴 → 스토어
+     ───────────────────────────────────────────────────────────── -->
+<div class="wrap">
+  <div class="logo">써주세요<em>.</em></div>
+
+  <!-- 모바일: 이동 중 안내 -->
+  <div id="mobile-view">
+    <div class="spinner"></div>
+    <div class="msg">앱으로 이동하고 있어요</div>
+    <div class="sub">잠시만 기다려 주세요.<br>자동으로 열리지 않으면 아래 버튼을 눌러 주세요.</div>
+    <!-- 카톡 인앱 브라우저가 자동 스킴 실행을 막는 경우가 있어 수동 버튼을 안전망으로 둔다 -->
+    <button type="button" class="btn" id="btn-open">앱으로 열기</button>
+    <a class="btn-ghost" id="btn-store" href="#">앱 설치하기</a>
+  </div>
+
+  <!-- PC: 안내 -->
+  <div id="pc-view" class="hide">
+    <div class="msg">모바일에서 열어 주세요</div>
+    <div class="sub">이 링크는 써주세요. 앱으로 연결됩니다.<br>휴대폰에서 다시 눌러 주세요.</div>
+    <a class="btn" href="https://www.sirjuseyo.com/">써주세요. 홈으로</a>
+  </div>
+
+  <div class="grad-bar"></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── 설정값 ──────────────────────────────────────────────
+     정책: 액션값은 Android(W-898)·iOS(W-087)와 합의된 고정 문자열.
+           앱 측은 대소문자 무관 비교하지만 합의 표기를 그대로 쓴다. */
+  var SCHEME_BASE = 'sirjuseyo://intro?service=nano&action=';
+  var ACTIONS = {
+    monthly_loan: 'MONTHLY_LOAN',   // 앱 - 월별 대출 안내
+    loan_checker: 'LOAN_CHECKER'    // 앱 - 대출 가능성 검사기
+  };
+  var STORE = {
+    android: 'https://play.google.com/store/apps/details?id=company101.fundlock',
+    ios:     'https://apps.apple.com/kr/app/id1277639490'
+  };
+  var HOME = 'https://www.sirjuseyo.com/';
+  var FALLBACK_MS = 1800;   // 요청 사양: 1.5~2초 내 이탈 없으면 스토어
+
+  /* ── 쿼리 파싱 ──────────────────────────────────────────
+     제약: GitHub Pages는 정적 호스팅이라 서버 라우팅이 없다.
+           /app/go?screen=... 를 app/go/index.html 이 받아 JS로 직접 읽는다. */
+  function getScreen() {
+    var m = /[?&]screen=([^&#]*)/.exec(location.search);
+    return m ? decodeURIComponent(m[1]).toLowerCase() : '';
+  }
+
+  var screen = getScreen();
+  var action = ACTIONS[screen] || null;
+  var schemeUrl = action ? SCHEME_BASE + action : null;
+
+  /* ── 플랫폼 판별 ────────────────────────────────────────
+       iPadOS 13+ 는 UA가 Macintosh로 나오므로 터치 지원 여부로 보강한다. */
+  var ua = navigator.userAgent || '';
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+              (/Macintosh/i.test(ua) && typeof document.ontouchend !== 'undefined');
+  var isMobile = isAndroid || isIOS;
+
+  var storeUrl = isIOS ? STORE.ios : STORE.android;
+  var btnStore = document.getElementById('btn-store');
+  if (btnStore) btnStore.href = storeUrl;
+
+  /* ── PC 또는 screen 값이 잘못된 경우 ──────────────────── */
+  if (!isMobile || !action) {
+    document.getElementById('mobile-view').classList.add('hide');
+    document.getElementById('pc-view').classList.remove('hide');
+    return;
+  }
+
+  /* ── 앱 실행 시도 ───────────────────────────────────────
+     원리: 앱이 열리면 이 페이지가 백그라운드로 내려간다.
+           그 순간을 감지해 스토어 이동 타이머를 취소한다.
+     주의: 타이머만 쓰면 앱이 열린 뒤에도 스토어가 뜨는 오동작이 생긴다. */
+  var timer = null;
+  var moved = false;
+
+  function cancel() {
+    moved = true;
+    if (timer) { clearTimeout(timer); timer = null; }
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) cancel();
+  });
+  window.addEventListener('pagehide', cancel);
+  window.addEventListener('blur', cancel);
+
+  function launch() {
+    if (moved) return;
+    // iOS는 미설치 시 '주소를 열 수 없습니다' 팝업이 뜰 수 있다.
+    // Universal Link가 정상 동작하면 이 페이지 자체에 도달하지 않으므로,
+    // 여기까지 왔다는 건 미설치이거나 UL 실패 상황이다.
+    try { location.href = schemeUrl; } catch (e) {}
+
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function () {
+      if (moved || document.hidden) return;
+      location.replace(storeUrl);
+    }, FALLBACK_MS);
+  }
+
+  // 수동 버튼 — 카톡 인앱에서 자동 실행이 막혔을 때의 안전망
+  var btnOpen = document.getElementById('btn-open');
+  if (btnOpen) {
+    btnOpen.addEventListener('click', function () {
+      moved = false;
+      launch();
+    });
+  }
+
+  // 진입 즉시 1회 시도
+  launch();
+})();
+</script>
+</body>
+</html>
