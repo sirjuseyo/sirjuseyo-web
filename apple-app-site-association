@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["QCXR8CZHCY.com.albit.SirJuseo"],
+        "components": [
+          { "/": "/app/go", "?": { "screen": "?*" } },
+          { "/": "/app/go/", "?": { "screen": "?*" } }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["QCXR8CZHCY.com.albit.SirJuseo"]
+  }
+}
