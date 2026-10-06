@@ -80,11 +80,20 @@ html,body{height:100%;background:var(--cream);font-family:'Apple SD Gothic Neo',
            /app/go?screen=... 를 app/go/index.html 이 받아 JS로 직접 읽는다. */
   function getScreen() {
     var m = /[?&]screen=([^&#]*)/.exec(location.search);
-    return m ? decodeURIComponent(m[1]).toLowerCase() : '';
+    if (!m) return '';
+    // 제약: decodeURIComponent 는 '%' 같은 불완전 인코딩에서 URIError 를 던진다.
+    //       잡지 않으면 스크립트 전체가 멈춰 페이지가 아무 동작도 하지 않는다.
+    try {
+      return decodeURIComponent(m[1]).toLowerCase();
+    } catch (e) {
+      return '';   // 잘못된 인코딩은 미지정과 동일하게 취급 → 안내 화면
+    }
   }
 
   var screen = getScreen();
-  var action = ACTIONS[screen] || null;
+  // 제약: ACTIONS[screen] 직접 접근은 프로토타입 키(constructor·toString·__proto__ 등)가
+  //       truthy 로 잡혀 엉뚱한 스킴이 만들어진다. 자기 자신의 키인지 반드시 확인한다.
+  var action = Object.prototype.hasOwnProperty.call(ACTIONS, screen) ? ACTIONS[screen] : null;
   var schemeUrl = action ? SCHEME_BASE + action : null;
 
   /* ── 플랫폼 판별 ────────────────────────────────────────
