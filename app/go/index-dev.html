@@ -50,11 +50,19 @@ html,body{height:100%;background:var(--cream);font-family:'Apple SD Gothic Neo',
     <a class="btn-ghost" id="btn-store" href="#">앱 설치하기</a>
   </div>
 
-  <!-- PC: 안내 -->
+  <!-- PC에서 열었을 때 -->
   <div id="pc-view" class="hide">
     <div class="msg">모바일에서 열어 주세요</div>
     <div class="sub">이 링크는 써주세요. 앱으로 연결됩니다.<br>휴대폰에서 다시 눌러 주세요.</div>
     <a class="btn" href="https://www.sirjuseyo.com/index-dev.html">써주세요. 홈으로 (DEV)</a>
+  </div>
+
+  <!-- 주소가 잘못됐을 때 (screen 값 누락·오타·깨진 인코딩) -->
+  <div id="error-view" class="hide">
+    <div class="msg">연결할 수 없는 링크예요</div>
+    <div class="sub">주소가 잘못되었거나 만료된 링크입니다.<br>아래에서 바로 이동해 주세요.</div>
+    <a class="btn" id="err-loan" href="#">🔟🈷️ 이달의 대출 보기</a>
+    <a class="btn-ghost" id="err-checker" href="#">대출 가능성 검사기</a>
   </div>
 
   <div class="grad-bar"></div>
@@ -76,7 +84,9 @@ html,body{height:100%;background:var(--cream);font-family:'Apple SD Gothic Neo',
     android: 'https://play.google.com/store/apps/details?id=company101.fundlock',
     ios:     'https://apps.apple.com/kr/app/id1277639490'
   };
-  var HOME = 'https://www.sirjuseyo.com/index-dev.html';   // DEV는 DEV 홈으로
+  var HOME = 'https://www.sirjuseyo.com/index-dev.html';
+  var LINK_LOAN    = 'https://www.sirjuseyo.com/monthly-loan/2026-10/index-dev.html';
+  var LINK_CHECKER = 'https://www.sirjuseyo.com/tip/loan-checker/index-dev.html';   // DEV는 DEV 홈으로
   var FALLBACK_MS = 1800;   // 요청 사양: 1.5~2초 내 이탈 없으면 스토어
 
   /* ── 쿼리 파싱 ──────────────────────────────────────────
@@ -112,10 +122,28 @@ html,body{height:100%;background:var(--cream);font-family:'Apple SD Gothic Neo',
   var btnStore = document.getElementById('btn-store');
   if (btnStore) btnStore.href = storeUrl;
 
-  /* ── PC 또는 screen 값이 잘못된 경우 ──────────────────── */
-  if (!isMobile || !action) {
+  /* ── 앱으로 보낼 수 없는 경우 — 원인별로 다른 화면을 보여준다 ─────
+     주의: PC 접속과 '주소 오류'는 원인이 전혀 다르다. 한 화면으로 묶으면
+           휴대폰에서 잘못된 주소를 열었을 때 "모바일에서 열어 주세요"라는
+           말이 안 되는 안내가 뜬다. 반드시 분리할 것. */
+  function showOnly(id) {
     document.getElementById('mobile-view').classList.add('hide');
-    document.getElementById('pc-view').classList.remove('hide');
+    document.getElementById('pc-view').classList.add('hide');
+    document.getElementById('error-view').classList.add('hide');
+    document.getElementById(id).classList.remove('hide');
+  }
+
+  if (!isMobile) {
+    showOnly('pc-view');            // PC → 휴대폰에서 열라고 안내
+    return;
+  }
+  if (!action) {
+    // 모바일인데 screen 값이 없거나 잘못됨 → 갈 곳을 직접 제시
+    var el1 = document.getElementById('err-loan');
+    var el2 = document.getElementById('err-checker');
+    if (el1) el1.href = LINK_LOAN;
+    if (el2) el2.href = LINK_CHECKER;
+    showOnly('error-view');
     return;
   }
 
