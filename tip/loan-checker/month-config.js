@@ -49,9 +49,6 @@ const MONTH_CONFIGS = {
     detailUrl: '/monthly-loan/2026-05/',
     // CTA 버튼 텍스트
     ctaText: '❤️ 가정의 달 대출 신청하기 →',
-    // 웨이팅 캘린더 기본 노출값 (Royal Seat 기준)
-    defaultWaitingDate: '2026년 4월 11일',
-    defaultWaitingPeriod: '2026년 4월 11일 ~ 15일',
     // step4Warning 심사 기간
     step4ReviewDisplay: '2026년 5월 1일 ~ 5일',
   },
@@ -83,8 +80,6 @@ const MONTH_CONFIGS = {
     subscribeStart: '2026.05.18',
     detailUrl: '/monthly-loan/2026-06/',
     ctaText: '🪖 호국보훈의 달 대출 신청하기 →',
-    defaultWaitingDate: '2026년 6월 11일',
-    defaultWaitingPeriod: '2026년 6월 11일 ~ 15일',
     step4ReviewDisplay: '2026년 7월 1일 ~ 5일',
   },
   '2026-07': {
@@ -114,8 +109,6 @@ const MONTH_CONFIGS = {
     subscribeStart: '2026.06.18',
     detailUrl: '/monthly-loan/2026-07/',
     ctaText: '7️⃣🈷️ 썸머🏖️ 베케이션 대출 신청하기 →',
-    defaultWaitingDate: '2026년 7월 11일',
-    defaultWaitingPeriod: '2026년 7월 11일 ~ 15일',
     step4ReviewDisplay: '2026년 8월 1일 ~ 5일',
   },
   '2026-08': {
@@ -145,8 +138,6 @@ const MONTH_CONFIGS = {
     subscribeStart: '2026.07.26',
     detailUrl: '/monthly-loan/2026-08/',
     ctaText: '8️⃣🈷️ 썸머🏝️ 베케이션 Ⅱ 대출 신청하기 →',
-    defaultWaitingDate: '2026년 8월 11일',
-    defaultWaitingPeriod: '2026년 8월 11일 ~ 15일',
     step4ReviewDisplay: '2026년 9월 1일 ~ 5일',
   },
   '2026-09': {
@@ -176,8 +167,6 @@ const MONTH_CONFIGS = {
     subscribeStart: '2026.08.26',
     detailUrl: '/monthly-loan/2026-09/',
     ctaText: '9️⃣🈷️ 풍성한 🍂한가위 대출 신청하기 →',
-    defaultWaitingDate: '2026년 9월 11일',
-    defaultWaitingPeriod: '2026년 9월 11일 ~ 15일',
     step4ReviewDisplay: '2026년 10월 1일 ~ 5일',
   },
   // T-171 WT-171: 10월 낭만가득 가을 대출 (기획서 PLAN_2026-10 §4 확정값)
@@ -209,8 +198,6 @@ const MONTH_CONFIGS = {
     subscribeStart: '2026.09.26',
     detailUrl: '/monthly-loan/2026-10/',
     ctaText: '🔟🈷️ 낭만가득 🍂가을 대출 신청하기 →',
-    defaultWaitingDate: '2026년 10월 11일',
-    defaultWaitingPeriod: '2026년 10월 11일 ~ 15일',
     step4ReviewDisplay: '2026년 11월 1일 ~ 5일',
   },
   // ← 11월 이후 여기에 추가 (activePeriod.start = 10월 26일, end = 11월 25일)
