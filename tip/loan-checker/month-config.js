@@ -200,7 +200,41 @@ const MONTH_CONFIGS = {
     ctaText: '🔟🈷️ 낭만가득 🍂가을 대출 신청하기 →',
     step4ReviewDisplay: '2026년 11월 1일 ~ 5일',
   },
-  // ← 11월 이후 여기에 추가 (activePeriod.start = 10월 26일, end = 11월 25일)
+  // T-190 WT-190: 11월 든든한 월동준비 대출 (기획서 PLAN_2026-11_월동준비 §4-1 확정값)
+  // 정책: 과거 월 워딩이 현재 월에 노출되면 안 되므로 하드코딩 대신 이 config를 참조한다
+  // ⚠️ defaultWaitingDate/defaultWaitingPeriod 필드는 W-184 결정에 따라 의도적으로 추가하지 않음
+  //    (죽은 플레이스홀더였음 — #waitingInfo가 class="hidden"으로 시작해 사용자에게 노출된 적 없음,
+  //     실제 날짜는 app.js의 getTodayDateString()이 항상 계산)
+  '2026-11': {
+    activePeriod: {
+      start: '2026-10-26',  // 10월 26일
+      end:   '2026-11-25',  // 11월 25일
+    },
+    loan: {
+      name: '1️⃣1️⃣🈷️ 든든한 🫙월동준비 대출',
+      emoji: '🫙',
+      concept: '든든한 월동준비',
+    },
+    event: {
+      period: '11월 한정 스페셜티',
+      name: '김장🥬대출',
+    },
+    applyPeriod: {
+      start: '2026-11-01',
+      end: '2026-11-25',
+    },
+    reviewPeriod: {
+      start: '2026-12-01',
+      end: '2026-12-05',
+      display: '2026년 12월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 12월 25일',
+    subscribeStart: '2026.10.26',
+    detailUrl: '/monthly-loan/2026-11/',
+    ctaText: '1️⃣1️⃣🈷️ 든든한 🫙월동준비 대출 신청하기 →',
+    step4ReviewDisplay: '2026년 12월 1일 ~ 5일',
+  },
+  // ← 12월 이후 여기에 추가 (activePeriod.start = 11월 26일, end = 12월 25일)
 };
 
 // ✅ 자동 감지: 오늘이 activePeriod(전월 26일 ~ 당월 25일) 안에 있는 config 선택
