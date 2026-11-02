@@ -3,6 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
+  <!-- T-189 WT-189: 비인증 웹 신청 경로 차단 (2026-10-30 사장님 지시)
+       정책: 월별 대출 신청은 앱에서만 받는다. DEV/PRD 동일 앱링크 사용(사장님 확정, 2026-10-30).
+       location.replace()로 히스토리에 남기지 않아 뒤로가기 루프를 방지한다. -->
+  <script>location.replace('https://www.sirjuseyo.com/app/go/?screen=monthly_loan');</script>
+  <noscript><meta http-equiv="refresh" content="0; url=https://www.sirjuseyo.com/app/go/?screen=monthly_loan"></noscript>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[DEV] 써주세요 대출 신청</title>
   <!-- 브랜드 폰트: Noto Sans KR (써주세요 브랜드 아이덴티티 ver1.0.2 기준) -->
@@ -517,7 +522,7 @@
   </style>
 </head>
 
-<body data-back="/monthly-loan/2026-10/index-dev.html" data-breadcrumb="월별 대출 신청하기,/monthly-loan/2026-10/index-dev.html|신청 폼">
+<body data-back="/monthly-loan/2026-11/index-dev.html" data-breadcrumb="월별 대출 신청하기,/monthly-loan/2026-11/index-dev.html|신청 폼">
 
   <!-- DEV 환경 표시 배너 (apply-dev.html 전용) -->
   <div style="background:#FF5400;color:#fff;text-align:center;padding:8px;font-size:13px;font-weight:700;font-family:'Noto Sans KR',sans-serif;letter-spacing:0.5px;position:sticky;top:52px;z-index:10000;max-width:480px;margin:0 auto;">
