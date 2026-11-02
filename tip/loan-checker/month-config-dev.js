@@ -1,0 +1,259 @@
+/**
+ * month-config.js
+ * 월별 대출 검사기 설정 파일
+ * 매월 신규 월 추가 시 이 파일에만 객체 하나 추가하면 자동 적용됨
+ *
+ * ✅ 활성 기간 정책 (activePeriod):
+ *   매월 26일 ~ 익월 25일 = 해당 월 대출 활성 기간
+ *   예) 2026-05-26 ~ 2026-06-25 = 6️⃣🈷️은 🪖호국보훈의 달 대출
+ *
+ * 작성자: 쮸티12호
+ * 작성일: 2026-05-31
+ * T-ID: T-013
+ */
+
+const MONTH_CONFIGS = {
+  '2026-05': {
+    // 활성 기간: 전월 26일 ~ 당월 25일
+    activePeriod: {
+      start: '2026-04-26',  // 4월 26일
+      end:   '2026-05-25',  // 5월 25일
+    },
+    // 대출 상품 정보
+    loan: {
+      name: '5️⃣🈷️은 ❤️가정의 달 대출',
+      emoji: '❤️',
+      concept: '가정의 달',
+    },
+    // 이벤트 대출
+    event: {
+      period: '5월 한정 스페셜티',
+      name: '장미 🌹 대출',
+    },
+    // 신청 기간 (웨이팅 좌석 자동 생성 기준)
+    applyPeriod: {
+      start: '2026-04-01',
+      end: '2026-04-25',
+    },
+    // 심사 기간
+    reviewPeriod: {
+      start: '2026-05-01',
+      end: '2026-05-05',
+      display: '2026년 5월 1일 ~ 5일 / 매일',
+    },
+    // 포인트 적립 기한 (step5Deadline)
+    pointDeadline: '2026년 5월 25일',
+    // 포인트 구독 시작일
+    subscribeStart: '2026.03.18',
+    // 랜딩 페이지 URL
+    detailUrl: '/monthly-loan/2026-05/',
+    // CTA 버튼 텍스트
+    ctaText: '❤️ 가정의 달 대출 신청하기 →',
+    // step4Warning 심사 기간
+    step4ReviewDisplay: '2026년 5월 1일 ~ 5일',
+  },
+  '2026-06': {
+    // 활성 기간: 전월 26일 ~ 당월 25일
+    activePeriod: {
+      start: '2026-05-26',  // 5월 26일
+      end:   '2026-06-25',  // 6월 25일
+    },
+    loan: {
+      name: '6️⃣🈷️은 🪖호국보훈의 달 대출',
+      emoji: '🪖',
+      concept: '호국보훈의 달',
+    },
+    event: {
+      period: '6월 한정 스페셜티',
+      name: '월드컵 ⚽ 대출',
+    },
+    applyPeriod: {
+      start: '2026-06-01',
+      end: '2026-06-25',
+    },
+    reviewPeriod: {
+      start: '2026-07-01',
+      end: '2026-07-05',
+      display: '2026년 7월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 7월 25일',
+    subscribeStart: '2026.05.18',
+    detailUrl: '/monthly-loan/2026-06/',
+    ctaText: '🪖 호국보훈의 달 대출 신청하기 →',
+    step4ReviewDisplay: '2026년 7월 1일 ~ 5일',
+  },
+  '2026-07': {
+    activePeriod: {
+      start: '2026-06-26',
+      end:   '2026-07-25',
+    },
+    loan: {
+      name: '7️⃣🈷️ 썸머 🏖️베케이션 대출',
+      emoji: '🏖️',
+      concept: '썸머 베케이션',
+    },
+    event: {
+      period: '7월 한정 스페셜티',
+      name: '워터밤💦대출',
+    },
+    applyPeriod: {
+      start: '2026-07-01',
+      end: '2026-07-25',
+    },
+    reviewPeriod: {
+      start: '2026-08-01',
+      end: '2026-08-05',
+      display: '2026년 8월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 8월 25일',
+    subscribeStart: '2026.06.18',
+    detailUrl: '/monthly-loan/2026-07/',
+    ctaText: '7️⃣🈷️ 썸머🏖️ 베케이션 대출 신청하기 →',
+    step4ReviewDisplay: '2026년 8월 1일 ~ 5일',
+  },
+  '2026-08': {
+    activePeriod: {
+      start: '2026-07-26',
+      end:   '2026-08-25',
+    },
+    loan: {
+      name: '8️⃣🈷️ 썸머 🏝️베케이션 Ⅱ 대출',
+      emoji: '🏝️',
+      concept: '썸머 베케이션 Ⅱ',
+    },
+    event: {
+      period: '8월 한정 스페셜티',
+      name: '호캉스🏨✈️대출',
+    },
+    applyPeriod: {
+      start: '2026-08-01',
+      end: '2026-08-25',
+    },
+    reviewPeriod: {
+      start: '2026-09-01',
+      end: '2026-09-05',
+      display: '2026년 9월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 9월 25일',
+    subscribeStart: '2026.07.26',
+    detailUrl: '/monthly-loan/2026-08/',
+    ctaText: '8️⃣🈷️ 썸머🏝️ 베케이션 Ⅱ 대출 신청하기 →',
+    step4ReviewDisplay: '2026년 9월 1일 ~ 5일',
+  },
+  '2026-09': {
+    activePeriod: {
+      start: '2026-08-26',
+      end:   '2026-09-25',
+    },
+    loan: {
+      name: '9️⃣🈷️ 풍성한 🍂한가위 대출',
+      emoji: '🍂',
+      concept: '풍성한 한가위',
+    },
+    event: {
+      period: '9월 한정 스페셜티',
+      name: '보름달🌕✨대출',
+    },
+    applyPeriod: {
+      start: '2026-09-01',
+      end: '2026-09-25',
+    },
+    reviewPeriod: {
+      start: '2026-10-01',
+      end: '2026-10-05',
+      display: '2026년 10월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 10월 25일',
+    subscribeStart: '2026.08.26',
+    detailUrl: '/monthly-loan/2026-09/',
+    ctaText: '9️⃣🈷️ 풍성한 🍂한가위 대출 신청하기 →',
+    step4ReviewDisplay: '2026년 10월 1일 ~ 5일',
+  },
+  // T-171 WT-171: 10월 낭만가득 가을 대출 (기획서 PLAN_2026-10 §4 확정값)
+  // 정책: 과거 월 워딩이 현재 월에 노출되면 안 되므로 하드코딩 대신 이 config를 참조한다(T-174 참조 전환 완료)
+  '2026-10': {
+    activePeriod: {
+      start: '2026-09-26',  // 9월 26일
+      end:   '2026-10-25',  // 10월 25일
+    },
+    loan: {
+      name: '🔟🈷️ 낭만가득 🍂가을 대출',
+      emoji: '🍂',
+      concept: '낭만가득 가을',
+    },
+    event: {
+      period: '10월 한정 스페셜티',
+      name: '단풍놀이🍁대출',
+    },
+    applyPeriod: {
+      start: '2026-10-01',
+      end: '2026-10-25',
+    },
+    reviewPeriod: {
+      start: '2026-11-01',
+      end: '2026-11-05',
+      display: '2026년 11월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 11월 25일',
+    subscribeStart: '2026.09.26',
+    detailUrl: '/monthly-loan/2026-10/',
+    ctaText: '🔟🈷️ 낭만가득 🍂가을 대출 신청하기 →',
+    step4ReviewDisplay: '2026년 11월 1일 ~ 5일',
+  },
+  // T-190 WT-190: 11월 든든한 월동준비 대출 (기획서 PLAN_2026-11_월동준비 §4-1 확정값)
+  // 정책: 과거 월 워딩이 현재 월에 노출되면 안 되므로 하드코딩 대신 이 config를 참조한다
+  // ⚠️ defaultWaitingDate/defaultWaitingPeriod 필드는 W-184 결정에 따라 의도적으로 추가하지 않음
+  //    (죽은 플레이스홀더였음 — #waitingInfo가 class="hidden"으로 시작해 사용자에게 노출된 적 없음,
+  //     실제 날짜는 app.js의 getTodayDateString()이 항상 계산)
+  '2026-11': {
+    activePeriod: {
+      start: '2026-10-26',  // 10월 26일
+      end:   '2026-11-25',  // 11월 25일
+    },
+    loan: {
+      name: '1️⃣1️⃣🈷️ 든든한 🫙월동준비 대출',
+      emoji: '🫙',
+      concept: '든든한 월동준비',
+    },
+    event: {
+      period: '11월 한정 스페셜티',
+      name: '김장🥬대출',
+    },
+    applyPeriod: {
+      start: '2026-11-01',
+      end: '2026-11-25',
+    },
+    reviewPeriod: {
+      start: '2026-12-01',
+      end: '2026-12-05',
+      display: '2026년 12월 1일 ~ 5일 / 매일',
+    },
+    pointDeadline: '2026년 12월 25일',
+    subscribeStart: '2026.10.26',
+    detailUrl: '/monthly-loan/2026-11/',
+    ctaText: '1️⃣1️⃣🈷️ 든든한 🫙월동준비 대출 신청하기 →',
+    step4ReviewDisplay: '2026년 12월 1일 ~ 5일',
+  },
+  // ← 12월 이후 여기에 추가 (activePeriod.start = 11월 26일, end = 12월 25일)
+};
+
+// ✅ 자동 감지: 오늘이 activePeriod(전월 26일 ~ 당월 25일) 안에 있는 config 선택
+// 예) 오늘=2026-05-31
+//     5월 activePeriod: 04-26 ~ 05-25 → 05-31 > 05-25 → skip
+//     6월 activePeriod: 05-26 ~ 06-25 → 05-26 ≤ 05-31 ≤ 06-25 → ✅ 6월 선택
+const _now = new Date();
+const _todayStr = `${_now.getFullYear()}-${String(_now.getMonth() + 1).padStart(2, '0')}-${String(_now.getDate()).padStart(2, '0')}`;
+const _sortedKeys = Object.keys(MONTH_CONFIGS).sort();
+
+var MONTH_CONFIG = null;
+for (const _key of _sortedKeys) {
+  const _ap = MONTH_CONFIGS[_key].activePeriod;
+  if (_todayStr >= _ap.start && _todayStr <= _ap.end) {
+    MONTH_CONFIG = MONTH_CONFIGS[_key];
+    break;
+  }
+}
+// 폴백: activePeriod에 해당하는 config가 없으면 가장 마지막 config 사용
+if (!MONTH_CONFIG) {
+  MONTH_CONFIG = MONTH_CONFIGS[_sortedKeys[_sortedKeys.length - 1]];
+}
