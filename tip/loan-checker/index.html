@@ -141,32 +141,32 @@
                 <span class="key-icon">✅</span>
                 <span>
                   웨이팅 대출 신청일 :
-                  <strong id="waitingDateText">2026년 6월 11일</strong>
+                  <strong id="waitingDateText">-</strong>
                 </span>
               </li>
               <li class="waiting-key-item">
                 <span class="key-icon"></span>
                 <span>
                   웨이팅 대출 신청 기간 :
-                  <strong id="waitingPeriod">2026년 6월 11일 ~ 15일</strong>
+                  <strong id="waitingPeriod">-</strong>
                 </span>
               </li>
               <li class="waiting-key-item">
                 <span class="key-icon"></span>
                 <span>
                   웨이팅 대출 할인 좌석 :
-                  <strong id="discountSeat">Royal Seat (2열)</strong>
+                  <strong id="discountSeat">-</strong>
                 </span>
               </li>
             </ul>
             <ul class="waiting-sub-list">
               <li>
                 모든 상품의 크레딧 미션 할인율 :
-                <span id="creditRange">50% ~ 25%</span>
+                <span id="creditRange">-</span>
               </li>
               <li>
                 원리포 상품인 30만 원과 50만 원의 원금 미션 인하율 :
-                <span id="wonmiRate">4%</span>
+                <span id="wonmiRate">-</span>
               </li>
             </ul>
           </div>
@@ -640,11 +640,6 @@
       // reviewPeriod default
       var rp = document.getElementById('reviewPeriod');
       if (rp) rp.textContent = cfg.reviewPeriod.display;
-      // waitingDateText / waitingPeriod
-      var wdt = document.getElementById('waitingDateText');
-      if (wdt) wdt.textContent = cfg.defaultWaitingDate;
-      var wp = document.getElementById('waitingPeriod');
-      if (wp) wp.textContent = cfg.defaultWaitingPeriod;
       // 이벤트 가이드
       var egl = document.getElementById('eventGuideLabel');
       if (egl) egl.innerHTML = '이벤트 대출 &gt; ' + cfg.event.period;
