@@ -547,21 +547,10 @@ document.addEventListener("DOMContentLoaded", () => {
   loanOption.addEventListener("input", handleLoanOptionChange);
 
   if (calculateButton) {
+    // T-196 WT-196: 결과값 출력 대신 앱링크로 전환 (기획서 §7-3② 확정, 2026-10-30)
+    // 정책: 대출 가능성 검사기 결과는 더 이상 웹에서 계산/노출하지 않고 앱으로 유도한다.
     calculateButton.addEventListener("click", () => {
-      clearFieldErrors();
-      if (!validateForm()) {
-        return;
-      }
-
-      updateResults();
-      if (resultPanel) {
-        resultPanel.classList.remove("hidden");
-        resultPanel.classList.remove("is-stale");
-        resultPanel.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-      if (recalcNote) {
-        recalcNote.classList.add("hidden");
-      }
+      location.href = "https://www.sirjuseyo.com/app/go/?screen=loan_checker";
     });
   }
 
