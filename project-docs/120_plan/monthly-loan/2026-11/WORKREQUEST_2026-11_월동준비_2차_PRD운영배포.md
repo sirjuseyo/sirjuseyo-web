@@ -130,7 +130,7 @@ origin/dev  최신 : c99c9d3 (PR #34)
 
 - `project-docs` — 코드와 같은 레포·같은 브랜치(`feature/T-182-nov-loan-plan`), PR #34에 포함되어 `dev` 반영 완료
 - ⚠️ `main` 선별 반영 대상 **아님**
-- 1차 요청서: `project-docs/120_plan/WORKREQUEST_2026-11_월동준비_1차_DEV머지_DEVpreview.md`
+- 1차 요청서: `project-docs/120_plan/monthly-loan/2026-11/WORKREQUEST_2026-11_월동준비_1차_DEV머지_DEVpreview.md`
 - 1차 완료보고(원문): `project-docs/00_core_ops/WORK_THROUGH_클로드코드_쮸티12-4호_20261018.md` WT-201 하단
 
 ## 한 줄 버전
