@@ -102,7 +102,7 @@ origin/main ↔ origin/dev :  main only 44 / dev only 354  → diverged
 
 - `project-docs` (같은 레포·같은 브랜치에 포함, 커밋 21건)
 - 브랜치: `feature/T-168-oct-loan-page` (코드와 동일 브랜치)
-- 기획서: `project-docs/120_plan/PLAN_2026-10_낭만가득가을_기획서.md` (v0.5)
+- 기획서: `project-docs/120_plan/monthly-loan/2026-10/PLAN_2026-10_낭만가득가을_기획서.md` (v0.5)
 - 2대 문서: `project-docs/00_core_ops/TODO_BOARD_클로드코드_쮸티12-3호_20260904.md`, `WORK_THROUGH_클로드코드_쮸티12-3호_20260904.md`
 - ⚠️ `project-docs`는 **`main` 선별 반영 대상이 아닙니다.** `dev` 머지까지만 반영해 주십시오.
 - ⚠️ 이번 브랜치에 **10월 작업과 무관한 선행 문서 정리 커밋 `a5c364f`**가 포함돼 있습니다 (`10_plan → 120_plan` 이동 15건, `structure.txt` 이동, 지침서 개명 — 전부 `R100` 동일 내용 이동). 소스 변경 0건입니다.

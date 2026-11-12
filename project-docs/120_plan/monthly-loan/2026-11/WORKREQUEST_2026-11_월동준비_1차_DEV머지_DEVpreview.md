@@ -116,10 +116,10 @@ origin/main ↔ origin/dev :  main only 62 / dev only 429  → diverged
 
 - `project-docs` (같은 레포·같은 브랜치에 포함)
 - 브랜치: `feature/T-182-nov-loan-plan` (코드와 동일 브랜치), PR `#34`
-- 기획서: `project-docs/120_plan/PLAN_2026-11_월동준비_기획서.md` (v0.10)
-- 구현작업일체: `project-docs/120_plan/PLAN_2026-11_월동준비_구현작업일체.md`
+- 기획서: `project-docs/120_plan/monthly-loan/2026-11/PLAN_2026-11_월동준비_기획서.md` (v0.10)
+- 구현작업일체: `project-docs/120_plan/monthly-loan/2026-11/PLAN_2026-11_월동준비_구현작업일체.md`
 - 앱 팀 인수인계: `project-docs/130_handover/HANDOVER_11월_든든한월동준비대출_sirjuseyoWeb_Android&iOS_20261101.md`(CTA/앱링크 내용 제외, Web 레포 전달용 — 앱 팀에는 별도 채널로 전달 예정)
-- Notion 첨부용 단독 HTML 4종: `project-docs/120_plan/STANDALONE_2026-11_월동준비_*.html`(라이브 배포 대상 아님, `main` 반영 불필요)
+- Notion 첨부용 단독 HTML 4종: `project-docs/120_plan/monthly-loan/2026-11/STANDALONE_2026-11_월동준비_*.html`(라이브 배포 대상 아님, `main` 반영 불필요)
 - 2대 문서: `project-docs/00_core_ops/TODO_BOARD_클로드코드_쮸티12-4호_20261018.md`, `WORK_THROUGH_클로드코드_쮸티12-4호_20261018.md`
 - ⚠️ `project-docs`는 **`main` 선별 반영 대상이 아닙니다.** `dev` 머지까지만 반영해 주십시오.
 

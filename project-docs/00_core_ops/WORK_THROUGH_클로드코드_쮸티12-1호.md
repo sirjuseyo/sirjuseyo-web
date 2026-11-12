@@ -771,7 +771,7 @@ GitHub Pages run `30691343721` success, 운영 주요 URL 200 및 8월 문구 �
 ### 작업 내용
 
 **A. 기획서 v0.1 작성 (커밋 `b3fdc76`)**
-- 파일: `project-docs/120_plan/PLAN_2026-08_썸머베케이션Ⅱ_기획서.md` (신규 생성)
+- 파일: `project-docs/120_plan/monthly-loan/2026-08/PLAN_2026-08_썸머베케이션Ⅱ_기획서.md` (신규 생성)
 - 7월 기획서 구조 기반으로 8월 변동 사항 전면 반영
 
 **B. 8월 확정 변동 사항 (사장님 컨펌 → v0.2, 커밋 `8428d7d`)**
@@ -1025,7 +1025,7 @@ GitHub Pages run `30691343721` success, 운영 주요 URL 200 및 8월 문구 �
 | 2 | 1회차 | `tip/loan-checker/index.html` | 배너5장→`.title-bar` 텍스트 블록, `.tone-note` 존댓말 안내문 교체, ①~⑦ 섹션 이모지 제거, 라벨·placeholder 말투 정제, 소통거리·크레딧·포인트 가이드 정제, 결과패널 이모지 제거, CTA 이미지→텍스트 버튼, 스크립트 섹션 이모지·반말 제거 (`c49caec`) |
 | 3 | 1회차 | `tip/loan-checker/app.js` | `LOAN_CONFIG` 상태 키 이모지 제거, `LOAN_OPTION_STATUS_TABLE` 오타(`블랙찬스 티캣`→`블랙찬스 티켓 사용`) 수정, `addSelectOption` 상태 이모지 제거, `benefitTitle` ✨→🌟, `santaApply/appApply` 체크 value 변경, 이중⚠️ 단일화, `까지❗️`→`까지`, `🟰🛢️➕` 이모지 제거 (`c49caec`) |
 | 4 | 1회차 | `tip/loan-checker/index-dev.html` | index.html과 동일 변경 + DEV 배너 유지 + `menu-dev.js` 유지 + CTA href DEV 경로 변환 유지 (`c49caec`) |
-| 5 | 문서수정 | `project-docs/120_plan/기획안_tip_loan-checker_리디자인_v1_20260728.md` | v1.4 업데이트: 작업 핵심 재정의(톤&매너만·뼈대·콘텐츠·값 유지·이미지 제거), Phase B 전체 취소 확정, §12 신설, 8월 썸머 베케이션 대출 Ⅱ 별도 작업 계획 기록 (`0fb0153`) |
+| 5 | 문서수정 | `project-docs/120_plan/loan-checker/기획안_tip_loan-checker_리디자인_v1_20260728.md` | v1.4 업데이트: 작업 핵심 재정의(톤&매너만·뼈대·콘텐츠·값 유지·이미지 제거), Phase B 전체 취소 확정, §12 신설, 8월 썸머 베케이션 대출 Ⅱ 별도 작업 계획 기록 (`0fb0153`) |
 | 6 | 2회차 | `tip/loan-checker/index.html`, `index-dev.html`, `app.js` | 회차 수정 — 목적 안내 박스 첫 줄·단락 문구 변경 / 대출 옵션 select 이모지 추가(⏳⚡🎫🎁) / 옵션 가이드 순서·문구 변경(웨이팅→롸잇나우→블찬→이벤트) / 이력/상태 가이드 14개 항목 (이력)/(상태) 표기 + 설명 개정 / 이벤트 가이드 6월→7월·워터밤 설명 변경 / 월별 신청 placeholder URL PRD·DEV 각각 변경 / 크레딧 미션 select 3개 장난식→정제 / 소통거리 select 3개 장난식→정제 / 소통거리 가이드 제목 변경 / app.js 반말 placeholder 6개 경어·communicationStatus "디 엔드"→"제출 완료" / 인라인 스크립트 eventGuideName PRD·DEV 공통 변경 (`e0e4565`) |
 | 7 | 3회차 | `tip/loan-checker/index.html`, `index-dev.html` | 회차 수정 — santaApply placeholder PRD·DEV 모두 https://www.sirjuseyo.com/monthly-loan/2026-07/index.html 통일 / 크레딧 미션 select: 아직 적립→적립 전·현재 적립 진행 중→적립 중·미션 완료→적립 완료했습니다. / 소통거리 select: 아직 제출 전→제출 전·자료 업로드 중→제출 중 (`2c64f0f`) |
 | 8 | 4회차 | `tip/loan-checker/styles.css`, `index.html`, `index-dev.html` | 영역 구분 강화 — .concept-image(연보라 160px placeholder, "🏖️ 7월 썸머 베케이션 대출 이미지 준비 중") 신규 / .clock-label(시계 위 맥락 레이블) 신규 / .section-divider(본문 구분선) 신규 / .tone-note 왼쪽 보더 4px accent 강화 (`13ba21c`) |
@@ -4765,9 +4765,9 @@ dev 검증 완료 커밋 2ffcb98 기준으로 index.html, index-dev.html 2개 �
 | 폴더 삭제 | `project-docs/00_plan/` | 기존 기획서 폴더 전체 삭제 |
 | 폴더 신규 | `project-docs/120_plan/` | 통합 기획서 보관 폴더 생성 |
 | 파일 이동 | `project-docs/00_plan/*` → `project-docs/120_plan/` | 전체 파일 이동 (기획서, 기술문서, wireframe 등) |
-| 파일 이동 | `2026-07/PLAN_7월_썸머베케이션대출_기획서.md` → `project-docs/120_plan/PLAN_2026-07_썸머베케이션대출_기획서.md` | 7월 기획서 이동 |
+| 파일 이동 | `2026-07/PLAN_7월_썸머베케이션대출_기획서.md` → `project-docs/120_plan/monthly-loan/2026-07/PLAN_2026-07_썸머베케이션대출_기획서.md` | 7월 기획서 이동 |
 | 파일 삭제 | `PLAN_홈페이지_7월전환_기획서.md` (루트) | 사장님 직접 삭제 |
-| 파일 신규 | `project-docs/120_plan/팝업배너콘텐츠.md` | 사장님 직접 추가 |
+| 파일 신규 | `project-docs/120_plan/monthly-loan/_shared/팝업배너콘텐츠.md` | 사장님 직접 추가 |
 
 ### 비고
 
